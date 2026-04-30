@@ -52,7 +52,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(253, 20);
+            label1.Location = new Point(167, 21);
             label1.Name = "label1";
             label1.Size = new Size(50, 15);
             label1.TabIndex = 0;
@@ -143,7 +143,7 @@
             groupBox2.Controls.Add(label5);
             groupBox2.Location = new Point(26, 249);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(531, 226);
+            groupBox2.Size = new Size(317, 226);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Estado de Cuenta Corriente";
@@ -170,7 +170,7 @@
             listView1.Columns.AddRange(new ColumnHeader[] { Fecha, Monto });
             listView1.Location = new Point(15, 78);
             listView1.Name = "listView1";
-            listView1.Size = new Size(497, 97);
+            listView1.Size = new Size(273, 97);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -206,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(569, 487);
+            ClientSize = new Size(371, 487);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
