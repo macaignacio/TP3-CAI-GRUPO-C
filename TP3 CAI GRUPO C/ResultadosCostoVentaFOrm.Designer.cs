@@ -30,18 +30,16 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            label2 = new Label();
-            label3 = new Label();
             button1 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            groupBox2 = new GroupBox();
             listView1 = new ListView();
             EmpresaOmnibus = new ColumnHeader();
             Ventas = new ColumnHeader();
             Costos = new ColumnHeader();
             Utilidad = new ColumnHeader();
             button2 = new Button();
+            dateTimePicker3 = new DateTimePicker();
+            label4 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -57,45 +55,15 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dateTimePicker2);
-            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(dateTimePicker3);
+            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
             groupBox1.Location = new Point(13, 48);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(389, 100);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Período de Consulta";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(13, 181);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(389, 144);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Resultado Operativo";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(13, 32);
-            label2.Name = "label2";
-            label2.Size = new Size(42, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Desde:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(201, 33);
-            label3.Name = "label3";
-            label3.Size = new Size(40, 15);
-            label3.TabIndex = 1;
-            label3.Text = "Hasta:";
             // 
             // button1
             // 
@@ -106,21 +74,15 @@
             button1.Text = "Consultar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // groupBox2
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(61, 27);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(102, 23);
-            dateTimePicker1.TabIndex = 3;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(247, 27);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(102, 23);
-            dateTimePicker2.TabIndex = 4;
+            groupBox2.Controls.Add(listView1);
+            groupBox2.Location = new Point(13, 181);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(389, 144);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Resultado Operativo";
             // 
             // listView1
             // 
@@ -159,6 +121,25 @@
             button2.Text = "Aceptar";
             button2.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.CustomFormat = "MMMMyyyy";
+            dateTimePicker3.Format = DateTimePickerFormat.Custom;
+            dateTimePicker3.Location = new Point(95, 31);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(180, 23);
+            dateTimePicker3.TabIndex = 6;
+            dateTimePicker3.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(13, 37);
+            label4.Name = "label4";
+            label4.Size = new Size(51, 15);
+            label4.TabIndex = 5;
+            label4.Text = "Período:";
+            // 
             // ResultadosCostoVentaFOrm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -182,16 +163,14 @@
         private Label label1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
         private Button button1;
-        private Label label3;
-        private Label label2;
         private ListView listView1;
         private ColumnHeader EmpresaOmnibus;
         private ColumnHeader Ventas;
         private ColumnHeader Costos;
         private ColumnHeader Utilidad;
         private Button button2;
+        private DateTimePicker dateTimePicker3;
+        private Label label4;
     }
 }

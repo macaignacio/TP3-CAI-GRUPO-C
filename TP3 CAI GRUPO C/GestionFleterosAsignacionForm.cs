@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace TP3_CAI_GRUPO_C
 {
-    public partial class GestionFleterosForm : Form
+    public partial class GestionFleterosAsignacionForm : Form
     {
-        public GestionFleterosForm()
+        public GestionFleterosAsignacionForm()
         {
             InitializeComponent();
         }

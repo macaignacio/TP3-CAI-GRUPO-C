@@ -8,12 +8,11 @@ using System.Windows.Forms;
 
 namespace TP3_CAI_GRUPO_C
 {
-    public partial class ConsultaCtaCteClienteForm : Form
+    public partial class GestionFleterosRendicionForm : Form
     {
-        public ConsultaCtaCteClienteForm()
+        public GestionFleterosRendicionForm()
         {
             InitializeComponent();
         }
-
-    
     }
+}

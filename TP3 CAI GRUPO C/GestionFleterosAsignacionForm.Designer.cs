@@ -1,6 +1,6 @@
 ﻿namespace TP3_CAI_GRUPO_C
 {
-    partial class GestionFleterosForm
+    partial class GestionFleterosAsignacionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,13 +32,6 @@
             button1 = new Button();
             comboBox1 = new ComboBox();
             label1 = new Label();
-            groupBox2 = new GroupBox();
-            button5 = new Button();
-            button2 = new Button();
-            listView1 = new ListView();
-            HojadeRuta = new ColumnHeader();
-            NumeroGuia = new ColumnHeader();
-            Estado = new ColumnHeader();
             groupBox3 = new GroupBox();
             listView2 = new ListView();
             columnHeader1 = new ColumnHeader();
@@ -48,7 +41,6 @@
             button4 = new Button();
             label2 = new Label();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
@@ -90,68 +82,13 @@
             label1.TabIndex = 0;
             label1.Text = "Nombre Fletero";
             // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(button5);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(12, 332);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(484, 170);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Hojas de Ruta Asignadas";
-            // 
-            // button5
-            // 
-            button5.Location = new Point(222, 141);
-            button5.Name = "button5";
-            button5.Size = new Size(115, 23);
-            button5.TabIndex = 2;
-            button5.Text = "Marcar Cumplida";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(353, 141);
-            button2.Name = "button2";
-            button2.Size = new Size(107, 23);
-            button2.TabIndex = 1;
-            button2.Text = "Imprimir Detalle";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { HojadeRuta, NumeroGuia, Estado });
-            listView1.Location = new Point(14, 22);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(345, 104);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // HojadeRuta
-            // 
-            HojadeRuta.Text = "Hoja de Ruta";
-            HojadeRuta.Width = 80;
-            // 
-            // NumeroGuia
-            // 
-            NumeroGuia.Text = "Número de Guía";
-            NumeroGuia.Width = 100;
-            // 
-            // Estado
-            // 
-            Estado.Text = "Estado";
-            Estado.Width = 100;
-            // 
             // groupBox3
             // 
             groupBox3.Controls.Add(listView2);
             groupBox3.Controls.Add(button3);
             groupBox3.Location = new Point(12, 149);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(486, 164);
+            groupBox3.Size = new Size(387, 164);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Asignar Hoja de Ruta";
@@ -183,7 +120,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(387, 135);
+            button3.Location = new Point(286, 135);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 1;
@@ -208,7 +145,7 @@
             label2.TabIndex = 4;
             label2.Text = "TUTASA";
             // 
-            // GestionFleterosForm
+            // GestionFleterosAsignacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -216,13 +153,11 @@
             Controls.Add(label2);
             Controls.Add(button4);
             Controls.Add(groupBox3);
-            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Name = "GestionFleterosForm";
-            Text = "Gestión de HDR Fleteros";
+            Name = "GestionFleterosAsignacionForm";
+            Text = "Gestión de HDR Pendientes a Fleteros";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -234,20 +169,13 @@
         private Button button1;
         private ComboBox comboBox1;
         private Label label1;
-        private GroupBox groupBox2;
-        private ListView listView1;
-        private ColumnHeader HojadeRuta;
-        private ColumnHeader NumeroGuia;
-        private ColumnHeader Estado;
         private GroupBox groupBox3;
-        private Button button2;
         private Button button3;
         private ListView listView2;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private Button button4;
-        private Button button5;
         private Label label2;
     }
 }
