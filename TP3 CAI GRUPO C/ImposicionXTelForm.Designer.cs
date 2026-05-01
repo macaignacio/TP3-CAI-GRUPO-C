@@ -34,22 +34,13 @@
             textBox1 = new TextBox();
             button1 = new Button();
             groupBox2 = new GroupBox();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            textBox2 = new TextBox();
             textBox3 = new TextBox();
             groupBox3 = new GroupBox();
             label7 = new Label();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
-            textBox6 = new TextBox();
             comboBox3 = new ComboBox();
             comboBox4 = new ComboBox();
-            label8 = new Label();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
@@ -205,19 +196,8 @@
             textBox2.Size = new Size(211, 23);
             textBox2.TabIndex = 6;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(373, 62);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(211, 23);
-            textBox3.TabIndex = 7;
-            // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(Seleccionar);
-            groupBox3.Controls.Add(listView1);
-            groupBox3.Controls.Add(comboBox5);
-            groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(textBox5);
             groupBox3.Controls.Add(comboBox3);
             groupBox3.Controls.Add(textBox6);
@@ -257,13 +237,6 @@
             textBox5.Size = new Size(211, 23);
             textBox5.TabIndex = 15;
             // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(93, 102);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(175, 23);
-            textBox6.TabIndex = 14;
-            // 
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
@@ -289,15 +262,6 @@
             label8.Size = new Size(57, 15);
             label8.TabIndex = 11;
             label8.Text = "Dirección";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(3, 102);
-            label9.Name = "label9";
-            label9.Size = new Size(81, 15);
-            label9.TabIndex = 10;
-            label9.Text = "Código Postal";
             // 
             // label10
             // 
@@ -491,7 +455,6 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Imposición telefónica";
-           // Load += this.Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -535,10 +498,6 @@
         private ComboBox comboBox4;
         private Label label9;
         private Label label8;
-        private ListView listView1;
-        private ColumnHeader Codigo;
-        private ColumnHeader Dirección;
-        private ColumnHeader Horarios;
         private GroupBox groupBox4;
         private TextBox textBox7;
         private Label label13;
@@ -546,9 +505,7 @@
         private Label label14;
         private TextBox textBox9;
         private Label label15;
-        private Label label16;
         private GroupBox groupBox5;
-        private ComboBox comboBox6;
         private Button button2;
         private Button button3;
         private Button Seleccionar;
