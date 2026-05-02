@@ -30,19 +30,22 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
             textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label3 = new Label();
+            label2 = new Label();
             groupBox2 = new GroupBox();
-            listView1 = new ListView();
-            NumeroGuia = new ColumnHeader();
-            Subtotal = new ColumnHeader();
-            label4 = new Label();
-            button2 = new Button();
             button3 = new Button();
             textBox3 = new TextBox();
+            button2 = new Button();
+            label4 = new Label();
+            listView1 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            NumeroGuia = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            Subtotal = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -70,23 +73,20 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Seleccionar Cliente";
             // 
-            // label2
+            // textBox2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(11, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 15);
-            label2.TabIndex = 0;
-            label2.Text = "CUIT/CUIL:";
+            textBox2.Location = new Point(332, 33);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(182, 23);
+            textBox2.TabIndex = 4;
             // 
-            // label3
+            // textBox1
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(251, 36);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 15);
-            label3.TabIndex = 1;
-            label3.Text = "Razón Social:";
+            textBox1.Location = new Point(83, 33);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(151, 23);
+            textBox1.TabIndex = 3;
             // 
             // button1
             // 
@@ -97,23 +97,27 @@
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // label3
             // 
-            textBox1.Location = new Point(83, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 23);
-            textBox1.TabIndex = 3;
+            label3.AutoSize = true;
+            label3.Location = new Point(251, 36);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 15);
+            label3.TabIndex = 1;
+            label3.Text = "Razón Social:";
             // 
-            // textBox2
+            // label2
             // 
-            textBox2.Location = new Point(332, 33);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(182, 23);
-            textBox2.TabIndex = 4;
+            label2.AutoSize = true;
+            label2.Location = new Point(11, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 15);
+            label2.TabIndex = 0;
+            label2.Text = "CUIT/CUIL:";
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(textBox3);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(label4);
@@ -125,51 +129,13 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Facturar Servicios";
             // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroGuia, Subtotal });
-            listView1.Location = new Point(15, 33);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(497, 97);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // NumeroGuia
-            // 
-            NumeroGuia.Text = "Número de Guía";
-            NumeroGuia.Width = 120;
-            // 
-            // Subtotal
-            // 
-            Subtotal.Text = "Subtotal";
-            Subtotal.Width = 80;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(17, 145);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 15);
-            label4.TabIndex = 1;
-            label4.Text = "Total a facturar:";
-            // 
-            // button2
-            // 
-            button2.Location = new Point(413, 178);
-            button2.Name = "button2";
-            button2.Size = new Size(99, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Emitir Factura";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            button3.Location = new Point(473, 415);
+            button3.Location = new Point(437, 178);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 3;
-            button3.Text = "Aceptar";
+            button3.Text = "Cancelar";
             button3.UseVisualStyleBackColor = true;
             // 
             // textBox3
@@ -180,12 +146,63 @@
             textBox3.Size = new Size(100, 23);
             textBox3.TabIndex = 3;
             // 
+            // button2
+            // 
+            button2.Location = new Point(330, 178);
+            button2.Name = "button2";
+            button2.Size = new Size(99, 23);
+            button2.TabIndex = 2;
+            button2.Text = "Emitir Factura";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(17, 145);
+            label4.Name = "label4";
+            label4.Size = new Size(89, 15);
+            label4.TabIndex = 1;
+            label4.Text = "Total a facturar:";
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, NumeroGuia, columnHeader3, Subtotal });
+            listView1.Location = new Point(15, 33);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(497, 97);
+            listView1.TabIndex = 0;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Fecha";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Descripción";
+            columnHeader2.Width = 120;
+            // 
+            // NumeroGuia
+            // 
+            NumeroGuia.Text = "Número de Guía";
+            NumeroGuia.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Monto";
+            columnHeader3.Width = 80;
+            // 
+            // Subtotal
+            // 
+            Subtotal.Text = "Subtotal";
+            Subtotal.Width = 80;
+            // 
             // FacturarClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(560, 450);
-            Controls.Add(button3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
@@ -216,5 +233,8 @@
         private Label label4;
         private Button button3;
         private TextBox textBox3;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
     }
 }

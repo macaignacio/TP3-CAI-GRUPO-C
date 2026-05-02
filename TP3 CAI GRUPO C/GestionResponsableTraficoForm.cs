@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace TP3_CAI_GRUPO_C
 {
-    public partial class GestionCDForm : Form
+    public partial class GestionResponsableTraficoForm : Form
     {
-        public GestionCDForm()
+        public GestionResponsableTraficoForm()
         {
             InitializeComponent();
         }

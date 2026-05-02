@@ -1,6 +1,6 @@
 ﻿namespace TP3_CAI_GRUPO_C
 {
-    partial class GestionCDForm
+    partial class GestionCDFormOriginal
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            label2 = new Label();
-            button1 = new Button();
             textBox1 = new TextBox();
+            button1 = new Button();
+            label2 = new Label();
             groupBox2 = new GroupBox();
-            listView1 = new ListView();
             button2 = new Button();
+            listView1 = new ListView();
             HojaDeRuta = new ColumnHeader();
             NumeroGuia = new ColumnHeader();
             Estado = new ColumnHeader();
@@ -48,6 +48,7 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             button4 = new Button();
+            label3 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -56,6 +57,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.MenuHighlight;
             label1.Location = new Point(259, 22);
             label1.Name = "label1";
             label1.Size = new Size(50, 15);
@@ -74,14 +76,12 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Ingresar órden";
             // 
-            // label2
+            // textBox1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 34);
-            label2.Name = "label2";
-            label2.Size = new Size(96, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Código de órden";
+            textBox1.Location = new Point(114, 31);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(220, 23);
+            textBox1.TabIndex = 3;
             // 
             // button1
             // 
@@ -92,12 +92,14 @@
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // label2
             // 
-            textBox1.Location = new Point(114, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(220, 23);
-            textBox1.TabIndex = 3;
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 34);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Código de órden";
             // 
             // groupBox2
             // 
@@ -110,6 +112,15 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Confirmar HDR despachadas";
             // 
+            // button2
+            // 
+            button2.Location = new Point(380, 139);
+            button2.Name = "button2";
+            button2.Size = new Size(138, 23);
+            button2.TabIndex = 1;
+            button2.Text = "Confirmar despacho";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { HojaDeRuta, NumeroGuia, Estado, PatenteOmnibus });
@@ -119,15 +130,6 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(380, 139);
-            button2.Name = "button2";
-            button2.Size = new Size(138, 23);
-            button2.TabIndex = 1;
-            button2.Text = "Confirmar despacho";
-            button2.UseVisualStyleBackColor = true;
             // 
             // HojaDeRuta
             // 
@@ -208,17 +210,28 @@
             button4.Text = "Aceptar";
             button4.UseVisualStyleBackColor = true;
             // 
-            // GestionCDForm
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.MenuHighlight;
+            label3.Location = new Point(35, 13);
+            label3.Name = "label3";
+            label3.Size = new Size(146, 15);
+            label3.TabIndex = 5;
+            label3.Text = "PANTALLA NO VALIDADA.";
+            // 
+            // GestionCDFormOriginal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(563, 577);
+            Controls.Add(label3);
             Controls.Add(button4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
-            Name = "GestionCDForm";
+            Name = "GestionCDFormOriginal";
             Text = "Gestión de encomiendas en CD";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -250,5 +263,6 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private Button button4;
+        private Label label3;
     }
 }
