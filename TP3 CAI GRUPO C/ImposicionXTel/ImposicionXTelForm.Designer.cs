@@ -1,6 +1,6 @@
-﻿namespace TP3_CAI_GRUPO_C
+﻿namespace TP3_CAI_GRUPO_C.ImposicionXTel
 {
-    partial class Form1
+    partial class ImposicionXTelForm
     {
         /// <summary>
         ///  Required designer variable.
