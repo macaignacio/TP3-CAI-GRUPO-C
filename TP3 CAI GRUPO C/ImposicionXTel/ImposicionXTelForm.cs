@@ -74,6 +74,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             // }
         }
 
+
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -88,6 +89,25 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 this.Close();
             }
         }
+
+        private void GenerarButton_Click(object sender, EventArgs e)
+        {
+            //Validar que no esté vacío el campo Nombre y Apellido de Destinatario 
+            if (string.IsNullOrWhiteSpace(NombreDestinatarioTextBox.Text))
+            {
+                MessageBox.Show("El Nombre y Apellido de Destinatario no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            //Validar que no esté vacío el campo DNI de Destinatario 
+             if (string.IsNullOrWhiteSpace(DNIDestinatarioTextBox.Text))
+            {
+                MessageBox.Show("El DNI de Destinatario no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
+        }
     }
-    
+
 }

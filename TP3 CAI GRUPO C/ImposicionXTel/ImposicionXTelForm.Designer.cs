@@ -523,6 +523,7 @@
             GenerarButton.TabIndex = 8;
             GenerarButton.Text = "Generar";
             GenerarButton.UseVisualStyleBackColor = true;
+            GenerarButton.Click += GenerarButton_Click;
             // 
             // CancelarButton
             // 
@@ -576,6 +577,7 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Codigo";
+            columnHeader1.Width = 100;
             // 
             // columnHeader2
             // 
@@ -590,7 +592,7 @@
             // TipoEstablecimiento
             // 
             TipoEstablecimiento.Text = "Tipo de Establecimiento";
-            TipoEstablecimiento.Width = 150;
+            TipoEstablecimiento.Width = 220;
             // 
             // LocalidadSucurComboBox
             // 
