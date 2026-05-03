@@ -31,7 +31,6 @@
             CodigoCDLabel = new Label();
             TutasaLabel = new Label();
             DatosSolicitanteGroupBox = new GroupBox();
-            RazonSocialTextBox = new TextBox();
             CuitTextBox = new TextBox();
             ValidarButton = new Button();
             RazonSocialLabel = new Label();
@@ -75,6 +74,7 @@
             CantidadCajasLTextBox = new TextBox();
             CantidadCajasSLabel = new Label();
             NroCDLabel = new Label();
+            label1 = new Label();
             DatosSolicitanteGroupBox.SuspendLayout();
             DatosDestinatarioGroupBox.SuspendLayout();
             RetiroSucursalGroupBox.SuspendLayout();
@@ -102,7 +102,7 @@
             // 
             // DatosSolicitanteGroupBox
             // 
-            DatosSolicitanteGroupBox.Controls.Add(RazonSocialTextBox);
+            DatosSolicitanteGroupBox.Controls.Add(label1);
             DatosSolicitanteGroupBox.Controls.Add(CuitTextBox);
             DatosSolicitanteGroupBox.Controls.Add(ValidarButton);
             DatosSolicitanteGroupBox.Controls.Add(RazonSocialLabel);
@@ -113,14 +113,6 @@
             DatosSolicitanteGroupBox.TabIndex = 3;
             DatosSolicitanteGroupBox.TabStop = false;
             DatosSolicitanteGroupBox.Text = "Datos Solicitante";
-            // 
-            // RazonSocialTextBox
-            // 
-            RazonSocialTextBox.Location = new Point(367, 31);
-            RazonSocialTextBox.Name = "RazonSocialTextBox";
-            RazonSocialTextBox.ReadOnly = true;
-            RazonSocialTextBox.Size = new Size(156, 23);
-            RazonSocialTextBox.TabIndex = 4;
             // 
             // CuitTextBox
             // 
@@ -498,11 +490,20 @@
             NroCDLabel.TabIndex = 17;
             NroCDLabel.Text = "[código]";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(370, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 15);
+            label1.TabIndex = 8;
+            label1.Text = "[razonSocial]";
+            // 
             // ImposiciónXCDForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(561, 562);
+            ClientSize = new Size(561, 749);
             Controls.Add(NroCDLabel);
             Controls.Add(DatosEncomiendaGroupBox);
             Controls.Add(RetiroSucursalGroupBox);
@@ -538,7 +539,6 @@
         private Label TutasaLabel;
         private GroupBox DatosSolicitanteGroupBox;
         private GroupBox DatosDestinatarioGroupBox;
-        private TextBox RazonSocialTextBox;
         private TextBox CuitTextBox;
         private Button ValidarButton;
         private Label RazonSocialLabel;
@@ -581,5 +581,6 @@
         private TextBox CantidadCajasLTextBox;
         private Label CantidadCajasSLabel;
         private Label NroCDLabel;
+        private Label label1;
     }
 }

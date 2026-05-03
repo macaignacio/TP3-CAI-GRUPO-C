@@ -31,7 +31,6 @@
             TutasaLabel = new Label();
             CodigoAgenciaLabel = new Label();
             DatosSolicitanteGroupBox = new GroupBox();
-            RazonSocialTextBox = new TextBox();
             CuitTextBox = new TextBox();
             ValidarButton = new Button();
             RazonSocialLabel = new Label();
@@ -75,6 +74,7 @@
             LocalidadSucursalLabel = new Label();
             ProvinciaSucursalLabel = new Label();
             NroAgenciaLabel = new Label();
+            label1 = new Label();
             DatosSolicitanteGroupBox.SuspendLayout();
             EntregaDomicilioGroupBox.SuspendLayout();
             DatosDestinatarioGroupBox.SuspendLayout();
@@ -102,7 +102,7 @@
             // 
             // DatosSolicitanteGroupBox
             // 
-            DatosSolicitanteGroupBox.Controls.Add(RazonSocialTextBox);
+            DatosSolicitanteGroupBox.Controls.Add(label1);
             DatosSolicitanteGroupBox.Controls.Add(CuitTextBox);
             DatosSolicitanteGroupBox.Controls.Add(ValidarButton);
             DatosSolicitanteGroupBox.Controls.Add(RazonSocialLabel);
@@ -113,14 +113,6 @@
             DatosSolicitanteGroupBox.TabIndex = 3;
             DatosSolicitanteGroupBox.TabStop = false;
             DatosSolicitanteGroupBox.Text = "Datos Solicitante";
-            // 
-            // RazonSocialTextBox
-            // 
-            RazonSocialTextBox.Location = new Point(368, 30);
-            RazonSocialTextBox.Name = "RazonSocialTextBox";
-            RazonSocialTextBox.ReadOnly = true;
-            RazonSocialTextBox.Size = new Size(153, 23);
-            RazonSocialTextBox.TabIndex = 4;
             // 
             // CuitTextBox
             // 
@@ -498,11 +490,20 @@
             NroAgenciaLabel.TabIndex = 13;
             NroAgenciaLabel.Text = "[código]";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(368, 33);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 15);
+            label1.TabIndex = 8;
+            label1.Text = "[razonSocial]";
+            // 
             // ImposicionXAgenciaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(563, 562);
+            ClientSize = new Size(563, 746);
             Controls.Add(NroAgenciaLabel);
             Controls.Add(RetiroSucursalGroupBox);
             Controls.Add(CancelarButton);
@@ -538,7 +539,6 @@
         private Label CodigoAgenciaLabel;
         private GroupBox DatosSolicitanteGroupBox;
         private Label CuitLabel;
-        private TextBox RazonSocialTextBox;
         private TextBox CuitTextBox;
         private Button ValidarButton;
         private Label RazonSocialLabel;
@@ -581,5 +581,6 @@
         private Label CantidadCajasLLabel;
         private Label CantidadCajasMLabel;
         private Label NroAgenciaLabel;
+        private Label label1;
     }
 }

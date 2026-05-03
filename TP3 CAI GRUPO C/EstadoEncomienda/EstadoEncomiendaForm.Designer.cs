@@ -38,6 +38,7 @@
             EstadoEncomienda = new ColumnHeader();
             Actualizacion = new ColumnHeader();
             AceptarButton = new Button();
+            Ubicacion = new ColumnHeader();
             DatosBusquedaGroupBox.SuspendLayout();
             ResultadoBusquedaGroupBox.SuspendLayout();
             SuspendLayout();
@@ -93,17 +94,17 @@
             ResultadoBusquedaGroupBox.Controls.Add(ResultadoBusquedaListView);
             ResultadoBusquedaGroupBox.Location = new Point(22, 196);
             ResultadoBusquedaGroupBox.Name = "ResultadoBusquedaGroupBox";
-            ResultadoBusquedaGroupBox.Size = new Size(315, 146);
+            ResultadoBusquedaGroupBox.Size = new Size(545, 146);
             ResultadoBusquedaGroupBox.TabIndex = 2;
             ResultadoBusquedaGroupBox.TabStop = false;
             ResultadoBusquedaGroupBox.Text = "Resultado de Búsqueda";
             // 
             // ResultadoBusquedaListView
             // 
-            ResultadoBusquedaListView.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, Actualizacion });
+            ResultadoBusquedaListView.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, Actualizacion, Ubicacion });
             ResultadoBusquedaListView.Location = new Point(10, 33);
             ResultadoBusquedaListView.Name = "ResultadoBusquedaListView";
-            ResultadoBusquedaListView.Size = new Size(285, 97);
+            ResultadoBusquedaListView.Size = new Size(510, 97);
             ResultadoBusquedaListView.TabIndex = 0;
             ResultadoBusquedaListView.UseCompatibleStateImageBehavior = false;
             ResultadoBusquedaListView.View = View.Details;
@@ -120,18 +121,23 @@
             // 
             // AceptarButton
             // 
-            AceptarButton.Location = new Point(262, 352);
+            AceptarButton.Location = new Point(492, 352);
             AceptarButton.Name = "AceptarButton";
             AceptarButton.Size = new Size(75, 23);
             AceptarButton.TabIndex = 3;
             AceptarButton.Text = "Aceptar";
             AceptarButton.UseVisualStyleBackColor = true;
             // 
+            // Ubicacion
+            // 
+            Ubicacion.Text = "Ubicación";
+            Ubicacion.Width = 100;
+            // 
             // EstadoEncomiendaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(362, 387);
+            ClientSize = new Size(582, 387);
             Controls.Add(AceptarButton);
             Controls.Add(ResultadoBusquedaGroupBox);
             Controls.Add(DatosBusquedaGroupBox);
@@ -158,5 +164,6 @@
         private ColumnHeader EstadoEncomienda;
         private ColumnHeader Actualizacion;
         private Button AceptarButton;
+        private ColumnHeader Ubicacion;
     }
 }
