@@ -1,4 +1,4 @@
-﻿namespace TP3_CAI_GRUPO_C
+﻿namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
 {
     partial class ResultadosCostoVentaFOrm
     {
@@ -28,71 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            groupBox1 = new GroupBox();
-            button1 = new Button();
-            groupBox2 = new GroupBox();
-            listView1 = new ListView();
+            TutasaLabel = new Label();
+            PeriodoConsultaGroupBox = new GroupBox();
+            PeriodoDateTimePicker = new DateTimePicker();
+            PeriodoLabel = new Label();
+            ConsultarButton = new Button();
+            ResultadoOperativoGroupBox = new GroupBox();
+            ResultadoOperativoListView = new ListView();
             EmpresaOmnibus = new ColumnHeader();
             Ventas = new ColumnHeader();
             Costos = new ColumnHeader();
             Utilidad = new ColumnHeader();
-            button2 = new Button();
-            dateTimePicker3 = new DateTimePicker();
-            label4 = new Label();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            AceptarButton = new Button();
+            PeriodoConsultaGroupBox.SuspendLayout();
+            ResultadoOperativoGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // TutasaLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(163, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 15);
-            label1.TabIndex = 0;
-            label1.Text = "TUTASA";
+            TutasaLabel.AutoSize = true;
+            TutasaLabel.Location = new Point(186, 27);
+            TutasaLabel.Name = "TutasaLabel";
+            TutasaLabel.Size = new Size(62, 20);
+            TutasaLabel.TabIndex = 0;
+            TutasaLabel.Text = "TUTASA";
             // 
-            // groupBox1
+            // PeriodoConsultaGroupBox
             // 
-            groupBox1.Controls.Add(dateTimePicker3);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Location = new Point(13, 48);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(389, 100);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Período de Consulta";
+            PeriodoConsultaGroupBox.Controls.Add(PeriodoDateTimePicker);
+            PeriodoConsultaGroupBox.Controls.Add(PeriodoLabel);
+            PeriodoConsultaGroupBox.Controls.Add(ConsultarButton);
+            PeriodoConsultaGroupBox.Location = new Point(15, 64);
+            PeriodoConsultaGroupBox.Margin = new Padding(3, 4, 3, 4);
+            PeriodoConsultaGroupBox.Name = "PeriodoConsultaGroupBox";
+            PeriodoConsultaGroupBox.Padding = new Padding(3, 4, 3, 4);
+            PeriodoConsultaGroupBox.Size = new Size(445, 133);
+            PeriodoConsultaGroupBox.TabIndex = 1;
+            PeriodoConsultaGroupBox.TabStop = false;
+            PeriodoConsultaGroupBox.Text = "Período de Consulta";
             // 
-            // button1
+            // PeriodoDateTimePicker
             // 
-            button1.Location = new Point(274, 71);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Consultar";
-            button1.UseVisualStyleBackColor = true;
+            PeriodoDateTimePicker.CustomFormat = "MMMMyyyy";
+            PeriodoDateTimePicker.Format = DateTimePickerFormat.Custom;
+            PeriodoDateTimePicker.Location = new Point(109, 41);
+            PeriodoDateTimePicker.Margin = new Padding(3, 4, 3, 4);
+            PeriodoDateTimePicker.Name = "PeriodoDateTimePicker";
+            PeriodoDateTimePicker.Size = new Size(205, 27);
+            PeriodoDateTimePicker.TabIndex = 6;
+            PeriodoDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
-            // groupBox2
+            // PeriodoLabel
             // 
-            groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(13, 181);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(389, 144);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Resultado Operativo";
+            PeriodoLabel.AutoSize = true;
+            PeriodoLabel.Location = new Point(15, 49);
+            PeriodoLabel.Name = "PeriodoLabel";
+            PeriodoLabel.Size = new Size(63, 20);
+            PeriodoLabel.TabIndex = 5;
+            PeriodoLabel.Text = "Período:";
             // 
-            // listView1
+            // ConsultarButton
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { EmpresaOmnibus, Ventas, Costos, Utilidad });
-            listView1.Location = new Point(11, 25);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(357, 97);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            ConsultarButton.Location = new Point(313, 95);
+            ConsultarButton.Margin = new Padding(3, 4, 3, 4);
+            ConsultarButton.Name = "ConsultarButton";
+            ConsultarButton.Size = new Size(86, 31);
+            ConsultarButton.TabIndex = 2;
+            ConsultarButton.Text = "Consultar";
+            ConsultarButton.UseVisualStyleBackColor = true;
+            // 
+            // ResultadoOperativoGroupBox
+            // 
+            ResultadoOperativoGroupBox.Controls.Add(ResultadoOperativoListView);
+            ResultadoOperativoGroupBox.Location = new Point(15, 241);
+            ResultadoOperativoGroupBox.Margin = new Padding(3, 4, 3, 4);
+            ResultadoOperativoGroupBox.Name = "ResultadoOperativoGroupBox";
+            ResultadoOperativoGroupBox.Padding = new Padding(3, 4, 3, 4);
+            ResultadoOperativoGroupBox.Size = new Size(445, 192);
+            ResultadoOperativoGroupBox.TabIndex = 2;
+            ResultadoOperativoGroupBox.TabStop = false;
+            ResultadoOperativoGroupBox.Text = "Resultado Operativo";
+            // 
+            // ResultadoOperativoListView
+            // 
+            ResultadoOperativoListView.Columns.AddRange(new ColumnHeader[] { EmpresaOmnibus, Ventas, Costos, Utilidad });
+            ResultadoOperativoListView.Location = new Point(13, 33);
+            ResultadoOperativoListView.Margin = new Padding(3, 4, 3, 4);
+            ResultadoOperativoListView.Name = "ResultadoOperativoListView";
+            ResultadoOperativoListView.Size = new Size(407, 128);
+            ResultadoOperativoListView.TabIndex = 0;
+            ResultadoOperativoListView.UseCompatibleStateImageBehavior = false;
+            ResultadoOperativoListView.View = View.Details;
             // 
             // EmpresaOmnibus
             // 
@@ -112,65 +138,48 @@
             Utilidad.Text = "Utilidad";
             Utilidad.Width = 80;
             // 
-            // button2
+            // AceptarButton
             // 
-            button2.Location = new Point(330, 345);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Aceptar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker3
-            // 
-            dateTimePicker3.CustomFormat = "MMMMyyyy";
-            dateTimePicker3.Format = DateTimePickerFormat.Custom;
-            dateTimePicker3.Location = new Point(95, 31);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(180, 23);
-            dateTimePicker3.TabIndex = 6;
-            dateTimePicker3.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(13, 37);
-            label4.Name = "label4";
-            label4.Size = new Size(51, 15);
-            label4.TabIndex = 5;
-            label4.Text = "Período:";
+            AceptarButton.Location = new Point(377, 460);
+            AceptarButton.Margin = new Padding(3, 4, 3, 4);
+            AceptarButton.Name = "AceptarButton";
+            AceptarButton.Size = new Size(86, 31);
+            AceptarButton.TabIndex = 3;
+            AceptarButton.Text = "Aceptar";
+            AceptarButton.UseVisualStyleBackColor = true;
             // 
             // ResultadosCostoVentaFOrm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(417, 380);
-            Controls.Add(button2);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(477, 507);
+            Controls.Add(AceptarButton);
+            Controls.Add(ResultadoOperativoGroupBox);
+            Controls.Add(PeriodoConsultaGroupBox);
+            Controls.Add(TutasaLabel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ResultadosCostoVentaFOrm";
             Text = "Resultados Ingresos y Egresos";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
+            PeriodoConsultaGroupBox.ResumeLayout(false);
+            PeriodoConsultaGroupBox.PerformLayout();
+            ResultadoOperativoGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private Button button1;
-        private ListView listView1;
+        private Label TutasaLabel;
+        private GroupBox PeriodoConsultaGroupBox;
+        private GroupBox ResultadoOperativoGroupBox;
+        private Button ConsultarButton;
+        private ListView ResultadoOperativoListView;
         private ColumnHeader EmpresaOmnibus;
         private ColumnHeader Ventas;
         private ColumnHeader Costos;
         private ColumnHeader Utilidad;
-        private Button button2;
-        private DateTimePicker dateTimePicker3;
-        private Label label4;
+        private Button AceptarButton;
+        private DateTimePicker PeriodoDateTimePicker;
+        private Label PeriodoLabel;
     }
 }
