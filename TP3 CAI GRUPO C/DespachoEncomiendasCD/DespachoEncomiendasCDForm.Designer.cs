@@ -55,9 +55,9 @@
             SeleccionarOmnibusGroupBox.Controls.Add(FechaHoraLabel);
             SeleccionarOmnibusGroupBox.Controls.Add(BuscarButton);
             SeleccionarOmnibusGroupBox.Controls.Add(EmpresaTextoLabel);
-            SeleccionarOmnibusGroupBox.Location = new Point(39, 80);
+            SeleccionarOmnibusGroupBox.Location = new Point(24, 80);
             SeleccionarOmnibusGroupBox.Name = "SeleccionarOmnibusGroupBox";
-            SeleccionarOmnibusGroupBox.Size = new Size(442, 142);
+            SeleccionarOmnibusGroupBox.Size = new Size(567, 113);
             SeleccionarOmnibusGroupBox.TabIndex = 10;
             SeleccionarOmnibusGroupBox.TabStop = false;
             SeleccionarOmnibusGroupBox.Text = "Seleccionar Ómnibus";
@@ -65,8 +65,8 @@
             // EmpresaComboBox
             // 
             EmpresaComboBox.FormattingEnabled = true;
-            EmpresaComboBox.Location = new Point(152, 31);
-            EmpresaComboBox.Margin = new Padding(2, 2, 2, 2);
+            EmpresaComboBox.Location = new Point(90, 33);
+            EmpresaComboBox.Margin = new Padding(2);
             EmpresaComboBox.Name = "EmpresaComboBox";
             EmpresaComboBox.Size = new Size(180, 23);
             EmpresaComboBox.TabIndex = 6;
@@ -75,16 +75,16 @@
             // 
             HorarioSalidaDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
             HorarioSalidaDateTimePicker.Format = DateTimePickerFormat.Custom;
-            HorarioSalidaDateTimePicker.Location = new Point(152, 63);
+            HorarioSalidaDateTimePicker.Location = new Point(422, 33);
             HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
-            HorarioSalidaDateTimePicker.Size = new Size(180, 23);
+            HorarioSalidaDateTimePicker.Size = new Size(139, 23);
             HorarioSalidaDateTimePicker.TabIndex = 5;
             HorarioSalidaDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
             // FechaHoraLabel
             // 
             FechaHoraLabel.AutoSize = true;
-            FechaHoraLabel.Location = new Point(11, 67);
+            FechaHoraLabel.Location = new Point(285, 36);
             FechaHoraLabel.Name = "FechaHoraLabel";
             FechaHoraLabel.Size = new Size(122, 15);
             FechaHoraLabel.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(350, 104);
+            BuscarButton.Location = new Point(486, 78);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
@@ -130,9 +130,9 @@
             // 
             DetalleHDRAsignadasGroupBox.Controls.Add(HDRAsignadasListView);
             DetalleHDRAsignadasGroupBox.Controls.Add(ImprimirButton);
-            DetalleHDRAsignadasGroupBox.Location = new Point(39, 245);
+            DetalleHDRAsignadasGroupBox.Location = new Point(24, 216);
             DetalleHDRAsignadasGroupBox.Name = "DetalleHDRAsignadasGroupBox";
-            DetalleHDRAsignadasGroupBox.Size = new Size(442, 219);
+            DetalleHDRAsignadasGroupBox.Size = new Size(567, 219);
             DetalleHDRAsignadasGroupBox.TabIndex = 11;
             DetalleHDRAsignadasGroupBox.TabStop = false;
             DetalleHDRAsignadasGroupBox.Text = "Detalle de Hojas de Ruta de transporte asignadas";
@@ -142,7 +142,7 @@
             HDRAsignadasListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
             HDRAsignadasListView.Location = new Point(16, 22);
             HDRAsignadasListView.Name = "HDRAsignadasListView";
-            HDRAsignadasListView.Size = new Size(410, 158);
+            HDRAsignadasListView.Size = new Size(545, 158);
             HDRAsignadasListView.TabIndex = 2;
             HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             HDRAsignadasListView.View = View.Details;
@@ -150,7 +150,7 @@
             // columnHeader4
             // 
             columnHeader4.Text = "Nro de Órden";
-            columnHeader4.Width = 150;
+            columnHeader4.Width = 120;
             // 
             // columnHeader1
             // 
@@ -164,16 +164,16 @@
             // 
             // columnHeader5
             // 
-            columnHeader5.Text = "Patente";
-            columnHeader5.Width = 80;
+            columnHeader5.Text = "Empresa de ómnibus";
+            columnHeader5.Width = 150;
             // 
             // ImprimirButton
             // 
-            ImprimirButton.Location = new Point(314, 190);
+            ImprimirButton.Location = new Point(422, 190);
             ImprimirButton.Name = "ImprimirButton";
-            ImprimirButton.Size = new Size(111, 23);
+            ImprimirButton.Size = new Size(139, 23);
             ImprimirButton.TabIndex = 1;
-            ImprimirButton.Text = "Imprimir detalle";
+            ImprimirButton.Text = "Confirmar asignación";
             ImprimirButton.UseVisualStyleBackColor = true;
             // 
             // CodCDLabel
@@ -189,7 +189,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(521, 449);
+            ClientSize = new Size(618, 502);
             Controls.Add(CodCDLabel);
             Controls.Add(DetalleHDRAsignadasGroupBox);
             Controls.Add(SeleccionarOmnibusGroupBox);

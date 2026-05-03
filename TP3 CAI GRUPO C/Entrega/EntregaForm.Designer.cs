@@ -34,12 +34,12 @@
             DniTextBox = new TextBox();
             DNILabel = new Label();
             DatosEncomiendasGroupBox = new GroupBox();
-            NombreApellidoTextBox = new TextBox();
             ConfirmarButton = new Button();
             DatosEncomiendaListView = new ListView();
             NumeroGuia = new ColumnHeader();
             Estado = new ColumnHeader();
             NombreApellidoLabel = new Label();
+            traerNombreDestinatarioLabel = new Label();
             VerififcacionDestinatarioGroupBox.SuspendLayout();
             DatosEncomiendasGroupBox.SuspendLayout();
             SuspendLayout();
@@ -92,7 +92,7 @@
             // 
             // DatosEncomiendasGroupBox
             // 
-            DatosEncomiendasGroupBox.Controls.Add(NombreApellidoTextBox);
+            DatosEncomiendasGroupBox.Controls.Add(traerNombreDestinatarioLabel);
             DatosEncomiendasGroupBox.Controls.Add(ConfirmarButton);
             DatosEncomiendasGroupBox.Controls.Add(DatosEncomiendaListView);
             DatosEncomiendasGroupBox.Controls.Add(NombreApellidoLabel);
@@ -102,14 +102,6 @@
             DatosEncomiendasGroupBox.TabIndex = 2;
             DatosEncomiendasGroupBox.TabStop = false;
             DatosEncomiendasGroupBox.Text = "Datos de Encomiendas";
-            // 
-            // NombreApellidoTextBox
-            // 
-            NombreApellidoTextBox.Location = new Point(129, 25);
-            NombreApellidoTextBox.Name = "NombreApellidoTextBox";
-            NombreApellidoTextBox.ReadOnly = true;
-            NombreApellidoTextBox.Size = new Size(181, 23);
-            NombreApellidoTextBox.TabIndex = 3;
             // 
             // ConfirmarButton
             // 
@@ -149,6 +141,15 @@
             NombreApellidoLabel.TabIndex = 0;
             NombreApellidoLabel.Text = "Nombre y apellido:";
             // 
+            // traerNombreDestinatarioLabel
+            // 
+            traerNombreDestinatarioLabel.AutoSize = true;
+            traerNombreDestinatarioLabel.Location = new Point(126, 28);
+            traerNombreDestinatarioLabel.Name = "traerNombreDestinatarioLabel";
+            traerNombreDestinatarioLabel.Size = new Size(122, 15);
+            traerNombreDestinatarioLabel.TabIndex = 3;
+            traerNombreDestinatarioLabel.Text = "[nombre destinatario]";
+            // 
             // EntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -181,6 +182,6 @@
         private ColumnHeader NumeroGuia;
         private ColumnHeader Estado;
         private Label NombreApellidoLabel;
-        private TextBox NombreApellidoTextBox;
+        private Label traerNombreDestinatarioLabel;
     }
 }

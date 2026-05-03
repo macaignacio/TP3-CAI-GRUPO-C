@@ -39,7 +39,7 @@
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
-            ImprimirDetalleButton = new Button();
+            ConfirmarAsignacionButton = new Button();
             button4 = new Button();
             TutasaTituloLabel = new Label();
             SeleccionarFleteroGroupBox.SuspendLayout();
@@ -107,7 +107,7 @@
             // DetalleHDRPendientesGroupBox
             // 
             DetalleHDRPendientesGroupBox.Controls.Add(DetalleHDRPendientesListView);
-            DetalleHDRPendientesGroupBox.Controls.Add(ImprimirDetalleButton);
+            DetalleHDRPendientesGroupBox.Controls.Add(ConfirmarAsignacionButton);
             DetalleHDRPendientesGroupBox.Location = new Point(31, 156);
             DetalleHDRPendientesGroupBox.Name = "DetalleHDRPendientesGroupBox";
             DetalleHDRPendientesGroupBox.Size = new Size(490, 232);
@@ -140,14 +140,14 @@
             columnHeader3.Text = "Estado";
             columnHeader3.Width = 100;
             // 
-            // ImprimirDetalleButton
+            // ConfirmarAsignacionButton
             // 
-            ImprimirDetalleButton.Location = new Point(369, 193);
-            ImprimirDetalleButton.Name = "ImprimirDetalleButton";
-            ImprimirDetalleButton.Size = new Size(115, 23);
-            ImprimirDetalleButton.TabIndex = 1;
-            ImprimirDetalleButton.Text = "Imprimir detalle";
-            ImprimirDetalleButton.UseVisualStyleBackColor = true;
+            ConfirmarAsignacionButton.Location = new Point(343, 193);
+            ConfirmarAsignacionButton.Name = "ConfirmarAsignacionButton";
+            ConfirmarAsignacionButton.Size = new Size(141, 23);
+            ConfirmarAsignacionButton.TabIndex = 1;
+            ConfirmarAsignacionButton.Text = "Confirmar asignación";
+            ConfirmarAsignacionButton.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -192,7 +192,7 @@
         private Button BuscarButton;
         private Label CuilTextLabel;
         private GroupBox DetalleHDRPendientesGroupBox;
-        private Button ImprimirDetalleButton;
+        private Button ConfirmarAsignacionButton;
         private ListView DetalleHDRPendientesListView;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;

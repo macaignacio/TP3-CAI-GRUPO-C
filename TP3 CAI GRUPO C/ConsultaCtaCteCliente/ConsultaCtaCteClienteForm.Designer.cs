@@ -143,7 +143,7 @@
             ResumenCuentaGroupBox.Controls.Add(CuentaCorrienteListView);
             ResumenCuentaGroupBox.Location = new Point(45, 209);
             ResumenCuentaGroupBox.Name = "ResumenCuentaGroupBox";
-            ResumenCuentaGroupBox.Size = new Size(595, 259);
+            ResumenCuentaGroupBox.Size = new Size(734, 259);
             ResumenCuentaGroupBox.TabIndex = 2;
             ResumenCuentaGroupBox.TabStop = false;
             ResumenCuentaGroupBox.Text = "Resumen de Cuenta Corriente";
@@ -154,7 +154,7 @@
             CuentaCorrienteListView.GridLines = true;
             CuentaCorrienteListView.Location = new Point(9, 40);
             CuentaCorrienteListView.Name = "CuentaCorrienteListView";
-            CuentaCorrienteListView.Size = new Size(573, 198);
+            CuentaCorrienteListView.Size = new Size(704, 198);
             CuentaCorrienteListView.TabIndex = 2;
             CuentaCorrienteListView.UseCompatibleStateImageBehavior = false;
             CuentaCorrienteListView.View = View.Details;
@@ -197,7 +197,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(687, 449);
+            ClientSize = new Size(791, 550);
             Controls.Add(ResumenCuentaGroupBox);
             Controls.Add(BusquedaClienteGroupBox);
             Controls.Add(TutasaTituloLabel);

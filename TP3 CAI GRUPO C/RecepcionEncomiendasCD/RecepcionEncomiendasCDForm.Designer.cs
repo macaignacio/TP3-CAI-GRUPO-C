@@ -37,14 +37,15 @@
             columnHeader3 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             ConfirmarRecepcionButton = new Button();
-            SeleccionarOmnibusGroupBox1 = new GroupBox();
-            PatenteTextBox = new TextBox();
-            BuscarButton = new Button();
-            PatenteLabel = new Label();
             NroCDLabel = new Label();
-            AceptarButton = new Button();
+            SeleccionarOmnibusGroupBox = new GroupBox();
+            EmpresaComboBox = new ComboBox();
+            HorarioSalidaDateTimePicker = new DateTimePicker();
+            FechaHoraLabel = new Label();
+            BuscarButton = new Button();
+            EmpresaTextoLabel = new Label();
             DetalleHdrGroupBox.SuspendLayout();
-            SeleccionarOmnibusGroupBox1.SuspendLayout();
+            SeleccionarOmnibusGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // TutasaLabel
@@ -71,7 +72,7 @@
             DetalleHdrGroupBox.Controls.Add(ConfirmarRecepcionButton);
             DetalleHdrGroupBox.Location = new Point(12, 180);
             DetalleHdrGroupBox.Name = "DetalleHdrGroupBox";
-            DetalleHdrGroupBox.Size = new Size(410, 226);
+            DetalleHdrGroupBox.Size = new Size(567, 226);
             DetalleHdrGroupBox.TabIndex = 14;
             DetalleHdrGroupBox.TabStop = false;
             DetalleHdrGroupBox.Text = "Detalle de Hojas de Ruta de transporte recibidas";
@@ -81,7 +82,7 @@
             DetalleHdrListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
             DetalleHdrListView.Location = new Point(16, 22);
             DetalleHdrListView.Name = "DetalleHdrListView";
-            DetalleHdrListView.Size = new Size(381, 170);
+            DetalleHdrListView.Size = new Size(545, 170);
             DetalleHdrListView.TabIndex = 2;
             DetalleHdrListView.UseCompatibleStateImageBehavior = false;
             DetalleHdrListView.View = View.Details;
@@ -103,54 +104,17 @@
             // 
             // columnHeader5
             // 
-            columnHeader5.Text = "Patente";
-            columnHeader5.Width = 80;
+            columnHeader5.Text = "Empresa de ómnibus";
+            columnHeader5.Width = 150;
             // 
             // ConfirmarRecepcionButton
             // 
-            ConfirmarRecepcionButton.Location = new Point(262, 196);
+            ConfirmarRecepcionButton.Location = new Point(422, 197);
             ConfirmarRecepcionButton.Name = "ConfirmarRecepcionButton";
             ConfirmarRecepcionButton.Size = new Size(135, 23);
             ConfirmarRecepcionButton.TabIndex = 1;
             ConfirmarRecepcionButton.Text = "Confirmar recepción";
             ConfirmarRecepcionButton.UseVisualStyleBackColor = true;
-            // 
-            // SeleccionarOmnibusGroupBox1
-            // 
-            SeleccionarOmnibusGroupBox1.Controls.Add(PatenteTextBox);
-            SeleccionarOmnibusGroupBox1.Controls.Add(BuscarButton);
-            SeleccionarOmnibusGroupBox1.Controls.Add(PatenteLabel);
-            SeleccionarOmnibusGroupBox1.Location = new Point(12, 61);
-            SeleccionarOmnibusGroupBox1.Name = "SeleccionarOmnibusGroupBox1";
-            SeleccionarOmnibusGroupBox1.Size = new Size(251, 100);
-            SeleccionarOmnibusGroupBox1.TabIndex = 13;
-            SeleccionarOmnibusGroupBox1.TabStop = false;
-            SeleccionarOmnibusGroupBox1.Text = "Seleccionar Ómnibus";
-            // 
-            // PatenteTextBox
-            // 
-            PatenteTextBox.Location = new Point(83, 33);
-            PatenteTextBox.Name = "PatenteTextBox";
-            PatenteTextBox.Size = new Size(151, 23);
-            PatenteTextBox.TabIndex = 3;
-            // 
-            // BuscarButton
-            // 
-            BuscarButton.Location = new Point(159, 71);
-            BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(75, 23);
-            BuscarButton.TabIndex = 2;
-            BuscarButton.Text = "Buscar";
-            BuscarButton.UseVisualStyleBackColor = true;
-            // 
-            // PatenteLabel
-            // 
-            PatenteLabel.AutoSize = true;
-            PatenteLabel.Location = new Point(11, 36);
-            PatenteLabel.Name = "PatenteLabel";
-            PatenteLabel.Size = new Size(50, 15);
-            PatenteLabel.TabIndex = 0;
-            PatenteLabel.Text = "Patente:";
             // 
             // NroCDLabel
             // 
@@ -161,32 +125,82 @@
             NroCDLabel.TabIndex = 18;
             NroCDLabel.Text = "[código]";
             // 
-            // AceptarButton
+            // SeleccionarOmnibusGroupBox
             // 
-            AceptarButton.Location = new Point(344, 412);
-            AceptarButton.Name = "AceptarButton";
-            AceptarButton.Size = new Size(75, 23);
-            AceptarButton.TabIndex = 4;
-            AceptarButton.Text = "Aceptar";
-            AceptarButton.UseVisualStyleBackColor = true;
+            SeleccionarOmnibusGroupBox.Controls.Add(EmpresaComboBox);
+            SeleccionarOmnibusGroupBox.Controls.Add(HorarioSalidaDateTimePicker);
+            SeleccionarOmnibusGroupBox.Controls.Add(FechaHoraLabel);
+            SeleccionarOmnibusGroupBox.Controls.Add(BuscarButton);
+            SeleccionarOmnibusGroupBox.Controls.Add(EmpresaTextoLabel);
+            SeleccionarOmnibusGroupBox.Location = new Point(12, 54);
+            SeleccionarOmnibusGroupBox.Name = "SeleccionarOmnibusGroupBox";
+            SeleccionarOmnibusGroupBox.Size = new Size(567, 113);
+            SeleccionarOmnibusGroupBox.TabIndex = 19;
+            SeleccionarOmnibusGroupBox.TabStop = false;
+            SeleccionarOmnibusGroupBox.Text = "Seleccionar Ómnibus";
+            // 
+            // EmpresaComboBox
+            // 
+            EmpresaComboBox.FormattingEnabled = true;
+            EmpresaComboBox.Location = new Point(90, 33);
+            EmpresaComboBox.Margin = new Padding(2);
+            EmpresaComboBox.Name = "EmpresaComboBox";
+            EmpresaComboBox.Size = new Size(180, 23);
+            EmpresaComboBox.TabIndex = 6;
+            // 
+            // HorarioSalidaDateTimePicker
+            // 
+            HorarioSalidaDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
+            HorarioSalidaDateTimePicker.Format = DateTimePickerFormat.Custom;
+            HorarioSalidaDateTimePicker.Location = new Point(422, 33);
+            HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
+            HorarioSalidaDateTimePicker.Size = new Size(139, 23);
+            HorarioSalidaDateTimePicker.TabIndex = 5;
+            HorarioSalidaDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
+            // 
+            // FechaHoraLabel
+            // 
+            FechaHoraLabel.AutoSize = true;
+            FechaHoraLabel.Location = new Point(285, 36);
+            FechaHoraLabel.Name = "FechaHoraLabel";
+            FechaHoraLabel.Size = new Size(122, 15);
+            FechaHoraLabel.TabIndex = 4;
+            FechaHoraLabel.Text = "Fecha/Hora de Salida:";
+            // 
+            // BuscarButton
+            // 
+            BuscarButton.Location = new Point(486, 78);
+            BuscarButton.Name = "BuscarButton";
+            BuscarButton.Size = new Size(75, 23);
+            BuscarButton.TabIndex = 2;
+            BuscarButton.Text = "Buscar";
+            BuscarButton.UseVisualStyleBackColor = true;
+            // 
+            // EmpresaTextoLabel
+            // 
+            EmpresaTextoLabel.AutoSize = true;
+            EmpresaTextoLabel.Location = new Point(11, 36);
+            EmpresaTextoLabel.Name = "EmpresaTextoLabel";
+            EmpresaTextoLabel.Size = new Size(55, 15);
+            EmpresaTextoLabel.TabIndex = 0;
+            EmpresaTextoLabel.Text = "Empresa:";
             // 
             // RecepcionEncomiendasCDForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(430, 438);
-            Controls.Add(AceptarButton);
+            ClientSize = new Size(608, 438);
+            Controls.Add(SeleccionarOmnibusGroupBox);
             Controls.Add(NroCDLabel);
             Controls.Add(DetalleHdrGroupBox);
-            Controls.Add(SeleccionarOmnibusGroupBox1);
             Controls.Add(TutasaLabel);
             Controls.Add(CodigoCDLabel);
             Name = "RecepcionEncomiendasCDForm";
             Text = "Gestión de Recepción de Encomiendas de media/larga distancia";
             Load += RecepcionEncomiendasCDForm_Load;
             DetalleHdrGroupBox.ResumeLayout(false);
-            SeleccionarOmnibusGroupBox1.ResumeLayout(false);
-            SeleccionarOmnibusGroupBox1.PerformLayout();
+            SeleccionarOmnibusGroupBox.ResumeLayout(false);
+            SeleccionarOmnibusGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,11 +217,12 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader5;
         private Button ConfirmarRecepcionButton;
-        private GroupBox SeleccionarOmnibusGroupBox1;
-        private TextBox PatenteTextBox;
-        private Button BuscarButton;
-        private Label PatenteLabel;
         private Label NroCDLabel;
-        private Button AceptarButton;
+        private GroupBox SeleccionarOmnibusGroupBox;
+        private ComboBox EmpresaComboBox;
+        private DateTimePicker HorarioSalidaDateTimePicker;
+        private Label FechaHoraLabel;
+        private Button BuscarButton;
+        private Label EmpresaTextoLabel;
     }
 }
