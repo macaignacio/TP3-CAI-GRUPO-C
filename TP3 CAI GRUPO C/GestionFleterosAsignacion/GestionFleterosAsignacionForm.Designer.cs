@@ -28,177 +28,192 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            button1 = new Button();
-            label1 = new Label();
-            groupBox3 = new GroupBox();
-            listView2 = new ListView();
+            SeleccionarFleteroGroupBox = new GroupBox();
+            NombreTextoLabel = new Label();
+            CuilTextBox = new TextBox();
+            BuscarButton = new Button();
+            CuilTextLabel = new Label();
+            DetalleHDRPendientesGroupBox = new GroupBox();
+            DetalleHDRPendientesListView = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
-            button3 = new Button();
+            ImprimirDetalleButton = new Button();
             button4 = new Button();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            groupBox1.SuspendLayout();
-            groupBox3.SuspendLayout();
+            TutasaTituloLabel = new Label();
+            NombreLabel = new Label();
+            SeleccionarFleteroGroupBox.SuspendLayout();
+            DetalleHDRPendientesGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // SeleccionarFleteroGroupBox
             // 
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 34);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(490, 89);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Seleccionar Fletero";
+            SeleccionarFleteroGroupBox.Controls.Add(NombreLabel);
+            SeleccionarFleteroGroupBox.Controls.Add(NombreTextoLabel);
+            SeleccionarFleteroGroupBox.Controls.Add(CuilTextBox);
+            SeleccionarFleteroGroupBox.Controls.Add(BuscarButton);
+            SeleccionarFleteroGroupBox.Controls.Add(CuilTextLabel);
+            SeleccionarFleteroGroupBox.Location = new Point(44, 69);
+            SeleccionarFleteroGroupBox.Margin = new Padding(4, 5, 4, 5);
+            SeleccionarFleteroGroupBox.Name = "SeleccionarFleteroGroupBox";
+            SeleccionarFleteroGroupBox.Padding = new Padding(4, 5, 4, 5);
+            SeleccionarFleteroGroupBox.Size = new Size(700, 261);
+            SeleccionarFleteroGroupBox.TabIndex = 0;
+            SeleccionarFleteroGroupBox.TabStop = false;
+            SeleccionarFleteroGroupBox.Text = "Seleccionar Fletero";
             // 
-            // button1
+            // NombreTextoLabel
             // 
-            button1.Location = new Point(409, 60);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            NombreTextoLabel.AutoSize = true;
+            NombreTextoLabel.Location = new Point(368, 53);
+            NombreTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            NombreTextoLabel.Name = "NombreTextoLabel";
+            NombreTextoLabel.Size = new Size(82, 25);
+            NombreTextoLabel.TabIndex = 4;
+            NombreTextoLabel.Text = "Nombre:";
             // 
-            // label1
+            // CuilTextBox
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Control;
-            label1.Location = new Point(16, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 15);
-            label1.TabIndex = 0;
-            label1.Text = "CUIT/CUIL:";
+            CuilTextBox.Location = new Point(137, 47);
+            CuilTextBox.Margin = new Padding(4, 5, 4, 5);
+            CuilTextBox.Name = "CuilTextBox";
+            CuilTextBox.Size = new Size(190, 31);
+            CuilTextBox.TabIndex = 3;
             // 
-            // groupBox3
+            // BuscarButton
             // 
-            groupBox3.Controls.Add(listView2);
-            groupBox3.Controls.Add(button3);
-            groupBox3.Location = new Point(12, 149);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(490, 164);
-            groupBox3.TabIndex = 2;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Detalle de Hojas de Ruta pendientes";
+            BuscarButton.Location = new Point(584, 100);
+            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Name = "BuscarButton";
+            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.TabIndex = 2;
+            BuscarButton.Text = "Buscar";
+            BuscarButton.UseVisualStyleBackColor = true;
             // 
-            // listView2
+            // CuilTextLabel
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listView2.Location = new Point(16, 22);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(468, 104);
-            listView2.TabIndex = 2;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            CuilTextLabel.AutoSize = true;
+            CuilTextLabel.BackColor = SystemColors.Control;
+            CuilTextLabel.Location = new Point(23, 52);
+            CuilTextLabel.Margin = new Padding(4, 0, 4, 0);
+            CuilTextLabel.Name = "CuilTextLabel";
+            CuilTextLabel.Size = new Size(96, 25);
+            CuilTextLabel.TabIndex = 0;
+            CuilTextLabel.Text = "CUIT/CUIL:";
+            // 
+            // DetalleHDRPendientesGroupBox
+            // 
+            DetalleHDRPendientesGroupBox.Controls.Add(DetalleHDRPendientesListView);
+            DetalleHDRPendientesGroupBox.Controls.Add(ImprimirDetalleButton);
+            DetalleHDRPendientesGroupBox.Location = new Point(44, 260);
+            DetalleHDRPendientesGroupBox.Margin = new Padding(4, 5, 4, 5);
+            DetalleHDRPendientesGroupBox.Name = "DetalleHDRPendientesGroupBox";
+            DetalleHDRPendientesGroupBox.Padding = new Padding(4, 5, 4, 5);
+            DetalleHDRPendientesGroupBox.Size = new Size(700, 386);
+            DetalleHDRPendientesGroupBox.TabIndex = 2;
+            DetalleHDRPendientesGroupBox.TabStop = false;
+            DetalleHDRPendientesGroupBox.Text = "Detalle de Hojas de Ruta pendientes";
+            // 
+            // DetalleHDRPendientesListView
+            // 
+            DetalleHDRPendientesListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            DetalleHDRPendientesListView.Location = new Point(23, 37);
+            DetalleHDRPendientesListView.Margin = new Padding(4, 5, 4, 5);
+            DetalleHDRPendientesListView.Name = "DetalleHDRPendientesListView";
+            DetalleHDRPendientesListView.Size = new Size(667, 262);
+            DetalleHDRPendientesListView.TabIndex = 2;
+            DetalleHDRPendientesListView.UseCompatibleStateImageBehavior = false;
+            DetalleHDRPendientesListView.View = View.Details;
             // 
             // columnHeader1
             // 
             columnHeader1.Text = "Hoja de Ruta";
-            columnHeader1.Width = 80;
+            columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Número de Guía";
-            columnHeader2.Width = 100;
+            columnHeader2.Width = 180;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Estado";
             columnHeader3.Width = 100;
             // 
-            // button3
+            // ImprimirDetalleButton
             // 
-            button3.Location = new Point(369, 132);
-            button3.Name = "button3";
-            button3.Size = new Size(115, 23);
-            button3.TabIndex = 1;
-            button3.Text = "Imprimir detalle";
-            button3.UseVisualStyleBackColor = true;
+            ImprimirDetalleButton.Location = new Point(527, 322);
+            ImprimirDetalleButton.Margin = new Padding(4, 5, 4, 5);
+            ImprimirDetalleButton.Name = "ImprimirDetalleButton";
+            ImprimirDetalleButton.Size = new Size(164, 38);
+            ImprimirDetalleButton.TabIndex = 1;
+            ImprimirDetalleButton.Text = "Imprimir detalle";
+            ImprimirDetalleButton.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            button4.Location = new Point(443, 508);
+            button4.Location = new Point(633, 847);
+            button4.Margin = new Padding(4, 5, 4, 5);
             button4.Name = "button4";
-            button4.Size = new Size(75, 23);
+            button4.Size = new Size(107, 38);
             button4.TabIndex = 3;
             button4.Text = "Aceptar";
             button4.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // TutasaTituloLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(234, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 15);
-            label2.TabIndex = 4;
-            label2.Text = "TUTASA";
+            TutasaTituloLabel.AutoSize = true;
+            TutasaTituloLabel.Location = new Point(347, 19);
+            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Name = "TutasaTituloLabel";
+            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.TabIndex = 4;
+            TutasaTituloLabel.Text = "TUTASA";
             // 
-            // textBox1
+            // NombreLabel
             // 
-            textBox1.Location = new Point(96, 28);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(134, 23);
-            textBox1.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(240, 31);
-            label3.Name = "label3";
-            label3.Size = new Size(54, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Nombre:";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(300, 28);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(184, 23);
-            textBox2.TabIndex = 5;
+            NombreLabel.AutoSize = true;
+            NombreLabel.Location = new Point(448, 52);
+            NombreLabel.Margin = new Padding(4, 0, 4, 0);
+            NombreLabel.Name = "NombreLabel";
+            NombreLabel.Size = new Size(59, 25);
+            NombreLabel.TabIndex = 15;
+            NombreLabel.Text = "[dato]";
             // 
             // GestionFleterosAsignacionForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(534, 338);
-            Controls.Add(label2);
+            ClientSize = new Size(788, 674);
+            Controls.Add(TutasaTituloLabel);
             Controls.Add(button4);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox1);
+            Controls.Add(DetalleHDRPendientesGroupBox);
+            Controls.Add(SeleccionarFleteroGroupBox);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "GestionFleterosAsignacionForm";
             Text = "Gestión de HDR Pendientes a Fleteros";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox3.ResumeLayout(false);
+            SeleccionarFleteroGroupBox.ResumeLayout(false);
+            SeleccionarFleteroGroupBox.PerformLayout();
+            DetalleHDRPendientesGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private GroupBox groupBox1;
-        private Button button1;
-        private Label label1;
-        private GroupBox groupBox3;
-        private Button button3;
-        private ListView listView2;
+        private GroupBox SeleccionarFleteroGroupBox;
+        private Button BuscarButton;
+        private Label CuilTextLabel;
+        private GroupBox DetalleHDRPendientesGroupBox;
+        private Button ImprimirDetalleButton;
+        private ListView DetalleHDRPendientesListView;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private Button button4;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private Label TutasaTituloLabel;
+        private Label NombreTextoLabel;
+        private TextBox CuilTextBox;
+        private Label NombreLabel;
     }
 }

@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            TutasaTituloLabel = new Label();
             BusquedaClienteGroupBox = new GroupBox();
+            RSLabel = new Label();
             BuscarButton = new Button();
             PeriodoDateTimePicker = new DateTimePicker();
-            label5 = new Label();
-            CuilTextBox = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
+            RZTextoLabel = new Label();
+            CuitTextBox = new TextBox();
+            periodoTextoLabel = new Label();
+            CuitTextoLabel = new Label();
             ResumenCuentaGroupBox = new GroupBox();
             CuentaCorrienteListView = new ListView();
             columnHeader5 = new ColumnHeader();
@@ -45,30 +46,29 @@
             Monto = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
-            RSLabel = new Label();
             BusquedaClienteGroupBox.SuspendLayout();
             ResumenCuentaGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // TutasaTituloLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(458, 30);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 25);
-            label1.TabIndex = 0;
-            label1.Text = "TUTASA";
+            TutasaTituloLabel.AutoSize = true;
+            TutasaTituloLabel.Location = new Point(458, 30);
+            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Name = "TutasaTituloLabel";
+            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.TabIndex = 0;
+            TutasaTituloLabel.Text = "TUTASA";
             // 
             // BusquedaClienteGroupBox
             // 
             BusquedaClienteGroupBox.Controls.Add(RSLabel);
             BusquedaClienteGroupBox.Controls.Add(BuscarButton);
             BusquedaClienteGroupBox.Controls.Add(PeriodoDateTimePicker);
-            BusquedaClienteGroupBox.Controls.Add(label5);
-            BusquedaClienteGroupBox.Controls.Add(CuilTextBox);
-            BusquedaClienteGroupBox.Controls.Add(label3);
-            BusquedaClienteGroupBox.Controls.Add(label2);
+            BusquedaClienteGroupBox.Controls.Add(RZTextoLabel);
+            BusquedaClienteGroupBox.Controls.Add(CuitTextBox);
+            BusquedaClienteGroupBox.Controls.Add(periodoTextoLabel);
+            BusquedaClienteGroupBox.Controls.Add(CuitTextoLabel);
             BusquedaClienteGroupBox.Location = new Point(64, 100);
             BusquedaClienteGroupBox.Margin = new Padding(4, 5, 4, 5);
             BusquedaClienteGroupBox.Name = "BusquedaClienteGroupBox";
@@ -77,6 +77,16 @@
             BusquedaClienteGroupBox.TabIndex = 1;
             BusquedaClienteGroupBox.TabStop = false;
             BusquedaClienteGroupBox.Text = "Búsqueda de Cliente";
+            // 
+            // RSLabel
+            // 
+            RSLabel.AutoSize = true;
+            RSLabel.Location = new Point(587, 48);
+            RSLabel.Margin = new Padding(4, 0, 4, 0);
+            RSLabel.Name = "RSLabel";
+            RSLabel.Size = new Size(59, 25);
+            RSLabel.TabIndex = 7;
+            RSLabel.Text = "[dato]";
             // 
             // BuscarButton
             // 
@@ -99,43 +109,43 @@
             PeriodoDateTimePicker.TabIndex = 4;
             PeriodoDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
-            // label5
+            // RZTextoLabel
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(463, 48);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(116, 25);
-            label5.TabIndex = 0;
-            label5.Text = "Razón Social:";
+            RZTextoLabel.AutoSize = true;
+            RZTextoLabel.Location = new Point(463, 48);
+            RZTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            RZTextoLabel.Name = "RZTextoLabel";
+            RZTextoLabel.Size = new Size(116, 25);
+            RZTextoLabel.TabIndex = 0;
+            RZTextoLabel.Text = "Razón Social:";
             // 
-            // CuilTextBox
+            // CuitTextBox
             // 
-            CuilTextBox.Location = new Point(143, 45);
-            CuilTextBox.Margin = new Padding(4, 5, 4, 5);
-            CuilTextBox.Name = "CuilTextBox";
-            CuilTextBox.Size = new Size(255, 31);
-            CuilTextBox.TabIndex = 3;
+            CuitTextBox.Location = new Point(143, 45);
+            CuitTextBox.Margin = new Padding(4, 5, 4, 5);
+            CuitTextBox.Name = "CuitTextBox";
+            CuitTextBox.Size = new Size(255, 31);
+            CuitTextBox.TabIndex = 3;
             // 
-            // label3
+            // periodoTextoLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(26, 113);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(77, 25);
-            label3.TabIndex = 1;
-            label3.Text = "Período:";
+            periodoTextoLabel.AutoSize = true;
+            periodoTextoLabel.Location = new Point(26, 113);
+            periodoTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            periodoTextoLabel.Name = "periodoTextoLabel";
+            periodoTextoLabel.Size = new Size(77, 25);
+            periodoTextoLabel.TabIndex = 1;
+            periodoTextoLabel.Text = "Período:";
             // 
-            // label2
+            // CuitTextoLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(26, 50);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(96, 25);
-            label2.TabIndex = 0;
-            label2.Text = "CUIT/CUIL:";
+            CuitTextoLabel.AutoSize = true;
+            CuitTextoLabel.Location = new Point(26, 50);
+            CuitTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            CuitTextoLabel.Name = "CuitTextoLabel";
+            CuitTextoLabel.Size = new Size(96, 25);
+            CuitTextoLabel.TabIndex = 0;
+            CuitTextoLabel.Text = "CUIT/CUIL:";
             // 
             // ResumenCuentaGroupBox
             // 
@@ -173,12 +183,12 @@
             // columnHeader6
             // 
             columnHeader6.Text = "Vencimiento";
-            columnHeader6.Width = 80;
+            columnHeader6.Width = 120;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Comprobante";
-            columnHeader2.Width = 90;
+            columnHeader2.Width = 150;
             // 
             // Monto
             // 
@@ -195,16 +205,6 @@
             columnHeader4.Text = "Saldo";
             columnHeader4.Width = 90;
             // 
-            // RSLabel
-            // 
-            RSLabel.AutoSize = true;
-            RSLabel.Location = new Point(587, 48);
-            RSLabel.Margin = new Padding(4, 0, 4, 0);
-            RSLabel.Name = "RSLabel";
-            RSLabel.Size = new Size(59, 25);
-            RSLabel.TabIndex = 7;
-            RSLabel.Text = "[dato]";
-            // 
             // ConsultaCtaCteClienteForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -212,7 +212,7 @@
             ClientSize = new Size(982, 795);
             Controls.Add(ResumenCuentaGroupBox);
             Controls.Add(BusquedaClienteGroupBox);
-            Controls.Add(label1);
+            Controls.Add(TutasaTituloLabel);
             Margin = new Padding(4, 5, 4, 5);
             Name = "ConsultaCtaCteClienteForm";
             Text = "Estado de Cuenta Corriente";
@@ -225,18 +225,18 @@
 
         #endregion
 
-        private Label label1;
+        private Label TutasaTituloLabel;
         private GroupBox BusquedaClienteGroupBox;
         private DateTimePicker PeriodoDateTimePicker;
-        private TextBox CuilTextBox;
-        private Label label3;
-        private Label label2;
+        private TextBox CuitTextBox;
+        private Label periodoTextoLabel;
+        private Label CuitTextoLabel;
         private Button BuscarButton;
         private GroupBox ResumenCuentaGroupBox;
         private ListView CuentaCorrienteListView;
         private ColumnHeader Fecha;
         private ColumnHeader Monto;
-        private Label label5;
+        private Label RZTextoLabel;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;

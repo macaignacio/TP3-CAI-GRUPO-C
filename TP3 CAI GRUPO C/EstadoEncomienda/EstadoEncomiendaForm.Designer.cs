@@ -28,134 +28,145 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            listView1 = new ListView();
+            TutasaTituloLabel = new Label();
+            DatosBusquedaGroupBox = new GroupBox();
+            BuscarButton = new Button();
+            NumeroGuiaTextBox = new TextBox();
+            NumeroGuiaLabel = new Label();
+            ResultadoBusquedaGroupBox = new GroupBox();
+            ResultadoBusquedaListView = new ListView();
             EstadoEncomienda = new ColumnHeader();
             Actualizacion = new ColumnHeader();
-            button2 = new Button();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            AceptarButton = new Button();
+            DatosBusquedaGroupBox.SuspendLayout();
+            ResultadoBusquedaGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // TutasaTituloLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(156, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 15);
-            label1.TabIndex = 0;
-            label1.Text = "TUTASA";
+            TutasaTituloLabel.AutoSize = true;
+            TutasaTituloLabel.Location = new Point(223, 30);
+            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Name = "TutasaTituloLabel";
+            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.TabIndex = 0;
+            TutasaTituloLabel.Text = "TUTASA";
             // 
-            // groupBox1
+            // DatosBusquedaGroupBox
             // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(22, 66);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(315, 100);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Datos de Búsqueda";
+            DatosBusquedaGroupBox.Controls.Add(BuscarButton);
+            DatosBusquedaGroupBox.Controls.Add(NumeroGuiaTextBox);
+            DatosBusquedaGroupBox.Controls.Add(NumeroGuiaLabel);
+            DatosBusquedaGroupBox.Location = new Point(31, 110);
+            DatosBusquedaGroupBox.Margin = new Padding(4, 5, 4, 5);
+            DatosBusquedaGroupBox.Name = "DatosBusquedaGroupBox";
+            DatosBusquedaGroupBox.Padding = new Padding(4, 5, 4, 5);
+            DatosBusquedaGroupBox.Size = new Size(450, 167);
+            DatosBusquedaGroupBox.TabIndex = 1;
+            DatosBusquedaGroupBox.TabStop = false;
+            DatosBusquedaGroupBox.Text = "Datos de Búsqueda";
             // 
-            // groupBox2
+            // BuscarButton
             // 
-            groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(22, 196);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(315, 146);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Resultado de Búsqueda";
+            BuscarButton.Location = new Point(334, 118);
+            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Name = "BuscarButton";
+            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.TabIndex = 2;
+            BuscarButton.Text = "Buscar";
+            BuscarButton.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // NumeroGuiaTextBox
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(10, 30);
-            label2.Name = "label2";
-            label2.Size = new Size(97, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Número de Guía:";
+            NumeroGuiaTextBox.Location = new Point(161, 45);
+            NumeroGuiaTextBox.Margin = new Padding(4, 5, 4, 5);
+            NumeroGuiaTextBox.Name = "NumeroGuiaTextBox";
+            NumeroGuiaTextBox.Size = new Size(258, 31);
+            NumeroGuiaTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // NumeroGuiaLabel
             // 
-            textBox1.Location = new Point(113, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 23);
-            textBox1.TabIndex = 1;
+            NumeroGuiaLabel.AutoSize = true;
+            NumeroGuiaLabel.Location = new Point(14, 50);
+            NumeroGuiaLabel.Margin = new Padding(4, 0, 4, 0);
+            NumeroGuiaLabel.Name = "NumeroGuiaLabel";
+            NumeroGuiaLabel.Size = new Size(146, 25);
+            NumeroGuiaLabel.TabIndex = 0;
+            NumeroGuiaLabel.Text = "Número de Guía:";
             // 
-            // button1
+            // ResultadoBusquedaGroupBox
             // 
-            button1.Location = new Point(234, 71);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            ResultadoBusquedaGroupBox.Controls.Add(ResultadoBusquedaListView);
+            ResultadoBusquedaGroupBox.Location = new Point(31, 327);
+            ResultadoBusquedaGroupBox.Margin = new Padding(4, 5, 4, 5);
+            ResultadoBusquedaGroupBox.Name = "ResultadoBusquedaGroupBox";
+            ResultadoBusquedaGroupBox.Padding = new Padding(4, 5, 4, 5);
+            ResultadoBusquedaGroupBox.Size = new Size(450, 243);
+            ResultadoBusquedaGroupBox.TabIndex = 2;
+            ResultadoBusquedaGroupBox.TabStop = false;
+            ResultadoBusquedaGroupBox.Text = "Resultado de Búsqueda";
             // 
-            // listView1
+            // ResultadoBusquedaListView
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, Actualizacion });
-            listView1.Location = new Point(10, 33);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(285, 97);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            ResultadoBusquedaListView.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, Actualizacion });
+            ResultadoBusquedaListView.Location = new Point(14, 55);
+            ResultadoBusquedaListView.Margin = new Padding(4, 5, 4, 5);
+            ResultadoBusquedaListView.Name = "ResultadoBusquedaListView";
+            ResultadoBusquedaListView.Size = new Size(405, 159);
+            ResultadoBusquedaListView.TabIndex = 0;
+            ResultadoBusquedaListView.UseCompatibleStateImageBehavior = false;
+            ResultadoBusquedaListView.View = View.Details;
             // 
             // EstadoEncomienda
             // 
             EstadoEncomienda.Text = "Estado de Encomienda";
-            EstadoEncomienda.Width = 140;
+            EstadoEncomienda.Width = 200;
             // 
             // Actualizacion
             // 
             Actualizacion.Text = "Última Actualización";
-            Actualizacion.Width = 140;
+            Actualizacion.Width = 180;
             // 
-            // button2
+            // AceptarButton
             // 
-            button2.Location = new Point(262, 352);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Aceptar";
-            button2.UseVisualStyleBackColor = true;
+            AceptarButton.Location = new Point(374, 587);
+            AceptarButton.Margin = new Padding(4, 5, 4, 5);
+            AceptarButton.Name = "AceptarButton";
+            AceptarButton.Size = new Size(107, 38);
+            AceptarButton.TabIndex = 3;
+            AceptarButton.Text = "Aceptar";
+            AceptarButton.UseVisualStyleBackColor = true;
             // 
             // EstadoEncomiendaForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(349, 387);
-            Controls.Add(button2);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(517, 645);
+            Controls.Add(AceptarButton);
+            Controls.Add(ResultadoBusquedaGroupBox);
+            Controls.Add(DatosBusquedaGroupBox);
+            Controls.Add(TutasaTituloLabel);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "EstadoEncomiendaForm";
             Text = "EstadoEncomiendaForm";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
+            DatosBusquedaGroupBox.ResumeLayout(false);
+            DatosBusquedaGroupBox.PerformLayout();
+            ResultadoBusquedaGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private GroupBox groupBox1;
-        private Button button1;
-        private TextBox textBox1;
-        private Label label2;
-        private GroupBox groupBox2;
-        private ListView listView1;
+        private Label TutasaTituloLabel;
+        private GroupBox DatosBusquedaGroupBox;
+        private Button BuscarButton;
+        private TextBox NumeroGuiaTextBox;
+        private Label NumeroGuiaLabel;
+        private GroupBox ResultadoBusquedaGroupBox;
+        private ListView ResultadoBusquedaListView;
         private ColumnHeader EstadoEncomienda;
         private ColumnHeader Actualizacion;
-        private Button button2;
+        private Button AceptarButton;
     }
 }

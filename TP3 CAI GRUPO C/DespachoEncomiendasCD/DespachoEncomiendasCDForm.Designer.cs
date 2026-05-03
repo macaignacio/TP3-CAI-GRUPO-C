@@ -28,171 +28,212 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            textBox3 = new TextBox();
-            button1 = new Button();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
-            groupBox3 = new GroupBox();
-            listView2 = new ListView();
+            SeleccionarOmnibusGroupBox = new GroupBox();
+            BuscarButton = new Button();
+            EmpresaTextoLabel = new Label();
+            TutasaTituloLabel = new Label();
+            CodCdTextoLabel = new Label();
+            DetalleHDRAsignadasGroupBox = new GroupBox();
+            HDRAsignadasListView = new ListView();
+            columnHeader4 = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
-            button3 = new Button();
-            columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
-            groupBox1.SuspendLayout();
-            groupBox3.SuspendLayout();
+            ImprimirButton = new Button();
+            CodCDLabel = new Label();
+            FechaHoraLabel = new Label();
+            HorarioSalidaDateTimePicker = new DateTimePicker();
+            EmpresaComboBox = new ComboBox();
+            SeleccionarOmnibusGroupBox.SuspendLayout();
+            DetalleHDRAsignadasGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // SeleccionarOmnibusGroupBox
             // 
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(23, 70);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(251, 100);
-            groupBox1.TabIndex = 10;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Seleccionar Ómnibus";
+            SeleccionarOmnibusGroupBox.Controls.Add(EmpresaComboBox);
+            SeleccionarOmnibusGroupBox.Controls.Add(HorarioSalidaDateTimePicker);
+            SeleccionarOmnibusGroupBox.Controls.Add(FechaHoraLabel);
+            SeleccionarOmnibusGroupBox.Controls.Add(BuscarButton);
+            SeleccionarOmnibusGroupBox.Controls.Add(EmpresaTextoLabel);
+            SeleccionarOmnibusGroupBox.Location = new Point(56, 134);
+            SeleccionarOmnibusGroupBox.Margin = new Padding(4, 5, 4, 5);
+            SeleccionarOmnibusGroupBox.Name = "SeleccionarOmnibusGroupBox";
+            SeleccionarOmnibusGroupBox.Padding = new Padding(4, 5, 4, 5);
+            SeleccionarOmnibusGroupBox.Size = new Size(632, 237);
+            SeleccionarOmnibusGroupBox.TabIndex = 10;
+            SeleccionarOmnibusGroupBox.TabStop = false;
+            SeleccionarOmnibusGroupBox.Text = "Seleccionar Ómnibus";
             // 
-            // textBox3
+            // BuscarButton
             // 
-            textBox3.Location = new Point(83, 33);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(151, 23);
-            textBox3.TabIndex = 3;
+            BuscarButton.Location = new Point(500, 173);
+            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Name = "BuscarButton";
+            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.TabIndex = 2;
+            BuscarButton.Text = "Buscar";
+            BuscarButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // EmpresaTextoLabel
             // 
-            button1.Location = new Point(159, 71);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            EmpresaTextoLabel.AutoSize = true;
+            EmpresaTextoLabel.Location = new Point(16, 60);
+            EmpresaTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            EmpresaTextoLabel.Name = "EmpresaTextoLabel";
+            EmpresaTextoLabel.Size = new Size(84, 25);
+            EmpresaTextoLabel.TabIndex = 0;
+            EmpresaTextoLabel.Text = "Empresa:";
             // 
-            // label4
+            // TutasaTituloLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(11, 36);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 15);
-            label4.TabIndex = 0;
-            label4.Text = "Patente:";
+            TutasaTituloLabel.AutoSize = true;
+            TutasaTituloLabel.Location = new Point(328, 20);
+            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Name = "TutasaTituloLabel";
+            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.TabIndex = 8;
+            TutasaTituloLabel.Text = "TUTASA";
             // 
-            // textBox1
+            // CodCdTextoLabel
             // 
-            textBox1.Location = new Point(94, 21);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(51, 23);
-            textBox1.TabIndex = 9;
+            CodCdTextoLabel.AutoSize = true;
+            CodCdTextoLabel.Location = new Point(56, 57);
+            CodCdTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            CodCdTextoLabel.Name = "CodCdTextoLabel";
+            CodCdTextoLabel.Size = new Size(104, 25);
+            CodCdTextoLabel.TabIndex = 7;
+            CodCdTextoLabel.Text = "Código CD:";
             // 
-            // label2
+            // DetalleHDRAsignadasGroupBox
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(249, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 15);
-            label2.TabIndex = 8;
-            label2.Text = "TUTASA";
+            DetalleHDRAsignadasGroupBox.Controls.Add(HDRAsignadasListView);
+            DetalleHDRAsignadasGroupBox.Controls.Add(ImprimirButton);
+            DetalleHDRAsignadasGroupBox.Location = new Point(56, 409);
+            DetalleHDRAsignadasGroupBox.Margin = new Padding(4, 5, 4, 5);
+            DetalleHDRAsignadasGroupBox.Name = "DetalleHDRAsignadasGroupBox";
+            DetalleHDRAsignadasGroupBox.Padding = new Padding(4, 5, 4, 5);
+            DetalleHDRAsignadasGroupBox.Size = new Size(632, 365);
+            DetalleHDRAsignadasGroupBox.TabIndex = 11;
+            DetalleHDRAsignadasGroupBox.TabStop = false;
+            DetalleHDRAsignadasGroupBox.Text = "Detalle de Hojas de Ruta de transporte asignadas";
             // 
-            // label1
+            // HDRAsignadasListView
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(23, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(68, 15);
-            label1.TabIndex = 7;
-            label1.Text = "Código CD:";
+            HDRAsignadasListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
+            HDRAsignadasListView.Location = new Point(23, 37);
+            HDRAsignadasListView.Margin = new Padding(4, 5, 4, 5);
+            HDRAsignadasListView.Name = "HDRAsignadasListView";
+            HDRAsignadasListView.Size = new Size(584, 260);
+            HDRAsignadasListView.TabIndex = 2;
+            HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
+            HDRAsignadasListView.View = View.Details;
             // 
-            // groupBox3
+            // columnHeader4
             // 
-            groupBox3.Controls.Add(listView2);
-            groupBox3.Controls.Add(button3);
-            groupBox3.Location = new Point(23, 189);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(410, 164);
-            groupBox3.TabIndex = 11;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Detalle de Hojas de Ruta de transporte asignadas";
-            // 
-            // listView2
-            // 
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
-            listView2.Location = new Point(16, 22);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(381, 104);
-            listView2.TabIndex = 2;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            columnHeader4.Text = "Nro de Órden";
+            columnHeader4.Width = 150;
             // 
             // columnHeader1
             // 
             columnHeader1.Text = "Hoja de Ruta";
-            columnHeader1.Width = 80;
+            columnHeader1.Width = 150;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Estado";
             columnHeader3.Width = 100;
             // 
-            // button3
-            // 
-            button3.Location = new Point(286, 132);
-            button3.Name = "button3";
-            button3.Size = new Size(111, 23);
-            button3.TabIndex = 1;
-            button3.Text = "Imprimir detalle";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Nro de Órden";
-            columnHeader4.Width = 100;
-            // 
             // columnHeader5
             // 
             columnHeader5.Text = "Patente";
             columnHeader5.Width = 80;
             // 
+            // ImprimirButton
+            // 
+            ImprimirButton.Location = new Point(448, 317);
+            ImprimirButton.Margin = new Padding(4, 5, 4, 5);
+            ImprimirButton.Name = "ImprimirButton";
+            ImprimirButton.Size = new Size(159, 38);
+            ImprimirButton.TabIndex = 1;
+            ImprimirButton.Text = "Imprimir detalle";
+            ImprimirButton.UseVisualStyleBackColor = true;
+            // 
+            // CodCDLabel
+            // 
+            CodCDLabel.AutoSize = true;
+            CodCDLabel.Location = new Point(159, 57);
+            CodCDLabel.Margin = new Padding(4, 0, 4, 0);
+            CodCDLabel.Name = "CodCDLabel";
+            CodCDLabel.Size = new Size(84, 25);
+            CodCDLabel.TabIndex = 12;
+            CodCDLabel.Text = "[número]";
+            // 
+            // FechaHoraLabel
+            // 
+            FechaHoraLabel.AutoSize = true;
+            FechaHoraLabel.Location = new Point(16, 111);
+            FechaHoraLabel.Margin = new Padding(4, 0, 4, 0);
+            FechaHoraLabel.Name = "FechaHoraLabel";
+            FechaHoraLabel.Size = new Size(184, 25);
+            FechaHoraLabel.TabIndex = 4;
+            FechaHoraLabel.Text = "Fecha/Hora de Salida:";
+            // 
+            // HorarioSalidaDateTimePicker
+            // 
+            HorarioSalidaDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
+            HorarioSalidaDateTimePicker.Format = DateTimePickerFormat.Custom;
+            HorarioSalidaDateTimePicker.Location = new Point(217, 105);
+            HorarioSalidaDateTimePicker.Margin = new Padding(4, 5, 4, 5);
+            HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
+            HorarioSalidaDateTimePicker.Size = new Size(255, 31);
+            HorarioSalidaDateTimePicker.TabIndex = 5;
+            HorarioSalidaDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
+            // 
+            // EmpresaComboBox
+            // 
+            EmpresaComboBox.FormattingEnabled = true;
+            EmpresaComboBox.Location = new Point(217, 52);
+            EmpresaComboBox.Name = "EmpresaComboBox";
+            EmpresaComboBox.Size = new Size(255, 33);
+            EmpresaComboBox.TabIndex = 6;
+            // 
             // DespachoEncomiendasCDForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(461, 379);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox1);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(744, 808);
+            Controls.Add(CodCDLabel);
+            Controls.Add(DetalleHDRAsignadasGroupBox);
+            Controls.Add(SeleccionarOmnibusGroupBox);
+            Controls.Add(TutasaTituloLabel);
+            Controls.Add(CodCdTextoLabel);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "DespachoEncomiendasCDForm";
             Text = "Gestión de Despacho de Encomiendas de media/larga distancia";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox3.ResumeLayout(false);
+            SeleccionarOmnibusGroupBox.ResumeLayout(false);
+            SeleccionarOmnibusGroupBox.PerformLayout();
+            DetalleHDRAsignadasGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private GroupBox groupBox1;
-        private TextBox textBox3;
-        private Button button1;
-        private Label label4;
-        private TextBox textBox1;
-        private Label label2;
-        private Label label1;
-        private GroupBox groupBox3;
-        private ListView listView2;
+        private GroupBox SeleccionarOmnibusGroupBox;
+        private Button BuscarButton;
+        private Label EmpresaTextoLabel;
+        private Label TutasaTituloLabel;
+        private Label CodCdTextoLabel;
+        private GroupBox DetalleHDRAsignadasGroupBox;
+        private ListView HDRAsignadasListView;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader5;
-        private Button button3;
+        private Button ImprimirButton;
+        private Label CodCDLabel;
+        private Label FechaHoraLabel;
+        private DateTimePicker HorarioSalidaDateTimePicker;
+        private ComboBox EmpresaComboBox;
     }
 }
