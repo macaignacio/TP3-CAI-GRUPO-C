@@ -1,4 +1,4 @@
-﻿namespace TP3_CAI_GRUPO_C
+﻿namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 {
     partial class RecepcionEncomiendasCDForm
     {
@@ -28,70 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
-            groupBox3 = new GroupBox();
-            listView2 = new ListView();
+            TutasaLabel = new Label();
+            CodigoCDLabel = new Label();
+            DetalleHdrGroupBox = new GroupBox();
+            DetalleHdrListView = new ListView();
             columnHeader4 = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
-            button3 = new Button();
-            groupBox1 = new GroupBox();
-            textBox3 = new TextBox();
-            button1 = new Button();
-            label4 = new Label();
-            groupBox3.SuspendLayout();
-            groupBox1.SuspendLayout();
+            ConfirmarRecepcionButton = new Button();
+            SeleccionarOmnibusGroupBox1 = new GroupBox();
+            PatenteTextBox = new TextBox();
+            BuscarButton = new Button();
+            PatenteLabel = new Label();
+            NroCDLabel = new Label();
+            AceptarButton = new Button();
+            DetalleHdrGroupBox.SuspendLayout();
+            SeleccionarOmnibusGroupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // TutasaLabel
             // 
-            textBox1.Location = new Point(83, 21);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(51, 23);
-            textBox1.TabIndex = 12;
+            TutasaLabel.AutoSize = true;
+            TutasaLabel.Location = new Point(243, 12);
+            TutasaLabel.Name = "TutasaLabel";
+            TutasaLabel.Size = new Size(62, 20);
+            TutasaLabel.TabIndex = 11;
+            TutasaLabel.Text = "TUTASA";
             // 
-            // label2
+            // CodigoCDLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(213, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 15);
-            label2.TabIndex = 11;
-            label2.Text = "TUTASA";
+            CodigoCDLabel.AutoSize = true;
+            CodigoCDLabel.Location = new Point(14, 32);
+            CodigoCDLabel.Name = "CodigoCDLabel";
+            CodigoCDLabel.Size = new Size(85, 20);
+            CodigoCDLabel.TabIndex = 10;
+            CodigoCDLabel.Text = "Código CD:";
             // 
-            // label1
+            // DetalleHdrGroupBox
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(68, 15);
-            label1.TabIndex = 10;
-            label1.Text = "Código CD:";
+            DetalleHdrGroupBox.Controls.Add(DetalleHdrListView);
+            DetalleHdrGroupBox.Controls.Add(ConfirmarRecepcionButton);
+            DetalleHdrGroupBox.Location = new Point(14, 240);
+            DetalleHdrGroupBox.Margin = new Padding(3, 4, 3, 4);
+            DetalleHdrGroupBox.Name = "DetalleHdrGroupBox";
+            DetalleHdrGroupBox.Padding = new Padding(3, 4, 3, 4);
+            DetalleHdrGroupBox.Size = new Size(469, 301);
+            DetalleHdrGroupBox.TabIndex = 14;
+            DetalleHdrGroupBox.TabStop = false;
+            DetalleHdrGroupBox.Text = "Detalle de Hojas de Ruta de transporte recibidas";
             // 
-            // groupBox3
+            // DetalleHdrListView
             // 
-            groupBox3.Controls.Add(listView2);
-            groupBox3.Controls.Add(button3);
-            groupBox3.Location = new Point(12, 180);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(410, 164);
-            groupBox3.TabIndex = 14;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Detalle de Hojas de Ruta de transporte recibidas";
-            // 
-            // listView2
-            // 
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
-            listView2.Location = new Point(16, 22);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(381, 104);
-            listView2.TabIndex = 2;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            DetalleHdrListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
+            DetalleHdrListView.Location = new Point(18, 29);
+            DetalleHdrListView.Margin = new Padding(3, 4, 3, 4);
+            DetalleHdrListView.Name = "DetalleHdrListView";
+            DetalleHdrListView.Size = new Size(435, 225);
+            DetalleHdrListView.TabIndex = 2;
+            DetalleHdrListView.UseCompatibleStateImageBehavior = false;
+            DetalleHdrListView.View = View.Details;
             // 
             // columnHeader4
             // 
@@ -113,67 +109,93 @@
             columnHeader5.Text = "Patente";
             columnHeader5.Width = 80;
             // 
-            // button3
+            // ConfirmarRecepcionButton
             // 
-            button3.Location = new Point(262, 132);
-            button3.Name = "button3";
-            button3.Size = new Size(135, 23);
-            button3.TabIndex = 1;
-            button3.Text = "Confirmar recepción";
-            button3.UseVisualStyleBackColor = true;
+            ConfirmarRecepcionButton.Location = new Point(299, 262);
+            ConfirmarRecepcionButton.Margin = new Padding(3, 4, 3, 4);
+            ConfirmarRecepcionButton.Name = "ConfirmarRecepcionButton";
+            ConfirmarRecepcionButton.Size = new Size(154, 31);
+            ConfirmarRecepcionButton.TabIndex = 1;
+            ConfirmarRecepcionButton.Text = "Confirmar recepción";
+            ConfirmarRecepcionButton.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // SeleccionarOmnibusGroupBox1
             // 
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(12, 61);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(251, 100);
-            groupBox1.TabIndex = 13;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Seleccionar Ómnibus";
+            SeleccionarOmnibusGroupBox1.Controls.Add(PatenteTextBox);
+            SeleccionarOmnibusGroupBox1.Controls.Add(BuscarButton);
+            SeleccionarOmnibusGroupBox1.Controls.Add(PatenteLabel);
+            SeleccionarOmnibusGroupBox1.Location = new Point(14, 81);
+            SeleccionarOmnibusGroupBox1.Margin = new Padding(3, 4, 3, 4);
+            SeleccionarOmnibusGroupBox1.Name = "SeleccionarOmnibusGroupBox1";
+            SeleccionarOmnibusGroupBox1.Padding = new Padding(3, 4, 3, 4);
+            SeleccionarOmnibusGroupBox1.Size = new Size(287, 133);
+            SeleccionarOmnibusGroupBox1.TabIndex = 13;
+            SeleccionarOmnibusGroupBox1.TabStop = false;
+            SeleccionarOmnibusGroupBox1.Text = "Seleccionar Ómnibus";
             // 
-            // textBox3
+            // PatenteTextBox
             // 
-            textBox3.Location = new Point(83, 33);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(151, 23);
-            textBox3.TabIndex = 3;
+            PatenteTextBox.Location = new Point(95, 44);
+            PatenteTextBox.Margin = new Padding(3, 4, 3, 4);
+            PatenteTextBox.Name = "PatenteTextBox";
+            PatenteTextBox.Size = new Size(172, 27);
+            PatenteTextBox.TabIndex = 3;
             // 
-            // button1
+            // BuscarButton
             // 
-            button1.Location = new Point(159, 71);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            BuscarButton.Location = new Point(182, 95);
+            BuscarButton.Margin = new Padding(3, 4, 3, 4);
+            BuscarButton.Name = "BuscarButton";
+            BuscarButton.Size = new Size(86, 31);
+            BuscarButton.TabIndex = 2;
+            BuscarButton.Text = "Buscar";
+            BuscarButton.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // PatenteLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(11, 36);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 15);
-            label4.TabIndex = 0;
-            label4.Text = "Patente:";
+            PatenteLabel.AutoSize = true;
+            PatenteLabel.Location = new Point(13, 48);
+            PatenteLabel.Name = "PatenteLabel";
+            PatenteLabel.Size = new Size(61, 20);
+            PatenteLabel.TabIndex = 0;
+            PatenteLabel.Text = "Patente:";
+            // 
+            // NroCDLabel
+            // 
+            NroCDLabel.AutoSize = true;
+            NroCDLabel.Location = new Point(105, 32);
+            NroCDLabel.Name = "NroCDLabel";
+            NroCDLabel.Size = new Size(66, 20);
+            NroCDLabel.TabIndex = 18;
+            NroCDLabel.Text = "[código]";
+            // 
+            // AceptarButton
+            // 
+            AceptarButton.Location = new Point(393, 549);
+            AceptarButton.Margin = new Padding(3, 4, 3, 4);
+            AceptarButton.Name = "AceptarButton";
+            AceptarButton.Size = new Size(86, 31);
+            AceptarButton.TabIndex = 4;
+            AceptarButton.Text = "Aceptar";
+            AceptarButton.UseVisualStyleBackColor = true;
             // 
             // RecepcionEncomiendasCDForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(484, 365);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox1);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(491, 584);
+            Controls.Add(AceptarButton);
+            Controls.Add(NroCDLabel);
+            Controls.Add(DetalleHdrGroupBox);
+            Controls.Add(SeleccionarOmnibusGroupBox1);
+            Controls.Add(TutasaLabel);
+            Controls.Add(CodigoCDLabel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "RecepcionEncomiendasCDForm";
             Text = "Gestión de Recepción de Encomiendas de media/larga distancia";
-            groupBox3.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            DetalleHdrGroupBox.ResumeLayout(false);
+            SeleccionarOmnibusGroupBox1.ResumeLayout(false);
+            SeleccionarOmnibusGroupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,18 +203,20 @@
         #endregion
 
         private TextBox textBox1;
-        private Label label2;
-        private Label label1;
-        private GroupBox groupBox3;
-        private ListView listView2;
+        private Label TutasaLabel;
+        private Label CodigoCDLabel;
+        private GroupBox DetalleHdrGroupBox;
+        private ListView DetalleHdrListView;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader5;
-        private Button button3;
-        private GroupBox groupBox1;
-        private TextBox textBox3;
-        private Button button1;
-        private Label label4;
+        private Button ConfirmarRecepcionButton;
+        private GroupBox SeleccionarOmnibusGroupBox1;
+        private TextBox PatenteTextBox;
+        private Button BuscarButton;
+        private Label PatenteLabel;
+        private Label NroCDLabel;
+        private Button AceptarButton;
     }
 }

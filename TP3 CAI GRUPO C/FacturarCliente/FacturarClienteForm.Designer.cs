@@ -28,151 +28,148 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            groupBox1 = new GroupBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            label3 = new Label();
-            label2 = new Label();
-            groupBox2 = new GroupBox();
-            button3 = new Button();
-            textBox3 = new TextBox();
-            button2 = new Button();
-            label4 = new Label();
-            listView1 = new ListView();
+            TutasaTituloLabel = new Label();
+            SeleccionarClienteTextGroup = new GroupBox();
+            CuitTextBox = new TextBox();
+            BuscarButton = new Button();
+            RSTextLabel = new Label();
+            CuilLabel = new Label();
+            FacturarServiciosGroupBox = new GroupBox();
+            CancelarButton = new Button();
+            EmitirFacturaButton = new Button();
+            TotalTextLabel = new Label();
+            ServiciosListView = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             NumeroGuia = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             Subtotal = new ColumnHeader();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            RSLabel = new Label();
+            TotalCalculadoLabel = new Label();
+            SeleccionarClienteTextGroup.SuspendLayout();
+            FacturarServiciosGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // TutasaTituloLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(239, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 15);
-            label1.TabIndex = 0;
-            label1.Text = "TUTASA";
+            TutasaTituloLabel.AutoSize = true;
+            TutasaTituloLabel.Location = new Point(371, 32);
+            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Name = "TutasaTituloLabel";
+            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.TabIndex = 0;
+            TutasaTituloLabel.Text = "TUTASA";
             // 
-            // groupBox1
+            // SeleccionarClienteTextGroup
             // 
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(28, 62);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(520, 100);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Seleccionar Cliente";
+            SeleccionarClienteTextGroup.Controls.Add(RSLabel);
+            SeleccionarClienteTextGroup.Controls.Add(CuitTextBox);
+            SeleccionarClienteTextGroup.Controls.Add(BuscarButton);
+            SeleccionarClienteTextGroup.Controls.Add(RSTextLabel);
+            SeleccionarClienteTextGroup.Controls.Add(CuilLabel);
+            SeleccionarClienteTextGroup.Location = new Point(40, 103);
+            SeleccionarClienteTextGroup.Margin = new Padding(4, 5, 4, 5);
+            SeleccionarClienteTextGroup.Name = "SeleccionarClienteTextGroup";
+            SeleccionarClienteTextGroup.Padding = new Padding(4, 5, 4, 5);
+            SeleccionarClienteTextGroup.Size = new Size(743, 167);
+            SeleccionarClienteTextGroup.TabIndex = 1;
+            SeleccionarClienteTextGroup.TabStop = false;
+            SeleccionarClienteTextGroup.Text = "Seleccionar Cliente";
             // 
-            // textBox2
+            // CuitTextBox
             // 
-            textBox2.Location = new Point(332, 33);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(182, 23);
-            textBox2.TabIndex = 4;
+            CuitTextBox.Location = new Point(119, 55);
+            CuitTextBox.Margin = new Padding(4, 5, 4, 5);
+            CuitTextBox.Name = "CuitTextBox";
+            CuitTextBox.Size = new Size(214, 31);
+            CuitTextBox.TabIndex = 3;
             // 
-            // textBox1
+            // BuscarButton
             // 
-            textBox1.Location = new Point(83, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 23);
-            textBox1.TabIndex = 3;
+            BuscarButton.Location = new Point(627, 118);
+            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Name = "BuscarButton";
+            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.TabIndex = 2;
+            BuscarButton.Text = "Buscar";
+            BuscarButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // RSTextLabel
             // 
-            button1.Location = new Point(439, 71);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            RSTextLabel.AutoSize = true;
+            RSTextLabel.Location = new Point(359, 60);
+            RSTextLabel.Margin = new Padding(4, 0, 4, 0);
+            RSTextLabel.Name = "RSTextLabel";
+            RSTextLabel.Size = new Size(116, 25);
+            RSTextLabel.TabIndex = 1;
+            RSTextLabel.Text = "Razón Social:";
             // 
-            // label3
+            // CuilLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(251, 36);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 15);
-            label3.TabIndex = 1;
-            label3.Text = "Razón Social:";
+            CuilLabel.AutoSize = true;
+            CuilLabel.Location = new Point(16, 60);
+            CuilLabel.Margin = new Padding(4, 0, 4, 0);
+            CuilLabel.Name = "CuilLabel";
+            CuilLabel.Size = new Size(96, 25);
+            CuilLabel.TabIndex = 0;
+            CuilLabel.Text = "CUIT/CUIL:";
             // 
-            // label2
+            // FacturarServiciosGroupBox
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(11, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 15);
-            label2.TabIndex = 0;
-            label2.Text = "CUIT/CUIL:";
+            FacturarServiciosGroupBox.Controls.Add(TotalCalculadoLabel);
+            FacturarServiciosGroupBox.Controls.Add(CancelarButton);
+            FacturarServiciosGroupBox.Controls.Add(EmitirFacturaButton);
+            FacturarServiciosGroupBox.Controls.Add(TotalTextLabel);
+            FacturarServiciosGroupBox.Controls.Add(ServiciosListView);
+            FacturarServiciosGroupBox.Location = new Point(43, 310);
+            FacturarServiciosGroupBox.Margin = new Padding(4, 5, 4, 5);
+            FacturarServiciosGroupBox.Name = "FacturarServiciosGroupBox";
+            FacturarServiciosGroupBox.Padding = new Padding(4, 5, 4, 5);
+            FacturarServiciosGroupBox.Size = new Size(740, 400);
+            FacturarServiciosGroupBox.TabIndex = 2;
+            FacturarServiciosGroupBox.TabStop = false;
+            FacturarServiciosGroupBox.Text = "Facturar Servicios";
             // 
-            // groupBox2
+            // CancelarButton
             // 
-            groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(30, 186);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(518, 207);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Facturar Servicios";
+            CancelarButton.Location = new Point(624, 346);
+            CancelarButton.Margin = new Padding(4, 5, 4, 5);
+            CancelarButton.Name = "CancelarButton";
+            CancelarButton.Size = new Size(107, 38);
+            CancelarButton.TabIndex = 3;
+            CancelarButton.Text = "Cancelar";
+            CancelarButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // EmitirFacturaButton
             // 
-            button3.Location = new Point(437, 178);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 3;
-            button3.Text = "Cancelar";
-            button3.UseVisualStyleBackColor = true;
+            EmitirFacturaButton.Location = new Point(471, 346);
+            EmitirFacturaButton.Margin = new Padding(4, 5, 4, 5);
+            EmitirFacturaButton.Name = "EmitirFacturaButton";
+            EmitirFacturaButton.Size = new Size(141, 38);
+            EmitirFacturaButton.TabIndex = 2;
+            EmitirFacturaButton.Text = "Emitir Factura";
+            EmitirFacturaButton.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // TotalTextLabel
             // 
-            textBox3.Location = new Point(112, 142);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 3;
+            TotalTextLabel.AutoSize = true;
+            TotalTextLabel.Location = new Point(24, 291);
+            TotalTextLabel.Margin = new Padding(4, 0, 4, 0);
+            TotalTextLabel.Name = "TotalTextLabel";
+            TotalTextLabel.Size = new Size(132, 25);
+            TotalTextLabel.TabIndex = 1;
+            TotalTextLabel.Text = "Total a facturar:";
             // 
-            // button2
+            // ServiciosListView
             // 
-            button2.Location = new Point(330, 178);
-            button2.Name = "button2";
-            button2.Size = new Size(99, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Emitir Factura";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(17, 145);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 15);
-            label4.TabIndex = 1;
-            label4.Text = "Total a facturar:";
-            // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, NumeroGuia, columnHeader3, Subtotal });
-            listView1.Location = new Point(15, 33);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(497, 97);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            ServiciosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, NumeroGuia, columnHeader3, Subtotal });
+            ServiciosListView.Location = new Point(21, 55);
+            ServiciosListView.Margin = new Padding(4, 5, 4, 5);
+            ServiciosListView.Name = "ServiciosListView";
+            ServiciosListView.Size = new Size(708, 208);
+            ServiciosListView.TabIndex = 0;
+            ServiciosListView.UseCompatibleStateImageBehavior = false;
+            ServiciosListView.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -186,7 +183,7 @@
             // NumeroGuia
             // 
             NumeroGuia.Text = "Número de Guía";
-            NumeroGuia.Width = 120;
+            NumeroGuia.Width = 170;
             // 
             // columnHeader3
             // 
@@ -198,43 +195,64 @@
             Subtotal.Text = "Subtotal";
             Subtotal.Width = 80;
             // 
+            // RSLabel
+            // 
+            RSLabel.AutoSize = true;
+            RSLabel.Location = new Point(474, 60);
+            RSLabel.Margin = new Padding(4, 0, 4, 0);
+            RSLabel.Name = "RSLabel";
+            RSLabel.Size = new Size(59, 25);
+            RSLabel.TabIndex = 14;
+            RSLabel.Text = "[dato]";
+            // 
+            // TotalCalculadoLabel
+            // 
+            TotalCalculadoLabel.AutoSize = true;
+            TotalCalculadoLabel.Location = new Point(155, 291);
+            TotalCalculadoLabel.Margin = new Padding(4, 0, 4, 0);
+            TotalCalculadoLabel.Name = "TotalCalculadoLabel";
+            TotalCalculadoLabel.Size = new Size(138, 25);
+            TotalCalculadoLabel.TabIndex = 14;
+            TotalCalculadoLabel.Text = "[Total calculado]";
+            // 
             // FacturarClienteForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 450);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(834, 750);
+            Controls.Add(FacturarServiciosGroupBox);
+            Controls.Add(SeleccionarClienteTextGroup);
+            Controls.Add(TutasaTituloLabel);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "FacturarClienteForm";
             Text = "Facturación a Clientes";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            SeleccionarClienteTextGroup.ResumeLayout(false);
+            SeleccionarClienteTextGroup.PerformLayout();
+            FacturarServiciosGroupBox.ResumeLayout(false);
+            FacturarServiciosGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private GroupBox groupBox1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Button button1;
-        private Label label3;
-        private Label label2;
-        private GroupBox groupBox2;
-        private ListView listView1;
+        private Label TutasaTituloLabel;
+        private GroupBox SeleccionarClienteTextGroup;
+        private TextBox CuitTextBox;
+        private Button BuscarButton;
+        private Label RSTextLabel;
+        private Label CuilLabel;
+        private GroupBox FacturarServiciosGroupBox;
+        private ListView ServiciosListView;
         private ColumnHeader NumeroGuia;
         private ColumnHeader Subtotal;
-        private Button button2;
-        private Label label4;
-        private Button button3;
-        private TextBox textBox3;
+        private Button EmitirFacturaButton;
+        private Label TotalTextLabel;
+        private Button CancelarButton;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
+        private Label RSLabel;
+        private Label TotalCalculadoLabel;
     }
 }

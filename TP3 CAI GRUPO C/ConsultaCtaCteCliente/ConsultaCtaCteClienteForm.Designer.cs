@@ -29,144 +29,167 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            groupBox1 = new GroupBox();
-            button1 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            textBox2 = new TextBox();
-            label5 = new Label();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
-            groupBox2 = new GroupBox();
-            listView1 = new ListView();
+            TutasaTituloLabel = new Label();
+            BusquedaClienteGroupBox = new GroupBox();
+            RSLabel = new Label();
+            BuscarButton = new Button();
+            PeriodoDateTimePicker = new DateTimePicker();
+            RZTextoLabel = new Label();
+            CuitTextBox = new TextBox();
+            periodoTextoLabel = new Label();
+            CuitTextoLabel = new Label();
+            ResumenCuentaGroupBox = new GroupBox();
+            CuentaCorrienteListView = new ListView();
+            columnHeader5 = new ColumnHeader();
             Fecha = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             Monto = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            BusquedaClienteGroupBox.SuspendLayout();
+            ResumenCuentaGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // TutasaTituloLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(276, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 15);
-            label1.TabIndex = 0;
-            label1.Text = "TUTASA";
+            TutasaTituloLabel.AutoSize = true;
+            TutasaTituloLabel.Location = new Point(458, 30);
+            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Name = "TutasaTituloLabel";
+            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.TabIndex = 0;
+            TutasaTituloLabel.Text = "TUTASA";
             // 
-            // groupBox1
+            // BusquedaClienteGroupBox
             // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(23, 58);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(595, 127);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Búsqueda de Cliente";
+            BusquedaClienteGroupBox.Controls.Add(RSLabel);
+            BusquedaClienteGroupBox.Controls.Add(BuscarButton);
+            BusquedaClienteGroupBox.Controls.Add(PeriodoDateTimePicker);
+            BusquedaClienteGroupBox.Controls.Add(RZTextoLabel);
+            BusquedaClienteGroupBox.Controls.Add(CuitTextBox);
+            BusquedaClienteGroupBox.Controls.Add(periodoTextoLabel);
+            BusquedaClienteGroupBox.Controls.Add(CuitTextoLabel);
+            BusquedaClienteGroupBox.Location = new Point(64, 100);
+            BusquedaClienteGroupBox.Margin = new Padding(4, 5, 4, 5);
+            BusquedaClienteGroupBox.Name = "BusquedaClienteGroupBox";
+            BusquedaClienteGroupBox.Padding = new Padding(4, 5, 4, 5);
+            BusquedaClienteGroupBox.Size = new Size(850, 212);
+            BusquedaClienteGroupBox.TabIndex = 1;
+            BusquedaClienteGroupBox.TabStop = false;
+            BusquedaClienteGroupBox.Text = "Búsqueda de Cliente";
             // 
-            // button1
+            // RSLabel
             // 
-            button1.Location = new Point(514, 98);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            RSLabel.AutoSize = true;
+            RSLabel.Location = new Point(587, 48);
+            RSLabel.Margin = new Padding(4, 0, 4, 0);
+            RSLabel.Name = "RSLabel";
+            RSLabel.Size = new Size(59, 25);
+            RSLabel.TabIndex = 7;
+            RSLabel.Text = "[dato]";
             // 
-            // dateTimePicker1
+            // BuscarButton
             // 
-            dateTimePicker1.CustomFormat = "MMMMyyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(100, 62);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(180, 23);
-            dateTimePicker1.TabIndex = 4;
-            dateTimePicker1.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
+            BuscarButton.Location = new Point(734, 163);
+            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Name = "BuscarButton";
+            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.TabIndex = 6;
+            BuscarButton.Text = "Buscar";
+            BuscarButton.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // PeriodoDateTimePicker
             // 
-            textBox2.Location = new Point(380, 27);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(175, 23);
-            textBox2.TabIndex = 1;
+            PeriodoDateTimePicker.CustomFormat = "MMMMyyyy";
+            PeriodoDateTimePicker.Format = DateTimePickerFormat.Custom;
+            PeriodoDateTimePicker.Location = new Point(143, 108);
+            PeriodoDateTimePicker.Margin = new Padding(4, 5, 4, 5);
+            PeriodoDateTimePicker.Name = "PeriodoDateTimePicker";
+            PeriodoDateTimePicker.Size = new Size(255, 31);
+            PeriodoDateTimePicker.TabIndex = 4;
+            PeriodoDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
-            // label5
+            // RZTextoLabel
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(286, 30);
-            label5.Name = "label5";
-            label5.Size = new Size(76, 15);
-            label5.TabIndex = 0;
-            label5.Text = "Razón Social:";
+            RZTextoLabel.AutoSize = true;
+            RZTextoLabel.Location = new Point(463, 48);
+            RZTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            RZTextoLabel.Name = "RZTextoLabel";
+            RZTextoLabel.Size = new Size(116, 25);
+            RZTextoLabel.TabIndex = 0;
+            RZTextoLabel.Text = "Razón Social:";
             // 
-            // textBox1
+            // CuitTextBox
             // 
-            textBox1.Location = new Point(100, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(180, 23);
-            textBox1.TabIndex = 3;
+            CuitTextBox.Location = new Point(143, 45);
+            CuitTextBox.Margin = new Padding(4, 5, 4, 5);
+            CuitTextBox.Name = "CuitTextBox";
+            CuitTextBox.Size = new Size(255, 31);
+            CuitTextBox.TabIndex = 3;
             // 
-            // label3
+            // periodoTextoLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(18, 68);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 15);
-            label3.TabIndex = 1;
-            label3.Text = "Período:";
+            periodoTextoLabel.AutoSize = true;
+            periodoTextoLabel.Location = new Point(26, 113);
+            periodoTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            periodoTextoLabel.Name = "periodoTextoLabel";
+            periodoTextoLabel.Size = new Size(77, 25);
+            periodoTextoLabel.TabIndex = 1;
+            periodoTextoLabel.Text = "Período:";
             // 
-            // label2
+            // CuitTextoLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(18, 30);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 15);
-            label2.TabIndex = 0;
-            label2.Text = "CUIT/CUIL:";
+            CuitTextoLabel.AutoSize = true;
+            CuitTextoLabel.Location = new Point(26, 50);
+            CuitTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            CuitTextoLabel.Name = "CuitTextoLabel";
+            CuitTextoLabel.Size = new Size(96, 25);
+            CuitTextoLabel.TabIndex = 0;
+            CuitTextoLabel.Text = "CUIT/CUIL:";
             // 
-            // groupBox2
+            // ResumenCuentaGroupBox
             // 
-            groupBox2.Controls.Add(listView1);
-            groupBox2.Location = new Point(23, 207);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(595, 165);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Resumen de Cuenta Corriente";
+            ResumenCuentaGroupBox.Controls.Add(CuentaCorrienteListView);
+            ResumenCuentaGroupBox.Location = new Point(64, 348);
+            ResumenCuentaGroupBox.Margin = new Padding(4, 5, 4, 5);
+            ResumenCuentaGroupBox.Name = "ResumenCuentaGroupBox";
+            ResumenCuentaGroupBox.Padding = new Padding(4, 5, 4, 5);
+            ResumenCuentaGroupBox.Size = new Size(850, 432);
+            ResumenCuentaGroupBox.TabIndex = 2;
+            ResumenCuentaGroupBox.TabStop = false;
+            ResumenCuentaGroupBox.Text = "Resumen de Cuenta Corriente";
             // 
-            // listView1
+            // CuentaCorrienteListView
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader5, Fecha, columnHeader6, columnHeader2, Monto, columnHeader3, columnHeader4 });
-            listView1.GridLines = true;
-            listView1.Location = new Point(9, 40);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(573, 103);
-            listView1.TabIndex = 2;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            CuentaCorrienteListView.Columns.AddRange(new ColumnHeader[] { columnHeader5, Fecha, columnHeader6, columnHeader2, Monto, columnHeader3, columnHeader4 });
+            CuentaCorrienteListView.GridLines = true;
+            CuentaCorrienteListView.Location = new Point(13, 67);
+            CuentaCorrienteListView.Margin = new Padding(4, 5, 4, 5);
+            CuentaCorrienteListView.Name = "CuentaCorrienteListView";
+            CuentaCorrienteListView.Size = new Size(817, 328);
+            CuentaCorrienteListView.TabIndex = 2;
+            CuentaCorrienteListView.UseCompatibleStateImageBehavior = false;
+            CuentaCorrienteListView.View = View.Details;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Tipo";
             // 
             // Fecha
             // 
             Fecha.Text = "Fecha";
             Fecha.Width = 70;
             // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Vencimiento";
+            columnHeader6.Width = 120;
+            // 
             // columnHeader2
             // 
             columnHeader2.Text = "Comprobante";
-            columnHeader2.Width = 90;
+            columnHeader2.Width = 150;
             // 
             // Monto
             // 
@@ -183,51 +206,43 @@
             columnHeader4.Text = "Saldo";
             columnHeader4.Width = 90;
             // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Tipo";
-            // 
-            // columnHeader6
-            // 
-            columnHeader6.Text = "Vencimiento";
-            columnHeader6.Width = 80;
-            // 
             // ConsultaCtaCteClienteForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(660, 408);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(982, 795);
+            Controls.Add(ResumenCuentaGroupBox);
+            Controls.Add(BusquedaClienteGroupBox);
+            Controls.Add(TutasaTituloLabel);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ConsultaCtaCteClienteForm";
             Text = "Estado de Cuenta Corriente";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
+            BusquedaClienteGroupBox.ResumeLayout(false);
+            BusquedaClienteGroupBox.PerformLayout();
+            ResumenCuentaGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private GroupBox groupBox1;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox1;
-        private Label label3;
-        private Label label2;
-        private Button button1;
-        private GroupBox groupBox2;
-        private ListView listView1;
+        private Label TutasaTituloLabel;
+        private GroupBox BusquedaClienteGroupBox;
+        private DateTimePicker PeriodoDateTimePicker;
+        private TextBox CuitTextBox;
+        private Label periodoTextoLabel;
+        private Label CuitTextoLabel;
+        private Button BuscarButton;
+        private GroupBox ResumenCuentaGroupBox;
+        private ListView CuentaCorrienteListView;
         private ColumnHeader Fecha;
         private ColumnHeader Monto;
-        private TextBox textBox2;
-        private Label label5;
+        private Label RZTextoLabel;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
+        private Label RSLabel;
     }
 }
