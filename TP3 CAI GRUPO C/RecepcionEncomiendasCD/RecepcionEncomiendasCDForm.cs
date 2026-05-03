@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TP3_CAI_GRUPO_C
+namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 {
     public partial class RecepcionEncomiendasCDForm : Form
     {
