@@ -101,12 +101,29 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
 
             //Validar que no esté vacío el campo DNI de Destinatario 
-             if (string.IsNullOrWhiteSpace(DNIDestinatarioTextBox.Text))
+            if (string.IsNullOrWhiteSpace(DNIDestinatarioTextBox.Text))
             {
                 MessageBox.Show("El DNI de Destinatario no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           
+
+        }
+
+        private void MetodoEntregaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MetodoEntregaComboBox.SelectedIndex == -1)
+                return;
+
+            if (MetodoEntregaComboBox.SelectedIndex == 0)
+            {
+                DatosEntregaGroupBox.Enabled = true;
+                DatosSucurGroupBox.Enabled = false;
+            }
+            else
+            {
+                DatosEntregaGroupBox.Enabled = false;
+                DatosSucurGroupBox.Enabled = true;
+            }
         }
     }
 
