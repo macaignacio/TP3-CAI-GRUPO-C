@@ -1,4 +1,4 @@
-﻿namespace TP3_CAI_GRUPO_C
+﻿namespace TP3_CAI_GRUPO_C.FacturarCliente
 {
     partial class FacturarClienteForm
     {
@@ -30,11 +30,13 @@
         {
             TutasaTituloLabel = new Label();
             SeleccionarClienteTextGroup = new GroupBox();
+            RSLabel = new Label();
             CuitTextBox = new TextBox();
             BuscarButton = new Button();
             RSTextLabel = new Label();
             CuilLabel = new Label();
             FacturarServiciosGroupBox = new GroupBox();
+            TotalCalculadoLabel = new Label();
             CancelarButton = new Button();
             EmitirFacturaButton = new Button();
             TotalTextLabel = new Label();
@@ -44,8 +46,6 @@
             NumeroGuia = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             Subtotal = new ColumnHeader();
-            RSLabel = new Label();
-            TotalCalculadoLabel = new Label();
             SeleccionarClienteTextGroup.SuspendLayout();
             FacturarServiciosGroupBox.SuspendLayout();
             SuspendLayout();
@@ -53,10 +53,9 @@
             // TutasaTituloLabel
             // 
             TutasaTituloLabel.AutoSize = true;
-            TutasaTituloLabel.Location = new Point(371, 32);
-            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Location = new Point(260, 19);
             TutasaTituloLabel.Name = "TutasaTituloLabel";
-            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.Size = new Size(50, 15);
             TutasaTituloLabel.TabIndex = 0;
             TutasaTituloLabel.Text = "TUTASA";
             // 
@@ -67,29 +66,34 @@
             SeleccionarClienteTextGroup.Controls.Add(BuscarButton);
             SeleccionarClienteTextGroup.Controls.Add(RSTextLabel);
             SeleccionarClienteTextGroup.Controls.Add(CuilLabel);
-            SeleccionarClienteTextGroup.Location = new Point(40, 103);
-            SeleccionarClienteTextGroup.Margin = new Padding(4, 5, 4, 5);
+            SeleccionarClienteTextGroup.Location = new Point(28, 62);
             SeleccionarClienteTextGroup.Name = "SeleccionarClienteTextGroup";
-            SeleccionarClienteTextGroup.Padding = new Padding(4, 5, 4, 5);
-            SeleccionarClienteTextGroup.Size = new Size(743, 167);
+            SeleccionarClienteTextGroup.Size = new Size(520, 100);
             SeleccionarClienteTextGroup.TabIndex = 1;
             SeleccionarClienteTextGroup.TabStop = false;
             SeleccionarClienteTextGroup.Text = "Seleccionar Cliente";
             // 
+            // RSLabel
+            // 
+            RSLabel.AutoSize = true;
+            RSLabel.Location = new Point(332, 36);
+            RSLabel.Name = "RSLabel";
+            RSLabel.Size = new Size(39, 15);
+            RSLabel.TabIndex = 14;
+            RSLabel.Text = "[dato]";
+            // 
             // CuitTextBox
             // 
-            CuitTextBox.Location = new Point(119, 55);
-            CuitTextBox.Margin = new Padding(4, 5, 4, 5);
+            CuitTextBox.Location = new Point(83, 33);
             CuitTextBox.Name = "CuitTextBox";
-            CuitTextBox.Size = new Size(214, 31);
+            CuitTextBox.Size = new Size(151, 23);
             CuitTextBox.TabIndex = 3;
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(627, 118);
-            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Location = new Point(439, 71);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -97,20 +101,18 @@
             // RSTextLabel
             // 
             RSTextLabel.AutoSize = true;
-            RSTextLabel.Location = new Point(359, 60);
-            RSTextLabel.Margin = new Padding(4, 0, 4, 0);
+            RSTextLabel.Location = new Point(251, 36);
             RSTextLabel.Name = "RSTextLabel";
-            RSTextLabel.Size = new Size(116, 25);
+            RSTextLabel.Size = new Size(76, 15);
             RSTextLabel.TabIndex = 1;
             RSTextLabel.Text = "Razón Social:";
             // 
             // CuilLabel
             // 
             CuilLabel.AutoSize = true;
-            CuilLabel.Location = new Point(16, 60);
-            CuilLabel.Margin = new Padding(4, 0, 4, 0);
+            CuilLabel.Location = new Point(11, 36);
             CuilLabel.Name = "CuilLabel";
-            CuilLabel.Size = new Size(96, 25);
+            CuilLabel.Size = new Size(66, 15);
             CuilLabel.TabIndex = 0;
             CuilLabel.Text = "CUIT/CUIL:";
             // 
@@ -121,31 +123,36 @@
             FacturarServiciosGroupBox.Controls.Add(EmitirFacturaButton);
             FacturarServiciosGroupBox.Controls.Add(TotalTextLabel);
             FacturarServiciosGroupBox.Controls.Add(ServiciosListView);
-            FacturarServiciosGroupBox.Location = new Point(43, 310);
-            FacturarServiciosGroupBox.Margin = new Padding(4, 5, 4, 5);
+            FacturarServiciosGroupBox.Location = new Point(30, 186);
             FacturarServiciosGroupBox.Name = "FacturarServiciosGroupBox";
-            FacturarServiciosGroupBox.Padding = new Padding(4, 5, 4, 5);
-            FacturarServiciosGroupBox.Size = new Size(740, 400);
+            FacturarServiciosGroupBox.Size = new Size(518, 240);
             FacturarServiciosGroupBox.TabIndex = 2;
             FacturarServiciosGroupBox.TabStop = false;
             FacturarServiciosGroupBox.Text = "Facturar Servicios";
             // 
+            // TotalCalculadoLabel
+            // 
+            TotalCalculadoLabel.AutoSize = true;
+            TotalCalculadoLabel.Location = new Point(108, 175);
+            TotalCalculadoLabel.Name = "TotalCalculadoLabel";
+            TotalCalculadoLabel.Size = new Size(95, 15);
+            TotalCalculadoLabel.TabIndex = 14;
+            TotalCalculadoLabel.Text = "[Total calculado]";
+            // 
             // CancelarButton
             // 
-            CancelarButton.Location = new Point(624, 346);
-            CancelarButton.Margin = new Padding(4, 5, 4, 5);
+            CancelarButton.Location = new Point(437, 208);
             CancelarButton.Name = "CancelarButton";
-            CancelarButton.Size = new Size(107, 38);
+            CancelarButton.Size = new Size(75, 23);
             CancelarButton.TabIndex = 3;
             CancelarButton.Text = "Cancelar";
             CancelarButton.UseVisualStyleBackColor = true;
             // 
             // EmitirFacturaButton
             // 
-            EmitirFacturaButton.Location = new Point(471, 346);
-            EmitirFacturaButton.Margin = new Padding(4, 5, 4, 5);
+            EmitirFacturaButton.Location = new Point(330, 208);
             EmitirFacturaButton.Name = "EmitirFacturaButton";
-            EmitirFacturaButton.Size = new Size(141, 38);
+            EmitirFacturaButton.Size = new Size(99, 23);
             EmitirFacturaButton.TabIndex = 2;
             EmitirFacturaButton.Text = "Emitir Factura";
             EmitirFacturaButton.UseVisualStyleBackColor = true;
@@ -153,20 +160,18 @@
             // TotalTextLabel
             // 
             TotalTextLabel.AutoSize = true;
-            TotalTextLabel.Location = new Point(24, 291);
-            TotalTextLabel.Margin = new Padding(4, 0, 4, 0);
+            TotalTextLabel.Location = new Point(17, 175);
             TotalTextLabel.Name = "TotalTextLabel";
-            TotalTextLabel.Size = new Size(132, 25);
+            TotalTextLabel.Size = new Size(89, 15);
             TotalTextLabel.TabIndex = 1;
             TotalTextLabel.Text = "Total a facturar:";
             // 
             // ServiciosListView
             // 
             ServiciosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, NumeroGuia, columnHeader3, Subtotal });
-            ServiciosListView.Location = new Point(21, 55);
-            ServiciosListView.Margin = new Padding(4, 5, 4, 5);
+            ServiciosListView.Location = new Point(15, 33);
             ServiciosListView.Name = "ServiciosListView";
-            ServiciosListView.Size = new Size(708, 208);
+            ServiciosListView.Size = new Size(497, 126);
             ServiciosListView.TabIndex = 0;
             ServiciosListView.UseCompatibleStateImageBehavior = false;
             ServiciosListView.View = View.Details;
@@ -195,37 +200,17 @@
             Subtotal.Text = "Subtotal";
             Subtotal.Width = 80;
             // 
-            // RSLabel
-            // 
-            RSLabel.AutoSize = true;
-            RSLabel.Location = new Point(474, 60);
-            RSLabel.Margin = new Padding(4, 0, 4, 0);
-            RSLabel.Name = "RSLabel";
-            RSLabel.Size = new Size(59, 25);
-            RSLabel.TabIndex = 14;
-            RSLabel.Text = "[dato]";
-            // 
-            // TotalCalculadoLabel
-            // 
-            TotalCalculadoLabel.AutoSize = true;
-            TotalCalculadoLabel.Location = new Point(155, 291);
-            TotalCalculadoLabel.Margin = new Padding(4, 0, 4, 0);
-            TotalCalculadoLabel.Name = "TotalCalculadoLabel";
-            TotalCalculadoLabel.Size = new Size(138, 25);
-            TotalCalculadoLabel.TabIndex = 14;
-            TotalCalculadoLabel.Text = "[Total calculado]";
-            // 
             // FacturarClienteForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(834, 750);
+            ClientSize = new Size(584, 449);
             Controls.Add(FacturarServiciosGroupBox);
             Controls.Add(SeleccionarClienteTextGroup);
             Controls.Add(TutasaTituloLabel);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "FacturarClienteForm";
             Text = "Facturación a Clientes";
+            Load += FacturarClienteForm_Load;
             SeleccionarClienteTextGroup.ResumeLayout(false);
             SeleccionarClienteTextGroup.PerformLayout();
             FacturarServiciosGroupBox.ResumeLayout(false);

@@ -1,4 +1,4 @@
-﻿namespace TP3_CAI_GRUPO_C
+﻿namespace TP3_CAI_GRUPO_C.EstadoEncomienda
 {
     partial class EstadoEncomiendaForm
     {
@@ -45,10 +45,9 @@
             // TutasaTituloLabel
             // 
             TutasaTituloLabel.AutoSize = true;
-            TutasaTituloLabel.Location = new Point(223, 30);
-            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Location = new Point(156, 18);
             TutasaTituloLabel.Name = "TutasaTituloLabel";
-            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.Size = new Size(50, 15);
             TutasaTituloLabel.TabIndex = 0;
             TutasaTituloLabel.Text = "TUTASA";
             // 
@@ -57,51 +56,44 @@
             DatosBusquedaGroupBox.Controls.Add(BuscarButton);
             DatosBusquedaGroupBox.Controls.Add(NumeroGuiaTextBox);
             DatosBusquedaGroupBox.Controls.Add(NumeroGuiaLabel);
-            DatosBusquedaGroupBox.Location = new Point(31, 110);
-            DatosBusquedaGroupBox.Margin = new Padding(4, 5, 4, 5);
+            DatosBusquedaGroupBox.Location = new Point(22, 66);
             DatosBusquedaGroupBox.Name = "DatosBusquedaGroupBox";
-            DatosBusquedaGroupBox.Padding = new Padding(4, 5, 4, 5);
-            DatosBusquedaGroupBox.Size = new Size(450, 167);
+            DatosBusquedaGroupBox.Size = new Size(315, 100);
             DatosBusquedaGroupBox.TabIndex = 1;
             DatosBusquedaGroupBox.TabStop = false;
             DatosBusquedaGroupBox.Text = "Datos de Búsqueda";
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(334, 118);
-            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Location = new Point(234, 71);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
             // 
             // NumeroGuiaTextBox
             // 
-            NumeroGuiaTextBox.Location = new Point(161, 45);
-            NumeroGuiaTextBox.Margin = new Padding(4, 5, 4, 5);
+            NumeroGuiaTextBox.Location = new Point(113, 27);
             NumeroGuiaTextBox.Name = "NumeroGuiaTextBox";
-            NumeroGuiaTextBox.Size = new Size(258, 31);
+            NumeroGuiaTextBox.Size = new Size(182, 23);
             NumeroGuiaTextBox.TabIndex = 1;
             // 
             // NumeroGuiaLabel
             // 
             NumeroGuiaLabel.AutoSize = true;
-            NumeroGuiaLabel.Location = new Point(14, 50);
-            NumeroGuiaLabel.Margin = new Padding(4, 0, 4, 0);
+            NumeroGuiaLabel.Location = new Point(10, 30);
             NumeroGuiaLabel.Name = "NumeroGuiaLabel";
-            NumeroGuiaLabel.Size = new Size(146, 25);
+            NumeroGuiaLabel.Size = new Size(97, 15);
             NumeroGuiaLabel.TabIndex = 0;
             NumeroGuiaLabel.Text = "Número de Guía:";
             // 
             // ResultadoBusquedaGroupBox
             // 
             ResultadoBusquedaGroupBox.Controls.Add(ResultadoBusquedaListView);
-            ResultadoBusquedaGroupBox.Location = new Point(31, 327);
-            ResultadoBusquedaGroupBox.Margin = new Padding(4, 5, 4, 5);
+            ResultadoBusquedaGroupBox.Location = new Point(22, 196);
             ResultadoBusquedaGroupBox.Name = "ResultadoBusquedaGroupBox";
-            ResultadoBusquedaGroupBox.Padding = new Padding(4, 5, 4, 5);
-            ResultadoBusquedaGroupBox.Size = new Size(450, 243);
+            ResultadoBusquedaGroupBox.Size = new Size(315, 146);
             ResultadoBusquedaGroupBox.TabIndex = 2;
             ResultadoBusquedaGroupBox.TabStop = false;
             ResultadoBusquedaGroupBox.Text = "Resultado de Búsqueda";
@@ -109,10 +101,9 @@
             // ResultadoBusquedaListView
             // 
             ResultadoBusquedaListView.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, Actualizacion });
-            ResultadoBusquedaListView.Location = new Point(14, 55);
-            ResultadoBusquedaListView.Margin = new Padding(4, 5, 4, 5);
+            ResultadoBusquedaListView.Location = new Point(10, 33);
             ResultadoBusquedaListView.Name = "ResultadoBusquedaListView";
-            ResultadoBusquedaListView.Size = new Size(405, 159);
+            ResultadoBusquedaListView.Size = new Size(285, 97);
             ResultadoBusquedaListView.TabIndex = 0;
             ResultadoBusquedaListView.UseCompatibleStateImageBehavior = false;
             ResultadoBusquedaListView.View = View.Details;
@@ -129,26 +120,25 @@
             // 
             // AceptarButton
             // 
-            AceptarButton.Location = new Point(374, 587);
-            AceptarButton.Margin = new Padding(4, 5, 4, 5);
+            AceptarButton.Location = new Point(262, 352);
             AceptarButton.Name = "AceptarButton";
-            AceptarButton.Size = new Size(107, 38);
+            AceptarButton.Size = new Size(75, 23);
             AceptarButton.TabIndex = 3;
             AceptarButton.Text = "Aceptar";
             AceptarButton.UseVisualStyleBackColor = true;
             // 
             // EstadoEncomiendaForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(517, 645);
+            ClientSize = new Size(362, 387);
             Controls.Add(AceptarButton);
             Controls.Add(ResultadoBusquedaGroupBox);
             Controls.Add(DatosBusquedaGroupBox);
             Controls.Add(TutasaTituloLabel);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "EstadoEncomiendaForm";
             Text = "EstadoEncomiendaForm";
+            Load += EstadoEncomiendaForm_Load;
             DatosBusquedaGroupBox.ResumeLayout(false);
             DatosBusquedaGroupBox.PerformLayout();
             ResultadoBusquedaGroupBox.ResumeLayout(false);

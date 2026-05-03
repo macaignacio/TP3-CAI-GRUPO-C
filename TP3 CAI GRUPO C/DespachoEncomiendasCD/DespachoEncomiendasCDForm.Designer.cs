@@ -1,4 +1,4 @@
-﻿namespace TP3_CAI_GRUPO_C
+﻿namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
 {
     partial class DespachoEncomiendasCDForm
     {
@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             SeleccionarOmnibusGroupBox = new GroupBox();
+            EmpresaComboBox = new ComboBox();
+            HorarioSalidaDateTimePicker = new DateTimePicker();
+            FechaHoraLabel = new Label();
             BuscarButton = new Button();
             EmpresaTextoLabel = new Label();
             TutasaTituloLabel = new Label();
@@ -41,9 +44,6 @@
             columnHeader5 = new ColumnHeader();
             ImprimirButton = new Button();
             CodCDLabel = new Label();
-            FechaHoraLabel = new Label();
-            HorarioSalidaDateTimePicker = new DateTimePicker();
-            EmpresaComboBox = new ComboBox();
             SeleccionarOmnibusGroupBox.SuspendLayout();
             DetalleHDRAsignadasGroupBox.SuspendLayout();
             SuspendLayout();
@@ -55,21 +55,46 @@
             SeleccionarOmnibusGroupBox.Controls.Add(FechaHoraLabel);
             SeleccionarOmnibusGroupBox.Controls.Add(BuscarButton);
             SeleccionarOmnibusGroupBox.Controls.Add(EmpresaTextoLabel);
-            SeleccionarOmnibusGroupBox.Location = new Point(56, 134);
-            SeleccionarOmnibusGroupBox.Margin = new Padding(4, 5, 4, 5);
+            SeleccionarOmnibusGroupBox.Location = new Point(39, 80);
             SeleccionarOmnibusGroupBox.Name = "SeleccionarOmnibusGroupBox";
-            SeleccionarOmnibusGroupBox.Padding = new Padding(4, 5, 4, 5);
-            SeleccionarOmnibusGroupBox.Size = new Size(632, 237);
+            SeleccionarOmnibusGroupBox.Size = new Size(442, 142);
             SeleccionarOmnibusGroupBox.TabIndex = 10;
             SeleccionarOmnibusGroupBox.TabStop = false;
             SeleccionarOmnibusGroupBox.Text = "Seleccionar Ómnibus";
             // 
+            // EmpresaComboBox
+            // 
+            EmpresaComboBox.FormattingEnabled = true;
+            EmpresaComboBox.Location = new Point(152, 31);
+            EmpresaComboBox.Margin = new Padding(2, 2, 2, 2);
+            EmpresaComboBox.Name = "EmpresaComboBox";
+            EmpresaComboBox.Size = new Size(180, 23);
+            EmpresaComboBox.TabIndex = 6;
+            // 
+            // HorarioSalidaDateTimePicker
+            // 
+            HorarioSalidaDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
+            HorarioSalidaDateTimePicker.Format = DateTimePickerFormat.Custom;
+            HorarioSalidaDateTimePicker.Location = new Point(152, 63);
+            HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
+            HorarioSalidaDateTimePicker.Size = new Size(180, 23);
+            HorarioSalidaDateTimePicker.TabIndex = 5;
+            HorarioSalidaDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
+            // 
+            // FechaHoraLabel
+            // 
+            FechaHoraLabel.AutoSize = true;
+            FechaHoraLabel.Location = new Point(11, 67);
+            FechaHoraLabel.Name = "FechaHoraLabel";
+            FechaHoraLabel.Size = new Size(122, 15);
+            FechaHoraLabel.TabIndex = 4;
+            FechaHoraLabel.Text = "Fecha/Hora de Salida:";
+            // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(500, 173);
-            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Location = new Point(350, 104);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -77,30 +102,27 @@
             // EmpresaTextoLabel
             // 
             EmpresaTextoLabel.AutoSize = true;
-            EmpresaTextoLabel.Location = new Point(16, 60);
-            EmpresaTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            EmpresaTextoLabel.Location = new Point(11, 36);
             EmpresaTextoLabel.Name = "EmpresaTextoLabel";
-            EmpresaTextoLabel.Size = new Size(84, 25);
+            EmpresaTextoLabel.Size = new Size(55, 15);
             EmpresaTextoLabel.TabIndex = 0;
             EmpresaTextoLabel.Text = "Empresa:";
             // 
             // TutasaTituloLabel
             // 
             TutasaTituloLabel.AutoSize = true;
-            TutasaTituloLabel.Location = new Point(328, 20);
-            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Location = new Point(230, 12);
             TutasaTituloLabel.Name = "TutasaTituloLabel";
-            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.Size = new Size(50, 15);
             TutasaTituloLabel.TabIndex = 8;
             TutasaTituloLabel.Text = "TUTASA";
             // 
             // CodCdTextoLabel
             // 
             CodCdTextoLabel.AutoSize = true;
-            CodCdTextoLabel.Location = new Point(56, 57);
-            CodCdTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            CodCdTextoLabel.Location = new Point(39, 34);
             CodCdTextoLabel.Name = "CodCdTextoLabel";
-            CodCdTextoLabel.Size = new Size(104, 25);
+            CodCdTextoLabel.Size = new Size(68, 15);
             CodCdTextoLabel.TabIndex = 7;
             CodCdTextoLabel.Text = "Código CD:";
             // 
@@ -108,11 +130,9 @@
             // 
             DetalleHDRAsignadasGroupBox.Controls.Add(HDRAsignadasListView);
             DetalleHDRAsignadasGroupBox.Controls.Add(ImprimirButton);
-            DetalleHDRAsignadasGroupBox.Location = new Point(56, 409);
-            DetalleHDRAsignadasGroupBox.Margin = new Padding(4, 5, 4, 5);
+            DetalleHDRAsignadasGroupBox.Location = new Point(39, 245);
             DetalleHDRAsignadasGroupBox.Name = "DetalleHDRAsignadasGroupBox";
-            DetalleHDRAsignadasGroupBox.Padding = new Padding(4, 5, 4, 5);
-            DetalleHDRAsignadasGroupBox.Size = new Size(632, 365);
+            DetalleHDRAsignadasGroupBox.Size = new Size(442, 219);
             DetalleHDRAsignadasGroupBox.TabIndex = 11;
             DetalleHDRAsignadasGroupBox.TabStop = false;
             DetalleHDRAsignadasGroupBox.Text = "Detalle de Hojas de Ruta de transporte asignadas";
@@ -120,10 +140,9 @@
             // HDRAsignadasListView
             // 
             HDRAsignadasListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
-            HDRAsignadasListView.Location = new Point(23, 37);
-            HDRAsignadasListView.Margin = new Padding(4, 5, 4, 5);
+            HDRAsignadasListView.Location = new Point(16, 22);
             HDRAsignadasListView.Name = "HDRAsignadasListView";
-            HDRAsignadasListView.Size = new Size(584, 260);
+            HDRAsignadasListView.Size = new Size(410, 158);
             HDRAsignadasListView.TabIndex = 2;
             HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             HDRAsignadasListView.View = View.Details;
@@ -150,10 +169,9 @@
             // 
             // ImprimirButton
             // 
-            ImprimirButton.Location = new Point(448, 317);
-            ImprimirButton.Margin = new Padding(4, 5, 4, 5);
+            ImprimirButton.Location = new Point(314, 190);
             ImprimirButton.Name = "ImprimirButton";
-            ImprimirButton.Size = new Size(159, 38);
+            ImprimirButton.Size = new Size(111, 23);
             ImprimirButton.TabIndex = 1;
             ImprimirButton.Text = "Imprimir detalle";
             ImprimirButton.UseVisualStyleBackColor = true;
@@ -161,55 +179,25 @@
             // CodCDLabel
             // 
             CodCDLabel.AutoSize = true;
-            CodCDLabel.Location = new Point(159, 57);
-            CodCDLabel.Margin = new Padding(4, 0, 4, 0);
+            CodCDLabel.Location = new Point(111, 34);
             CodCDLabel.Name = "CodCDLabel";
-            CodCDLabel.Size = new Size(84, 25);
+            CodCDLabel.Size = new Size(57, 15);
             CodCDLabel.TabIndex = 12;
             CodCDLabel.Text = "[número]";
             // 
-            // FechaHoraLabel
-            // 
-            FechaHoraLabel.AutoSize = true;
-            FechaHoraLabel.Location = new Point(16, 111);
-            FechaHoraLabel.Margin = new Padding(4, 0, 4, 0);
-            FechaHoraLabel.Name = "FechaHoraLabel";
-            FechaHoraLabel.Size = new Size(184, 25);
-            FechaHoraLabel.TabIndex = 4;
-            FechaHoraLabel.Text = "Fecha/Hora de Salida:";
-            // 
-            // HorarioSalidaDateTimePicker
-            // 
-            HorarioSalidaDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
-            HorarioSalidaDateTimePicker.Format = DateTimePickerFormat.Custom;
-            HorarioSalidaDateTimePicker.Location = new Point(217, 105);
-            HorarioSalidaDateTimePicker.Margin = new Padding(4, 5, 4, 5);
-            HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
-            HorarioSalidaDateTimePicker.Size = new Size(255, 31);
-            HorarioSalidaDateTimePicker.TabIndex = 5;
-            HorarioSalidaDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
-            // 
-            // EmpresaComboBox
-            // 
-            EmpresaComboBox.FormattingEnabled = true;
-            EmpresaComboBox.Location = new Point(217, 52);
-            EmpresaComboBox.Name = "EmpresaComboBox";
-            EmpresaComboBox.Size = new Size(255, 33);
-            EmpresaComboBox.TabIndex = 6;
-            // 
             // DespachoEncomiendasCDForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 808);
+            ClientSize = new Size(521, 449);
             Controls.Add(CodCDLabel);
             Controls.Add(DetalleHDRAsignadasGroupBox);
             Controls.Add(SeleccionarOmnibusGroupBox);
             Controls.Add(TutasaTituloLabel);
             Controls.Add(CodCdTextoLabel);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "DespachoEncomiendasCDForm";
             Text = "Gestión de Despacho de Encomiendas de media/larga distancia";
+            Load += DespachoEncomiendasCDForm_Load;
             SeleccionarOmnibusGroupBox.ResumeLayout(false);
             SeleccionarOmnibusGroupBox.PerformLayout();
             DetalleHDRAsignadasGroupBox.ResumeLayout(false);

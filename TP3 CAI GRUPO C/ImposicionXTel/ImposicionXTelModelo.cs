@@ -6,11 +6,13 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 {
     internal class ImposicionXTelModelo
     {
-      /*  public List<Cliente> ValidarCliente(long cuit)
+     
+        
+        /*  public List<Cliente> ValidarCliente(long cuit)
 
         {
 
-        }*/
+        } */
        
         //Cargo Provincias en el ComboBox Provincias
        public string[] Provincias { get; } = [

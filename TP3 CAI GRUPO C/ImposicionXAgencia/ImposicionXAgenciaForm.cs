@@ -7,6 +7,9 @@
             InitializeComponent();
         }
 
+        private void ImposicionXAgenciaForm_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

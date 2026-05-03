@@ -47,9 +47,9 @@
             // TutasaLabel
             // 
             TutasaLabel.AutoSize = true;
-            TutasaLabel.Location = new Point(186, 27);
+            TutasaLabel.Location = new Point(163, 20);
             TutasaLabel.Name = "TutasaLabel";
-            TutasaLabel.Size = new Size(62, 20);
+            TutasaLabel.Size = new Size(50, 15);
             TutasaLabel.TabIndex = 0;
             TutasaLabel.Text = "TUTASA";
             // 
@@ -58,11 +58,9 @@
             PeriodoConsultaGroupBox.Controls.Add(PeriodoDateTimePicker);
             PeriodoConsultaGroupBox.Controls.Add(PeriodoLabel);
             PeriodoConsultaGroupBox.Controls.Add(ConsultarButton);
-            PeriodoConsultaGroupBox.Location = new Point(15, 64);
-            PeriodoConsultaGroupBox.Margin = new Padding(3, 4, 3, 4);
+            PeriodoConsultaGroupBox.Location = new Point(13, 48);
             PeriodoConsultaGroupBox.Name = "PeriodoConsultaGroupBox";
-            PeriodoConsultaGroupBox.Padding = new Padding(3, 4, 3, 4);
-            PeriodoConsultaGroupBox.Size = new Size(445, 133);
+            PeriodoConsultaGroupBox.Size = new Size(389, 100);
             PeriodoConsultaGroupBox.TabIndex = 1;
             PeriodoConsultaGroupBox.TabStop = false;
             PeriodoConsultaGroupBox.Text = "Período de Consulta";
@@ -71,28 +69,26 @@
             // 
             PeriodoDateTimePicker.CustomFormat = "MMMMyyyy";
             PeriodoDateTimePicker.Format = DateTimePickerFormat.Custom;
-            PeriodoDateTimePicker.Location = new Point(109, 41);
-            PeriodoDateTimePicker.Margin = new Padding(3, 4, 3, 4);
+            PeriodoDateTimePicker.Location = new Point(95, 31);
             PeriodoDateTimePicker.Name = "PeriodoDateTimePicker";
-            PeriodoDateTimePicker.Size = new Size(205, 27);
+            PeriodoDateTimePicker.Size = new Size(180, 23);
             PeriodoDateTimePicker.TabIndex = 6;
             PeriodoDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
             // PeriodoLabel
             // 
             PeriodoLabel.AutoSize = true;
-            PeriodoLabel.Location = new Point(15, 49);
+            PeriodoLabel.Location = new Point(13, 37);
             PeriodoLabel.Name = "PeriodoLabel";
-            PeriodoLabel.Size = new Size(63, 20);
+            PeriodoLabel.Size = new Size(51, 15);
             PeriodoLabel.TabIndex = 5;
             PeriodoLabel.Text = "Período:";
             // 
             // ConsultarButton
             // 
-            ConsultarButton.Location = new Point(313, 95);
-            ConsultarButton.Margin = new Padding(3, 4, 3, 4);
+            ConsultarButton.Location = new Point(274, 71);
             ConsultarButton.Name = "ConsultarButton";
-            ConsultarButton.Size = new Size(86, 31);
+            ConsultarButton.Size = new Size(75, 23);
             ConsultarButton.TabIndex = 2;
             ConsultarButton.Text = "Consultar";
             ConsultarButton.UseVisualStyleBackColor = true;
@@ -100,11 +96,9 @@
             // ResultadoOperativoGroupBox
             // 
             ResultadoOperativoGroupBox.Controls.Add(ResultadoOperativoListView);
-            ResultadoOperativoGroupBox.Location = new Point(15, 241);
-            ResultadoOperativoGroupBox.Margin = new Padding(3, 4, 3, 4);
+            ResultadoOperativoGroupBox.Location = new Point(13, 181);
             ResultadoOperativoGroupBox.Name = "ResultadoOperativoGroupBox";
-            ResultadoOperativoGroupBox.Padding = new Padding(3, 4, 3, 4);
-            ResultadoOperativoGroupBox.Size = new Size(445, 192);
+            ResultadoOperativoGroupBox.Size = new Size(389, 144);
             ResultadoOperativoGroupBox.TabIndex = 2;
             ResultadoOperativoGroupBox.TabStop = false;
             ResultadoOperativoGroupBox.Text = "Resultado Operativo";
@@ -112,10 +106,9 @@
             // ResultadoOperativoListView
             // 
             ResultadoOperativoListView.Columns.AddRange(new ColumnHeader[] { EmpresaOmnibus, Ventas, Costos, Utilidad });
-            ResultadoOperativoListView.Location = new Point(13, 33);
-            ResultadoOperativoListView.Margin = new Padding(3, 4, 3, 4);
+            ResultadoOperativoListView.Location = new Point(11, 25);
             ResultadoOperativoListView.Name = "ResultadoOperativoListView";
-            ResultadoOperativoListView.Size = new Size(407, 128);
+            ResultadoOperativoListView.Size = new Size(357, 97);
             ResultadoOperativoListView.TabIndex = 0;
             ResultadoOperativoListView.UseCompatibleStateImageBehavior = false;
             ResultadoOperativoListView.View = View.Details;
@@ -140,26 +133,25 @@
             // 
             // AceptarButton
             // 
-            AceptarButton.Location = new Point(377, 460);
-            AceptarButton.Margin = new Padding(3, 4, 3, 4);
+            AceptarButton.Location = new Point(330, 345);
             AceptarButton.Name = "AceptarButton";
-            AceptarButton.Size = new Size(86, 31);
+            AceptarButton.Size = new Size(75, 23);
             AceptarButton.TabIndex = 3;
             AceptarButton.Text = "Aceptar";
             AceptarButton.UseVisualStyleBackColor = true;
             // 
             // ResultadosCostoVentaFOrm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(477, 507);
+            ClientSize = new Size(417, 380);
             Controls.Add(AceptarButton);
             Controls.Add(ResultadoOperativoGroupBox);
             Controls.Add(PeriodoConsultaGroupBox);
             Controls.Add(TutasaLabel);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "ResultadosCostoVentaFOrm";
             Text = "Resultados Ingresos y Egresos";
+            Load += ResultadosCostoVentaFOrm_Load;
             PeriodoConsultaGroupBox.ResumeLayout(false);
             PeriodoConsultaGroupBox.PerformLayout();
             ResultadoOperativoGroupBox.ResumeLayout(false);

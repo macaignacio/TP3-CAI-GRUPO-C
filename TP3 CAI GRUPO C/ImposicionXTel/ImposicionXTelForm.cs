@@ -9,12 +9,12 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             InitializeComponent();
         }
 
+        private ImposicionXTelModelo modelo = new ImposicionXTelModelo();
         private void ImposicionXTelForm_Load(object sender, EventArgs e)
         {
-            var provincias = ImposicionXTelModelo.Provincias;
-            var metodosEntrega = ImposicionXTelModelo.MetodosEntrega;
-
-            
+            var provincias = modelo.Provincias;
+            var metodosEntrega = modelo.MetodosEntrega;
+                        
             //Agregar las opciones provincias a Combobox
             
             foreach (var provincia in provincias)

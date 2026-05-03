@@ -7,6 +7,9 @@
             InitializeComponent();
         }
 
+        private void EntregaForm_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

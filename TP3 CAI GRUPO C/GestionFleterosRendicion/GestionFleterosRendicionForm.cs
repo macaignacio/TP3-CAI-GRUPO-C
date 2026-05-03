@@ -14,5 +14,10 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
         {
             InitializeComponent();
         }
+
+        private void GestionFleterosRendicionForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

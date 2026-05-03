@@ -6,6 +6,11 @@
         {
             InitializeComponent();
         }
+
+        private void ImposiciónXCDForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

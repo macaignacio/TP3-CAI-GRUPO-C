@@ -8,6 +8,9 @@
             InitializeComponent();
         }
 
+        private void ConsultaCtaCteClienteForm_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

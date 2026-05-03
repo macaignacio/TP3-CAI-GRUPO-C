@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TP3_CAI_GRUPO_C
+namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 {
     public partial class GestionFleterosAsignacionForm : Form
     {
@@ -15,6 +15,10 @@ namespace TP3_CAI_GRUPO_C
             InitializeComponent();
         }
 
+        private void GestionFleterosAsignacionForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

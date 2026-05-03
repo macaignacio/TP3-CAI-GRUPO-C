@@ -30,6 +30,7 @@
         {
             TutasaLabel = new Label();
             HdrAsignadasGroupBox = new GroupBox();
+            CumplidoCheckBox = new CheckBox();
             HdrAsignadasListView = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -41,7 +42,6 @@
             CuitTextBox = new TextBox();
             BuscarButton = new Button();
             CuitLabel = new Label();
-            CumplidoCheckBox = new CheckBox();
             HdrAsignadasGroupBox.SuspendLayout();
             SelecFleteroGroupBox.SuspendLayout();
             SuspendLayout();
@@ -49,9 +49,9 @@
             // TutasaLabel
             // 
             TutasaLabel.AutoSize = true;
-            TutasaLabel.Location = new Point(195, 12);
+            TutasaLabel.Location = new Point(171, 9);
             TutasaLabel.Name = "TutasaLabel";
-            TutasaLabel.Size = new Size(62, 20);
+            TutasaLabel.Size = new Size(50, 15);
             TutasaLabel.TabIndex = 0;
             TutasaLabel.Text = "TUTASA";
             // 
@@ -59,22 +59,30 @@
             // 
             HdrAsignadasGroupBox.Controls.Add(CumplidoCheckBox);
             HdrAsignadasGroupBox.Controls.Add(HdrAsignadasListView);
-            HdrAsignadasGroupBox.Location = new Point(15, 217);
-            HdrAsignadasGroupBox.Margin = new Padding(3, 4, 3, 4);
+            HdrAsignadasGroupBox.Location = new Point(13, 163);
             HdrAsignadasGroupBox.Name = "HdrAsignadasGroupBox";
-            HdrAsignadasGroupBox.Padding = new Padding(3, 4, 3, 4);
-            HdrAsignadasGroupBox.Size = new Size(560, 330);
+            HdrAsignadasGroupBox.Size = new Size(490, 248);
             HdrAsignadasGroupBox.TabIndex = 2;
             HdrAsignadasGroupBox.TabStop = false;
             HdrAsignadasGroupBox.Text = "Hojas de Ruta Asignadas";
             // 
+            // CumplidoCheckBox
+            // 
+            CumplidoCheckBox.AutoSize = true;
+            CumplidoCheckBox.Location = new Point(174, 53);
+            CumplidoCheckBox.Margin = new Padding(3, 2, 3, 2);
+            CumplidoCheckBox.Name = "CumplidoCheckBox";
+            CumplidoCheckBox.Size = new Size(79, 19);
+            CumplidoCheckBox.TabIndex = 1;
+            CumplidoCheckBox.Text = "Cumplido";
+            CumplidoCheckBox.UseVisualStyleBackColor = true;
+            // 
             // HdrAsignadasListView
             // 
             HdrAsignadasListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            HdrAsignadasListView.Location = new Point(18, 28);
-            HdrAsignadasListView.Margin = new Padding(3, 4, 3, 4);
+            HdrAsignadasListView.Location = new Point(16, 21);
             HdrAsignadasListView.Name = "HdrAsignadasListView";
-            HdrAsignadasListView.Size = new Size(534, 294);
+            HdrAsignadasListView.Size = new Size(468, 222);
             HdrAsignadasListView.TabIndex = 0;
             HdrAsignadasListView.UseCompatibleStateImageBehavior = false;
             HdrAsignadasListView.View = View.Details;
@@ -96,10 +104,9 @@
             // 
             // ConfirmarButton
             // 
-            ConfirmarButton.Location = new Point(453, 555);
-            ConfirmarButton.Margin = new Padding(3, 4, 3, 4);
+            ConfirmarButton.Location = new Point(396, 416);
             ConfirmarButton.Name = "ConfirmarButton";
-            ConfirmarButton.Size = new Size(122, 31);
+            ConfirmarButton.Size = new Size(107, 23);
             ConfirmarButton.TabIndex = 4;
             ConfirmarButton.Text = "Confirmar";
             ConfirmarButton.UseVisualStyleBackColor = true;
@@ -111,47 +118,42 @@
             SelecFleteroGroupBox.Controls.Add(CuitTextBox);
             SelecFleteroGroupBox.Controls.Add(BuscarButton);
             SelecFleteroGroupBox.Controls.Add(CuitLabel);
-            SelecFleteroGroupBox.Location = new Point(15, 61);
-            SelecFleteroGroupBox.Margin = new Padding(3, 4, 3, 4);
+            SelecFleteroGroupBox.Location = new Point(13, 46);
             SelecFleteroGroupBox.Name = "SelecFleteroGroupBox";
-            SelecFleteroGroupBox.Padding = new Padding(3, 4, 3, 4);
-            SelecFleteroGroupBox.Size = new Size(560, 119);
+            SelecFleteroGroupBox.Size = new Size(490, 89);
             SelecFleteroGroupBox.TabIndex = 7;
             SelecFleteroGroupBox.TabStop = false;
             SelecFleteroGroupBox.Text = "Seleccionar Fletero";
             // 
             // NombreFleteroTextBox
             // 
-            NombreFleteroTextBox.Location = new Point(343, 37);
-            NombreFleteroTextBox.Margin = new Padding(3, 4, 3, 4);
+            NombreFleteroTextBox.Location = new Point(300, 28);
             NombreFleteroTextBox.Name = "NombreFleteroTextBox";
             NombreFleteroTextBox.ReadOnly = true;
-            NombreFleteroTextBox.Size = new Size(210, 27);
+            NombreFleteroTextBox.Size = new Size(184, 23);
             NombreFleteroTextBox.TabIndex = 5;
             // 
             // NombreFleteroLabel
             // 
             NombreFleteroLabel.AutoSize = true;
-            NombreFleteroLabel.Location = new Point(274, 41);
+            NombreFleteroLabel.Location = new Point(240, 31);
             NombreFleteroLabel.Name = "NombreFleteroLabel";
-            NombreFleteroLabel.Size = new Size(67, 20);
+            NombreFleteroLabel.Size = new Size(54, 15);
             NombreFleteroLabel.TabIndex = 4;
             NombreFleteroLabel.Text = "Nombre:";
             // 
             // CuitTextBox
             // 
-            CuitTextBox.Location = new Point(110, 37);
-            CuitTextBox.Margin = new Padding(3, 4, 3, 4);
+            CuitTextBox.Location = new Point(96, 28);
             CuitTextBox.Name = "CuitTextBox";
-            CuitTextBox.Size = new Size(153, 27);
+            CuitTextBox.Size = new Size(134, 23);
             CuitTextBox.TabIndex = 3;
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(467, 80);
-            BuscarButton.Margin = new Padding(3, 4, 3, 4);
+            BuscarButton.Location = new Point(409, 60);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(86, 31);
+            BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -160,34 +162,24 @@
             // 
             CuitLabel.AutoSize = true;
             CuitLabel.BackColor = SystemColors.Control;
-            CuitLabel.Location = new Point(18, 41);
+            CuitLabel.Location = new Point(16, 31);
             CuitLabel.Name = "CuitLabel";
-            CuitLabel.Size = new Size(79, 20);
+            CuitLabel.Size = new Size(66, 15);
             CuitLabel.TabIndex = 0;
             CuitLabel.Text = "CUIT/CUIL:";
             // 
-            // CumplidoCheckBox
-            // 
-            CumplidoCheckBox.AutoSize = true;
-            CumplidoCheckBox.Location = new Point(199, 71);
-            CumplidoCheckBox.Name = "CumplidoCheckBox";
-            CumplidoCheckBox.Size = new Size(96, 24);
-            CumplidoCheckBox.TabIndex = 1;
-            CumplidoCheckBox.Text = "Cumplido";
-            CumplidoCheckBox.UseVisualStyleBackColor = true;
-            // 
             // GestionFleterosRendicionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(600, 599);
+            ClientSize = new Size(525, 449);
             Controls.Add(SelecFleteroGroupBox);
             Controls.Add(ConfirmarButton);
             Controls.Add(HdrAsignadasGroupBox);
             Controls.Add(TutasaLabel);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "GestionFleterosRendicionForm";
             Text = "Gestión HDR Asignadas a Fleteros";
+            Load += GestionFleterosRendicionForm_Load;
             HdrAsignadasGroupBox.ResumeLayout(false);
             HdrAsignadasGroupBox.PerformLayout();
             SelecFleteroGroupBox.ResumeLayout(false);

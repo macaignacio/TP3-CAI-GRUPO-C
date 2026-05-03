@@ -50,18 +50,18 @@
             // TutasaLabel
             // 
             TutasaLabel.AutoSize = true;
-            TutasaLabel.Location = new Point(243, 12);
+            TutasaLabel.Location = new Point(213, 9);
             TutasaLabel.Name = "TutasaLabel";
-            TutasaLabel.Size = new Size(62, 20);
+            TutasaLabel.Size = new Size(50, 15);
             TutasaLabel.TabIndex = 11;
             TutasaLabel.Text = "TUTASA";
             // 
             // CodigoCDLabel
             // 
             CodigoCDLabel.AutoSize = true;
-            CodigoCDLabel.Location = new Point(14, 32);
+            CodigoCDLabel.Location = new Point(12, 24);
             CodigoCDLabel.Name = "CodigoCDLabel";
-            CodigoCDLabel.Size = new Size(85, 20);
+            CodigoCDLabel.Size = new Size(68, 15);
             CodigoCDLabel.TabIndex = 10;
             CodigoCDLabel.Text = "Código CD:";
             // 
@@ -69,11 +69,9 @@
             // 
             DetalleHdrGroupBox.Controls.Add(DetalleHdrListView);
             DetalleHdrGroupBox.Controls.Add(ConfirmarRecepcionButton);
-            DetalleHdrGroupBox.Location = new Point(14, 240);
-            DetalleHdrGroupBox.Margin = new Padding(3, 4, 3, 4);
+            DetalleHdrGroupBox.Location = new Point(12, 180);
             DetalleHdrGroupBox.Name = "DetalleHdrGroupBox";
-            DetalleHdrGroupBox.Padding = new Padding(3, 4, 3, 4);
-            DetalleHdrGroupBox.Size = new Size(469, 301);
+            DetalleHdrGroupBox.Size = new Size(410, 226);
             DetalleHdrGroupBox.TabIndex = 14;
             DetalleHdrGroupBox.TabStop = false;
             DetalleHdrGroupBox.Text = "Detalle de Hojas de Ruta de transporte recibidas";
@@ -81,10 +79,9 @@
             // DetalleHdrListView
             // 
             DetalleHdrListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
-            DetalleHdrListView.Location = new Point(18, 29);
-            DetalleHdrListView.Margin = new Padding(3, 4, 3, 4);
+            DetalleHdrListView.Location = new Point(16, 22);
             DetalleHdrListView.Name = "DetalleHdrListView";
-            DetalleHdrListView.Size = new Size(435, 225);
+            DetalleHdrListView.Size = new Size(381, 170);
             DetalleHdrListView.TabIndex = 2;
             DetalleHdrListView.UseCompatibleStateImageBehavior = false;
             DetalleHdrListView.View = View.Details;
@@ -111,10 +108,9 @@
             // 
             // ConfirmarRecepcionButton
             // 
-            ConfirmarRecepcionButton.Location = new Point(299, 262);
-            ConfirmarRecepcionButton.Margin = new Padding(3, 4, 3, 4);
+            ConfirmarRecepcionButton.Location = new Point(262, 196);
             ConfirmarRecepcionButton.Name = "ConfirmarRecepcionButton";
-            ConfirmarRecepcionButton.Size = new Size(154, 31);
+            ConfirmarRecepcionButton.Size = new Size(135, 23);
             ConfirmarRecepcionButton.TabIndex = 1;
             ConfirmarRecepcionButton.Text = "Confirmar recepción";
             ConfirmarRecepcionButton.UseVisualStyleBackColor = true;
@@ -124,29 +120,25 @@
             SeleccionarOmnibusGroupBox1.Controls.Add(PatenteTextBox);
             SeleccionarOmnibusGroupBox1.Controls.Add(BuscarButton);
             SeleccionarOmnibusGroupBox1.Controls.Add(PatenteLabel);
-            SeleccionarOmnibusGroupBox1.Location = new Point(14, 81);
-            SeleccionarOmnibusGroupBox1.Margin = new Padding(3, 4, 3, 4);
+            SeleccionarOmnibusGroupBox1.Location = new Point(12, 61);
             SeleccionarOmnibusGroupBox1.Name = "SeleccionarOmnibusGroupBox1";
-            SeleccionarOmnibusGroupBox1.Padding = new Padding(3, 4, 3, 4);
-            SeleccionarOmnibusGroupBox1.Size = new Size(287, 133);
+            SeleccionarOmnibusGroupBox1.Size = new Size(251, 100);
             SeleccionarOmnibusGroupBox1.TabIndex = 13;
             SeleccionarOmnibusGroupBox1.TabStop = false;
             SeleccionarOmnibusGroupBox1.Text = "Seleccionar Ómnibus";
             // 
             // PatenteTextBox
             // 
-            PatenteTextBox.Location = new Point(95, 44);
-            PatenteTextBox.Margin = new Padding(3, 4, 3, 4);
+            PatenteTextBox.Location = new Point(83, 33);
             PatenteTextBox.Name = "PatenteTextBox";
-            PatenteTextBox.Size = new Size(172, 27);
+            PatenteTextBox.Size = new Size(151, 23);
             PatenteTextBox.TabIndex = 3;
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(182, 95);
-            BuscarButton.Margin = new Padding(3, 4, 3, 4);
+            BuscarButton.Location = new Point(159, 71);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(86, 31);
+            BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -154,45 +146,44 @@
             // PatenteLabel
             // 
             PatenteLabel.AutoSize = true;
-            PatenteLabel.Location = new Point(13, 48);
+            PatenteLabel.Location = new Point(11, 36);
             PatenteLabel.Name = "PatenteLabel";
-            PatenteLabel.Size = new Size(61, 20);
+            PatenteLabel.Size = new Size(50, 15);
             PatenteLabel.TabIndex = 0;
             PatenteLabel.Text = "Patente:";
             // 
             // NroCDLabel
             // 
             NroCDLabel.AutoSize = true;
-            NroCDLabel.Location = new Point(105, 32);
+            NroCDLabel.Location = new Point(92, 24);
             NroCDLabel.Name = "NroCDLabel";
-            NroCDLabel.Size = new Size(66, 20);
+            NroCDLabel.Size = new Size(52, 15);
             NroCDLabel.TabIndex = 18;
             NroCDLabel.Text = "[código]";
             // 
             // AceptarButton
             // 
-            AceptarButton.Location = new Point(393, 549);
-            AceptarButton.Margin = new Padding(3, 4, 3, 4);
+            AceptarButton.Location = new Point(344, 412);
             AceptarButton.Name = "AceptarButton";
-            AceptarButton.Size = new Size(86, 31);
+            AceptarButton.Size = new Size(75, 23);
             AceptarButton.TabIndex = 4;
             AceptarButton.Text = "Aceptar";
             AceptarButton.UseVisualStyleBackColor = true;
             // 
             // RecepcionEncomiendasCDForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(491, 584);
+            ClientSize = new Size(430, 438);
             Controls.Add(AceptarButton);
             Controls.Add(NroCDLabel);
             Controls.Add(DetalleHdrGroupBox);
             Controls.Add(SeleccionarOmnibusGroupBox1);
             Controls.Add(TutasaLabel);
             Controls.Add(CodigoCDLabel);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "RecepcionEncomiendasCDForm";
             Text = "Gestión de Recepción de Encomiendas de media/larga distancia";
+            Load += RecepcionEncomiendasCDForm_Load;
             DetalleHdrGroupBox.ResumeLayout(false);
             SeleccionarOmnibusGroupBox1.ResumeLayout(false);
             SeleccionarOmnibusGroupBox1.PerformLayout();

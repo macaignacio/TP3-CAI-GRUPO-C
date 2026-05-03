@@ -14,5 +14,10 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
         {
             InitializeComponent();
         }
+
+        private void RecepcionEncomiendasCDForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

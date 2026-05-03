@@ -14,5 +14,10 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
         {
             InitializeComponent();
         }
+
+        private void ResultadosCostoVentaFOrm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
