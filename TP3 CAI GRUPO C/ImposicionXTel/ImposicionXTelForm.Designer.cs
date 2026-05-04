@@ -72,7 +72,6 @@
             GenerarButton = new Button();
             CancelarButton = new Button();
             DatosSucurGroupBox = new GroupBox();
-            SeleccionarSucurButton = new Button();
             RetiroSucurListView = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -491,7 +490,6 @@
             // 
             // DatosSucurGroupBox
             // 
-            DatosSucurGroupBox.Controls.Add(SeleccionarSucurButton);
             DatosSucurGroupBox.Controls.Add(RetiroSucurListView);
             DatosSucurGroupBox.Controls.Add(LocalidadSucurComboBox);
             DatosSucurGroupBox.Controls.Add(label17);
@@ -504,19 +502,12 @@
             DatosSucurGroupBox.TabStop = false;
             DatosSucurGroupBox.Text = "Retiro en sucursal (Agencia o CD)";
             // 
-            // SeleccionarSucurButton
-            // 
-            SeleccionarSucurButton.Location = new Point(506, 128);
-            SeleccionarSucurButton.Name = "SeleccionarSucurButton";
-            SeleccionarSucurButton.Size = new Size(75, 23);
-            SeleccionarSucurButton.TabIndex = 19;
-            SeleccionarSucurButton.Text = "Seleccionar";
-            SeleccionarSucurButton.UseVisualStyleBackColor = true;
-            // 
             // RetiroSucurListView
             // 
             RetiroSucurListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, TipoEstablecimiento });
+            RetiroSucurListView.FullRowSelect = true;
             RetiroSucurListView.Location = new Point(6, 57);
+            RetiroSucurListView.MultiSelect = false;
             RetiroSucurListView.Name = "RetiroSucurListView";
             RetiroSucurListView.Size = new Size(575, 65);
             RetiroSucurListView.TabIndex = 18;
@@ -550,7 +541,6 @@
             LocalidadSucurComboBox.Name = "LocalidadSucurComboBox";
             LocalidadSucurComboBox.Size = new Size(198, 23);
             LocalidadSucurComboBox.TabIndex = 13;
-            LocalidadSucurComboBox.Text = "*bloquear*";
             // 
             // label17
             // 
@@ -654,7 +644,6 @@
         private Button GenerarButton;
         private Button CancelarButton;
         private GroupBox DatosSucurGroupBox;
-        private Button SeleccionarSucurButton;
         private ListView RetiroSucurListView;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;

@@ -165,7 +165,61 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
             return new List<Sucursal>();
         }
-        
 
+        public (bool valido, string error) ValidarCajas(string cantS, string cantM, string cantL, string cantXL)
+        {
+            // Vacíos = 0
+            cantS = string.IsNullOrWhiteSpace(cantS) ? "0" : cantS;
+            cantM = string.IsNullOrWhiteSpace(cantM) ? "0" : cantM;
+            cantL = string.IsNullOrWhiteSpace(cantL) ? "0" : cantL;
+            cantXL = string.IsNullOrWhiteSpace(cantXL) ? "0" : cantXL;
+
+            // Parseo
+            if (!long.TryParse(cantS, out long s) ||
+                !long.TryParse(cantM, out long m) ||
+                !long.TryParse(cantL, out long l) ||
+                !long.TryParse(cantXL, out long xl))
+            {
+                return (false, "Las cantidades de cajas deben ser números enteros.");
+            }
+
+            // Negativos
+            if (s < 0 || m < 0 || l < 0 || xl < 0)
+            {
+                return (false, "Las cantidades de cajas no pueden ser negativas.");
+            }
+
+            // Al menos una caja
+            long totalCajas = s + m + l + xl;
+
+            if (totalCajas == 0)
+            {
+                return (false, "Debe ingresar al menos una caja.");
+            }
+
+            // Capacidad
+            long capacidadUsada = (s * 1) + (m * 2) + (l * 4) + (xl * 8);
+            long capacidadMaxima = 20 * 8;
+
+            if (capacidadUsada > capacidadMaxima)
+            {
+                return (false, "La cantidad de cajas supera el máximo permitido.");
+            }
+
+            return (true, "");
+        }
+        public (bool valido, string error) ValidarDNI(string dniTexto)
+        {
+            if (string.IsNullOrWhiteSpace(dniTexto))
+                return (false, "El campo DNI no puede estar vacío.");
+
+            if (!int.TryParse(dniTexto, out int dni))
+                return (false, "El DNI debe ser un número válido.");
+
+            if (dni < 10_000_000 || dni > 99_999_999)
+                return (false, "El DNI debe ser un número válido.");
+
+            return (true, "");
+        }
     }
 }

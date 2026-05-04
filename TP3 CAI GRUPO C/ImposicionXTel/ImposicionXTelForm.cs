@@ -110,15 +110,19 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             }
 
 
-            //Validar que no esté vacío el campo DNI de Destinatario 
-            if (string.IsNullOrWhiteSpace(DNIDestinatarioTextBox.Text))
+            //Realizar todas las validaciones de DNI de Destinatario 
+            var resultadoDNI = modelo.ValidarDNI(DNIDestinatarioTextBox.Text);
+
+            if (!resultadoDNI.valido)
             {
-                MessageBox.Show("El DNI de Destinatario no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(resultadoDNI.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+
+
             // RETIRO
-          
+
 
             if (!modelo.ValidarCodigoPostal(CPRetiroTextBox.Text))
             {
@@ -150,7 +154,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                     return;
                 }
             }
-            else // Sucursal
+                 else // Sucursal
             {
                 if (RetiroSucurListView.SelectedItems.Count == 0)
                 {
@@ -159,6 +163,19 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 }
             }
 
+            var resultadoCajas = modelo.ValidarCajas(CajaSTextBox.Text,CajaMTextBox.Text,CajaLTextBox.Text,
+                CajaXLTextBox.Text);
+
+            if (!resultadoCajas.valido)
+            {
+                MessageBox.Show(resultadoCajas.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Imposición generada con éxito ✅",
+                "Éxito",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
 
@@ -234,6 +251,8 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 CPEnvioTextBox.Enabled = false;
                 DirecEnvioTextBox.Enabled = false;
 
+                // Limpiar
+                LocalidadEnvioComboBox.Items.Clear();
                 LocalidadEnvioComboBox.Text = "";
                 CPEnvioTextBox.Text = "";
                 DirecEnvioTextBox.Text = "";
@@ -243,23 +262,51 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 LocalidadEnvioComboBox.Enabled = true;
                 CPEnvioTextBox.Enabled = true;
                 DirecEnvioTextBox.Enabled = true;
+
+                // Cargar barrios/localidades
+                LocalidadEnvioComboBox.Items.Clear();
+                LocalidadEnvioComboBox.SelectedIndex = -1;
+
+                string provincia = (string)ProvinciaEnvioComboBox.SelectedItem!;
+
+                var localidades = modelo.ObtenerLocalidadesPorProvincia(provincia);
+
+                if (localidades.Length > 0)
+                {
+                    LocalidadEnvioComboBox.Items.AddRange(localidades);
+                }
+                // Si no es CABA → queda vacío pero habilitado
             }
         }
 
         private void ProvinciaSucurComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LocalidadSucurComboBox.Items.Clear();
+            RetiroSucurListView.Items.Clear();
+
             if (ProvinciaSucurComboBox.SelectedIndex == -1)
             {
+                LocalidadSucurComboBox.Enabled = false;
                 RetiroSucurListView.Enabled = false;
-                RetiroSucurListView.Items.Clear();
                 return;
             }
 
+            LocalidadSucurComboBox.Enabled = true;
             RetiroSucurListView.Enabled = true;
-            RetiroSucurListView.Items.Clear();
 
             string provincia = (string)ProvinciaSucurComboBox.SelectedItem!;
 
+            // Cargar barrios/localidades
+            var localidades = modelo.ObtenerLocalidadesPorProvincia(provincia);
+
+            if (localidades.Length > 0)
+            {
+                LocalidadSucurComboBox.Items.AddRange(localidades);
+            }
+
+            LocalidadSucurComboBox.SelectedIndex = -1;
+
+            // Cargar sucursales
             var sucursales = modelo.ObtenerSucursalesPorProvincia(provincia);
 
             foreach (var s in sucursales)
