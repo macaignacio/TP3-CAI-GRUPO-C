@@ -195,7 +195,6 @@
             LocalidadRetiroComboBox.Name = "LocalidadRetiroComboBox";
             LocalidadRetiroComboBox.Size = new Size(211, 23);
             LocalidadRetiroComboBox.TabIndex = 5;
-            LocalidadRetiroComboBox.Text = "*bloquear*";
             // 
             // ProvinciaRetiroComboBox
             // 
@@ -204,6 +203,7 @@
             ProvinciaRetiroComboBox.Name = "ProvinciaRetiroComboBox";
             ProvinciaRetiroComboBox.Size = new Size(158, 23);
             ProvinciaRetiroComboBox.TabIndex = 4;
+            ProvinciaRetiroComboBox.SelectedIndexChanged += ProvinciaRetiroComboBox_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -272,7 +272,6 @@
             LocalidadEnvioComboBox.Name = "LocalidadEnvioComboBox";
             LocalidadEnvioComboBox.Size = new Size(198, 23);
             LocalidadEnvioComboBox.TabIndex = 13;
-            LocalidadEnvioComboBox.Text = "*bloquear*";
             // 
             // CPEnvioTextBox
             // 
@@ -306,6 +305,7 @@
             ProvinciaEnvioComboBox.Name = "ProvinciaEnvioComboBox";
             ProvinciaEnvioComboBox.Size = new Size(158, 23);
             ProvinciaEnvioComboBox.TabIndex = 12;
+            ProvinciaEnvioComboBox.SelectedIndexChanged += ProvinciaEnvioComboBox_SelectedIndexChanged;
             // 
             // label9
             // 
@@ -577,12 +577,13 @@
             ProvinciaSucurComboBox.Name = "ProvinciaSucurComboBox";
             ProvinciaSucurComboBox.Size = new Size(158, 23);
             ProvinciaSucurComboBox.TabIndex = 12;
+            ProvinciaSucurComboBox.SelectedIndexChanged += ProvinciaSucurComboBox_SelectedIndexChanged;
             // 
             // ImposicionXTelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(959, 449);
+            ClientSize = new Size(1227, 578);
             Controls.Add(DatosSucurGroupBox);
             Controls.Add(CancelarButton);
             Controls.Add(GenerarButton);
