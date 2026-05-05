@@ -1,21 +1,19 @@
-using System.Reflection;
-
 namespace TP3_CAI_GRUPO_C.ImposicionXTel
 {
     public partial class ImposicionXTelForm : Form
     {
+        private ImposicionXTelModelo modelo = new ImposicionXTelModelo();
+
         public ImposicionXTelForm()
         {
             InitializeComponent();
         }
 
-        private ImposicionXTelModelo modelo = new ImposicionXTelModelo();
         private void ImposicionXTelForm_Load(object sender, EventArgs e)
         {
             var provincias = modelo.Provincias;
             var metodosEntrega = modelo.MetodosEntrega;
 
-            // Lista de ComboBox de provincias
             var comboBoxesProvincias = new[]
             {
                   ProvinciaRetiroComboBox,
@@ -23,52 +21,48 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                   ProvinciaSucurComboBox
             };
 
-            // Cargar provincias en todos los ComboBox & sin seleccionar nada
             foreach (var combo in comboBoxesProvincias)
             {
                 combo.Items.AddRange(provincias);
                 combo.SelectedIndex = -1;
             }
 
-            //Agregar las opciones tipos de entrega a Combobox Metodos de Entrega
-
             foreach (var tipoEntrega in metodosEntrega)
-
             {
                 MetodoEntregaComboBox.Items.Add(tipoEntrega);
             }
 
-            // Estado inicial de los groupbox
             DatosEntregaGroupBox.Enabled = false;
             DatosSucurGroupBox.Enabled = false;
 
-            // Retiro
             LocalidadRetiroComboBox.Enabled = false;
             CPRetiroTextBox.Enabled = false;
             DirecRetiroTextBox.Enabled = false;
 
-            // Entrega
             LocalidadEnvioComboBox.Enabled = false;
             CPEnvioTextBox.Enabled = false;
             DirecEnvioTextBox.Enabled = false;
 
-            // Sucursal
+            LocalidadSucurComboBox.Enabled = false;
             RetiroSucurListView.Enabled = false;
 
-            // Bloquear selección hasta validar CUIT
             ProvinciaRetiroComboBox.Enabled = false;
             ProvinciaEnvioComboBox.Enabled = false;
             ProvinciaSucurComboBox.Enabled = false;
             MetodoEntregaComboBox.Enabled = false;
             DatosDestinatarioGroupBox.Enabled = false;
             DatosEncomiendaGroupBox.Enabled = false;
-
         }
 
         private void ValidarButton_Click(object sender, EventArgs e)
         {
-            //Realizar las distintas validaciones asociadas al CUIT
-            var resultado = modelo.ValidarCliente(CuitTextBox.Text);
+            if (!long.TryParse(CuitTextBox.Text, out var cuit))
+            {
+                MessageBox.Show("CUIT inválido. Se debe ingresar un número de 11 digitos sin guiones ni comas.");
+                return;
+            }
+
+            var resultado = modelo.ValidarCliente(cuit);
 
             if (resultado.cliente != null)
             {
@@ -80,10 +74,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             {
                 MessageBox.Show(resultado.error);
             }
-                   
-
         }
-
 
         private void CancelarButton_Click(object sender, EventArgs e)
         {
@@ -96,129 +87,184 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                Close();
             }
         }
 
         private void GenerarButton_Click(object sender, EventArgs e)
         {
-            //Validar que no esté vacío el campo Nombre y Apellido de Destinatario 
-            if (string.IsNullOrWhiteSpace(NombreDestinatarioTextBox.Text))
+            if (!long.TryParse(CuitTextBox.Text, out var cuit))
             {
-                MessageBox.Show("El Nombre y Apellido de Destinatario no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El CUIT debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-
-            //Realizar todas las validaciones de DNI de Destinatario 
-            var resultadoDNI = modelo.ValidarDNI(DNIDestinatarioTextBox.Text);
-
-            if (!resultadoDNI.valido)
+            if (!int.TryParse(DNIDestinatarioTextBox.Text, out var dni))
             {
-                MessageBox.Show(resultadoDNI.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El DNI debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-
-
-            // RETIRO
-
-
-            if (!modelo.ValidarCodigoPostal(CPRetiroTextBox.Text))
+            if (!int.TryParse(CPRetiroTextBox.Text, out var codigoPostalRetiro))
             {
-                MessageBox.Show("El código postal de retiro debe ser un número de 4 dígitos.");
+                MessageBox.Show("El código postal de retiro debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!modelo.ValidarDireccion(DirecRetiroTextBox.Text))
+            var codigoPostalEnvio = 0;
+            if (MetodoEntregaComboBox.SelectedItem?.ToString() == "A Domicilio" &&
+                !int.TryParse(CPEnvioTextBox.Text, out codigoPostalEnvio))
             {
-                MessageBox.Show("La dirección de retiro no puede estar vacía.");
+                MessageBox.Show("El código postal de entrega debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            
-            // ENTREGA (depende del método)
-            
-
-            if (MetodoEntregaComboBox.SelectedIndex == 0) // A domicilio
+            if (!TryParseCantidadCaja(CajaSTextBox.Text, out var cantidadCajaS) ||
+                !TryParseCantidadCaja(CajaMTextBox.Text, out var cantidadCajaM) ||
+                !TryParseCantidadCaja(CajaLTextBox.Text, out var cantidadCajaL) ||
+                !TryParseCantidadCaja(CajaXLTextBox.Text, out var cantidadCajaXL))
             {
-                if (!modelo.ValidarCodigoPostal(CPEnvioTextBox.Text))
-                {
-                    MessageBox.Show("El código postal de entrega debe ser un número de 4 dígitos.");
-                    return;
-                }
-
-                if (!modelo.ValidarDireccion(DirecEnvioTextBox.Text))
-                {
-                    MessageBox.Show("La dirección de entrega no puede estar vacía.");
-                    return;
-                }
-            }
-                 else // Sucursal
-            {
-                if (RetiroSucurListView.SelectedItems.Count == 0)
-                {
-                    MessageBox.Show("Debe seleccionar una sucursal.");
-                    return;
-                }
-            }
-
-            var resultadoCajas = modelo.ValidarCajas(CajaSTextBox.Text,CajaMTextBox.Text,CajaLTextBox.Text,
-                CajaXLTextBox.Text);
-
-            if (!resultadoCajas.valido)
-            {
-                MessageBox.Show(resultadoCajas.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Las cantidades de cajas deben ser números enteros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show("Imposición generada con éxito ✅",
+            var imposicion = new Imposicion
+            {
+                CuitCliente = cuit,
+                NombreDestinatario = NombreDestinatarioTextBox.Text,
+                DniDestinatario = dni,
+                ProvinciaRetiro = ProvinciaRetiroComboBox.SelectedItem?.ToString() ?? "",
+                LocalidadRetiro = LocalidadRetiroComboBox.SelectedItem?.ToString() ?? "",
+                CodigoPostalRetiro = codigoPostalRetiro,
+                DireccionRetiro = DirecRetiroTextBox.Text,
+                MetodoEntrega = MetodoEntregaComboBox.SelectedItem?.ToString() ?? "",
+                ProvinciaEnvio = ProvinciaEnvioComboBox.SelectedItem?.ToString() ?? "",
+                LocalidadEnvio = LocalidadEnvioComboBox.SelectedItem?.ToString() ?? "",
+                CodigoPostalEnvio = codigoPostalEnvio,
+                DireccionEnvio = DirecEnvioTextBox.Text,
+                ProvinciaSucursal = ProvinciaSucurComboBox.SelectedItem?.ToString() ?? "",
+                LocalidadSucursal = LocalidadSucurComboBox.SelectedItem?.ToString() ?? "",
+                SucursalSeleccionada = ObtenerSucursalSeleccionada(),
+                CantidadCajaS = cantidadCajaS,
+                CantidadCajaM = cantidadCajaM,
+                CantidadCajaL = cantidadCajaL,
+                CantidadCajaXL = cantidadCajaXL
+            };
+
+            var resultado = modelo.GenerarImposicion(imposicion);
+
+            if (!resultado.valido)
+            {
+                MessageBox.Show(resultado.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Imposición generada con éxito",
                 "Éxito",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+
+            LimpiarFormulario();
         }
 
+        private bool TryParseCantidadCaja(string texto, out int cantidad)
+        {
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                cantidad = 0;
+                return true;
+            }
 
-           
+            return int.TryParse(texto, out cantidad);
+        }
 
-      private void ProvinciaRetiroComboBox_SelectedIndexChanged(object sender, EventArgs e)
-          {
+        private Sucursal? ObtenerSucursalSeleccionada()
+        {
+            if (RetiroSucurListView.SelectedItems.Count == 0)
+                return null;
+
+            var item = RetiroSucurListView.SelectedItems[0];
+
+            return new Sucursal
+            {
+                Codigo = item.Text,
+                Direccion = item.SubItems[1].Text,
+                Horarios = item.SubItems[2].Text,
+                Tipo = item.SubItems[3].Text
+            };
+        }
+
+        private void LimpiarFormulario()
+        {
+            CuitTextBox.Text = "";
+            RazonSocialLabel.Text = "";
+            NombreDestinatarioTextBox.Text = "";
+            DNIDestinatarioTextBox.Text = "";
+            CPRetiroTextBox.Text = "";
+            DirecRetiroTextBox.Text = "";
+            CPEnvioTextBox.Text = "";
+            DirecEnvioTextBox.Text = "";
+            CajaSTextBox.Text = "";
+            CajaMTextBox.Text = "";
+            CajaLTextBox.Text = "";
+            CajaXLTextBox.Text = "";
+
+            ProvinciaRetiroComboBox.SelectedIndex = -1;
+            ProvinciaEnvioComboBox.SelectedIndex = -1;
+            ProvinciaSucurComboBox.SelectedIndex = -1;
+            MetodoEntregaComboBox.SelectedIndex = -1;
+
+            LocalidadRetiroComboBox.Items.Clear();
+            LocalidadRetiroComboBox.Text = "";
+            LocalidadEnvioComboBox.Items.Clear();
+            LocalidadEnvioComboBox.Text = "";
+            LocalidadSucurComboBox.Items.Clear();
+            LocalidadSucurComboBox.Text = "";
+            RetiroSucurListView.Items.Clear();
+
+            DatosEntregaGroupBox.Enabled = false;
+            DatosSucurGroupBox.Enabled = false;
+            LocalidadRetiroComboBox.Enabled = false;
+            CPRetiroTextBox.Enabled = false;
+            DirecRetiroTextBox.Enabled = false;
+            LocalidadEnvioComboBox.Enabled = false;
+            CPEnvioTextBox.Enabled = false;
+            DirecEnvioTextBox.Enabled = false;
+            LocalidadSucurComboBox.Enabled = false;
+            RetiroSucurListView.Enabled = false;
+
+            ProvinciaRetiroComboBox.Enabled = false;
+            ProvinciaEnvioComboBox.Enabled = false;
+            ProvinciaSucurComboBox.Enabled = false;
+            MetodoEntregaComboBox.Enabled = false;
+            DatosDestinatarioGroupBox.Enabled = false;
+            DatosEncomiendaGroupBox.Enabled = false;
+        }
+
+        private void ProvinciaRetiroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LocalidadRetiroComboBox.Items.Clear();
+
             if (ProvinciaRetiroComboBox.SelectedIndex == -1)
             {
-                // Deshabilitar todo
                 LocalidadRetiroComboBox.Enabled = false;
                 CPRetiroTextBox.Enabled = false;
                 DirecRetiroTextBox.Enabled = false;
 
-                // Limpiar
-                LocalidadRetiroComboBox.Items.Clear();
                 LocalidadRetiroComboBox.Text = "";
                 CPRetiroTextBox.Text = "";
                 DirecRetiroTextBox.Text = "";
+                return;
             }
-            else
-            {
-                // SIEMPRE habilitar cuando hay provincia
-                LocalidadRetiroComboBox.Enabled = true;
-                CPRetiroTextBox.Enabled = true;
-                DirecRetiroTextBox.Enabled = true;
 
-                // Limpiar antes de cargar
-                LocalidadRetiroComboBox.Items.Clear();
-                LocalidadRetiroComboBox.SelectedIndex = -1;
+            LocalidadRetiroComboBox.Enabled = true;
+            CPRetiroTextBox.Enabled = true;
+            DirecRetiroTextBox.Enabled = true;
+            LocalidadRetiroComboBox.SelectedIndex = -1;
 
-                string provincia = (string)ProvinciaRetiroComboBox.SelectedItem!;
-
-                var localidades = modelo.ObtenerLocalidadesPorProvincia(provincia);
-
-                // SOLO carga si hay datos (CABA)
-                if (localidades.Length > 0)
-                {
-                    LocalidadRetiroComboBox.Items.AddRange(localidades);
-                }
-                
-            }
-        } 
+            string provincia = (string)ProvinciaRetiroComboBox.SelectedItem!;
+            LocalidadRetiroComboBox.Items.AddRange(modelo.ObtenerLocalidadesPorProvincia(provincia));
+        }
 
         private void MetodoEntregaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -237,46 +283,34 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 DatosSucurGroupBox.Enabled = true;
                 ProvinciaSucurComboBox.Enabled = true;
             }
-           
+
             DatosDestinatarioGroupBox.Enabled = true;
             DatosEncomiendaGroupBox.Enabled = true;
-
         }
 
         private void ProvinciaEnvioComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LocalidadEnvioComboBox.Items.Clear();
+
             if (ProvinciaEnvioComboBox.SelectedIndex == -1)
             {
                 LocalidadEnvioComboBox.Enabled = false;
                 CPEnvioTextBox.Enabled = false;
                 DirecEnvioTextBox.Enabled = false;
 
-                // Limpiar
-                LocalidadEnvioComboBox.Items.Clear();
                 LocalidadEnvioComboBox.Text = "";
                 CPEnvioTextBox.Text = "";
                 DirecEnvioTextBox.Text = "";
+                return;
             }
-            else
-            {
-                LocalidadEnvioComboBox.Enabled = true;
-                CPEnvioTextBox.Enabled = true;
-                DirecEnvioTextBox.Enabled = true;
 
-                // Cargar barrios/localidades
-                LocalidadEnvioComboBox.Items.Clear();
-                LocalidadEnvioComboBox.SelectedIndex = -1;
+            LocalidadEnvioComboBox.Enabled = true;
+            CPEnvioTextBox.Enabled = true;
+            DirecEnvioTextBox.Enabled = true;
+            LocalidadEnvioComboBox.SelectedIndex = -1;
 
-                string provincia = (string)ProvinciaEnvioComboBox.SelectedItem!;
-
-                var localidades = modelo.ObtenerLocalidadesPorProvincia(provincia);
-
-                if (localidades.Length > 0)
-                {
-                    LocalidadEnvioComboBox.Items.AddRange(localidades);
-                }
-                // Si no es CABA → queda vacío pero habilitado
-            }
+            string provincia = (string)ProvinciaEnvioComboBox.SelectedItem!;
+            LocalidadEnvioComboBox.Items.AddRange(modelo.ObtenerLocalidadesPorProvincia(provincia));
         }
 
         private void ProvinciaSucurComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -292,22 +326,30 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             }
 
             LocalidadSucurComboBox.Enabled = true;
-            RetiroSucurListView.Enabled = true;
-
-            string provincia = (string)ProvinciaSucurComboBox.SelectedItem!;
-
-            // Cargar barrios/localidades
-            var localidades = modelo.ObtenerLocalidadesPorProvincia(provincia);
-
-            if (localidades.Length > 0)
-            {
-                LocalidadSucurComboBox.Items.AddRange(localidades);
-            }
-
+            RetiroSucurListView.Enabled = false;
             LocalidadSucurComboBox.SelectedIndex = -1;
 
-            // Cargar sucursales
-            var sucursales = modelo.ObtenerSucursalesPorProvincia(provincia);
+            string provincia = (string)ProvinciaSucurComboBox.SelectedItem!;
+            LocalidadSucurComboBox.Items.AddRange(modelo.ObtenerLocalidadesPorProvincia(provincia));
+        }
+
+        private void LocalidadSucurComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RetiroSucurListView.Items.Clear();
+
+            if (LocalidadSucurComboBox.SelectedIndex == -1)
+            {
+                RetiroSucurListView.Enabled = false;
+                return;
+            }
+
+            RetiroSucurListView.Enabled = true;
+            CargarSucursales(LocalidadSucurComboBox.SelectedItem!.ToString()!);
+        }
+
+        private void CargarSucursales(string localidad)
+        {
+            var sucursales = modelo.ObtenerSucursalesPorLocalidad(localidad);
 
             foreach (var s in sucursales)
             {
@@ -319,10 +361,5 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 RetiroSucurListView.Items.Add(item);
             }
         }
-
-        
-
-
     }
-
 }

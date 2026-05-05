@@ -250,9 +250,9 @@
             DatosEntregaGroupBox.Controls.Add(ProvinciaEnvioComboBox);
             DatosEntregaGroupBox.Controls.Add(label9);
             DatosEntregaGroupBox.Controls.Add(label8);
-            DatosEntregaGroupBox.Location = new Point(12, 245);
+            DatosEntregaGroupBox.Location = new Point(12, 221);
             DatosEntregaGroupBox.Name = "DatosEntregaGroupBox";
-            DatosEntregaGroupBox.Size = new Size(596, 158);
+            DatosEntregaGroupBox.Size = new Size(596, 185);
             DatosEntregaGroupBox.TabIndex = 3;
             DatosEntregaGroupBox.TabStop = false;
             DatosEntregaGroupBox.Text = "Entrega a domicilio";
@@ -327,7 +327,7 @@
             // MetodoEntregaComboBox
             // 
             MetodoEntregaComboBox.FormattingEnabled = true;
-            MetodoEntregaComboBox.Location = new Point(143, 192);
+            MetodoEntregaComboBox.Location = new Point(143, 179);
             MetodoEntregaComboBox.Name = "MetodoEntregaComboBox";
             MetodoEntregaComboBox.Size = new Size(179, 23);
             MetodoEntregaComboBox.TabIndex = 17;
@@ -336,7 +336,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(21, 195);
+            label12.Location = new Point(21, 182);
             label12.Name = "label12";
             label12.Size = new Size(108, 15);
             label12.TabIndex = 16;
@@ -495,9 +495,9 @@
             DatosSucurGroupBox.Controls.Add(label17);
             DatosSucurGroupBox.Controls.Add(label18);
             DatosSucurGroupBox.Controls.Add(ProvinciaSucurComboBox);
-            DatosSucurGroupBox.Location = new Point(616, 245);
+            DatosSucurGroupBox.Location = new Point(616, 221);
             DatosSucurGroupBox.Name = "DatosSucurGroupBox";
-            DatosSucurGroupBox.Size = new Size(590, 158);
+            DatosSucurGroupBox.Size = new Size(590, 185);
             DatosSucurGroupBox.TabIndex = 20;
             DatosSucurGroupBox.TabStop = false;
             DatosSucurGroupBox.Text = "Retiro en sucursal (Agencia o CD)";
@@ -509,7 +509,7 @@
             RetiroSucurListView.Location = new Point(6, 57);
             RetiroSucurListView.MultiSelect = false;
             RetiroSucurListView.Name = "RetiroSucurListView";
-            RetiroSucurListView.Size = new Size(575, 65);
+            RetiroSucurListView.Size = new Size(575, 119);
             RetiroSucurListView.TabIndex = 18;
             RetiroSucurListView.UseCompatibleStateImageBehavior = false;
             RetiroSucurListView.View = View.Details;
@@ -541,6 +541,7 @@
             LocalidadSucurComboBox.Name = "LocalidadSucurComboBox";
             LocalidadSucurComboBox.Size = new Size(198, 23);
             LocalidadSucurComboBox.TabIndex = 13;
+            LocalidadSucurComboBox.SelectedIndexChanged += LocalidadSucurComboBox_SelectedIndexChanged;
             // 
             // label17
             // 
