@@ -47,6 +47,7 @@
             Monto = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
+            Limpiar = new Button();
             BusquedaClienteGroupBox.SuspendLayout();
             ResumenCuentaGroupBox.SuspendLayout();
             SuspendLayout();
@@ -158,7 +159,7 @@
             ResumenCuentaGroupBox.Margin = new Padding(4, 5, 4, 5);
             ResumenCuentaGroupBox.Name = "ResumenCuentaGroupBox";
             ResumenCuentaGroupBox.Padding = new Padding(4, 5, 4, 5);
-            ResumenCuentaGroupBox.Size = new Size(1049, 432);
+            ResumenCuentaGroupBox.Size = new Size(850, 432);
             ResumenCuentaGroupBox.TabIndex = 2;
             ResumenCuentaGroupBox.TabStop = false;
             ResumenCuentaGroupBox.Text = "Resumen de Cuenta Corriente";
@@ -170,7 +171,7 @@
             CuentaCorrienteListView.Location = new Point(13, 67);
             CuentaCorrienteListView.Margin = new Padding(4, 5, 4, 5);
             CuentaCorrienteListView.Name = "CuentaCorrienteListView";
-            CuentaCorrienteListView.Size = new Size(1004, 327);
+            CuentaCorrienteListView.Size = new Size(806, 327);
             CuentaCorrienteListView.TabIndex = 2;
             CuentaCorrienteListView.UseCompatibleStateImageBehavior = false;
             CuentaCorrienteListView.View = View.Details;
@@ -178,16 +179,17 @@
             // columnHeader5
             // 
             columnHeader5.Text = "Tipo";
+            columnHeader5.Width = 100;
             // 
             // Fecha
             // 
             Fecha.Text = "Fecha";
-            Fecha.Width = 70;
+            Fecha.Width = 110;
             // 
             // columnHeader6
             // 
             columnHeader6.Text = "Vencimiento";
-            columnHeader6.Width = 120;
+            columnHeader6.Width = 110;
             // 
             // columnHeader2
             // 
@@ -197,23 +199,34 @@
             // Monto
             // 
             Monto.Text = "Debe";
-            Monto.Width = 90;
+            Monto.Width = 110;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Haber";
-            columnHeader3.Width = 90;
+            columnHeader3.Width = 110;
             // 
             // columnHeader4
             // 
             columnHeader4.Text = "Saldo";
-            columnHeader4.Width = 90;
+            columnHeader4.Width = 110;
+            // 
+            // Limpiar
+            // 
+            Limpiar.Location = new Point(832, 813);
+            Limpiar.Margin = new Padding(4, 5, 4, 5);
+            Limpiar.Name = "Limpiar";
+            Limpiar.Size = new Size(107, 38);
+            Limpiar.TabIndex = 7;
+            Limpiar.Text = "Limpiar";
+            Limpiar.UseVisualStyleBackColor = true;
             // 
             // ConsultaCtaCteClienteForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1130, 917);
+            ClientSize = new Size(984, 871);
+            Controls.Add(Limpiar);
             Controls.Add(ResumenCuentaGroupBox);
             Controls.Add(BusquedaClienteGroupBox);
             Controls.Add(TutasaTituloLabel);
@@ -248,5 +261,6 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private Label RazonSocialLabel;
+        private Button Limpiar;
     }
 }
