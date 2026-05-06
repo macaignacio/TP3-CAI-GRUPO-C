@@ -206,7 +206,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
         public (bool valido, string error) ValidarDNI(int dni)
         {
             if (dni < 1_000_000 || dni > 99_999_999)
-                return (false, "El DNI debe ser un número válido.");
+                return (false, "DNI inválido. Se debe ingresar un número de entre 7 a 8 dígitos.");
 
             return (true, "");
         }

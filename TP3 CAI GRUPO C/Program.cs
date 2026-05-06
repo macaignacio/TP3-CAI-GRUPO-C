@@ -1,5 +1,5 @@
 //using TP3_CAI_GRUPO_C.Entrega;
-using TP3_CAI_GRUPO_C.ImposicionXTel;
+using TP3_CAI_GRUPO_C.ImposicionXAgencia;
 
 namespace TP3_CAI_GRUPO_C
 {
@@ -14,7 +14,7 @@ namespace TP3_CAI_GRUPO_C
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new ImposicionXTelForm());
+            Application.Run(new ImposicionXAgenciaForm());
         }
     }
 }
