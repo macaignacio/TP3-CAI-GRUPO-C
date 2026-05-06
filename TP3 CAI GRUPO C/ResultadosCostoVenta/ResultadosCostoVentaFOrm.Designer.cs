@@ -75,6 +75,7 @@
             PeriodoDateTimePicker.Location = new Point(130, 67);
             PeriodoDateTimePicker.Margin = new Padding(4, 5, 4, 5);
             PeriodoDateTimePicker.Name = "PeriodoDateTimePicker";
+            PeriodoDateTimePicker.ShowUpDown = true;
             PeriodoDateTimePicker.Size = new Size(255, 31);
             PeriodoDateTimePicker.TabIndex = 6;
             PeriodoDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
@@ -151,6 +152,7 @@
             AceptarButton.TabIndex = 3;
             AceptarButton.Text = "Aceptar";
             AceptarButton.UseVisualStyleBackColor = true;
+            AceptarButton.Click += AceptarButton_Click;
             // 
             // ResultadosCostoVentaFOrm
             // 
