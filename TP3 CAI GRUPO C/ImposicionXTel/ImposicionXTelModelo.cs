@@ -211,64 +211,64 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             return (true, "");
         }
 
-        public (bool valido, string error) GenerarImposicion(Imposicion imposicion)
+        public ResultadoImposicion GenerarImposicion(Imposicion imposicion)
         {
             var resultadoCliente = ValidarCliente(imposicion.CuitCliente);
             if (resultadoCliente.cliente == null)
-                return (false, resultadoCliente.error);
+                return new ResultadoImposicion { Valido = false, Error = resultadoCliente.error };
 
             if (string.IsNullOrWhiteSpace(imposicion.NombreDestinatario))
-                return (false, "El Nombre y Apellido de Destinatario no puede estar vacío.");
+                return new ResultadoImposicion { Valido = false, Error = "El Nombre y Apellido de Destinatario no puede estar vacío." };
 
             var resultadoDNI = ValidarDNI(imposicion.DniDestinatario);
             if (!resultadoDNI.valido)
-                return resultadoDNI;
+                return new ResultadoImposicion { Valido = false, Error = resultadoDNI.error };
 
             if (!Provincias.Contains(imposicion.ProvinciaRetiro))
-                return (false, "Debe seleccionar una provincia de retiro.");
+                return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una provincia de retiro." };
 
             if (!ObtenerLocalidadesPorProvincia(imposicion.ProvinciaRetiro).Contains(imposicion.LocalidadRetiro))
-                return (false, "Debe seleccionar una localidad de retiro válida.");
+                return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una localidad de retiro válida." };
 
             if (!ValidarCodigoPostal(imposicion.CodigoPostalRetiro))
-                return (false, "El código postal de retiro debe ser un número de 4 dígitos.");
+                return new ResultadoImposicion { Valido = false, Error = "El código postal de retiro debe ser un número de 4 dígitos." };
 
             if (!ValidarDireccion(imposicion.DireccionRetiro))
-                return (false, "La dirección de retiro no puede estar vacía.");
+                return new ResultadoImposicion { Valido = false, Error = "La dirección de retiro no puede estar vacía." };
 
             if (!MetodosEntrega.Contains(imposicion.MetodoEntrega))
-                return (false, "Debe seleccionar un método de entrega.");
+                return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar un método de entrega." };
 
             if (imposicion.MetodoEntrega == MetodoEntregaDomicilio)
             {
                 if (!Provincias.Contains(imposicion.ProvinciaEnvio))
-                    return (false, "Debe seleccionar una provincia de entrega.");
+                    return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una provincia de entrega." };
 
                 if (!ObtenerLocalidadesPorProvincia(imposicion.ProvinciaEnvio).Contains(imposicion.LocalidadEnvio))
-                    return (false, "Debe seleccionar una localidad de entrega válida.");
+                    return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una localidad de entrega válida." };
 
                 if (!ValidarCodigoPostal(imposicion.CodigoPostalEnvio))
-                    return (false, "El código postal de entrega debe ser un número de 4 dígitos.");
+                    return new ResultadoImposicion { Valido = false, Error = "El código postal de entrega debe ser un número de 4 dígitos." };
 
                 if (!ValidarDireccion(imposicion.DireccionEnvio))
-                    return (false, "La dirección de entrega no puede estar vacía.");
+                    return new ResultadoImposicion { Valido = false, Error = "La dirección de entrega no puede estar vacía." };
             }
             else
             {
                 if (!Provincias.Contains(imposicion.ProvinciaSucursal))
-                    return (false, "Debe seleccionar una provincia de sucursal.");
+                    return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una provincia de sucursal." };
 
                 if (!ObtenerLocalidadesPorProvincia(imposicion.ProvinciaSucursal).Contains(imposicion.LocalidadSucursal))
-                    return (false, "Debe seleccionar una localidad de sucursal válida.");
+                    return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una localidad de sucursal válida." };
 
                 if (imposicion.SucursalSeleccionada == null)
-                    return (false, "Debe seleccionar una sucursal.");
+                    return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una sucursal." };
 
                 var sucursalValida = ObtenerSucursalesPorLocalidad(imposicion.LocalidadSucursal)
                     .Any(s => s.Codigo == imposicion.SucursalSeleccionada.Codigo);
 
                 if (!sucursalValida)
-                    return (false, "Debe seleccionar una sucursal válida para la localidad elegida.");
+                    return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una sucursal válida para la localidad elegida." };
             }
 
             var resultadoCajas = ValidarCajas(
@@ -278,9 +278,25 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 imposicion.CantidadCajaXL);
 
             if (!resultadoCajas.valido)
-                return resultadoCajas;
+                return new ResultadoImposicion { Valido = false, Error = resultadoCajas.error };
 
-            return (true, "");
+            return new ResultadoImposicion
+            {
+                Valido = true,
+                Guía = GenerarGuía("Impuesta")
+            };
+        }
+
+        private Guía GenerarGuía(string estadoInicial)
+        {
+            var fechaHoraAlta = DateTime.Now;
+
+            return new Guía
+            {
+                NumeroGuia = long.Parse(fechaHoraAlta.ToString("yyyyMMddHHmmssfff")),
+                EstadoActual = estadoInicial,
+                FechaHoraAlta = fechaHoraAlta
+            };
         }
     }
 }

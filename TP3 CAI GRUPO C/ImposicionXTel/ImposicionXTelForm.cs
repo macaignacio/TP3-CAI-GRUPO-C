@@ -153,13 +153,13 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
             var resultado = modelo.GenerarImposicion(imposicion);
 
-            if (!resultado.valido)
+            if (!resultado.Valido)
             {
-                MessageBox.Show(resultado.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(resultado.Error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show("Imposición generada con éxito",
+            MessageBox.Show($"Imposición generada con éxito. Número de guía: {resultado.Guía!.NumeroGuia}",
                 "Éxito",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
