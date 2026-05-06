@@ -37,10 +37,12 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             if (resultado.cliente != null)
             {
                 RSLabel.Text = resultado.cliente.RazonSocial;
-                
+                CargarFacturas(resultado.cliente.RazonSocial);
             }
             else
             {
+                RSLabel.Text = "[dato]";
+                ServiciosListView.Items.Clear();
                 MessageBox.Show(resultado.error);
             }
 
@@ -64,6 +66,8 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
           
         private void CargarFacturas(string cliente)
         {
+            ServiciosListView.Items.Clear();
+
             var facturas = modelo.ObtenerFacturasPorCliente(cliente);
 
             foreach (var f in facturas)
@@ -71,8 +75,8 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
                 var item = new ListViewItem(f.Fecha.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(f.Descripcion);
                 item.SubItems.Add(f.NumeroGuia.ToString());
-                item.SubItems.Add(f.Monto.ToString());
-                item.SubItems.Add(f.Subtotal.ToString());
+                item.SubItems.Add(f.Monto.ToString("N2"));
+                item.SubItems.Add(f.Subtotal.ToString("N2"));
 
                 ServiciosListView.Items.Add(item);
             }
