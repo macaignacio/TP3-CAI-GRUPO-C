@@ -6,6 +6,7 @@
         public ConsultaCtaCteClienteForm()
         {
             InitializeComponent();
+            LimpiarButton.Click += LimpiarButton_Click;
         }
 
         private void ConsultaCtaCteClienteForm_Load(object sender, EventArgs e)
@@ -55,6 +56,21 @@
         private void PeriodoDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             periodoSeleccionado = true;
+        }
+
+        private void LimpiarButton_Click(object? sender, EventArgs e)
+        {
+            LimpiarFormulario();
+        }
+
+        private void LimpiarFormulario()
+        {
+            CuitTextBox.Text = "";
+            RazonSocialLabel.Text = "[dato]";
+            CuentaCorrienteListView.Items.Clear();
+            PeriodoDateTimePicker.Value = DateTime.Today;
+            periodoSeleccionado = false;
+            CuitTextBox.Focus();
         }
     }
 }

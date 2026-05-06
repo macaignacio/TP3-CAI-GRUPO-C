@@ -47,7 +47,7 @@
             Monto = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
-            Limpiar = new Button();
+            LimpiarButton = new Button();
             BusquedaClienteGroupBox.SuspendLayout();
             ResumenCuentaGroupBox.SuspendLayout();
             SuspendLayout();
@@ -211,22 +211,22 @@
             columnHeader4.Text = "Saldo";
             columnHeader4.Width = 110;
             // 
-            // Limpiar
+            // LimpiarButton
             // 
-            Limpiar.Location = new Point(832, 813);
-            Limpiar.Margin = new Padding(4, 5, 4, 5);
-            Limpiar.Name = "Limpiar";
-            Limpiar.Size = new Size(107, 38);
-            Limpiar.TabIndex = 7;
-            Limpiar.Text = "Limpiar";
-            Limpiar.UseVisualStyleBackColor = true;
+            LimpiarButton.Location = new Point(832, 813);
+            LimpiarButton.Margin = new Padding(4, 5, 4, 5);
+            LimpiarButton.Name = "LimpiarButton";
+            LimpiarButton.Size = new Size(107, 38);
+            LimpiarButton.TabIndex = 7;
+            LimpiarButton.Text = "Limpiar";
+            LimpiarButton.UseVisualStyleBackColor = true;
             // 
             // ConsultaCtaCteClienteForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 871);
-            Controls.Add(Limpiar);
+            Controls.Add(LimpiarButton);
             Controls.Add(ResumenCuentaGroupBox);
             Controls.Add(BusquedaClienteGroupBox);
             Controls.Add(TutasaTituloLabel);
@@ -261,6 +261,6 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private Label RazonSocialLabel;
-        private Button Limpiar;
+        private Button LimpiarButton;
     }
 }
