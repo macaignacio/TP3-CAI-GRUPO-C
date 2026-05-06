@@ -31,6 +31,7 @@
             CodigoCDLabel = new Label();
             TutasaLabel = new Label();
             DatosSolicitanteGroupBox = new GroupBox();
+            label1 = new Label();
             CuitTextBox = new TextBox();
             ValidarButton = new Button();
             RazonSocialLabel = new Label();
@@ -43,7 +44,6 @@
             GenerarButton = new Button();
             CancelarButton = new Button();
             RetiroSucursalGroupBox = new GroupBox();
-            SeleccionarButton = new Button();
             SucursalListView = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -74,7 +74,6 @@
             CantidadCajasLTextBox = new TextBox();
             CantidadCajasSLabel = new Label();
             NroCDLabel = new Label();
-            label1 = new Label();
             DatosSolicitanteGroupBox.SuspendLayout();
             DatosDestinatarioGroupBox.SuspendLayout();
             RetiroSucursalGroupBox.SuspendLayout();
@@ -114,6 +113,15 @@
             DatosSolicitanteGroupBox.TabStop = false;
             DatosSolicitanteGroupBox.Text = "Datos Solicitante";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(370, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 15);
+            label1.TabIndex = 8;
+            label1.Text = "[razonSocial]";
+            // 
             // CuitTextBox
             // 
             CuitTextBox.Location = new Point(89, 31);
@@ -129,6 +137,7 @@
             ValidarButton.TabIndex = 2;
             ValidarButton.Text = "Validar";
             ValidarButton.UseVisualStyleBackColor = true;
+            ValidarButton.Click += ValidarButton_Click;
             // 
             // RazonSocialLabel
             // 
@@ -201,6 +210,7 @@
             GenerarButton.TabIndex = 7;
             GenerarButton.Text = "Generar";
             GenerarButton.UseVisualStyleBackColor = true;
+            GenerarButton.Click += GenerarButton_Click;
             // 
             // CancelarButton
             // 
@@ -210,10 +220,10 @@
             CancelarButton.TabIndex = 8;
             CancelarButton.Text = "Cancelar";
             CancelarButton.UseVisualStyleBackColor = true;
+            CancelarButton.Click += CancelarButton_Click;
             // 
             // RetiroSucursalGroupBox
             // 
-            RetiroSucursalGroupBox.Controls.Add(SeleccionarButton);
             RetiroSucursalGroupBox.Controls.Add(SucursalListView);
             RetiroSucursalGroupBox.Controls.Add(LocalidadSucursalComboBox);
             RetiroSucursalGroupBox.Controls.Add(ProvinciaSucursalComboBox);
@@ -226,21 +236,12 @@
             RetiroSucursalGroupBox.TabStop = false;
             RetiroSucursalGroupBox.Text = "Retiro en Sucursal (Agencia o CD)";
             // 
-            // SeleccionarButton
-            // 
-            SeleccionarButton.Location = new Point(434, 155);
-            SeleccionarButton.Name = "SeleccionarButton";
-            SeleccionarButton.Size = new Size(85, 23);
-            SeleccionarButton.TabIndex = 11;
-            SeleccionarButton.Text = "Seleccionar";
-            SeleccionarButton.UseVisualStyleBackColor = true;
-            // 
             // SucursalListView
             // 
             SucursalListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            SucursalListView.Location = new Point(14, 78);
+            SucursalListView.Location = new Point(14, 69);
             SucursalListView.Name = "SucursalListView";
-            SucursalListView.Size = new Size(505, 69);
+            SucursalListView.Size = new Size(505, 114);
             SucursalListView.TabIndex = 10;
             SucursalListView.UseCompatibleStateImageBehavior = false;
             SucursalListView.View = View.Details;
@@ -272,6 +273,7 @@
             LocalidadSucursalComboBox.Size = new Size(178, 23);
             LocalidadSucursalComboBox.TabIndex = 4;
             LocalidadSucursalComboBox.Text = "*bloquear*";
+            LocalidadSucursalComboBox.SelectedIndexChanged += LocalidadSucursalComboBox_SelectedIndexChanged;
             // 
             // ProvinciaSucursalComboBox
             // 
@@ -280,6 +282,7 @@
             ProvinciaSucursalComboBox.Name = "ProvinciaSucursalComboBox";
             ProvinciaSucursalComboBox.Size = new Size(154, 23);
             ProvinciaSucursalComboBox.TabIndex = 3;
+            ProvinciaSucursalComboBox.SelectedIndexChanged += ProvinciaSucursalComboBox_SelectedIndexChanged;
             // 
             // LocalidadSucursalLabel
             // 
@@ -364,6 +367,7 @@
             ProvinciaDomicilioComboBox.Name = "ProvinciaDomicilioComboBox";
             ProvinciaDomicilioComboBox.Size = new Size(154, 23);
             ProvinciaDomicilioComboBox.TabIndex = 3;
+            ProvinciaDomicilioComboBox.SelectedIndexChanged += ProvinciaDomicilioComboBox_SelectedIndexChanged;
             // 
             // LocalidadDomicilioLabel
             // 
@@ -390,6 +394,7 @@
             MetodoEntregaComboBox.Name = "MetodoEntregaComboBox";
             MetodoEntregaComboBox.Size = new Size(143, 23);
             MetodoEntregaComboBox.TabIndex = 15;
+            MetodoEntregaComboBox.SelectedIndexChanged += MetodoEntregaComboBox_SelectedIndexChanged;
             // 
             // MetodoEntregaLabel
             // 
@@ -490,19 +495,11 @@
             NroCDLabel.TabIndex = 17;
             NroCDLabel.Text = "[código]";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(370, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 15);
-            label1.TabIndex = 8;
-            label1.Text = "[razonSocial]";
-            // 
             // ImposiciónXCDForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(561, 749);
             Controls.Add(NroCDLabel);
             Controls.Add(DatosEncomiendaGroupBox);
@@ -550,7 +547,6 @@
         private Button GenerarButton;
         private Button CancelarButton;
         private GroupBox RetiroSucursalGroupBox;
-        private Button SeleccionarButton;
         private ListView SucursalListView;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
