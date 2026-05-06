@@ -1,5 +1,8 @@
 //using TP3_CAI_GRUPO_C.Entrega;
-using TP3_CAI_GRUPO_C.ImposiciónXCD;
+//using TP3_CAI_GRUPO_C.ImposiciónXCD;
+using TP3_CAI_GRUPO_C.ConsultaCtaCteCliente; 
+
+
 namespace TP3_CAI_GRUPO_C
 {
     internal static class Program
@@ -13,7 +16,7 @@ namespace TP3_CAI_GRUPO_C
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new ImposiciónXCDForm());
+            Application.Run(new ConsultaCtaCteClienteForm());
         }
     }
 }
