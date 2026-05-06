@@ -43,6 +43,7 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             {
                 RSLabel.Text = "[dato]";
                 ServiciosListView.Items.Clear();
+                TotalCalculadoLabel.Text = "[Total calculado]";
                 MessageBox.Show(resultado.error);
             }
 
@@ -70,7 +71,12 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 
             var facturas = modelo.ObtenerFacturasPorCliente(cliente);
 
-            foreach (var f in facturas)
+            var resultado = modelo.CalcularFacturacion(new FacturacionCliente
+            {
+                Facturas = facturas
+            });
+
+            foreach (var f in resultado.facturas)
             {
                 var item = new ListViewItem(f.Fecha.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(f.Descripcion);
@@ -80,6 +86,8 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 
                 ServiciosListView.Items.Add(item);
             }
+
+            TotalCalculadoLabel.Text = resultado.total.ToString("N2");
         }
             
     }

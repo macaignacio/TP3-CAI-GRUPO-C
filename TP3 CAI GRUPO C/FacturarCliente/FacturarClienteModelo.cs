@@ -69,6 +69,28 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
                 ? facturas
                 : [];
         }
+
+        public (List<Factura> facturas, int total) CalcularFacturacion(FacturacionCliente facturacion)
+        {
+            int total = 0;
+            var facturasCalculadas = new List<Factura>();
+
+            foreach (var factura in facturacion.Facturas)
+            {
+                total += factura.Monto;
+
+                facturasCalculadas.Add(new Factura
+                {
+                    Fecha = factura.Fecha,
+                    Descripcion = factura.Descripcion,
+                    NumeroGuia = factura.NumeroGuia,
+                    Monto = factura.Monto,
+                    Subtotal = total
+                });
+            }
+
+            return (facturasCalculadas, total);
+        }
         /*
         public FacturarClienteModelo Ejemplo()
         {
