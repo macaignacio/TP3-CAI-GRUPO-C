@@ -2,7 +2,6 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
 {
     public partial class ImposicionXAgenciaForm : Form
     {
-        private const string TipoImposicionAgencia = "Agencia";
         private ImposicionXAgenciaModelo modelo = new ImposicionXAgenciaModelo();
 
         public ImposicionXAgenciaForm()
@@ -170,8 +169,6 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
 
             var imposicion = new Imposicion
             {
-                TipoImposicion = TipoImposicionAgencia,
-                CodigoAgenciaOrigen = modelo.CodigoAgenciaActual,
                 CuitCliente = cuit,
                 NombreDestinatario = NombreApellidoTextBox.Text,
                 DniDestinatario = dni,
