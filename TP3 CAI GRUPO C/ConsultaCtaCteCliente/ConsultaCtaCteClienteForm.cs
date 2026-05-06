@@ -45,9 +45,20 @@
             {
                 RazonSocialLabel.Text = resultado.cliente.RazonSocial;
 
+                var movimientos = modelo.ObtenerCuentaCorrientePorCliente(
+                    resultado.cliente.RazonSocial,
+                    periodo);
+
+                CargarCuentaCorriente(movimientos);
+
+                if (movimientos.Count == 0)
+                {
+                    MessageBox.Show("No hay movimientos para el período seleccionado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
+                CuentaCorrienteListView.Items.Clear();
                 MessageBox.Show(resultado.error);
             }
 
@@ -71,6 +82,24 @@
             PeriodoDateTimePicker.Value = DateTime.Today;
             periodoSeleccionado = false;
             CuitTextBox.Focus();
+        }
+
+        private void CargarCuentaCorriente(List<CtaCorriente> movimientos)
+        {
+            CuentaCorrienteListView.Items.Clear();
+
+            foreach (var movimiento in movimientos)
+            {
+                var item = new ListViewItem(movimiento.Tipo);
+                item.SubItems.Add(movimiento.Fecha.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(movimiento.Vencimiento.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(movimiento.Comprobante);
+                item.SubItems.Add(movimiento.Debe.ToString("N2"));
+                item.SubItems.Add(movimiento.Haber.ToString("N2"));
+                item.SubItems.Add(movimiento.Saldo.ToString("N2"));
+
+                CuentaCorrienteListView.Items.Add(item);
+            }
         }
     }
 }
