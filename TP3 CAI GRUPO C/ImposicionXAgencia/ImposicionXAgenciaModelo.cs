@@ -195,11 +195,8 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
 
         public (bool valido, string error) GenerarImposicion(Imposicion imposicion)
         {
-            if (imposicion.TipoImposicion != TipoImposicionAgencia)
-                return (false, "La imposición debe registrarse como imposición por agencia.");
-
-            if (imposicion.CodigoAgenciaOrigen != CodigoAgenciaActual)
-                return (false, "El código de agencia no es válido.");
+            imposicion.TipoImposicion = TipoImposicionAgencia;
+            imposicion.CodigoAgenciaOrigen = CodigoAgenciaActual;
 
             var resultadoCliente = ValidarCliente(imposicion.CuitCliente);
             if (resultadoCliente.cliente == null)

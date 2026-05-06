@@ -2,7 +2,6 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
 {
     public partial class ImposiciónXCDForm : Form
     {
-        private const string TipoImposicionCD = "CD";
         private ImposicionXCDModelo modelo = new ImposicionXCDModelo();
 
         public ImposiciónXCDForm()
@@ -170,8 +169,6 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
 
             var imposicion = new Imposicion
             {
-                TipoImposicion = TipoImposicionCD,
-                CodigoCDOrigen = modelo.CodigoCDActual,
                 CuitCliente = cuit,
                 NombreDestinatario = NombreApellidoTextBox.Text,
                 DniDestinatario = dni,

@@ -195,11 +195,8 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
 
         public (bool valido, string error) GenerarImposicion(Imposicion imposicion)
         {
-            if (imposicion.TipoImposicion != TipoImposicionCD)
-                return (false, "La imposición debe registrarse como imposición por CD.");
-
-            if (imposicion.CodigoCDOrigen != CodigoCDActual)
-                return (false, "El código de centro de distribución no es válido.");
+            imposicion.TipoImposicion = TipoImposicionCD;
+            imposicion.CodigoCDOrigen = CodigoCDActual;
 
             var resultadoCliente = ValidarCliente(imposicion.CuitCliente);
             if (resultadoCliente.cliente == null)
