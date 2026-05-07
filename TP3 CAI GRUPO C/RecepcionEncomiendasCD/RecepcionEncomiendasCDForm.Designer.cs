@@ -81,7 +81,7 @@
             DetalleHdrGroupBox.Controls.Add(ConfirmarRecepcionButton);
             DetalleHdrGroupBox.Location = new Point(19, 180);
             DetalleHdrGroupBox.Name = "DetalleHdrGroupBox";
-            DetalleHdrGroupBox.Size = new Size(693, 228);
+            DetalleHdrGroupBox.Size = new Size(693, 256);
             DetalleHdrGroupBox.TabIndex = 14;
             DetalleHdrGroupBox.TabStop = false;
             DetalleHdrGroupBox.Text = "Detalle de Hojas de Ruta de transporte recibidas";
@@ -93,7 +93,7 @@
             DetalleHdrListView.Location = new Point(16, 22);
             DetalleHdrListView.MultiSelect = false;
             DetalleHdrListView.Name = "DetalleHdrListView";
-            DetalleHdrListView.Size = new Size(663, 170);
+            DetalleHdrListView.Size = new Size(663, 199);
             DetalleHdrListView.TabIndex = 2;
             DetalleHdrListView.UseCompatibleStateImageBehavior = false;
             DetalleHdrListView.View = View.Details;
@@ -116,11 +116,11 @@
             // columnHeader5
             // 
             columnHeader5.Text = "Empresa de ómnibus";
-            columnHeader5.Width = 300;
+            columnHeader5.Width = 180;
             // 
             // ConfirmarRecepcionButton
             // 
-            ConfirmarRecepcionButton.Location = new Point(542, 195);
+            ConfirmarRecepcionButton.Location = new Point(542, 227);
             ConfirmarRecepcionButton.Name = "ConfirmarRecepcionButton";
             ConfirmarRecepcionButton.Size = new Size(135, 23);
             ConfirmarRecepcionButton.TabIndex = 1;
@@ -137,7 +137,7 @@
             SeleccionarOmnibusGroupBox.Controls.Add(EmpresaTextoLabel);
             SeleccionarOmnibusGroupBox.Location = new Point(19, 54);
             SeleccionarOmnibusGroupBox.Name = "SeleccionarOmnibusGroupBox";
-            SeleccionarOmnibusGroupBox.Size = new Size(693, 115);
+            SeleccionarOmnibusGroupBox.Size = new Size(640, 115);
             SeleccionarOmnibusGroupBox.TabIndex = 19;
             SeleccionarOmnibusGroupBox.TabStop = false;
             SeleccionarOmnibusGroupBox.Text = "Seleccionar Ómnibus";
@@ -146,7 +146,7 @@
             // 
             EmpresaComboBox.FormattingEnabled = true;
             EmpresaComboBox.Location = new Point(90, 33);
-            EmpresaComboBox.Margin = new Padding(2, 2, 2, 2);
+            EmpresaComboBox.Margin = new Padding(2);
             EmpresaComboBox.Name = "EmpresaComboBox";
             EmpresaComboBox.Size = new Size(180, 23);
             EmpresaComboBox.TabIndex = 6;
@@ -155,7 +155,7 @@
             // 
             HorarioSalidaDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
             HorarioSalidaDateTimePicker.Format = DateTimePickerFormat.Custom;
-            HorarioSalidaDateTimePicker.Location = new Point(505, 32);
+            HorarioSalidaDateTimePicker.Location = new Point(453, 34);
             HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
             HorarioSalidaDateTimePicker.Size = new Size(173, 23);
             HorarioSalidaDateTimePicker.TabIndex = 5;
@@ -164,7 +164,7 @@
             // FechaHoraLabel
             // 
             FechaHoraLabel.AutoSize = true;
-            FechaHoraLabel.Location = new Point(342, 33);
+            FechaHoraLabel.Location = new Point(290, 37);
             FechaHoraLabel.Name = "FechaHoraLabel";
             FechaHoraLabel.Size = new Size(132, 15);
             FechaHoraLabel.TabIndex = 4;
@@ -172,7 +172,7 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(602, 77);
+            BuscarButton.Location = new Point(551, 75);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
@@ -193,7 +193,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(731, 436);
+            ClientSize = new Size(731, 470);
             Controls.Add(SeleccionarOmnibusGroupBox);
             Controls.Add(NroCDLabel);
             Controls.Add(DetalleHdrGroupBox);

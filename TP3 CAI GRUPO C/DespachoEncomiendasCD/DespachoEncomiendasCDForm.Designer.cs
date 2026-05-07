@@ -57,7 +57,7 @@
             SeleccionarOmnibusGroupBox.Controls.Add(EmpresaTextoLabel);
             SeleccionarOmnibusGroupBox.Location = new Point(24, 80);
             SeleccionarOmnibusGroupBox.Name = "SeleccionarOmnibusGroupBox";
-            SeleccionarOmnibusGroupBox.Size = new Size(567, 113);
+            SeleccionarOmnibusGroupBox.Size = new Size(611, 113);
             SeleccionarOmnibusGroupBox.TabIndex = 10;
             SeleccionarOmnibusGroupBox.TabStop = false;
             SeleccionarOmnibusGroupBox.Text = "Seleccionar Ómnibus";
@@ -75,16 +75,16 @@
             // 
             HorarioSalidaDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
             HorarioSalidaDateTimePicker.Format = DateTimePickerFormat.Custom;
-            HorarioSalidaDateTimePicker.Location = new Point(422, 33);
+            HorarioSalidaDateTimePicker.Location = new Point(432, 33);
             HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
-            HorarioSalidaDateTimePicker.Size = new Size(139, 23);
+            HorarioSalidaDateTimePicker.Size = new Size(157, 23);
             HorarioSalidaDateTimePicker.TabIndex = 5;
-            HorarioSalidaDateTimePicker.Value = DateTime.Now;
+            HorarioSalidaDateTimePicker.Value = new DateTime(2026, 5, 7, 19, 0, 15, 92);
             // 
             // FechaHoraLabel
             // 
             FechaHoraLabel.AutoSize = true;
-            FechaHoraLabel.Location = new Point(285, 36);
+            FechaHoraLabel.Location = new Point(295, 36);
             FechaHoraLabel.Name = "FechaHoraLabel";
             FechaHoraLabel.Size = new Size(122, 15);
             FechaHoraLabel.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(486, 78);
+            BuscarButton.Location = new Point(514, 84);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
@@ -142,7 +142,7 @@
             DetalleHDRAsignadasGroupBox.Controls.Add(ConfirmarAsignacionButton);
             DetalleHDRAsignadasGroupBox.Location = new Point(24, 216);
             DetalleHDRAsignadasGroupBox.Name = "DetalleHDRAsignadasGroupBox";
-            DetalleHDRAsignadasGroupBox.Size = new Size(567, 219);
+            DetalleHDRAsignadasGroupBox.Size = new Size(704, 219);
             DetalleHDRAsignadasGroupBox.TabIndex = 11;
             DetalleHDRAsignadasGroupBox.TabStop = false;
             DetalleHDRAsignadasGroupBox.Text = "Detalle de Hojas de Ruta de transporte asignadas";
@@ -154,7 +154,7 @@
             HDRAsignadasListView.Location = new Point(16, 22);
             HDRAsignadasListView.MultiSelect = false;
             HDRAsignadasListView.Name = "HDRAsignadasListView";
-            HDRAsignadasListView.Size = new Size(545, 158);
+            HDRAsignadasListView.Size = new Size(682, 158);
             HDRAsignadasListView.TabIndex = 2;
             HDRAsignadasListView.UseCompatibleStateImageBehavior = false;
             HDRAsignadasListView.View = View.Details;
@@ -162,7 +162,7 @@
             // columnHeader4
             // 
             columnHeader4.Text = "Nro de Orden";
-            columnHeader4.Width = 100;
+            columnHeader4.Width = 180;
             // 
             // columnHeader1
             // 
@@ -177,11 +177,11 @@
             // columnHeader5
             // 
             columnHeader5.Text = "Empresa de ómnibus";
-            columnHeader5.Width = 100;
+            columnHeader5.Width = 180;
             // 
             // ConfirmarAsignacionButton
             // 
-            ConfirmarAsignacionButton.Location = new Point(422, 190);
+            ConfirmarAsignacionButton.Location = new Point(559, 190);
             ConfirmarAsignacionButton.Name = "ConfirmarAsignacionButton";
             ConfirmarAsignacionButton.Size = new Size(139, 23);
             ConfirmarAsignacionButton.TabIndex = 1;
@@ -193,7 +193,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(618, 502);
+            ClientSize = new Size(740, 502);
             Controls.Add(CodCDLabel);
             Controls.Add(DetalleHDRAsignadasGroupBox);
             Controls.Add(SeleccionarOmnibusGroupBox);

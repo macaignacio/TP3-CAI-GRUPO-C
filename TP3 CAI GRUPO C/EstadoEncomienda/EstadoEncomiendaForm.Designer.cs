@@ -48,7 +48,7 @@
             TutasaTituloLabel.AutoSize = true;
             TutasaTituloLabel.Location = new Point(156, 18);
             TutasaTituloLabel.Name = "TutasaTituloLabel";
-            TutasaTituloLabel.Size = new Size(48, 15);
+            TutasaTituloLabel.Size = new Size(50, 15);
             TutasaTituloLabel.TabIndex = 0;
             TutasaTituloLabel.Text = "TUTASA";
             // 
@@ -144,7 +144,7 @@
             Controls.Add(DatosBusquedaGroupBox);
             Controls.Add(TutasaTituloLabel);
             Name = "EstadoEncomiendaForm";
-            Text = "EstadoEncomiendaForm";
+            Text = "Consulta de estado de encomienda";
             Load += EstadoEncomiendaForm_Load;
             DatosBusquedaGroupBox.ResumeLayout(false);
             DatosBusquedaGroupBox.PerformLayout();
