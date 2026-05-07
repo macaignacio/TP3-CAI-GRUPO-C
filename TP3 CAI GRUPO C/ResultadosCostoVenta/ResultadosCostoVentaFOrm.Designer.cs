@@ -63,7 +63,7 @@
             PeriodoConsultaGroupBox.Margin = new Padding(4, 5, 4, 5);
             PeriodoConsultaGroupBox.Name = "PeriodoConsultaGroupBox";
             PeriodoConsultaGroupBox.Padding = new Padding(4, 5, 4, 5);
-            PeriodoConsultaGroupBox.Size = new Size(609, 149);
+            PeriodoConsultaGroupBox.Size = new Size(667, 149);
             PeriodoConsultaGroupBox.TabIndex = 1;
             PeriodoConsultaGroupBox.TabStop = false;
             PeriodoConsultaGroupBox.Text = "Período de Consulta";
@@ -107,7 +107,7 @@
             ResultadoOperativoGroupBox.Margin = new Padding(4, 5, 4, 5);
             ResultadoOperativoGroupBox.Name = "ResultadoOperativoGroupBox";
             ResultadoOperativoGroupBox.Padding = new Padding(4, 5, 4, 5);
-            ResultadoOperativoGroupBox.Size = new Size(609, 291);
+            ResultadoOperativoGroupBox.Size = new Size(667, 291);
             ResultadoOperativoGroupBox.TabIndex = 2;
             ResultadoOperativoGroupBox.TabStop = false;
             ResultadoOperativoGroupBox.Text = "Resultado Operativo";
@@ -118,7 +118,7 @@
             ResultadoOperativoListView.Location = new Point(16, 42);
             ResultadoOperativoListView.Margin = new Padding(4, 5, 4, 5);
             ResultadoOperativoListView.Name = "ResultadoOperativoListView";
-            ResultadoOperativoListView.Size = new Size(558, 221);
+            ResultadoOperativoListView.Size = new Size(628, 221);
             ResultadoOperativoListView.TabIndex = 0;
             ResultadoOperativoListView.UseCompatibleStateImageBehavior = false;
             ResultadoOperativoListView.View = View.Details;
@@ -131,17 +131,17 @@
             // Ventas
             // 
             Ventas.Text = "Ventas";
-            Ventas.Width = 110;
+            Ventas.Width = 135;
             // 
             // Costos
             // 
             Costos.Text = "Costos";
-            Costos.Width = 110;
+            Costos.Width = 135;
             // 
             // Utilidad
             // 
             Utilidad.Text = "Utilidad";
-            Utilidad.Width = 110;
+            Utilidad.Width = 140;
             // 
             // LimpiarButton
             // 
@@ -158,7 +158,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(722, 673);
+            ClientSize = new Size(775, 673);
             Controls.Add(LimpiarButton);
             Controls.Add(ResultadoOperativoGroupBox);
             Controls.Add(PeriodoConsultaGroupBox);

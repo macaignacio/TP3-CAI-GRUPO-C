@@ -64,9 +64,9 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
             foreach (var resultado in resultados)
             {
                 var item = new ListViewItem(resultado.EmpresaOmnibus);
-                item.SubItems.Add(resultado.Ventas.ToString("N2"));
-                item.SubItems.Add(resultado.Costos.ToString("N2"));
-                item.SubItems.Add(resultado.Utilidad.ToString("N2"));
+                item.SubItems.Add($"${resultado.Ventas:N2}");
+                item.SubItems.Add($"${resultado.Costos:N2}");
+                item.SubItems.Add($"${resultado.Utilidad:N2}");
 
                 ResultadoOperativoListView.Items.Add(item);
             }
