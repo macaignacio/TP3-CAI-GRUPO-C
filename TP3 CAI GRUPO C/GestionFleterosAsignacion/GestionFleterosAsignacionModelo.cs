@@ -5,6 +5,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
         private const string EstadoImposicionTelefonica = "Imposición hecha telefónicamente";
         private const string EstadoImposicionAgencia = "Imposición hecha por agencia";
         private const string EstadoRecibidoCDDestino = "Recibido en CD destino";
+        private const string EstadoListoDistribucionLocal = "Listo para distribución local";
         private const string EstadoPendienteRetiroFletero = "Pendiente de retiro por fletero";
         private const string EstadoEnCaminoDestinatario = "En camino hacia el destinatario";
 
@@ -16,9 +17,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 NombreCompleto = "Martin Alvarez",
                 HojasDeRuta =
                 [
-                    new HojaDeRuta { Codigo = "HDR-202605-0001", NumeroGuia = 20260506101010101, EstadoEncomienda = EstadoImposicionTelefonica },
-                    new HojaDeRuta { Codigo = "HDR-202605-0002", NumeroGuia = 20260506101010202, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-202605-0003", NumeroGuia = 20260506101010303, EstadoEncomienda = EstadoRecibidoCDDestino },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0001", NumeroGuia = 20260506101010101, EstadoEncomienda = EstadoImposicionTelefonica },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0002", NumeroGuia = 20260506101010202, EstadoEncomienda = EstadoImposicionAgencia },
+                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0001", NumeroGuia = 20260506101010303, EstadoEncomienda = EstadoRecibidoCDDestino },
                 ]
             },
             new Fletero
@@ -27,9 +28,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 NombreCompleto = "Luciana Torres",
                 HojasDeRuta =
                 [
-                    new HojaDeRuta { Codigo = "HDR-202605-0004", NumeroGuia = 20260506101510101, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-202605-0005", NumeroGuia = 20260506101510202, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-202605-0006", NumeroGuia = 20260506101510303, EstadoEncomienda = EstadoImposicionTelefonica },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0003", NumeroGuia = 20260506101510101, EstadoEncomienda = EstadoImposicionAgencia },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0004", NumeroGuia = 20260506101510202, EstadoEncomienda = EstadoImposicionAgencia },
+                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0002", NumeroGuia = 20260506101510303, EstadoEncomienda = EstadoListoDistribucionLocal },
                 ]
             },
             new Fletero
@@ -38,9 +39,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 NombreCompleto = "Carlos Benitez",
                 HojasDeRuta =
                 [
-                    new HojaDeRuta { Codigo = "HDR-202605-0007", NumeroGuia = 20260506102010101, EstadoEncomienda = EstadoRecibidoCDDestino },
-                    new HojaDeRuta { Codigo = "HDR-202605-0008", NumeroGuia = 20260506102010202, EstadoEncomienda = EstadoRecibidoCDDestino },
-                    new HojaDeRuta { Codigo = "HDR-202605-0009", NumeroGuia = 20260506102010303, EstadoEncomienda = EstadoImposicionTelefonica },
+                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0003", NumeroGuia = 20260506102010101, EstadoEncomienda = EstadoRecibidoCDDestino },
+                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0004", NumeroGuia = 20260506102010202, EstadoEncomienda = EstadoListoDistribucionLocal },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0005", NumeroGuia = 20260506102010303, EstadoEncomienda = EstadoImposicionTelefonica },
                 ]
             },
             new Fletero
@@ -49,9 +50,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 NombreCompleto = "Sofia Romero",
                 HojasDeRuta =
                 [
-                    new HojaDeRuta { Codigo = "HDR-202605-0010", NumeroGuia = 20260506102510101, EstadoEncomienda = EstadoImposicionTelefonica },
-                    new HojaDeRuta { Codigo = "HDR-202605-0011", NumeroGuia = 20260506102510202, EstadoEncomienda = EstadoImposicionTelefonica },
-                    new HojaDeRuta { Codigo = "HDR-202605-0012", NumeroGuia = 20260506102510303, EstadoEncomienda = EstadoImposicionTelefonica },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0006", NumeroGuia = 20260506102510101, EstadoEncomienda = EstadoImposicionTelefonica },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0007", NumeroGuia = 20260506102510202, EstadoEncomienda = EstadoImposicionTelefonica },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0008", NumeroGuia = 20260506102510303, EstadoEncomienda = EstadoImposicionTelefonica },
                 ]
             },
             new Fletero
@@ -60,9 +61,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 NombreCompleto = "Diego Fernandez",
                 HojasDeRuta =
                 [
-                    new HojaDeRuta { Codigo = "HDR-202605-0013", NumeroGuia = 20260506103010101, EstadoEncomienda = EstadoRecibidoCDDestino },
-                    new HojaDeRuta { Codigo = "HDR-202605-0014", NumeroGuia = 20260506103010202, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-202605-0015", NumeroGuia = 20260506103010303, EstadoEncomienda = EstadoRecibidoCDDestino },
+                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0005", NumeroGuia = 20260506103010101, EstadoEncomienda = EstadoRecibidoCDDestino },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0009", NumeroGuia = 20260506103010202, EstadoEncomienda = EstadoImposicionAgencia },
+                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0006", NumeroGuia = 20260506103010303, EstadoEncomienda = EstadoListoDistribucionLocal },
                 ]
             },
             new Fletero
@@ -71,9 +72,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 NombreCompleto = "Valeria Castro",
                 HojasDeRuta =
                 [
-                    new HojaDeRuta { Codigo = "HDR-202605-0016", NumeroGuia = 20260506103510101, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-202605-0017", NumeroGuia = 20260506103510202, EstadoEncomienda = EstadoRecibidoCDDestino },
-                    new HojaDeRuta { Codigo = "HDR-202605-0018", NumeroGuia = 20260506103510303, EstadoEncomienda = EstadoImposicionTelefonica },
+                    new HojaDeRuta { Codigo = "HDR-RET-202605-0010", NumeroGuia = 20260506103510101, EstadoEncomienda = EstadoImposicionAgencia },
+                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0007", NumeroGuia = 20260506103510202, EstadoEncomienda = EstadoRecibidoCDDestino },
+                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0008", NumeroGuia = 20260506103510303, EstadoEncomienda = EstadoListoDistribucionLocal },
                 ]
             },
         };
@@ -118,7 +119,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             if (estadoActual == EstadoImposicionTelefonica || estadoActual == EstadoImposicionAgencia)
                 return EstadoPendienteRetiroFletero;
 
-            if (estadoActual == EstadoRecibidoCDDestino)
+            if (estadoActual == EstadoRecibidoCDDestino || estadoActual == EstadoListoDistribucionLocal)
                 return EstadoEnCaminoDestinatario;
 
             return estadoActual;

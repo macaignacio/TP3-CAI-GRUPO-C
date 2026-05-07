@@ -2,7 +2,7 @@
 //using TP3_CAI_GRUPO_C.ImposiciónXCD;
 //using TP3_CAI_GRUPO_C.ConsultaCtaCteCliente; 
 //using TP3_CAI_GRUPO_C.ResultadosCostoVenta;
-using TP3_CAI_GRUPO_C.FacturarCliente;
+using TP3_CAI_GRUPO_C.GestionFleterosAsignacion;
 
 namespace TP3_CAI_GRUPO_C
 {
@@ -17,7 +17,7 @@ namespace TP3_CAI_GRUPO_C
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FacturarClienteForm());
+            Application.Run(new GestionFleterosAsignacionForm());
         }
     }
 }
