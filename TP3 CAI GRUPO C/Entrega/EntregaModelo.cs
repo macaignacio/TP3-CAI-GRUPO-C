@@ -39,7 +39,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
             new Encomienda
             {
                 NumeroGuia = 20260506101510101,
-                Estado = EstadoEncomienda.ListoParaRetirarPorCD,
+                Estado = EstadoEncomienda.ListoParaRetirarPorAgencia,
                 Destinatario = new Destinatario { NombreApellido = "Carla Ruiz", Dni = 33444555 },
                 ClienteAsociado = new Cliente { Cuit = 30205869953, RazonSocial = "EnvasesArg" }
             }
@@ -98,6 +98,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
             {
                 EstadoEncomienda.RecibidoCDDestino => "Recibido en CD destino",
                 EstadoEncomienda.ListoParaRetirarPorCD => "Listo para retirar por CD",
+                EstadoEncomienda.ListoParaRetirarPorAgencia => "Listo para retirar por Agencia",
                 EstadoEncomienda.Entregado => "Entregado",
                 _ => ""
             };
