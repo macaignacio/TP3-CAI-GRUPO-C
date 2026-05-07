@@ -55,7 +55,7 @@
             SeleccionarFleteroGroupBox.Controls.Add(CuilTextLabel);
             SeleccionarFleteroGroupBox.Location = new Point(31, 41);
             SeleccionarFleteroGroupBox.Name = "SeleccionarFleteroGroupBox";
-            SeleccionarFleteroGroupBox.Size = new Size(490, 157);
+            SeleccionarFleteroGroupBox.Size = new Size(517, 109);
             SeleccionarFleteroGroupBox.TabIndex = 0;
             SeleccionarFleteroGroupBox.TabStop = false;
             SeleccionarFleteroGroupBox.Text = "Seleccionar Fletero";
@@ -87,7 +87,7 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(409, 60);
+            BuscarButton.Location = new Point(436, 80);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 2;
@@ -111,7 +111,7 @@
             DetalleHDRPendientesGroupBox.Controls.Add(ConfirmarAsignacionButton);
             DetalleHDRPendientesGroupBox.Location = new Point(31, 156);
             DetalleHDRPendientesGroupBox.Name = "DetalleHDRPendientesGroupBox";
-            DetalleHDRPendientesGroupBox.Size = new Size(490, 232);
+            DetalleHDRPendientesGroupBox.Size = new Size(517, 220);
             DetalleHDRPendientesGroupBox.TabIndex = 2;
             DetalleHDRPendientesGroupBox.TabStop = false;
             DetalleHDRPendientesGroupBox.Text = "Detalle de Hojas de Ruta pendientes";
@@ -121,7 +121,7 @@
             DetalleHDRPendientesListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             DetalleHDRPendientesListView.Location = new Point(16, 22);
             DetalleHDRPendientesListView.Name = "DetalleHDRPendientesListView";
-            DetalleHDRPendientesListView.Size = new Size(468, 159);
+            DetalleHDRPendientesListView.Size = new Size(495, 159);
             DetalleHDRPendientesListView.TabIndex = 2;
             DetalleHDRPendientesListView.UseCompatibleStateImageBehavior = false;
             DetalleHDRPendientesListView.View = View.Details;
@@ -134,16 +134,16 @@
             // columnHeader2
             // 
             columnHeader2.Text = "Número de Guía";
-            columnHeader2.Width = 180;
+            columnHeader2.Width = 130;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Estado";
-            columnHeader3.Width = 100;
+            columnHeader3.Width = 200;
             // 
             // ConfirmarAsignacionButton
             // 
-            ConfirmarAsignacionButton.Location = new Point(343, 193);
+            ConfirmarAsignacionButton.Location = new Point(370, 187);
             ConfirmarAsignacionButton.Name = "ConfirmarAsignacionButton";
             ConfirmarAsignacionButton.Size = new Size(141, 23);
             ConfirmarAsignacionButton.TabIndex = 1;
@@ -174,7 +174,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(552, 404);
+            ClientSize = new Size(576, 404);
             Controls.Add(TutasaTituloLabel);
             Controls.Add(button4);
             Controls.Add(DetalleHDRPendientesGroupBox);

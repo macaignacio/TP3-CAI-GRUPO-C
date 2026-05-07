@@ -62,11 +62,12 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 return;
             }
 
-            CargarHojasDeRuta(resultado.HojasActualizadas);
             MessageBox.Show("Se actualizó el estado de las encomiendas correctamente.",
                 "Éxito",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+
+            LimpiarFormulario();
         }
 
         private void AceptarButton_Click(object sender, EventArgs e)
@@ -86,6 +87,15 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 
                 DetalleHDRPendientesListView.Items.Add(item);
             }
+        }
+
+        private void LimpiarFormulario()
+        {
+            CuilTextBox.Text = "";
+            NombreLabel.Text = "";
+            DetalleHDRPendientesListView.Items.Clear();
+            DetalleHDRPendientesGroupBox.Enabled = false;
+            ConfirmarAsignacionButton.Enabled = false;
         }
     }
 }

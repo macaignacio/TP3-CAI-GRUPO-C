@@ -91,18 +91,5 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 
             return (facturasCalculadas, total);
         }
-        /*
-        public FacturarClienteModelo Ejemplo()
-        {
-            //Ejemplo de datos precargados
-            clientes[10500900700] = new Cliente
-            {
-                Fecha = new DateTime(2024, 12, 2),
-                Descripcion = "Entrega encomienda XL",
-                NumeroGuia = 890,
-                Monto = 25000,
-                Subtotal = 18000,
-            };
-        }*/
     }
 }
