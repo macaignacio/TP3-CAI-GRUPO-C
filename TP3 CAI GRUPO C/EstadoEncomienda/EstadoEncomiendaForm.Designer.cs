@@ -37,8 +37,8 @@
             ResultadoBusquedaListView = new ListView();
             EstadoEncomienda = new ColumnHeader();
             Actualizacion = new ColumnHeader();
-            AceptarButton = new Button();
             Ubicacion = new ColumnHeader();
+            AceptarButton = new Button();
             DatosBusquedaGroupBox.SuspendLayout();
             ResultadoBusquedaGroupBox.SuspendLayout();
             SuspendLayout();
@@ -119,6 +119,11 @@
             Actualizacion.Text = "Última Actualización";
             Actualizacion.Width = 180;
             // 
+            // Ubicacion
+            // 
+            Ubicacion.Text = "Ubicación";
+            Ubicacion.Width = 100;
+            // 
             // AceptarButton
             // 
             AceptarButton.Location = new Point(492, 352);
@@ -127,11 +132,6 @@
             AceptarButton.TabIndex = 3;
             AceptarButton.Text = "Aceptar";
             AceptarButton.UseVisualStyleBackColor = true;
-            // 
-            // Ubicacion
-            // 
-            Ubicacion.Text = "Ubicación";
-            Ubicacion.Width = 100;
             // 
             // EstadoEncomiendaForm
             // 
