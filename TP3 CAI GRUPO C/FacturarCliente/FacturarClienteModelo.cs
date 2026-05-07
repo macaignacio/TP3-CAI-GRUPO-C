@@ -40,25 +40,25 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             {
                 "EnvasesArg",
                 [
-                    new Factura { Fecha = new DateTime(2024, 12, 2), Descripcion = "Entrega encomienda XL", NumeroGuia = 1001, Monto = 25000, Subtotal = 18000 },
-                    new Factura { Fecha = new DateTime(2025, 3, 17), Descripcion = "Entrega encomienda M", NumeroGuia = 1002, Monto = 15000, Subtotal = 12000 },
-                    new Factura { Fecha = new DateTime(2025, 6, 28), Descripcion = "Entrega encomienda S", NumeroGuia = 1003, Monto = 10000, Subtotal = 8000 },
+                    new Factura { Fecha = new DateTime(2024, 12, 2), Descripcion = "Entrega encomienda XL", NumeroGuia = 1001, Monto = 25000, Subtotal = 25000 },
+                    new Factura { Fecha = new DateTime(2025, 3, 17), Descripcion = "Entrega encomienda M", NumeroGuia = 1002, Monto = 15000, Subtotal = 40000 },
+                    new Factura { Fecha = new DateTime(2025, 6, 28), Descripcion = "Entrega encomienda S", NumeroGuia = 1003, Monto = 10000, Subtotal = 50000 },
                 ]
             },
             {
                 "RepuestosCorSA",
                 [
-                    new Factura { Fecha = new DateTime(2023, 1, 14), Descripcion = "Entrega encomienda S", NumeroGuia = 2001, Monto = 6000, Subtotal = 5000 },
-                    new Factura { Fecha = new DateTime(2024, 10, 10), Descripcion = "Entrega encomienda XL", NumeroGuia = 2002, Monto = 18000, Subtotal = 14000 },
-                    new Factura { Fecha = new DateTime(2026, 4, 3), Descripcion = "Entrega encomienda L", NumeroGuia = 2003, Monto = 20000, Subtotal = 15000 },
+                    new Factura { Fecha = new DateTime(2023, 1, 14), Descripcion = "Entrega encomienda S", NumeroGuia = 2001, Monto = 6000, Subtotal = 6000 },
+                    new Factura { Fecha = new DateTime(2024, 10, 10), Descripcion = "Entrega encomienda XL", NumeroGuia = 2002, Monto = 18000, Subtotal = 24000 },
+                    new Factura { Fecha = new DateTime(2026, 4, 3), Descripcion = "Entrega encomienda L", NumeroGuia = 2003, Monto = 20000, Subtotal = 44000 },
                 ]
             },
             {
                 "TecnologiaHoy",
                 [
-                    new Factura { Fecha = new DateTime(2025, 7, 12), Descripcion = "Entrega encomienda M", NumeroGuia = 3001, Monto = 25000, Subtotal = 18000 },
-                    new Factura { Fecha = new DateTime(2025, 11, 30), Descripcion = "Entrega encomienda XL", NumeroGuia = 3002, Monto = 24000, Subtotal = 17500 },
-                    new Factura { Fecha = new DateTime(2026, 3, 16), Descripcion = "Entrega encomienda L", NumeroGuia = 3003, Monto = 21000, Subtotal = 16500 },
+                    new Factura { Fecha = new DateTime(2025, 7, 12), Descripcion = "Entrega encomienda M", NumeroGuia = 3001, Monto = 25000, Subtotal = 25000 },
+                    new Factura { Fecha = new DateTime(2025, 11, 30), Descripcion = "Entrega encomienda XL", NumeroGuia = 3002, Monto = 24000, Subtotal = 49000 },
+                    new Factura { Fecha = new DateTime(2026, 3, 16), Descripcion = "Entrega encomienda L", NumeroGuia = 3003, Monto = 21000, Subtotal = 70000 },
                 ]
             },
         };
