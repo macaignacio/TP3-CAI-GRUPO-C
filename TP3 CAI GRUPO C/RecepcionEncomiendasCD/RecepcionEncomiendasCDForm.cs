@@ -65,7 +65,6 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
             foreach (var h in hojas)
             {
                 var item = new ListViewItem(h.NroOrden);
-                item.SubItems.Add(h.NumeroGuia.ToString());
                 item.SubItems.Add(h.Codigo);
                 item.SubItems.Add(h.Estado);
                 item.SubItems.Add(h.EmpresaOmnibus);
@@ -98,7 +97,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 
             // Reflejar el cambio de estado en el ListView
             var itemSeleccionado = DetalleHdrListView.SelectedItems[0];
-            itemSeleccionado.SubItems[3].Text = hojaSeleccionada!.Estado;
+            itemSeleccionado.SubItems[2].Text = hojaSeleccionada!.Estado;
 
             MessageBox.Show(
                 "Recepción confirmada con éxito.",

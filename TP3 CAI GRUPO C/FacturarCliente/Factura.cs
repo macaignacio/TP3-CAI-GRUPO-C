@@ -1,20 +1,20 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TP3_CAI_GRUPO_C.FacturarCliente
 {
     internal class Factura
     {
-        public DateTime Fecha { get; set; }
-        
-        public required string Descripcion { get; set; }
+        public long NumeroFactura { get; set; }
 
-        public int NumeroGuia { get; set; }
+        public long CuitCliente { get; set; }
 
-        public int Monto { get; set; }
+        public string RazonSocial { get; set; } = "";
 
-        public int Subtotal { get; set; }
+        public DateTime FechaEmision { get; set; }
 
+        public List<Servicio> Servicios { get; set; } = new List<Servicio>();
+
+        public int Total { get; set; }
     }
 }
