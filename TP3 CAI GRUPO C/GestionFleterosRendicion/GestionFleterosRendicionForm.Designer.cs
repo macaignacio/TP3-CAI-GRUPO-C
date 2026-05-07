@@ -30,19 +30,18 @@
         {
             TutasaLabel = new Label();
             HdrAsignadasGroupBox = new GroupBox();
-            CumplidoCheckBox = new CheckBox();
+            InstruccionesLabel = new Label();
             HdrAsignadasListView = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             ConfirmarButton = new Button();
             SelecFleteroGroupBox = new GroupBox();
+            traerNombreFleteroLabel = new Label();
             NombreFleteroLabel = new Label();
             CuitTextBox = new TextBox();
             BuscarButton = new Button();
             CuitLabel = new Label();
-            traerNombreFleteroLabel = new Label();
-            InstruccionesLabel = new Label();
             HdrAsignadasGroupBox.SuspendLayout();
             SelecFleteroGroupBox.SuspendLayout();
             SuspendLayout();
@@ -59,7 +58,6 @@
             // HdrAsignadasGroupBox
             // 
             HdrAsignadasGroupBox.Controls.Add(InstruccionesLabel);
-            HdrAsignadasGroupBox.Controls.Add(CumplidoCheckBox);
             HdrAsignadasGroupBox.Controls.Add(HdrAsignadasListView);
             HdrAsignadasGroupBox.Location = new Point(13, 163);
             HdrAsignadasGroupBox.Name = "HdrAsignadasGroupBox";
@@ -68,41 +66,41 @@
             HdrAsignadasGroupBox.TabStop = false;
             HdrAsignadasGroupBox.Text = "Hojas de Ruta Asignadas";
             // 
-            // CumplidoCheckBox
+            // InstruccionesLabel
             // 
-            CumplidoCheckBox.AutoSize = true;
-            CumplidoCheckBox.Location = new Point(296, 75);
-            CumplidoCheckBox.Margin = new Padding(3, 2, 3, 2);
-            CumplidoCheckBox.Name = "CumplidoCheckBox";
-            CumplidoCheckBox.Size = new Size(15, 14);
-            CumplidoCheckBox.TabIndex = 1;
-            CumplidoCheckBox.UseVisualStyleBackColor = true;
+            InstruccionesLabel.AutoSize = true;
+            InstruccionesLabel.Location = new Point(16, 28);
+            InstruccionesLabel.Name = "InstruccionesLabel";
+            InstruccionesLabel.Size = new Size(280, 15);
+            InstruccionesLabel.TabIndex = 2;
+            InstruccionesLabel.Text = "Marcar las HDR que fueron cumplidas por el fletero:";
             // 
             // HdrAsignadasListView
             // 
-            HdrAsignadasListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             HdrAsignadasListView.CheckBoxes = true;
+            HdrAsignadasListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             HdrAsignadasListView.Location = new Point(16, 54);
             HdrAsignadasListView.Name = "HdrAsignadasListView";
             HdrAsignadasListView.Size = new Size(468, 189);
             HdrAsignadasListView.TabIndex = 0;
             HdrAsignadasListView.UseCompatibleStateImageBehavior = false;
             HdrAsignadasListView.View = View.Details;
+            HdrAsignadasListView.ItemChecked += HdrAsignadasListView_ItemChecked;
             // 
             // columnHeader1
             // 
             columnHeader1.Text = "Hoja de Ruta";
-            columnHeader1.Width = 150;
+            columnHeader1.Width = 140;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Número de Guía";
-            columnHeader2.Width = 150;
+            columnHeader2.Width = 130;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Estado";
-            columnHeader3.Width = 160;
+            columnHeader3.Width = 180;
             // 
             // ConfirmarButton
             // 
@@ -127,6 +125,15 @@
             SelecFleteroGroupBox.TabIndex = 7;
             SelecFleteroGroupBox.TabStop = false;
             SelecFleteroGroupBox.Text = "Seleccionar Fletero";
+            // 
+            // traerNombreFleteroLabel
+            // 
+            traerNombreFleteroLabel.AutoSize = true;
+            traerNombreFleteroLabel.Location = new Point(296, 31);
+            traerNombreFleteroLabel.Name = "traerNombreFleteroLabel";
+            traerNombreFleteroLabel.Size = new Size(96, 15);
+            traerNombreFleteroLabel.TabIndex = 5;
+            traerNombreFleteroLabel.Text = "[nombre Fletero]";
             // 
             // NombreFleteroLabel
             // 
@@ -164,24 +171,6 @@
             CuitLabel.TabIndex = 0;
             CuitLabel.Text = "CUIT/CUIL:";
             // 
-            // traerNombreFleteroLabel
-            // 
-            traerNombreFleteroLabel.AutoSize = true;
-            traerNombreFleteroLabel.Location = new Point(296, 31);
-            traerNombreFleteroLabel.Name = "traerNombreFleteroLabel";
-            traerNombreFleteroLabel.Size = new Size(96, 15);
-            traerNombreFleteroLabel.TabIndex = 5;
-            traerNombreFleteroLabel.Text = "[nombre Fletero]";
-            // 
-            // InstruccionesLabel
-            // 
-            InstruccionesLabel.AutoSize = true;
-            InstruccionesLabel.Location = new Point(16, 28);
-            InstruccionesLabel.Name = "InstruccionesLabel";
-            InstruccionesLabel.Size = new Size(280, 15);
-            InstruccionesLabel.TabIndex = 2;
-            InstruccionesLabel.Text = "Marcar las HDR que fueron cumplidas por el fletero:";
-            // 
             // GestionFleterosRendicionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -216,7 +205,6 @@
         private TextBox CuitTextBox;
         private Button BuscarButton;
         private Label CuitLabel;
-        private CheckBox CumplidoCheckBox;
         private Label traerNombreFleteroLabel;
         private Label InstruccionesLabel;
     }
