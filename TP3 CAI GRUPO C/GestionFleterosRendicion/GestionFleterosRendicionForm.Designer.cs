@@ -81,6 +81,7 @@
             // HdrAsignadasListView
             // 
             HdrAsignadasListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            HdrAsignadasListView.CheckBoxes = true;
             HdrAsignadasListView.Location = new Point(16, 54);
             HdrAsignadasListView.Name = "HdrAsignadasListView";
             HdrAsignadasListView.Size = new Size(468, 189);
@@ -91,17 +92,17 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Hoja de Ruta";
-            columnHeader1.Width = 80;
+            columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Número de Guía";
-            columnHeader2.Width = 100;
+            columnHeader2.Width = 150;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Estado";
-            columnHeader3.Width = 100;
+            columnHeader3.Width = 160;
             // 
             // ConfirmarButton
             // 
@@ -111,6 +112,7 @@
             ConfirmarButton.TabIndex = 4;
             ConfirmarButton.Text = "Confirmar";
             ConfirmarButton.UseVisualStyleBackColor = true;
+            ConfirmarButton.Click += ConfirmarButton_Click;
             // 
             // SelecFleteroGroupBox
             // 
@@ -150,6 +152,7 @@
             BuscarButton.TabIndex = 2;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
+            BuscarButton.Click += BuscarButton_Click;
             // 
             // CuitLabel
             // 
