@@ -36,14 +36,14 @@
             EmpresaTextoLabel = new Label();
             TutasaTituloLabel = new Label();
             CodCdTextoLabel = new Label();
+            CodCDLabel = new Label();
             DetalleHDRAsignadasGroupBox = new GroupBox();
             HDRAsignadasListView = new ListView();
             columnHeader4 = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
-            ImprimirButton = new Button();
-            CodCDLabel = new Label();
+            ConfirmarAsignacionButton = new Button();
             SeleccionarOmnibusGroupBox.SuspendLayout();
             DetalleHDRAsignadasGroupBox.SuspendLayout();
             SuspendLayout();
@@ -79,7 +79,7 @@
             HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
             HorarioSalidaDateTimePicker.Size = new Size(139, 23);
             HorarioSalidaDateTimePicker.TabIndex = 5;
-            HorarioSalidaDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
+            HorarioSalidaDateTimePicker.Value = DateTime.Now;
             // 
             // FechaHoraLabel
             // 
@@ -98,6 +98,7 @@
             BuscarButton.TabIndex = 2;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
+            BuscarButton.Click += BuscarButton_Click;
             // 
             // EmpresaTextoLabel
             // 
@@ -126,10 +127,19 @@
             CodCdTextoLabel.TabIndex = 7;
             CodCdTextoLabel.Text = "Código CD:";
             // 
+            // CodCDLabel
+            // 
+            CodCDLabel.AutoSize = true;
+            CodCDLabel.Location = new Point(111, 34);
+            CodCDLabel.Name = "CodCDLabel";
+            CodCDLabel.Size = new Size(57, 15);
+            CodCDLabel.TabIndex = 12;
+            CodCDLabel.Text = "[número]";
+            // 
             // DetalleHDRAsignadasGroupBox
             // 
             DetalleHDRAsignadasGroupBox.Controls.Add(HDRAsignadasListView);
-            DetalleHDRAsignadasGroupBox.Controls.Add(ImprimirButton);
+            DetalleHDRAsignadasGroupBox.Controls.Add(ConfirmarAsignacionButton);
             DetalleHDRAsignadasGroupBox.Location = new Point(24, 216);
             DetalleHDRAsignadasGroupBox.Name = "DetalleHDRAsignadasGroupBox";
             DetalleHDRAsignadasGroupBox.Size = new Size(567, 219);
@@ -140,7 +150,9 @@
             // HDRAsignadasListView
             // 
             HDRAsignadasListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader1, columnHeader3, columnHeader5 });
+            HDRAsignadasListView.FullRowSelect = true;
             HDRAsignadasListView.Location = new Point(16, 22);
+            HDRAsignadasListView.MultiSelect = false;
             HDRAsignadasListView.Name = "HDRAsignadasListView";
             HDRAsignadasListView.Size = new Size(545, 158);
             HDRAsignadasListView.TabIndex = 2;
@@ -149,41 +161,33 @@
             // 
             // columnHeader4
             // 
-            columnHeader4.Text = "Nro de Órden";
-            columnHeader4.Width = 120;
+            columnHeader4.Text = "Nro de Orden";
+            columnHeader4.Width = 100;
             // 
             // columnHeader1
             // 
             columnHeader1.Text = "Hoja de Ruta";
-            columnHeader1.Width = 150;
+            columnHeader1.Width = 170;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Estado";
-            columnHeader3.Width = 100;
+            columnHeader3.Width = 170;
             // 
             // columnHeader5
             // 
             columnHeader5.Text = "Empresa de ómnibus";
-            columnHeader5.Width = 150;
+            columnHeader5.Width = 100;
             // 
-            // ImprimirButton
+            // ConfirmarAsignacionButton
             // 
-            ImprimirButton.Location = new Point(422, 190);
-            ImprimirButton.Name = "ImprimirButton";
-            ImprimirButton.Size = new Size(139, 23);
-            ImprimirButton.TabIndex = 1;
-            ImprimirButton.Text = "Confirmar asignación";
-            ImprimirButton.UseVisualStyleBackColor = true;
-            // 
-            // CodCDLabel
-            // 
-            CodCDLabel.AutoSize = true;
-            CodCDLabel.Location = new Point(111, 34);
-            CodCDLabel.Name = "CodCDLabel";
-            CodCDLabel.Size = new Size(57, 15);
-            CodCDLabel.TabIndex = 12;
-            CodCDLabel.Text = "[número]";
+            ConfirmarAsignacionButton.Location = new Point(422, 190);
+            ConfirmarAsignacionButton.Name = "ConfirmarAsignacionButton";
+            ConfirmarAsignacionButton.Size = new Size(139, 23);
+            ConfirmarAsignacionButton.TabIndex = 1;
+            ConfirmarAsignacionButton.Text = "Confirmar asignación";
+            ConfirmarAsignacionButton.UseVisualStyleBackColor = true;
+            ConfirmarAsignacionButton.Click += ConfirmarAsignacionButton_Click;
             // 
             // DespachoEncomiendasCDForm
             // 
@@ -212,14 +216,14 @@
         private Label EmpresaTextoLabel;
         private Label TutasaTituloLabel;
         private Label CodCdTextoLabel;
+        private Label CodCDLabel;
         private GroupBox DetalleHDRAsignadasGroupBox;
         private ListView HDRAsignadasListView;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader5;
-        private Button ImprimirButton;
-        private Label CodCDLabel;
+        private Button ConfirmarAsignacionButton;
         private Label FechaHoraLabel;
         private DateTimePicker HorarioSalidaDateTimePicker;
         private ComboBox EmpresaComboBox;

@@ -37,7 +37,7 @@
             CuilLabel = new Label();
             FacturarServiciosGroupBox = new GroupBox();
             TotalCalculadoLabel = new Label();
-            CancelarButton = new Button();
+            LimpiarButton = new Button();
             EmitirFacturaButton = new Button();
             TotalTextLabel = new Label();
             ServiciosListView = new ListView();
@@ -124,7 +124,7 @@
             // FacturarServiciosGroupBox
             // 
             FacturarServiciosGroupBox.Controls.Add(TotalCalculadoLabel);
-            FacturarServiciosGroupBox.Controls.Add(CancelarButton);
+            FacturarServiciosGroupBox.Controls.Add(LimpiarButton);
             FacturarServiciosGroupBox.Controls.Add(EmitirFacturaButton);
             FacturarServiciosGroupBox.Controls.Add(TotalTextLabel);
             FacturarServiciosGroupBox.Controls.Add(ServiciosListView);
@@ -146,15 +146,16 @@
             TotalCalculadoLabel.TabIndex = 14;
             TotalCalculadoLabel.Text = "[Total calculado]";
             // 
-            // CancelarButton
+            // LimpiarButton
             // 
-            CancelarButton.Location = new Point(499, 277);
-            CancelarButton.Margin = new Padding(3, 4, 3, 4);
-            CancelarButton.Name = "CancelarButton";
-            CancelarButton.Size = new Size(86, 31);
-            CancelarButton.TabIndex = 3;
-            CancelarButton.Text = "Cancelar";
-            CancelarButton.UseVisualStyleBackColor = true;
+            LimpiarButton.Location = new Point(499, 277);
+            LimpiarButton.Margin = new Padding(3, 4, 3, 4);
+            LimpiarButton.Name = "LimpiarButton";
+            LimpiarButton.Size = new Size(86, 31);
+            LimpiarButton.TabIndex = 3;
+            LimpiarButton.Text = "Limpiar";
+            LimpiarButton.UseVisualStyleBackColor = true;
+            LimpiarButton.Click += LimpiarButton_Click;
             // 
             // EmitirFacturaButton
             // 
@@ -165,6 +166,7 @@
             EmitirFacturaButton.TabIndex = 2;
             EmitirFacturaButton.Text = "Emitir Factura";
             EmitirFacturaButton.UseVisualStyleBackColor = true;
+            EmitirFacturaButton.Click += EmitirFacturaButton_Click;
             // 
             // TotalTextLabel
             // 
@@ -244,7 +246,7 @@
         private ColumnHeader Subtotal;
         private Button EmitirFacturaButton;
         private Label TotalTextLabel;
-        private Button CancelarButton;
+        private Button LimpiarButton;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;

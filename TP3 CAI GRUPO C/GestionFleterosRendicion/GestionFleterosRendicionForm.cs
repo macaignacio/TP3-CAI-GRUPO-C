@@ -14,7 +14,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             traerNombreFleteroLabel.Text = "";
             HdrAsignadasGroupBox.Enabled = false;
             ConfirmarButton.Enabled = false;
-            
+            CumplidoCheckBox.Visible = false;
 
             HdrAsignadasListView.CheckBoxes = true;
             HdrAsignadasListView.FullRowSelect = true;

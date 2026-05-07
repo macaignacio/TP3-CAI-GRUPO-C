@@ -10,6 +10,8 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
 {
     public partial class ResultadosCostoVentaFOrm : Form
     {
+        private ResultadosCostoVentaModelo modelo = new ResultadosCostoVentaModelo();
+
         public ResultadosCostoVentaFOrm()
         {
             InitializeComponent();
@@ -35,6 +37,14 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
                 MessageBox.Show("Debe seleccionar un período.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            var resultados = modelo.ObtenerResultadosPorPeriodo(PeriodoDateTimePicker.Value);
+            CargarResultados(resultados);
+
+            if (resultados.Count == 0)
+            {
+                MessageBox.Show("No hay resultados para el período seleccionado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void PeriodoDateTimePicker_ValueChanged(object? sender, EventArgs e)
@@ -42,9 +52,32 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
             periodoSeleccionado = true;
         }
 
-        private void AceptarButton_Click(object sender, EventArgs e)
+        private void LimpiarButton_Click(object sender, EventArgs e)
         {
-            Close();
+            LimpiarFormulario();
+        }
+
+        private void CargarResultados(List<Resultado> resultados)
+        {
+            ResultadoOperativoListView.Items.Clear();
+
+            foreach (var resultado in resultados)
+            {
+                var item = new ListViewItem(resultado.EmpresaOmnibus);
+                item.SubItems.Add(resultado.Ventas.ToString("N2"));
+                item.SubItems.Add(resultado.Costos.ToString("N2"));
+                item.SubItems.Add(resultado.Utilidad.ToString("N2"));
+
+                ResultadoOperativoListView.Items.Add(item);
+            }
+        }
+
+        private void LimpiarFormulario()
+        {
+            ResultadoOperativoListView.Items.Clear();
+            PeriodoDateTimePicker.Value = DateTime.Today;
+            periodoSeleccionado = false;
+            PeriodoDateTimePicker.Focus();
         }
     }
 }

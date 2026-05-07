@@ -39,7 +39,7 @@
             Ventas = new ColumnHeader();
             Costos = new ColumnHeader();
             Utilidad = new ColumnHeader();
-            AceptarButton = new Button();
+            LimpiarButton = new Button();
             PeriodoConsultaGroupBox.SuspendLayout();
             ResultadoOperativoGroupBox.SuspendLayout();
             SuspendLayout();
@@ -143,23 +143,23 @@
             Utilidad.Text = "Utilidad";
             Utilidad.Width = 110;
             // 
-            // AceptarButton
+            // LimpiarButton
             // 
-            AceptarButton.Location = new Point(559, 614);
-            AceptarButton.Margin = new Padding(4, 5, 4, 5);
-            AceptarButton.Name = "AceptarButton";
-            AceptarButton.Size = new Size(107, 38);
-            AceptarButton.TabIndex = 3;
-            AceptarButton.Text = "Aceptar";
-            AceptarButton.UseVisualStyleBackColor = true;
-            AceptarButton.Click += AceptarButton_Click;
+            LimpiarButton.Location = new Point(559, 614);
+            LimpiarButton.Margin = new Padding(4, 5, 4, 5);
+            LimpiarButton.Name = "LimpiarButton";
+            LimpiarButton.Size = new Size(107, 38);
+            LimpiarButton.TabIndex = 3;
+            LimpiarButton.Text = "Limpiar";
+            LimpiarButton.UseVisualStyleBackColor = true;
+            LimpiarButton.Click += LimpiarButton_Click;
             // 
             // ResultadosCostoVentaFOrm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(722, 673);
-            Controls.Add(AceptarButton);
+            Controls.Add(LimpiarButton);
             Controls.Add(ResultadoOperativoGroupBox);
             Controls.Add(PeriodoConsultaGroupBox);
             Controls.Add(TutasaLabel);
@@ -185,7 +185,7 @@
         private ColumnHeader Ventas;
         private ColumnHeader Costos;
         private ColumnHeader Utilidad;
-        private Button AceptarButton;
+        private Button LimpiarButton;
         private DateTimePicker PeriodoDateTimePicker;
         private Label PeriodoLabel;
     }
