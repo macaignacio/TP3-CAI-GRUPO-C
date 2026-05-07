@@ -29,6 +29,16 @@
 
             }
 
+            ConsultaCtaCteClienteModelo modelo = new ConsultaCtaCteClienteModelo();
+            var resultado = modelo.ValidarCliente(cuit);
+
+            if (resultado.cliente == null)
+            {
+                CuentaCorrienteListView.Items.Clear();
+                MessageBox.Show(resultado.error);
+                return;
+            }
+
             if (!periodoSeleccionado)
             {
                 MessageBox.Show("Debe seleccionar un período.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -37,29 +47,17 @@
 
             DateTime periodo = PeriodoDateTimePicker.Value;
 
+            RazonSocialLabel.Text = resultado.cliente.RazonSocial;
 
-            ConsultaCtaCteClienteModelo modelo = new ConsultaCtaCteClienteModelo();
-            var resultado = modelo.ValidarCliente(cuit);
+            var movimientos = modelo.ObtenerCuentaCorrientePorCliente(
+                resultado.cliente.RazonSocial,
+                periodo);
 
-            if (resultado.cliente != null)
+            CargarCuentaCorriente(movimientos);
+
+            if (movimientos.Count == 0)
             {
-                RazonSocialLabel.Text = resultado.cliente.RazonSocial;
-
-                var movimientos = modelo.ObtenerCuentaCorrientePorCliente(
-                    resultado.cliente.RazonSocial,
-                    periodo);
-
-                CargarCuentaCorriente(movimientos);
-
-                if (movimientos.Count == 0)
-                {
-                    MessageBox.Show("No hay movimientos para el período seleccionado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                CuentaCorrienteListView.Items.Clear();
-                MessageBox.Show(resultado.error);
+                MessageBox.Show("No hay movimientos para el período seleccionado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
