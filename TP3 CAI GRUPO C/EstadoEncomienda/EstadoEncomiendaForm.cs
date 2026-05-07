@@ -30,7 +30,7 @@ namespace TP3_CAI_GRUPO_C.EstadoEncomienda
             // Validación de vacío
             if (string.IsNullOrWhiteSpace(textoGuia))
             {
-                MessageBox.Show("Debe ingresar una guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar una Guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -46,7 +46,7 @@ namespace TP3_CAI_GRUPO_C.EstadoEncomienda
             if (resultado.guia == null)
             {
                 ResultadoBusquedaListView.Items.Clear();
-                MessageBox.Show("guia no encontrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Guia no encontrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
