@@ -159,16 +159,16 @@
             HorarioSalidaDateTimePicker.Name = "HorarioSalidaDateTimePicker";
             HorarioSalidaDateTimePicker.Size = new Size(173, 23);
             HorarioSalidaDateTimePicker.TabIndex = 5;
-            HorarioSalidaDateTimePicker.Value = new DateTime(2026, 5, 7, 1, 55, 16, 563);
+            HorarioSalidaDateTimePicker.Value = DateTime.Now;
             // 
             // FechaHoraLabel
             // 
             FechaHoraLabel.AutoSize = true;
             FechaHoraLabel.Location = new Point(290, 37);
             FechaHoraLabel.Name = "FechaHoraLabel";
-            FechaHoraLabel.Size = new Size(132, 15);
+            FechaHoraLabel.Size = new Size(122, 15);
             FechaHoraLabel.TabIndex = 4;
-            FechaHoraLabel.Text = "Fecha/Hora de Llegada:";
+            FechaHoraLabel.Text = "Fecha/Hora de Salida:";
             // 
             // BuscarButton
             // 
