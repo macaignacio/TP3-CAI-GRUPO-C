@@ -48,7 +48,7 @@
             TutasaTituloLabel.AutoSize = true;
             TutasaTituloLabel.Location = new Point(156, 18);
             TutasaTituloLabel.Name = "TutasaTituloLabel";
-            TutasaTituloLabel.Size = new Size(50, 15);
+            TutasaTituloLabel.Size = new Size(48, 15);
             TutasaTituloLabel.TabIndex = 0;
             TutasaTituloLabel.Text = "TUTASA";
             // 
@@ -94,7 +94,7 @@
             ResultadoBusquedaGroupBox.Controls.Add(ResultadoBusquedaListView);
             ResultadoBusquedaGroupBox.Location = new Point(22, 196);
             ResultadoBusquedaGroupBox.Name = "ResultadoBusquedaGroupBox";
-            ResultadoBusquedaGroupBox.Size = new Size(545, 146);
+            ResultadoBusquedaGroupBox.Size = new Size(600, 196);
             ResultadoBusquedaGroupBox.TabIndex = 2;
             ResultadoBusquedaGroupBox.TabStop = false;
             ResultadoBusquedaGroupBox.Text = "Resultado de Búsqueda";
@@ -102,9 +102,9 @@
             // ResultadoBusquedaListView
             // 
             ResultadoBusquedaListView.Columns.AddRange(new ColumnHeader[] { EstadoEncomienda, Actualizacion, Ubicacion });
-            ResultadoBusquedaListView.Location = new Point(10, 33);
+            ResultadoBusquedaListView.Location = new Point(10, 22);
             ResultadoBusquedaListView.Name = "ResultadoBusquedaListView";
-            ResultadoBusquedaListView.Size = new Size(510, 97);
+            ResultadoBusquedaListView.Size = new Size(577, 158);
             ResultadoBusquedaListView.TabIndex = 0;
             ResultadoBusquedaListView.UseCompatibleStateImageBehavior = false;
             ResultadoBusquedaListView.View = View.Details;
@@ -112,32 +112,33 @@
             // EstadoEncomienda
             // 
             EstadoEncomienda.Text = "Estado de Encomienda";
-            EstadoEncomienda.Width = 200;
+            EstadoEncomienda.Width = 230;
             // 
             // Actualizacion
             // 
             Actualizacion.Text = "Última Actualización";
-            Actualizacion.Width = 180;
+            Actualizacion.Width = 130;
             // 
             // Ubicacion
             // 
             Ubicacion.Text = "Ubicación";
-            Ubicacion.Width = 100;
+            Ubicacion.Width = 210;
             // 
             // AceptarButton
             // 
-            AceptarButton.Location = new Point(492, 352);
+            AceptarButton.Location = new Point(534, 398);
             AceptarButton.Name = "AceptarButton";
             AceptarButton.Size = new Size(75, 23);
             AceptarButton.TabIndex = 3;
-            AceptarButton.Text = "Aceptar";
+            AceptarButton.Text = "Limpiar";
             AceptarButton.UseVisualStyleBackColor = true;
+            AceptarButton.Click += AceptarButton_Click;
             // 
             // EstadoEncomiendaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(582, 387);
+            ClientSize = new Size(628, 446);
             Controls.Add(AceptarButton);
             Controls.Add(ResultadoBusquedaGroupBox);
             Controls.Add(DatosBusquedaGroupBox);
