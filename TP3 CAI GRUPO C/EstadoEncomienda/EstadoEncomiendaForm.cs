@@ -30,7 +30,7 @@ namespace TP3_CAI_GRUPO_C.EstadoEncomienda
             // Validación de vacío
             if (string.IsNullOrWhiteSpace(textoGuia))
             {
-                MessageBox.Show("Debe ingresar una Guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar una guia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
