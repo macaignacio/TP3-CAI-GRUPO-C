@@ -16,62 +16,62 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
             {
                 Nombre = "Flecha Bus",
                 CapacidadAlmacenamiento = 120,
-                HorariosSalida = ["08:00", "14:00", "20:00"]
+                HorariosSalida = ["20:00", "22:00", "23:00"]
             },
             new Empresa
             {
                 Nombre = "Chevallier",
                 CapacidadAlmacenamiento = 90,
-                HorariosSalida = ["07:30", "13:00", "19:30"]
+                HorariosSalida = ["21:30", "22:30", "23:30"]
             },
             new Empresa
             {
                 Nombre = "Andesmar",
                 CapacidadAlmacenamiento = 100,
-                HorariosSalida = ["09:00", "15:00", "21:00"]
+                HorariosSalida = ["19:00", "20:00", "21:00"]
             },
         ];
 
         private List<HojaDeRuta> HojasDeRuta { get; } =
         [
-            // Flecha Bus - 08:00
-            new HojaDeRuta { NumeroGuia = 20260510080001, NroOrden = "ORD-001", Codigo = "HDR-FB-001", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 8, 0, 0), Destino = "Córdoba Capital" },
-            new HojaDeRuta { NumeroGuia = 20260510080002, NroOrden = "ORD-002", Codigo = "HDR-FB-002", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 8, 0, 0), Destino = "Villa Carlos Paz" },
-            new HojaDeRuta { NumeroGuia = 20260510080003, NroOrden = "ORD-003", Codigo = "HDR-FB-003", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 8, 0, 0), Destino = "Río Cuarto" },
-            // Flecha Bus - 14:00
-            new HojaDeRuta { NumeroGuia = 20260510140001, NroOrden = "ORD-004", Codigo = "HDR-FB-004", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 14, 0, 0), Destino = "Córdoba Capital" },
-            new HojaDeRuta { NumeroGuia = 20260510140002, NroOrden = "ORD-005", Codigo = "HDR-FB-005", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 14, 0, 0), Destino = "Godoy Cruz" },
-            new HojaDeRuta { NumeroGuia = 20260510140003, NroOrden = "ORD-006", Codigo = "HDR-FB-006", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 14, 0, 0), Destino = "Guaymallén" },
-            // Flecha Bus - 20:00
-            new HojaDeRuta { NumeroGuia = 20260510200001, NroOrden = "ORD-007", Codigo = "HDR-FB-007", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 20, 0, 0), Destino = "Córdoba Capital" },
-            new HojaDeRuta { NumeroGuia = 20260510200002, NroOrden = "ORD-008", Codigo = "HDR-FB-008", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 20, 0, 0), Destino = "Palermo" },
-            new HojaDeRuta { NumeroGuia = 20260510200003, NroOrden = "ORD-009", Codigo = "HDR-FB-009", Estado = "Pendiente", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 20, 0, 0), Destino = "Belgrano" },
-
-            // Chevallier - 07:30
-            new HojaDeRuta { NumeroGuia = 20260512073001, NroOrden = "ORD-010", Codigo = "HDR-CH-001", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 7, 30, 0), Destino = "Ciudad de Mendoza" },
-            new HojaDeRuta { NumeroGuia = 20260512073002, NroOrden = "ORD-011", Codigo = "HDR-CH-002", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 7, 30, 0), Destino = "Godoy Cruz" },
-            new HojaDeRuta { NumeroGuia = 20260512073003, NroOrden = "ORD-012", Codigo = "HDR-CH-003", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 7, 30, 0), Destino = "Guaymallén" },
-            // Chevallier - 13:00
-            new HojaDeRuta { NumeroGuia = 20260512130001, NroOrden = "ORD-013", Codigo = "HDR-CH-004", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 13, 0, 0), Destino = "Recoleta" },
-            new HojaDeRuta { NumeroGuia = 20260512130002, NroOrden = "ORD-014", Codigo = "HDR-CH-005", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 13, 0, 0), Destino = "Palermo" },
-            new HojaDeRuta { NumeroGuia = 20260512130003, NroOrden = "ORD-015", Codigo = "HDR-CH-006", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 13, 0, 0), Destino = "Belgrano" },
-            // Chevallier - 19:30
-            new HojaDeRuta { NumeroGuia = 20260512193001, NroOrden = "ORD-016", Codigo = "HDR-CH-007", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 19, 30, 0), Destino = "Ciudad de Mendoza" },
-            new HojaDeRuta { NumeroGuia = 20260512193002, NroOrden = "ORD-017", Codigo = "HDR-CH-008", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 19, 30, 0), Destino = "Godoy Cruz" },
-            new HojaDeRuta { NumeroGuia = 20260512193003, NroOrden = "ORD-018", Codigo = "HDR-CH-009", Estado = "Pendiente", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 19, 30, 0), Destino = "Córdoba Capital" },
-
-            // Andesmar - 09:00
-            new HojaDeRuta { NumeroGuia = 20260515090001, NroOrden = "ORD-019", Codigo = "HDR-AN-001", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 9, 0, 0), Destino = "Río Cuarto" },
-            new HojaDeRuta { NumeroGuia = 20260515090002, NroOrden = "ORD-020", Codigo = "HDR-AN-002", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 9, 0, 0), Destino = "Villa Carlos Paz" },
-            new HojaDeRuta { NumeroGuia = 20260515090003, NroOrden = "ORD-021", Codigo = "HDR-AN-003", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 9, 0, 0), Destino = "Guaymallén" },
-            // Andesmar - 15:00
-            new HojaDeRuta { NumeroGuia = 20260515150001, NroOrden = "ORD-022", Codigo = "HDR-AN-004", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 15, 0, 0), Destino = "Recoleta" },
-            new HojaDeRuta { NumeroGuia = 20260515150002, NroOrden = "ORD-023", Codigo = "HDR-AN-005", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 15, 0, 0), Destino = "Belgrano" },
-            new HojaDeRuta { NumeroGuia = 20260515150003, NroOrden = "ORD-024", Codigo = "HDR-AN-006", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 15, 0, 0), Destino = "Ciudad de Mendoza" },
-            // Andesmar - 21:00
-            new HojaDeRuta { NumeroGuia = 20260515210001, NroOrden = "ORD-025", Codigo = "HDR-AN-007", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 21, 0, 0), Destino = "Palermo" },
-            new HojaDeRuta { NumeroGuia = 20260515210002, NroOrden = "ORD-026", Codigo = "HDR-AN-008", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 21, 0, 0), Destino = "Córdoba Capital" },
-            new HojaDeRuta { NumeroGuia = 20260515210003, NroOrden = "ORD-027", Codigo = "HDR-AN-009", Estado = "Pendiente", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 21, 0, 0), Destino = "Godoy Cruz" },
+            // Flecha Bus - 08:00 - ORD-001
+            new HojaDeRuta { NroOrden = "ORD-001", Codigo = "HDR-FB-202605-0001", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 20, 0, 0), Destino = "Córdoba Capital" },
+            new HojaDeRuta { NroOrden = "ORD-001", Codigo = "HDR-FB-202605-0002", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 20, 0, 0), Destino = "Villa Carlos Paz" },
+            new HojaDeRuta { NroOrden = "ORD-001", Codigo = "HDR-FB-202605-0003", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 20, 0, 0), Destino = "Río Cuarto" },
+            // Flecha Bus - 14:00 - ORD-002
+            new HojaDeRuta { NroOrden = "ORD-002", Codigo = "HDR-FB-202605-0004", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 22, 0, 0), Destino = "Córdoba Capital" },
+            new HojaDeRuta { NroOrden = "ORD-002", Codigo = "HDR-FB-202605-0005", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 22, 0, 0), Destino = "Godoy Cruz" },
+            new HojaDeRuta { NroOrden = "ORD-002", Codigo = "HDR-FB-202605-0006", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 22, 0, 0), Destino = "Guaymallén" },
+            // Flecha Bus - 20:00 - ORD-003
+            new HojaDeRuta { NroOrden = "ORD-003", Codigo = "HDR-FB-202605-0007", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 23, 0, 0), Destino = "Córdoba Capital" },
+            new HojaDeRuta { NroOrden = "ORD-003", Codigo = "HDR-FB-202605-0008", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 23, 0, 0), Destino = "Palermo" },
+            new HojaDeRuta { NroOrden = "ORD-003", Codigo = "HDR-FB-202605-0009", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Flecha Bus", FechaSalida = new DateTime(2026, 5, 10, 23, 0, 0), Destino = "Belgrano" },
+ 
+            // Chevallier - 07:30 - ORD-004
+            new HojaDeRuta { NroOrden = "ORD-004", Codigo = "HDR-CH-202605-0001", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 21, 30, 0), Destino = "Ciudad de Mendoza" },
+            new HojaDeRuta { NroOrden = "ORD-004", Codigo = "HDR-CH-202605-0002", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 21, 30, 0), Destino = "Godoy Cruz" },
+            new HojaDeRuta { NroOrden = "ORD-004", Codigo = "HDR-CH-202605-0003", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 21, 30, 0), Destino = "Guaymallén" },
+            // Chevallier - 13:00 - ORD-005
+            new HojaDeRuta { NroOrden = "ORD-005", Codigo = "HDR-CH-202605-0004", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 22, 30, 0), Destino = "Recoleta" },
+            new HojaDeRuta { NroOrden = "ORD-005", Codigo = "HDR-CH-202605-0005", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 22, 30, 0), Destino = "Palermo" },
+            new HojaDeRuta { NroOrden = "ORD-005", Codigo = "HDR-CH-202605-0006", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 22, 30, 0), Destino = "Belgrano" },
+            // Chevallier - 19:30 - ORD-006
+            new HojaDeRuta { NroOrden = "ORD-006", Codigo = "HDR-CH-202605-0007", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 23, 30, 0), Destino = "Ciudad de Mendoza" },
+            new HojaDeRuta { NroOrden = "ORD-006", Codigo = "HDR-CH-202605-0008", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 23, 30, 0), Destino = "Godoy Cruz" },
+            new HojaDeRuta { NroOrden = "ORD-006", Codigo = "HDR-CH-202605-0009", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Chevallier", FechaSalida = new DateTime(2026, 5, 12, 23, 30, 0), Destino = "Córdoba Capital" },
+ 
+            // Andesmar - 09:00 - ORD-007
+            new HojaDeRuta { NroOrden = "ORD-007", Codigo = "HDR-AN-202605-0001", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 19, 0, 0), Destino = "Río Cuarto" },
+            new HojaDeRuta { NroOrden = "ORD-007", Codigo = "HDR-AN-202605-0002", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 19, 0, 0), Destino = "Villa Carlos Paz" },
+            new HojaDeRuta { NroOrden = "ORD-007", Codigo = "HDR-AN-202605-0003", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 19, 0, 0), Destino = "Guaymallén" },
+            // Andesmar - 15:00 - ORD-008
+            new HojaDeRuta { NroOrden = "ORD-008", Codigo = "HDR-AN-202605-0004", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 20, 0, 0), Destino = "Recoleta" },
+            new HojaDeRuta { NroOrden = "ORD-008", Codigo = "HDR-AN-202605-0005", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 20, 0, 0), Destino = "Belgrano" },
+            new HojaDeRuta { NroOrden = "ORD-008", Codigo = "HDR-AN-202605-0006", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 20, 0, 0), Destino = "Ciudad de Mendoza" },
+            // Andesmar - 21:00 - ORD-009
+            new HojaDeRuta { NroOrden = "ORD-009", Codigo = "HDR-AN-202605-0007", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 21, 0, 0), Destino = "Palermo" },
+            new HojaDeRuta { NroOrden = "ORD-009", Codigo = "HDR-AN-202605-0008", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 21, 0, 0), Destino = "Córdoba Capital" },
+            new HojaDeRuta { NroOrden = "ORD-009", Codigo = "HDR-AN-202605-0009", Estado = "Listo para ser despachado a CD destino", EmpresaOmnibus = "Andesmar", FechaSalida = new DateTime(2026, 5, 15, 21, 0, 0), Destino = "Godoy Cruz" },
         ];
 
         public (bool valido, string error) ValidarBusqueda(string empresa, DateTime fechaSalida)
@@ -109,7 +109,7 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
 
         public (bool valido, string error) ActualizarEstadoHojaDeRuta(HojaDeRuta hojaDeRuta)
         {
-            var hojaEnSistema = HojasDeRuta.FirstOrDefault(h => h.NumeroGuia == hojaDeRuta.NumeroGuia);
+            var hojaEnSistema = HojasDeRuta.FirstOrDefault(h => h.Codigo == hojaDeRuta.Codigo);
 
             if (hojaEnSistema == null)
                 return (false, "Hoja de Ruta no encontrada.");

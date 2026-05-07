@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
+namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 {
     internal class HojaDeRuta
     {
