@@ -39,16 +39,27 @@ namespace TP3_CAI_GRUPO_C.Entrega
             new Encomienda
             {
                 NumeroGuia = 20260506101510101,
-                Estado = EstadoEncomienda.ListoParaRetirarPorCD,
+                Estado = EstadoEncomienda.ListoParaRetirarPorAgencia,
                 Destinatario = new Destinatario { NombreApellido = "Carla Ruiz", Dni = 33444555 },
                 ClienteAsociado = new Cliente { Cuit = 30205869953, RazonSocial = "EnvasesArg" }
             }
         };
 
+        public (bool valido, string error) ValidarIngresoDNI(string dni)
+        {
+            if (string.IsNullOrWhiteSpace(dni))
+                return (false, "Debe ingresar un DNI.");
+
+            if (dni.Length < 7 || dni.Length > 8)
+                return (false, "Se debe ingresar un numero de entre 7 a 8 digitos.");
+
+            return (true, "");
+        }
+
         public (bool valido, string error) ValidarDNI(int dni)
         {
             if (dni < 1_000_000 || dni > 99_999_999)
-                return (false, "DNI invalido. Se debe ingresar un numero de entre 7 a 8 digitos.");
+                return (false, "Se debe ingresar un numero de entre 7 a 8 digitos.");
 
             return (true, "");
         }
@@ -98,6 +109,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
             {
                 EstadoEncomienda.RecibidoCDDestino => "Recibido en CD destino",
                 EstadoEncomienda.ListoParaRetirarPorCD => "Listo para retirar por CD",
+                EstadoEncomienda.ListoParaRetirarPorAgencia => "Listo para retirar por Agencia",
                 EstadoEncomienda.Entregado => "Entregado",
                 _ => ""
             };
