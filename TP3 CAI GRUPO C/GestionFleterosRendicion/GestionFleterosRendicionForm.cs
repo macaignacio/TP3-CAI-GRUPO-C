@@ -43,12 +43,18 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 
             traerNombreFleteroLabel.Text = resultado.fletero.NombreCompleto;
             HdrAsignadasGroupBox.Enabled = true;
-            ConfirmarButton.Enabled = true;
             CargarHojasDeRuta(resultado.fletero.HojasDeRuta);
+            ConfirmarButton.Enabled = false;
         }
 
         private void ConfirmarButton_Click(object sender, EventArgs e)
         {
+            if (HdrAsignadasListView.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Debe marcar al menos una hoja de ruta cumplida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!long.TryParse(CuitTextBox.Text, out var cuitCuil))
             {
                 MessageBox.Show("El CUIT/CUIL debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -82,6 +88,11 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             }
 
             return codigosCumplidos;
+        }
+
+        private void HdrAsignadasListView_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            ConfirmarButton.Enabled = HdrAsignadasListView.CheckedItems.Count > 0;
         }
 
         private void CargarHojasDeRuta(List<HojaDeRuta> hojasDeRuta)
