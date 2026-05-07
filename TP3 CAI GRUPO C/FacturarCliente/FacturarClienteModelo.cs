@@ -6,15 +6,17 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 {
     internal class FacturarClienteModelo
     {
+        private List<Factura> FacturasEmitidas { get; } = new List<Factura>();
+
         public (Cliente? cliente, string error) ValidarCliente(long cuit)
         {
             if (cuit < 10_000_000_000 || cuit > 99_999_999_999)
-                return (null, "CUIT inválido. Se debe ingresar un número de 11 digitos sin guiones ni comas.");
+                return (null, "El CUIT debe tener 11 dígitos");
 
             var cliente = Clientes.FirstOrDefault(c => c.Cuit == cuit);
 
             if (cliente == null)
-                return (null, "Cliente no encontrado.");
+                return (null, "Cliente no encontrado");
 
             return (cliente, "");
         }
@@ -35,51 +37,51 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             }
         };
 
-        private Dictionary<string, List<Factura>> FacturasPorCliente { get; } = new()
+        private Dictionary<string, List<Servicio>> FacturasPorCliente { get; } = new()
         {
             {
                 "EnvasesArg",
                 [
-                    new Factura { Fecha = new DateTime(2024, 12, 2), Descripcion = "Entrega encomienda XL", NumeroGuia = 1001, Monto = 25000, Subtotal = 25000 },
-                    new Factura { Fecha = new DateTime(2025, 3, 17), Descripcion = "Entrega encomienda M", NumeroGuia = 1002, Monto = 15000, Subtotal = 40000 },
-                    new Factura { Fecha = new DateTime(2025, 6, 28), Descripcion = "Entrega encomienda S", NumeroGuia = 1003, Monto = 10000, Subtotal = 50000 },
+                    new Servicio { Fecha = new DateTime(2024, 12, 2), Descripcion = "Entrega encomienda XL", NumeroGuia = 20241202090000001, Monto = 25000, Subtotal = 25000 },
+                    new Servicio { Fecha = new DateTime(2025, 3, 17), Descripcion = "Entrega encomienda M", NumeroGuia = 20250317103000002, Monto = 15000, Subtotal = 40000 },
+                    new Servicio { Fecha = new DateTime(2025, 6, 28), Descripcion = "Entrega encomienda S", NumeroGuia = 20250628114500003, Monto = 10000, Subtotal = 50000 },
                 ]
             },
             {
                 "RepuestosCorSA",
                 [
-                    new Factura { Fecha = new DateTime(2023, 1, 14), Descripcion = "Entrega encomienda S", NumeroGuia = 2001, Monto = 6000, Subtotal = 6000 },
-                    new Factura { Fecha = new DateTime(2024, 10, 10), Descripcion = "Entrega encomienda XL", NumeroGuia = 2002, Monto = 18000, Subtotal = 24000 },
-                    new Factura { Fecha = new DateTime(2026, 4, 3), Descripcion = "Entrega encomienda L", NumeroGuia = 2003, Monto = 20000, Subtotal = 44000 },
+                    new Servicio { Fecha = new DateTime(2023, 1, 14), Descripcion = "Entrega encomienda S", NumeroGuia = 20230114091500004, Monto = 6000, Subtotal = 6000 },
+                    new Servicio { Fecha = new DateTime(2024, 10, 10), Descripcion = "Entrega encomienda XL", NumeroGuia = 20241010110000005, Monto = 18000, Subtotal = 24000 },
+                    new Servicio { Fecha = new DateTime(2026, 4, 3), Descripcion = "Entrega encomienda L", NumeroGuia = 20260403123000006, Monto = 20000, Subtotal = 44000 },
                 ]
             },
             {
                 "TecnologiaHoy",
                 [
-                    new Factura { Fecha = new DateTime(2025, 7, 12), Descripcion = "Entrega encomienda M", NumeroGuia = 3001, Monto = 25000, Subtotal = 25000 },
-                    new Factura { Fecha = new DateTime(2025, 11, 30), Descripcion = "Entrega encomienda XL", NumeroGuia = 3002, Monto = 24000, Subtotal = 49000 },
-                    new Factura { Fecha = new DateTime(2026, 3, 16), Descripcion = "Entrega encomienda L", NumeroGuia = 3003, Monto = 21000, Subtotal = 70000 },
+                    new Servicio { Fecha = new DateTime(2025, 7, 12), Descripcion = "Entrega encomienda M", NumeroGuia = 20250712094500007, Monto = 25000, Subtotal = 25000 },
+                    new Servicio { Fecha = new DateTime(2025, 11, 30), Descripcion = "Entrega encomienda XL", NumeroGuia = 20251130131500008, Monto = 24000, Subtotal = 49000 },
+                    new Servicio { Fecha = new DateTime(2026, 3, 16), Descripcion = "Entrega encomienda L", NumeroGuia = 20260316160000009, Monto = 21000, Subtotal = 70000 },
                 ]
             },
         };
 
-        public List<Factura> ObtenerFacturasPorCliente(string cliente)
+        public List<Servicio> ObtenerFacturasPorCliente(string cliente)
         {
             return FacturasPorCliente.TryGetValue(cliente, out var facturas)
                 ? facturas
                 : [];
         }
 
-        public (List<Factura> facturas, int total) CalcularFacturacion(FacturacionCliente facturacion)
+        public (List<Servicio> facturas, int total) CalcularFacturacion(FacturacionCliente facturacion)
         {
             int total = 0;
-            var facturasCalculadas = new List<Factura>();
+            var facturasCalculadas = new List<Servicio>();
 
-            foreach (var factura in facturacion.Facturas)
+            foreach (var factura in facturacion.Servicios)
             {
                 total += factura.Monto;
 
-                facturasCalculadas.Add(new Factura
+                facturasCalculadas.Add(new Servicio
                 {
                     Fecha = factura.Fecha,
                     Descripcion = factura.Descripcion,
@@ -90,6 +92,42 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             }
 
             return (facturasCalculadas, total);
+        }
+
+        public ResultadoFactura EmitirFactura(FacturacionCliente facturacion)
+        {
+            var resultadoCliente = ValidarCliente(facturacion.CuitCliente);
+            if (resultadoCliente.cliente == null)
+                return new ResultadoFactura { Valido = false, Error = resultadoCliente.error };
+
+            if (facturacion.Servicios.Count == 0)
+                return new ResultadoFactura { Valido = false, Error = "No hay servicios para facturar." };
+
+            var resultadoFacturacion = CalcularFacturacion(facturacion);
+
+            var factura = new Factura
+            {
+                NumeroFactura = GenerarNumeroFactura(),
+                CuitCliente = facturacion.CuitCliente,
+                RazonSocial = resultadoCliente.cliente.RazonSocial,
+                FechaEmision = DateTime.Now,
+                Servicios = resultadoFacturacion.facturas,
+                Total = resultadoFacturacion.total
+            };
+
+            FacturasEmitidas.Add(factura);
+
+            return new ResultadoFactura
+            {
+                Valido = true,
+                Factura = factura
+            };
+        }
+
+        private long GenerarNumeroFactura()
+        {
+            var fechaHoraAlta = DateTime.Now;
+            return long.Parse(fechaHoraAlta.ToString("yyyyMMddHHmmssfff"));
         }
     }
 }

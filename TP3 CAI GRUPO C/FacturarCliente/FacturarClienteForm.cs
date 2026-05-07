@@ -1,19 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Reflection.Emit;
-using System.Text;
 using System.Windows.Forms;
-using TP3_CAI_GRUPO_C.ImposiciónXCD;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TP3_CAI_GRUPO_C.FacturarCliente
 {
     public partial class FacturarClienteForm : Form
     {
         private FacturarClienteModelo modelo = new FacturarClienteModelo();
+        private List<Servicio> serviciosCargados = new List<Servicio>();
+
         public FacturarClienteForm()
         {
             InitializeComponent();
@@ -28,7 +23,7 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
         {
             if (!long.TryParse(CuitTextBox.Text, out var cuit))
             {
-                MessageBox.Show("CUIT inválido. Se debe ingresar un número de 11 digitos sin guiones ni comas.");
+                MessageBox.Show("El CUIT debe ser un número");
                 return;
             }
 
@@ -41,28 +36,10 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             }
             else
             {
-                RSLabel.Text = "[dato]";
-                ServiciosListView.Items.Clear();
-                TotalCalculadoLabel.Text = "[Total calculado]";
+                LimpiarDatosFacturacion();
                 MessageBox.Show(resultado.error);
             }
 
-        }
-        private Factura? ObtenerFacturaSeleccionada()
-        {
-            if (ServiciosListView.SelectedItems.Count == 0)
-                return null;
-
-            var item = ServiciosListView.SelectedItems[0];
-
-            return new Factura 
-            {
-                Fecha = DateTime.Parse(item.SubItems[0].Text),
-                Descripcion = item.SubItems[1].Text,
-                NumeroGuia = int.Parse(item.SubItems[2].Text),
-                Monto = int.Parse(item.SubItems[3].Text),
-                Subtotal = int.Parse(item.SubItems[4].Text)
-            };
         }
           
         private void CargarFacturas(string cliente)
@@ -73,8 +50,10 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 
             var resultado = modelo.CalcularFacturacion(new FacturacionCliente
             {
-                Facturas = facturas
+                Servicios = facturas
             });
+
+            serviciosCargados = resultado.facturas;
 
             foreach (var f in resultado.facturas)
             {
@@ -88,6 +67,56 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             }
 
             TotalCalculadoLabel.Text = resultado.total.ToString("N2");
+        }
+
+        private void EmitirFacturaButton_Click(object sender, EventArgs e)
+        {
+            if (!long.TryParse(CuitTextBox.Text, out var cuit))
+            {
+                MessageBox.Show("El CUIT debe ser un número", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var facturacion = new FacturacionCliente
+            {
+                CuitCliente = cuit,
+                RazonSocial = RSLabel.Text,
+                Servicios = serviciosCargados
+            };
+
+            var resultado = modelo.EmitirFactura(facturacion);
+
+            if (!resultado.Valido)
+            {
+                MessageBox.Show(resultado.Error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show($"Factura emitida con éxito. Número de factura: {resultado.Factura!.NumeroFactura}",
+                "Éxito",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            LimpiarFormulario();
+        }
+
+        private void LimpiarButton_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+        }
+
+        private void LimpiarFormulario()
+        {
+            CuitTextBox.Text = "";
+            LimpiarDatosFacturacion();
+        }
+
+        private void LimpiarDatosFacturacion()
+        {
+            RSLabel.Text = "[dato]";
+            ServiciosListView.Items.Clear();
+            TotalCalculadoLabel.Text = "[Total calculado]";
+            serviciosCargados.Clear();
         }
             
     }
