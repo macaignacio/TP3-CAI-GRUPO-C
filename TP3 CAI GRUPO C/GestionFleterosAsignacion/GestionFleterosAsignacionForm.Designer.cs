@@ -93,6 +93,7 @@
             BuscarButton.TabIndex = 2;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
+            BuscarButton.Click += BuscarButton_Click;
             // 
             // CuilTextLabel
             // 
@@ -148,6 +149,7 @@
             ConfirmarAsignacionButton.TabIndex = 1;
             ConfirmarAsignacionButton.Text = "Confirmar asignación";
             ConfirmarAsignacionButton.UseVisualStyleBackColor = true;
+            ConfirmarAsignacionButton.Click += ConfirmarAsignacionButton_Click;
             // 
             // button4
             // 
@@ -157,6 +159,7 @@
             button4.TabIndex = 3;
             button4.Text = "Aceptar";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += AceptarButton_Click;
             // 
             // TutasaTituloLabel
             // 
