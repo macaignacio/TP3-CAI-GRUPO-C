@@ -8,6 +8,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
     {
         RecibidoCDDestino,
         ListoParaRetirarPorCD,
+        ListoParaRetirarPorAgencia,
         Entregado
     }
 }

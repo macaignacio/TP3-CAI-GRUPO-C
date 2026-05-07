@@ -514,7 +514,7 @@
             Controls.Add(TutasaLabel);
             Controls.Add(CodigoCDLabel);
             Name = "ImposiciónXCDForm";
-            Text = "ImposiciónXCDForm";
+            Text = "Imposición por Centro de Distribución";
             Load += ImposiciónXCDForm_Load;
             DatosSolicitanteGroupBox.ResumeLayout(false);
             DatosSolicitanteGroupBox.PerformLayout();

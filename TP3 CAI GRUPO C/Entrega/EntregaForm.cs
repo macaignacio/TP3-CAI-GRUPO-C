@@ -13,6 +13,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
             InitializeComponent();
             BuscarButton.Click += BuscarButton_Click;
             ConfirmarButton.Click += ConfirmarButton_Click;
+            NuevaConsultabtn.Click += NuevaConsultabtn_Click;
             DatosEncomiendaListView.SelectedIndexChanged += DatosEncomiendaListView_SelectedIndexChanged;
         }
 
@@ -23,10 +24,18 @@ namespace TP3_CAI_GRUPO_C.Entrega
             DatosEncomiendaListView.MultiSelect = false;
             Estado.Width = 240;
             ConfirmarButton.Enabled = false;
+            NuevaConsultabtn.Enabled = false;
         }
 
         private void BuscarButton_Click(object? sender, EventArgs e)
         {
+            var resultadoIngresoDni = modelo.ValidarIngresoDNI(DniTextBox.Text);
+            if (!resultadoIngresoDni.valido)
+            {
+                MessageBox.Show(resultadoIngresoDni.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!int.TryParse(DniTextBox.Text, out var dni))
             {
                 MessageBox.Show("El DNI debe ser un numero valido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -40,6 +49,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
                 traerNombreDestinatarioLabel.Text = "";
                 DatosEncomiendaListView.Items.Clear();
                 ConfirmarButton.Enabled = false;
+                NuevaConsultabtn.Enabled = false;
                 MessageBox.Show(resultado.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -47,6 +57,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
             traerNombreDestinatarioLabel.Text = resultado.destinatario.NombreApellido;
             CargarEncomiendas(modelo.ObtenerEncomiendasPorDni(dni));
             ConfirmarButton.Enabled = false;
+            NuevaConsultabtn.Enabled = true;
         }
 
         private void DatosEncomiendaListView_SelectedIndexChanged(object? sender, EventArgs e)
@@ -97,6 +108,11 @@ namespace TP3_CAI_GRUPO_C.Entrega
             MessageBox.Show("Entrega confirmada con exito.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void NuevaConsultabtn_Click(object? sender, EventArgs e)
+        {
+            LimpiarControles();
+        }
+
         private void CargarEncomiendas(List<Encomienda> encomiendas)
         {
             DatosEncomiendaListView.Items.Clear();
@@ -107,6 +123,15 @@ namespace TP3_CAI_GRUPO_C.Entrega
                 item.SubItems.Add(modelo.ObtenerNombreEstado(encomienda.Estado));
                 DatosEncomiendaListView.Items.Add(item);
             }
+        }
+
+        private void LimpiarControles()
+        {
+            DniTextBox.Text = "";
+            traerNombreDestinatarioLabel.Text = "";
+            DatosEncomiendaListView.Items.Clear();
+            ConfirmarButton.Enabled = false;
+            NuevaConsultabtn.Enabled = false;
         }
     }
 }
