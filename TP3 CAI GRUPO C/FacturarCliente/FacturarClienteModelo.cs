@@ -6,6 +6,8 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 {
     internal class FacturarClienteModelo
     {
+        private int ProximoNumeroFactura { get; set; } = 2001;
+
         private List<Factura> FacturasEmitidas { get; } = new List<Factura>();
 
         public (Cliente? cliente, string error) ValidarCliente(long cuit)
@@ -124,10 +126,12 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             };
         }
 
-        private long GenerarNumeroFactura()
+        private string GenerarNumeroFactura()
         {
-            var fechaHoraAlta = DateTime.Now;
-            return long.Parse(fechaHoraAlta.ToString("yyyyMMddHHmmssfff"));
+            var numeroFactura = $"001-{ProximoNumeroFactura:000000}";
+            ProximoNumeroFactura++;
+
+            return numeroFactura;
         }
     }
 }

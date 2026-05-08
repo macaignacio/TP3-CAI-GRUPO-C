@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
 {
-    public partial class ResultadosCostoVentaFOrm : Form
+    public partial class ResultadosCostoVentaForm : Form
     {
         private ResultadosCostoVentaModelo modelo = new ResultadosCostoVentaModelo();
 
-        public ResultadosCostoVentaFOrm()
+        public ResultadosCostoVentaForm()
         {
             InitializeComponent();
             PeriodoDateTimePicker.ValueChanged += PeriodoDateTimePicker_ValueChanged;
