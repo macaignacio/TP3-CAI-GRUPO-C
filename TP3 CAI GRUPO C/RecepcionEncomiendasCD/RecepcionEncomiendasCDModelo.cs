@@ -82,8 +82,8 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
             if (!Empresas.Any(e => e.Nombre == empresa))
                 return (false, "Debe seleccionar una empresa de ómnibus válida.");
 
-            if (fechaSalida > DateTime.Now)
-                return (false, "La fecha y hora de salida no puede ser posterior a la fecha y hora actual.");
+           // if (fechaSalida > DateTime.Now)
+             //   return (false, "La fecha y hora de salida no puede ser posterior a la fecha y hora actual.");
 
             return (true, "");
         }
@@ -99,22 +99,25 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                 .ToList();
         }
 
-        public (bool valido, string error) ValidarConfirmacion(HojaDeRuta? hojaSeleccionada)
+        public (bool valido, string error) ValidarConfirmacion(List<HojaDeRuta> hojas)
         {
-            if (hojaSeleccionada == null)
-                return (false, "Debe seleccionar una Hoja de Ruta para confirmar la recepción.");
+            if (hojas.Count == 0)
+                return (false, "No hay Hojas de Ruta cargadas para confirmar la recepción.");
 
             return (true, "");
         }
 
-        public (bool valido, string error) ActualizarEstadoHojaDeRuta(HojaDeRuta hojaDeRuta)
+        public (bool valido, string error) ActualizarEstadoHojasDeRuta(List<HojaDeRuta> hojas)
         {
-            var hojaEnSistema = HojasDeRuta.FirstOrDefault(h => h.Codigo == hojaDeRuta.Codigo);
+            foreach (var hojaDeRuta in hojas)
+            {
+                var hojaEnSistema = HojasDeRuta.FirstOrDefault(h => h.Codigo == hojaDeRuta.Codigo);
 
-            if (hojaEnSistema == null)
-                return (false, "Hoja de Ruta no encontrada.");
+                if (hojaEnSistema == null)
+                    return (false, $"Hoja de Ruta {hojaDeRuta.Codigo} no encontrada.");
 
-            hojaEnSistema.Estado = EstadoRecibido;
+                hojaEnSistema.Estado = EstadoRecibido;
+            }
 
             return (true, "");
         }

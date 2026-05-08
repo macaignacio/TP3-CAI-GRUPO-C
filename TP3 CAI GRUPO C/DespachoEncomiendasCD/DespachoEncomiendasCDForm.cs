@@ -76,9 +76,9 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
 
         private void ConfirmarAsignacionButton_Click(object sender, EventArgs e)
         {
-            var hojaSeleccionada = ObtenerHojaDeRutaSeleccionada();
+            var hojas = ObtenerTodasLasHojas();
 
-            var resultadoValidacion = modelo.ValidarConfirmacion(hojaSeleccionada);
+            var resultadoValidacion = modelo.ValidarConfirmacion(hojas);
 
             if (!resultadoValidacion.valido)
             {
@@ -86,7 +86,7 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                 return;
             }
 
-            var resultadoActualizacion = modelo.ActualizarEstadoHojaDeRuta(hojaSeleccionada!);
+            var resultadoActualizacion = modelo.ActualizarEstadoHojasDeRuta(hojas);
 
             if (!resultadoActualizacion.valido)
             {
@@ -94,9 +94,11 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                 return;
             }
 
-            // Reflejar el cambio de estado en el ListView
-            var itemSeleccionado = HDRAsignadasListView.SelectedItems[0];
-            itemSeleccionado.SubItems[2].Text = hojaSeleccionada!.Estado;
+            // Reflejar el cambio de estado en todos los items del ListView
+            foreach (ListViewItem item in HDRAsignadasListView.Items)
+            {
+                item.SubItems[2].Text = (item.Tag as HojaDeRuta)!.Estado;
+            }
 
             MessageBox.Show(
                 "Asignación confirmada con éxito.",
@@ -105,12 +107,17 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                 MessageBoxIcon.Information);
         }
 
-        private HojaDeRuta? ObtenerHojaDeRutaSeleccionada()
+        private List<HojaDeRuta> ObtenerTodasLasHojas()
         {
-            if (HDRAsignadasListView.SelectedItems.Count == 0)
-                return null;
+            var hojas = new List<HojaDeRuta>();
 
-            return HDRAsignadasListView.SelectedItems[0].Tag as HojaDeRuta;
+            foreach (ListViewItem item in HDRAsignadasListView.Items)
+            {
+                if (item.Tag is HojaDeRuta hoja)
+                    hojas.Add(hoja);
+            }
+
+            return hojas;
         }
     }
 }
