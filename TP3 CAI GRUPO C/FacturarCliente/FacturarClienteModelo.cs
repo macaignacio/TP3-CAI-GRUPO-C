@@ -44,25 +44,25 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             {
                 "EnvasesArg",
                 [
-                    new Servicio { Fecha = new DateTime(2024, 12, 2), Descripcion = "Entrega encomienda XL", NumeroGuia = 20241202090000001, Monto = 25000, Subtotal = 25000 },
-                    new Servicio { Fecha = new DateTime(2025, 3, 17), Descripcion = "Entrega encomienda M", NumeroGuia = 20250317103000002, Monto = 15000, Subtotal = 40000 },
-                    new Servicio { Fecha = new DateTime(2025, 6, 28), Descripcion = "Entrega encomienda S", NumeroGuia = 20250628114500003, Monto = 10000, Subtotal = 50000 },
+                    new Servicio { Fecha = new DateTime(2024, 12, 2), Descripcion = "Entrega de encomienda a domicilio", NumeroGuia = 20241202090000001, Monto = 25000, Subtotal = 25000 },
+                    new Servicio { Fecha = new DateTime(2025, 3, 17), Descripcion = "Entrega de encomienda en Agencia", NumeroGuia = 20250317103000002, Monto = 15000, Subtotal = 40000 },
+                    new Servicio { Fecha = new DateTime(2025, 6, 28), Descripcion = "Entrega de encomienda en CD", NumeroGuia = 20250628114500003, Monto = 10000, Subtotal = 50000 },
                 ]
             },
             {
                 "RepuestosCorSA",
                 [
-                    new Servicio { Fecha = new DateTime(2023, 1, 14), Descripcion = "Entrega encomienda S", NumeroGuia = 20230114091500004, Monto = 6000, Subtotal = 6000 },
-                    new Servicio { Fecha = new DateTime(2024, 10, 10), Descripcion = "Entrega encomienda XL", NumeroGuia = 20241010110000005, Monto = 18000, Subtotal = 24000 },
-                    new Servicio { Fecha = new DateTime(2026, 4, 3), Descripcion = "Entrega encomienda L", NumeroGuia = 20260403123000006, Monto = 20000, Subtotal = 44000 },
+                    new Servicio { Fecha = new DateTime(2023, 1, 14), Descripcion = "Entrega de encomienda en Agencia", NumeroGuia = 20230114091500004, Monto = 6000, Subtotal = 6000 },
+                    new Servicio { Fecha = new DateTime(2024, 10, 10), Descripcion = "Entrega de encomienda en CD", NumeroGuia = 20241010110000005, Monto = 18000, Subtotal = 24000 },
+                    new Servicio { Fecha = new DateTime(2026, 4, 3), Descripcion = "Entrega de encomienda a domicilio", NumeroGuia = 20260403123000006, Monto = 20000, Subtotal = 44000 },
                 ]
             },
             {
                 "TecnologiaHoy",
                 [
-                    new Servicio { Fecha = new DateTime(2025, 7, 12), Descripcion = "Entrega encomienda M", NumeroGuia = 20250712094500007, Monto = 25000, Subtotal = 25000 },
-                    new Servicio { Fecha = new DateTime(2025, 11, 30), Descripcion = "Entrega encomienda XL", NumeroGuia = 20251130131500008, Monto = 24000, Subtotal = 49000 },
-                    new Servicio { Fecha = new DateTime(2026, 3, 16), Descripcion = "Entrega encomienda L", NumeroGuia = 20260316160000009, Monto = 21000, Subtotal = 70000 },
+                    new Servicio { Fecha = new DateTime(2025, 7, 12), Descripcion = "Entrega de encomienda a domicilio", NumeroGuia = 20250712094500007, Monto = 25000, Subtotal = 25000 },
+                    new Servicio { Fecha = new DateTime(2025, 11, 30), Descripcion = "Entrega de encomienda en CD", NumeroGuia = 20251130131500008, Monto = 24000, Subtotal = 49000 },
+                    new Servicio { Fecha = new DateTime(2026, 3, 16), Descripcion = "Entrega de encomienda a domicilio", NumeroGuia = 20260316160000009, Monto = 21000, Subtotal = 70000 },
                 ]
             },
         };
