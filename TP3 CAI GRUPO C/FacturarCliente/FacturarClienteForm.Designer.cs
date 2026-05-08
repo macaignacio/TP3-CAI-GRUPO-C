@@ -70,7 +70,7 @@
             SeleccionarClienteTextGroup.Margin = new Padding(3, 4, 3, 4);
             SeleccionarClienteTextGroup.Name = "SeleccionarClienteTextGroup";
             SeleccionarClienteTextGroup.Padding = new Padding(3, 4, 3, 4);
-            SeleccionarClienteTextGroup.Size = new Size(594, 133);
+            SeleccionarClienteTextGroup.Size = new Size(725, 133);
             SeleccionarClienteTextGroup.TabIndex = 1;
             SeleccionarClienteTextGroup.TabStop = false;
             SeleccionarClienteTextGroup.Text = "Seleccionar Cliente";
@@ -94,7 +94,7 @@
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(502, 95);
+            BuscarButton.Location = new Point(526, 44);
             BuscarButton.Margin = new Padding(3, 4, 3, 4);
             BuscarButton.Name = "BuscarButton";
             BuscarButton.Size = new Size(86, 31);
@@ -132,7 +132,7 @@
             FacturarServiciosGroupBox.Margin = new Padding(3, 4, 3, 4);
             FacturarServiciosGroupBox.Name = "FacturarServiciosGroupBox";
             FacturarServiciosGroupBox.Padding = new Padding(3, 4, 3, 4);
-            FacturarServiciosGroupBox.Size = new Size(592, 320);
+            FacturarServiciosGroupBox.Size = new Size(723, 320);
             FacturarServiciosGroupBox.TabIndex = 2;
             FacturarServiciosGroupBox.TabStop = false;
             FacturarServiciosGroupBox.Text = "Facturar Servicios";
@@ -148,7 +148,7 @@
             // 
             // LimpiarButton
             // 
-            LimpiarButton.Location = new Point(499, 277);
+            LimpiarButton.Location = new Point(615, 281);
             LimpiarButton.Margin = new Padding(3, 4, 3, 4);
             LimpiarButton.Name = "LimpiarButton";
             LimpiarButton.Size = new Size(86, 31);
@@ -159,7 +159,7 @@
             // 
             // EmitirFacturaButton
             // 
-            EmitirFacturaButton.Location = new Point(377, 277);
+            EmitirFacturaButton.Location = new Point(496, 281);
             EmitirFacturaButton.Margin = new Padding(3, 4, 3, 4);
             EmitirFacturaButton.Name = "EmitirFacturaButton";
             EmitirFacturaButton.Size = new Size(113, 31);
@@ -183,7 +183,7 @@
             ServiciosListView.Location = new Point(17, 44);
             ServiciosListView.Margin = new Padding(3, 4, 3, 4);
             ServiciosListView.Name = "ServiciosListView";
-            ServiciosListView.Size = new Size(567, 167);
+            ServiciosListView.Size = new Size(684, 167);
             ServiciosListView.TabIndex = 0;
             ServiciosListView.UseCompatibleStateImageBehavior = false;
             ServiciosListView.View = View.Details;
@@ -195,7 +195,7 @@
             // columnHeader2
             // 
             columnHeader2.Text = "Descripción";
-            columnHeader2.Width = 120;
+            columnHeader2.Width = 265;
             // 
             // NumeroGuia
             // 
@@ -216,7 +216,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(667, 599);
+            ClientSize = new Size(769, 599);
             Controls.Add(FacturarServiciosGroupBox);
             Controls.Add(SeleccionarClienteTextGroup);
             Controls.Add(TutasaTituloLabel);
