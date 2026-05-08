@@ -100,14 +100,14 @@
             DatosEncomiendasGroupBox.Controls.Add(NombreApellidoLabel);
             DatosEncomiendasGroupBox.Location = new Point(34, 167);
             DatosEncomiendasGroupBox.Name = "DatosEncomiendasGroupBox";
-            DatosEncomiendasGroupBox.Size = new Size(393, 203);
+            DatosEncomiendasGroupBox.Size = new Size(393, 222);
             DatosEncomiendasGroupBox.TabIndex = 2;
             DatosEncomiendasGroupBox.TabStop = false;
             DatosEncomiendasGroupBox.Text = "Datos de Encomiendas";
             // 
             // NuevaConsultabtn
             // 
-            NuevaConsultabtn.Location = new Point(257, 174);
+            NuevaConsultabtn.Location = new Point(253, 193);
             NuevaConsultabtn.Name = "NuevaConsultabtn";
             NuevaConsultabtn.Size = new Size(125, 23);
             NuevaConsultabtn.TabIndex = 4;
@@ -125,7 +125,7 @@
             // 
             // ConfirmarButton
             // 
-            ConfirmarButton.Location = new Point(126, 174);
+            ConfirmarButton.Location = new Point(122, 193);
             ConfirmarButton.Name = "ConfirmarButton";
             ConfirmarButton.Size = new Size(125, 23);
             ConfirmarButton.TabIndex = 2;
@@ -137,7 +137,7 @@
             DatosEncomiendaListView.Columns.AddRange(new ColumnHeader[] { NumeroGuia, Estado });
             DatosEncomiendaListView.Location = new Point(11, 54);
             DatosEncomiendaListView.Name = "DatosEncomiendaListView";
-            DatosEncomiendaListView.Size = new Size(367, 97);
+            DatosEncomiendaListView.Size = new Size(367, 116);
             DatosEncomiendaListView.TabIndex = 1;
             DatosEncomiendaListView.UseCompatibleStateImageBehavior = false;
             DatosEncomiendaListView.View = View.Details;
