@@ -1,5 +1,4 @@
-using TP3_CAI_GRUPO_C.ResultadosCostoVenta; 
-
+using TP3_CAI_GRUPO_C.DespachoEncomiendasCD;
 
 namespace TP3_CAI_GRUPO_C
 {
@@ -14,7 +13,7 @@ namespace TP3_CAI_GRUPO_C
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new ResultadosCostoVentaForm());
+            Application.Run(new DespachoEncomiendasCDForm());
         }
     }
 }
