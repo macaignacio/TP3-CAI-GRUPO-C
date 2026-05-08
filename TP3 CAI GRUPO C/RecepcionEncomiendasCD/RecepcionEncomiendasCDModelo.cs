@@ -82,8 +82,8 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
             if (!Empresas.Any(e => e.Nombre == empresa))
                 return (false, "Debe seleccionar una empresa de ómnibus válida.");
 
-           // if (fechaSalida > DateTime.Now)
-             //   return (false, "La fecha y hora de salida no puede ser posterior a la fecha y hora actual.");
+            if (fechaSalida > DateTime.Now)
+                return (false, "La fecha y hora de salida no puede ser posterior a la fecha y hora actual.");
 
             return (true, "");
         }

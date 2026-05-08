@@ -86,7 +86,7 @@
             DetalleHdrGroupBox.Margin = new Padding(6);
             DetalleHdrGroupBox.Name = "DetalleHdrGroupBox";
             DetalleHdrGroupBox.Padding = new Padding(6);
-            DetalleHdrGroupBox.Size = new Size(1287, 546);
+            DetalleHdrGroupBox.Size = new Size(1189, 546);
             DetalleHdrGroupBox.TabIndex = 14;
             DetalleHdrGroupBox.TabStop = false;
             DetalleHdrGroupBox.Text = "Detalle de Hojas de Ruta de transporte recibidas";
@@ -99,7 +99,7 @@
             DetalleHdrListView.Margin = new Padding(6);
             DetalleHdrListView.MultiSelect = false;
             DetalleHdrListView.Name = "DetalleHdrListView";
-            DetalleHdrListView.Size = new Size(1228, 420);
+            DetalleHdrListView.Size = new Size(1132, 420);
             DetalleHdrListView.TabIndex = 2;
             DetalleHdrListView.UseCompatibleStateImageBehavior = false;
             DetalleHdrListView.View = View.Details;
@@ -126,7 +126,7 @@
             // 
             // ConfirmarRecepcionButton
             // 
-            ConfirmarRecepcionButton.Location = new Point(1007, 484);
+            ConfirmarRecepcionButton.Location = new Point(911, 479);
             ConfirmarRecepcionButton.Margin = new Padding(6);
             ConfirmarRecepcionButton.Name = "ConfirmarRecepcionButton";
             ConfirmarRecepcionButton.Size = new Size(251, 49);
@@ -206,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1358, 1003);
+            ClientSize = new Size(1260, 1003);
             Controls.Add(SeleccionarOmnibusGroupBox);
             Controls.Add(NroCDLabel);
             Controls.Add(DetalleHdrGroupBox);
