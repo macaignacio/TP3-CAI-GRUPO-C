@@ -5,7 +5,7 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 {
     internal class Factura
     {
-        public long NumeroFactura { get; set; }
+        public string NumeroFactura { get; set; } = "";
 
         public long CuitCliente { get; set; }
 
