@@ -1,6 +1,6 @@
 ﻿namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
 {
-    partial class ResultadosCostoVentaFOrm
+    partial class ResultadosCostoVentaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -47,10 +47,9 @@
             // TutasaLabel
             // 
             TutasaLabel.AutoSize = true;
-            TutasaLabel.Location = new Point(286, 39);
-            TutasaLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaLabel.Location = new Point(200, 23);
             TutasaLabel.Name = "TutasaLabel";
-            TutasaLabel.Size = new Size(75, 25);
+            TutasaLabel.Size = new Size(50, 15);
             TutasaLabel.TabIndex = 0;
             TutasaLabel.Text = "TUTASA";
             // 
@@ -59,11 +58,9 @@
             PeriodoConsultaGroupBox.Controls.Add(PeriodoDateTimePicker);
             PeriodoConsultaGroupBox.Controls.Add(PeriodoLabel);
             PeriodoConsultaGroupBox.Controls.Add(ConsultarButton);
-            PeriodoConsultaGroupBox.Location = new Point(57, 86);
-            PeriodoConsultaGroupBox.Margin = new Padding(4, 5, 4, 5);
+            PeriodoConsultaGroupBox.Location = new Point(40, 52);
             PeriodoConsultaGroupBox.Name = "PeriodoConsultaGroupBox";
-            PeriodoConsultaGroupBox.Padding = new Padding(4, 5, 4, 5);
-            PeriodoConsultaGroupBox.Size = new Size(667, 149);
+            PeriodoConsultaGroupBox.Size = new Size(467, 89);
             PeriodoConsultaGroupBox.TabIndex = 1;
             PeriodoConsultaGroupBox.TabStop = false;
             PeriodoConsultaGroupBox.Text = "Período de Consulta";
@@ -72,30 +69,27 @@
             // 
             PeriodoDateTimePicker.CustomFormat = "MMMMyyyy";
             PeriodoDateTimePicker.Format = DateTimePickerFormat.Custom;
-            PeriodoDateTimePicker.Location = new Point(130, 67);
-            PeriodoDateTimePicker.Margin = new Padding(4, 5, 4, 5);
+            PeriodoDateTimePicker.Location = new Point(91, 40);
             PeriodoDateTimePicker.Name = "PeriodoDateTimePicker";
             PeriodoDateTimePicker.ShowUpDown = true;
-            PeriodoDateTimePicker.Size = new Size(255, 31);
+            PeriodoDateTimePicker.Size = new Size(180, 23);
             PeriodoDateTimePicker.TabIndex = 6;
             PeriodoDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
             // 
             // PeriodoLabel
             // 
             PeriodoLabel.AutoSize = true;
-            PeriodoLabel.Location = new Point(21, 72);
-            PeriodoLabel.Margin = new Padding(4, 0, 4, 0);
+            PeriodoLabel.Location = new Point(15, 43);
             PeriodoLabel.Name = "PeriodoLabel";
-            PeriodoLabel.Size = new Size(77, 25);
+            PeriodoLabel.Size = new Size(51, 15);
             PeriodoLabel.TabIndex = 5;
             PeriodoLabel.Text = "Período:";
             // 
             // ConsultarButton
             // 
-            ConsultarButton.Location = new Point(444, 65);
-            ConsultarButton.Margin = new Padding(4, 5, 4, 5);
+            ConsultarButton.Location = new Point(311, 39);
             ConsultarButton.Name = "ConsultarButton";
-            ConsultarButton.Size = new Size(107, 38);
+            ConsultarButton.Size = new Size(75, 23);
             ConsultarButton.TabIndex = 2;
             ConsultarButton.Text = "Consultar";
             ConsultarButton.UseVisualStyleBackColor = true;
@@ -103,11 +97,9 @@
             // ResultadoOperativoGroupBox
             // 
             ResultadoOperativoGroupBox.Controls.Add(ResultadoOperativoListView);
-            ResultadoOperativoGroupBox.Location = new Point(57, 291);
-            ResultadoOperativoGroupBox.Margin = new Padding(4, 5, 4, 5);
+            ResultadoOperativoGroupBox.Location = new Point(40, 175);
             ResultadoOperativoGroupBox.Name = "ResultadoOperativoGroupBox";
-            ResultadoOperativoGroupBox.Padding = new Padding(4, 5, 4, 5);
-            ResultadoOperativoGroupBox.Size = new Size(667, 291);
+            ResultadoOperativoGroupBox.Size = new Size(467, 175);
             ResultadoOperativoGroupBox.TabIndex = 2;
             ResultadoOperativoGroupBox.TabStop = false;
             ResultadoOperativoGroupBox.Text = "Resultado Operativo";
@@ -115,10 +107,9 @@
             // ResultadoOperativoListView
             // 
             ResultadoOperativoListView.Columns.AddRange(new ColumnHeader[] { EmpresaOmnibus, Ventas, Costos, Utilidad });
-            ResultadoOperativoListView.Location = new Point(16, 42);
-            ResultadoOperativoListView.Margin = new Padding(4, 5, 4, 5);
+            ResultadoOperativoListView.Location = new Point(11, 25);
             ResultadoOperativoListView.Name = "ResultadoOperativoListView";
-            ResultadoOperativoListView.Size = new Size(628, 221);
+            ResultadoOperativoListView.Size = new Size(441, 134);
             ResultadoOperativoListView.TabIndex = 0;
             ResultadoOperativoListView.UseCompatibleStateImageBehavior = false;
             ResultadoOperativoListView.View = View.Details;
@@ -145,26 +136,24 @@
             // 
             // LimpiarButton
             // 
-            LimpiarButton.Location = new Point(559, 614);
-            LimpiarButton.Margin = new Padding(4, 5, 4, 5);
+            LimpiarButton.Location = new Point(391, 368);
             LimpiarButton.Name = "LimpiarButton";
-            LimpiarButton.Size = new Size(107, 38);
+            LimpiarButton.Size = new Size(75, 23);
             LimpiarButton.TabIndex = 3;
             LimpiarButton.Text = "Limpiar";
             LimpiarButton.UseVisualStyleBackColor = true;
             LimpiarButton.Click += LimpiarButton_Click;
             // 
-            // ResultadosCostoVentaFOrm
+            // ResultadosCostoVentaForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(775, 673);
+            ClientSize = new Size(542, 404);
             Controls.Add(LimpiarButton);
             Controls.Add(ResultadoOperativoGroupBox);
             Controls.Add(PeriodoConsultaGroupBox);
             Controls.Add(TutasaLabel);
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "ResultadosCostoVentaFOrm";
+            Name = "ResultadosCostoVentaForm";
             Text = "Resultados Ingresos y Egresos";
             Load += ResultadosCostoVentaFOrm_Load;
             PeriodoConsultaGroupBox.ResumeLayout(false);

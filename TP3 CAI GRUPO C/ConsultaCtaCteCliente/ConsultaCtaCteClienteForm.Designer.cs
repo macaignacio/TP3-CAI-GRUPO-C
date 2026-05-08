@@ -55,10 +55,9 @@
             // TutasaTituloLabel
             // 
             TutasaTituloLabel.AutoSize = true;
-            TutasaTituloLabel.Location = new Point(459, 30);
-            TutasaTituloLabel.Margin = new Padding(4, 0, 4, 0);
+            TutasaTituloLabel.Location = new Point(321, 18);
             TutasaTituloLabel.Name = "TutasaTituloLabel";
-            TutasaTituloLabel.Size = new Size(75, 25);
+            TutasaTituloLabel.Size = new Size(50, 15);
             TutasaTituloLabel.TabIndex = 0;
             TutasaTituloLabel.Text = "TUTASA";
             // 
@@ -71,11 +70,9 @@
             BusquedaClienteGroupBox.Controls.Add(CuitTextBox);
             BusquedaClienteGroupBox.Controls.Add(periodoTextoLabel);
             BusquedaClienteGroupBox.Controls.Add(CuitTextoLabel);
-            BusquedaClienteGroupBox.Location = new Point(64, 100);
-            BusquedaClienteGroupBox.Margin = new Padding(4, 5, 4, 5);
+            BusquedaClienteGroupBox.Location = new Point(45, 60);
             BusquedaClienteGroupBox.Name = "BusquedaClienteGroupBox";
-            BusquedaClienteGroupBox.Padding = new Padding(4, 5, 4, 5);
-            BusquedaClienteGroupBox.Size = new Size(850, 212);
+            BusquedaClienteGroupBox.Size = new Size(595, 127);
             BusquedaClienteGroupBox.TabIndex = 1;
             BusquedaClienteGroupBox.TabStop = false;
             BusquedaClienteGroupBox.Text = "Búsqueda de Cliente";
@@ -83,19 +80,17 @@
             // RazonSocialLabel
             // 
             RazonSocialLabel.AutoSize = true;
-            RazonSocialLabel.Location = new Point(587, 48);
-            RazonSocialLabel.Margin = new Padding(4, 0, 4, 0);
+            RazonSocialLabel.Location = new Point(411, 29);
             RazonSocialLabel.Name = "RazonSocialLabel";
-            RazonSocialLabel.Size = new Size(59, 25);
+            RazonSocialLabel.Size = new Size(39, 15);
             RazonSocialLabel.TabIndex = 7;
             RazonSocialLabel.Text = "[dato]";
             // 
             // BuscarButton
             // 
-            BuscarButton.Location = new Point(734, 163);
-            BuscarButton.Margin = new Padding(4, 5, 4, 5);
+            BuscarButton.Location = new Point(514, 98);
             BuscarButton.Name = "BuscarButton";
-            BuscarButton.Size = new Size(107, 38);
+            BuscarButton.Size = new Size(75, 23);
             BuscarButton.TabIndex = 6;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
@@ -105,11 +100,10 @@
             // 
             PeriodoDateTimePicker.CustomFormat = "MMMMyyyy";
             PeriodoDateTimePicker.Format = DateTimePickerFormat.Custom;
-            PeriodoDateTimePicker.Location = new Point(143, 108);
-            PeriodoDateTimePicker.Margin = new Padding(4, 5, 4, 5);
+            PeriodoDateTimePicker.Location = new Point(100, 65);
             PeriodoDateTimePicker.Name = "PeriodoDateTimePicker";
             PeriodoDateTimePicker.ShowUpDown = true;
-            PeriodoDateTimePicker.Size = new Size(255, 31);
+            PeriodoDateTimePicker.Size = new Size(180, 23);
             PeriodoDateTimePicker.TabIndex = 4;
             PeriodoDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
             PeriodoDateTimePicker.ValueChanged += PeriodoDateTimePicker_ValueChanged;
@@ -117,49 +111,43 @@
             // RZTextoLabel
             // 
             RZTextoLabel.AutoSize = true;
-            RZTextoLabel.Location = new Point(463, 48);
-            RZTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            RZTextoLabel.Location = new Point(324, 29);
             RZTextoLabel.Name = "RZTextoLabel";
-            RZTextoLabel.Size = new Size(116, 25);
+            RZTextoLabel.Size = new Size(76, 15);
             RZTextoLabel.TabIndex = 0;
             RZTextoLabel.Text = "Razón Social:";
             // 
             // CuitTextBox
             // 
-            CuitTextBox.Location = new Point(143, 45);
-            CuitTextBox.Margin = new Padding(4, 5, 4, 5);
+            CuitTextBox.Location = new Point(100, 27);
             CuitTextBox.Name = "CuitTextBox";
-            CuitTextBox.Size = new Size(255, 31);
+            CuitTextBox.Size = new Size(180, 23);
             CuitTextBox.TabIndex = 3;
             // 
             // periodoTextoLabel
             // 
             periodoTextoLabel.AutoSize = true;
-            periodoTextoLabel.Location = new Point(26, 113);
-            periodoTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            periodoTextoLabel.Location = new Point(18, 68);
             periodoTextoLabel.Name = "periodoTextoLabel";
-            periodoTextoLabel.Size = new Size(77, 25);
+            periodoTextoLabel.Size = new Size(51, 15);
             periodoTextoLabel.TabIndex = 1;
             periodoTextoLabel.Text = "Período:";
             // 
             // CuitTextoLabel
             // 
             CuitTextoLabel.AutoSize = true;
-            CuitTextoLabel.Location = new Point(26, 50);
-            CuitTextoLabel.Margin = new Padding(4, 0, 4, 0);
+            CuitTextoLabel.Location = new Point(18, 30);
             CuitTextoLabel.Name = "CuitTextoLabel";
-            CuitTextoLabel.Size = new Size(96, 25);
+            CuitTextoLabel.Size = new Size(66, 15);
             CuitTextoLabel.TabIndex = 0;
             CuitTextoLabel.Text = "CUIT/CUIL:";
             // 
             // ResumenCuentaGroupBox
             // 
             ResumenCuentaGroupBox.Controls.Add(CuentaCorrienteListView);
-            ResumenCuentaGroupBox.Location = new Point(64, 348);
-            ResumenCuentaGroupBox.Margin = new Padding(4, 5, 4, 5);
+            ResumenCuentaGroupBox.Location = new Point(45, 209);
             ResumenCuentaGroupBox.Name = "ResumenCuentaGroupBox";
-            ResumenCuentaGroupBox.Padding = new Padding(4, 5, 4, 5);
-            ResumenCuentaGroupBox.Size = new Size(850, 432);
+            ResumenCuentaGroupBox.Size = new Size(595, 259);
             ResumenCuentaGroupBox.TabIndex = 2;
             ResumenCuentaGroupBox.TabStop = false;
             ResumenCuentaGroupBox.Text = "Resumen de Cuenta Corriente";
@@ -168,10 +156,9 @@
             // 
             CuentaCorrienteListView.Columns.AddRange(new ColumnHeader[] { columnHeader5, Fecha, columnHeader6, columnHeader2, Monto, columnHeader3, columnHeader4 });
             CuentaCorrienteListView.GridLines = true;
-            CuentaCorrienteListView.Location = new Point(13, 67);
-            CuentaCorrienteListView.Margin = new Padding(4, 5, 4, 5);
+            CuentaCorrienteListView.Location = new Point(9, 40);
             CuentaCorrienteListView.Name = "CuentaCorrienteListView";
-            CuentaCorrienteListView.Size = new Size(806, 327);
+            CuentaCorrienteListView.Size = new Size(565, 198);
             CuentaCorrienteListView.TabIndex = 2;
             CuentaCorrienteListView.UseCompatibleStateImageBehavior = false;
             CuentaCorrienteListView.View = View.Details;
@@ -213,24 +200,22 @@
             // 
             // LimpiarButton
             // 
-            LimpiarButton.Location = new Point(832, 813);
-            LimpiarButton.Margin = new Padding(4, 5, 4, 5);
+            LimpiarButton.Location = new Point(582, 488);
             LimpiarButton.Name = "LimpiarButton";
-            LimpiarButton.Size = new Size(107, 38);
+            LimpiarButton.Size = new Size(75, 23);
             LimpiarButton.TabIndex = 7;
             LimpiarButton.Text = "Limpiar";
             LimpiarButton.UseVisualStyleBackColor = true;
             // 
             // ConsultaCtaCteClienteForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 871);
+            ClientSize = new Size(689, 533);
             Controls.Add(LimpiarButton);
             Controls.Add(ResumenCuentaGroupBox);
             Controls.Add(BusquedaClienteGroupBox);
             Controls.Add(TutasaTituloLabel);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "ConsultaCtaCteClienteForm";
             Text = "Estado de Cuenta Corriente";
             Load += ConsultaCtaCteClienteForm_Load;
