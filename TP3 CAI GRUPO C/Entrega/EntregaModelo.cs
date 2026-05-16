@@ -50,8 +50,11 @@ namespace TP3_CAI_GRUPO_C.Entrega
             if (string.IsNullOrWhiteSpace(dni))
                 return (false, "Debe ingresar un DNI.");
 
+            if (!dni.All(char.IsDigit))
+                return (false, "Debe ingresar un valor numerico.");
+
             if (dni.Length < 7 || dni.Length > 8)
-                return (false, "Se debe ingresar un numero de entre 7 a 8 digitos.");
+                return (false, "Debe ingresar un valor numerico de 7 a 8 digitos. Por ejemplo: 42830416");
 
             return (true, "");
         }
@@ -59,7 +62,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
         public (bool valido, string error) ValidarDNI(int dni)
         {
             if (dni < 1_000_000 || dni > 99_999_999)
-                return (false, "Se debe ingresar un numero de entre 7 a 8 digitos.");
+                return (false, "Debe ingresar un valor numerico de 7 a 8 digitos. Por ejemplo: 42830416");
 
             return (true, "");
         }
