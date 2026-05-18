@@ -71,6 +71,12 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 
         private void EmitirFacturaButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(CuitTextBox.Text))
+            {
+                MessageBox.Show("Debe ingresar un CUIT/CUIL", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!long.TryParse(CuitTextBox.Text, out var cuit))
             {
                 MessageBox.Show("El CUIT debe ser un número", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
