@@ -71,6 +71,7 @@
             PeriodoDateTimePicker.Format = DateTimePickerFormat.Custom;
             PeriodoDateTimePicker.Location = new Point(91, 40);
             PeriodoDateTimePicker.Name = "PeriodoDateTimePicker";
+            PeriodoDateTimePicker.ShowCheckBox = true;
             PeriodoDateTimePicker.ShowUpDown = true;
             PeriodoDateTimePicker.Size = new Size(180, 23);
             PeriodoDateTimePicker.TabIndex = 6;

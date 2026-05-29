@@ -10,6 +10,10 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 
         private List<Factura> FacturasEmitidas { get; } = new List<Factura>();
 
+        public List<Servicio> ServiciosCargados { get; } = new List<Servicio>();
+
+        public int TotalCalculado { get; private set; }
+
         public (Cliente? cliente, string error) ValidarCliente(long cuit)
         {
             if (cuit < 10_000_000_000 || cuit > 99_999_999_999)
@@ -72,6 +76,26 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             return FacturasPorCliente.TryGetValue(cliente, out var facturas)
                 ? facturas
                 : [];
+        }
+
+        public void CargarServiciosFacturados(string cliente)
+        {
+            var facturas = ObtenerFacturasPorCliente(cliente);
+
+            var resultado = CalcularFacturacion(new FacturacionCliente
+            {
+                Servicios = facturas
+            });
+
+            ServiciosCargados.Clear();
+            ServiciosCargados.AddRange(resultado.facturas);
+            TotalCalculado = resultado.total;
+        }
+
+        public void LimpiarServiciosCargados()
+        {
+            ServiciosCargados.Clear();
+            TotalCalculado = 0;
         }
 
         public (List<Servicio> facturas, int total) CalcularFacturacion(FacturacionCliente facturacion)

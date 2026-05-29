@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace TP3_CAI_GRUPO_C.FacturarCliente
@@ -7,7 +6,6 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
     public partial class FacturarClienteForm : Form
     {
         private FacturarClienteModelo modelo = new FacturarClienteModelo();
-        private List<Servicio> serviciosCargados = new List<Servicio>();
 
         public FacturarClienteForm()
         {
@@ -46,16 +44,9 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
         {
             ServiciosListView.Items.Clear();
 
-            var facturas = modelo.ObtenerFacturasPorCliente(cliente);
+            modelo.CargarServiciosFacturados(cliente);
 
-            var resultado = modelo.CalcularFacturacion(new FacturacionCliente
-            {
-                Servicios = facturas
-            });
-
-            serviciosCargados = resultado.facturas;
-
-            foreach (var f in resultado.facturas)
+            foreach (var f in modelo.ServiciosCargados)
             {
                 var item = new ListViewItem(f.Fecha.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(f.Descripcion);
@@ -66,7 +57,7 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
                 ServiciosListView.Items.Add(item);
             }
 
-            TotalCalculadoLabel.Text = resultado.total.ToString("N2");
+            TotalCalculadoLabel.Text = modelo.TotalCalculado.ToString("N2");
         }
 
         private void EmitirFacturaButton_Click(object sender, EventArgs e)
@@ -87,7 +78,7 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             {
                 CuitCliente = cuit,
                 RazonSocial = RSLabel.Text,
-                Servicios = serviciosCargados
+                Servicios = modelo.ServiciosCargados
             };
 
             var resultado = modelo.EmitirFactura(facturacion);
@@ -122,7 +113,7 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
             RSLabel.Text = "[dato]";
             ServiciosListView.Items.Clear();
             TotalCalculadoLabel.Text = "[Total calculado]";
-            serviciosCargados.Clear();
+            modelo.LimpiarServiciosCargados();
         }
             
     }

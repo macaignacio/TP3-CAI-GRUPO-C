@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
@@ -15,7 +11,6 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
         public ResultadosCostoVentaForm()
         {
             InitializeComponent();
-            PeriodoDateTimePicker.ValueChanged += PeriodoDateTimePicker_ValueChanged;
             ConsultarButton.Click += ConsultarButton_Click;
         }
 
@@ -25,14 +20,12 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
             var ultimoDiaMesActual = DateTime.DaysInMonth(hoy.Year, hoy.Month);
             PeriodoDateTimePicker.MaxDate = new DateTime(hoy.Year, hoy.Month, ultimoDiaMesActual);
 
-            periodoSeleccionado = false;
+            PeriodoDateTimePicker.Checked = false;
         }
-
-        private bool periodoSeleccionado = false;
 
         private void ConsultarButton_Click(object? sender, EventArgs e)
         {
-            if (!periodoSeleccionado)
+            if (!PeriodoDateTimePicker.Checked)
             {
                 MessageBox.Show("Debe seleccionar un período.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -45,11 +38,6 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
             {
                 MessageBox.Show("No hay resultados para el período seleccionado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void PeriodoDateTimePicker_ValueChanged(object? sender, EventArgs e)
-        {
-            periodoSeleccionado = true;
         }
 
         private void LimpiarButton_Click(object sender, EventArgs e)
@@ -76,7 +64,7 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
         {
             ResultadoOperativoListView.Items.Clear();
             PeriodoDateTimePicker.Value = DateTime.Today;
-            periodoSeleccionado = false;
+            PeriodoDateTimePicker.Checked = false;
             PeriodoDateTimePicker.Focus();
         }
     }
