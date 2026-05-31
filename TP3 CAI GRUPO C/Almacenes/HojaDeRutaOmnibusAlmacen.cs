@@ -8,21 +8,21 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 {
     internal static class HojaDeRutaOmnibusAlmacen
     {
-        public static List<HojaDeRutaOmnibusEntidad> hojasderutaomnibus = new();
+        public static List<HojaDeRutaOmnibusEntidad> HojasDeRutaOmnibus = new();
 
         static HojaDeRutaOmnibusAlmacen()
         {
-            if (File.Exists(@"datos\hojasderutaomnibus.json"))
+            if (File.Exists(@"datos\HojasDeRutaOmnibus.json"))
             {
-                string json = File.ReadAllText(@"datos\hojasderutaomnibus.json");
-                hojasderutaomnibus = JsonSerializer.Deserialize<List<HojaDeRutaOmnibusEntidad>>(json);
+                string json = File.ReadAllText(@"datos\HojasDeRutaOmnibus.json");
+                HojasDeRutaOmnibus = JsonSerializer.Deserialize<List<HojaDeRutaOmnibusEntidad>>(json);
             }
         }
 
         public static void Guardar()
         {
-            string json = JsonSerializer.Serialize(hojasderutaomnibus);
-            File.WriteAllText(@"datos\hojasderutaomnibus.json", json);
+            string json = JsonSerializer.Serialize(HojasDeRutaOmnibus);
+            File.WriteAllText(@"datos\HojasDeRutaOmnibus.json", json);
         }
     }
 }
