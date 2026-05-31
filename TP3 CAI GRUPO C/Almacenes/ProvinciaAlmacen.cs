@@ -11,9 +11,9 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
             static ProvinciaAlmacen()
             {
-                if (File.Exists(@"datos\provincias.json"))
+                if (File.Exists(@"datos\Provincias.json"))
                 {
-                    string json = File.ReadAllText(@"datos\provincias.json");
+                    string json = File.ReadAllText(@"datos\Provincias.json");
                     provincias = JsonSerializer.Deserialize<List<ProvinciaEntidad>>(json);
                 }
             }
@@ -21,7 +21,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
             public static void Guardar()
             {
                 string json = JsonSerializer.Serialize(provincias);
-                File.WriteAllText(@"datos\provincias.json", json);
+                File.WriteAllText(@"datos\Provincias.json", json);
             }
         }
     }

@@ -11,9 +11,9 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
         static ServicioOmnibusAlmacen()
         {
-            if (File.Exists(@"datos\serviciosOmnibus.json"))
+            if (File.Exists(@"datos\ServiciosOmnibus.json"))
             {
-                string json = File.ReadAllText(@"datos\serviciosOmnibus.json");
+                string json = File.ReadAllText(@"datos\ServiciosOmnibus.json");
                 servicios = JsonSerializer.Deserialize<List<ServicioOmnibusEntidad>>(json);
             }
         }
@@ -21,7 +21,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(servicios);
-            File.WriteAllText(@"datos\serviciosOmnibus.json", json);
+            File.WriteAllText(@"datos\ServiciosOmnibus.json", json);
         }
     }
 }
