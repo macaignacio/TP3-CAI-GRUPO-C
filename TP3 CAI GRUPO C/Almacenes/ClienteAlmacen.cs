@@ -11,9 +11,9 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
         static ClienteAlmacen()
         {
-            if (File.Exists(@"datos\clientes.json"))
+            if (File.Exists(@"datos\Clientes.json"))
             {
-                string json = File.ReadAllText(@"datos\clientes.json");
+                string json = File.ReadAllText(@"datos\Clientes.json");
                 clientes = JsonSerializer.Deserialize<List<ClienteEntidad>>(json);
             }
         }
@@ -21,7 +21,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(clientes);
-            File.WriteAllText(@"datos\clientes.json", json);
+            File.WriteAllText(@"datos\Clientes.json", json);
         }
 
     }

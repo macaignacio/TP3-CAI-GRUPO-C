@@ -11,9 +11,9 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
         static CuentaCorrienteClienteAlmacen()
         {
-            if (File.Exists(@"datos\ctactecliente.json"))
+            if (File.Exists(@"datos\CtaCteCliente.json"))
             {
-                string json = File.ReadAllText(@"datos\ctactecliente.json");
+                string json = File.ReadAllText(@"datos\CtaCteCliente.json");
                 ctaCteCliente = JsonSerializer.Deserialize<List<CuentaCorrienteClienteEntidad>>(json);
             }
         }
@@ -21,7 +21,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(ctaCteCliente);
-            File.WriteAllText(@"datos\ctactecliente.json", json);
+            File.WriteAllText(@"datos\CtaCteCliente.json", json);
         }
     }
 }
