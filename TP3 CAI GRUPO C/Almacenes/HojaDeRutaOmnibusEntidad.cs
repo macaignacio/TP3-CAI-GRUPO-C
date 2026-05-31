@@ -14,6 +14,6 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public string CentroDistribucionDestino { get; set; }
 
         public EstadoHDROmnibusEnum Estado { get; set; }
-        public List<NumeroGuia> Guias { get; set; } 
+        public List<long> Guias { get; set; } 
     }
 }
