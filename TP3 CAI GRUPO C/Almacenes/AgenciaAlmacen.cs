@@ -12,9 +12,9 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
         static AgenciaAlmacen()
         {
-            if (File.Exists(@"datos\Agencia.json"))
+            if (File.Exists(@"datos\Agencias.json"))
             {
-                string json = File.ReadAllText(@"datos\Agencia.json");
+                string json = File.ReadAllText(@"datos\Agencias.json");
                 agencia = JsonSerializer.Deserialize<List<AgenciaEntidad>>(json);
             }
         }
@@ -22,7 +22,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(agencia);
-            File.WriteAllText(@"datos\Agencia.json", json);
+            File.WriteAllText(@"datos\Agencias.json", json);
         }
     }
 }
