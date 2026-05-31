@@ -4,7 +4,11 @@ using System.Text;
 
 namespace TP3_CAI_GRUPO_C.Almacenes
 {
-    internal class MetodoRetiroEnum
+    public enum MetodoRetiroEnum
     {
+        Agencia,
+        CentroDeDistribución,
+        EnDomicilio
+
     }
 }

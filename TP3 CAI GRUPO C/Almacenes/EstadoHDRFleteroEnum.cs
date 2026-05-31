@@ -4,7 +4,9 @@ using System.Text;
 
 namespace TP3_CAI_GRUPO_C.Almacenes
 {
-    internal class EstadoHDRFleteroEnum
+    public enum EstadoHDRFleteroEnum
     {
+        Asignada,
+        Cumplida
     }
 }
