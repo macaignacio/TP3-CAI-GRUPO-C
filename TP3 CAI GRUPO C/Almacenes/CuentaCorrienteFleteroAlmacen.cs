@@ -23,6 +23,6 @@ namespace TP3_CAI_GRUPO_C.Almacenes
             string json = JsonSerializer.Serialize(ctaCteFletero);
             File.WriteAllText(@"datos\CtaCteFletero.json", json);
         }
-        //
+        
     }
 }
