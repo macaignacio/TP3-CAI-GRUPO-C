@@ -11,9 +11,9 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
         static FacturaAlmacen()
         {
-            if (File.Exists(@"datos\facturas.json"))
+            if (File.Exists(@"datos\Facturas.json"))
             {
-                string json = File.ReadAllText(@"datos\facturas.json");
+                string json = File.ReadAllText(@"datos\Facturas.json");
                 facturas = JsonSerializer.Deserialize<List<FacturaEntidad>>(json);
             }
 
@@ -23,7 +23,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
         {
             string json = JsonSerializer.Serialize(facturas);
-            File.WriteAllText(@"datos\facturas.json", json);
+            File.WriteAllText(@"datos\Facturas.json", json);
         }
 
     }

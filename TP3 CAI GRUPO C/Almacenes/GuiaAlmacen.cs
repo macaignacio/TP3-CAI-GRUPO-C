@@ -11,9 +11,9 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
         static GuiaAlmacen()
         {
-            if(File.Exists(@"datos\guias.json"))
+            if(File.Exists(@"datos\Guias.json"))
             {
-                string json = File.ReadAllText(@"datos\guias.json");
+                string json = File.ReadAllText(@"datos\Guias.json");
                 guias = JsonSerializer.Deserialize<List<GuiaEntidad>>(json);
             }
         }
@@ -21,7 +21,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(guias);
-            File.WriteAllText(@"datos\guias.json", json);
+            File.WriteAllText(@"datos\Guias.json", json);
         }
     }
 }
