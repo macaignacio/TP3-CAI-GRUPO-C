@@ -8,20 +8,20 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 {
     internal static class HojaDeRutaFleteroAlmacen
     {
-        public static List<HojaDeRutaFleteroEntidad> hojasderutafleteros = new();
+        public static List<HojaDeRutaFleteroEntidad> HojasDeRutaFleteros = new();
 
         static HojaDeRutaFleteroAlmacen()
         {
-            if (File.Exists(@"datos\hojasderutafleteros.json"))
+            if (File.Exists(@"datos\HojasDeRutaFleteros.json"))
             {
-                string json = File.ReadAllText(@"datos\hojasderutafleteros.json");
-                hojasderutafleteros = JsonSerializer.Deserialize<List<HojaDeRutaFleteroEntidad>>(json);
+                string json = File.ReadAllText(@"datos\HojasDeRutaFleteros.json");
+                HojasDeRutaFleteros = JsonSerializer.Deserialize<List<HojaDeRutaFleteroEntidad>>(json);
             }
         }
 
         public static void Guardar()
         {
-            string json = JsonSerializer.Serialize(hojasderutafleteros);
+            string json = JsonSerializer.Serialize(HojasDeRutaFleteros);
             File.WriteAllText(@"datos\hojasderutafleteros.json", json);
         }
     }
