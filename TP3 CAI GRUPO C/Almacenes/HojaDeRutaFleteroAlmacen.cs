@@ -22,7 +22,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public static void Guardar()
         {
             string json = JsonSerializer.Serialize(HojasDeRutaFleteros);
-            File.WriteAllText(@"datos\hojasderutafleteros.json", json);
+            File.WriteAllText(@"datos\HojasDeRutaFleteros.json", json);
         }
     }
 }
