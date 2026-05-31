@@ -12,6 +12,6 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public long CuitCuilFletero { get; set; }
         public TipoHDRFleteroEnum TipoHDR { get; set; }
         public EstadoHDRFleteroEnum Estado { get; set; }
-        public List<NumeroGuia> Guias { get; set; } 
+        public List<long> Guias { get; set; } 
     }
 }
