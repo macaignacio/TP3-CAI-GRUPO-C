@@ -1,1 +1,296 @@
-﻿
+[
+  {
+    "CuitEmpresaOmnibus": 30700112233,
+    "IdentificadorServicio": "LP-1105",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-01T11:05:00.000",
+        "CentroDistribucionParada": "CD-LP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-01T13:20:00.000",
+        "CentroDistribucionParada": "CD-LP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-02T08:10:00.000",
+        "CentroDistribucionParada": "CD-LP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-02T19:45:00.000",
+        "CentroDistribucionParada": "CD-CBA-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-03T09:30:00.000",
+        "CentroDistribucionParada": "CD-CBA-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-03T16:20:00.000",
+        "CentroDistribucionParada": "CD-CBA-01"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30700112233,
+    "IdentificadorServicio": "MDP-1840",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-02T18:40:00.000",
+        "CentroDistribucionParada": "CD-MDP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-03T07:15:00.000",
+        "CentroDistribucionParada": "CD-MDP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-03T12:30:00.000",
+        "CentroDistribucionParada": "CD-MDP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-03T17:20:00.000",
+        "CentroDistribucionParada": "CD-RET-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T08:35:00.000",
+        "CentroDistribucionParada": "CD-RET-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T10:10:00.000",
+        "CentroDistribucionParada": "CD-RET-01"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30555123456,
+    "IdentificadorServicio": "CBA-1445",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-03T14:45:10.003",
+        "CentroDistribucionParada": "CD-CBA-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-03T15:25:00.000",
+        "CentroDistribucionParada": "CD-CBA-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T06:50:00.000",
+        "CentroDistribucionParada": "CD-CBA-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T09:20:00.000",
+        "CentroDistribucionParada": "CD-VCP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T13:10:00.000",
+        "CentroDistribucionParada": "CD-VCP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T17:45:00.000",
+        "CentroDistribucionParada": "CD-VCP-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T18:15:00.000",
+        "CentroDistribucionParada": "CD-MZA-01"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30666123457,
+    "IdentificadorServicio": "LIN-0900",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-04T09:00:00.000",
+        "CentroDistribucionParada": "CD-LIN-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T11:10:00.000",
+        "CentroDistribucionParada": "CD-LIN-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T12:15:00.000",
+        "CentroDistribucionParada": "CD-LIN-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T13:00:00.000",
+        "CentroDistribucionParada": "CD-LIN-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-04T16:40:00.000",
+        "CentroDistribucionParada": "CD-LIN-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-05T07:30:00.000",
+        "CentroDistribucionParada": "CD-LIN-02"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30555123456,
+    "IdentificadorServicio": "BB-0730",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-05T07:30:00.000",
+        "CentroDistribucionParada": "CD-BB-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-05T13:45:00.000",
+        "CentroDistribucionParada": "CD-BB-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-05T18:25:00.000",
+        "CentroDistribucionParada": "CD-BB-01"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30666123457,
+    "IdentificadorServicio": "MZA-0835",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-05T08:35:00.000",
+        "CentroDistribucionParada": "CD-MZA-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-05T09:45:00.000",
+        "CentroDistribucionParada": "CD-MZA-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-05T13:30:00.000",
+        "CentroDistribucionParada": "CD-MZA-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-05T15:00:00.000",
+        "CentroDistribucionParada": "CD-MZA-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-05T17:15:00.000",
+        "CentroDistribucionParada": "CD-MZA-02"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30777123458,
+    "IdentificadorServicio": "GYM-0850",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-06T08:50:00.000",
+        "CentroDistribucionParada": "CD-GYM-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-06T12:05:40.006",
+        "CentroDistribucionParada": "CD-RET-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-06T13:00:00.000",
+        "CentroDistribucionParada": "CD-RET-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-06T14:05:00.000",
+        "CentroDistribucionParada": "CD-GYM-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-06T17:30:00.000",
+        "CentroDistribucionParada": "CD-RET-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-06T18:20:00.000",
+        "CentroDistribucionParada": "CD-GYM-01"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30777123458,
+    "IdentificadorServicio": "MDP-1800",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-06T18:00:00.000",
+        "CentroDistribucionParada": "CD-MDP-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-07T09:40:00.000",
+        "CentroDistribucionParada": "CD-MDP-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-07T16:10:00.000",
+        "CentroDistribucionParada": "CD-MDP-02"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30700112233,
+    "IdentificadorServicio": "GC-1235",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-06T12:35:00.000",
+        "CentroDistribucionParada": "CD-GC-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-07T19:05:00.000",
+        "CentroDistribucionParada": "CD-PAL-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-08T08:45:00.000",
+        "CentroDistribucionParada": "CD-PAL-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-08T12:20:00.000",
+        "CentroDistribucionParada": "CD-PAL-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-10T18:50:00.000",
+        "CentroDistribucionParada": "CD-GC-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-11T08:30:00.000",
+        "CentroDistribucionParada": "CD-GC-01"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30555123456,
+    "IdentificadorServicio": "RC-0810",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-08T08:10:00.000",
+        "CentroDistribucionParada": "CD-RC-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-08T10:25:00.000",
+        "CentroDistribucionParada": "CD-RC-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-09T06:40:00.000",
+        "CentroDistribucionParada": "CD-RC-01"
+      },
+      {
+        "FechaHoraParada": "2026-05-09T20:05:00.000",
+        "CentroDistribucionParada": "CD-LP-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-10T09:00:00.000",
+        "CentroDistribucionParada": "CD-LP-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-10T14:30:00.000",
+        "CentroDistribucionParada": "CD-LP-02"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30666123457,
+    "IdentificadorServicio": "PAL-1245",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-05-09T12:45:00.000",
+        "CentroDistribucionParada": "CD-PAL-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-10T07:00:00.000",
+        "CentroDistribucionParada": "CD-PAL-02"
+      },
+      {
+        "FechaHoraParada": "2026-05-10T16:35:00.000",
+        "CentroDistribucionParada": "CD-PAL-02"
+      }
+    ]
+  }
+]
