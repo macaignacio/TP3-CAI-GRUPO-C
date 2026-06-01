@@ -1,0 +1,14 @@
+﻿[
+  {
+    "Tipo": "RetiroDomicilio",
+    "Precio": 500
+  },
+  {
+    "Tipo": "EntregaDomicilio",
+    "Precio": 800
+  },
+  {
+    "Tipo": "EntregaAgencia",
+    "Precio": 300
+  }
+]
