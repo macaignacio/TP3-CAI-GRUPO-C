@@ -1,12 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Text;
 
 namespace TP3_CAI_GRUPO_C.Almacenes
 {
-   /* internal class EmpresaOmnibusEntidad
+    internal class EmpresaOmnibusEntidad
     {
         public string nombre { get; set; }
 
@@ -19,8 +17,5 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public decimal precioFijo { get; set; }
 
         public int capacidadAlmacenamientoEnS { get; set; }
-
-
-    }*/
+    }
 }
-
