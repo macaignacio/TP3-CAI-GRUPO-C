@@ -6,9 +6,11 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 {
     internal class MovimientoGuia
     {
-        public DateTime FechaHoraPara { get; set; }
+        public EstadoEnum Estado {  get; set; }
 
-        public string CentroDistribucionParada { get; set; }
+        public DateTime UltimaActualizacion { get; set; }
+
+        public string Ubicacion { get; set; }
 
     }
 }
