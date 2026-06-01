@@ -1,1 +1,163 @@
 ﻿
+[
+  {
+    "CuitCuilFletero": 20301234567,
+    "NombreCompleto": "Carlos Alberto Perez",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27312345678,
+    "NombreCompleto": "Mariana Soledad Torres",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20423456789,
+    "NombreCompleto": "Ricardo Daniel Medina",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27534567890,
+    "NombreCompleto": "Valeria Andrea Suarez",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20645678901,
+    "NombreCompleto": "Martin Ezequiel Rojas",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20756789012,
+    "NombreCompleto": "Federico Nicolas Castro",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27867890123,
+    "NombreCompleto": "Laura Beatriz Acosta",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20978901234,
+    "NombreCompleto": "Diego Sebastian Molina",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27089012345,
+    "NombreCompleto": "Natalia Veronica Herrera",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20190123456,
+    "NombreCompleto": "Gustavo Ariel Luna",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27201234567,
+    "NombreCompleto": "Paula Marcela Silva",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20312345098,
+    "NombreCompleto": "Hector Fabian Cabrera",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27423456109,
+    "NombreCompleto": "Silvina Gabriela Romero",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20534567210,
+    "NombreCompleto": "Pablo Esteban Navarro",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27645678321,
+    "NombreCompleto": "Carolina Ines Vargas",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20756789432,
+    "NombreCompleto": "Sergio Damian Ortega",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27867890543,
+    "NombreCompleto": "Monica Alejandra Rios",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20978901654,
+    "NombreCompleto": "Claudio Javier Sosa",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 27089012765,
+    "NombreCompleto": "Patricia Noemi Dominguez",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  },
+  {
+    "CuitCuilFletero": 20190123876,
+    "NombreCompleto": "Emiliano Andres Peralta",
+    "ComisionS": 1000,
+    "ComisionM": 1700,
+    "ComisionL": 2400,
+    "ComisionXL": 3000
+  }
+]

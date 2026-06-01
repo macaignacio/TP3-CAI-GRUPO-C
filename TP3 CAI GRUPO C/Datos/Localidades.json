@@ -1,1 +1,63 @@
 ﻿
+[
+  {
+    "IDLocalidad": 101,
+    "Descripcion": "La Plata",
+    "CodigosPostales": [1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909]
+  },
+  {
+    "IDLocalidad": 102,
+    "Descripcion": "Mar del Plata",
+    "CodigosPostales": [7600, 7601, 7602, 7603, 7604, 7605, 7606, 7607, 7608, 7609]
+  },
+  {
+    "IDLocalidad": 103,
+    "Descripcion": "Bahía Blanca",
+    "CodigosPostales": [8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009]
+  },
+  {
+    "IDLocalidad": 201,
+    "Descripcion": "Córdoba Capital",
+    "CodigosPostales": [5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009]
+  },
+  {
+    "IDLocalidad": 202,
+    "Descripcion": "Villa Carlos Paz",
+    "CodigosPostales": [5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161]
+  },
+  {
+    "IDLocalidad": 203,
+    "Descripcion": "Río Cuarto",
+    "CodigosPostales": [5800, 5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809]
+  },
+  {
+    "IDLocalidad": 301,
+    "Descripcion": "Ciudad de Mendoza",
+    "CodigosPostales": [5500, 5510, 5511, 5512, 5513, 5514, 5515, 5516, 5517, 5518]
+  },
+  {
+    "IDLocalidad": 302,
+    "Descripcion": "Godoy Cruz",
+    "CodigosPostales": [5520, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530]
+  },
+  {
+    "IDLocalidad": 303,
+    "Descripcion": "Guaymallén",
+    "CodigosPostales": [5531, 5532, 5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540]
+  },
+  {
+    "IDLocalidad": 401,
+    "Descripcion": "Liniers",
+    "CodigosPostales": [1405, 1406, 1407, 1408, 1410, 1411, 1412, 1413, 1414, 1415]
+  },
+  {
+    "IDLocalidad": 402,
+    "Descripcion": "Retiro",
+    "CodigosPostales": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]
+  },
+  {
+    "IDLocalidad": 403,
+    "Descripcion": "Palermo",
+    "CodigosPostales": [1416, 1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425]
+  }
+]

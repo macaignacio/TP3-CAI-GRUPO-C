@@ -1,1 +1,28 @@
 ﻿
+[
+  {
+    "Cuit": 30712345678,
+    "RazonSocial": "Tecnologia Austral S.A.",
+    "CondicionIva": "Responsable Inscripto"
+  },
+  {
+    "Cuit": 30765432109,
+    "RazonSocial": "Comercial del Plata S.A.",
+    "CondicionIva": "Responsable Inscripto"
+  },
+  {
+    "Cuit": 30567891234,
+    "RazonSocial": "Distribuidora Norte S.R.L.",
+    "CondicionIva": "Responsable Inscripto"
+  },
+  {
+    "Cuit": 30543219876,
+    "RazonSocial": "Logistica Andina S.R.L.",
+    "CondicionIva": "Responsable Inscripto"
+  },
+  {
+    "Cuit": 30678912345,
+    "RazonSocial": "Servicios Integrales del Sur S.A.",
+    "CondicionIva": "Responsable Inscripto"
+  }
+]

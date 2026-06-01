@@ -1,1 +1,23 @@
 ﻿
+[
+  {
+    "IdProvincia": 1,
+    "Nombre": "Buenos Aires",
+    "Localidades": [101, 102, 103]
+  },
+  {
+    "IdProvincia": 2,
+    "Nombre": "Córdoba",
+    "Localidades": [201, 202, 203]
+  },
+  {
+    "IdProvincia": 3,
+    "Nombre": "Mendoza",
+    "Localidades": [301, 302, 303]
+  },
+  {
+    "IdProvincia": 4,
+    "Nombre": "Ciudad Autonoma de Buenos Aires",
+    "Localidades": [401, 402, 403]
+  }
+]

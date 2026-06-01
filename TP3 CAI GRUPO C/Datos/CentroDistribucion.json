@@ -1,1 +1,117 @@
 ﻿
+[
+  {
+    "Codigo": "CD-LP-01",
+    "Nombre": "Centro Distribucion La Plata Norte",
+    "IdLocalidad": 101,
+    "CodPostal": [1900, 1901, 1902, 1903, 1904]
+  },
+  {
+    "Codigo": "CD-LP-02",
+    "Nombre": "Centro Distribucion La Plata Sur",
+    "IdLocalidad": 101,
+    "CodPostal": [1905, 1906, 1907, 1908, 1909]
+  },
+  {
+    "Codigo": "CD-MDP-01",
+    "Nombre": "Centro Distribucion Mar del Plata Centro",
+    "IdLocalidad": 102,
+    "CodPostal": [7600, 7601, 7602, 7603, 7604]
+  },
+  {
+    "Codigo": "CD-MDP-02",
+    "Nombre": "Centro Distribucion Mar del Plata Puerto",
+    "IdLocalidad": 102,
+    "CodPostal": [7605, 7606, 7607, 7608, 7609]
+  },
+  {
+    "Codigo": "CD-BB-01",
+    "Nombre": "Centro Distribucion Bahia Blanca",
+    "IdLocalidad": 103,
+    "CodPostal": [8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009]
+  },
+  {
+    "Codigo": "CD-CBA-01",
+    "Nombre": "Centro Distribucion Cordoba Capital Norte",
+    "IdLocalidad": 201,
+    "CodPostal": [5000, 5001, 5002, 5003, 5004]
+  },
+  {
+    "Codigo": "CD-CBA-02",
+    "Nombre": "Centro Distribucion Cordoba Capital Sur",
+    "IdLocalidad": 201,
+    "CodPostal": [5005, 5006, 5007, 5008, 5009]
+  },
+  {
+    "Codigo": "CD-VCP-01",
+    "Nombre": "Centro Distribucion Villa Carlos Paz",
+    "IdLocalidad": 202,
+    "CodPostal": [5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161]
+  },
+  {
+    "Codigo": "CD-RC-01",
+    "Nombre": "Centro Distribucion Rio Cuarto",
+    "IdLocalidad": 203,
+    "CodPostal": [5800, 5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809]
+  },
+  {
+    "Codigo": "CD-MZA-01",
+    "Nombre": "Centro Distribucion Ciudad de Mendoza Centro",
+    "IdLocalidad": 301,
+    "CodPostal": [5500, 5510, 5511, 5512, 5513]
+  },
+  {
+    "Codigo": "CD-MZA-02",
+    "Nombre": "Centro Distribucion Ciudad de Mendoza Oeste",
+    "IdLocalidad": 301,
+    "CodPostal": [5514, 5515, 5516, 5517, 5518]
+  },
+  {
+    "Codigo": "CD-GC-01",
+    "Nombre": "Centro Distribucion Godoy Cruz",
+    "IdLocalidad": 302,
+    "CodPostal": [5520, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530]
+  },
+  {
+    "Codigo": "CD-GYM-01",
+    "Nombre": "Centro Distribucion Guaymallen",
+    "IdLocalidad": 303,
+    "CodPostal": [5531, 5532, 5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540]
+  },
+  {
+    "Codigo": "CD-LIN-01",
+    "Nombre": "Centro Distribucion Liniers Norte",
+    "IdLocalidad": 401,
+    "CodPostal": [1405, 1406, 1407, 1408, 1410]
+  },
+  {
+    "Codigo": "CD-LIN-02",
+    "Nombre": "Centro Distribucion Liniers Sur",
+    "IdLocalidad": 401,
+    "CodPostal": [1411, 1412, 1413, 1414, 1415]
+  },
+  {
+    "Codigo": "CD-RET-01",
+    "Nombre": "Centro Distribucion Retiro Terminal",
+    "IdLocalidad": 402,
+    "CodPostal": [1001, 1002, 1003, 1004, 1005]
+  },
+  {
+    "Codigo": "CD-RET-02",
+    "Nombre": "Centro Distribucion Retiro Centro",
+    "IdLocalidad": 402,
+    "CodPostal": [1006, 1007, 1008, 1009, 1010]
+  },
+  {
+    "Codigo": "CD-PAL-01",
+    "Nombre": "Centro Distribucion Palermo Norte",
+    "IdLocalidad": 403,
+    "CodPostal": [1416, 1417, 1418, 1419, 1420]
+  },
+  {
+    "Codigo": "CD-PAL-02",
+    "Nombre": "Centro Distribucion Palermo Sur",
+    "IdLocalidad": 403,
+    "CodPostal": [1421, 1422, 1423, 1424, 1425]
+  }
+]
