@@ -1,1 +1,83 @@
 ﻿
+[
+  {
+    "Codigo": "HDR-OMN-202605-0001",
+    "IdentificadorServicio": "FLE-20260502-0810-LP-CBA",
+    "CentroDistribucionOrigen": "CD-LP-01",
+    "CentroDistribucionDestino": "CD-CBA-01",
+    "Estado": 1,
+    "Guias": [
+      20260501101530001
+    ]
+  },
+  {
+    "Codigo": "HDR-OMN-202605-0002",
+    "IdentificadorServicio": "CHE-20260503-0715-MDP-RET",
+    "CentroDistribucionOrigen": "CD-MDP-01",
+    "CentroDistribucionDestino": "CD-RET-01",
+    "Estado": 1,
+    "Guias": [
+      20260502113045002
+    ]
+  },
+  {
+    "Codigo": "HDR-OMN-202605-0003",
+    "IdentificadorServicio": "AND-20260504-0650-CBA-MZA",
+    "CentroDistribucionOrigen": "CD-CBA-02",
+    "CentroDistribucionDestino": "CD-MZA-01",
+    "Estado": 1,
+    "Guias": [
+      20260503144510003
+    ]
+  },
+  {
+    "Codigo": "HDR-OMN-202605-0004",
+    "IdentificadorServicio": "VIA-20260505-0730-LIN-BB",
+    "CentroDistribucionOrigen": "CD-LIN-02",
+    "CentroDistribucionDestino": "CD-BB-01",
+    "Estado": 0,
+    "Guias": [
+      20260504102005004
+    ]
+  },
+  {
+    "Codigo": "HDR-OMN-202605-0005",
+    "IdentificadorServicio": "AND-20260506-1235-GC-PAL",
+    "CentroDistribucionOrigen": "CD-GC-01",
+    "CentroDistribucionDestino": "CD-PAL-01",
+    "Estado": 1,
+    "Guias": [
+      20260505165022005
+    ]
+  },
+  {
+    "Codigo": "HDR-OMN-202605-0006",
+    "IdentificadorServicio": "CHE-20260506-2200-RET-MDP",
+    "CentroDistribucionOrigen": "CD-RET-02",
+    "CentroDistribucionDestino": "CD-MDP-02",
+    "Estado": 0,
+    "Guias": [
+      20260506120540006
+    ]
+  },
+  {
+    "Codigo": "HDR-OMN-202605-0007",
+    "IdentificadorServicio": "FLE-20260509-0640-RC-LP",
+    "CentroDistribucionOrigen": "CD-RC-01",
+    "CentroDistribucionDestino": "CD-LP-02",
+    "Estado": 1,
+    "Guias": [
+      20260507190533007
+    ]
+  },
+  {
+    "Codigo": "HDR-OMN-202605-0008",
+    "IdentificadorServicio": "AND-20260510-0700-PAL-GC",
+    "CentroDistribucionOrigen": "CD-PAL-02",
+    "CentroDistribucionDestino": "CD-GC-01",
+    "Estado": 1,
+    "Guias": [
+      20260508172012008
+    ]
+  }
+]

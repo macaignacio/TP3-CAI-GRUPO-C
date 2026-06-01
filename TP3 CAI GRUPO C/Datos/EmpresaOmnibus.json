@@ -1,1 +1,46 @@
-﻿
+[
+  {
+    "nombre": "Flecha Bus",
+    "cuitEmpresaOmnibus": 30611338844,
+    "serviciosOmnibus": [
+      "FLE-20260502-0810-LP-CBA",
+      "FLE-20260509-0640-RC-LP"
+    ],
+    "resultados": [],
+    "precioFijo": 145000.00,
+    "capacidadAlmacenamientoEnS": 160
+  },
+  {
+    "nombre": "Andesmar",
+    "cuitEmpresaOmnibus": 30561785402,
+    "serviciosOmnibus": [
+      "AND-20260504-0650-CBA-MZA",
+      "AND-20260506-1235-GC-PAL",
+      "AND-20260510-0700-PAL-GC"
+    ],
+    "resultados": [],
+    "precioFijo": 128000.00,
+    "capacidadAlmacenamientoEnS": 80
+  },
+  {
+    "nombre": "Nueva Chevallier",
+    "cuitEmpresaOmnibus": 33707215689,
+    "serviciosOmnibus": [
+      "CHE-20260503-0715-MDP-RET",
+      "CHE-20260506-2200-RET-MDP"
+    ],
+    "resultados": [],
+    "precioFijo": 96500.00,
+    "capacidadAlmacenamientoEnS": 56
+  },
+  {
+    "nombre": "Via Bariloche",
+    "cuitEmpresaOmnibus": 30643922157,
+    "serviciosOmnibus": [
+      "VIA-20260505-0730-LIN-BB"
+    ],
+    "resultados": [],
+    "precioFijo": 72000.00,
+    "capacidadAlmacenamientoEnS": 24
+  }
+]

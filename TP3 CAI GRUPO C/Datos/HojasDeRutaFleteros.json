@@ -1,1 +1,63 @@
 ﻿
+[
+  {
+    "Codigo": "HDR-RET-202605-0001",
+    "CentroDistribucion": "CD-MDP-01",
+    "CuitCuilFletero": 20301234567,
+    "TipoHDR": 0,
+    "Estado": 1,
+    "Guias": [
+      20260502113045002
+    ]
+  },
+  {
+    "Codigo": "HDR-RET-202605-0002",
+    "CentroDistribucion": "CD-GC-01",
+    "CuitCuilFletero": 27312345678,
+    "TipoHDR": 0,
+    "Estado": 1,
+    "Guias": [
+      20260505165022005
+    ]
+  },
+  {
+    "Codigo": "HDR-RET-202605-0003",
+    "CentroDistribucion": "CD-PAL-02",
+    "CuitCuilFletero": 20423456789,
+    "TipoHDR": 0,
+    "Estado": 1,
+    "Guias": [
+      20260508172012008
+    ]
+  },
+  {
+    "Codigo": "HDR-DIS-202605-0001",
+    "CentroDistribucion": "CD-CBA-01",
+    "CuitCuilFletero": 27534567890,
+    "TipoHDR": 1,
+    "Estado": 1,
+    "Guias": [
+      20260501101530001
+    ]
+  },
+  {
+    "Codigo": "HDR-DIS-202605-0002",
+    "CentroDistribucion": "CD-LP-02",
+    "CuitCuilFletero": 20645678901,
+    "TipoHDR": 1,
+    "Estado": 0,
+    "Guias": [
+      20260507190533007
+    ]
+  },
+  {
+    "Codigo": "HDR-DIS-202605-0003",
+    "CentroDistribucion": "CD-BB-01",
+    "CuitCuilFletero": 20756789012,
+    "TipoHDR": 1,
+    "Estado": 0,
+    "Guias": [
+      20260504102005004
+    ]
+  }
+]
