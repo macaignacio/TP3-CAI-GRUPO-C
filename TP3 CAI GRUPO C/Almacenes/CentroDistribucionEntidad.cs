@@ -13,6 +13,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public int IdLocalidad { get; set; }
 
         public List<int> CodPostal { get; set; }
+        public List<long> Fleteros { get; set; }
 
     }
 }

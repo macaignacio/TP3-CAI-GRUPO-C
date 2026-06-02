@@ -5,10 +5,10 @@
   },
   {
     "Tipo": "EntregaDomicilio",
-    "Precio": 800
+    "Precio": 500
   },
   {
     "Tipo": "EntregaAgencia",
-    "Precio": 300
+    "Precio": 800
   }
 ]

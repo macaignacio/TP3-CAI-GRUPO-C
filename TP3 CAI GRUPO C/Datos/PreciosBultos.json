@@ -1,101 +1,3458 @@
 ﻿[
-  {
-    "TamañoCaja": "S",
-    "IdLocalidadOrigen": 101,
-    "IdLocalidadDestino": 101,
-    "Precio": 1000
-  },
-  {
-    "TamañoCaja": "M",
-    "IdLocalidadOrigen": 101,
-    "IdLocalidadDestino": 101,
-    "Precio": 1500
-  },
-  {
-    "TamañoCaja": "L",
-    "IdLocalidadOrigen": 101,
-    "IdLocalidadDestino": 101,
-    "Precio": 2200
-  },
-  {
-    "TamañoCaja": "XL",
-    "IdLocalidadOrigen": 101,
-    "IdLocalidadDestino": 101,
-    "Precio": 3000
-  },
-
-  {
-    "TamañoCaja": "S",
-    "IdLocalidadOrigen": 101,
-    "IdLocalidadDestino": 102,
-    "Precio": 1000
-  },
-  {
-    "TamañoCaja": "M",
-    "IdLocalidadOrigen": 101,
-    "IdLocalidadDestino": 102,
-    "Precio": 1500
-  },
-  {
-    "TamañoCaja": "L",
-    "IdLocalidadOrigen": 101,
-    "IdLocalidadDestino": 102,
-    "Precio": 2200
-  },
-  {
-    "TamañoCaja": "XL",
-    "IdLocalidadOrigen": 101,
-    "IdLocalidadDestino": 102,
-    "Precio": 3000
-  },
-
-  {
-    "TamañoCaja": "S",
-    "IdLocalidadOrigen": 102,
-    "IdLocalidadDestino": 101,
-    "Precio": 1000
-  },
-  {
-    "TamañoCaja": "M",
-    "IdLocalidadOrigen": 102,
-    "IdLocalidadDestino": 101,
-    "Precio": 1500
-  },
-  {
-    "TamañoCaja": "L",
-    "IdLocalidadOrigen": 102,
-    "IdLocalidadDestino": 101,
-    "Precio": 2200
-  },
-  {
-    "TamañoCaja": "XL",
-    "IdLocalidadOrigen": 102,
-    "IdLocalidadDestino": 101,
-    "Precio": 3000
-  },
-
-  {
-    "TamañoCaja": "S",
-    "IdLocalidadOrigen": 102,
-    "IdLocalidadDestino": 102,
-    "Precio": 1000
-  },
-  {
-    "TamañoCaja": "M",
-    "IdLocalidadOrigen": 102,
-    "IdLocalidadDestino": 102,
-    "Precio": 1500
-  },
-  {
-    "TamañoCaja": "L",
-    "IdLocalidadOrigen": 102,
-    "IdLocalidadDestino": 102,
-    "Precio": 2200
-  },
-  {
-    "TamañoCaja": "XL",
-    "IdLocalidadOrigen": 102,
-    "IdLocalidadDestino": 102,
-    "Precio": 3000
-  }
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  101,
+        "Precio":  950
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  101,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  101,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  101,
+        "Precio":  3050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  102,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  102,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  102,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  102,
+        "Precio":  5100
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  103,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  103,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  103,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  103,
+        "Precio":  5100
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  201,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  201,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  201,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  201,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  202,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  202,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  202,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  202,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  203,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  203,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  203,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  203,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  301,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  301,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  301,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  301,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  302,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  302,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  302,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  302,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  303,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  303,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  303,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  303,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  401,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  401,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  401,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  401,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  402,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  402,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  402,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  402,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  403,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  403,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  403,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  101,
+        "IdLocalidadDestino":  403,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  101,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  101,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  101,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  101,
+        "Precio":  5100
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  102,
+        "Precio":  950
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  102,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  102,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  102,
+        "Precio":  3050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  103,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  103,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  103,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  103,
+        "Precio":  5100
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  201,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  201,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  201,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  201,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  202,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  202,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  202,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  202,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  203,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  203,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  203,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  203,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  301,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  301,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  301,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  301,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  302,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  302,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  302,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  302,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  303,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  303,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  303,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  303,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  401,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  401,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  401,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  401,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  402,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  402,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  402,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  402,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  403,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  403,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  403,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  102,
+        "IdLocalidadDestino":  403,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  101,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  101,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  101,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  101,
+        "Precio":  5100
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  102,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  102,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  102,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  102,
+        "Precio":  5100
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  103,
+        "Precio":  950
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  103,
+        "Precio":  1600
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  103,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  103,
+        "Precio":  3050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  201,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  201,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  201,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  201,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  202,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  202,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  202,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  202,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  203,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  203,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  203,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  203,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  301,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  301,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  301,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  301,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  302,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  302,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  302,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  302,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  303,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  303,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  303,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  303,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  401,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  401,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  401,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  401,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  402,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  402,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  402,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  402,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  403,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  403,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  403,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  103,
+        "IdLocalidadDestino":  403,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  101,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  101,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  101,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  101,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  102,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  102,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  102,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  102,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  103,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  103,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  103,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  103,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  201,
+        "Precio":  850
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  201,
+        "Precio":  1450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  201,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  201,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  202,
+        "Precio":  1200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  202,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  202,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  202,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  203,
+        "Precio":  1200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  203,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  203,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  203,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  301,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  301,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  301,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  301,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  302,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  302,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  302,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  302,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  303,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  303,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  303,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  303,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  401,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  401,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  401,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  401,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  402,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  402,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  402,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  402,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  403,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  403,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  403,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  201,
+        "IdLocalidadDestino":  403,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  101,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  101,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  101,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  101,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  102,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  102,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  102,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  102,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  103,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  103,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  103,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  103,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  201,
+        "Precio":  1200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  201,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  201,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  201,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  202,
+        "Precio":  850
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  202,
+        "Precio":  1450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  202,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  202,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  203,
+        "Precio":  1200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  203,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  203,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  203,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  301,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  301,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  301,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  301,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  302,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  302,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  302,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  302,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  303,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  303,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  303,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  303,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  401,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  401,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  401,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  401,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  402,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  402,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  402,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  402,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  403,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  403,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  403,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  202,
+        "IdLocalidadDestino":  403,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  101,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  101,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  101,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  101,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  102,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  102,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  102,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  102,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  103,
+        "Precio":  2300
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  103,
+        "Precio":  3900
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  103,
+        "Precio":  5500
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  103,
+        "Precio":  7350
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  201,
+        "Precio":  1200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  201,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  201,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  201,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  202,
+        "Precio":  1200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  202,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  202,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  202,
+        "Precio":  3850
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  203,
+        "Precio":  850
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  203,
+        "Precio":  1450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  203,
+        "Precio":  2050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  203,
+        "Precio":  2700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  301,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  301,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  301,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  301,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  302,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  302,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  302,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  302,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  303,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  303,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  303,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  303,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  401,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  401,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  401,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  401,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  402,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  402,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  402,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  402,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  403,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  403,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  403,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  203,
+        "IdLocalidadDestino":  403,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  101,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  101,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  101,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  101,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  102,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  102,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  102,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  102,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  103,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  103,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  103,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  103,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  201,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  201,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  201,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  201,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  202,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  202,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  202,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  202,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  203,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  203,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  203,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  203,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  301,
+        "Precio":  750
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  301,
+        "Precio":  1300
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  301,
+        "Precio":  1800
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  301,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  302,
+        "Precio":  1000
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  302,
+        "Precio":  1700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  302,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  302,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  303,
+        "Precio":  1000
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  303,
+        "Precio":  1700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  303,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  303,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  401,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  401,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  401,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  401,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  402,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  402,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  402,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  402,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  403,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  403,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  403,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  301,
+        "IdLocalidadDestino":  403,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  101,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  101,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  101,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  101,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  102,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  102,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  102,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  102,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  103,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  103,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  103,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  103,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  201,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  201,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  201,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  201,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  202,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  202,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  202,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  202,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  203,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  203,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  203,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  203,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  301,
+        "Precio":  1000
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  301,
+        "Precio":  1700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  301,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  301,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  302,
+        "Precio":  750
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  302,
+        "Precio":  1300
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  302,
+        "Precio":  1800
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  302,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  303,
+        "Precio":  1000
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  303,
+        "Precio":  1700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  303,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  303,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  401,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  401,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  401,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  401,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  402,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  402,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  402,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  402,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  403,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  403,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  403,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  302,
+        "IdLocalidadDestino":  403,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  101,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  101,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  101,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  101,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  102,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  102,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  102,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  102,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  103,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  103,
+        "Precio":  5450
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  103,
+        "Precio":  7700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  103,
+        "Precio":  10250
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  201,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  201,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  201,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  201,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  202,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  202,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  202,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  202,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  203,
+        "Precio":  2200
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  203,
+        "Precio":  3750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  203,
+        "Precio":  5300
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  203,
+        "Precio":  7050
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  301,
+        "Precio":  1000
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  301,
+        "Precio":  1700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  301,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  301,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  302,
+        "Precio":  1000
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  302,
+        "Precio":  1700
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  302,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  302,
+        "Precio":  3200
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  303,
+        "Precio":  750
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  303,
+        "Precio":  1300
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  303,
+        "Precio":  1800
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  303,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  401,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  401,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  401,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  401,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  402,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  402,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  402,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  402,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  403,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  403,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  403,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  303,
+        "IdLocalidadDestino":  403,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  101,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  101,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  101,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  101,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  102,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  102,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  102,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  102,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  103,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  103,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  103,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  103,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  201,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  201,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  201,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  201,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  202,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  202,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  202,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  202,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  203,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  203,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  203,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  203,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  301,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  301,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  301,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  301,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  302,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  302,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  302,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  302,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  303,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  303,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  303,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  303,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  401,
+        "Precio":  650
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  401,
+        "Precio":  1100
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  401,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  401,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  402,
+        "Precio":  900
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  402,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  402,
+        "Precio":  2150
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  402,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  403,
+        "Precio":  900
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  403,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  403,
+        "Precio":  2150
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  401,
+        "IdLocalidadDestino":  403,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  101,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  101,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  101,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  101,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  102,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  102,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  102,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  102,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  103,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  103,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  103,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  103,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  201,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  201,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  201,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  201,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  202,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  202,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  202,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  202,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  203,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  203,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  203,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  203,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  301,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  301,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  301,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  301,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  302,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  302,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  302,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  302,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  303,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  303,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  303,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  303,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  401,
+        "Precio":  900
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  401,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  401,
+        "Precio":  2150
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  401,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  402,
+        "Precio":  650
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  402,
+        "Precio":  1100
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  402,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  402,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  403,
+        "Precio":  900
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  403,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  403,
+        "Precio":  2150
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  402,
+        "IdLocalidadDestino":  403,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  101,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  101,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  101,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  101,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  102,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  102,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  102,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  102,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  103,
+        "Precio":  1400
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  103,
+        "Precio":  2400
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  103,
+        "Precio":  3350
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  103,
+        "Precio":  4500
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  201,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  201,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  201,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  201,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  202,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  202,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  202,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  202,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  203,
+        "Precio":  2100
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  203,
+        "Precio":  3550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  203,
+        "Precio":  5050
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  203,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  301,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  301,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  301,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  301,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  302,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  302,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  302,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  302,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  303,
+        "Precio":  2800
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  303,
+        "Precio":  4750
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  303,
+        "Precio":  6700
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  303,
+        "Precio":  8950
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  401,
+        "Precio":  900
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  401,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  401,
+        "Precio":  2150
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  401,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  402,
+        "Precio":  900
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  402,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  402,
+        "Precio":  2150
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  402,
+        "Precio":  2900
+    },
+    {
+        "TamañoCaja":  "S",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  403,
+        "Precio":  650
+    },
+    {
+        "TamañoCaja":  "M",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  403,
+        "Precio":  1100
+    },
+    {
+        "TamañoCaja":  "L",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  403,
+        "Precio":  1550
+    },
+    {
+        "TamañoCaja":  "XL",
+        "IdLocalidadOrigen":  403,
+        "IdLocalidadDestino":  403,
+        "Precio":  2100
+    }
 ]

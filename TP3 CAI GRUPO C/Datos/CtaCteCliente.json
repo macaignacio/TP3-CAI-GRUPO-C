@@ -1,137 +1,137 @@
-[
-  {
-    "Cuit": 30712345678,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-04-30T10:00:00.000",
-    "Comprobante": "A-0001-00000096",
-    "Debe": 18600,
-    "Haber": 0,
-    "Saldo": 18600
-  },
-  {
-    "Cuit": 30712345678,
-    "TipoComprobante": "Recibo",
-    "Fecha": "2026-05-12T15:30:00.000",
-    "Comprobante": "RC-0001-00000074",
-    "Debe": 0,
-    "Haber": 18600,
-    "Saldo": 0
-  },
-  {
-    "Cuit": 30712345678,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-05-31T10:00:00.000",
-    "Comprobante": "A-0001-00000001",
-    "Debe": 14550,
-    "Haber": 0,
-    "Saldo": 14550
-  },
-  {
-    "Cuit": 30765432109,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-04-30T10:05:00.000",
-    "Comprobante": "A-0001-00000097",
-    "Debe": 22400,
-    "Haber": 0,
-    "Saldo": 22400
-  },
-  {
-    "Cuit": 30765432109,
-    "TipoComprobante": "Recibo",
-    "Fecha": "2026-05-14T11:20:00.000",
-    "Comprobante": "RC-0001-00000075",
-    "Debe": 0,
-    "Haber": 20000,
-    "Saldo": 2400
-  },
-  {
-    "Cuit": 30765432109,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-05-31T10:05:00.000",
-    "Comprobante": "A-0001-00000002",
-    "Debe": 17120,
-    "Haber": 0,
-    "Saldo": 19520
-  },
-  {
-    "Cuit": 30567891234,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-04-30T10:10:00.000",
-    "Comprobante": "A-0001-00000098",
-    "Debe": 27650,
-    "Haber": 0,
-    "Saldo": 27650
-  },
-  {
-    "Cuit": 30567891234,
-    "TipoComprobante": "Recibo",
-    "Fecha": "2026-05-13T16:45:00.000",
-    "Comprobante": "RC-0001-00000076",
-    "Debe": 0,
-    "Haber": 27650,
-    "Saldo": 0
-  },
-  {
-    "Cuit": 30567891234,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-05-31T10:10:00.000",
-    "Comprobante": "A-0001-00000003",
-    "Debe": 34460,
-    "Haber": 0,
-    "Saldo": 34460
-  },
-  {
-    "Cuit": 30543219876,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-04-30T10:15:00.000",
-    "Comprobante": "A-0001-00000099",
-    "Debe": 13200,
-    "Haber": 0,
-    "Saldo": 13200
-  },
-  {
-    "Cuit": 30543219876,
-    "TipoComprobante": "Recibo",
-    "Fecha": "2026-05-16T09:10:00.000",
-    "Comprobante": "RC-0001-00000077",
-    "Debe": 0,
-    "Haber": 13200,
-    "Saldo": 0
-  },
-  {
-    "Cuit": 30543219876,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-05-31T10:15:00.000",
-    "Comprobante": "A-0001-00000004",
-    "Debe": 15050,
-    "Haber": 0,
-    "Saldo": 15050
-  },
-  {
-    "Cuit": 30678912345,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-04-30T10:20:00.000",
-    "Comprobante": "A-0001-00000100",
-    "Debe": 15880,
-    "Haber": 0,
-    "Saldo": 15880
-  },
-  {
-    "Cuit": 30678912345,
-    "TipoComprobante": "Recibo",
-    "Fecha": "2026-05-15T14:25:00.000",
-    "Comprobante": "RC-0001-00000078",
-    "Debe": 0,
-    "Haber": 15880,
-    "Saldo": 0
-  },
-  {
-    "Cuit": 30678912345,
-    "TipoComprobante": "Factura",
-    "Fecha": "2026-05-31T10:20:00.000",
-    "Comprobante": "A-0001-00000005",
-    "Debe": 9680,
-    "Haber": 0,
-    "Saldo": 9680
-  }
+﻿[
+    {
+        "Cuit":  30712345678,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-04-30T10:00:00.000",
+        "Comprobante":  "A-0001-00000096",
+        "Debe":  18600,
+        "Haber":  0,
+        "Saldo":  18600
+    },
+    {
+        "Cuit":  30712345678,
+        "TipoComprobante":  "Recibo",
+        "Fecha":  "2026-05-12T15:30:00.000",
+        "Comprobante":  "RC-0001-00000074",
+        "Debe":  0,
+        "Haber":  18600,
+        "Saldo":  0
+    },
+    {
+        "Cuit":  30712345678,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-05-31T10:00:00.000",
+        "Comprobante":  "A-0001-00000001",
+        "Debe":  14600,
+        "Haber":  0,
+        "Saldo":  14600
+    },
+    {
+        "Cuit":  30765432109,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-04-30T10:05:00.000",
+        "Comprobante":  "A-0001-00000097",
+        "Debe":  22400,
+        "Haber":  0,
+        "Saldo":  22400
+    },
+    {
+        "Cuit":  30765432109,
+        "TipoComprobante":  "Recibo",
+        "Fecha":  "2026-05-14T11:20:00.000",
+        "Comprobante":  "RC-0001-00000075",
+        "Debe":  0,
+        "Haber":  20000,
+        "Saldo":  2400
+    },
+    {
+        "Cuit":  30765432109,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-05-31T10:05:00.000",
+        "Comprobante":  "A-0001-00000002",
+        "Debe":  20050,
+        "Haber":  0,
+        "Saldo":  22450
+    },
+    {
+        "Cuit":  30567891234,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-04-30T10:10:00.000",
+        "Comprobante":  "A-0001-00000098",
+        "Debe":  27650,
+        "Haber":  0,
+        "Saldo":  27650
+    },
+    {
+        "Cuit":  30567891234,
+        "TipoComprobante":  "Recibo",
+        "Fecha":  "2026-05-13T16:45:00.000",
+        "Comprobante":  "RC-0001-00000076",
+        "Debe":  0,
+        "Haber":  27650,
+        "Saldo":  0
+    },
+    {
+        "Cuit":  30567891234,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-05-31T10:10:00.000",
+        "Comprobante":  "A-0001-00000003",
+        "Debe":  44950,
+        "Haber":  0,
+        "Saldo":  44950
+    },
+    {
+        "Cuit":  30543219876,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-04-30T10:15:00.000",
+        "Comprobante":  "A-0001-00000099",
+        "Debe":  13200,
+        "Haber":  0,
+        "Saldo":  13200
+    },
+    {
+        "Cuit":  30543219876,
+        "TipoComprobante":  "Recibo",
+        "Fecha":  "2026-05-16T09:10:00.000",
+        "Comprobante":  "RC-0001-00000077",
+        "Debe":  0,
+        "Haber":  13200,
+        "Saldo":  0
+    },
+    {
+        "Cuit":  30543219876,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-05-31T10:15:00.000",
+        "Comprobante":  "A-0001-00000004",
+        "Debe":  11600,
+        "Haber":  0,
+        "Saldo":  11600
+    },
+    {
+        "Cuit":  30678912345,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-04-30T10:20:00.000",
+        "Comprobante":  "A-0001-00000100",
+        "Debe":  15880,
+        "Haber":  0,
+        "Saldo":  15880
+    },
+    {
+        "Cuit":  30678912345,
+        "TipoComprobante":  "Recibo",
+        "Fecha":  "2026-05-15T14:25:00.000",
+        "Comprobante":  "RC-0001-00000078",
+        "Debe":  0,
+        "Haber":  15880,
+        "Saldo":  0
+    },
+    {
+        "Cuit":  30678912345,
+        "TipoComprobante":  "Factura",
+        "Fecha":  "2026-05-31T10:20:00.000",
+        "Comprobante":  "A-0001-00000005",
+        "Debe":  12750,
+        "Haber":  0,
+        "Saldo":  12750
+    }
 ]
