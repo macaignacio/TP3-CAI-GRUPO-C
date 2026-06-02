@@ -1,1 +1,74 @@
-﻿
+[
+  {
+    "CuitEmpresaOmnibus": 30611338844,
+    "Fecha": "2026-05-01T09:00:00.000",
+    "Comprobante": "FC-A-202605-000001",
+    "Importe": 145000,
+    "Debe": 145000,
+    "Haber": 0,
+    "Saldo": 145000
+  },
+  {
+    "CuitEmpresaOmnibus": 30611338844,
+    "Fecha": "2026-05-02T11:00:00.000",
+    "Comprobante": "OP-A-202605-000001",
+    "Importe": 0,
+    "Debe": 0,
+    "Haber": 145000,
+    "Saldo": 0
+  },
+  {
+    "CuitEmpresaOmnibus": 30561785402,
+    "Fecha": "2026-05-01T09:10:00.000",
+    "Comprobante": "FC-A-202605-000002",
+    "Importe": 128000,
+    "Debe": 128000,
+    "Haber": 0,
+    "Saldo": 128000
+  },
+  {
+    "CuitEmpresaOmnibus": 30561785402,
+    "Fecha": "2026-05-02T11:15:00.000",
+    "Comprobante": "OP-A-202605-000002",
+    "Importe": 0,
+    "Debe": 0,
+    "Haber": 128000,
+    "Saldo": 0
+  },
+  {
+    "CuitEmpresaOmnibus": 33707215689,
+    "Fecha": "2026-05-01T09:20:00.000",
+    "Comprobante": "FC-A-202605-000003",
+    "Importe": 96500,
+    "Debe": 96500,
+    "Haber": 0,
+    "Saldo": 96500
+  },
+  {
+    "CuitEmpresaOmnibus": 33707215689,
+    "Fecha": "2026-05-03T11:00:00.000",
+    "Comprobante": "OP-A-202605-000003",
+    "Importe": 0,
+    "Debe": 0,
+    "Haber": 96500,
+    "Saldo": 0
+  },
+  {
+    "CuitEmpresaOmnibus": 30643922157,
+    "Fecha": "2026-05-01T09:30:00.000",
+    "Comprobante": "FC-A-202605-000004",
+    "Importe": 72000,
+    "Debe": 72000,
+    "Haber": 0,
+    "Saldo": 72000
+  },
+  {
+    "CuitEmpresaOmnibus": 30643922157,
+    "Fecha": "2026-05-03T11:15:00.000",
+    "Comprobante": "OP-A-202605-000004",
+    "Importe": 0,
+    "Debe": 0,
+    "Haber": 72000,
+    "Saldo": 0
+  }
+]
