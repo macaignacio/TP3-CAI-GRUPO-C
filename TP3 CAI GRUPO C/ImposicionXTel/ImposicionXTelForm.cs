@@ -268,6 +268,8 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
         private void MetodoEntregaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            RetiroSucurListView.Items.Clear();
+
             if (MetodoEntregaComboBox.SelectedIndex == -1)
                 return;
 
@@ -286,6 +288,9 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
             DatosDestinatarioGroupBox.Enabled = true;
             DatosEncomiendaGroupBox.Enabled = true;
+
+            if (DatosSucurGroupBox.Enabled && LocalidadSucurComboBox.SelectedIndex != -1)
+                CargarSucursales(LocalidadSucurComboBox.SelectedItem!.ToString()!);
         }
 
         private void ProvinciaEnvioComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -349,7 +354,8 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
         private void CargarSucursales(string localidad)
         {
-            var sucursales = modelo.ObtenerSucursalesPorLocalidad(localidad);
+            var metodoEntrega = MetodoEntregaComboBox.SelectedItem?.ToString() ?? "";
+            var sucursales = modelo.ObtenerSucursalesPorLocalidad(localidad, metodoEntrega);
 
             foreach (var s in sucursales)
             {

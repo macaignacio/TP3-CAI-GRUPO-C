@@ -6,16 +6,7 @@ using TP3_CAI_GRUPO_C.Almacenes;
 namespace TP3_CAI_GRUPO_C.ImposicionXTel
 {
     internal class ImposicionXTelModelo
-    {
-        private const string MetodoEntregaDomicilio = "A Domicilio";
-        private const string MetodoEntregaCentroDistribucion = "Centro de Distribución";
-
-        private const string TipoAgencia = "Agencia";
-        private const string TipoCentroDistribucion = "Centro de Distribución";
-        private const string HorarioAgencia = "Lun a Vie 9 a 18";
-        private const string HorarioCentroDistribucion = "Lun a Vie 8 a 17";
-
-        // Opciones de UI (no provienen de los JSON).
+    {        
         public string[] MetodosEntrega => Enum.GetValues<MetodoEntregaEnum>()
 
             .Select(ObtenerDescripcionMetodoEntrega)
@@ -50,11 +41,16 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 .ToArray();
         }
 
-        public List<Sucursal> ObtenerSucursalesPorLocalidad(string localidad)
+        public List<Sucursal> ObtenerSucursalesPorLocalidad(string localidad, string metodoEntrega)
         {
             var entidad = LocalidadAlmacen.localidades.FirstOrDefault(l => l.Descripcion == localidad);
 
             if (entidad == null)
+                return [];
+
+            var metodo = ObtenerMetodoEntrega(metodoEntrega);
+
+            if (metodo == MetodoEntregaEnum.ADomicilio)
                 return [];
 
             var centros = CentroDistribucionAlmacen.cd
@@ -66,9 +62,9 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             var sucursalesCentros = centros.Select(c => new Sucursal
             {
                 Codigo = c.Codigo,
-                Direccion = c.Nombre,
-                Horarios = HorarioCentroDistribucion,
-                Tipo = TipoCentroDistribucion
+                Direccion = c.Direccion,
+                Horarios = c.Horarios,
+                Tipo = ObtenerDescripcionMetodoEntrega(MetodoEntregaEnum.CentroDeDistribucion)
             });
 
             var sucursalesAgencias = AgenciaAlmacen.agencia
@@ -76,13 +72,16 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 .Select(a => new Sucursal
                 {
                     Codigo = a.Codigo,
-                    Direccion = a.Nombre,
-                    Horarios = HorarioAgencia,
-                    Tipo = TipoAgencia
+                    Direccion = a.Direccion,
+                    Horarios = a.Horarios,
+                    Tipo = ObtenerDescripcionMetodoEntrega(MetodoEntregaEnum.Agencia)
                 });
 
-            return sucursalesCentros
-                .Concat(sucursalesAgencias)
+            var sucursales = metodo == MetodoEntregaEnum.CentroDeDistribucion
+                ? sucursalesCentros
+                : sucursalesAgencias;
+
+            return sucursales
                 .OrderBy(s => s.Codigo)
                 .ToList();
         }
@@ -155,7 +154,9 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             if (!MetodosEntrega.Contains(imposicion.MetodoEntrega))
                 return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar un método de entrega." };
 
-            if (imposicion.MetodoEntrega == MetodoEntregaDomicilio)
+            var metodoEntrega = ObtenerMetodoEntrega(imposicion.MetodoEntrega);
+
+            if (metodoEntrega == MetodoEntregaEnum.ADomicilio)
             {
                 if (!Provincias.Contains(imposicion.ProvinciaEnvio))
                     return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una provincia de entrega." };
@@ -183,7 +184,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 if (imposicion.SucursalSeleccionada == null)
                     return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar una sucursal." };
 
-                var sucursalValida = ObtenerSucursalesPorLocalidad(imposicion.LocalidadSucursal)
+                var sucursalValida = ObtenerSucursalesPorLocalidad(imposicion.LocalidadSucursal, imposicion.MetodoEntrega)
                     .Any(s => s.Codigo == imposicion.SucursalSeleccionada.Codigo);
 
                 if (!sucursalValida)
@@ -200,9 +201,16 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 return new ResultadoImposicion { Valido = false, Error = resultadoCajas.error };
 
             var guia = GenerarGuía(imposicion);
+            var resultadoHojaDeRuta = GenerarHojaDeRutaRetiro(guia);
+
+            if (resultadoHojaDeRuta.hojaDeRuta == null)
+                return new ResultadoImposicion { Valido = false, Error = resultadoHojaDeRuta.error };
 
             GuiaAlmacen.guias.Add(guia);
+            HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRuta);
+
             GuiaAlmacen.Guardar();
+            HojaDeRutaFleteroAlmacen.Guardar();
 
             return new ResultadoImposicion
             {
@@ -221,8 +229,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             var ahora = DateTime.Now;
             var numeroGuia = long.Parse(ahora.ToString("yyyyMMddHHmmssfff"));
 
-            var metodoEntrega = Enum.GetValues<MetodoEntregaEnum>()
-                .First(e => ObtenerDescripcionMetodoEntrega(e) == imposicion.MetodoEntrega);
+            var metodoEntrega = ObtenerMetodoEntrega(imposicion.MetodoEntrega);
 
             var cdOrigen = ObtenerCentroDistribucionPorLocalidadYCodigoPostal(
                 imposicion.LocalidadRetiro,
@@ -310,6 +317,78 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             };
         }     
 
+        private static (HojaDeRutaFleteroEntidad? hojaDeRuta, string error) GenerarHojaDeRutaRetiro(GuiaEntidad guia)
+        {
+            if (!PuedeGenerarHojaDeRutaFletero(guia.EstadoActual))
+                return (null, "La guía no está en un estado válido para generar una hoja de ruta de fletero.");
+
+            var centroDistribucion = CentroDistribucionAlmacen.cd
+                .FirstOrDefault(c => c.Codigo == guia.CentroDistribucionRetiroCodigo);
+
+            if (centroDistribucion == null)
+                return (null, "No se encontró el centro de distribución de origen para asignar el retiro.");
+
+            var fletero = ObtenerFleteroConMenorCarga(centroDistribucion);
+
+            if (fletero == null)
+                return (null, "No hay fleteros con cobertura para el centro de distribución de origen.");
+
+            return (new HojaDeRutaFleteroEntidad
+            {
+                Codigo = GenerarCodigoHojaDeRutaRetiro(),
+                CentroDistribucion = centroDistribucion.Codigo,
+                CuitCuilFletero = fletero.CuitCuilFletero,
+                TipoHDR = TipoHDRFleteroEnum.Retiro,
+                Estado = EstadoHDRFleteroEnum.Asignada,
+                Guias = new List<long> { guia.NumeroGuia }
+            }, "");
+        }
+
+        private static bool PuedeGenerarHojaDeRutaFletero(EstadoEnum estado)
+        {
+            return estado == EstadoEnum.ImpuestaTelefonicamente ||
+                   estado == EstadoEnum.ImpuestaEnAgencia ||
+                   estado == EstadoEnum.EnCDDestino;
+        }
+
+        private static FleteroEntidad? ObtenerFleteroConMenorCarga(CentroDistribucionEntidad centroDistribucion)
+        {
+            var fleterosConCobertura = FleteroAlmacen.fleteros
+                .Where(f => centroDistribucion.Fleteros.Contains(f.CuitCuilFletero))
+                .ToList();
+
+            if (fleterosConCobertura.Count == 0)
+                return null;
+
+            return fleterosConCobertura
+                .OrderBy(f => ContarHojasDeRutaRetiroAsignadas(centroDistribucion.Codigo, f.CuitCuilFletero))
+                .ThenBy(f => centroDistribucion.Fleteros.IndexOf(f.CuitCuilFletero))
+                .First();
+        }
+
+        private static int ContarHojasDeRutaRetiroAsignadas(string codigoCentroDistribucion, long cuitCuilFletero)
+        {
+            return HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Count(h =>
+                h.CentroDistribucion == codigoCentroDistribucion &&
+                h.CuitCuilFletero == cuitCuilFletero &&
+                h.TipoHDR == TipoHDRFleteroEnum.Retiro &&
+                h.Estado == EstadoHDRFleteroEnum.Asignada);
+        }
+
+        private static string GenerarCodigoHojaDeRutaRetiro()
+        {
+            var periodo = DateTime.Now.ToString("yyyyMM");
+            var prefijo = $"HDR-RET-{periodo}-";
+
+            var ultimoNumero = HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros
+                .Where(h => h.Codigo.StartsWith(prefijo))
+                .Select(h => int.TryParse(h.Codigo.Substring(prefijo.Length), out var numero) ? numero : 0)
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return $"{prefijo}{ultimoNumero + 1:0000}";
+        }
+
         private static decimal CalcularImporte(
             Imposicion imposicion,
             CentroDistribucionEntidad cdOrigen,
@@ -359,6 +438,12 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 MetodoEntregaEnum.Agencia => "Agencia",
                 _ => metodoEntrega.ToString()
             };
+        }
+
+        private static MetodoEntregaEnum ObtenerMetodoEntrega(string metodoEntrega)
+        {
+            return Enum.GetValues<MetodoEntregaEnum>()
+                .First(e => ObtenerDescripcionMetodoEntrega(e) == metodoEntrega);
         }
 
         private static CentroDistribucionEntidad? ObtenerCentroDistribucionPorLocalidadYCodigoPostal(string localidad, int codigoPostal)
