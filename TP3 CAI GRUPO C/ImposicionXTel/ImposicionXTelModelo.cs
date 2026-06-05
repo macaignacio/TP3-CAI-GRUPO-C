@@ -1,161 +1,90 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
+using TP3_CAI_GRUPO_C.Almacenes;
 
 namespace TP3_CAI_GRUPO_C.ImposicionXTel
 {
     internal class ImposicionXTelModelo
     {
         private const string MetodoEntregaDomicilio = "A Domicilio";
+        private const string MetodoEntregaCentroDistribucion = "Centro de Distribución";
+
+        private const string TipoAgencia = "Agencia";
+        private const string TipoCentroDistribucion = "Centro de Distribución";
+        private const string HorarioAgencia = "Lun a Vie 9 a 18";
+        private const string HorarioCentroDistribucion = "Lun a Vie 8 a 17";
+
+        // Opciones de UI (no provienen de los JSON).
+        public string[] MetodosEntrega => Enum.GetValues<MetodoEntregaEnum>()
+
+            .Select(ObtenerDescripcionMetodoEntrega)
+            .ToArray();
+
+        public string[] Provincias =>
+            ProvinciaAlmacen.provincias.Select(p => p.Nombre).ToArray();
 
         public (Cliente? cliente, string error) ValidarCliente(long cuit)
         {
             if (cuit < 10_000_000_000 || cuit > 99_999_999_999)
                 return (null, "CUIT inválido. Se debe ingresar un número de 11 digitos sin guiones ni comas.");
 
-            var cliente = Clientes.FirstOrDefault(c => c.Cuit == cuit);
+            var entidad = ClienteAlmacen.clientes.FirstOrDefault(c => c.Cuit == cuit);
 
-            if (cliente == null)
+            if (entidad == null)
                 return (null, "Cliente no encontrado.");
 
-            return (cliente, "");
+            return (new Cliente { Cuit = entidad.Cuit, RazonSocial = entidad.RazonSocial }, "");
         }
-
-        //Cargo Provincias en el ComboBox Provincias
-        public string[] Provincias { get; } = [
-         "Ciudad Autónoma de Buenos Aires",
-         "Mendoza",
-         "Cordoba",
-     ];
-
-         //Agregar las opciones tamaños a Combobox Metodos de Entrega
-         public string[] MetodosEntrega { get; } = [
-
-         "A Domicilio",
-
-         "Centro de Distribución",
-
-         "Agencia",
-
-         ];
-
-        //Datos de Pruebareturn new List<Cliente>
-
-        public List<Cliente> Clientes { get; } = new List<Cliente>
-        {
-            new Cliente {
-                Cuit = 30205869953,
-                RazonSocial = "EnvasesArg",
-            },
-            new Cliente {
-                Cuit = 30725648921,
-                RazonSocial = "RepuestosCorSA",
-            },
-            new Cliente {
-                Cuit = 20314567891,
-                RazonSocial = "TecnologiaHoy",
-            }
-        };
-
-        private Dictionary<string, string[]> LocalidadesPorProvincia { get; } = new()
-        {
-            {
-                "Ciudad Autónoma de Buenos Aires",
-                ["Palermo", "Recoleta", "Belgrano"]
-            },
-            {
-                "Mendoza",
-                ["Ciudad de Mendoza", "Godoy Cruz", "Guaymallen"]
-            },
-            {
-                "Cordoba",
-                ["Cordoba Capital", "Villa Carlos Paz", "Rio Cuarto"]
-            }
-        };
-
-        private Dictionary<string, List<Sucursal>> SucursalesPorLocalidad { get; } = new()
-        {
-            {
-                "Palermo",
-                [
-                    new Sucursal { Codigo = "CABA-PAL-001", Direccion = "Av. Santa Fe 3250", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "CABA-PAL-002", Direccion = "Av. Scalabrini Ortiz 1600", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "CABA-PAL-003", Direccion = "Honduras 4900", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-            {
-                "Recoleta",
-                [
-                    new Sucursal { Codigo = "CABA-REC-001", Direccion = "Av. Callao 1500", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "CABA-REC-002", Direccion = "Av. Pueyrredon 1900", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "CABA-REC-003", Direccion = "Juncal 2100", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-            {
-                "Belgrano",
-                [
-                    new Sucursal { Codigo = "CABA-BEL-001", Direccion = "Av. Cabildo 890", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "CABA-BEL-002", Direccion = "Juramento 2400", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "CABA-BEL-003", Direccion = "Mendoza 1800", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-            {
-                "Ciudad de Mendoza",
-                [
-                    new Sucursal { Codigo = "MZA-CIU-001", Direccion = "Av. San Martin 1150", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "MZA-CIU-002", Direccion = "Colon 420", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "MZA-CIU-003", Direccion = "Las Heras 780", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-            {
-                "Godoy Cruz",
-                [
-                    new Sucursal { Codigo = "MZA-GOD-001", Direccion = "San Martin Sur 850", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "MZA-GOD-002", Direccion = "Perito Moreno 620", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "MZA-GOD-003", Direccion = "Beltran 1450", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-            {
-                "Guaymallen",
-                [
-                    new Sucursal { Codigo = "MZA-GUA-001", Direccion = "Bandera de los Andes 5100", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "MZA-GUA-002", Direccion = "Av. Mitre 700", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "MZA-GUA-003", Direccion = "Libertad 230", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-            {
-                "Cordoba Capital",
-                [
-                    new Sucursal { Codigo = "COR-CAP-001", Direccion = "Av. Colon 950", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "COR-CAP-002", Direccion = "Bv. San Juan 430", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "COR-CAP-003", Direccion = "Independencia 620", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-            {
-                "Villa Carlos Paz",
-                [
-                    new Sucursal { Codigo = "COR-VCP-001", Direccion = "Av. San Martin 1200", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "COR-VCP-002", Direccion = "9 de Julio 450", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "COR-VCP-003", Direccion = "General Paz 300", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-            {
-                "Rio Cuarto",
-                [
-                    new Sucursal { Codigo = "COR-RCU-001", Direccion = "Sobremonte 760", Horarios = "L a V 9-18", Tipo = "Agencia" },
-                    new Sucursal { Codigo = "COR-RCU-002", Direccion = "Constitucion 550", Horarios = "L a V 8-17", Tipo = "Centro de Distribución" },
-                    new Sucursal { Codigo = "COR-RCU-003", Direccion = "Av. Italia 980", Horarios = "L a S 10-19", Tipo = "Agencia" },
-                ]
-            },
-        };
 
         public string[] ObtenerLocalidadesPorProvincia(string provincia)
         {
-            return LocalidadesPorProvincia.TryGetValue(provincia, out var localidades)
-                ? localidades
-                : [];
+            var entidad = ProvinciaAlmacen.provincias.FirstOrDefault(p => p.Nombre == provincia);
+
+            if (entidad == null)
+                return [];
+
+            return LocalidadAlmacen.localidades
+                .Where(l => entidad.Localidades.Contains(l.IDLocalidad))
+                .Select(l => l.Descripcion)
+                .ToArray();
+        }
+
+        public List<Sucursal> ObtenerSucursalesPorLocalidad(string localidad)
+        {
+            var entidad = LocalidadAlmacen.localidades.FirstOrDefault(l => l.Descripcion == localidad);
+
+            if (entidad == null)
+                return [];
+
+            var centros = CentroDistribucionAlmacen.cd
+                .Where(c => c.IdLocalidad == entidad.IDLocalidad)
+                .ToList();
+
+            var codigosCentros = centros.Select(c => c.Codigo).ToHashSet();
+
+            var sucursalesCentros = centros.Select(c => new Sucursal
+            {
+                Codigo = c.Codigo,
+                Direccion = c.Nombre,
+                Horarios = HorarioCentroDistribucion,
+                Tipo = TipoCentroDistribucion
+            });
+
+            var sucursalesAgencias = AgenciaAlmacen.agencia
+                .Where(a => codigosCentros.Contains(a.CentroDistribucion))
+                .Select(a => new Sucursal
+                {
+                    Codigo = a.Codigo,
+                    Direccion = a.Nombre,
+                    Horarios = HorarioAgencia,
+                    Tipo = TipoAgencia
+                });
+
+            return sucursalesCentros
+                .Concat(sucursalesAgencias)
+                .OrderBy(s => s.Codigo)
+                .ToList();
         }
 
         public bool ValidarCodigoPostal(int cp)
@@ -168,37 +97,21 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             return !string.IsNullOrWhiteSpace(direccion);
         }
 
-        public List<Sucursal> ObtenerSucursalesPorLocalidad(string localidad)
-        {
-            return SucursalesPorLocalidad.TryGetValue(localidad, out var sucursales)
-                ? sucursales
-                : [];
-        }
-
         public (bool valido, string error) ValidarCajas(int s, int m, int l, int xl)
         {
-            // Negativos
             if (s < 0 || m < 0 || l < 0 || xl < 0)
-            {
                 return (false, "Las cantidades de cajas no pueden ser negativas.");
-            }
 
-            // Al menos una caja
             long totalCajas = s + m + l + xl;
 
             if (totalCajas == 0)
-            {
                 return (false, "Debe ingresar al menos una caja.");
-            }
 
-            // Capacidad
             long capacidadUsada = (s * 1) + (m * 2) + (l * 4) + (xl * 8);
             long capacidadMaxima = 20 * 8;
 
             if (capacidadUsada > capacidadMaxima)
-            {
                 return (false, "La cantidad de cajas supera el máximo permitido.");
-            }
 
             return (true, "");
         }
@@ -280,23 +193,125 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             if (!resultadoCajas.valido)
                 return new ResultadoImposicion { Valido = false, Error = resultadoCajas.error };
 
+            var guia = GenerarGuía(imposicion);
+
+            GuiaAlmacen.guias.Add(guia);
+            GuiaAlmacen.Guardar();
+
             return new ResultadoImposicion
             {
                 Valido = true,
-                Guía = GenerarGuía("Impuesta")
+                Guía = new Guía
+                {
+                    NumeroGuia = guia.NumeroGuia,
+                    EstadoActual = guia.EstadoActual.ToString(),
+                    FechaHoraAlta = guia.FechaCreacion
+                }
             };
         }
 
-        private Guía GenerarGuía(string estadoInicial)
+        private GuiaEntidad GenerarGuía(Imposicion imposicion)
         {
-            var fechaHoraAlta = DateTime.Now;
+            var ahora = DateTime.Now;
+            var numeroGuia = long.Parse(ahora.ToString("yyyyMMddHHmmssfff"));
 
-            return new Guía
+            var metodoEntrega = MapearMetodoEntrega(imposicion.MetodoEntrega);
+
+            var cdOrigen = CentroDistribucionAlmacen.cd
+                .FirstOrDefault(c => c.CodPostal.Contains(imposicion.CodigoPostalRetiro));
+
+            string cdDestinoCodigo;
+            string agenciaEntregaCodigo = "";
+            string cdEntregaCodigo = "";
+            string direccionEntrega;
+            int cpEntrega;
+
+            if (metodoEntrega == MetodoEntregaEnum.ADomicilio)
             {
-                NumeroGuia = long.Parse(fechaHoraAlta.ToString("yyyyMMddHHmmssfff")),
-                EstadoActual = estadoInicial,
-                FechaHoraAlta = fechaHoraAlta
+                var cdDestino = CentroDistribucionAlmacen.cd
+                    .FirstOrDefault(c => c.CodPostal.Contains(imposicion.CodigoPostalEnvio));
+                cdDestinoCodigo = cdDestino?.Codigo ?? "";
+                direccionEntrega = imposicion.DireccionEnvio;
+                cpEntrega = imposicion.CodigoPostalEnvio;
+            }
+            else if (metodoEntrega == MetodoEntregaEnum.CentroDeDistribucion)
+            {
+                cdDestinoCodigo = imposicion.SucursalSeleccionada!.Codigo;
+                cdEntregaCodigo = imposicion.SucursalSeleccionada.Codigo;
+                direccionEntrega = imposicion.SucursalSeleccionada.Direccion;
+                cpEntrega = 0;
+            }
+            else // Agencia
+            {
+                var agencia = AgenciaAlmacen.agencia
+                    .FirstOrDefault(a => a.Codigo == imposicion.SucursalSeleccionada!.Codigo);
+                cdDestinoCodigo = agencia?.CentroDistribucion ?? "";
+                agenciaEntregaCodigo = imposicion.SucursalSeleccionada!.Codigo;
+                direccionEntrega = imposicion.SucursalSeleccionada.Direccion;
+                cpEntrega = 0;
+            }
+
+            return new GuiaEntidad
+            {
+                NumeroGuia = numeroGuia,
+                FechaCreacion = ahora,
+                CuitCliente = imposicion.CuitCliente,
+                Importe = 0,
+                EstadoActual = EstadoEnum.ImpuestaTelefonicamente,
+
+                CentroDistribucionOrigen = cdOrigen?.Codigo ?? "",
+                CentroDistribucionDestino = cdDestinoCodigo,
+
+                MetodoEntrega = metodoEntrega,
+                AgenciaEntregaCodigo = agenciaEntregaCodigo,
+                CentroDistribucionEntregaCodigo = cdEntregaCodigo,
+                DireccionEntrega = direccionEntrega,
+                CodPostalEntrega = cpEntrega,
+
+                MetodoRetiro = MetodoRetiroEnum.EnDomicilio,
+                AgenciaRetiroCodigo = "",
+                CentroDistribucionRetiroCodigo = cdOrigen?.Codigo ?? "",
+                DireccionRetiro = imposicion.DireccionRetiro,
+                CodPostalRetiro = imposicion.CodigoPostalRetiro,
+
+                DniDestinatario = imposicion.DniDestinatario,
+                NombreApellidoDestinatario = imposicion.NombreDestinatario,
+
+                CajasS = imposicion.CantidadCajaS,
+                CajasM = imposicion.CantidadCajaM,
+                CajasL = imposicion.CantidadCajaL,
+                CajasXL = imposicion.CantidadCajaXL,
+
+                Historial = new List<MovimientoGuia>
+                {
+                    new MovimientoGuia
+                    {
+                        Estado = EstadoEnum.ImpuestaTelefonicamente,
+                        UltimaActualizacion = ahora,
+                        Ubicacion = cdOrigen?.Nombre ?? imposicion.DireccionRetiro
+                    }
+                }
             };
         }
+
+        private MetodoEntregaEnum MapearMetodoEntrega(string metodo) => metodo switch
+        {
+            MetodoEntregaDomicilio => MetodoEntregaEnum.ADomicilio,
+            MetodoEntregaCentroDistribucion => MetodoEntregaEnum.CentroDeDistribucion,
+            _ => MetodoEntregaEnum.Agencia
+        };
+
+        private static string ObtenerDescripcionMetodoEntrega(MetodoEntregaEnum metodoEntrega)
+        {
+            return metodoEntrega switch
+            {
+                MetodoEntregaEnum.ADomicilio => "A Domicilio",
+                MetodoEntregaEnum.CentroDeDistribucion => "Centro de Distribución",
+                MetodoEntregaEnum.Agencia => "Agencia",
+                _ => metodoEntrega.ToString()
+            };
+        }
+
+
     }
 }

@@ -361,5 +361,10 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 RetiroSucurListView.Items.Add(item);
             }
         }
+
+        private void DatosSucurGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
