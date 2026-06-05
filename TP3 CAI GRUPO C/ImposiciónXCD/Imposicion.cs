@@ -3,7 +3,7 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
     internal class Imposicion
     {
         public string TipoImposicion { get; set; } = "";
-        public int CodigoCDOrigen { get; set; }
+        public string CodigoCDOrigen { get; set; } = "";
         public long CuitCliente { get; set; }
         public string NombreDestinatario { get; set; } = "";
         public int DniDestinatario { get; set; }
