@@ -146,6 +146,9 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             if (!ValidarCodigoPostal(imposicion.CodigoPostalRetiro))
                 return new ResultadoImposicion { Valido = false, Error = "El código postal de retiro debe ser un número de 4 dígitos." };
 
+            if (ObtenerCentroDistribucionPorLocalidadYCodigoPostal(imposicion.LocalidadRetiro, imposicion.CodigoPostalRetiro) == null)
+                return new ResultadoImposicion { Valido = false, Error = "El codigo postal de retiro no corresponde a la localidad seleccionada o no tiene centro de distribucion asignado." };
+
             if (!ValidarDireccion(imposicion.DireccionRetiro))
                 return new ResultadoImposicion { Valido = false, Error = "La dirección de retiro no puede estar vacía." };
 
@@ -162,6 +165,9 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
                 if (!ValidarCodigoPostal(imposicion.CodigoPostalEnvio))
                     return new ResultadoImposicion { Valido = false, Error = "El código postal de entrega debe ser un número de 4 dígitos." };
+
+                if (ObtenerCentroDistribucionPorLocalidadYCodigoPostal(imposicion.LocalidadEnvio, imposicion.CodigoPostalEnvio) == null)
+                    return new ResultadoImposicion { Valido = false, Error = "El codigo postal de entrega no corresponde a la localidad seleccionada o no tiene centro de distribucion asignado." };
 
                 if (!ValidarDireccion(imposicion.DireccionEnvio))
                     return new ResultadoImposicion { Valido = false, Error = "La dirección de entrega no puede estar vacía." };
@@ -218,19 +224,22 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             var metodoEntrega = Enum.GetValues<MetodoEntregaEnum>()
                 .First(e => ObtenerDescripcionMetodoEntrega(e) == imposicion.MetodoEntrega);
 
-            var cdOrigen = CentroDistribucionAlmacen.cd
-                .FirstOrDefault(c => c.CodPostal.Contains(imposicion.CodigoPostalRetiro));
+            var cdOrigen = ObtenerCentroDistribucionPorLocalidadYCodigoPostal(
+                imposicion.LocalidadRetiro,
+                imposicion.CodigoPostalRetiro);
 
             string cdDestinoCodigo;
             string agenciaEntregaCodigo = "";
             string cdEntregaCodigo = "";
             string direccionEntrega;
             int cpEntrega;
+            CentroDistribucionEntidad? cdDestino;
 
             if (metodoEntrega == MetodoEntregaEnum.ADomicilio)
             {
-                var cdDestino = CentroDistribucionAlmacen.cd
-                    .FirstOrDefault(c => c.CodPostal.Contains(imposicion.CodigoPostalEnvio));
+                cdDestino = ObtenerCentroDistribucionPorLocalidadYCodigoPostal(
+                    imposicion.LocalidadEnvio,
+                    imposicion.CodigoPostalEnvio);
                 cdDestinoCodigo = cdDestino?.Codigo ?? "";
                 direccionEntrega = imposicion.DireccionEnvio;
                 cpEntrega = imposicion.CodigoPostalEnvio;
@@ -241,6 +250,8 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 cdEntregaCodigo = imposicion.SucursalSeleccionada.Codigo;
                 direccionEntrega = imposicion.SucursalSeleccionada.Direccion;
                 cpEntrega = 0;
+                cdDestino = CentroDistribucionAlmacen.cd
+                    .FirstOrDefault(c => c.Codigo == cdDestinoCodigo);
             }
             else // Agencia
             {
@@ -250,14 +261,18 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 agenciaEntregaCodigo = imposicion.SucursalSeleccionada!.Codigo;
                 direccionEntrega = imposicion.SucursalSeleccionada.Direccion;
                 cpEntrega = 0;
+                cdDestino = CentroDistribucionAlmacen.cd
+                    .FirstOrDefault(c => c.Codigo == cdDestinoCodigo);
             }
+
+            var importe = CalcularImporte(imposicion, cdOrigen!, cdDestino!, metodoEntrega);
 
             return new GuiaEntidad
             {
                 NumeroGuia = numeroGuia,
                 FechaCreacion = ahora,
                 CuitCliente = imposicion.CuitCliente,
-                Importe = 0,
+                Importe = importe,
                 EstadoActual = EstadoEnum.ImpuestaTelefonicamente,
 
                 CentroDistribucionOrigen = cdOrigen?.Codigo ?? "",
@@ -293,9 +308,47 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                     }
                 }
             };
+        }     
+
+        private static decimal CalcularImporte(
+            Imposicion imposicion,
+            CentroDistribucionEntidad cdOrigen,
+            CentroDistribucionEntidad cdDestino,
+            MetodoEntregaEnum metodoEntrega)
+        {
+            var importe = 0m;
+
+            importe += imposicion.CantidadCajaS * ObtenerPrecioBulto("S", cdOrigen.IdLocalidad, cdDestino.IdLocalidad);
+            importe += imposicion.CantidadCajaM * ObtenerPrecioBulto("M", cdOrigen.IdLocalidad, cdDestino.IdLocalidad);
+            importe += imposicion.CantidadCajaL * ObtenerPrecioBulto("L", cdOrigen.IdLocalidad, cdDestino.IdLocalidad);
+            importe += imposicion.CantidadCajaXL * ObtenerPrecioBulto("XL", cdOrigen.IdLocalidad, cdDestino.IdLocalidad);
+
+            importe += ObtenerPrecioExtra("RetiroDomicilio");
+
+            if (metodoEntrega == MetodoEntregaEnum.ADomicilio)
+                importe += ObtenerPrecioExtra("EntregaDomicilio");
+            else if (metodoEntrega == MetodoEntregaEnum.Agencia)
+                importe += ObtenerPrecioExtra("EntregaAgencia");
+
+            return importe;
         }
 
-     
+        private static decimal ObtenerPrecioBulto(string tamañoCaja, int idLocalidadOrigen, int idLocalidadDestino)
+        {
+            return PreciosBultosAlmacen.PreciosBultos
+                .First(p =>
+                    p.TamañoCaja == tamañoCaja &&
+                    p.IdLocalidadOrigen == idLocalidadOrigen &&
+                    p.IdLocalidadDestino == idLocalidadDestino)
+                .Precio;
+        }
+
+        private static decimal ObtenerPrecioExtra(string tipo)
+        {
+            return PreciosExtrasAlmacen.PreciosExtras
+                .First(e => e.Tipo == tipo)
+                .Precio;
+        }
 
         private static string ObtenerDescripcionMetodoEntrega(MetodoEntregaEnum metodoEntrega)
         {
@@ -306,6 +359,19 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 MetodoEntregaEnum.Agencia => "Agencia",
                 _ => metodoEntrega.ToString()
             };
+        }
+
+        private static CentroDistribucionEntidad? ObtenerCentroDistribucionPorLocalidadYCodigoPostal(string localidad, int codigoPostal)
+        {
+            var localidadEntidad = LocalidadAlmacen.localidades
+                .FirstOrDefault(l => l.Descripcion == localidad);
+
+            if (localidadEntidad == null || !localidadEntidad.CodigosPostales.Contains(codigoPostal))
+                return null;
+
+            return CentroDistribucionAlmacen.cd.FirstOrDefault(c =>
+                c.IdLocalidad == localidadEntidad.IDLocalidad &&
+                c.CodPostal.Contains(codigoPostal));
         }
 
 
