@@ -1,49 +1,76 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TP3_CAI_GRUPO_C.Almacenes;
 
 namespace TP3_CAI_GRUPO_C.Entrega
 {
     internal class EntregaModelo
     {
-        public List<Destinatario> Destinatarios { get; } = new List<Destinatario>
-        {
-            new Destinatario { NombreApellido = "Ana Gomez", Dni = 30111222 },
-            new Destinatario { NombreApellido = "Bruno Perez", Dni = 28999888 },
-            new Destinatario { NombreApellido = "Carla Ruiz", Dni = 33444555 }
-        };
+        public List<Destinatario> Destinatarios { get; } = new List<Destinatario>();
 
-        public List<Encomienda> Encomiendas { get; } = new List<Encomienda>
+        public List<Encomienda> Encomiendas { get; } = new List<Encomienda>();
+
+        public EntregaModelo()
         {
-            new Encomienda
+            CargarDatos();
+        }
+
+        private void CargarDatos()
+        {
+            Encomiendas.Clear();
+            Destinatarios.Clear();
+
+            foreach (var guia in GuiaAlmacen.guias)
             {
-                NumeroGuia = 20260506101010101,
-                Estado = EstadoEncomienda.RecibidoCDDestino,
-                Destinatario = new Destinatario { NombreApellido = "Ana Gomez", Dni = 30111222 },
-                ClienteAsociado = new Cliente { Cuit = 30205869953, RazonSocial = "EnvasesArg" }
-            },
-            new Encomienda
-            {
-                NumeroGuia = 20260506101010202,
-                Estado = EstadoEncomienda.ListoParaRetirarPorCD,
-                Destinatario = new Destinatario { NombreApellido = "Ana Gomez", Dni = 30111222 },
-                ClienteAsociado = new Cliente { Cuit = 30725648921, RazonSocial = "RepuestosCorSA" }
-            },
-            new Encomienda
-            {
-                NumeroGuia = 20260506101010303,
-                Estado = EstadoEncomienda.RecibidoCDDestino,
-                Destinatario = new Destinatario { NombreApellido = "Bruno Perez", Dni = 28999888 },
-                ClienteAsociado = new Cliente { Cuit = 20314567891, RazonSocial = "TecnologiaHoy" }
-            },
-            new Encomienda
-            {
-                NumeroGuia = 20260506101510101,
-                Estado = EstadoEncomienda.ListoParaRetirarPorAgencia,
-                Destinatario = new Destinatario { NombreApellido = "Carla Ruiz", Dni = 33444555 },
-                ClienteAsociado = new Cliente { Cuit = 30205869953, RazonSocial = "EnvasesArg" }
+                var estado = ObtenerEstadoEntrega(guia.EstadoActual);
+
+                if (estado == null)
+                    continue;
+
+                var destinatario = new Destinatario
+                {
+                    NombreApellido = guia.NombreApellidoDestinatario,
+                    Dni = guia.DniDestinatario
+                };
+
+                Encomiendas.Add(new Encomienda
+                {
+                    NumeroGuia = guia.NumeroGuia,
+                    Estado = estado.Value,
+                    Destinatario = destinatario,
+                    ClienteAsociado = ObtenerClienteAsociado(guia.CuitCliente)
+                });
             }
-        };
+
+            Destinatarios.AddRange(Encomiendas
+                .Select(e => e.Destinatario)
+                .GroupBy(d => d.Dni)
+                .Select(g => g.First()));
+        }
+
+        private Cliente ObtenerClienteAsociado(long cuit)
+        {
+            var cliente = ClienteAlmacen.clientes.FirstOrDefault(c => c.Cuit == cuit);
+
+            return new Cliente
+            {
+                Cuit = cuit,
+                RazonSocial = cliente?.RazonSocial ?? ""
+            };
+        }
+
+        private EstadoEncomienda? ObtenerEstadoEntrega(EstadoEnum estado)
+        {
+            return estado switch
+            {
+                EstadoEnum.EnCDDestino => EstadoEncomienda.RecibidoCDDestino,
+                EstadoEnum.ListaParaEntregarPorCD => EstadoEncomienda.ListoParaRetirarPorCD,
+                EstadoEnum.ListaParaEntregarPorAgencia => EstadoEncomienda.ListoParaRetirarPorAgencia,
+                EstadoEnum.Entregado => EstadoEncomienda.Entregado,
+                _ => null
+            };
+        }
 
         public (bool valido, string error) ValidarIngresoDNI(string dni)
         {
@@ -103,6 +130,21 @@ namespace TP3_CAI_GRUPO_C.Entrega
                 return (false, "La encomienda ya fue entregada.");
 
             encomienda.Estado = EstadoEncomienda.Entregado;
+            var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.DniDestinatario == dni && g.NumeroGuia == numeroGuia);
+
+            if (guia != null)
+            {
+                guia.EstadoActual = EstadoEnum.Entregado;
+                guia.Historial ??= new List<MovimientoGuia>();
+                guia.Historial.Add(new MovimientoGuia
+                {
+                    Estado = EstadoEnum.Entregado,
+                    UltimaActualizacion = DateTime.Now,
+                    Ubicacion = guia.DireccionEntrega
+                });
+                GuiaAlmacen.Guardar();
+            }
+
             return (true, "");
         }
 
