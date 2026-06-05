@@ -106,7 +106,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             if (totalCajas == 0)
                 return (false, "Debe ingresar al menos una caja.");
 
-            long capacidadUsada = (s * 1) + (m * 2) + (l * 4) + (xl * 8);
+            long capacidadUsada = (s * 1L) + (m * 2L) + (l * 4L) + (xl * 8L);
             long capacidadMaxima = 20 * 8;
 
             if (capacidadUsada > capacidadMaxima)
