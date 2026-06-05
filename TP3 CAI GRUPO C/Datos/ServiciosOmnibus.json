@@ -166,5 +166,169 @@
         "CentroDistribucionParada": "CD-GC-01"
       }
     ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30611338844,
+    "IdentificadorServicio": "FLE-20260610-0600-TRONCAL-IDA",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-06-10T06:00:00.000",
+        "CentroDistribucionParada": "CD-LP-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T07:00:00.000",
+        "CentroDistribucionParada": "CD-LP-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T08:30:00.000",
+        "CentroDistribucionParada": "CD-PAL-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T09:15:00.000",
+        "CentroDistribucionParada": "CD-PAL-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T10:10:00.000",
+        "CentroDistribucionParada": "CD-LIN-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T10:50:00.000",
+        "CentroDistribucionParada": "CD-LIN-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T11:45:00.000",
+        "CentroDistribucionParada": "CD-RET-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T12:30:00.000",
+        "CentroDistribucionParada": "CD-RET-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T18:20:00.000",
+        "CentroDistribucionParada": "CD-MDP-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-10T19:10:00.000",
+        "CentroDistribucionParada": "CD-MDP-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-11T02:30:00.000",
+        "CentroDistribucionParada": "CD-BB-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-11T11:45:00.000",
+        "CentroDistribucionParada": "CD-CBA-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-11T12:30:00.000",
+        "CentroDistribucionParada": "CD-CBA-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-11T14:00:00.000",
+        "CentroDistribucionParada": "CD-VCP-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-11T17:45:00.000",
+        "CentroDistribucionParada": "CD-RC-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T01:30:00.000",
+        "CentroDistribucionParada": "CD-MZA-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T02:10:00.000",
+        "CentroDistribucionParada": "CD-MZA-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T02:45:00.000",
+        "CentroDistribucionParada": "CD-GC-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T03:20:00.000",
+        "CentroDistribucionParada": "CD-GYM-01"
+      }
+    ]
+  },
+  {
+    "CuitEmpresaOmnibus": 30561785402,
+    "IdentificadorServicio": "AND-20260612-0600-TRONCAL-VUELTA",
+    "Parada": [
+      {
+        "FechaHoraParada": "2026-06-12T06:00:00.000",
+        "CentroDistribucionParada": "CD-GYM-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T06:35:00.000",
+        "CentroDistribucionParada": "CD-GC-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T07:10:00.000",
+        "CentroDistribucionParada": "CD-MZA-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T07:50:00.000",
+        "CentroDistribucionParada": "CD-MZA-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T15:35:00.000",
+        "CentroDistribucionParada": "CD-RC-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T19:20:00.000",
+        "CentroDistribucionParada": "CD-VCP-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T20:50:00.000",
+        "CentroDistribucionParada": "CD-CBA-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-12T21:35:00.000",
+        "CentroDistribucionParada": "CD-CBA-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-13T06:50:00.000",
+        "CentroDistribucionParada": "CD-BB-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-13T14:10:00.000",
+        "CentroDistribucionParada": "CD-MDP-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-13T15:00:00.000",
+        "CentroDistribucionParada": "CD-MDP-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-13T20:50:00.000",
+        "CentroDistribucionParada": "CD-RET-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-13T21:35:00.000",
+        "CentroDistribucionParada": "CD-RET-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-13T22:30:00.000",
+        "CentroDistribucionParada": "CD-LIN-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-13T23:10:00.000",
+        "CentroDistribucionParada": "CD-LIN-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-14T00:05:00.000",
+        "CentroDistribucionParada": "CD-PAL-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-14T00:50:00.000",
+        "CentroDistribucionParada": "CD-PAL-01"
+      },
+      {
+        "FechaHoraParada": "2026-06-14T02:20:00.000",
+        "CentroDistribucionParada": "CD-LP-02"
+      },
+      {
+        "FechaHoraParada": "2026-06-14T03:20:00.000",
+        "CentroDistribucionParada": "CD-LP-01"
+      }
+    ]
   }
 ]

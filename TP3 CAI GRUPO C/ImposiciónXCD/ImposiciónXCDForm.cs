@@ -60,6 +60,8 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
             if (MetodoEntregaComboBox.SelectedIndex == -1)
                 return;
 
+            SucursalListView.Items.Clear();
+
             if (MetodoEntregaComboBox.SelectedItem?.ToString() == "A Domicilio")
             {
                 EntregaDomicilioGroupBox.Enabled = true;
@@ -71,6 +73,9 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                 EntregaDomicilioGroupBox.Enabled = false;
                 RetiroSucursalGroupBox.Enabled = true;
                 ProvinciaSucursalComboBox.Enabled = true;
+
+                if (LocalidadSucursalComboBox.SelectedIndex != -1)
+                    CargarSucursales(LocalidadSucursalComboBox.SelectedItem!.ToString()!);
             }
 
             DatosDestinatarioGroupBox.Enabled = true;
@@ -237,7 +242,7 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
 
             return new Sucursal
             {
-                Codigo = int.Parse(item.Text),
+                Codigo = item.Text,
                 Direccion = item.SubItems[1].Text,
                 Horarios = item.SubItems[2].Text,
                 Tipo = item.SubItems[3].Text
@@ -246,11 +251,12 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
 
         private void CargarSucursales(string localidad)
         {
-            var sucursales = modelo.ObtenerSucursalesPorLocalidad(localidad);
+            var metodoEntrega = MetodoEntregaComboBox.SelectedItem?.ToString() ?? "";
+            var sucursales = modelo.ObtenerSucursalesPorLocalidad(localidad, metodoEntrega);
 
             foreach (var s in sucursales)
             {
-                var item = new ListViewItem(s.Codigo.ToString());
+                var item = new ListViewItem(s.Codigo);
                 item.SubItems.Add(s.Direccion);
                 item.SubItems.Add(s.Horarios);
                 item.SubItems.Add(s.Tipo);
