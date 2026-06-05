@@ -1,48 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TP3_CAI_GRUPO_C.Almacenes;
 
 namespace TP3_CAI_GRUPO_C.EstadoEncomienda
 {
 
     internal class EstadoEncomiendaModelo
     {
-        public List<Guia> Guias { get; } = new List<Guia>
+        public List<Guia> Guias { get; } = new List<Guia>();
+
+        public EstadoEncomiendaModelo()
         {
-            new Guia
-            {
-                NumeroGuia = 20260506101010101,
-                Historial = new List<Movimiento>
-                {
-                    new Movimiento { Estado = "Imposición", UltimaActualizacion = "06/05/2026 10:00", Ubicacion = "Agencia CABA-PAL-001 - Palermo" }
-                }
-            },
+            CargarGuias();
+        }
 
-            new Guia
-            {
-                NumeroGuia = 20260506101010202,
-                Historial = new List<Movimiento>
-                {
-                    new Movimiento { Estado = "Imposición", UltimaActualizacion = "05/05/2026 09:15", Ubicacion = "Agencia MZA-CIU-001 - Ciudad de Mendoza" },
-                    new Movimiento { Estado = "Admitida en CD", UltimaActualizacion = "05/05/2026 18:30", Ubicacion = "CD MZA-CIU-002 - Ciudad de Mendoza" },
-                    new Movimiento { Estado = "En viaje", UltimaActualizacion = "06/05/2026 08:00", Ubicacion = "CD MZA-CIU-002 - Ciudad de Mendoza" }
-                }
-            },
+        private void CargarGuias()
+        {
+            Guias.Clear();
 
-            new Guia
+            foreach (var guiaEntidad in GuiaAlmacen.guias)
             {
-                NumeroGuia = 20260506101010303,
-                Historial = new List<Movimiento>
+                Guias.Add(new Guia
                 {
-                    new Movimiento { Estado = "Imposición", UltimaActualizacion = "04/05/2026 11:00", Ubicacion = "Agencia COR-RCU-001 - Rio Cuarto" },
-                    new Movimiento { Estado = "Admitida en CD", UltimaActualizacion = "04/05/2026 19:00", Ubicacion = "CD COR-RCU-002 - Rio Cuarto" },
-                    new Movimiento { Estado = "En viaje", UltimaActualizacion = "05/05/2026 07:30", Ubicacion = "CD COR-RCU-002 - Rio Cuarto" },
-                    new Movimiento { Estado = "Recibido en CD destino", UltimaActualizacion = "06/05/2026 14:00", Ubicacion = "CD CABA-BEL-002 - Belgrano" },
-                    new Movimiento { Estado = "Encomienda lista para visitar domicilio", UltimaActualizacion = "07/05/2026 08:30", Ubicacion = "CD CABA-BEL-002 - Belgrano" },
-                    new Movimiento { Estado = "Entregado", UltimaActualizacion = "07/05/2026 11:15", Ubicacion = "Domicilio Cliente - Belgrano" }
-                }
+                    NumeroGuia = guiaEntidad.NumeroGuia,
+                    Historial = ObtenerHistorial(guiaEntidad)
+                });
             }
-        };
+        }
+
+        private List<Movimiento> ObtenerHistorial(GuiaEntidad guiaEntidad)
+        {
+            return (guiaEntidad.Historial ?? new List<MovimientoGuia>())
+                .Select(movimiento => new Movimiento
+                {
+                    Estado = ObtenerNombreEstado(movimiento.Estado),
+                    UltimaActualizacion = movimiento.UltimaActualizacion.ToString("dd/MM/yyyy HH:mm"),
+                    Ubicacion = movimiento.Ubicacion
+                })
+                .ToList();
+        }
+
+        private string ObtenerNombreEstado(EstadoEnum estado)
+        {
+            return estado switch
+            {
+                EstadoEnum.ImpuestaTelefonicamente => "Impuesta telefonicamente",
+                EstadoEnum.ImpuestaEnAgencia => "Impuesta en Agencia",
+                EstadoEnum.ImpuestaEnCD => "Impuesta en CD",
+                EstadoEnum.RetiroDomicilioEnCurso => "Retiro a domicilio en curso",
+                EstadoEnum.RetiroAgenciaEnCurso => "Retiro en Agencia en curso",
+                EstadoEnum.AdmitidaEnCD => "Admitida en CD",
+                EstadoEnum.EnTransitoACDDestino => "En transito a CD destino",
+                EstadoEnum.EnCDDestino => "Recibido en CD destino",
+                EstadoEnum.ListaParaEntregarPorCD => "Listo para retirar por CD",
+                EstadoEnum.EnTransitoEntregaDomicilio => "En transito para entrega a domicilio",
+                EstadoEnum.EnTransitoAAgenciaDestino => "En transito a Agencia destino",
+                EstadoEnum.ListaParaEntregarPorAgencia => "Listo para retirar por Agencia",
+                EstadoEnum.Entregado => "Entregado",
+                _ => ""
+            };
+        }
 
         public (Guia? guia, string error) ValidarYBuscarGuia(long numeroGuia)
         {
