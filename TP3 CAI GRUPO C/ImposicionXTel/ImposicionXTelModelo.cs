@@ -215,7 +215,8 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             var ahora = DateTime.Now;
             var numeroGuia = long.Parse(ahora.ToString("yyyyMMddHHmmssfff"));
 
-            var metodoEntrega = MapearMetodoEntrega(imposicion.MetodoEntrega);
+            var metodoEntrega = Enum.GetValues<MetodoEntregaEnum>()
+                .First(e => ObtenerDescripcionMetodoEntrega(e) == imposicion.MetodoEntrega);
 
             var cdOrigen = CentroDistribucionAlmacen.cd
                 .FirstOrDefault(c => c.CodPostal.Contains(imposicion.CodigoPostalRetiro));
@@ -294,12 +295,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             };
         }
 
-        private MetodoEntregaEnum MapearMetodoEntrega(string metodo) => metodo switch
-        {
-            MetodoEntregaDomicilio => MetodoEntregaEnum.ADomicilio,
-            MetodoEntregaCentroDistribucion => MetodoEntregaEnum.CentroDeDistribucion,
-            _ => MetodoEntregaEnum.Agencia
-        };
+     
 
         private static string ObtenerDescripcionMetodoEntrega(MetodoEntregaEnum metodoEntrega)
         {
