@@ -3,7 +3,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
     internal class Imposicion
     {
         public string TipoImposicion { get; set; } = "";
-        public int CodigoAgenciaOrigen { get; set; }
+        public string CodigoAgenciaOrigen { get; set; } = "";
         public long CuitCliente { get; set; }
         public string NombreDestinatario { get; set; } = "";
         public int DniDestinatario { get; set; }
