@@ -1,88 +1,73 @@
+using TP3_CAI_GRUPO_C.Almacenes;
+
 namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 {
     internal class GestionFleterosAsignacionModelo
     {
-        private const string EstadoImposicionTelefonica = "Imposición hecha telefónicamente";
-        private const string EstadoImposicionAgencia = "Imposición hecha por agencia";
-        private const string EstadoRecibidoCDDestino = "Recibido en CD destino";
-        private const string EstadoListoDistribucionLocal = "Listo para distribución local";
-        private const string EstadoPendienteRetiroFletero = "Pendiente de retiro por fletero";
-        private const string EstadoEnCaminoDestinatario = "En camino hacia el destinatario";
+        public List<Fletero> Fleteros => CargarFleteros();
 
-        public List<Fletero> Fleteros { get; } = new List<Fletero>
+        private static List<Fletero> CargarFleteros()
         {
-            new Fletero
+            var directorio = new DirectoryInfo(AppContext.BaseDirectory);
+
+            while (directorio != null && !Directory.Exists(Path.Combine(directorio.FullName, "Datos")))
             {
-                CuitCuil = 20345678901,
-                NombreCompleto = "Martin Alvarez",
-                HojasDeRuta =
-                [
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0001", NumeroGuia = 20260506101010101, EstadoEncomienda = EstadoImposicionTelefonica },
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0002", NumeroGuia = 20260506101010202, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0001", NumeroGuia = 20260506101010303, EstadoEncomienda = EstadoRecibidoCDDestino },
-                ]
-            },
-            new Fletero
-            {
-                CuitCuil = 20345678902,
-                NombreCompleto = "Luciana Torres",
-                HojasDeRuta =
-                [
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0003", NumeroGuia = 20260506101510101, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0004", NumeroGuia = 20260506101510202, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0002", NumeroGuia = 20260506101510303, EstadoEncomienda = EstadoListoDistribucionLocal },
-                ]
-            },
-            new Fletero
-            {
-                CuitCuil = 20345678903,
-                NombreCompleto = "Carlos Benitez",
-                HojasDeRuta =
-                [
-                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0003", NumeroGuia = 20260506102010101, EstadoEncomienda = EstadoRecibidoCDDestino },
-                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0004", NumeroGuia = 20260506102010202, EstadoEncomienda = EstadoListoDistribucionLocal },
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0005", NumeroGuia = 20260506102010303, EstadoEncomienda = EstadoImposicionTelefonica },
-                ]
-            },
-            new Fletero
-            {
-                CuitCuil = 20345678904,
-                NombreCompleto = "Sofia Romero",
-                HojasDeRuta =
-                [
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0006", NumeroGuia = 20260506102510101, EstadoEncomienda = EstadoImposicionTelefonica },
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0007", NumeroGuia = 20260506102510202, EstadoEncomienda = EstadoImposicionTelefonica },
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0008", NumeroGuia = 20260506102510303, EstadoEncomienda = EstadoImposicionTelefonica },
-                ]
-            },
-            new Fletero
-            {
-                CuitCuil = 20345678905,
-                NombreCompleto = "Diego Fernandez",
-                HojasDeRuta =
-                [
-                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0005", NumeroGuia = 20260506103010101, EstadoEncomienda = EstadoRecibidoCDDestino },
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0009", NumeroGuia = 20260506103010202, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0006", NumeroGuia = 20260506103010303, EstadoEncomienda = EstadoListoDistribucionLocal },
-                ]
-            },
-            new Fletero
-            {
-                CuitCuil = 20345678906,
-                NombreCompleto = "Valeria Castro",
-                HojasDeRuta =
-                [
-                    new HojaDeRuta { Codigo = "HDR-RET-202605-0010", NumeroGuia = 20260506103510101, EstadoEncomienda = EstadoImposicionAgencia },
-                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0007", NumeroGuia = 20260506103510202, EstadoEncomienda = EstadoRecibidoCDDestino },
-                    new HojaDeRuta { Codigo = "HDR-DIS-202605-0008", NumeroGuia = 20260506103510303, EstadoEncomienda = EstadoListoDistribucionLocal },
-                ]
-            },
-        };
+                directorio = directorio.Parent;
+            }
+
+            if (directorio != null)
+                Directory.SetCurrentDirectory(directorio.FullName);
+
+            return FleteroAlmacen.fleteros
+                .Select(fletero => new Fletero
+                {
+                    CuitCuil = fletero.CuitCuilFletero,
+                    NombreCompleto = fletero.NombreCompleto,
+                    HojasDeRuta = HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros
+                        .Where(hoja => hoja.CuitCuilFletero == fletero.CuitCuilFletero
+                            && hoja.Estado == EstadoHDRFleteroEnum.Asignada)
+                        .SelectMany(hoja => hoja.Guias.Select(numeroGuia =>
+                        {
+                            var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == numeroGuia);
+
+                            return new HojaDeRuta
+                            {
+                                Codigo = hoja.Codigo,
+                                NumeroGuia = numeroGuia,
+                                EstadoEncomienda = ObtenerEstadoPendiente(hoja.TipoHDR, guia)
+                            };
+                        }))
+                        .Where(hoja => GuiaPuedeAsignarseAFletero(GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == hoja.NumeroGuia)))
+                        .ToList()
+                })
+                .ToList();
+        }
+
+        private static string ObtenerEstadoPendiente(TipoHDRFleteroEnum tipoHDR, GuiaEntidad? guia)
+        {
+            if (guia != null)
+                return guia.EstadoActual.ToString();
+
+            if (tipoHDR == TipoHDRFleteroEnum.Retiro)
+                return EstadoEnum.ImpuestaTelefonicamente.ToString();
+
+            return EstadoEnum.EnCDDestino.ToString();
+        }
+
+        private static bool GuiaPuedeAsignarseAFletero(GuiaEntidad? guia)
+        {
+            if (guia == null)
+                return false;
+
+            return (int)guia.EstadoActual == 0
+                || (int)guia.EstadoActual == 1
+                || ((int)guia.EstadoActual == 7 && (int)guia.MetodoEntrega != 1);
+        }
 
         public (Fletero? fletero, string error) BuscarFletero(long cuitCuil)
         {
             if (cuitCuil < 10_000_000_000 || cuitCuil > 99_999_999_999)
-                return (null, "CUIT/CUIL inválido. Se debe ingresar un número de 11 digitos sin guiones ni comas.");
+                return (null, "CUIT/CUIL invalido. Se debe ingresar un numero de 11 digitos sin guiones ni comas.");
 
             var fletero = Fleteros.FirstOrDefault(f => f.CuitCuil == cuitCuil);
 
@@ -104,8 +89,16 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 
             foreach (var hojaDeRuta in resultadoFletero.fletero.HojasDeRuta)
             {
-                hojaDeRuta.EstadoEncomienda = ObtenerEstadoActualizado(hojaDeRuta.EstadoEncomienda);
+                var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == hojaDeRuta.NumeroGuia);
+
+                if (guia != null)
+                {
+                    guia.EstadoActual = ObtenerEstadoActualizado(guia);
+                    hojaDeRuta.EstadoEncomienda = guia.EstadoActual.ToString();
+                }
             }
+
+            GuiaAlmacen.Guardar();
 
             return new ResultadoAsignacion
             {
@@ -114,15 +107,23 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             };
         }
 
-        private string ObtenerEstadoActualizado(string estadoActual)
+        private EstadoEnum ObtenerEstadoActualizado(GuiaEntidad guia)
         {
-            if (estadoActual == EstadoImposicionTelefonica || estadoActual == EstadoImposicionAgencia)
-                return EstadoPendienteRetiroFletero;
+            if ((int)guia.EstadoActual == 0)
+                return (EstadoEnum)3;
 
-            if (estadoActual == EstadoRecibidoCDDestino || estadoActual == EstadoListoDistribucionLocal)
-                return EstadoEnCaminoDestinatario;
+            if ((int)guia.EstadoActual == 1)
+                return (EstadoEnum)4;
 
-            return estadoActual;
+            if ((int)guia.EstadoActual == 7
+                && (int)guia.MetodoEntrega == 0)
+                return (EstadoEnum)9;
+
+            if ((int)guia.EstadoActual == 7
+                && (int)guia.MetodoEntrega == 2)
+                return (EstadoEnum)10;
+
+            return guia.EstadoActual;
         }
     }
 }
