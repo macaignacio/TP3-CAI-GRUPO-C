@@ -23,7 +23,7 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
 
             foreach (var empresa in modelo.Empresas)
             {
-                EmpresaComboBox.Items.Add(empresa.Nombre);
+                EmpresaComboBox.Items.Add(empresa.nombre);
             }
 
             EmpresaComboBox.SelectedIndex = -1;

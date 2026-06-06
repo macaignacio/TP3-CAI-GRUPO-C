@@ -66,7 +66,7 @@
             // 
             EmpresaComboBox.FormattingEnabled = true;
             EmpresaComboBox.Location = new Point(90, 33);
-            EmpresaComboBox.Margin = new Padding(2, 2, 2, 2);
+            EmpresaComboBox.Margin = new Padding(2);
             EmpresaComboBox.Name = "EmpresaComboBox";
             EmpresaComboBox.Size = new Size(180, 23);
             EmpresaComboBox.TabIndex = 6;
@@ -114,7 +114,7 @@
             TutasaTituloLabel.AutoSize = true;
             TutasaTituloLabel.Location = new Point(230, 12);
             TutasaTituloLabel.Name = "TutasaTituloLabel";
-            TutasaTituloLabel.Size = new Size(50, 15);
+            TutasaTituloLabel.Size = new Size(48, 15);
             TutasaTituloLabel.TabIndex = 8;
             TutasaTituloLabel.Text = "TUTASA";
             // 

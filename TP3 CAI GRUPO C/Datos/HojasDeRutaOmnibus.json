@@ -5,7 +5,7 @@
     "IdentificadorServicio": "FLE-20260502-0810-LP-CBA",
     "CentroDistribucionOrigen": "CD-LP-01",
     "CentroDistribucionDestino": "CD-CBA-01",
-    "Estado": 1,
+    "Estado": 0,
     "Guias": [
       20260501101530001
     ]
@@ -15,7 +15,7 @@
     "IdentificadorServicio": "CHE-20260503-0715-MDP-RET",
     "CentroDistribucionOrigen": "CD-MDP-01",
     "CentroDistribucionDestino": "CD-RET-01",
-    "Estado": 1,
+    "Estado": 0,
     "Guias": [
       20260502113045002
     ]
@@ -25,7 +25,7 @@
     "IdentificadorServicio": "AND-20260504-0650-CBA-MZA",
     "CentroDistribucionOrigen": "CD-CBA-02",
     "CentroDistribucionDestino": "CD-MZA-01",
-    "Estado": 1,
+    "Estado": 0,
     "Guias": [
       20260503144510003
     ]
@@ -45,7 +45,7 @@
     "IdentificadorServicio": "AND-20260506-1235-GC-PAL",
     "CentroDistribucionOrigen": "CD-GC-01",
     "CentroDistribucionDestino": "CD-PAL-01",
-    "Estado": 1,
+    "Estado": 0,
     "Guias": [
       20260505165022005
     ]
