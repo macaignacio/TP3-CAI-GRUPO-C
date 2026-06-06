@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using TP3_CAI_GRUPO_C.Almacenes;
 
 namespace TP3_CAI_GRUPO_C.ConsultaCtaCteCliente
 {
@@ -9,169 +10,59 @@ namespace TP3_CAI_GRUPO_C.ConsultaCtaCteCliente
         public (Cliente? cliente, string error) ValidarCliente(long cuit)
         {
             if (cuit < 10_000_000_000 || cuit > 99_999_999_999)
-                return (null, "CUIT inválido. Se debe ingresar un número de 11 digitos sin guiones ni comas.");
+                return (null, "CUIT invalido. Se debe ingresar un numero de 11 digitos sin guiones ni comas.");
 
-            var cliente = Clientes.FirstOrDefault(c => c.Cuit == cuit);
+            var cliente = ClienteAlmacen.clientes.FirstOrDefault(c => c.Cuit == cuit);
 
             if (cliente == null)
                 return (null, "Cliente no encontrado.");
 
-            return (cliente, "");
+            return (MapearCliente(cliente), "");
         }
-
-
-        //Datos de Pruebareturn new List<Cliente>
-        public List<Cliente> Clientes { get; } = new List<Cliente>
-        {
-            new Cliente {
-                Cuit = 30205869953,
-                RazonSocial = "EnvasesArg",
-            },
-            new Cliente {
-                Cuit = 30725648921,
-                RazonSocial = "RepuestosCorSA",
-            },
-            new Cliente {
-                Cuit = 20314567891,
-                RazonSocial = "TecnologiaHoy",
-            }
-        };
-
-        private Dictionary<string, List<CtaCorriente>> CuentasCorrientesPorCliente { get; } = new()
-        {
-            {
-                "EnvasesArg",
-                [
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2024, 12, 2),
-                        Vencimiento = new DateTime(2025, 1, 1),
-                        Comprobante = "FC-A-001-001527",
-                        Debe = 25000,
-                        Haber = 0,
-                        Saldo = 25000
-                    },
-                    new CtaCorriente {
-                        Tipo = "Recibo",
-                        Fecha = new DateTime(2024, 12, 20),
-                        Vencimiento = new DateTime(2024, 12, 20),
-                        Comprobante = "RC-A-001-001528",
-                        Debe = 0,
-                        Haber = 15000,
-                        Saldo = 10000
-                    },
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2025, 3, 17),
-                        Vencimiento = new DateTime(2025, 4, 16),
-                        Comprobante = "FC-A-001-001529",
-                        Debe = 15000,
-                        Haber = 0,
-                        Saldo = 25000
-                    },
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2025, 6, 28),
-                        Vencimiento = new DateTime(2025, 7, 28),
-                        Comprobante = "FC-A-002-057727",
-                        Debe = 10000,
-                        Haber = 0,
-                        Saldo = 35000
-                    }
-                ]
-            },
-            {
-                "RepuestosCorSA",
-                [
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2023, 1, 14),
-                        Vencimiento = new DateTime(2023, 2, 13),
-                        Comprobante = "FC-A-001-002001",
-                        Debe = 6000,
-                        Haber = 0,
-                        Saldo = 6000
-                    },
-                    new CtaCorriente {
-                        Tipo = "Recibo",
-                        Fecha = new DateTime(2023, 1, 30),
-                        Vencimiento = new DateTime(2023, 1, 30),
-                        Comprobante = "RC-A-001-002002",
-                        Debe = 0,
-                        Haber = 6000,
-                        Saldo = 0
-                    },
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2024, 10, 10),
-                        Vencimiento = new DateTime(2024, 11, 9),
-                        Comprobante = "FC-A-003-001728",
-                        Debe = 18000,
-                        Haber = 0,
-                        Saldo = 18000
-                    },
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2026, 4, 3),
-                        Vencimiento = new DateTime(2026, 5, 3),
-                        Comprobante = "FC-A-004-001729",
-                        Debe = 20000,
-                        Haber = 0,
-                        Saldo = 38000
-                    }
-                ]
-            },
-            {
-                "TecnologiaHoy",
-                [
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2025, 7, 12),
-                        Vencimiento = new DateTime(2025, 8, 11),
-                        Comprobante = "FC-A-001-003001",
-                        Debe = 25000,
-                        Haber = 0,
-                        Saldo = 25000
-                    },
-                    new CtaCorriente {
-                        Tipo = "Recibo",
-                        Fecha = new DateTime(2025, 8, 5),
-                        Vencimiento = new DateTime(2025, 8, 5),
-                        Comprobante = "RC-A-001-003002",
-                        Debe = 0,
-                        Haber = 10000,
-                        Saldo = 15000
-                    },
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2025, 11, 30),
-                        Vencimiento = new DateTime(2025, 12, 30),
-                        Comprobante = "FC-A-002-003002",
-                        Debe = 24000,
-                        Haber = 0,
-                        Saldo = 39000
-                    },
-                    new CtaCorriente {
-                        Tipo = "Factura",
-                        Fecha = new DateTime(2026, 3, 16),
-                        Vencimiento = new DateTime(2026, 4, 15),
-                        Comprobante = "FC-A-003-003003",
-                        Debe = 21000,
-                        Haber = 0,
-                        Saldo = 60000
-                    }
-                ]
-            },
-        };
 
         public List<CtaCorriente> ObtenerCuentaCorrientePorCliente(string cliente, DateTime periodo)
         {
-            if (!CuentasCorrientesPorCliente.TryGetValue(cliente, out var movimientos))
+            var clienteEntidad = ClienteAlmacen.clientes.FirstOrDefault(c => c.RazonSocial == cliente);
+
+            if (clienteEntidad == null)
                 return [];
 
-            return movimientos
+            return CuentaCorrienteClienteAlmacen.ctaCteCliente
+                .Where(m => m.Cuit == clienteEntidad.Cuit)
                 .Where(m => m.Fecha.Year == periodo.Year && m.Fecha.Month == periodo.Month)
+                .Select(MapearMovimiento)
                 .ToList();
+        }
+
+        private static Cliente MapearCliente(ClienteEntidad cliente)
+        {
+            return new Cliente
+            {
+                Cuit = cliente.Cuit,
+                RazonSocial = cliente.RazonSocial
+            };
+        }
+
+        private static CtaCorriente MapearMovimiento(CuentaCorrienteClienteEntidad movimiento)
+        {
+            return new CtaCorriente
+            {
+                Tipo = movimiento.TipoComprobante,
+                Fecha = movimiento.Fecha,
+                Vencimiento = CalcularVencimiento(movimiento),
+                Comprobante = movimiento.Comprobante,
+                Debe = movimiento.Debe,
+                Haber = movimiento.Haber,
+                Saldo = movimiento.Saldo
+            };
+        }
+
+        private static DateTime CalcularVencimiento(CuentaCorrienteClienteEntidad movimiento)
+        {
+            if (movimiento.TipoComprobante.Equals("Factura", StringComparison.OrdinalIgnoreCase))
+                return movimiento.Fecha.AddDays(30);
+
+            return movimiento.Fecha;
         }
     }
 }
