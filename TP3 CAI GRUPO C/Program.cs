@@ -1,4 +1,5 @@
 using TP3_CAI_GRUPO_C.DespachoEncomiendasCD;
+using TP3_CAI_GRUPO_C.RecepcionEncomiendasCD;
 using TP3_CAI_GRUPO_C.ResultadosCostoVenta;
 
 namespace TP3_CAI_GRUPO_C
@@ -14,7 +15,7 @@ namespace TP3_CAI_GRUPO_C
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new DespachoEncomiendasCDForm());
+            Application.Run(new RecepcionEncomiendasCDForm());
         }
     }
 }
