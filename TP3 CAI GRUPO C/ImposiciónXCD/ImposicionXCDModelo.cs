@@ -292,6 +292,18 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                 {
                     new MovimientoGuia
                     {
+                        Estado = EstadoEnum.ImpuestaEnCD,
+                        UltimaActualizacion = ahora,
+                        Ubicacion = cdOrigen.Nombre
+                    },
+                    new MovimientoGuia
+                    {
+                        Estado = EstadoEnum.PendienteAdmision,
+                        UltimaActualizacion = ahora,
+                        Ubicacion = cdOrigen.Nombre
+                    },
+                    new MovimientoGuia
+                    {
                         Estado = EstadoEnum.AdmitidaEnCD,
                         UltimaActualizacion = ahora,
                         Ubicacion = cdOrigen.Nombre

@@ -97,13 +97,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             {
                 MessageBox.Show("El CUIT debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
-
-            if (!int.TryParse(DNIDestinatarioTextBox.Text, out var dni))
-            {
-                MessageBox.Show("El DNI debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            }            
 
             if (!int.TryParse(CPRetiroTextBox.Text, out var codigoPostalRetiro))
             {
@@ -119,6 +113,12 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 return;
             }
 
+            if (!int.TryParse(DNIDestinatarioTextBox.Text, out var dni))
+                        {
+                            MessageBox.Show("El DNI debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+           
             if (!TryParseCantidadCaja(CajaSTextBox.Text, out var cantidadCajaS) ||
                 !TryParseCantidadCaja(CajaMTextBox.Text, out var cantidadCajaM) ||
                 !TryParseCantidadCaja(CajaLTextBox.Text, out var cantidadCajaL) ||

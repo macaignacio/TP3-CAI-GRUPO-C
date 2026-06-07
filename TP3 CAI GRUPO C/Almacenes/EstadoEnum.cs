@@ -11,6 +11,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         ImpuestaEnCD,//3
         RetiroDomicilioEnCurso,//4
         RetiroAgenciaEnCurso,//5
+        PendienteAdmision,
         AdmitidaEnCD,//6
         EnTransitoACDDestino,//7
         EnCDDestino,//8

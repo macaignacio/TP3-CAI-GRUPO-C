@@ -148,12 +148,7 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                 MessageBox.Show("El CUIT debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            if (!int.TryParse(DniTextBox.Text, out var dni))
-            {
-                MessageBox.Show("El DNI debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                       
 
             var codigoPostal = 0;
             if (MetodoEntregaComboBox.SelectedItem?.ToString() == "A Domicilio" &&
@@ -163,6 +158,12 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                 return;
             }
 
+            if (!int.TryParse(DniTextBox.Text, out var dni))
+                        {
+                            MessageBox.Show("El DNI debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+           
             if (!TryParseCantidadCaja(CantidadCajasSTextBox.Text, out var cantidadCajaS) ||
                 !TryParseCantidadCaja(CantidadCajasMTextBox.Text, out var cantidadCajaM) ||
                 !TryParseCantidadCaja(CantidadCajasLTextBox.Text, out var cantidadCajaL) ||

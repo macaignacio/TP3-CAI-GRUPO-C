@@ -124,8 +124,8 @@ namespace TP3_CAI_GRUPO_C.Admision
 
         private static bool PuedeAdmitirse(EstadoEnum estado)
         {
-            return estado == EstadoEnum.ImpuestaTelefonicamente ||
-                   estado == EstadoEnum.ImpuestaEnAgencia;
+            return estado == EstadoEnum.ImpuestaEnCD ||
+                   estado == EstadoEnum.PendienteAdmision;
         }
 
         private static Guia MapearGuia(GuiaEntidad guia)

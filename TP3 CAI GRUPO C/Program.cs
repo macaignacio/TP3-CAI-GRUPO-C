@@ -1,11 +1,10 @@
-using TP3_CAI_GRUPO_C.DespachoEncomiendasCD;
-using TP3_CAI_GRUPO_C.RecepcionEncomiendasCD;
-using TP3_CAI_GRUPO_C.ResultadosCostoVenta;
-
 namespace TP3_CAI_GRUPO_C
 {
     internal static class Program
     {
+        public static string CDActual = "";
+        public static string AgenciaActual = "";
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -15,7 +14,7 @@ namespace TP3_CAI_GRUPO_C
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new RecepcionEncomiendasCDForm());
+            Application.Run(new MenuPrincipal());
         }
     }
 }
