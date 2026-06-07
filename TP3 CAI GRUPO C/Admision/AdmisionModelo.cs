@@ -41,11 +41,11 @@ namespace TP3_CAI_GRUPO_C.Admision
             if (!resultadoCajas.valido)
                 return new ResultadoAdmision { Valido = false, Error = resultadoCajas.error };
 
-            var cdOrigen = CentroDistribucionAlmacen.cd.FirstOrDefault(c => c.Codigo == guia.CentroDistribucionOrigen);
+            var cdOrigen = CentroDistribucionAlmacen.cd.FirstOrDefault(c => c.Codigo == Program.CDActual);
             var cdDestino = CentroDistribucionAlmacen.cd.FirstOrDefault(c => c.Codigo == guia.CentroDistribucionDestino);
 
             if (cdOrigen == null)
-                return new ResultadoAdmision { Valido = false, Error = "No se encontro el centro de distribucion de origen de la guia." };
+                return new ResultadoAdmision { Valido = false, Error = "Debe seleccionar un centro de distribucion actual valido." };
 
             if (cdDestino == null)
                 return new ResultadoAdmision { Valido = false, Error = "No se encontro el centro de distribucion de destino de la guia." };
@@ -63,13 +63,16 @@ namespace TP3_CAI_GRUPO_C.Admision
                 guia.CajasM != cantidadCajaM ||
                 guia.CajasL != cantidadCajaL ||
                 guia.CajasXL != cantidadCajaXL;
+            var centroDistribucionOrigenModificado =
+                guia.CentroDistribucionOrigen != cdOrigen.Codigo;
 
             guia.CajasS = cantidadCajaS;
             guia.CajasM = cantidadCajaM;
             guia.CajasL = cantidadCajaL;
             guia.CajasXL = cantidadCajaXL;
+            guia.CentroDistribucionOrigen = cdOrigen.Codigo;
 
-            if (cajasModificadas)
+            if (cajasModificadas || centroDistribucionOrigenModificado)
                 guia.Importe = CalcularImporte(guia, cdOrigen, cdDestino);
 
             guia.EstadoActual = EstadoEnum.AdmitidaEnCD;

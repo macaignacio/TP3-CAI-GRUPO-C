@@ -4,7 +4,7 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
 {
     internal class ImposicionXCDModelo
     {
-        public string CodigoCDActual { get; } = "CD-LP-01";
+        public string CodigoCDActual => Program.CDActual;
 
         public string[] Provincias =>
             ProvinciaAlmacen.provincias.Select(p => p.Nombre).ToArray();

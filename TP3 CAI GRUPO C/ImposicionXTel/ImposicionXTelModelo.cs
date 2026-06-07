@@ -129,6 +129,9 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             if (resultadoCliente.cliente == null)
                 return new ResultadoImposicion { Valido = false, Error = resultadoCliente.error };
 
+            if (ObtenerCentroDistribucionOrigen() == null)
+                return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar un centro de distribucion actual valido." };
+
             if (string.IsNullOrWhiteSpace(imposicion.NombreDestinatario))
                 return new ResultadoImposicion { Valido = false, Error = "El Nombre y Apellido de Destinatario no puede estar vacío." };
 
@@ -144,9 +147,6 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
             if (!ValidarCodigoPostal(imposicion.CodigoPostalRetiro))
                 return new ResultadoImposicion { Valido = false, Error = "El código postal de retiro debe ser un número de 4 dígitos." };
-
-            if (ObtenerCentroDistribucionPorLocalidadYCodigoPostal(imposicion.LocalidadRetiro, imposicion.CodigoPostalRetiro) == null)
-                return new ResultadoImposicion { Valido = false, Error = "El codigo postal de retiro no corresponde a la localidad seleccionada o no tiene centro de distribucion asignado." };
 
             if (!ValidarDireccion(imposicion.DireccionRetiro))
                 return new ResultadoImposicion { Valido = false, Error = "La dirección de retiro no puede estar vacía." };
@@ -231,9 +231,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
             var metodoEntrega = ObtenerMetodoEntrega(imposicion.MetodoEntrega);
 
-            var cdOrigen = ObtenerCentroDistribucionPorLocalidadYCodigoPostal(
-                imposicion.LocalidadRetiro,
-                imposicion.CodigoPostalRetiro);
+            var cdOrigen = ObtenerCentroDistribucionOrigen()!;
 
             string cdDestinoCodigo;
             string agenciaEntregaCodigo = "";
@@ -282,7 +280,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 Importe = importe,
                 EstadoActual = EstadoEnum.ImpuestaTelefonicamente,
 
-                CentroDistribucionOrigen = cdOrigen?.Codigo ?? "",
+                CentroDistribucionOrigen = cdOrigen.Codigo,
                 CentroDistribucionDestino = cdDestinoCodigo,
 
                 MetodoEntrega = metodoEntrega,
@@ -293,7 +291,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
                 MetodoRetiro = MetodoRetiroEnum.EnDomicilio,
                 AgenciaRetiroCodigo = "",
-                CentroDistribucionRetiroCodigo = cdOrigen?.Codigo ?? "",
+                CentroDistribucionRetiroCodigo = cdOrigen.Codigo,
                 DireccionRetiro = imposicion.DireccionRetiro,
                 CodPostalRetiro = imposicion.CodigoPostalRetiro,
 
@@ -311,7 +309,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                     {
                         Estado = EstadoEnum.ImpuestaTelefonicamente,
                         UltimaActualizacion = ahora,
-                        Ubicacion = cdOrigen?.Nombre ?? imposicion.DireccionRetiro
+                        Ubicacion = imposicion.DireccionRetiro
                     }
                 }
             };
@@ -457,6 +455,11 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             return CentroDistribucionAlmacen.cd.FirstOrDefault(c =>
                 c.IdLocalidad == localidadEntidad.IDLocalidad &&
                 c.CodPostal.Contains(codigoPostal));
+        }
+
+        private static CentroDistribucionEntidad? ObtenerCentroDistribucionOrigen()
+        {
+            return CentroDistribucionAlmacen.cd.FirstOrDefault(c => c.Codigo == Program.CDActual);
         }
 
 

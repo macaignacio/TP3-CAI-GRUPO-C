@@ -4,7 +4,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
 {
     internal class ImposicionXAgenciaModelo
     {
-        public string CodigoAgenciaActual { get; } = "AG-LP-01-01";
+        public string CodigoAgenciaActual => Program.AgenciaActual;
 
         public string[] Provincias =>
             ProvinciaAlmacen.provincias.Select(p => p.Nombre).ToArray();
@@ -133,6 +133,9 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
             if (ObtenerAgenciaOrigen() == null)
                 return new ResultadoImposicion { Valido = false, Error = "No se encontró la agencia de origen." };
 
+            if (ObtenerCentroDistribucionOrigen() == null)
+                return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar un centro de distribucion actual valido." };
+
             if (string.IsNullOrWhiteSpace(imposicion.NombreDestinatario))
                 return new ResultadoImposicion { Valido = false, Error = "El Nombre y Apellido de Destinatario no puede estar vacío." };
 
@@ -223,8 +226,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
             var numeroGuia = long.Parse(ahora.ToString("yyyyMMddHHmmssfff"));
             var metodoEntrega = ObtenerMetodoEntrega(imposicion.MetodoEntrega);
             var agenciaOrigen = ObtenerAgenciaOrigen()!;
-            var cdOrigen = CentroDistribucionAlmacen.cd
-                .First(c => c.Codigo == agenciaOrigen.CentroDistribucion);
+            var cdOrigen = ObtenerCentroDistribucionOrigen()!;
 
             string cdDestinoCodigo;
             string agenciaEntregaCodigo = "";
@@ -282,7 +284,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
 
                 MetodoRetiro = MetodoRetiroEnum.Agencia,
                 AgenciaRetiroCodigo = agenciaOrigen.Codigo,
-                CentroDistribucionRetiroCodigo = "",
+                CentroDistribucionRetiroCodigo = cdOrigen.Codigo,
                 DireccionRetiro = agenciaOrigen.Direccion,
                 CodPostalRetiro = cdOrigen.CodPostal.FirstOrDefault(),
 
@@ -431,6 +433,11 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
         private AgenciaEntidad? ObtenerAgenciaOrigen()
         {
             return AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == CodigoAgenciaActual);
+        }
+
+        private static CentroDistribucionEntidad? ObtenerCentroDistribucionOrigen()
+        {
+            return CentroDistribucionAlmacen.cd.FirstOrDefault(c => c.Codigo == Program.CDActual);
         }
 
         private static decimal CalcularImporte(
