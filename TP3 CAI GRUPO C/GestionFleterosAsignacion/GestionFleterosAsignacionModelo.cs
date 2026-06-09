@@ -61,7 +61,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 
             return (int)guia.EstadoActual == 0
                 || (int)guia.EstadoActual == 1
-                || ((int)guia.EstadoActual == 7 && (int)guia.MetodoEntrega != 1);
+                || ((int)guia.EstadoActual == 8 && (int)guia.MetodoEntrega != 1);
         }
 
         public (Fletero? fletero, string error) BuscarFletero(long cuitCuil)
@@ -115,13 +115,13 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             if ((int)guia.EstadoActual == 1)
                 return (EstadoEnum)4;
 
-            if ((int)guia.EstadoActual == 7
+            if ((int)guia.EstadoActual == 8
                 && (int)guia.MetodoEntrega == 0)
-                return (EstadoEnum)9;
-
-            if ((int)guia.EstadoActual == 7
-                && (int)guia.MetodoEntrega == 2)
                 return (EstadoEnum)10;
+
+            if ((int)guia.EstadoActual == 8
+                && (int)guia.MetodoEntrega == 2)
+                return (EstadoEnum)11;
 
             return guia.EstadoActual;
         }
