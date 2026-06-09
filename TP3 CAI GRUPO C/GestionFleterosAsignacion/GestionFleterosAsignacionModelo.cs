@@ -61,7 +61,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 
             return (int)guia.EstadoActual == 0
                 || (int)guia.EstadoActual == 1
-                || ((int)guia.EstadoActual == 7 && (int)guia.MetodoEntrega != 1);
+                || ((int)guia.EstadoActual == 8 && (int)guia.MetodoEntrega != 1);
         }
 
         public (Fletero? fletero, string error) BuscarFletero(long cuitCuil)
