@@ -93,7 +93,20 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 
                 if (guia != null)
                 {
-                    guia.EstadoActual = ObtenerEstadoActualizado(guia);
+                    var estadoActualizado = ObtenerEstadoActualizado(guia);
+
+                    if (estadoActualizado != guia.EstadoActual)
+                    {
+                        guia.EstadoActual = estadoActualizado;
+                        guia.Historial ??= new List<MovimientoGuia>();
+                        guia.Historial.Add(new MovimientoGuia
+                        {
+                            Estado = guia.EstadoActual,
+                            UltimaActualizacion = DateTime.Now,
+                            Ubicacion = ObtenerUbicacionMovimiento(guia)
+                        });
+                    }
+
                     hojaDeRuta.EstadoEncomienda = guia.EstadoActual.ToString();
                 }
             }
@@ -124,6 +137,45 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 return (EstadoEnum)11;
 
             return guia.EstadoActual;
+        }
+
+        private string ObtenerUbicacionMovimiento(GuiaEntidad guia)
+        {
+            if ((int)guia.EstadoActual == 3
+                || (int)guia.EstadoActual == 4)
+                return $"En transito a {ObtenerDestinoRetiro(guia)}";
+
+            if ((int)guia.EstadoActual == 10
+                || (int)guia.EstadoActual == 11)
+                return $"En transito a {ObtenerDestinoEntrega(guia)}";
+
+            return $"En transito a {guia.CentroDistribucionDestino}";
+        }
+
+        private string ObtenerDestinoRetiro(GuiaEntidad guia)
+        {
+            if ((int)guia.MetodoRetiro == 2)
+                return guia.DireccionRetiro;
+
+            if ((int)guia.MetodoRetiro == 0)
+                return AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == guia.AgenciaRetiroCodigo)?.Nombre
+                    ?? guia.AgenciaRetiroCodigo;
+
+            return CentroDistribucionAlmacen.cd.FirstOrDefault(cd => cd.Codigo == guia.CentroDistribucionRetiroCodigo)?.Nombre
+                ?? guia.CentroDistribucionRetiroCodigo;
+        }
+
+        private string ObtenerDestinoEntrega(GuiaEntidad guia)
+        {
+            if ((int)guia.MetodoEntrega == 0)
+                return guia.DireccionEntrega;
+
+            if ((int)guia.MetodoEntrega == 2)
+                return AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == guia.AgenciaEntregaCodigo)?.Nombre
+                    ?? guia.AgenciaEntregaCodigo;
+
+            return CentroDistribucionAlmacen.cd.FirstOrDefault(cd => cd.Codigo == guia.CentroDistribucionEntregaCodigo)?.Nombre
+                ?? guia.CentroDistribucionEntregaCodigo;
         }
     }
 }
