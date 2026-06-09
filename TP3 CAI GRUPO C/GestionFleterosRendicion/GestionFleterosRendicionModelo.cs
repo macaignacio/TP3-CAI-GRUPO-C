@@ -23,22 +23,28 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
                 HojasDeRuta = HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros
                     .Where(hoja => hoja.CuitCuilFletero == fleteroEntidad.CuitCuilFletero
                         && hoja.Estado == EstadoHDRFleteroEnum.Asignada)
-                    .SelectMany(hoja => hoja.Guias.Select(numeroGuia =>
+                    .SelectMany(hoja => hoja.Guias
+                        .Select(numeroGuia => new
+                        {
+                            hoja.Codigo,
+                            NumeroGuia = numeroGuia,
+                            Guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == numeroGuia)
+                        })
+                        .Where(item => item.Guia != null && PuedeRendirse(item.Guia.EstadoActual))
+                        .Select(item =>
                     {
-                        var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == numeroGuia);
-
                         return new HojaDeRuta
                         {
-                            Codigo = hoja.Codigo,
-                            NumeroGuia = numeroGuia,
-                            EstadoEncomienda = guia?.EstadoActual.ToString() ?? ""
+                            Codigo = item.Codigo,
+                            NumeroGuia = item.NumeroGuia,
+                            EstadoEncomienda = item.Guia!.EstadoActual.ToString()
                         };
                     }))
                     .ToList()
             };
 
             if (fletero.HojasDeRuta.Count == 0)
-                return (null, "El fletero no tiene hojas de ruta asignadas.");
+                return (null, "El fletero no tiene hojas de ruta asignadas pendientes de rendicion.");
 
             return (fletero, "");
         }
@@ -61,12 +67,25 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             foreach (var hojaDeRutaFletero in hojasDeRutaCumplidas)
             {
                 hojaDeRutaFletero.Estado = EstadoHDRFleteroEnum.Cumplida;
+
+                foreach (var numeroGuia in hojaDeRutaFletero.Guias)
+                {
+                    var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == numeroGuia);
+
+                    if (guia == null)
+                        continue;
+
+                    ActualizarEstadoGuiaRendida(guia);
+                }
             }
 
             foreach (var hojaDeRuta in resultadoFletero.fletero.HojasDeRuta)
             {
                 if (codigosCumplidos.Contains(hojaDeRuta.Codigo))
-                    hojaDeRuta.EstadoEncomienda = EstadoHDRFleteroEnum.Cumplida.ToString();
+                {
+                    var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == hojaDeRuta.NumeroGuia);
+                    hojaDeRuta.EstadoEncomienda = guia?.EstadoActual.ToString() ?? "";
+                }
             }
 
             var directorio = new DirectoryInfo(AppContext.BaseDirectory);
@@ -80,6 +99,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
                 Directory.SetCurrentDirectory(directorio.FullName);
 
             HojaDeRutaFleteroAlmacen.Guardar();
+            GuiaAlmacen.Guardar();
 
             return new ResultadoRendicion
             {
@@ -88,7 +108,56 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             };
         }
 
-     
+        private static void ActualizarEstadoGuiaRendida(GuiaEntidad guia)
+        {
+            var estadoActualizado = ObtenerEstadoActualizadoPorRendicion(guia.EstadoActual);
+
+            if (estadoActualizado == guia.EstadoActual)
+                return;
+
+            guia.EstadoActual = estadoActualizado;
+            guia.Historial ??= new List<MovimientoGuia>();
+            guia.Historial.Add(new MovimientoGuia
+            {
+                Estado = estadoActualizado,
+                UltimaActualizacion = DateTime.Now,
+                Ubicacion = ObtenerUbicacionGuia(guia, estadoActualizado)
+            });
+        }
+
+        private static EstadoEnum ObtenerEstadoActualizadoPorRendicion(EstadoEnum estado)
+        {
+            return estado switch
+            {
+                EstadoEnum.RetiroAgenciaEnCurso => EstadoEnum.PendienteAdmision,
+                EstadoEnum.RetiroDomicilioEnCurso => EstadoEnum.PendienteAdmision,
+                EstadoEnum.EnTransitoEntregaDomicilio => EstadoEnum.Entregado,
+                EstadoEnum.EnTransitoAAgenciaDestino => EstadoEnum.ListaParaEntregarPorAgencia,
+                _ => estado
+            };
+        }
+
+        private static string ObtenerUbicacionGuia(GuiaEntidad guia, EstadoEnum estado)
+        {
+            if (estado == EstadoEnum.Entregado && !string.IsNullOrWhiteSpace(guia.DireccionEntrega))
+                return guia.DireccionEntrega;
+
+            if (estado == EstadoEnum.PendienteAdmision && !string.IsNullOrWhiteSpace(guia.CentroDistribucionRetiroCodigo))
+                return guia.CentroDistribucionRetiroCodigo;
+
+            if (estado == EstadoEnum.ListaParaEntregarPorAgencia && !string.IsNullOrWhiteSpace(guia.AgenciaEntregaCodigo))
+                return guia.AgenciaEntregaCodigo;
+
+            return Program.CDActual;
+        }
+
+        private static bool PuedeRendirse(EstadoEnum estado)
+        {
+            return estado == EstadoEnum.RetiroAgenciaEnCurso ||
+                   estado == EstadoEnum.RetiroDomicilioEnCurso ||
+                   estado == EstadoEnum.EnTransitoEntregaDomicilio ||
+                   estado == EstadoEnum.EnTransitoAAgenciaDestino;
+        }
 
     }
 }
