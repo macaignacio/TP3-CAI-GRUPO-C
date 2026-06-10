@@ -1,0 +1,57 @@
+﻿00. Antes de empezar (menú principal):
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
+	2 - Entrar al menú "Imposición por Teléfono"
+
+01. Pantalla "Imposición por Teléfono":
+	1 - CUIT: 30712345678
+	2 - Apretar el botón "Validar"
+	3 - VERIFICAR que aparece la razón social: "Tecnologia Austral S.A."
+	4 - Provincia de Retiro: "Córdoba"
+	5 - Localidad de Retiro: "Córdoba Capital"
+	6 - CP de Retiro: 5000
+	7 - Dirección de Retiro: "Av. Colón 1234"
+	8 - Método de Entrega: "Agencia"
+	9 - VERIFICAR que queda habilitado únicamente el groupBox de "Datos Sucursal"
+	     (el de entrega "A Domicilio" tiene que quedar deshabilitado)
+	10 - Provincia de Sucursal: "Mendoza"
+	11 - Localidad de Sucursal: "Ciudad de Mendoza"
+	12 - VERIFICAR que en la lista de sucursales figuren únicamente estas 4 agencias:
+	     "AG-MZA-01-01", "AG-MZA-01-02", "AG-MZA-02-01", "AG-MZA-02-02"
+	13 - Seleccionar la agencia: "AG-MZA-01-01" (Agencia Ciudad de Mendoza Centro)
+	14 - Datos del Destinatario: Nombre "Juan Perez" - DNI 12345678
+	15 - Tamaño del bulto: S (poner 1 en la caja S, las demás vacías)
+	16 - Confirmar: botón "Generar"
+	17 - VERIFICAR que aparece el cartel: "Imposición generada con éxito. Número de guía: ..."
+	     (el número de guía es un número largo de fecha/hora, ej: 20260609153012345)
+
+02. Cierro el programa
+
+03. En Bin > Datos corroborar los siguientes archivos:
+
+	En "Guias.json" confirmar que se creó la guía con los datos ingresados en el paso 01.
+	Los datos a corroborar son:
+		- NumeroGuia: el número largo que mostró el cartel (fecha/hora)
+		- CuitCliente: 30712345678
+		- Importe: 3500
+		- Estado (EstadoActual): 0  (= Impuesta Telefónicamente)
+		- CentroDistribucionOrigen: "CD-CBA-01"
+		- CentroDistribucionDestino: "CD-MZA-01"
+		- MetodoEntrega: 2  (= Agencia)
+		- AgenciaEntregaCodigo: "AG-MZA-01-01"
+		- DireccionEntrega: "Av. San Martin 1120"
+		- CentroDistribucionRetiroCodigo: "CD-CBA-01"
+		- DireccionRetiro: "Av. Colón 1234"
+		- CodPostalRetiro: 5000
+		- DniDestinatario: 12345678
+		- NombreApellidoDestinatario: "Juan Perez"
+		- CajasS: 1  (CajasM, CajasL y CajasXL en 0)
+
+	En "HojasDeRutaFleteros.json" confirmar que se creó el HDR de retiro con el fletero
+	y la guía correspondiente.
+	Los datos a corroborar son:
+		- Codigo: "HDR-RET-202606-0001"  (cambia según el mes; formato HDR-RET-AAAAMM-numero)
+		- CentroDistribucion: "CD-CBA-01"
+		- CuitCuilFletero: 27534567890  (se asigna solo, al fletero con menos carga)
+		- TipoHDR: 0  (= Retiro)
+		- Estado: 0  (= Asignada)
+		- Guias: tiene que estar el mismo NumeroGuia de arriba
