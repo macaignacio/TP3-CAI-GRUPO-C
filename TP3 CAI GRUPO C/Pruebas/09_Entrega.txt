@@ -1,6 +1,7 @@
 00. Antes de empezar (menú principal):
 	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
-	2 - Entrar al menú "Entrega"
+	2 - En "Agencia actual" elegir: "AG-LP-01-01" (Agencia La Plata Norte Centro)
+	3 - Entrar al menú "Entrega"
 
 01. Pantalla "Entrega":
 	1 - CUIT: 31876543
