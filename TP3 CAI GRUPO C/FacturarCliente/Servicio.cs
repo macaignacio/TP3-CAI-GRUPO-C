@@ -12,9 +12,9 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 
         public long NumeroGuia { get; set; }
 
-        public int Monto { get; set; }
+        public decimal Monto { get; set; }
 
-        public int Subtotal { get; set; }
+        public decimal Subtotal { get; set; }
 
     }
 }
