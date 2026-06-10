@@ -1,0 +1,46 @@
+﻿
+ACLARACION: PARA ESTA PRUEBA NECESITO SABER BIEN QUE INFO SE USO EN LA PRUEBA DE ADMISION Y DESPACHO PARA COMPLETAR LA INFO REAL Y SEGUIR EL CAMINO FELIZ ENTERO
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+00. Antes de empezar (menú principal):
+	1 - En "Centro de distribución actual" elegir: "(AGREGAR CD DESTINO)"
+	2 - Entrar al menú "Recepción Encomiendas"
+
+01. Pantalla "Recepción Encomiendas CD":
+	1 - VERIFICAR que en el campo del CD actual figure: "(CD DESTINO SELECCIONADO PREVIAMENTE)"
+	2 - Empresa de Ómnibus: "(AGREGAR EMPRESA OMNIBUS)"
+	3 - Fecha/Hora de Salida: "(AGREGAR FECHA/HORA SALIDA)"
+	4 - Apretar el botón "Buscar"
+	5 - VERIFICAR que queda habilitado el groupBox/listado de "Detalle HDR"
+	6 - VERIFICAR que los datos mostrados coincidan con la hoja de ruta:
+	     - Nro Orden / Servicio: "(AGREGAR IDENTIFICADOR SERVICIO)"
+	     - Código HDR: "(AGREGAR CODIGO HDR OMNIBUS)"
+	     - Estado: "EnTransito"
+	     - Empresa: "(AGREGAR EMPRESA OMNIBUS)"
+	7 - Confirmar: botón "Confirmar recepción"
+	8 - VERIFICAR que aparece el cartel: "Recepción confirmada con éxito."
+
+02. Cierro el programa
+
+03. En Bin > Datos corroborar los siguientes archivos:
+
+	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta.
+	Los datos a corroborar son:
+		- Codigo: "(CODIGO HDR OMNIBUS)"
+		- IdentificadorServicio: "(IDENTIFICADOR SERVICIO)"
+		- CentroDistribucionOrigen: "(CD ORIGEN)"
+		- CentroDistribucionDestino: "(CD DESTINO)"
+		- Estado: 2  (= Cumplida)
+		- Guias: "(NUMERO GUIA GENERADO EN IMPOXTEL)"
+
+	En "Guias.json" confirmar que se actualizó la guía.
+	Los datos a corroborar son:
+		- NumeroGuia: "(NUMERO GUIA GENERADO EN IMPOXTEL)"
+		- EstadoActual: 8  (= EnCDDestino)
+		- CentroDistribucionOrigen: "(CD ORIGEN)"
+		- CentroDistribucionDestino: "(CD DESTINO)"
+		- Dentro de Historial confirmar que se agregó un nuevo movimiento con la siguiente información:
+		  - Estado: 8  (= EnCDDestino)
+		  - Ubicacion: "(NOMBRE CD DESTINO)"
+		  - UltimaActualizacion: fecha/hora del momento en que se confirmó la recepción
