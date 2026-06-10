@@ -1,0 +1,26 @@
+﻿
+ACLARACIÓN: Para estas dos pantallas se prueba únicamente lo mencionado a continuación,
+dado que el resto de las pruebas podrían considerarse válidas desde ImposiciónXTel.
+
+----------------------------------------------------------------------------------
+
+
+00. Menú Principal (antes de abrir ImpoXCD):
+	1 - En "Seleccione el CD actual:" elegir: "CD-CBA-02"
+	     (Centro Distribución Córdoba Capital Sur)
+	2 - Hacer clic en el botón "Imposición por CD"
+
+01. Pantalla "Imposición por CD":
+	1 - VERIFICAR que en el campo del CD actual figure: "CD-CBA-02"
+	     (lo muestra automáticamente al abrirse la pantalla)
+
+__________________________________________________________________________________
+
+00. Menú Principal (antes de abrir ImpoXAgencia):
+	1 - En "Seleccione la agencia actual:" elegir: "AG-CBA-01-01"
+	     (Agencia Córdoba Capital Norte Centro)
+	2 - Hacer clic en el botón "Imposición por agencia"
+
+01. Pantalla "Imposición por Agencia":
+	1 - VERIFICAR que en el campo de la agencia actual figure: "AG-CBA-01-01"
+	     (lo muestra automáticamente al abrirse la pantalla)
