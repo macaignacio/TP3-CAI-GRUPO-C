@@ -14,7 +14,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             traerNombreFleteroLabel.Text = "";
             HdrAsignadasGroupBox.Enabled = false;
             ConfirmarButton.Enabled = false;
-        
+
             HdrAsignadasListView.CheckBoxes = true;
             HdrAsignadasListView.FullRowSelect = true;
             HdrAsignadasListView.MultiSelect = false;
@@ -24,7 +24,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
         {
             if (!long.TryParse(CuitTextBox.Text, out var cuitCuil))
             {
-                MessageBox.Show("El CUIT/CUIL debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("CUIT/CUIL invalido. Se debe ingresar un numero de 11 digitos sin guiones ni comas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -56,7 +56,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 
             if (!long.TryParse(CuitTextBox.Text, out var cuitCuil))
             {
-                MessageBox.Show("El CUIT/CUIL debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("CUIT/CUIL invalido. Se debe ingresar un numero de 11 digitos sin guiones ni comas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -69,8 +69,8 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
                 return;
             }
 
-            MessageBox.Show("Se actualizó el estado de las encomiendas correctamente.",
-                "Éxito",
+            MessageBox.Show("Se actualizo el estado de las encomiendas correctamente.",
+                "Exito",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 

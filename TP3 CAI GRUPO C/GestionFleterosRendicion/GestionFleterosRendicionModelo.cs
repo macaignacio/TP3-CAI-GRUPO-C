@@ -110,9 +110,10 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 
         private static void ActualizarEstadoGuiaRendida(GuiaEntidad guia)
         {
-            var estadoActualizado = ObtenerEstadoActualizadoPorRendicion(guia.EstadoActual);
+            var estadoAnterior = guia.EstadoActual;
+            var estadoActualizado = ObtenerEstadoActualizadoPorRendicion(estadoAnterior);
 
-            if (estadoActualizado == guia.EstadoActual)
+            if (estadoActualizado == estadoAnterior)
                 return;
 
             guia.EstadoActual = estadoActualizado;
@@ -121,7 +122,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             {
                 Estado = estadoActualizado,
                 UltimaActualizacion = DateTime.Now,
-                Ubicacion = ObtenerUbicacionGuia(guia, estadoActualizado)
+                Ubicacion = ObtenerUbicacionGuia(guia, estadoAnterior)
             });
         }
 
@@ -137,18 +138,65 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             };
         }
 
-        private static string ObtenerUbicacionGuia(GuiaEntidad guia, EstadoEnum estado)
+        private static string ObtenerUbicacionGuia(GuiaEntidad guia, EstadoEnum estadoAnterior)
         {
-            if (estado == EstadoEnum.Entregado && !string.IsNullOrWhiteSpace(guia.DireccionEntrega))
-                return guia.DireccionEntrega;
+            var destino = ObtenerDestinoFletero(guia, estadoAnterior);
 
-            if (estado == EstadoEnum.PendienteAdmision && !string.IsNullOrWhiteSpace(guia.CentroDistribucionRetiroCodigo))
-                return guia.CentroDistribucionRetiroCodigo;
+            if (string.IsNullOrWhiteSpace(destino))
+                destino = Program.CDActual;
 
-            if (estado == EstadoEnum.ListaParaEntregarPorAgencia && !string.IsNullOrWhiteSpace(guia.AgenciaEntregaCodigo))
-                return guia.AgenciaEntregaCodigo;
+            return $"En transito a {destino}";
+        }
 
-            return Program.CDActual;
+        private static string ObtenerDestinoFletero(GuiaEntidad guia, EstadoEnum estadoAnterior)
+        {
+            return estadoAnterior switch
+            {
+                EstadoEnum.RetiroAgenciaEnCurso => ObtenerNombreAgencia(guia.AgenciaRetiroCodigo),
+                EstadoEnum.RetiroDomicilioEnCurso => ObtenerDestinoRetiroDomicilio(guia),
+                EstadoEnum.EnTransitoEntregaDomicilio => ObtenerDestinoDomicilio(guia),
+                EstadoEnum.EnTransitoAAgenciaDestino => ObtenerNombreAgencia(guia.AgenciaEntregaCodigo),
+                _ => ""
+            };
+        }
+
+        private static string ObtenerDestinoRetiroDomicilio(GuiaEntidad guia)
+        {
+            if (!string.IsNullOrWhiteSpace(guia.CentroDistribucionRetiroCodigo))
+                return ObtenerNombreCentroDistribucion(guia.CentroDistribucionRetiroCodigo);
+
+            if (!string.IsNullOrWhiteSpace(guia.CentroDistribucionOrigen))
+                return ObtenerNombreCentroDistribucion(guia.CentroDistribucionOrigen);
+
+            return guia.DireccionRetiro;
+        }
+
+        private static string ObtenerDestinoDomicilio(GuiaEntidad guia)
+        {
+            if (!string.IsNullOrWhiteSpace(guia.DireccionEntrega))
+                return $"domicilio {guia.DireccionEntrega}";
+
+            return "domicilio";
+        }
+
+        private static string ObtenerNombreAgencia(string codigoAgencia)
+        {
+            if (string.IsNullOrWhiteSpace(codigoAgencia))
+                return "";
+
+            var agencia = AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == codigoAgencia);
+
+            return agencia?.Nombre ?? codigoAgencia;
+        }
+
+        private static string ObtenerNombreCentroDistribucion(string codigoCentroDistribucion)
+        {
+            if (string.IsNullOrWhiteSpace(codigoCentroDistribucion))
+                return "";
+
+            var centroDistribucion = CentroDistribucionAlmacen.cd.FirstOrDefault(c => c.Codigo == codigoCentroDistribucion);
+
+            return centroDistribucion?.Nombre ?? codigoCentroDistribucion;
         }
 
         private static bool PuedeRendirse(EstadoEnum estado)
