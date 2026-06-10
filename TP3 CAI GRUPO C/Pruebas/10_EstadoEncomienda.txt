@@ -1,0 +1,22 @@
+00. Antes de empezar (menú principal):
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
+	2 - En "Agencia actual" elegir: "AG-LP-01-01" (Agencia La Plata Norte Centro)
+	3 - Entrar al menú "Consulta estado encomienda"
+
+01. Pantalla "Consulta estado encomienda":
+	1 - Número de Guía: 20260501101530001
+	2 - Apretar el botón "Buscar"
+	3 - VERIFICAR que dentro del groupBox "Resultado de Búsqueda" trae el historial de Estado de encomienda, Última actualización y Ubicación.
+	4 - VERIFICAR que si se clickea en "Limpiar" se borra la información traida de la búsqueda
+	
+02. Cierro el programa
+
+03. En Bin > Datos corroborar los siguientes archivos:
+
+	En "Guias.json" confirmar no deben haberse generado cambios.
+	Los datos a corroborar son:
+		- EstadoActual: 13
+		- Dentro de Historial confirmar que se agregó un nuevo movimiento con la siguiente información:
+		  - Estado:  13 (= Entregado),
+          - UltimaActualizacion":  "2026-06-10T12:15:00.000",
+          - Ubicacion":  "Av. Colon 1240"

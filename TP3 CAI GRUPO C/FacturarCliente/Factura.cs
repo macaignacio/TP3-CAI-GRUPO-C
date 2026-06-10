@@ -15,6 +15,6 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
 
         public List<Servicio> Servicios { get; set; } = new List<Servicio>();
 
-        public int Total { get; set; }
+        public decimal Total { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         public string NumeroFactura { get; set; }
         public long CuitCliente { get; set; }
         public DateTime FechaEmision { get; set; }
-        public int Total { get; set; }
+        public decimal Total { get; set; }
         public DateTime Vencimiento { get; set; }
 
 
