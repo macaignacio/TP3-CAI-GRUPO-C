@@ -7,7 +7,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 {
     internal class RecepcionEncomiendasCDModelo
     {
-        public int CodigoCDActual { get; } = 3001;
+        public string CodigoCDActual => Program.CDActual;
 
         public List<EmpresaOmnibusEntidad> Empresas =>
             EmpresaOmnibusAlmacen.empresasOmnibus;
@@ -18,6 +18,9 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
         {
             if (string.IsNullOrWhiteSpace(empresa))
                 return (false, "Debe seleccionar una empresa de ómnibus.");
+
+            if (string.IsNullOrWhiteSpace(CodigoCDActual))
+                return (false, "Debe seleccionar un centro de distribución actual.");
 
             if (!Empresas.Any(e => e.nombre == empresa))
                 return (false, "Debe seleccionar una empresa de ómnibus válida.");
@@ -75,6 +78,8 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                         h.IdentificadorServicio ==
                         servicio.IdentificadorServicio
                         &&
+                        h.CentroDistribucionDestino == CodigoCDActual
+                        &&
                         h.Estado ==
                         EstadoHDROmnibusEnum.EnTransito)
                     .ToList();
@@ -129,9 +134,37 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 
                 hojaEnSistema.Estado =
                     EstadoHDROmnibusEnum.Cumplida;
+
+                var ubicacion = CentroDistribucionAlmacen.cd
+                    .FirstOrDefault(c => c.Codigo == hojaEnSistema.CentroDistribucionDestino)
+                    ?.Nombre ?? hojaEnSistema.CentroDistribucionDestino;
+
+                foreach (var numeroGuia in hojaEnSistema.Guias)
+                {
+                    var guia = GuiaAlmacen.guias
+                        .FirstOrDefault(g => g.NumeroGuia == numeroGuia);
+
+                    if (guia == null)
+                    {
+                        return (
+                            false,
+                            $"Guía {numeroGuia} no encontrada."
+                        );
+                    }
+
+                    guia.EstadoActual = EstadoEnum.EnCDDestino;
+                    guia.Historial ??= new List<MovimientoGuia>();
+                    guia.Historial.Add(new MovimientoGuia
+                    {
+                        Estado = EstadoEnum.EnCDDestino,
+                        UltimaActualizacion = DateTime.Now,
+                        Ubicacion = ubicacion
+                    });
+                }
             }
 
             HojaDeRutaOmnibusAlmacen.Guardar();
+            GuiaAlmacen.Guardar();
 
             return (true, "");
         }
