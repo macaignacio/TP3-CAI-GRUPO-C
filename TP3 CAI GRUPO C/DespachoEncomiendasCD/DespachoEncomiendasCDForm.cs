@@ -105,6 +105,8 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                 "Éxito",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+
+            LimpiarFormulario();
         }
 
         private List<HojaDeRuta> ObtenerTodasLasHojas()
@@ -118,6 +120,14 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
             }
 
             return hojas;
+        }
+
+        private void LimpiarFormulario()
+        {
+            EmpresaComboBox.SelectedIndex = -1;
+            HorarioSalidaDateTimePicker.Value = DateTime.Now;
+            HDRAsignadasListView.Items.Clear();
+            DetalleHDRAsignadasGroupBox.Enabled = false;
         }
     }
 }
