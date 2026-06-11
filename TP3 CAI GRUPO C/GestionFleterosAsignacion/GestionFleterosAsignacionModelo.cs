@@ -56,12 +56,12 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
         private static string ObtenerEstadoPendiente(TipoHDRFleteroEnum tipoHDR, GuiaEntidad? guia)
         {
             if (guia != null)
-                return guia.EstadoActual.ToString();
+                return ObtenerDescripcionEstado(guia.EstadoActual);
 
             if (tipoHDR == TipoHDRFleteroEnum.Retiro)
-                return EstadoEnum.ImpuestaTelefonicamente.ToString();
+                return ObtenerDescripcionEstado(EstadoEnum.ImpuestaTelefonicamente);
 
-            return EstadoEnum.EnCDDestino.ToString();
+            return ObtenerDescripcionEstado(EstadoEnum.EnCDDestino);
         }
 
         private static bool GuiaPuedeAsignarseAFletero(
@@ -166,7 +166,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                         asignacion.guia)
                 });
 
-                asignacion.hoja.EstadoEncomienda = estadoActualizado.ToString();
+                asignacion.hoja.EstadoEncomienda = ObtenerDescripcionEstado(estadoActualizado);
             }
 
             GuiaAlmacen.Guardar();
@@ -197,6 +197,27 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 MetodoEntregaEnum.ADomicilio => EstadoEnum.EnTransitoEntregaDomicilio,
                 MetodoEntregaEnum.Agencia => EstadoEnum.EnTransitoAAgenciaDestino,
                 _ => guia.EstadoActual
+            };
+        }
+
+        private static string ObtenerDescripcionEstado(EstadoEnum estado)
+        {
+            return estado switch
+            {
+                EstadoEnum.ImpuestaTelefonicamente => "Impuesta Telefónicamente",
+                EstadoEnum.ImpuestaEnAgencia => "Impuesta en Agencia",
+                EstadoEnum.ImpuestaEnCD => "Impuesta en CD",
+                EstadoEnum.RetiroDomicilioEnCurso => "Retiro a Domicilio en Curso",
+                EstadoEnum.RetiroAgenciaEnCurso => "Retiro en Agencia en Curso",
+                EstadoEnum.AdmitidaEnCD => "Admitida en CD",
+                EstadoEnum.EnTransitoACDDestino => "En Tránsito a CD Destino",
+                EstadoEnum.EnCDDestino => "En CD Destino",
+                EstadoEnum.ListaParaEntregarPorCD => "Lista para Entregar por CD",
+                EstadoEnum.EnTransitoEntregaDomicilio => "En Tránsito a Domicilio",
+                EstadoEnum.EnTransitoAAgenciaDestino => "En Tránsito a Agencia Destino",
+                EstadoEnum.ListaParaEntregarPorAgencia => "Lista para Entregar por Agencia",
+                EstadoEnum.Entregado => "Entregado",
+                _ => estado.ToString()
             };
         }
 
