@@ -10,8 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pruebas\02_ImpoXAgencia\**" />
+    <Compile Remove="Pruebas\03_ImpoXCD\**" />
     <Compile Remove="Pruebas\06_GestionFleterosRendicion\**" />
+    <EmbeddedResource Remove="Pruebas\02_ImpoXAgencia\**" />
+    <EmbeddedResource Remove="Pruebas\03_ImpoXCD\**" />
     <EmbeddedResource Remove="Pruebas\06_GestionFleterosRendicion\**" />
+    <None Remove="Pruebas\02_ImpoXAgencia\**" />
+    <None Remove="Pruebas\03_ImpoXCD\**" />
     <None Remove="Pruebas\06_GestionFleterosRendicion\**" />
   </ItemGroup>
 
@@ -79,8 +85,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pruebas\02_ImpoXAgencia\" />
-    <Folder Include="Pruebas\03_ImpoXCD\" />
     <Folder Include="Pruebas\04_GestionFleterosAsignacion\" />
     <Folder Include="Pruebas\11_FacturarCliente\" />
     <Folder Include="Pruebas\12_ConsultaCtaCteCliente\" />

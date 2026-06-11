@@ -1,0 +1,124 @@
+00. Antes de empezar:
+	- Salvo cuando el caso indique lo contrario, seleccionar como CD actual
+	  "CD-CBA-02" y entrar a "Imposición por CD".
+	- Datos válidos de base:
+		- CUIT: 30543219876 (validar antes de continuar)
+		- Método de Entrega: "A Domicilio"
+		- Provincia: "Mendoza"
+		- Localidad: "Ciudad de Mendoza"
+		- CP: 5500
+		- Dirección: "Av. Las Heras 650"
+		- Destinatario: "Luciana Ferreyra"
+		- DNI: 28456789
+		- Caja S: 1
+
+------------------------------------------------------------------------------
+
+01. Contexto y cliente:
+
+	1.1 - Sin CD actual:
+		- No seleccionar un CD en el menú principal.
+		- Completar el formulario con los datos válidos de base y apretar "Generar".
+		- VERIFICAR cartel: "No se encontró el centro de distribución de origen."
+
+	1.2 - CUIT vacío, con letras o con guiones:
+		- Apretar "Validar".
+		- VERIFICAR cartel: "CUIT inválido. Se debe ingresar un número de 11
+		  digitos sin guiones ni comas."
+
+	1.3 - CUIT inexistente:
+		- CUIT: 99999999999
+		- Apretar "Validar".
+		- VERIFICAR cartel: "Cliente no encontrado."
+
+------------------------------------------------------------------------------
+
+02. Entrega a domicilio:
+
+	PRE: CUIT validado y Método de Entrega = "A Domicilio".
+
+	2.1 - Sin Provincia:
+		- VERIFICAR cartel: "Debe seleccionar una provincia de entrega."
+
+	2.2 - Sin Localidad:
+		- Provincia: "Mendoza" / Localidad vacía.
+		- VERIFICAR cartel: "Debe seleccionar una localidad de entrega válida."
+
+	2.3 - CP vacío o con letras:
+		- VERIFICAR cartel: "El código postal de entrega debe ser un número."
+
+	2.4 - CP fuera de rango:
+		- CP: 999
+		- VERIFICAR cartel: "El código postal de entrega debe ser un número
+		  de 4 dígitos."
+
+	2.5 - CP de otra localidad:
+		- Localidad: "Ciudad de Mendoza" / CP: 1900
+		- VERIFICAR cartel: "El código postal de entrega no corresponde a la
+		  localidad seleccionada o no tiene centro de distribución asignado."
+
+	2.6 - Dirección vacía:
+		- VERIFICAR cartel: "La dirección de entrega no puede estar vacía."
+
+	En cada caso completar el resto con datos válidos y apretar "Generar".
+
+------------------------------------------------------------------------------
+
+03. Entrega en CD o Agencia:
+
+	PRE: CUIT validado y Método de Entrega = "Agencia".
+
+	3.1 - Sin Provincia de Sucursal:
+		- VERIFICAR cartel: "Debe seleccionar una provincia de sucursal."
+
+	3.2 - Sin Localidad de Sucursal:
+		- Provincia: "Mendoza" / Localidad vacía.
+		- VERIFICAR cartel: "Debe seleccionar una localidad de sucursal válida."
+
+	3.3 - Sin sucursal elegida:
+		- Provincia: "Mendoza" / Localidad: "Godoy Cruz".
+		- No seleccionar ninguna fila de la lista.
+		- VERIFICAR cartel: "Debe seleccionar una sucursal."
+
+	En cada caso completar el resto con datos válidos y apretar "Generar".
+
+------------------------------------------------------------------------------
+
+04. Destinatario:
+
+	4.1 - Nombre vacío:
+		- VERIFICAR cartel: "El Nombre y Apellido de Destinatario no puede
+		  estar vacío."
+
+	4.2 - DNI con letras:
+		- DNI: "ABC"
+		- VERIFICAR cartel: "El DNI debe ser un número válido."
+
+	4.3 - DNI de menos de 7 o más de 8 dígitos:
+		- Probar 123456 y luego 123456789.
+		- VERIFICAR cartel: "DNI inválido. Se debe ingresar un número de entre
+		  7 a 8 dígitos."
+
+	En cada caso completar el resto con datos válidos y apretar "Generar".
+
+------------------------------------------------------------------------------
+
+05. Encomienda:
+
+	5.1 - Cantidad con letras:
+		- Caja S: "ABC"
+		- VERIFICAR cartel: "Las cantidades de cajas deben ser números enteros."
+
+	5.2 - Todas las cantidades vacías o en 0:
+		- VERIFICAR cartel: "Debe ingresar al menos una caja."
+
+	5.3 - Cantidad negativa:
+		- Caja S: -1
+		- VERIFICAR cartel: "Las cantidades de cajas no pueden ser negativas."
+
+	5.4 - Supera la capacidad máxima:
+		- Caja XL: 21
+		- VERIFICAR cartel: "La cantidad de cajas supera el máximo permitido."
+
+	En cada caso completar el resto con datos válidos y apretar "Generar".
+

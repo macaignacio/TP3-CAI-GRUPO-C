@@ -1,0 +1,134 @@
+00. Antes de empezar:
+	- Salvo cuando el caso indique lo contrario, seleccionar:
+		- CD actual: "CD-GC-01"
+		- Agencia actual: "AG-GC-01-02"
+	- Entrar a "Imposición por agencia".
+	- Datos válidos de base:
+		- CUIT: 30567891234 (validar antes de continuar)
+		- Método de Entrega: "A Domicilio"
+		- Provincia: "Buenos Aires"
+		- Localidad: "La Plata"
+		- CP: 1906
+		- Dirección: "Calle 54 1320"
+		- Destinatario: "Camila Dominguez"
+		- DNI: 40123456
+		- Caja M: 1
+
+------------------------------------------------------------------------------
+
+01. Contexto:
+
+	1.1 - Sin agencia actual:
+		- Seleccionar el CD "CD-GC-01", pero ninguna agencia.
+		- Completar el formulario con los datos válidos de base y apretar "Generar".
+		- VERIFICAR cartel: "No se encontró la agencia de origen."
+
+	1.2 - Sin CD actual:
+		- Seleccionar la agencia "AG-GC-01-02", pero ningún CD.
+		- Completar el formulario con los datos válidos de base y apretar "Generar".
+		- VERIFICAR cartel: "Debe seleccionar un centro de distribucion actual valido."
+
+------------------------------------------------------------------------------
+
+02. Cliente:
+
+	2.1 - CUIT vacío, con letras o con guiones:
+		- Apretar "Validar".
+		- VERIFICAR cartel: "CUIT inválido. Se debe ingresar un número de 11
+		  digitos sin guiones ni comas."
+
+	2.2 - CUIT inexistente:
+		- CUIT: 99999999999
+		- Apretar "Validar".
+		- VERIFICAR cartel: "Cliente no encontrado."
+
+------------------------------------------------------------------------------
+
+03. Entrega a domicilio:
+
+	PRE: CUIT validado y Método de Entrega = "A Domicilio".
+
+	3.1 - Sin Provincia:
+		- VERIFICAR cartel: "Debe seleccionar una provincia de entrega."
+
+	3.2 - Sin Localidad:
+		- Provincia: "Buenos Aires" / Localidad vacía.
+		- VERIFICAR cartel: "Debe seleccionar una localidad de entrega válida."
+
+	3.3 - CP vacío o con letras:
+		- VERIFICAR cartel: "El código postal de entrega debe ser un número."
+
+	3.4 - CP fuera de rango:
+		- CP: 999
+		- VERIFICAR cartel: "El código postal de entrega debe ser un número
+		  de 4 dígitos."
+
+	3.5 - CP de otra localidad:
+		- Localidad: "La Plata" / CP: 5500
+		- VERIFICAR cartel: "El codigo postal de entrega no corresponde a la
+		  localidad seleccionada o no tiene centro de distribucion asignado."
+
+	3.6 - Dirección vacía:
+		- VERIFICAR cartel: "La dirección de entrega no puede estar vacía."
+
+	En cada caso completar el resto con datos válidos y apretar "Generar".
+
+------------------------------------------------------------------------------
+
+04. Entrega en CD o Agencia:
+
+	PRE: CUIT validado y Método de Entrega = "Centro de Distribución".
+
+	4.1 - Sin Provincia de Sucursal:
+		- VERIFICAR cartel: "Debe seleccionar una provincia de sucursal."
+
+	4.2 - Sin Localidad de Sucursal:
+		- Provincia: "Ciudad Autonoma de Buenos Aires" / Localidad vacía.
+		- VERIFICAR cartel: "Debe seleccionar una localidad de sucursal válida."
+
+	4.3 - Sin sucursal elegida:
+		- Provincia: "Ciudad Autonoma de Buenos Aires" / Localidad: "Retiro".
+		- No seleccionar ninguna fila de la lista.
+		- VERIFICAR cartel: "Debe seleccionar una sucursal."
+
+	En cada caso completar el resto con datos válidos y apretar "Generar".
+
+------------------------------------------------------------------------------
+
+05. Destinatario:
+
+	5.1 - Nombre vacío:
+		- VERIFICAR cartel: "El Nombre y Apellido de Destinatario no puede
+		  estar vacío."
+
+	5.2 - DNI con letras:
+		- DNI: "ABC"
+		- VERIFICAR cartel: "El DNI debe ser un número válido."
+
+	5.3 - DNI de menos de 7 o más de 8 dígitos:
+		- Probar 123456 y luego 123456789.
+		- VERIFICAR cartel: "DNI inválido. Se debe ingresar un número de entre
+		  7 a 8 dígitos."
+
+	En cada caso completar el resto con datos válidos y apretar "Generar".
+
+------------------------------------------------------------------------------
+
+06. Encomienda:
+
+	6.1 - Cantidad con letras:
+		- Caja S: "ABC"
+		- VERIFICAR cartel: "Las cantidades de cajas deben ser números enteros."
+
+	6.2 - Todas las cantidades vacías o en 0:
+		- VERIFICAR cartel: "Debe ingresar al menos una caja."
+
+	6.3 - Cantidad negativa:
+		- Caja S: -1
+		- VERIFICAR cartel: "Las cantidades de cajas no pueden ser negativas."
+
+	6.4 - Supera la capacidad máxima:
+		- Caja XL: 21
+		- VERIFICAR cartel: "La cantidad de cajas supera el máximo permitido."
+
+	En cada caso completar el resto con datos válidos y apretar "Generar".

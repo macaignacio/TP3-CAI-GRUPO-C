@@ -1,0 +1,68 @@
+ACLARACION:
+	Estas guías son independientes del camino feliz iniciado en Imposición por Teléfono.
+	No reutilizarlas en las pruebas de las demás pantallas.
+
+==============================================================================
+
+00. Antes de empezar (menú principal):
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-02"
+	    (Centro Distribución Córdoba Capital Sur)
+	2 - Entrar al menú "Imposición por CD"
+
+01. Pantalla "Imposición por CD":
+	1 - VERIFICAR que el CD actual mostrado sea: "CD-CBA-02"
+	2 - CUIT: 30543219876
+	3 - Apretar el botón "Validar"
+	4 - VERIFICAR que aparece la razón social: "Logistica Andina S.R.L."
+	5 - Método de Entrega: "A Domicilio"
+	6 - VERIFICAR que queda habilitado el groupBox de entrega a domicilio.
+	7 - Provincia de Envío: "Mendoza"
+	8 - Localidad de Envío: "Ciudad de Mendoza"
+	9 - Código Postal: 5500
+	10 - Dirección: "Av. Las Heras 650"
+	11 - Datos del Destinatario:
+	     - Nombre y Apellido: "Luciana Ferreyra"
+	     - DNI: 28456789
+	12 - Datos de la Encomienda:
+	     - Caja S: 2
+	     - Caja M: 1
+	     - Caja L: 1
+	     - Caja XL: 0
+	13 - Apretar el botón "Generar"
+	14 - VERIFICAR cartel: "Imposición generada con éxito. Número de guía: ..."
+	     Anotar el número informado como <GUIA_IMPOXCD_1>.
+
+02. Cerrar el programa.
+
+03. En Bin > Datos corroborar:
+
+	En "Guias.json":
+		- NumeroGuia: <GUIA_IMPOXCD_1>
+		- CuitCliente: 30543219876
+		- Importe: 13950
+		- EstadoActual: 6  (= AdmitidaEnCD)
+		- CentroDistribucionOrigen: "CD-CBA-02"
+		- CentroDistribucionDestino: "CD-MZA-01"
+		- MetodoEntrega: 0  (= A Domicilio)
+		- AgenciaEntregaCodigo: ""
+		- CentroDistribucionEntregaCodigo: ""
+		- DireccionEntrega: "Av. Las Heras 650"
+		- CodPostalEntrega: 5500
+		- MetodoRetiro: 1  (= Centro de Distribución)
+		- CentroDistribucionRetiroCodigo: "CD-CBA-02"
+		- DireccionRetiro: "Bv. San Juan 1120"
+		- CodPostalRetiro: 5005
+		- DniDestinatario: 28456789
+		- NombreApellidoDestinatario: "Luciana Ferreyra"
+		- CajasS: 2 / CajasM: 1 / CajasL: 1 / CajasXL: 0
+		- Historial: contiene, en este orden, los estados:
+		  2 (= ImpuestaEnCD), 5 (= PendienteAdmision) y 6 (= AdmitidaEnCD)
+
+	En "HojasDeRutaOmnibus.json":
+		- Codigo: formato "HDR-OMN-AAAAMM-número"
+		- IdentificadorServicio: "AND-20260504-0650-CBA-MZA"
+		- CentroDistribucionOrigen: "CD-CBA-02"
+		- CentroDistribucionDestino: "CD-MZA-01"
+		- Estado: 0  (= Asignada)
+		- Guias: contiene <GUIA_IMPOXCD_1>
+

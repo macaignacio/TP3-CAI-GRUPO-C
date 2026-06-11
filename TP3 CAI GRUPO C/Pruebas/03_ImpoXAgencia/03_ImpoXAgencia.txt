@@ -1,0 +1,81 @@
+ACLARACION:
+	Estas guías son independientes del camino feliz iniciado en Imposición por Teléfono.
+	No reutilizarlas en las pruebas de las demás pantallas.
+
+	En los dos casos se debe seleccionar un CD y una agencia coherentes entre sí.
+
+==============================================================================
+
+00. Antes de empezar (menú principal):
+	1 - En "Centro de distribución actual" elegir: "CD-MDP-01"
+	    (Centro Distribución Mar del Plata Centro)
+	2 - En "Agencia actual" elegir: "AG-MDP-01-02"
+	    (Agencia Mar del Plata Güemes)
+	3 - Entrar al menú "Imposición por agencia"
+
+01. Pantalla "Imposición por agencia":
+	1 - VERIFICAR que la agencia actual mostrada sea: "AG-MDP-01-02"
+	2 - CUIT: 30765432109
+	3 - Apretar el botón "Validar"
+	4 - VERIFICAR que aparece la razón social: "Comercial del Plata S.A."
+	5 - Método de Entrega: "Centro de Distribución"
+	6 - Provincia de Sucursal: "Ciudad Autonoma de Buenos Aires"
+	7 - Localidad de Sucursal: "Retiro"
+	8 - VERIFICAR que figuren los CD:
+	     - "CD-RET-01"
+	     - "CD-RET-02"
+	9 - Seleccionar: "CD-RET-01" (Centro Distribución Retiro Terminal)
+	10 - Datos del Destinatario:
+	     - Nombre y Apellido: "Sofia Benitez"
+	     - DNI: 25789456
+	11 - Datos de la Encomienda:
+	     - Caja S: 1
+	     - Caja M: 0
+	     - Caja L: 2
+	     - Caja XL: 0
+	12 - Apretar el botón "Generar"
+	13 - VERIFICAR cartel: "Imposición generada con éxito. Número de guía: ..."
+	     Anotar el número informado como <GUIA_IMPOXAGENCIA_1>.
+
+02. Cerrar el programa.
+
+03. En Bin > Datos corroborar:
+
+	En "Guias.json":
+		- NumeroGuia: <GUIA_IMPOXAGENCIA_1>
+		- CuitCliente: 30765432109
+		- Importe: 8100
+		- EstadoActual: 1  (= ImpuestaEnAgencia)
+		- CentroDistribucionOrigen: "CD-MDP-01"
+		- CentroDistribucionDestino: "CD-RET-01"
+		- MetodoEntrega: 1  (= Centro de Distribución)
+		- CentroDistribucionEntregaCodigo: "CD-RET-01"
+		- DireccionEntrega: "Av. Antartida Argentina 1180"
+		- CodPostalEntrega: 1001
+		- MetodoRetiro: 0  (= Agencia)
+		- AgenciaRetiroCodigo: "AG-MDP-01-02"
+		- CentroDistribucionRetiroCodigo: "CD-MDP-01"
+		- DireccionRetiro: "Guemes 2850"
+		- CodPostalRetiro: 7600
+		- DniDestinatario: 25789456
+		- NombreApellidoDestinatario: "Sofia Benitez"
+		- CajasS: 1 / CajasM: 0 / CajasL: 2 / CajasXL: 0
+		- Historial: contiene Estado 1 (= ImpuestaEnAgencia)
+
+	En "HojasDeRutaFleteros.json":
+		- Codigo: formato "HDR-RET-AAAAMM-número"
+		- CentroDistribucion: "CD-MDP-01"
+		- CuitCuilFletero: corresponde a uno de los fleteros del CD
+		  (la asignación depende de cuál tenga menor carga al ejecutar la prueba)
+		- TipoHDR: 0  (= Retiro)
+		- Estado: 0  (= Asignada)
+		- Guias: contiene <GUIA_IMPOXAGENCIA_1>
+
+	En "CtaCteAgencia.json":
+		- CodigoAgencia: "AG-MDP-01-02"
+		- NumeroGuia: <GUIA_IMPOXAGENCIA_1>
+		- Comprobante: formato "FC-A-0001-número"
+		- Comision: 5800
+		- Debe: 5800
+		- Haber: 0
+		- Saldo: saldo anterior de la agencia + 5800
