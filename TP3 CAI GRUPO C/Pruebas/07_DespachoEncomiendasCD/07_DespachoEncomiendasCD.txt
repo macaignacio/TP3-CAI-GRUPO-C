@@ -1,46 +1,51 @@
-﻿
-ACLARACION: PARA ESTA PRUEBA NECESITO SABER BIEN QUE INFO SE USO EN LA PRUEBA DE ADMISION PARA COMPLETAR LA INFO REAL Y SEGUIR EL CAMINO FELIZ ENTERO
+00. Antes de empezar:
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+	IMPORTANTE: Esta prueba CONTINÚA la cadena del camino feliz, después de
+	"06_Admision". Usa la MISMA guía: <GUIA_CAMINO_FELIZ>.
+	Al llegar acá tiene que estar así:
+		- En "Guias.json": la guía en estado 6 (Admitida en CD)
+		- En "HojasDeRutaOmnibus.json": <HDR_OMNIBUS_CAMINO_FELIZ>
+		     en estado 0 (Asignada), servicio "FLE-20260610-0600-TRONCAL-IDA",
+		     origen CD-CBA-01, destino CD-MZA-01.
 
-00. Antes de empezar (menú principal):
-	1 - En "Centro de distribución actual" elegir: "(AGREGAR CD ORIGEN)"
+01. Menú principal:
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
 	2 - Entrar al menú "Despacho Encomiendas"
 
-01. Pantalla "Despacho Encomiendas CD":
-	1 - VERIFICAR que en el campo del CD actual figure: "(CD ORIGEN SELECCIONADO PREVIAMENTE)"
-	2 - Empresa de Ómnibus: "(AGREGAR EMPRESA OMNIBUS)"
-	3 - Fecha/Hora de Salida: "(AGREGAR FECHA/HORA SALIDA)"
+02. Pantalla "Despacho Encomiendas CD" - GroupBox "Seleccionar Ómnibus":
+	1 - VERIFICAR que en el campo "Código CD" figure: "CD-CBA-01"
+	2 - Empresa: "Flecha Bus"
+	3 - Fecha/Hora de Salida: 11/06/2026 11:45
+	     (es la hora a la que el servicio troncal sale de CD-CBA-01)
 	4 - Apretar el botón "Buscar"
-	5 - VERIFICAR que queda habilitado el groupBox/listado de "Detalle HDR Asignadas"
-	6 - VERIFICAR que los datos mostrados coincidan con la hoja de ruta:
-	     - Nro Orden / Servicio: "(AGREGAR IDENTIFICADOR SERVICIO)"
-	     - Código HDR: "(AGREGAR CODIGO HDR OMNIBUS)"
+	5 - VERIFICAR que se habilita el GroupBox "Detalle de Hojas de Ruta de transporte asignadas"
+
+03. Pantalla "Despacho Encomiendas CD" - GroupBox "Detalle de Hojas de Ruta de transporte asignadas":
+	1 - VERIFICAR que en la lista aparece una fila con:
+	     - Nro de Orden: "FLE-20260610-0600-TRONCAL-IDA"
+	     - Hoja de Ruta: <HDR_OMNIBUS_CAMINO_FELIZ>
 	     - Estado: "Asignada"
-	     - Empresa: "(AGREGAR EMPRESA OMNIBUS)"
-	7 - Confirmar: botón "Confirmar asignación"
-	8 - VERIFICAR que aparece el cartel: "Asignación confirmada con éxito."
+	     - Empresa de ómnibus: "Flecha Bus"
+	2 - Apretar el botón "Confirmar asignación"
+	3 - VERIFICAR que aparece el cartel: "Asignación confirmada con éxito."
 
-02. Cierro el programa
+04. Cierro el programa
 
-03. En Bin > Datos corroborar los siguientes archivos:
+05. En Bin > Datos corroborar los siguientes archivos:
 
-	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta.
-	Los datos a corroborar son:
-		- Codigo: "(CODIGO HDR OMNIBUS)"
-		- IdentificadorServicio: "(IDENTIFICADOR SERVICIO)"
-		- CentroDistribucionOrigen: "(CD ORIGEN)"
-		- CentroDistribucionDestino: "(CD DESTINO)"
-		- Estado: 1  (= EnTransito)
-		- Guias: "(NUMERO GUIA GENERADO EN IMPOXTEL)"
+	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta:
+		- Codigo: <HDR_OMNIBUS_CAMINO_FELIZ>
+		- IdentificadorServicio: "FLE-20260610-0600-TRONCAL-IDA"
+		- CentroDistribucionOrigen: "CD-CBA-01"
+		- CentroDistribucionDestino: "CD-MZA-01"
+		- Estado: 1  (= EnTransito; antes era 0 = Asignada)
+		- Guias: tiene que estar <GUIA_CAMINO_FELIZ>
 
-	En "Guias.json" confirmar que se actualizó la guía.
-	Los datos a corroborar son:
-		- NumeroGuia: "(NUMERO GUIA GENERADO EN IMPOXTEL)"
-		- EstadoActual: 7  (= EnTransitoACDDestino)
-		- CentroDistribucionOrigen: "(CD ORIGEN)"
-		- CentroDistribucionDestino: "(CD DESTINO)"
-		- Dentro de Historial confirmar que se agregó un nuevo movimiento con la siguiente información:
-		  - Estado: 7  (= EnTransitoACDDestino)
-		  - Ubicacion: "(NOMBRE CD ORIGEN)"
-		  - UltimaActualizacion: fecha/hora del momento en que se confirmó la asignación
+	En "Guias.json" confirmar que se actualizó la guía:
+		- NumeroGuia: <GUIA_CAMINO_FELIZ>
+		- Estado (EstadoActual): 7  (= En tránsito a CD destino; antes era 6)
+		- Historial: tiene un movimiento NUEVO agregado al final con
+		     Estado: 7 (En tránsito a CD destino)
+		     Ubicacion: "Centro Distribucion Cordoba Capital Norte"
+
+	Con la guía en estado 7 queda lista para la prueba siguiente: "08_RecepcionEncomiendasCD".
