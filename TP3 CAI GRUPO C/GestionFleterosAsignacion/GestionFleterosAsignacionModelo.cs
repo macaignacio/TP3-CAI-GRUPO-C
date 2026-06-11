@@ -37,7 +37,17 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                                 EstadoEncomienda = ObtenerEstadoPendiente(hoja.TipoHDR, guia)
                             };
                         }))
-                        .Where(hoja => GuiaPuedeAsignarseAFletero(GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == hoja.NumeroGuia)))
+                        .Where(hoja =>
+                        {
+                            var hojaEntidad = HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros
+                                .First(h => h.Codigo == hoja.Codigo);
+                            var guia = GuiaAlmacen.guias
+                                .FirstOrDefault(g => g.NumeroGuia == hoja.NumeroGuia);
+
+                            return GuiaPuedeAsignarseAFletero(
+                                hojaEntidad.TipoHDR,
+                                guia);
+                        })
                         .ToList()
                 })
                 .ToList();
@@ -54,14 +64,22 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             return EstadoEnum.EnCDDestino.ToString();
         }
 
-        private static bool GuiaPuedeAsignarseAFletero(GuiaEntidad? guia)
+        private static bool GuiaPuedeAsignarseAFletero(
+            TipoHDRFleteroEnum tipoHDR,
+            GuiaEntidad? guia)
         {
             if (guia == null)
                 return false;
 
-            return (int)guia.EstadoActual == 0
-                || (int)guia.EstadoActual == 1
-                || ((int)guia.EstadoActual == 8 && (int)guia.MetodoEntrega != 1);
+            if (tipoHDR == TipoHDRFleteroEnum.Retiro)
+            {
+                return guia.EstadoActual == EstadoEnum.ImpuestaTelefonicamente ||
+                       guia.EstadoActual == EstadoEnum.ImpuestaEnAgencia;
+            }
+
+            return guia.EstadoActual == EstadoEnum.EnCDDestino &&
+                   (guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio ||
+                    guia.MetodoEntrega == MetodoEntregaEnum.Agencia);
         }
 
         public (Fletero? fletero, string error) BuscarFletero(long cuitCuil)
@@ -87,28 +105,68 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             if (resultadoFletero.fletero.HojasDeRuta.Count == 0)
                 return new ResultadoAsignacion { Valido = false, Error = "El fletero no tiene hojas de ruta pendientes." };
 
+            var asignaciones = new List<(HojaDeRuta hoja, HojaDeRutaFleteroEntidad hojaEntidad, GuiaEntidad guia)>();
+
             foreach (var hojaDeRuta in resultadoFletero.fletero.HojasDeRuta)
             {
-                var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == hojaDeRuta.NumeroGuia);
+                var hojaEntidad = HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros
+                    .FirstOrDefault(h =>
+                        h.Codigo == hojaDeRuta.Codigo &&
+                        h.CuitCuilFletero == cuitCuil &&
+                        h.Estado == EstadoHDRFleteroEnum.Asignada &&
+                        h.Guias.Contains(hojaDeRuta.NumeroGuia));
 
-                if (guia != null)
+                if (hojaEntidad == null)
                 {
-                    var estadoActualizado = ObtenerEstadoActualizado(guia);
-
-                    if (estadoActualizado != guia.EstadoActual)
+                    return new ResultadoAsignacion
                     {
-                        guia.EstadoActual = estadoActualizado;
-                        guia.Historial ??= new List<MovimientoGuia>();
-                        guia.Historial.Add(new MovimientoGuia
-                        {
-                            Estado = guia.EstadoActual,
-                            UltimaActualizacion = DateTime.Now,
-                            Ubicacion = ObtenerUbicacionMovimiento(guia)
-                        });
-                    }
-
-                    hojaDeRuta.EstadoEncomienda = guia.EstadoActual.ToString();
+                        Valido = false,
+                        Error = $"La hoja de ruta {hojaDeRuta.Codigo} ya no está disponible para asignar."
+                    };
                 }
+
+                var guia = GuiaAlmacen.guias
+                    .FirstOrDefault(g => g.NumeroGuia == hojaDeRuta.NumeroGuia);
+
+                if (guia == null)
+                {
+                    return new ResultadoAsignacion
+                    {
+                        Valido = false,
+                        Error = $"La guía {hojaDeRuta.NumeroGuia} no fue encontrada."
+                    };
+                }
+
+                if (!GuiaPuedeAsignarseAFletero(hojaEntidad.TipoHDR, guia))
+                {
+                    return new ResultadoAsignacion
+                    {
+                        Valido = false,
+                        Error = $"La guía {guia.NumeroGuia} ya no está en un estado válido para la hoja de ruta {hojaEntidad.Codigo}."
+                    };
+                }
+
+                asignaciones.Add((hojaDeRuta, hojaEntidad, guia));
+            }
+
+            foreach (var asignacion in asignaciones)
+            {
+                var estadoActualizado = ObtenerEstadoActualizado(
+                    asignacion.hojaEntidad.TipoHDR,
+                    asignacion.guia);
+
+                asignacion.guia.EstadoActual = estadoActualizado;
+                asignacion.guia.Historial ??= new List<MovimientoGuia>();
+                asignacion.guia.Historial.Add(new MovimientoGuia
+                {
+                    Estado = estadoActualizado,
+                    UltimaActualizacion = DateTime.Now,
+                    Ubicacion = ObtenerUbicacionMovimiento(
+                        asignacion.hojaEntidad.TipoHDR,
+                        asignacion.guia)
+                });
+
+                asignacion.hoja.EstadoEncomienda = estadoActualizado.ToString();
             }
 
             GuiaAlmacen.Guardar();
@@ -120,44 +178,44 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             };
         }
 
-        private EstadoEnum ObtenerEstadoActualizado(GuiaEntidad guia)
+        private static EstadoEnum ObtenerEstadoActualizado(
+            TipoHDRFleteroEnum tipoHDR,
+            GuiaEntidad guia)
         {
-            if ((int)guia.EstadoActual == 0)
-                return (EstadoEnum)3;
+            if (tipoHDR == TipoHDRFleteroEnum.Retiro)
+            {
+                return guia.EstadoActual switch
+                {
+                    EstadoEnum.ImpuestaTelefonicamente => EstadoEnum.RetiroDomicilioEnCurso,
+                    EstadoEnum.ImpuestaEnAgencia => EstadoEnum.RetiroAgenciaEnCurso,
+                    _ => guia.EstadoActual
+                };
+            }
 
-            if ((int)guia.EstadoActual == 1)
-                return (EstadoEnum)4;
-
-            if ((int)guia.EstadoActual == 8
-                && (int)guia.MetodoEntrega == 0)
-                return (EstadoEnum)10;
-
-            if ((int)guia.EstadoActual == 8
-                && (int)guia.MetodoEntrega == 2)
-                return (EstadoEnum)11;
-
-            return guia.EstadoActual;
+            return guia.MetodoEntrega switch
+            {
+                MetodoEntregaEnum.ADomicilio => EstadoEnum.EnTransitoEntregaDomicilio,
+                MetodoEntregaEnum.Agencia => EstadoEnum.EnTransitoAAgenciaDestino,
+                _ => guia.EstadoActual
+            };
         }
 
-        private string ObtenerUbicacionMovimiento(GuiaEntidad guia)
+        private static string ObtenerUbicacionMovimiento(
+            TipoHDRFleteroEnum tipoHDR,
+            GuiaEntidad guia)
         {
-            if ((int)guia.EstadoActual == 3
-                || (int)guia.EstadoActual == 4)
+            if (tipoHDR == TipoHDRFleteroEnum.Retiro)
                 return $"En transito a {ObtenerDestinoRetiro(guia)}";
 
-            if ((int)guia.EstadoActual == 10
-                || (int)guia.EstadoActual == 11)
-                return $"En transito a {ObtenerDestinoEntrega(guia)}";
-
-            return $"En transito a {guia.CentroDistribucionDestino}";
+            return $"En transito a {ObtenerDestinoEntrega(guia)}";
         }
 
-        private string ObtenerDestinoRetiro(GuiaEntidad guia)
+        private static string ObtenerDestinoRetiro(GuiaEntidad guia)
         {
-            if ((int)guia.MetodoRetiro == 2)
+            if (guia.MetodoRetiro == MetodoRetiroEnum.EnDomicilio)
                 return guia.DireccionRetiro;
 
-            if ((int)guia.MetodoRetiro == 0)
+            if (guia.MetodoRetiro == MetodoRetiroEnum.Agencia)
                 return AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == guia.AgenciaRetiroCodigo)?.Nombre
                     ?? guia.AgenciaRetiroCodigo;
 
@@ -165,12 +223,12 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 ?? guia.CentroDistribucionRetiroCodigo;
         }
 
-        private string ObtenerDestinoEntrega(GuiaEntidad guia)
+        private static string ObtenerDestinoEntrega(GuiaEntidad guia)
         {
-            if ((int)guia.MetodoEntrega == 0)
+            if (guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio)
                 return guia.DireccionEntrega;
 
-            if ((int)guia.MetodoEntrega == 2)
+            if (guia.MetodoEntrega == MetodoEntregaEnum.Agencia)
                 return AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == guia.AgenciaEntregaCodigo)?.Nombre
                     ?? guia.AgenciaEntregaCodigo;
 

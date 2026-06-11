@@ -121,6 +121,8 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
         public (bool valido, string error)
             ActualizarEstadoHojasDeRuta(List<HojaDeRuta> hojas)
         {
+            var hojasEnSistema = new List<HojaDeRutaOmnibusEntidad>();
+
             foreach (var hoja in hojas)
             {
                 var hojaEnSistema =
@@ -135,14 +137,21 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                     );
                 }
 
-                hojaEnSistema.Estado =
-                    EstadoHDROmnibusEnum.EnTransito;
+                if (hojaEnSistema.Estado != EstadoHDROmnibusEnum.Asignada)
+                {
+                    return (
+                        false,
+                        $"La Hoja de Ruta {hoja.Codigo} ya no está asignada."
+                    );
+                }
 
-                hoja.Estado = EstadoHDROmnibusEnum.EnTransito.ToString();
-
-                var ubicacion = CentroDistribucionAlmacen.cd
-                    .FirstOrDefault(c => c.Codigo == hojaEnSistema.CentroDistribucionOrigen)
-                    ?.Nombre ?? hojaEnSistema.CentroDistribucionOrigen;
+                if (hojaEnSistema.CentroDistribucionOrigen != CodigoCDActual)
+                {
+                    return (
+                        false,
+                        $"La Hoja de Ruta {hoja.Codigo} no pertenece al centro de distribución actual."
+                    );
+                }
 
                 foreach (var numeroGuia in hojaEnSistema.Guias)
                 {
@@ -156,6 +165,46 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                             $"Guía {numeroGuia} no encontrada."
                         );
                     }
+
+                    if (guia.EstadoActual != EstadoEnum.AdmitidaEnCD)
+                    {
+                        return (
+                            false,
+                            $"La Guía {numeroGuia} no está admitida en el centro de distribución."
+                        );
+                    }
+
+                    if (guia.CentroDistribucionOrigen != hojaEnSistema.CentroDistribucionOrigen ||
+                        guia.CentroDistribucionDestino != hojaEnSistema.CentroDistribucionDestino)
+                    {
+                        return (
+                            false,
+                            $"La Guía {numeroGuia} no coincide con el origen y destino de la Hoja de Ruta {hoja.Codigo}."
+                        );
+                    }
+                }
+
+                hojasEnSistema.Add(hojaEnSistema);
+            }
+
+            foreach (var hoja in hojas)
+            {
+                var hojaEnSistema = hojasEnSistema
+                    .First(h => h.Codigo == hoja.Codigo);
+
+                hojaEnSistema.Estado =
+                    EstadoHDROmnibusEnum.EnTransito;
+
+                hoja.Estado = EstadoHDROmnibusEnum.EnTransito.ToString();
+
+                var ubicacion = CentroDistribucionAlmacen.cd
+                    .FirstOrDefault(c => c.Codigo == hojaEnSistema.CentroDistribucionOrigen)
+                    ?.Nombre ?? hojaEnSistema.CentroDistribucionOrigen;
+
+                foreach (var numeroGuia in hojaEnSistema.Guias)
+                {
+                    var guia = GuiaAlmacen.guias
+                        .First(g => g.NumeroGuia == numeroGuia);
 
                     guia.EstadoActual = EstadoEnum.EnTransitoACDDestino;
                     guia.Historial ??= new List<MovimientoGuia>();
