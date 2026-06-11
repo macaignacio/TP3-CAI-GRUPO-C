@@ -1,0 +1,48 @@
+00. Antes de empezar (menú principal):
+	1 - El "Centro de distribución actual" no afecta a esta pantalla.
+	2 - Entrar al menú "Gestión Asignación Fleteros"
+
+
+	NOTA IMPORTANTE !!:
+	  El caso 2.1 necesita un fletero que EXISTA pero que NO tenga hojas de
+	  ruta pendientes. Sirve cualquier fletero de "Fleteros.json" que NO sea
+	  el 27534567890 (ese es el que tiene el HDR del camino feliz).
+	  Ejemplo a usar: 20301234567 (Carlos Alberto Perez).
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones del GroupBox "Seleccionar Fletero":
+
+	(Se disparan al apretar el botón "Buscar")
+
+	1.1 - CUIT/CUIL vacío o con letras (o con guiones):
+		- CUIT/CUIL: "" o "ABC" o "27-53456789-0"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "El CUIT/CUIL debe ser un número."
+
+	1.2 - CUIT/CUIL que no tiene 11 dígitos:
+		- CUIT/CUIL: "12345"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "CUIT/CUIL invalido. Se debe ingresar un numero
+		  de 11 digitos sin guiones ni comas."
+
+	1.3 - CUIT/CUIL de 11 dígitos pero NO existe ningún fletero:
+		- CUIT/CUIL: "99999999999"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Fletero no encontrado."
+
+
+------------------------------------------------------------------------------
+
+02. Validaciones del GroupBox "Detalle de Hojas de Ruta pendientes":
+
+	(Se disparan al apretar el botón "Confirmar asignación")
+
+	2.1 - Fletero existe pero NO tiene hojas de ruta pendientes:
+		- CUIT/CUIL: 20301234567  (Carlos Alberto Perez)
+		- Apretar "Buscar"
+		- VERIFICAR que aparece el nombre "Carlos Alberto Perez" pero la
+		  lista de hojas de ruta queda VACÍA.
+		- Apretar "Confirmar asignación"
+		- VERIFICAR cartel: "El fletero no tiene hojas de ruta pendientes."

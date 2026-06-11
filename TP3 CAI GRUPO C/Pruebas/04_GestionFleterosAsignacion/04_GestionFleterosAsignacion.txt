@@ -1,0 +1,34 @@
+
+
+01. Menú principal:
+	1 - El "Centro de distribución actual" NO afecta a esta pantalla;
+	     podés dejar el que tengas (ej: "CD-CBA-01").
+	2 - Entrar al menú "Gestión Asignación Fleteros"
+
+02. Pantalla "Gestión de HDR Pendientes a Fleteros" - GroupBox "Seleccionar Fletero":
+	1 - CUIT/CUIL: 27534567890
+	     (es el fletero que ImpoXTel asignó solo a traves del "proceso magico" al HDR de retiro)
+	2 - Apretar el botón "Buscar"
+	3 - VERIFICAR que aparece el nombre del fletero: "Valeria Andrea Suarez"
+	4 - VERIFICAR que se habilita el GroupBox "Detalle de Hojas de Ruta pendientes".
+
+03. Pantalla "Gestión de HDR Pendientes a Fleteros" - GroupBox "Detalle de Hojas de Ruta pendientes":
+	1 - VERIFICAR que en la lista aparece una fila con:
+	     - Hoja de Ruta: "HDR-RET-202606-0001"
+	     - Número de Guía: 20260609153012345  (el mismo de ImpoXTel)
+	     - Estado: "Impuesta Telefónicamente"
+	2 - Apretar el botón "Confirmar asignación"
+	3 - VERIFICAR que aparece el cartel: "Se actualizó el estado de las encomiendas correctamente."
+	4 - VERIFICAR que el formulario se limpia.
+
+04. Cierro el programa
+
+05. En Bin > Datos corroborar los siguientes archivos:
+
+	En "Guias.json" buscar la guía con el NumeroGuia usado y confirmar que cambió:
+		- Estado (EstadoActual): 3  (= Retiro a Domicilio en Curso; antes era 0)
+		- Historial: tiene un movimiento NUEVO agregado al final con
+		     Estado: 3 (Retiro a Domicilio en Curso)
+		     Ubicacion: "En transito a Av. Colón 1234"
+
+	

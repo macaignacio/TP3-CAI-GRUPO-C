@@ -1,0 +1,57 @@
+00. Antes de empezar (menú principal):
+	1 - En "Agencia actual" elegir una agencia (ej: "AG-MZA-01-01")
+	2 - Entrar al menú "Entrega"
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones del GroupBox "Verificación de Destinatario":
+
+	(Se disparan al apretar el botón "Buscar")
+
+	1.1 - DNI vacío:
+		- DNI: "" (vacío)
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Debe ingresar un DNI."
+
+	1.2 - DNI con letras:
+		- DNI: "ABC"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Debe ingresar un valor numerico."
+
+	1.3 - DNI con menos de 7 o más de 8 dígitos:
+		- DNI: "123456" (o "123456789")
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Debe ingresar un valor numerico de 7 a 8 digitos.
+		  Por ejemplo: 42830416"
+
+	1.4 - DNI válido pero sin encomiendas listas para entregar:
+		- DNI: "99999999"  (un DNI sin encomiendas en estado "Listo para retirar")
+		  También pasa con 12345678 si la guía TODAVÍA no llegó al estado 12
+		  (es decir, si falta la vuelta de fleteros para la entrega).
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Destinatario no encontrado."
+
+
+------------------------------------------------------------------------------
+
+02. Validaciones del GroupBox "Datos de Encomiendas":
+
+	(Se disparan al apretar el botón "Confirmar entrega")
+
+	PRE: Haber buscado correctamente al destinatario (DNI 12345678) para que la
+	     lista tenga la encomienda.
+
+	2.1 - Confirmar sin seleccionar una encomienda:
+		- Buscar el destinatario pero NO seleccionar ninguna fila de la lista.
+		- VERIFICAR que el botón "Confirmar entrega" queda DESHABILITADO (el
+		  sistema no deja confirmar sin elegir una encomienda).
+		  (Si por algún motivo se llegara a apretar sin selección, el cartel
+		   sería: "Debe indicar una encomienda.")
+
+	2.2 - La agencia actual no es la de la encomienda:
+		- En el menú elegir "Agencia actual" = "AG-MZA-02-01" (una agencia distinta
+		  a la de entrega, que es AG-MZA-01-01).
+		- Entrar a Entrega, DNI: 12345678, Buscar, seleccionar la encomienda y
+		  apretar "Confirmar entrega" -> "Sí".
+		- VERIFICAR cartel: "La encomienda no se encuentra en la agencia actual."

@@ -1,0 +1,42 @@
+00. Antes de empezar (menú principal):
+	1 - Entrar al menú "Facturar"
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones de la búsqueda del cliente:
+
+	(Se disparan al apretar el botón "Buscar")
+
+	1.1 - CUIT vacío o con letras:
+		- CUIT/CUIL: "" o "ABC"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "El CUIT debe ser un número"
+
+	1.2 - CUIT que no tiene 11 dígitos:
+		- CUIT/CUIL: "12345"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "El CUIT debe tener 11 dígitos"
+
+	1.3 - CUIT de 11 dígitos pero que NO existe:
+		- CUIT/CUIL: "99999999999"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Cliente no encontrado"
+
+
+------------------------------------------------------------------------------
+
+02. Validaciones del GroupBox "Facturar Servicios":
+
+	(Se disparan al apretar el botón "Emitir Factura")
+
+	2.1 - Emitir con el CUIT vacío:
+		- Dejar el campo CUIT/CUIL vacío y apretar "Emitir Factura"
+		- VERIFICAR cartel: "Debe ingresar un CUIT/CUIL"
+
+	2.2 - Cliente válido pero sin servicios para facturar:
+		- Buscar un cliente que exista pero que NO tenga guías entregadas sin
+		  facturar este mes, por ejemplo 30765432109 (Comercial del Plata S.A.).
+		- VERIFICAR que la lista "Facturar Servicios" queda vacía y el total en 0.
+		- Apretar "Emitir Factura"
+		- VERIFICAR cartel: "No hay servicios para facturar."

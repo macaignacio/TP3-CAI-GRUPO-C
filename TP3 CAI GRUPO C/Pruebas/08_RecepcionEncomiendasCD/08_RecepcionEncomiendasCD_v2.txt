@@ -1,0 +1,57 @@
+00. Antes de empezar:
+
+	IMPORTANTE: Esta prueba CONTINÚA la cadena del camino feliz, después de
+	"07_DespachoEncomiendasCD". Usa la MISMA guía (mismo NumeroGuia,
+	ej: 20260609153012345). Al llegar acá tiene que estar así:
+		- En "Guias.json": la guía en estado 7 (En tránsito a CD destino)
+		- En "HojasDeRutaOmnibus.json": el HDR "HDR-OMN-202606-0001" en estado 1 (EnTransito)
+
+01. Menú principal:
+	1 - En "Centro de distribución actual" elegir: "CD-MZA-01" (CD Destino)
+	   
+	2 - Entrar al menú "Recepción Encomiendas"
+
+02. Pantalla "Recepción Encomiendas CD" - GroupBox "Seleccionar Ómnibus":
+	1 - VERIFICAR que en el campo "Código CD" figure: "CD-MZA-01"
+	2 - Empresa: "Flecha Bus"
+	3 - Fecha/Hora de Salida: 12/06/2026 01:30
+	     (es la hora a la que el servicio troncal LLEGA a CD-MZA-01)
+	4 - Apretar el botón "Buscar"
+	5 - VERIFICAR que se habilita el GroupBox "Detalle de Hojas de Ruta de transporte recibidas"
+
+03. Pantalla "Recepción Encomiendas CD" - GroupBox "Detalle de Hojas de Ruta de transporte recibidas":
+	1 - VERIFICAR que en la lista aparece una fila con:
+	     - Nro de Orden: "FLE-20260610-0600-TRONCAL-IDA"
+	     - Hoja de Ruta: "HDR-OMN-202606-0001"
+	     - Estado: "EnTransito"
+	     - Empresa de ómnibus: "Flecha Bus"
+	2 - Apretar el botón "Confirmar recepción"
+	3 - VERIFICAR que aparece el cartel: "Recepción confirmada con éxito."
+
+04. Cierro el programa
+
+05. En Bin > Datos corroborar los siguientes archivos:
+
+	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta:
+		- Codigo: "HDR-OMN-202606-0001"
+		- Estado: 2  (= Cumplida; antes era 1 = EnTransito)
+
+	En "Guias.json" confirmar que se actualizó la guía:
+		- Estado (EstadoActual): 8  (= Recibido en CD destino; antes era 7)
+		- Historial: tiene un movimiento NUEVO agregado al final con
+		     Estado: 8 (Recibido en CD destino)
+		     Ubicacion: "Centro Distribucion Ciudad de Mendoza Centro"
+
+	En "HojasDeRutaFleteros.json" confirmar que se creó un HDR de distribución NUEVO
+	(porque la entrega es a Agencia, el sistema asigna solo un fletero para el reparto):
+		- Codigo: "HDR-DIS-202606-0001"  (formato HDR-DIS-AAAAMM-numero)
+		- CentroDistribucion: "CD-MZA-01"
+		- CuitCuilFletero: 27312345678  (Mariana Soledad Torres; fletero de menor carga del CD destino)
+		- TipoHDR: 1  (= Entrega)
+		- Estado: 0  (= Asignada)
+		- Guias: el mismo NumeroGuia
+
+	PRÓXIMO PASO: para la entrega en agencia hay que volver a pasar por
+	"04_GestionFleterosAsignacion" y "05_GestionFleterosRendicion", esta vez con
+	el HDR de distribución (HDR-DIS-202606-0001, fletero 27312345678). El detalle
+	está explicado en la precondición de "09_Entrega".

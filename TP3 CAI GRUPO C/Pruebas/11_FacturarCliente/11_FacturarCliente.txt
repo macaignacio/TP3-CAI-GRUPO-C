@@ -1,0 +1,43 @@
+
+
+01. Menú principal:
+	1 - El CD y la agencia actual no afectan a esta pantalla.
+	2 - Entrar al menú "Facturar"
+
+02. Pantalla "Facturar Cliente" - Búsqueda del cliente:
+	1 - CUIT/CUIL: 30712345678
+	2 - Apretar el botón "Buscar"
+	3 - VERIFICAR que aparece la razón social: "Tecnologia Austral S.A."
+
+03. Pantalla "Facturar Cliente" - GroupBox "Facturar Servicios":
+	1 - VERIFICAR que en la lista aparece una fila con:
+	     - Fecha: la fecha de entrega (la de hoy)
+	     - Descripción: "Entrega de encomienda en Agencia"
+	     - Número de Guía: 20260609153012345
+	     - Monto: 3.500,00
+	     - Subtotal: 3.500,00
+	2 - VERIFICAR que el "Total calculado" muestra: 3.500,00
+	3 - Apretar el botón "Emitir Factura"
+	4 - VERIFICAR que aparece el cartel: "Factura emitida con éxito. Número de factura: A-0001-00000001"
+
+04. Cierro el programa
+
+05. En Bin > Datos corroborar los siguientes archivos:
+
+	En "Facturas.json" confirmar que se creó la factura:
+		- NumeroFactura: "A-0001-00000001"
+		- CuitCliente: 30712345678
+		- Total: 3500
+		- Vencimiento: 30 días después de la fecha de emisión
+		- Guias: tiene que estar el NumeroGuia de la cadena (ej: 20260609153012345)
+
+	En "CtaCteCliente.json" confirmar que se creó el movimiento de la factura:
+		- Cuit: 30712345678
+		- TipoComprobante: "Factura"
+		- Comprobante: "A-0001-00000001"
+		- Debe: 3500
+		- Haber: 0
+		- Saldo: 3500
+
+	Con esto la guía queda facturada y lista para consultarse en la cuenta
+	corriente del cliente (prueba "12_ConsultaCtaCteCliente").

@@ -1,0 +1,21 @@
+00. Antes de empezar (menú principal):
+	1 - Entrar al menú "Resultados Costos Ventas"
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones del GroupBox "Período de Consulta":
+
+	(Se disparan al apretar el botón "Consultar")
+
+	1.1 - Sin tildar el período:
+		- Dejar el checkbox del período SIN tildar.
+		- Apretar "Consultar"
+		- VERIFICAR cartel: "Debe seleccionar un período."
+
+	1.2 - Período sin resultados:
+		- Tildar el período y elegir un mes SIN ventas ni costos
+		  (por ejemplo enero 2026, donde no hay guías que hayan viajado ni
+		   movimientos de costos cargados).
+		- Apretar "Consultar"
+		- VERIFICAR cartel: "No hay resultados para el período seleccionado."

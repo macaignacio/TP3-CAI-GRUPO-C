@@ -1,0 +1,23 @@
+
+01. Menú principal:
+	1 - El CD y la agencia actual no afectan a esta pantalla.
+	2 - Entrar al menú "Resultados Costos Ventas"
+
+02. Pantalla "Resultados Costos Ventas" - GroupBox "Período de Consulta":
+	1 - Período: TILDAR el checkbox y elegir una fecha de JUNIO 2026
+	2 - Apretar el botón "Consultar"
+
+03. Pantalla "Resultados Costos Ventas" - GroupBox "Resultado Operativo":
+	1 - VERIFICAR que aparece una fila para "Flecha Bus" con:
+	     - Ventas: $3.500,00   (el importe de la guía que viajó en el troncal de junio)
+	     - Costos: $0,00       (no hay costos cargados en junio; los movimientos de
+	                            CtaCteEmpresaOmnibus.json son todos de mayo 2026)
+	     - Utilidad: $3.500,00
+	2 - VERIFICAR que NO aparecen las demás empresas (no tienen ventas ni costos en junio).
+
+	NOTA: si en cambio elegís MAYO 2026, vas a ver lo contrario: cada empresa con
+	sus COSTOS cargados (Flecha Bus 145.000, Andesmar 128.000, etc.) y Ventas en 0,
+	porque en mayo ninguna guía de esta cadena viajó.
+
+04. Cierro el programa
+

@@ -12,7 +12,7 @@ namespace TP3_CAI_GRUPO_C.Admision
                 return new ResultadoAdmision { Valido = false, Error = "Guia no encontrada." };
 
             if (!PuedeAdmitirse(guia.EstadoActual))
-                return new ResultadoAdmision { Valido = false, Error = "La guia no se encuentra en estado Impuesta telefonicamente o Impuesta en agencia." };
+                return new ResultadoAdmision { Valido = false, Error = "La guia no se encuentra en estado Impuesta telefonicamente o Pendiente de Admision." };
 
             var cliente = ClienteAlmacen.clientes.FirstOrDefault(c => c.Cuit == guia.CuitCliente);
 
@@ -34,7 +34,7 @@ namespace TP3_CAI_GRUPO_C.Admision
                 return new ResultadoAdmision { Valido = false, Error = "Guia no encontrada." };
 
             if (!PuedeAdmitirse(guia.EstadoActual))
-                return new ResultadoAdmision { Valido = false, Error = "La guia no se encuentra en estado Impuesta telefonicamente o Impuesta en agencia." };
+                return new ResultadoAdmision { Valido = false, Error = "La guia no se encuentra en estado Impuesta telefonicamente o Pendiente de Admision." };
 
             var resultadoCajas = ValidarCajas(cantidadCajaS, cantidadCajaM, cantidadCajaL, cantidadCajaXL);
 

@@ -1,0 +1,25 @@
+00. Antes de empezar (menú principal):
+	1 - El CD y la agencia actual no afectan a esta pantalla.
+	2 - Entrar al menú "Consulta estado encomienda"
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones del GroupBox "Datos de Búsqueda":
+
+	(Se disparan al apretar el botón "Buscar")
+
+	1.1 - Número de guía vacío:
+		- Número de Guía: "" (vacío)
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Debe ingresar una guia"
+
+	1.2 - Número de guía que no es válido (no numérico o no tiene 17 dígitos):
+		- Número de Guía: "123"  (o "ABC", o un número de menos/más de 17 dígitos)
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Guia invalida. Debe ingresar un numero de 17 digitos"
+
+	1.3 - Número de guía con 17 dígitos pero que NO existe:
+		- Número de Guía: 99999999999999999  (17 nueves)
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Guia no encontrada"

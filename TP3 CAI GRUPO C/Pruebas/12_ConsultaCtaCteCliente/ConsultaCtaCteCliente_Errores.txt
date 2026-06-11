@@ -1,0 +1,39 @@
+00. Antes de empezar (menú principal):
+	1 - Entrar al menú "Consulta Cta Cte"
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones del GroupBox "Búsqueda de Cliente":
+
+	(Se disparan al apretar el botón "Buscar")
+
+	1.1 - CUIT vacío o con letras:
+		- CUIT/CUIL: "" o "ABC"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "CUIT inválido. Se debe ingresar un número de 11
+		  digitos sin guiones ni comas."
+
+	1.2 - CUIT que no tiene 11 dígitos:
+		- CUIT/CUIL: "12345"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "CUIT invalido. Se debe ingresar un numero de 11
+		  digitos sin guiones ni comas."
+		  (Nota: es casi igual al de 1.1 pero SIN tildes; este lo tira la
+		   validación interna cuando el número no entra en 11 dígitos.)
+
+	1.3 - CUIT de 11 dígitos pero que NO existe:
+		- CUIT/CUIL: "99999999999"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Cliente no encontrado."
+
+	1.4 - Cliente válido pero SIN tildar el período:
+		- CUIT/CUIL: 30712345678, dejar el checkbox del período SIN tildar.
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Debe seleccionar un período."
+
+	1.5 - Período sin movimientos:
+		- CUIT/CUIL: 30712345678, tildar el período y elegir un mes SIN movimientos
+		  (por ejemplo un mes anterior a la factura).
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "No hay movimientos para el período seleccionado."

@@ -1,0 +1,31 @@
+00. Antes de empezar:
+
+	Usar la MISMA guía de la cadena (ej: 20260609153012345). Para ver el
+	historial completo conviene correrla DESPUÉS de "09_Entrega".
+
+01. Menú principal:
+	1 - El CD y la agencia actual no afectan a esta pantalla.
+	2 - Entrar al menú "Consulta estado encomienda"
+
+02. Pantalla "Consulta estado encomienda" - GroupBox "Datos de Búsqueda":
+	1 - Número de Guía: 20260609153012345  (los 17 dígitos de la guía)
+	2 - Apretar el botón "Buscar"
+
+03. Pantalla "Consulta estado encomienda" - GroupBox "Resultado de Búsqueda":
+	1 - VERIFICAR que se muestra el historial completo, con columnas
+	     "Estado de Encomienda", "Última Actualización" y "Ubicación".
+	     Si corriste TODA la cadena (01 -> 09), deberían verse estos
+	     movimientos EN ORDEN:
+	       1) Impuesta telefonicamente       -> Av. Colón 1234
+	       2) Retiro a domicilio en curso     -> En transito a Av. Colón 1234
+	       3) Pendiente de admision           -> Centro Distribucion Cordoba Capital Norte
+	       4) Admitida en CD                  -> Centro Distribucion Cordoba Capital Norte
+	       5) En transito a CD destino        -> Centro Distribucion Cordoba Capital Norte
+	       6) Recibido en CD destino          -> Centro Distribucion Ciudad de Mendoza Centro
+	       7) En transito a Agencia destino   -> En transito a Agencia Ciudad de Mendoza Centro
+	       8) Listo para retirar por Agencia  -> Agencia Ciudad de Mendoza Centro
+	       9) Entregado                       -> Agencia Ciudad de Mendoza Centro
+	2 - VERIFICAR que el botón "Limpiar" borra la información traída de la búsqueda.
+
+04. Cierro el programa
+

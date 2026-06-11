@@ -1,0 +1,51 @@
+00. Antes de empezar:
+
+	IMPORTANTE: Esta prueba CONTINÚA la cadena del camino feliz, después de
+	"06_Admision". Usa la MISMA guía (mismo NumeroGuia, ej: 20260609153012345).
+	Al llegar acá tiene que estar así:
+		- En "Guias.json": la guía en estado 6 (Admitida en CD)
+		- En "HojasDeRutaOmnibus.json": el HDR de ómnibus "HDR-OMN-202606-0001"
+		     en estado 0 (Asignada), servicio "FLE-20260610-0600-TRONCAL-IDA",
+		     origen CD-CBA-01, destino CD-MZA-01.
+
+01. Menú principal:
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
+	2 - Entrar al menú "Despacho Encomiendas"
+
+02. Pantalla "Despacho Encomiendas CD" - GroupBox "Seleccionar Ómnibus":
+	1 - VERIFICAR que en el campo "Código CD" figure: "CD-CBA-01"
+	2 - Empresa: "Flecha Bus"
+	3 - Fecha/Hora de Salida: 11/06/2026 11:45
+	     (es la hora a la que el servicio troncal sale de CD-CBA-01)
+	4 - Apretar el botón "Buscar"
+	5 - VERIFICAR que se habilita el GroupBox "Detalle de Hojas de Ruta de transporte asignadas"
+
+03. Pantalla "Despacho Encomiendas CD" - GroupBox "Detalle de Hojas de Ruta de transporte asignadas":
+	1 - VERIFICAR que en la lista aparece una fila con:
+	     - Nro de Orden: "FLE-20260610-0600-TRONCAL-IDA"
+	     - Hoja de Ruta: "HDR-OMN-202606-0001"
+	     - Estado: "Asignada"
+	     - Empresa de ómnibus: "Flecha Bus"
+	2 - Apretar el botón "Confirmar asignación"
+	3 - VERIFICAR que aparece el cartel: "Asignación confirmada con éxito."
+
+04. Cierro el programa
+
+05. En Bin > Datos corroborar los siguientes archivos:
+
+	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta:
+		- Codigo: "HDR-OMN-202606-0001"
+		- IdentificadorServicio: "FLE-20260610-0600-TRONCAL-IDA"
+		- CentroDistribucionOrigen: "CD-CBA-01"
+		- CentroDistribucionDestino: "CD-MZA-01"
+		- Estado: 1  (= EnTransito; antes era 0 = Asignada)
+		- Guias: tiene que estar el NumeroGuia de ImpoXTel
+
+	En "Guias.json" confirmar que se actualizó la guía:
+		- NumeroGuia: el mismo de ImpoXTel (ej: 20260609153012345)
+		- Estado (EstadoActual): 7  (= En tránsito a CD destino; antes era 6)
+		- Historial: tiene un movimiento NUEVO agregado al final con
+		     Estado: 7 (En tránsito a CD destino)
+		     Ubicacion: "Centro Distribucion Cordoba Capital Norte"
+
+	Con la guía en estado 7 queda lista para la prueba siguiente: "08_RecepcionEncomiendasCD".

@@ -1,0 +1,26 @@
+
+
+01. Menú principal:
+	1 - El CD y la agencia actual no afectan a esta pantalla.
+	2 - Entrar al menú "Consulta Cta Cte"
+
+02. Pantalla "Consulta Cta Cte Cliente" - GroupBox "Búsqueda de Cliente":
+	1 - CUIT/CUIL: 30712345678
+	2 - Período: TILDAR el checkbox del período y elegir una fecha del MES ACTUAL
+	     (junio 2026, el mes en que se emitió la factura)
+	3 - Apretar el botón "Buscar"
+	4 - VERIFICAR que aparece la razón social: "Tecnologia Austral S.A."
+
+03. Pantalla "Consulta Cta Cte Cliente" - GroupBox "Resumen de Cuenta Corriente":
+	1 - VERIFICAR que en la lista aparece una fila con:
+	     - Tipo: "Factura"
+	     - Fecha: la fecha de emisión de la factura
+	     - Vencimiento: 30 días después de la emisión
+	     - Comprobante: "A-0001-00000001"
+	     - Debe: 3.500,00
+	     - Haber: 0,00
+	     - Saldo: 3.500,00
+
+04. Cierro el programa
+
+

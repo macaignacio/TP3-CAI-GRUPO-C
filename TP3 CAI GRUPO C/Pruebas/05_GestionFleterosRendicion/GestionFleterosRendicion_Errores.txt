@@ -1,0 +1,56 @@
+00. Antes de empezar (menú principal):
+	1 - El "Centro de distribución actual" no afecta a esta pantalla.
+	2 - Entrar al menú "Gestión Rendición Fleteros"
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones del GroupBox "Seleccionar Fletero":
+
+	(Se disparan al apretar el botón "Buscar")
+
+	1.1 - CUIT/CUIL vacío o con letras (o con guiones):
+		- CUIT/CUIL: "" o "ABC" o "27-53456789-0"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "CUIT/CUIL invalido. Se debe ingresar un numero
+		  de 11 digitos sin guiones ni comas."
+
+	1.2 - CUIT/CUIL que no tiene 11 dígitos:
+		- CUIT/CUIL: "12345"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "CUIT/CUIL inválido. Se debe ingresar un número
+		  de 11 digitos sin guiones ni comas."
+		  (Nota: es casi igual al cartel del 1.1 pero con tildes; este lo
+		   tira la validación interna cuando el número no entra en 11 dígitos)
+
+	1.3 - CUIT/CUIL de 11 dígitos pero NO existe ningún fletero:
+		- CUIT/CUIL: "99999999999"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Fletero no encontrado."
+
+	1.4 - Fletero existe pero NO tiene HDR pendientes de rendición:
+		- Usar un fletero que exista pero sin HDR en curso, por ejemplo
+		  20301234567 (Carlos Alberto Perez). También pasa si buscás al
+		  27534567890 DESPUÉS de haber rendido (su HDR ya quedó Cumplida).
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "El fletero no tiene hojas de ruta asignadas
+		  pendientes de rendicion."
+
+
+------------------------------------------------------------------------------
+
+02. Validaciones del GroupBox "Hojas de Ruta Asignadas":
+
+	(Se disparan al apretar el botón "Confirmar")
+
+	PRE: Haber buscado correctamente al fletero 27534567890 (con su HDR
+	     pendiente) para que el GroupBox esté habilitado y la lista tenga
+	     la hoja de ruta.
+
+	2.1 - Confirmar sin marcar ninguna HDR:
+		- Buscar el fletero pero NO marcar ningún checkbox de la lista.
+		- VERIFICAR que el botón "Confirmar" queda DESHABILITADO: el sistema
+		  no deja confirmar una rendición sin marcar al menos una HDR como
+		  cumplida.
+		  (Si por algún motivo se llegara a apretar sin marcar nada, el
+		   cartel sería: "Debe marcar al menos una hoja de ruta cumplida.")

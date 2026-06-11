@@ -1,0 +1,30 @@
+00. Antes de empezar (menú principal):
+	1 - Entrar al menú "Recepción Encomiendas"
+	    (cada caso aclara qué CD actual usar; recordar que en Recepción el CD
+	     actual tiene que ser el de DESTINO)
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones del GroupBox "Seleccionar Ómnibus":
+
+	(Se disparan al apretar el botón "Buscar")
+
+	1.1 - Sin empresa seleccionada:
+		- Elegir un CD actual (ej: "CD-MZA-01"), dejar "Empresa" sin elegir.
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Debe seleccionar una empresa de ómnibus."
+
+	1.2 - Sin centro de distribución actual:
+		- Abrir el programa SIN elegir "CD actual" en el menú.
+		- Entrar a Recepción, elegir una empresa (ej: "Flecha Bus") y apretar "Buscar".
+		- VERIFICAR cartel: "Debe seleccionar un centro de distribución actual."
+
+	1.3 - El CD actual NO es el destino (o fecha/hora que no coincide):
+		- CD actual: "CD-CBA-01" (que es el ORIGEN, no el destino), Empresa: "Flecha Bus"
+		- Fecha/Hora de Salida: 12/06/2026 01:30
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "No se encontraron Hojas de Ruta para la empresa y
+		  fecha/hora seleccionadas."
+		  (También pasa si el CD actual es el destino correcto pero la fecha/hora
+		   no coincide con la llegada, o si la HDR todavía no fue despachada.)

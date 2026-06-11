@@ -1,0 +1,42 @@
+
+
+01. Menú principal:
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
+	2 - Entrar al menú "Admisión"
+
+02. Pantalla "Admisión" - GroupBox "Datos de Búsqueda":
+	1 - Número de Guía: 20260609153012345
+	2 - Apretar el botón "Buscar"
+	3 - VERIFICAR que aparece el CUIT del cliente: "30712345678"
+	4 - VERIFICAR que en "Datos Encomienda" se precargan las cantidades:
+	     CajaS=1, CajaM=0, CajaL=0, CajaXL=0
+	5 - VERIFICAR que se habilita el GroupBox "Confirmación de datos" y el
+	     botón "Confirmar Admisión".
+
+03. Pantalla "Admisión" - GroupBox "Confirmación de datos":
+	1 - Dejar las cantidades como están: CajaS=1, el resto en 0
+	     (las cajas físicas coinciden con lo declarado al cliente)
+	2 - Apretar el botón "Confirmar Admisión"
+	3 - VERIFICAR que aparece el cartel: "Admisión realizada exitosamente."
+	4 - VERIFICAR que el formulario se limpia y vuelve a su estado inicial.
+
+04. Cierro el programa
+
+05. En Bin > Datos corroborar los siguientes archivos:
+
+	En "Guias.json" buscar la guía con el NumeroGuia usado y confirmar que cambió:
+		- Estado (EstadoActual): 6  (= Admitida en CD)
+		- CentroDistribucionOrigen: "CD-CBA-01"  (se mantiene)
+		- Importe: 3500  (no cambia porque no se modificaron las cajas ni el CD origen)
+		- Historial: tiene un movimiento NUEVO agregado al final con
+		     Estado: 6 (Admitida en CD)
+		     Ubicacion: "Centro Distribucion Cordoba Capital Norte"
+
+	En "HojasDeRutaOmnibus.json" confirmar que se creó un HDR de ómnibus nuevo:
+		- Codigo: "HDR-OMN-202606-0001"  (cambia según el mes; formato HDR-OMN-AAAAMM-numero)
+		- IdentificadorServicio: "FLE-20260610-0600-TRONCAL-IDA"
+		     (servicio que pasa por CD-CBA-01 antes que por CD-MZA-01)
+		- CentroDistribucionOrigen: "CD-CBA-01"
+		- CentroDistribucionDestino: "CD-MZA-01"
+		- Estado: 0  (= Asignada)
+		- Guias: tiene que estar el mismo NumeroGuia de arriba
