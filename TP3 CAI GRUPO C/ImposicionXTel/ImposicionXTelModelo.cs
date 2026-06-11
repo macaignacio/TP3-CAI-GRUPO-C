@@ -129,9 +129,6 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             if (resultadoCliente.cliente == null)
                 return new ResultadoImposicion { Valido = false, Error = resultadoCliente.error };
 
-            if (ObtenerCentroDistribucionOrigen() == null)
-                return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar un centro de distribucion actual valido." };
-
             if (string.IsNullOrWhiteSpace(imposicion.NombreDestinatario))
                 return new ResultadoImposicion { Valido = false, Error = "El Nombre y Apellido de Destinatario no puede estar vacío." };
 
@@ -147,6 +144,13 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
             if (!ValidarCodigoPostal(imposicion.CodigoPostalRetiro))
                 return new ResultadoImposicion { Valido = false, Error = "El código postal de retiro debe ser un número de 4 dígitos." };
+
+            var centroDistribucionRetiro = ObtenerCentroDistribucionPorLocalidadYCodigoPostal(
+                imposicion.LocalidadRetiro,
+                imposicion.CodigoPostalRetiro);
+
+            if (centroDistribucionRetiro == null)
+                return new ResultadoImposicion { Valido = false, Error = "El codigo postal de retiro no corresponde a la localidad seleccionada o no tiene centro de distribucion asignado." };
 
             if (!ValidarDireccion(imposicion.DireccionRetiro))
                 return new ResultadoImposicion { Valido = false, Error = "La dirección de retiro no puede estar vacía." };
@@ -199,6 +203,13 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
 
             if (!resultadoCajas.valido)
                 return new ResultadoImposicion { Valido = false, Error = resultadoCajas.error };
+
+            var centroDistribucionOrigen = ObtenerCentroDistribucionOrigen();
+            if (centroDistribucionOrigen == null)
+                return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar un centro de distribucion actual valido." };
+
+            if (centroDistribucionRetiro.Codigo != centroDistribucionOrigen.Codigo)
+                return new ResultadoImposicion { Valido = false, Error = "El centro de distribucion actual no corresponde a la localidad y codigo postal de retiro." };
 
             var guia = GenerarGuía(imposicion);
             var resultadoHojaDeRuta = GenerarHojaDeRutaRetiro(guia);
