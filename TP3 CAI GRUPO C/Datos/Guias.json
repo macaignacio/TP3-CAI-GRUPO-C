@@ -4,7 +4,7 @@
         "NumeroGuia":  20260501101530001,
         "FechaCreacion":  "2026-05-01T10:15:30.001",
         "Importe":  9000,
-        "EstadoActual":  12,
+        "EstadoActual":  13,
         "CentroDistribucionOrigen":  "CD-LP-01",
         "CentroDistribucionDestino":  "CD-CBA-01",
         "MetodoEntrega":  0,
@@ -50,13 +50,18 @@
                               "Ubicacion":  "Centro Distribucion Cordoba Capital Norte"
                           },
                           {
-                              "Estado":  9,
+                              "Estado":  8,
                               "UltimaActualizacion":  "2026-05-03T09:30:00.000",
-                              "Ubicacion":  "Cordoba Capital"
+                              "Ubicacion":  "Centro Distribucion Cordoba Capital Norte"
                           },
                           {
-                              "Estado":  12,
+                              "Estado":  10,
                               "UltimaActualizacion":  "2026-05-03T16:20:00.000",
+                              "Ubicacion":  "En transito a domicilio"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-04T10:00:00.000",
                               "Ubicacion":  "Av. Colon 1240"
                           }
                       ]
@@ -66,7 +71,7 @@
         "NumeroGuia":  20260502113045002,
         "FechaCreacion":  "2026-05-02T11:30:45.002",
         "Importe":  9450,
-        "EstadoActual":  11,
+        "EstadoActual":  13,
         "CentroDistribucionOrigen":  "CD-MDP-01",
         "CentroDistribucionDestino":  "CD-RET-01",
         "MetodoEntrega":  2,
@@ -112,13 +117,23 @@
                               "Ubicacion":  "Centro Distribucion Retiro Terminal"
                           },
                           {
-                              "Estado":  10,
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-04T08:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  11,
                               "UltimaActualizacion":  "2026-05-04T08:35:00.000",
                               "Ubicacion":  "En transito a agencia destino"
                           },
                           {
-                              "Estado":  11,
+                              "Estado":  12,
                               "UltimaActualizacion":  "2026-05-04T10:10:00.000",
+                              "Ubicacion":  "Agencia Retiro Terminal"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-05T09:30:00.000",
                               "Ubicacion":  "Agencia Retiro Terminal"
                           }
                       ]
@@ -128,7 +143,7 @@
         "NumeroGuia":  20260503144510003,
         "FechaCreacion":  "2026-05-03T14:45:10.003",
         "Importe":  19850,
-        "EstadoActual":  7,
+        "EstadoActual":  13,
         "CentroDistribucionOrigen":  "CD-CBA-02",
         "CentroDistribucionDestino":  "CD-MZA-01",
         "MetodoEntrega":  1,
@@ -167,6 +182,21 @@
                               "Estado":  7,
                               "UltimaActualizacion":  "2026-05-04T18:15:00.000",
                               "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-05T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
+                          },
+                          {
+                              "Estado":  9,
+                              "UltimaActualizacion":  "2026-05-05T12:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-06T09:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
                           }
                       ]
     },
@@ -175,7 +205,7 @@
         "NumeroGuia":  20260504102005004,
         "FechaCreacion":  "2026-05-04T10:20:05.004",
         "Importe":  11600,
-        "EstadoActual":  6,
+        "EstadoActual":  13,
         "CentroDistribucionOrigen":  "CD-LIN-02",
         "CentroDistribucionDestino":  "CD-BB-01",
         "MetodoEntrega":  0,
@@ -214,6 +244,26 @@
                               "Estado":  6,
                               "UltimaActualizacion":  "2026-05-05T07:30:00.000",
                               "Ubicacion":  "En transito a CD-BB-01"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-05T17:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Bahia Blanca"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-06T08:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Bahia Blanca"
+                          },
+                          {
+                              "Estado":  10,
+                              "UltimaActualizacion":  "2026-05-06T11:00:00.000",
+                              "Ubicacion":  "En transito a domicilio"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-07T10:00:00.000",
+                              "Ubicacion":  "Alsina 830"
                           }
                       ]
     },
@@ -222,7 +272,7 @@
         "NumeroGuia":  20260505165022005,
         "FechaCreacion":  "2026-05-05T16:50:22.005",
         "Importe":  12750,
-        "EstadoActual":  10,
+        "EstadoActual":  13,
         "CentroDistribucionOrigen":  "CD-GC-01",
         "CentroDistribucionDestino":  "CD-PAL-01",
         "MetodoEntrega":  2,
@@ -268,9 +318,24 @@
                               "Ubicacion":  "Centro Distribucion Palermo Norte"
                           },
                           {
-                              "Estado":  10,
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-08T08:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Palermo Norte"
+                          },
+                          {
+                              "Estado":  11,
                               "UltimaActualizacion":  "2026-05-08T08:45:00.000",
                               "Ubicacion":  "En transito a agencia destino"
+                          },
+                          {
+                              "Estado":  12,
+                              "UltimaActualizacion":  "2026-05-08T10:00:00.000",
+                              "Ubicacion":  "Agencia Palermo Norte Soho"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-09T09:30:00.000",
+                              "Ubicacion":  "Agencia Palermo Norte Soho"
                           }
                       ]
     },
@@ -279,7 +344,7 @@
         "NumeroGuia":  20260506120540006,
         "FechaCreacion":  "2026-05-06T12:05:40.006",
         "Importe":  5600,
-        "EstadoActual":  5,
+        "EstadoActual":  13,
         "CentroDistribucionOrigen":  "CD-RET-02",
         "CentroDistribucionDestino":  "CD-MDP-02",
         "MetodoEntrega":  1,
@@ -308,6 +373,31 @@
                               "Estado":  5,
                               "UltimaActualizacion":  "2026-05-06T13:00:00.000",
                               "Ubicacion":  "Centro Distribucion Retiro Centro"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-06T22:00:00.000",
+                              "Ubicacion":  "En transito a CD-MDP-02"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-07T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Puerto"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-07T09:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Puerto"
+                          },
+                          {
+                              "Estado":  9,
+                              "UltimaActualizacion":  "2026-05-07T12:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Puerto"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-08T09:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Puerto"
                           }
                       ]
     },
@@ -316,7 +406,7 @@
         "NumeroGuia":  20260507190533007,
         "FechaCreacion":  "2026-05-07T19:05:33.007",
         "Importe":  10600,
-        "EstadoActual":  9,
+        "EstadoActual":  13,
         "CentroDistribucionOrigen":  "CD-RC-01",
         "CentroDistribucionDestino":  "CD-LP-02",
         "MetodoEntrega":  0,
@@ -362,9 +452,19 @@
                               "Ubicacion":  "Centro Distribucion La Plata Sur"
                           },
                           {
-                              "Estado":  9,
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-10T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion La Plata Sur"
+                          },
+                          {
+                              "Estado":  10,
                               "UltimaActualizacion":  "2026-05-10T09:00:00.000",
-                              "Ubicacion":  "La Plata"
+                              "Ubicacion":  "En transito a domicilio"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-11T10:00:00.000",
+                              "Ubicacion":  "Calle 12 980"
                           }
                       ]
     },
@@ -373,7 +473,7 @@
         "NumeroGuia":  20260508172012008,
         "FechaCreacion":  "2026-05-08T17:20:12.008",
         "Importe":  25100,
-        "EstadoActual":  8,
+        "EstadoActual":  13,
         "CentroDistribucionOrigen":  "CD-PAL-02",
         "CentroDistribucionDestino":  "CD-GC-01",
         "MetodoEntrega":  1,
@@ -421,6 +521,16 @@
                           {
                               "Estado":  8,
                               "UltimaActualizacion":  "2026-05-11T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Godoy Cruz"
+                          },
+                          {
+                              "Estado":  9,
+                              "UltimaActualizacion":  "2026-05-11T12:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Godoy Cruz"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-12T09:00:00.000",
                               "Ubicacion":  "Centro Distribucion Godoy Cruz"
                           }
                       ]

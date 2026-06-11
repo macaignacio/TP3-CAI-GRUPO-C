@@ -129,7 +129,7 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
                 CuitCliente = facturacion.CuitCliente,
                 FechaEmision = fechaEmision,
                 Total = resultadoFacturacion.total,
-                Vencimiento = fechaEmision.AddDays(10),
+                Vencimiento = fechaEmision.AddDays(30),
                 Guias = resultadoFacturacion.facturas
                     .Select(s => s.NumeroGuia)
                     .ToList()

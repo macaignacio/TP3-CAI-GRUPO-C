@@ -45,7 +45,7 @@
     "CentroDistribucion": "CD-LP-02",
     "CuitCuilFletero": 20645678901,
     "TipoHDR": 1,
-    "Estado": 0,
+    "Estado": 1,
     "Guias": [
       20260507190533007
     ]
@@ -55,7 +55,7 @@
     "CentroDistribucion": "CD-BB-01",
     "CuitCuilFletero": 20756789012,
     "TipoHDR": 1,
-    "Estado": 0,
+    "Estado": 1,
     "Guias": [
       20260504102005004
     ]

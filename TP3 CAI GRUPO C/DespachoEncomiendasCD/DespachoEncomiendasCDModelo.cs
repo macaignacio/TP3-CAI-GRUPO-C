@@ -52,30 +52,6 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
 
             foreach (var servicio in serviciosEmpresa)
             {
-                // Primera parada del servicio
-                var primeraParada = servicio.Parada
-                    .OrderBy(p => p.FechaHoraParada)
-                    .FirstOrDefault();
-
-                if (primeraParada == null)
-                    continue;
-
-                // Comparar fecha y hora seleccionadas
-                if (primeraParada.FechaHoraParada.Year != fechaSalida.Year)
-                    continue;
-
-                if (primeraParada.FechaHoraParada.Month != fechaSalida.Month)
-                    continue;
-
-                if (primeraParada.FechaHoraParada.Day != fechaSalida.Day)
-                    continue;
-
-                if (primeraParada.FechaHoraParada.Hour != fechaSalida.Hour)
-                    continue;
-
-                if (primeraParada.FechaHoraParada.Minute != fechaSalida.Minute)
-                    continue;
-
                 // Buscar las HDR asociadas al servicio
                 var hdrs =
                     HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus
@@ -91,19 +67,56 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
 
                 foreach (var hdr in hdrs)
                 {
+                    var fechaHoraOrigen = ObtenerFechaHoraParada(
+                        servicio,
+                        hdr.CentroDistribucionOrigen);
+
+                    var fechaHoraDestino = ObtenerFechaHoraParada(
+                        servicio,
+                        hdr.CentroDistribucionDestino);
+
+                    if (fechaHoraOrigen == null ||
+                        fechaHoraDestino == null ||
+                        fechaHoraOrigen >= fechaHoraDestino)
+                    {
+                        continue;
+                    }
+
+                    if (!CoincideFechaHora(fechaHoraOrigen.Value, fechaSalida))
+                        continue;
+
                     resultado.Add(new HojaDeRuta
                     {
                         NroOrden = hdr.IdentificadorServicio,
                         Codigo = hdr.Codigo,
                         Estado = hdr.Estado.ToString(),
                         EmpresaOmnibus = empresaSeleccionada.nombre,
-                        FechaSalida = primeraParada.FechaHoraParada,
+                        FechaSalida = fechaHoraOrigen.Value,
                         Destino = hdr.CentroDistribucionDestino
                     });
                 }
             }
 
             return resultado;
+        }
+
+        private static DateTime? ObtenerFechaHoraParada(
+            ServicioOmnibusEntidad servicio,
+            string centroDistribucion)
+        {
+            return servicio.Parada
+                .Where(p => p.CentroDistribucionParada == centroDistribucion)
+                .Select(p => (DateTime?)p.FechaHoraParada)
+                .FirstOrDefault();
+        }
+
+        private static bool CoincideFechaHora(DateTime parada, DateTime busqueda)
+        {
+            return parada.Year == busqueda.Year &&
+                   parada.Month == busqueda.Month &&
+                   parada.Day == busqueda.Day &&
+                   parada.Hour == busqueda.Hour &&
+                   parada.Minute == busqueda.Minute;
         }
         
         public (bool valido, string error)
