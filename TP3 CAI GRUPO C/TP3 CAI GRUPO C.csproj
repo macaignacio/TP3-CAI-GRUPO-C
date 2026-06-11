@@ -10,6 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pruebas\06_GestionFleterosRendicion\**" />
+    <EmbeddedResource Remove="Pruebas\06_GestionFleterosRendicion\**" />
+    <None Remove="Pruebas\06_GestionFleterosRendicion\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Datos\Agencias.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -76,7 +82,6 @@
     <Folder Include="Pruebas\02_ImpoXAgencia\" />
     <Folder Include="Pruebas\03_ImpoXCD\" />
     <Folder Include="Pruebas\04_GestionFleterosAsignacion\" />
-    <Folder Include="Pruebas\06_GestionFleterosRendicion\" />
     <Folder Include="Pruebas\11_FacturarCliente\" />
     <Folder Include="Pruebas\12_ConsultaCtaCteCliente\" />
     <Folder Include="Pruebas\13_ResultadosCostoVenta\" />

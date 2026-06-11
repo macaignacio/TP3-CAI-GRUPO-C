@@ -38,12 +38,8 @@
 		  (Alternativa: editar "Guias.json" y poner cualquier estado que no
 		   sea 2 ni 5, por ejemplo EstadoActual: 6.)
 		- Ingresar ese NumeroGuia y apretar "Buscar"
-		- VERIFICAR cartel: "La guia no se encuentra en estado Impuesta
-		  telefonicamente o Impuesta en agencia."
-		  (ACLARACIÓN: el texto del cartel dice eso, pero el código en
-		   realidad solo acepta estados 2 = Impuesta en CD o
-		   5 = Pendiente Admisión)
-
+		- VERIFICAR cartel: "La guia no se encuentra en estado Impuesta en CD o Pendiente de Admisión."
+		  
 	1.4 - Cliente asociado a la guía no existe:
 		- Editar "Guias.json" y poner una guía con CuitCliente: 99999999999
 		  (un CUIT que NO esté en Clientes.json)
