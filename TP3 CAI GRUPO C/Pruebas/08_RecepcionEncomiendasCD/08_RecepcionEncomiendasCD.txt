@@ -1,46 +1,59 @@
-﻿
-ACLARACION: PARA ESTA PRUEBA NECESITO SABER BIEN QUE INFO SE USO EN LA PRUEBA DE ADMISION Y DESPACHO PARA COMPLETAR LA INFO REAL Y SEGUIR EL CAMINO FELIZ ENTERO
+00. Antes de empezar:
 
----------------------------------------------------------------------------------------------------------------------------------------------------------
+	IMPORTANTE: Esta prueba CONTINÚA la cadena del camino feliz, después de
+	"07_DespachoEncomiendasCD". Usa la MISMA guía:
+	<GUIA_CAMINO_FELIZ>. Al llegar acá tiene que estar así:
+		- En "Guias.json": la guía en estado 7 (En tránsito a CD destino)
+		- En "HojasDeRutaOmnibus.json": <HDR_OMNIBUS_CAMINO_FELIZ>
+		  en estado 1 (EnTransito)
 
-00. Antes de empezar (menú principal):
-	1 - En "Centro de distribución actual" elegir: "(AGREGAR CD DESTINO)"
+01. Menú principal:
+	1 - En "Centro de distribución actual" elegir: "CD-MZA-01" (CD Destino)
+	   
 	2 - Entrar al menú "Recepción Encomiendas"
 
-01. Pantalla "Recepción Encomiendas CD":
-	1 - VERIFICAR que en el campo del CD actual figure: "(CD DESTINO SELECCIONADO PREVIAMENTE)"
-	2 - Empresa de Ómnibus: "(AGREGAR EMPRESA OMNIBUS)"
-	3 - Fecha/Hora de Salida: "(AGREGAR FECHA/HORA SALIDA)"
+02. Pantalla "Recepción Encomiendas CD" - GroupBox "Seleccionar Ómnibus":
+	1 - VERIFICAR que en el campo "Código CD" figure: "CD-MZA-01"
+	2 - Empresa: "Flecha Bus"
+	3 - Fecha/Hora de Salida: 12/06/2026 01:30
+	     (es la hora a la que el servicio troncal LLEGA a CD-MZA-01)
 	4 - Apretar el botón "Buscar"
-	5 - VERIFICAR que queda habilitado el groupBox/listado de "Detalle HDR"
-	6 - VERIFICAR que los datos mostrados coincidan con la hoja de ruta:
-	     - Nro Orden / Servicio: "(AGREGAR IDENTIFICADOR SERVICIO)"
-	     - Código HDR: "(AGREGAR CODIGO HDR OMNIBUS)"
+	5 - VERIFICAR que se habilita el GroupBox "Detalle de Hojas de Ruta de transporte recibidas"
+
+03. Pantalla "Recepción Encomiendas CD" - GroupBox "Detalle de Hojas de Ruta de transporte recibidas":
+	1 - VERIFICAR que en la lista aparece una fila con:
+	     - Nro de Orden: "FLE-20260610-0600-TRONCAL-IDA"
+	     - Hoja de Ruta: <HDR_OMNIBUS_CAMINO_FELIZ>
 	     - Estado: "EnTransito"
-	     - Empresa: "(AGREGAR EMPRESA OMNIBUS)"
-	7 - Confirmar: botón "Confirmar recepción"
-	8 - VERIFICAR que aparece el cartel: "Recepción confirmada con éxito."
+	     - Empresa de ómnibus: "Flecha Bus"
+	2 - Apretar el botón "Confirmar recepción"
+	3 - VERIFICAR que aparece el cartel: "Recepción confirmada con éxito."
 
-02. Cierro el programa
+04. Cierro el programa
 
-03. En Bin > Datos corroborar los siguientes archivos:
+05. En Bin > Datos corroborar los siguientes archivos:
 
-	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta.
-	Los datos a corroborar son:
-		- Codigo: "(CODIGO HDR OMNIBUS)"
-		- IdentificadorServicio: "(IDENTIFICADOR SERVICIO)"
-		- CentroDistribucionOrigen: "(CD ORIGEN)"
-		- CentroDistribucionDestino: "(CD DESTINO)"
-		- Estado: 2  (= Cumplida)
-		- Guias: "(NUMERO GUIA GENERADO EN IMPOXTEL)"
+	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta:
+		- Codigo: <HDR_OMNIBUS_CAMINO_FELIZ>
+		- Estado: 2  (= Cumplida; antes era 1 = EnTransito)
 
-	En "Guias.json" confirmar que se actualizó la guía.
-	Los datos a corroborar son:
-		- NumeroGuia: "(NUMERO GUIA GENERADO EN IMPOXTEL)"
-		- EstadoActual: 8  (= EnCDDestino)
-		- CentroDistribucionOrigen: "(CD ORIGEN)"
-		- CentroDistribucionDestino: "(CD DESTINO)"
-		- Dentro de Historial confirmar que se agregó un nuevo movimiento con la siguiente información:
-		  - Estado: 8  (= EnCDDestino)
-		  - Ubicacion: "(NOMBRE CD DESTINO)"
-		  - UltimaActualizacion: fecha/hora del momento en que se confirmó la recepción
+	En "Guias.json" confirmar que se actualizó la guía:
+		- Estado (EstadoActual): 8  (= Recibido en CD destino; antes era 7)
+		- Historial: tiene un movimiento NUEVO agregado al final con
+		     Estado: 8 (Recibido en CD destino)
+		     Ubicacion: "Centro Distribucion Ciudad de Mendoza Centro"
+
+	En "HojasDeRutaFleteros.json" confirmar que se creó un HDR de distribución NUEVO
+	(porque la entrega es a Agencia, el sistema asigna solo un fletero para el reparto):
+		- Codigo: <HDR_DISTRIBUCION_CAMINO_FELIZ>
+		  (formato HDR-DIS-AAAAMM-numero)
+		- CentroDistribucion: "CD-MZA-01"
+		- CuitCuilFletero: 27312345678  (Mariana Soledad Torres; fletero de menor carga del CD destino)
+		- TipoHDR: 1  (= Entrega)
+		- Estado: 0  (= Asignada)
+		- Guias: <GUIA_CAMINO_FELIZ>
+
+	PRÓXIMO PASO: para la entrega en agencia hay que volver a pasar por
+	"04_GestionFleterosAsignacion" y "05_GestionFleterosRendicion", esta vez con
+	el HDR de distribución (<HDR_DISTRIBUCION_CAMINO_FELIZ>). El detalle
+	está explicado en la precondición de "09_Entrega".

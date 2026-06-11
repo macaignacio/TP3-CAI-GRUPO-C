@@ -1,26 +1,59 @@
-00. Antes de empezar (menú principal):
-	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
-	2 - En "Agencia actual" elegir: "AG-LP-01-01" (Agencia La Plata Norte Centro)
-	3 - Entrar al menú "Entrega"
+00. Antes de empezar:
 
-01. Pantalla "Entrega":
-	1 - CUIT: 31876543
+	IMPORTANTE: Esta prueba CONTINÚA la cadena del camino feliz, después de
+	"08_RecepcionEncomiendasCD". Usa la MISMA guía:
+	<GUIA_CAMINO_FELIZ>.
+
+	Al terminar la recepción, la guía quedó en estado 8 (Recibido en CD destino)
+	y se creó <HDR_DISTRIBUCION_CAMINO_FELIZ> (tipo Entrega, Asignada).
+	Como la entrega es a AGENCIA, antes de poder
+	entregar hay que repetir la vuelta de fleteros con ESE HDR de distribución:
+
+		PASO A) Volver a "04_GestionFleterosAsignacion":
+			- CUIT/CUIL: 27312345678  (Mariana Soledad Torres)
+			- Buscar -> aparece <HDR_DISTRIBUCION_CAMINO_FELIZ> con la guía
+			- Apretar "Confirmar asignación"
+			- => la guía pasa a estado 11 (En tránsito a Agencia destino)
+
+		PASO B) Volver a "05_GestionFleterosRendicion":
+			- CUIT/CUIL: 27312345678
+			- Buscar -> aparece <HDR_DISTRIBUCION_CAMINO_FELIZ>
+			- Marcar el checkbox y apretar "Confirmar"
+			- => la guía pasa a estado 12 (Listo para retirar por Agencia)
+			     y <HDR_DISTRIBUCION_CAMINO_FELIZ> queda Cumplida
+
+	Recién con la guía en estado 12 (Listo para retirar por Agencia) la pantalla
+	de Entrega la va a mostrar.
+
+01. Menú principal:
+	1 - En "Agencia actual" elegir: "AG-MZA-01-01" (Agencia Ciudad de Mendoza Centro)
+	2 - Entrar al menú "Entrega"
+
+02. Pantalla "Entrega" - GroupBox "Verificación de Destinatario":
+	1 - DNI: 12345678
 	2 - Apretar el botón "Buscar"
-	3 - VERIFICAR que dentro del groupBox "Datos de Encomiendas" trae Nombre y apellido: "Sofía Martinez"
-	4 - Número de Guía: 20260501101530001
-	5 - Estado: "Listo para retirar por Agencia"
-	6 - VERIFICAR que una vez que se selecciona la fila del número de guía y estado queda habilitado el botón de "Confirmar entrega"
-	7 - VERIFICAR que si se clickea en "Confirmar entrega" aparece un cartel de confirmación pudiendo seleccionar Sí o No
-	8 - VERIFICAR que si se clickea en "Nueva Consulta" se borra la información traida de la búsqueda
-	
-02. Cierro el programa
+	3 - VERIFICAR que aparece el nombre del destinatario: "Juan Perez"
 
-03. En Bin > Datos corroborar los siguientes archivos:
+03. Pantalla "Entrega" - GroupBox "Datos de Encomiendas":
+	1 - VERIFICAR que en la lista aparece:
+	     - Numero de Guía: <GUIA_CAMINO_FELIZ>
+	     - Estado: "Listo para retirar por Agencia"
+	2 - Seleccionar la fila de la encomienda
+	3 - VERIFICAR que al seleccionarla se habilita el botón "Confirmar entrega"
+	4 - Apretar el botón "Confirmar entrega"
+	5 - VERIFICAR que aparece un cartel de confirmación: "Confirma la entrega de la guia ...?" (Sí / No)
+	6 - Apretar "Sí"
+	7 - VERIFICAR que aparece el cartel: "Entrega confirmada con exito."
+	     (El botón "Nueva Consulta" limpia la búsqueda)
 
-	En "Guias.json" confirmar que se actualizó la guía con los datos ingresados en el paso 01.
-	Los datos a corroborar son:
-		- EstadoActual: 13
-		- Dentro de Historial confirmar que se agregó un nuevo movimiento con la siguiente información:
-		  - Estado:  13 (= Entregado),
-          - UltimaActualizacion":  "2026-06-10T12:15:00.000",
-          - Ubicacion":  "Av. Colon 1240"
+04. Cierro el programa
+
+05. En Bin > Datos corroborar los siguientes archivos:
+
+	En "Guias.json" confirmar que se actualizó la guía:
+		- Estado (EstadoActual): 13  (= Entregado; antes era 12)
+		- Historial: tiene un movimiento NUEVO agregado al final con
+		     Estado: 13 (Entregado)
+		     Ubicacion: "Agencia Ciudad de Mendoza Centro"
+
+

@@ -79,9 +79,6 @@
     <None Update="Datos\ServiciosOmnibus.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Pruebas\09_Entrega\09_Entrega.txt">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
