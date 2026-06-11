@@ -221,12 +221,13 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                     var guia = GuiaAlmacen.guias
                         .First(g => g.NumeroGuia == numeroGuia);
 
+                    var ahora = DateTime.Now;
                     guia.EstadoActual = EstadoEnum.EnCDDestino;
                     guia.Historial ??= new List<MovimientoGuia>();
                     guia.Historial.Add(new MovimientoGuia
                     {
                         Estado = EstadoEnum.EnCDDestino,
-                        UltimaActualizacion = DateTime.Now,
+                        UltimaActualizacion = ahora,
                         Ubicacion = ubicacion
                     });
 
@@ -234,6 +235,18 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                     {
                         HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(
                             GenerarHojaDeRutaDistribucion(guia));
+                    }
+                    else if (guia.MetodoEntrega ==
+                             MetodoEntregaEnum.CentroDeDistribucion)
+                    {
+                        guia.EstadoActual =
+                            EstadoEnum.ListaParaEntregarPorCD;
+                        guia.Historial.Add(new MovimientoGuia
+                        {
+                            Estado = EstadoEnum.ListaParaEntregarPorCD,
+                            UltimaActualizacion = ahora,
+                            Ubicacion = ubicacion
+                        });
                     }
                 }
             }

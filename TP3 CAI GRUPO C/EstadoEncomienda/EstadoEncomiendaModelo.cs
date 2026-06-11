@@ -32,6 +32,7 @@ namespace TP3_CAI_GRUPO_C.EstadoEncomienda
         private List<Movimiento> ObtenerHistorial(GuiaEntidad guiaEntidad)
         {
             return (guiaEntidad.Historial ?? new List<MovimientoGuia>())
+                .OrderBy(movimiento => movimiento.UltimaActualizacion)
                 .Select(movimiento => new Movimiento
                 {
                     Estado = ObtenerNombreEstado(movimiento.Estado),
@@ -50,6 +51,7 @@ namespace TP3_CAI_GRUPO_C.EstadoEncomienda
                 EstadoEnum.ImpuestaEnCD => "Impuesta en CD",
                 EstadoEnum.RetiroDomicilioEnCurso => "Retiro a domicilio en curso",
                 EstadoEnum.RetiroAgenciaEnCurso => "Retiro en Agencia en curso",
+                EstadoEnum.PendienteAdmision => "Pendiente de admision",
                 EstadoEnum.AdmitidaEnCD => "Admitida en CD",
                 EstadoEnum.EnTransitoACDDestino => "En transito a CD destino",
                 EstadoEnum.EnCDDestino => "Recibido en CD destino",

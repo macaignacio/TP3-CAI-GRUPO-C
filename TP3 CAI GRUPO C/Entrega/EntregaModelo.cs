@@ -64,10 +64,8 @@ namespace TP3_CAI_GRUPO_C.Entrega
         {
             return estado switch
             {
-                EstadoEnum.EnCDDestino => EstadoEncomienda.RecibidoCDDestino,
                 EstadoEnum.ListaParaEntregarPorCD => EstadoEncomienda.ListoParaRetirarPorCD,
                 EstadoEnum.ListaParaEntregarPorAgencia => EstadoEncomienda.ListoParaRetirarPorAgencia,
-                EstadoEnum.Entregado => EstadoEncomienda.Entregado,
                 _ => null
             };
         }
@@ -126,26 +124,91 @@ namespace TP3_CAI_GRUPO_C.Entrega
             if (encomienda == null)
                 return (false, "Debe indicar una encomienda.");
 
-            if (encomienda.Estado == EstadoEncomienda.Entregado)
-                return (false, "La encomienda ya fue entregada.");
-
-            encomienda.Estado = EstadoEncomienda.Entregado;
             var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.DniDestinatario == dni && g.NumeroGuia == numeroGuia);
 
-            if (guia != null)
+            if (guia == null)
+                return (false, "La guía no fue encontrada.");
+
+            if (guia.EstadoActual != EstadoEnum.ListaParaEntregarPorCD &&
+                guia.EstadoActual != EstadoEnum.ListaParaEntregarPorAgencia)
             {
-                guia.EstadoActual = EstadoEnum.Entregado;
-                guia.Historial ??= new List<MovimientoGuia>();
-                guia.Historial.Add(new MovimientoGuia
+                return (
+                    false,
+                    "La encomienda ya no está lista para ser entregada."
+                );
+            }
+
+            var resultadoContexto = ValidarContextoEntrega(guia);
+            if (!resultadoContexto.valido)
+                return resultadoContexto;
+
+            guia.EstadoActual = EstadoEnum.Entregado;
+            guia.Historial ??= new List<MovimientoGuia>();
+            guia.Historial.Add(new MovimientoGuia
+            {
+                Estado = EstadoEnum.Entregado,
+                UltimaActualizacion = DateTime.Now,
+                Ubicacion = ObtenerUbicacionEntrega(guia)
+            });
+            GuiaAlmacen.Guardar();
+
+            encomienda.Estado = EstadoEncomienda.Entregado;
+
+            return (true, "");
+        }
+
+        private static (bool valido, string error) ValidarContextoEntrega(
+            GuiaEntidad guia)
+        {
+            if (guia.EstadoActual == EstadoEnum.ListaParaEntregarPorCD)
+            {
+                var codigoCD = !string.IsNullOrWhiteSpace(
+                    guia.CentroDistribucionEntregaCodigo)
+                    ? guia.CentroDistribucionEntregaCodigo
+                    : guia.CentroDistribucionDestino;
+
+                if (codigoCD != Program.CDActual)
                 {
-                    Estado = EstadoEnum.Entregado,
-                    UltimaActualizacion = DateTime.Now,
-                    Ubicacion = guia.DireccionEntrega
-                });
-                GuiaAlmacen.Guardar();
+                    return (
+                        false,
+                        "La encomienda no se encuentra en el centro de distribución actual."
+                    );
+                }
+
+                return (true, "");
+            }
+
+            if (guia.AgenciaEntregaCodigo != Program.AgenciaActual)
+            {
+                return (
+                    false,
+                    "La encomienda no se encuentra en la agencia actual."
+                );
             }
 
             return (true, "");
+        }
+
+        private static string ObtenerUbicacionEntrega(GuiaEntidad guia)
+        {
+            if (guia.MetodoEntrega == MetodoEntregaEnum.Agencia)
+            {
+                var agencia = AgenciaAlmacen.agencia
+                    .FirstOrDefault(a =>
+                        a.Codigo == guia.AgenciaEntregaCodigo);
+
+                return agencia?.Nombre ?? guia.AgenciaEntregaCodigo;
+            }
+
+            var codigoCD = !string.IsNullOrWhiteSpace(
+                guia.CentroDistribucionEntregaCodigo)
+                ? guia.CentroDistribucionEntregaCodigo
+                : guia.CentroDistribucionDestino;
+
+            var centroDistribucion = CentroDistribucionAlmacen.cd
+                .FirstOrDefault(c => c.Codigo == codigoCD);
+
+            return centroDistribucion?.Nombre ?? codigoCD;
         }
 
         public string ObtenerNombreEstado(EstadoEncomienda estado)
