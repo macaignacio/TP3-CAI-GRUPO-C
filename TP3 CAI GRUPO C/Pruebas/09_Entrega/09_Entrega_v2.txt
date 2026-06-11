@@ -1,26 +1,26 @@
 00. Antes de empezar:
 
 	IMPORTANTE: Esta prueba CONTINÚA la cadena del camino feliz, después de
-	"08_RecepcionEncomiendasCD". Usa la MISMA guía (mismo NumeroGuia,
-	ej: 20260609153012345).
+	"08_RecepcionEncomiendasCD". Usa la MISMA guía:
+	<GUIA_CAMINO_FELIZ>.
 
 	Al terminar la recepción, la guía quedó en estado 8 (Recibido en CD destino)
-	y se creó el HDR de distribución "HDR-DIS-202606-0001" (fletero 27312345678,
-	tipo Entrega, Asignada). Como la entrega es a AGENCIA, antes de poder
+	y se creó <HDR_DISTRIBUCION_CAMINO_FELIZ> (tipo Entrega, Asignada).
+	Como la entrega es a AGENCIA, antes de poder
 	entregar hay que repetir la vuelta de fleteros con ESE HDR de distribución:
 
 		PASO A) Volver a "04_GestionFleterosAsignacion":
 			- CUIT/CUIL: 27312345678  (Mariana Soledad Torres)
-			- Buscar -> aparece el HDR "HDR-DIS-202606-0001" con la guía
+			- Buscar -> aparece <HDR_DISTRIBUCION_CAMINO_FELIZ> con la guía
 			- Apretar "Confirmar asignación"
 			- => la guía pasa a estado 11 (En tránsito a Agencia destino)
 
 		PASO B) Volver a "05_GestionFleterosRendicion":
 			- CUIT/CUIL: 27312345678
-			- Buscar -> aparece el HDR "HDR-DIS-202606-0001"
+			- Buscar -> aparece <HDR_DISTRIBUCION_CAMINO_FELIZ>
 			- Marcar el checkbox y apretar "Confirmar"
 			- => la guía pasa a estado 12 (Listo para retirar por Agencia)
-			     y el HDR-DIS-202606-0001 queda Cumplida
+			     y <HDR_DISTRIBUCION_CAMINO_FELIZ> queda Cumplida
 
 	Recién con la guía en estado 12 (Listo para retirar por Agencia) la pantalla
 	de Entrega la va a mostrar.
@@ -36,7 +36,7 @@
 
 03. Pantalla "Entrega" - GroupBox "Datos de Encomiendas":
 	1 - VERIFICAR que en la lista aparece:
-	     - Numero de Guía: 20260609153012345
+	     - Numero de Guía: <GUIA_CAMINO_FELIZ>
 	     - Estado: "Listo para retirar por Agencia"
 	2 - Seleccionar la fila de la encomienda
 	3 - VERIFICAR que al seleccionarla se habilita el botón "Confirmar entrega"

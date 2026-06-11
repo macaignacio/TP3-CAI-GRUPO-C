@@ -1,10 +1,10 @@
 00. Antes de empezar:
 
 	IMPORTANTE: Esta prueba CONTINÚA la cadena del camino feliz, después de
-	"06_Admision". Usa la MISMA guía (mismo NumeroGuia, ej: 20260609153012345).
+	"06_Admision". Usa la MISMA guía: <GUIA_CAMINO_FELIZ>.
 	Al llegar acá tiene que estar así:
 		- En "Guias.json": la guía en estado 6 (Admitida en CD)
-		- En "HojasDeRutaOmnibus.json": el HDR de ómnibus "HDR-OMN-202606-0001"
+		- En "HojasDeRutaOmnibus.json": <HDR_OMNIBUS_CAMINO_FELIZ>
 		     en estado 0 (Asignada), servicio "FLE-20260610-0600-TRONCAL-IDA",
 		     origen CD-CBA-01, destino CD-MZA-01.
 
@@ -23,7 +23,7 @@
 03. Pantalla "Despacho Encomiendas CD" - GroupBox "Detalle de Hojas de Ruta de transporte asignadas":
 	1 - VERIFICAR que en la lista aparece una fila con:
 	     - Nro de Orden: "FLE-20260610-0600-TRONCAL-IDA"
-	     - Hoja de Ruta: "HDR-OMN-202606-0001"
+	     - Hoja de Ruta: <HDR_OMNIBUS_CAMINO_FELIZ>
 	     - Estado: "Asignada"
 	     - Empresa de ómnibus: "Flecha Bus"
 	2 - Apretar el botón "Confirmar asignación"
@@ -34,15 +34,15 @@
 05. En Bin > Datos corroborar los siguientes archivos:
 
 	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta:
-		- Codigo: "HDR-OMN-202606-0001"
+		- Codigo: <HDR_OMNIBUS_CAMINO_FELIZ>
 		- IdentificadorServicio: "FLE-20260610-0600-TRONCAL-IDA"
 		- CentroDistribucionOrigen: "CD-CBA-01"
 		- CentroDistribucionDestino: "CD-MZA-01"
 		- Estado: 1  (= EnTransito; antes era 0 = Asignada)
-		- Guias: tiene que estar el NumeroGuia de ImpoXTel
+		- Guias: tiene que estar <GUIA_CAMINO_FELIZ>
 
 	En "Guias.json" confirmar que se actualizó la guía:
-		- NumeroGuia: el mismo de ImpoXTel (ej: 20260609153012345)
+		- NumeroGuia: <GUIA_CAMINO_FELIZ>
 		- Estado (EstadoActual): 7  (= En tránsito a CD destino; antes era 6)
 		- Historial: tiene un movimiento NUEVO agregado al final con
 		     Estado: 7 (En tránsito a CD destino)

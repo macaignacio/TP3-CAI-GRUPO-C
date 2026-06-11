@@ -1,8 +1,9 @@
 
 
 01. Menú principal:
-	1 - El "Centro de distribución actual" NO afecta a esta pantalla;
-	     podés dejar el que tengas (ej: "CD-CBA-01").
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01".
+	     Este dato no interviene en la lógica de esta pantalla, pero se fija
+	     para mantener el mismo contexto durante todo el camino feliz.
 	2 - Entrar al menú "Gestión Asignación Fleteros"
 
 02. Pantalla "Gestión de HDR Pendientes a Fleteros" - GroupBox "Seleccionar Fletero":
@@ -14,8 +15,8 @@
 
 03. Pantalla "Gestión de HDR Pendientes a Fleteros" - GroupBox "Detalle de Hojas de Ruta pendientes":
 	1 - VERIFICAR que en la lista aparece una fila con:
-	     - Hoja de Ruta: "HDR-RET-202606-0001"
-	     - Número de Guía: 20260609153012345  (el mismo de ImpoXTel)
+	     - Hoja de Ruta: <HDR_RETIRO_CAMINO_FELIZ>
+	     - Número de Guía: <GUIA_CAMINO_FELIZ>
 	     - Estado: "Impuesta Telefónicamente"
 	2 - Apretar el botón "Confirmar asignación"
 	3 - VERIFICAR que aparece el cartel: "Se actualizó el estado de las encomiendas correctamente."

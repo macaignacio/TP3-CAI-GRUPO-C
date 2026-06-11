@@ -5,7 +5,7 @@
 	2 - Entrar al menú "Admisión"
 
 02. Pantalla "Admisión" - GroupBox "Datos de Búsqueda":
-	1 - Número de Guía: 20260609153012345
+	1 - Número de Guía: <GUIA_CAMINO_FELIZ>
 	2 - Apretar el botón "Buscar"
 	3 - VERIFICAR que aparece el CUIT del cliente: "30712345678"
 	4 - VERIFICAR que en "Datos Encomienda" se precargan las cantidades:
@@ -33,7 +33,8 @@
 		     Ubicacion: "Centro Distribucion Cordoba Capital Norte"
 
 	En "HojasDeRutaOmnibus.json" confirmar que se creó un HDR de ómnibus nuevo:
-		- Codigo: "HDR-OMN-202606-0001"  (cambia según el mes; formato HDR-OMN-AAAAMM-numero)
+		- Codigo: anotar como <HDR_OMNIBUS_CAMINO_FELIZ>
+		  (formato HDR-OMN-AAAAMM-numero)
 		- IdentificadorServicio: "FLE-20260610-0600-TRONCAL-IDA"
 		     (servicio que pasa por CD-CBA-01 antes que por CD-MZA-01)
 		- CentroDistribucionOrigen: "CD-CBA-01"

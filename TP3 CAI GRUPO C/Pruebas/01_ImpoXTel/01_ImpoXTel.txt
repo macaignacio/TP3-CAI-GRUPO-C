@@ -22,7 +22,7 @@
 	15 - Tamaño del bulto: S (poner 1 en la caja S, las demás vacías)
 	16 - Confirmar: botón "Generar"
 	17 - VERIFICAR que aparece el cartel: "Imposición generada con éxito. Número de guía: ..."
-	     (el número de guía es un número largo de fecha/hora, ej: 20260609153012345)
+	     Anotar el número informado como <GUIA_CAMINO_FELIZ>.
 
 02. Cierro el programa
 
@@ -49,9 +49,18 @@
 	En "HojasDeRutaFleteros.json" confirmar que se creó el HDR de retiro con el fletero
 	y la guía correspondiente.
 	Los datos a corroborar son:
-		- Codigo: "HDR-RET-202606-0001"  (cambia según el mes; formato HDR-RET-AAAAMM-numero)
+		- Codigo: anotar como <HDR_RETIRO_CAMINO_FELIZ>
+		  (formato HDR-RET-AAAAMM-numero)
 		- CentroDistribucion: "CD-CBA-01"
 		- CuitCuilFletero: 27534567890  (se asigna solo, al fletero con menos carga)
 		- TipoHDR: 0  (= Retiro)
 		- Estado: 0  (= Asignada)
 		- Guias: tiene que estar el mismo NumeroGuia de arriba
+
+04. Datos que deben anotarse para continuar el camino feliz:
+	- <GUIA_CAMINO_FELIZ>: número de guía informado por el cartel.
+	- <HDR_RETIRO_CAMINO_FELIZ>: código de la HDR de retiro creada.
+	- Fletero asignado a esa HDR.
+
+	Estos valores se reutilizan en Asignación, Rendición, Admisión, Despacho,
+	Recepción, Entrega, Consulta de Estado y Facturación.

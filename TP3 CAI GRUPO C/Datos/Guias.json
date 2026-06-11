@@ -534,5 +534,190 @@
                               "Ubicacion":  "Centro Distribucion Godoy Cruz"
                           }
                       ]
+    },
+    {
+        "CuitCliente": 30712345678,
+        "NumeroGuia": 20260601090090001,
+        "FechaCreacion": "2026-06-01T09:00:00.000",
+        "Importe": 3500,
+        "EstadoActual": 3,
+        "CentroDistribucionOrigen": "CD-CBA-01",
+        "CentroDistribucionDestino": "CD-MZA-01",
+        "MetodoEntrega": 2,
+        "AgenciaEntregaCodigo": "AG-MZA-01-01",
+        "CentroDistribucionEntregaCodigo": "",
+        "DireccionEntrega": "Av. San Martin 1120",
+        "CodPostalEntrega": 5500,
+        "MetodoRetiro": 2,
+        "AgenciaRetiroCodigo": "",
+        "CentroDistribucionRetiroCodigo": "CD-CBA-01",
+        "DireccionRetiro": "Av. Colon 1234",
+        "CodPostalRetiro": 5000,
+        "DniDestinatario": 40111222,
+        "NombreApellidoDestinatario": "Prueba Rendicion",
+        "CajasS": 1,
+        "CajasM": 0,
+        "CajasL": 0,
+        "CajasXL": 0,
+        "Historial": [
+            {
+                "Estado": 0,
+                "UltimaActualizacion": "2026-06-01T09:00:00.000",
+                "Ubicacion": "Solicitud telefonica"
+            },
+            {
+                "Estado": 3,
+                "UltimaActualizacion": "2026-06-01T09:15:00.000",
+                "Ubicacion": "En transito a Av. Colon 1234"
+            }
+        ]
+    },
+    {
+        "CuitCliente": 30712345678,
+        "NumeroGuia": 20260601090090002,
+        "FechaCreacion": "2026-06-01T09:05:00.000",
+        "Importe": 3500,
+        "EstadoActual": 0,
+        "CentroDistribucionOrigen": "CD-CBA-01",
+        "CentroDistribucionDestino": "CD-MZA-01",
+        "MetodoEntrega": 2,
+        "AgenciaEntregaCodigo": "AG-MZA-01-01",
+        "CentroDistribucionEntregaCodigo": "",
+        "DireccionEntrega": "Av. San Martin 1120",
+        "CodPostalEntrega": 5500,
+        "MetodoRetiro": 2,
+        "AgenciaRetiroCodigo": "",
+        "CentroDistribucionRetiroCodigo": "CD-CBA-01",
+        "DireccionRetiro": "Av. Colon 1250",
+        "CodPostalRetiro": 5000,
+        "DniDestinatario": 40222333,
+        "NombreApellidoDestinatario": "Prueba Admision Estado",
+        "CajasS": 1,
+        "CajasM": 0,
+        "CajasL": 0,
+        "CajasXL": 0,
+        "Historial": [
+            {
+                "Estado": 0,
+                "UltimaActualizacion": "2026-06-01T09:05:00.000",
+                "Ubicacion": "Solicitud telefonica"
+            }
+        ]
+    },
+    {
+        "CuitCliente": 30712345678,
+        "NumeroGuia": 20260601090090003,
+        "FechaCreacion": "2026-06-01T09:10:00.000",
+        "Importe": 3500,
+        "EstadoActual": 5,
+        "CentroDistribucionOrigen": "CD-CBA-01",
+        "CentroDistribucionDestino": "CD-MZA-01",
+        "MetodoEntrega": 2,
+        "AgenciaEntregaCodigo": "AG-MZA-01-01",
+        "CentroDistribucionEntregaCodigo": "",
+        "DireccionEntrega": "Av. San Martin 1120",
+        "CodPostalEntrega": 5500,
+        "MetodoRetiro": 2,
+        "AgenciaRetiroCodigo": "",
+        "CentroDistribucionRetiroCodigo": "CD-CBA-01",
+        "DireccionRetiro": "Av. Colon 1260",
+        "CodPostalRetiro": 5000,
+        "DniDestinatario": 40333444,
+        "NombreApellidoDestinatario": "Prueba Admision Valida",
+        "CajasS": 1,
+        "CajasM": 0,
+        "CajasL": 0,
+        "CajasXL": 0,
+        "Historial": [
+            {
+                "Estado": 0,
+                "UltimaActualizacion": "2026-06-01T09:10:00.000",
+                "Ubicacion": "Solicitud telefonica"
+            },
+            {
+                "Estado": 3,
+                "UltimaActualizacion": "2026-06-01T09:20:00.000",
+                "Ubicacion": "En transito a Av. Colon 1260"
+            },
+            {
+                "Estado": 5,
+                "UltimaActualizacion": "2026-06-01T09:30:00.000",
+                "Ubicacion": "Centro Distribucion Cordoba Capital Norte"
+            }
+        ]
+    },
+    {
+        "CuitCliente": 30712345678,
+        "NumeroGuia": 20260601090090004,
+        "FechaCreacion": "2026-06-01T09:15:00.000",
+        "Importe": 3500,
+        "EstadoActual": 5,
+        "CentroDistribucionOrigen": "CD-CBA-01",
+        "CentroDistribucionDestino": "CD-XX-99",
+        "MetodoEntrega": 1,
+        "AgenciaEntregaCodigo": "",
+        "CentroDistribucionEntregaCodigo": "CD-XX-99",
+        "DireccionEntrega": "",
+        "CodPostalEntrega": 0,
+        "MetodoRetiro": 2,
+        "AgenciaRetiroCodigo": "",
+        "CentroDistribucionRetiroCodigo": "CD-CBA-01",
+        "DireccionRetiro": "Av. Colon 1270",
+        "CodPostalRetiro": 5000,
+        "DniDestinatario": 40444555,
+        "NombreApellidoDestinatario": "Prueba Admision Destino",
+        "CajasS": 1,
+        "CajasM": 0,
+        "CajasL": 0,
+        "CajasXL": 0,
+        "Historial": [
+            {
+                "Estado": 5,
+                "UltimaActualizacion": "2026-06-01T09:35:00.000",
+                "Ubicacion": "Centro Distribucion Cordoba Capital Norte"
+            }
+        ]
+    },
+    {
+        "CuitCliente": 30765432109,
+        "NumeroGuia": 20260601090090005,
+        "FechaCreacion": "2026-06-01T09:20:00.000",
+        "Importe": 4100,
+        "EstadoActual": 12,
+        "CentroDistribucionOrigen": "CD-CBA-01",
+        "CentroDistribucionDestino": "CD-MZA-01",
+        "MetodoEntrega": 2,
+        "AgenciaEntregaCodigo": "AG-MZA-01-01",
+        "CentroDistribucionEntregaCodigo": "",
+        "DireccionEntrega": "Av. San Martin 1120",
+        "CodPostalEntrega": 5500,
+        "MetodoRetiro": 1,
+        "AgenciaRetiroCodigo": "",
+        "CentroDistribucionRetiroCodigo": "CD-CBA-01",
+        "DireccionRetiro": "",
+        "CodPostalRetiro": 0,
+        "DniDestinatario": 40555666,
+        "NombreApellidoDestinatario": "Prueba Entrega Agencia",
+        "CajasS": 1,
+        "CajasM": 0,
+        "CajasL": 0,
+        "CajasXL": 0,
+        "Historial": [
+            {
+                "Estado": 8,
+                "UltimaActualizacion": "2026-06-01T10:00:00.000",
+                "Ubicacion": "Centro Distribucion Ciudad de Mendoza Centro"
+            },
+            {
+                "Estado": 11,
+                "UltimaActualizacion": "2026-06-01T10:15:00.000",
+                "Ubicacion": "En transito a Agencia Ciudad de Mendoza Centro"
+            },
+            {
+                "Estado": 12,
+                "UltimaActualizacion": "2026-06-01T10:30:00.000",
+                "Ubicacion": "Agencia Ciudad de Mendoza Centro"
+            }
+        ]
     }
 ]

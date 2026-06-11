@@ -1,8 +1,9 @@
 
 
 01. Menú principal:
-	1 - El "Centro de distribución actual" NO afecta a esta pantalla;
-	     podés dejar el que tengas.
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01".
+	     Este dato no interviene en la lógica de esta pantalla, pero se fija
+	     para mantener el mismo contexto durante todo el camino feliz.
 	2 - Entrar al menú "Gestión Rendición Fleteros"
 
 02. Pantalla "Gestión Rendición Fleteros" - GroupBox "Seleccionar Fletero":
@@ -13,8 +14,8 @@
 
 03. Pantalla "Gestión Rendición Fleteros" - GroupBox "Hojas de Ruta Asignadas":
 	1 - VERIFICAR que en la lista aparece una fila con:
-	     - Hoja de Ruta: "HDR-RET-202606-0001"
-	     - Número de Guía: 20260609153012345  (el mismo de ImpoXTel)
+	     - Hoja de Ruta: <HDR_RETIRO_CAMINO_FELIZ>
+	     - Número de Guía: <GUIA_CAMINO_FELIZ>
 	     - Estado: "RetiroDomicilioEnCurso"
 	2 - Marcar el CHECKBOX de esa fila (la HDR fue cumplida por el fletero)
 	3 - VERIFICAR que al marcar el checkbox se habilita el botón "Confirmar"
@@ -34,7 +35,7 @@
 		     Ubicacion: "Centro Distribucion Cordoba Capital Norte"
 
 	En "HojasDeRutaFleteros.json" confirmar que el HDR de retiro cambió:
-		- Codigo: "HDR-RET-202606-0001"
+		- Codigo: <HDR_RETIRO_CAMINO_FELIZ>
 		- Estado: 1  (= Cumplida; antes era 0 = Asignada)
 
 	Con la guía ya en estado 5 (Pendiente Admisión) queda lista para la

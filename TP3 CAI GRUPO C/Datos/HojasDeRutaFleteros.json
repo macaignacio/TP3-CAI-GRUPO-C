@@ -59,5 +59,15 @@
     "Guias": [
       20260504102005004
     ]
+  },
+  {
+    "Codigo": "HDR-RET-PRUEBA-RENDICION",
+    "CentroDistribucion": "CD-CBA-01",
+    "CuitCuilFletero": 20978901234,
+    "TipoHDR": 0,
+    "Estado": 0,
+    "Guias": [
+      20260601090090001
+    ]
   }
 ]

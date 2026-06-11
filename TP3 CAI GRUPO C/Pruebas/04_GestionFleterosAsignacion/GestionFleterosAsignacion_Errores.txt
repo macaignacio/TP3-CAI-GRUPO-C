@@ -1,5 +1,6 @@
 00. Antes de empezar (menú principal):
-	1 - El "Centro de distribución actual" no afecta a esta pantalla.
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01".
+	    Este dato no interviene en la lógica de esta pantalla.
 	2 - Entrar al menú "Gestión Asignación Fleteros"
 
 

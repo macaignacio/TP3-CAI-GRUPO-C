@@ -27,8 +27,6 @@
 
 	1.4 - DNI válido pero sin encomiendas listas para entregar:
 		- DNI: "99999999"  (un DNI sin encomiendas en estado "Listo para retirar")
-		  También pasa con 12345678 si la guía TODAVÍA no llegó al estado 12
-		  (es decir, si falta la vuelta de fleteros para la entrega).
 		- Apretar "Buscar"
 		- VERIFICAR cartel: "Destinatario no encontrado."
 
@@ -39,11 +37,11 @@
 
 	(Se disparan al apretar el botón "Confirmar entrega")
 
-	PRE: Haber buscado correctamente al destinatario (DNI 12345678) para que la
-	     lista tenga la encomienda.
+	PRE: Usar la guía fija 20260601090090005, preparada en estado
+	     ListaParaEntregarPorAgencia para el DNI 40555666.
 
 	2.1 - Confirmar sin seleccionar una encomienda:
-		- Buscar el destinatario pero NO seleccionar ninguna fila de la lista.
+		- DNI: 40555666. Buscar, pero NO seleccionar ninguna fila.
 		- VERIFICAR que el botón "Confirmar entrega" queda DESHABILITADO (el
 		  sistema no deja confirmar sin elegir una encomienda).
 		  (Si por algún motivo se llegara a apretar sin selección, el cartel
@@ -52,6 +50,6 @@
 	2.2 - La agencia actual no es la de la encomienda:
 		- En el menú elegir "Agencia actual" = "AG-MZA-02-01" (una agencia distinta
 		  a la de entrega, que es AG-MZA-01-01).
-		- Entrar a Entrega, DNI: 12345678, Buscar, seleccionar la encomienda y
+		- Entrar a Entrega, DNI: 40555666, Buscar, seleccionar la encomienda y
 		  apretar "Confirmar entrega" -> "Sí".
 		- VERIFICAR cartel: "La encomienda no se encuentra en la agencia actual."

@@ -3,16 +3,13 @@
 	2 - Entrar al menú "Admisión"
 
 
-	NOTA IMPORTANTE !!:
-	  Para probar las validaciones del GroupBox "Confirmación de datos",
-	  primero tiene que existir una guía admisible en estado 2 (Impuesta en CD)
-	  o 5 (Pendiente Admisión). Esa guía es la que viene de la cadena del
-	  camino feliz (01_ImpoXTel -> 04_GestionFleterosAsignacion ->
-	  05_GestionFleterosRendicion; ver "06_Admision.txt"). Usarla como base y
-	  cambiar SOLO el campo que se está testeando.
-
-	  Algunos casos piden editar "Guias.json" a mano para forzar la condición
-	  de error; se aclara en cada uno.
+	NOTA IMPORTANTE:
+	  Estas pruebas usan guías fijas ya preparadas en "Guias.json":
+	    - 20260601090090002: estado inválido para Admisión.
+	    - 20260601090090003: guía válida en PendienteAdmision.
+	    - 20260601090090004: guía admisible con CD destino inexistente.
+	  No es necesario editar manualmente el JSON ni consumir la guía del
+	  camino feliz.
 
 
 ------------------------------------------------------------------------------
@@ -32,19 +29,10 @@
 		- VERIFICAR cartel: "Guia no encontrada."
 
 	1.3 - Guía existe pero NO está en estado admisible:
-		- Usar una guía que TODAVÍA no pasó por toda la cadena: recién salida
-		  de ImpoXTel (estado 0) o después de asignación pero ANTES de rendir
-		  (estado 3). Así NO hace falta tocar el JSON.
-		  (Alternativa: editar "Guias.json" y poner cualquier estado que no
-		   sea 2 ni 5, por ejemplo EstadoActual: 6.)
-		- Ingresar ese NumeroGuia y apretar "Buscar"
-		- VERIFICAR cartel: "La guia no se encuentra en estado Impuesta en CD o Pendiente de Admisión."
-		  
-	1.4 - Cliente asociado a la guía no existe:
-		- Editar "Guias.json" y poner una guía con CuitCliente: 99999999999
-		  (un CUIT que NO esté en Clientes.json)
-		- Ingresar ese NumeroGuia y apretar "Buscar"
-		- VERIFICAR cartel: "Cliente asociado a la guia no encontrado."
+		- Número de Guía: 20260601090090002
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "La guía no se encuentra en un estado válido
+		  para ser admitida."
 
 
 ------------------------------------------------------------------------------
@@ -53,8 +41,8 @@
 
 	(Se disparan al apretar el botón "Confirmar Admisión")
 
-	PRE: Haber buscado correctamente una guía válida (paso 02 del camino
-	     feliz) para que el GroupBox esté habilitado.
+	PRE: Buscar la guía fija 20260601090090003 para habilitar el GroupBox.
+	     Está en estado PendienteAdmision y no depende del camino feliz.
 
 	2.1 - Cantidad de cajas con letras:
 		- Caja S: "ABC"
@@ -82,30 +70,26 @@
 	2.5 - Sin CD actual seleccionado en el menú:
 		- Volver al menú principal y deseleccionar el "CD actual"
 		  (o reabrir el programa sin elegir CD).
-		- Volver a entrar a Admisión, buscar la guía y apretar
+		- Volver a entrar a Admisión, buscar la guía fija 20260601090090003
+		  y apretar
 		  "Confirmar Admisión".
 		- VERIFICAR cartel: "Debe seleccionar un centro de distribucion
 		  actual valido."
 
 	2.6 - CD destino de la guía no existe:
-		- Editar "Guias.json" y poner CentroDistribucionDestino: "CD-XX-99"
-		  (un código que no existe en CentroDistribucion.json).
-		- Buscar la guía y apretar "Confirmar Admisión"
+		- Buscar la guía fija 20260601090090004, cuyo destino es "CD-XX-99".
+		- Apretar "Confirmar Admisión"
 		- VERIFICAR cartel: "No se encontro el centro de distribucion de
 		  destino de la guia."
 
 	2.7 - CD actual y CD destino son el MISMO:
 		- En el menú elegir "CD actual" = "CD-MZA-01"
-		- La guía tiene CentroDistribucionDestino: "CD-MZA-01"
-		- Buscar la guía y apretar "Confirmar Admisión"
+		- Buscar la guía fija 20260601090090003, cuyo destino es "CD-MZA-01"
+		- Apretar "Confirmar Admisión"
 		- VERIFICAR cartel: "No corresponde generar hoja de ruta de
 		  omnibus porque el origen y el destino son el mismo centro de
 		  distribucion."
 
-	2.8 - No hay servicio de ómnibus entre origen y destino:
-		- En el menú elegir "CD actual" = "CD-LP-02"
-		  (no hay servicios de ómnibus desde CD-LP-02 hacia CD-MZA-01)
-		- Buscar una guía con CentroDistribucionDestino: "CD-MZA-01"
-		- Apretar "Confirmar Admisión"
-		- VERIFICAR cartel: "No hay servicios de omnibus con cobertura
-		  entre el centro de distribucion origen y destino."
+	NOTA: No se incluye un caso "sin servicio de ómnibus" porque los datos
+	actuales tienen cobertura para todos los pares de CD en ambos sentidos.
+

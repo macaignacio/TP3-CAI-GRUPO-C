@@ -1,5 +1,6 @@
 00. Antes de empezar (menú principal):
-	1 - El "Centro de distribución actual" no afecta a esta pantalla.
+	1 - En "Centro de distribución actual" elegir: "CD-CBA-01".
+	    Este dato no interviene en la lógica de esta pantalla.
 	2 - Entrar al menú "Gestión Rendición Fleteros"
 
 
@@ -43,12 +44,15 @@
 
 	(Se disparan al apretar el botón "Confirmar")
 
-	PRE: Haber buscado correctamente al fletero 27534567890 (con su HDR
-	     pendiente) para que el GroupBox esté habilitado y la lista tenga
-	     la hoja de ruta.
+	PRE: Usar el dato fijo preparado para esta prueba:
+	     - CUIT/CUIL: 20978901234 (Diego Sebastian Molina)
+	     - HDR: "HDR-RET-PRUEBA-RENDICION"
+	     - Guía: 20260601090090001
+	     La HDR está Asignada y la guía está en RetiroDomicilioEnCurso.
+	     No depende del camino feliz.
 
 	2.1 - Confirmar sin marcar ninguna HDR:
-		- Buscar el fletero pero NO marcar ningún checkbox de la lista.
+		- Buscar el fletero 20978901234 pero NO marcar ningún checkbox.
 		- VERIFICAR que el botón "Confirmar" queda DESHABILITADO: el sistema
 		  no deja confirmar una rendición sin marcar al menos una HDR como
 		  cumplida.
