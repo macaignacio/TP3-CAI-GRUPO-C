@@ -20,16 +20,13 @@ namespace TP3_CAI_GRUPO_C.ConsultaCtaCteCliente
             return (MapearCliente(cliente), "");
         }
 
-        public List<CtaCorriente> ObtenerCuentaCorrientePorCliente(string cliente, DateTime periodo)
+        public List<CtaCorriente> ObtenerCuentaCorrientePorCliente(long cuitCliente, DateTime periodo)
         {
-            var clienteEntidad = ClienteAlmacen.clientes.FirstOrDefault(c => c.RazonSocial == cliente);
-
-            if (clienteEntidad == null)
-                return [];
-
             return CuentaCorrienteClienteAlmacen.ctaCteCliente
-                .Where(m => m.Cuit == clienteEntidad.Cuit)
+                .Where(m => m.Cuit == cuitCliente)
                 .Where(m => m.Fecha.Year == periodo.Year && m.Fecha.Month == periodo.Month)
+                .OrderBy(m => m.Fecha)
+                .ThenBy(m => m.Comprobante)
                 .Select(MapearMovimiento)
                 .ToList();
         }
@@ -60,7 +57,12 @@ namespace TP3_CAI_GRUPO_C.ConsultaCtaCteCliente
         private static DateTime CalcularVencimiento(CuentaCorrienteClienteEntidad movimiento)
         {
             if (movimiento.TipoComprobante.Equals("Factura", StringComparison.OrdinalIgnoreCase))
-                return movimiento.Fecha.AddDays(30);
+            {
+                var factura = FacturaAlmacen.facturas
+                    .FirstOrDefault(f => f.NumeroFactura == movimiento.Comprobante);
+
+                return factura?.Vencimiento ?? movimiento.Fecha.AddDays(30);
+            }
 
             return movimiento.Fecha;
         }

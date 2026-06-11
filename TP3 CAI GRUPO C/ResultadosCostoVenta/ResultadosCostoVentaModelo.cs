@@ -36,6 +36,13 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
         {
             var serviciosEmpresa = ServicioOmnibusAlmacen.servicios
                 .Where(s => s.CuitEmpresaOmnibus == cuitEmpresaOmnibus)
+                .Where(s => s.Parada != null && s.Parada.Count > 0)
+                .Where(s =>
+                {
+                    var fechaSalida = s.Parada.Min(p => p.FechaHoraParada);
+                    return fechaSalida.Year == periodo.Year
+                        && fechaSalida.Month == periodo.Month;
+                })
                 .Select(s => s.IdentificadorServicio)
                 .ToHashSet();
 
@@ -46,7 +53,6 @@ namespace TP3_CAI_GRUPO_C.ResultadosCostoVenta
 
             return GuiaAlmacen.guias
                 .Where(g => numerosGuiasEmpresa.Contains(g.NumeroGuia))
-                .Where(g => g.FechaCreacion.Year == periodo.Year && g.FechaCreacion.Month == periodo.Month)
                 .Sum(g => g.Importe);
         }
 

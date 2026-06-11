@@ -106,7 +106,6 @@
             PeriodoDateTimePicker.Size = new Size(180, 23);
             PeriodoDateTimePicker.TabIndex = 4;
             PeriodoDateTimePicker.Value = new DateTime(2026, 4, 30, 0, 0, 0, 0);
-            PeriodoDateTimePicker.ValueChanged += PeriodoDateTimePicker_ValueChanged;
             // 
             // RZTextoLabel
             // 

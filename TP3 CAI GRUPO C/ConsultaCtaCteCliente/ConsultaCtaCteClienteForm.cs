@@ -14,11 +14,9 @@
             var hoy = DateTime.Today;
             var ultimoDiaMesActual = DateTime.DaysInMonth(hoy.Year, hoy.Month);
             PeriodoDateTimePicker.MaxDate = new DateTime(hoy.Year, hoy.Month, ultimoDiaMesActual);
-
-            periodoSeleccionado = false;
+            PeriodoDateTimePicker.ShowCheckBox = true;
+            PeriodoDateTimePicker.Checked = false;
         }
-
-        private bool periodoSeleccionado = false;
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
@@ -39,7 +37,7 @@
                 return;
             }
 
-            if (!periodoSeleccionado)
+            if (!PeriodoDateTimePicker.Checked)
             {
                 MessageBox.Show("Debe seleccionar un período.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -50,7 +48,7 @@
             RazonSocialLabel.Text = resultado.cliente.RazonSocial;
 
             var movimientos = modelo.ObtenerCuentaCorrientePorCliente(
-                resultado.cliente.RazonSocial,
+                resultado.cliente.Cuit,
                 periodo);
 
             CargarCuentaCorriente(movimientos);
@@ -60,11 +58,6 @@
                 MessageBox.Show("No hay movimientos para el período seleccionado.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-        }
-
-        private void PeriodoDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            periodoSeleccionado = true;
         }
 
         private void LimpiarButton_Click(object? sender, EventArgs e)
@@ -78,7 +71,7 @@
             RazonSocialLabel.Text = "[dato]";
             CuentaCorrienteListView.Items.Clear();
             PeriodoDateTimePicker.Value = DateTime.Today;
-            periodoSeleccionado = false;
+            PeriodoDateTimePicker.Checked = false;
             CuitTextBox.Focus();
         }
 
