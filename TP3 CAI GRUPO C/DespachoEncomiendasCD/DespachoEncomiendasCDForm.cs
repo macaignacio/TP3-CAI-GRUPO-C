@@ -94,7 +94,6 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                 return;
             }
 
-            // Reflejar el cambio de estado en todos los items del ListView
             foreach (ListViewItem item in HDRAsignadasListView.Items)
             {
                 item.SubItems[2].Text = (item.Tag as HojaDeRuta)!.Estado;
