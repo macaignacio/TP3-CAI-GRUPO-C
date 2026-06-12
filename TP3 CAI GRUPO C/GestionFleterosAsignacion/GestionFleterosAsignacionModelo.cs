@@ -8,16 +8,6 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 
         private static List<Fletero> CargarFleteros()
         {
-            var directorio = new DirectoryInfo(AppContext.BaseDirectory);
-
-            while (directorio != null && !Directory.Exists(Path.Combine(directorio.FullName, "Datos")))
-            {
-                directorio = directorio.Parent;
-            }
-
-            if (directorio != null)
-                Directory.SetCurrentDirectory(directorio.FullName);
-
             return FleteroAlmacen.fleteros
                 .Select(fletero => new Fletero
                 {
@@ -56,10 +46,14 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
         private static string ObtenerEstadoPendiente(TipoHDRFleteroEnum tipoHDR, GuiaEntidad? guia)
         {
             if (guia != null)
+            {
                 return ObtenerDescripcionEstado(guia.EstadoActual);
+            }
 
             if (tipoHDR == TipoHDRFleteroEnum.Retiro)
+            {
                 return ObtenerDescripcionEstado(EstadoEnum.ImpuestaTelefonicamente);
+            }
 
             return ObtenerDescripcionEstado(EstadoEnum.EnCDDestino);
         }
@@ -69,7 +63,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             GuiaEntidad? guia)
         {
             if (guia == null)
+            {
                 return false;
+            }
 
             if (tipoHDR == TipoHDRFleteroEnum.Retiro)
             {
@@ -85,12 +81,16 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
         public (Fletero? fletero, string error) BuscarFletero(long cuitCuil)
         {
             if (cuitCuil < 10_000_000_000 || cuitCuil > 99_999_999_999)
+            {
                 return (null, "CUIT/CUIL invalido. Se debe ingresar un numero de 11 digitos sin guiones ni comas.");
+            }
 
             var fletero = Fleteros.FirstOrDefault(f => f.CuitCuil == cuitCuil);
 
             if (fletero == null)
+            {
                 return (null, "Fletero no encontrado.");
+            }
 
             return (fletero, "");
         }
@@ -100,10 +100,14 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             var resultadoFletero = BuscarFletero(cuitCuil);
 
             if (resultadoFletero.fletero == null)
+            {
                 return new ResultadoAsignacion { Valido = false, Error = resultadoFletero.error };
+            }
 
             if (resultadoFletero.fletero.HojasDeRuta.Count == 0)
+            {
                 return new ResultadoAsignacion { Valido = false, Error = "El fletero no tiene hojas de ruta pendientes." };
+            }
 
             var asignaciones = new List<(HojaDeRuta hoja, HojaDeRutaFleteroEntidad hojaEntidad, GuiaEntidad guia)>();
 
@@ -226,7 +230,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             GuiaEntidad guia)
         {
             if (tipoHDR == TipoHDRFleteroEnum.Retiro)
+            {
                 return $"En transito a {ObtenerDestinoRetiro(guia)}";
+            }
 
             return $"En transito a {ObtenerDestinoEntrega(guia)}";
         }
@@ -234,11 +240,15 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
         private static string ObtenerDestinoRetiro(GuiaEntidad guia)
         {
             if (guia.MetodoRetiro == MetodoRetiroEnum.EnDomicilio)
+            {
                 return guia.DireccionRetiro;
+            }
 
             if (guia.MetodoRetiro == MetodoRetiroEnum.Agencia)
+            {
                 return AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == guia.AgenciaRetiroCodigo)?.Nombre
                     ?? guia.AgenciaRetiroCodigo;
+            }
 
             return CentroDistribucionAlmacen.cd.FirstOrDefault(cd => cd.Codigo == guia.CentroDistribucionRetiroCodigo)?.Nombre
                 ?? guia.CentroDistribucionRetiroCodigo;
@@ -247,11 +257,15 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
         private static string ObtenerDestinoEntrega(GuiaEntidad guia)
         {
             if (guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio)
+            {
                 return guia.DireccionEntrega;
+            }
 
             if (guia.MetodoEntrega == MetodoEntregaEnum.Agencia)
+            {
                 return AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == guia.AgenciaEntregaCodigo)?.Nombre
                     ?? guia.AgenciaEntregaCodigo;
+            }
 
             return CentroDistribucionAlmacen.cd.FirstOrDefault(cd => cd.Codigo == guia.CentroDistribucionEntregaCodigo)?.Nombre
                 ?? guia.CentroDistribucionEntregaCodigo;

@@ -4,17 +4,19 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 {
     internal class GestionFleterosRendicionModelo
     {
-       
-
         public (Fletero? fletero, string error) BuscarFletero(long cuitCuil)
         {
             if (cuitCuil < 10_000_000_000 || cuitCuil > 99_999_999_999)
+            {
                 return (null, "CUIT/CUIL inválido. Se debe ingresar un número de 11 digitos sin guiones ni comas.");
+            }
 
             var fleteroEntidad = FleteroAlmacen.fleteros.FirstOrDefault(f => f.CuitCuilFletero == cuitCuil);
 
             if (fleteroEntidad == null)
+            {
                 return (null, "Fletero no encontrado.");
+            }
 
             var fletero = new Fletero
             {
@@ -45,7 +47,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             };
 
             if (fletero.HojasDeRuta.Count == 0)
+            {
                 return (null, "El fletero no tiene hojas de ruta asignadas pendientes de rendicion.");
+            }
 
             return (fletero, "");
         }
@@ -55,10 +59,14 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             var resultadoFletero = BuscarFletero(cuitCuil);
 
             if (resultadoFletero.fletero == null)
+            {
                 return new ResultadoRendicion { Valido = false, Error = resultadoFletero.error };
+            }
 
             if (codigosCumplidos.Count == 0)
+            {
                 return new ResultadoRendicion { Valido = false, Error = "Debe seleccionar al menos una hoja de ruta." };
+            }
 
             var hojasDeRutaCumplidas = HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros
                 .Where(hoja => hoja.CuitCuilFletero == cuitCuil
@@ -110,16 +118,6 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
                 }
             }
 
-            var directorio = new DirectoryInfo(AppContext.BaseDirectory);
-
-            while (directorio != null && !Directory.Exists(Path.Combine(directorio.FullName, "datos")))
-            {
-                directorio = directorio.Parent;
-            }
-
-            if (directorio != null)
-                Directory.SetCurrentDirectory(directorio.FullName);
-
             HojaDeRutaFleteroAlmacen.Guardar();
             GuiaAlmacen.Guardar();
 
@@ -134,7 +132,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             HojaDeRutaFleteroEntidad hojaDeRuta)
         {
             if (hojaDeRuta.Guias.Count == 0)
+            {
                 return false;
+            }
 
             return hojaDeRuta.Guias.All(numeroGuia =>
             {
@@ -196,10 +196,14 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             EstadoEnum estadoAnterior)
         {
             if (hojaDeRuta.TipoHDR == TipoHDRFleteroEnum.Retiro)
+            {
                 return ObtenerNombreCentroDistribucion(hojaDeRuta.CentroDistribucion);
+            }
 
             if (estadoAnterior == EstadoEnum.EnTransitoEntregaDomicilio)
+            {
                 return ObtenerDestinoDomicilio(guia);
+            }
 
             return ObtenerNombreAgencia(guia.AgenciaEntregaCodigo);
         }
@@ -207,7 +211,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
         private static string ObtenerDestinoDomicilio(GuiaEntidad guia)
         {
             if (!string.IsNullOrWhiteSpace(guia.DireccionEntrega))
+            {
                 return $"domicilio {guia.DireccionEntrega}";
+            }
 
             return "domicilio";
         }
@@ -215,7 +221,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
         private static string ObtenerNombreAgencia(string codigoAgencia)
         {
             if (string.IsNullOrWhiteSpace(codigoAgencia))
+            {
                 return "";
+            }
 
             var agencia = AgenciaAlmacen.agencia.FirstOrDefault(a => a.Codigo == codigoAgencia);
 
@@ -225,7 +233,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
         private static string ObtenerNombreCentroDistribucion(string codigoCentroDistribucion)
         {
             if (string.IsNullOrWhiteSpace(codigoCentroDistribucion))
+            {
                 return "";
+            }
 
             var centroDistribucion = CentroDistribucionAlmacen.cd.FirstOrDefault(c => c.Codigo == codigoCentroDistribucion);
 
