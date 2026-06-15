@@ -95,7 +95,6 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                 return;
             }
 
-            // Reflejar el cambio de estado en todos los items del ListView
             foreach (ListViewItem item in DetalleHdrListView.Items)
             {
                 item.SubItems[2].Text = (item.Tag as HojaDeRuta)!.Estado;
@@ -106,6 +105,8 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                 "Éxito",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+
+            LimpiarFormulario();
         }
 
         private List<HojaDeRuta> ObtenerTodasLasHojas()
@@ -119,6 +120,14 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
             }
 
             return hojas;
+        }
+
+        private void LimpiarFormulario()
+        {
+            EmpresaComboBox.SelectedIndex = -1;
+            HorarioSalidaDateTimePicker.Value = DateTime.Now;
+            DetalleHdrListView.Items.Clear();
+            DetalleHdrGroupBox.Enabled = false;
         }
     }
 }
