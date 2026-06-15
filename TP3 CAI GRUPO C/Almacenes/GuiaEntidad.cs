@@ -44,6 +44,9 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         //movimientos
         public List<MovimientoGuia> Historial { get; set; }
 
+        //facturacion
+        public bool Facturada { get; set; }
+
         //datos devolucion
         public string CentroDistribucionOrigenDevolucion { get; set; }
         public string CentroDistribucionDestinoDevolucion { get; set; }
