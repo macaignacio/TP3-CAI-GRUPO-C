@@ -34,14 +34,7 @@ namespace TP3_CAI_GRUPO_C.EstadoEncomienda
                 return;
             }
 
-            // Validación de 17 dígitos
-            if (!long.TryParse(textoGuia, out var numeroGuia) || textoGuia.Length != 17)
-            {
-                MessageBox.Show("Guia invalida. Debe ingresar un numero de 17 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            var resultado = modelo.ValidarYBuscarGuia(numeroGuia);
+            var resultado = modelo.ValidarYBuscarGuia(textoGuia);
 
             if (resultado.guia == null)
             {

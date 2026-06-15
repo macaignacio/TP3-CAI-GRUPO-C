@@ -64,7 +64,7 @@ namespace TP3_CAI_GRUPO_C.EstadoEncomienda
             };
         }
 
-        public (Guia? guia, string error) ValidarYBuscarGuia(long numeroGuia)
+        public (Guia? guia, string error) ValidarYBuscarGuia(string numeroGuia)
         {
             var guiaEncontrada = Guias.FirstOrDefault(g => g.NumeroGuia == numeroGuia);
 

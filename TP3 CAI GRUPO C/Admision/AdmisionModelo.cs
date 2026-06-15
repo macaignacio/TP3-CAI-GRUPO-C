@@ -4,7 +4,7 @@ namespace TP3_CAI_GRUPO_C.Admision
 {
     internal class AdmisionModelo
     {
-        public ResultadoAdmision BuscarGuia(long numeroGuia)
+        public ResultadoAdmision BuscarGuia(string numeroGuia)
         {
             var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == numeroGuia);
 
@@ -26,7 +26,7 @@ namespace TP3_CAI_GRUPO_C.Admision
             };
         }
 
-        public ResultadoAdmision ConfirmarAdmision(long numeroGuia, int cantidadCajaS, int cantidadCajaM, int cantidadCajaL, int cantidadCajaXL)
+        public ResultadoAdmision ConfirmarAdmision(string numeroGuia, int cantidadCajaS, int cantidadCajaM, int cantidadCajaL, int cantidadCajaXL)
         {
             var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == numeroGuia);
 
@@ -91,7 +91,7 @@ namespace TP3_CAI_GRUPO_C.Admision
                 CentroDistribucionOrigen = cdOrigen.Codigo,
                 CentroDistribucionDestino = cdDestino.Codigo,
                 Estado = EstadoHDROmnibusEnum.Asignada,
-                Guias = new List<long> { guia.NumeroGuia }
+                Guias = new List<string> { guia.NumeroGuia }
             };
 
             HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(hojaDeRuta);

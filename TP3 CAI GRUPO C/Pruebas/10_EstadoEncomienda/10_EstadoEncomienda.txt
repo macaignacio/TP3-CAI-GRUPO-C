@@ -3,7 +3,7 @@
 	Usar <GUIA_CAMINO_FELIZ>. Para ver el historial completo conviene correrla
 	DESPUÉS de "09_Entrega".
 	Si se quiere probar esta pantalla de forma aislada, puede usarse la guía
-	fija 20260501101530001, que ya está entregada.
+	fija AG-LP-01-01-00000001, que ya está entregada.
 
 01. Menú principal:
 	1 - El CD y la agencia actual no afectan a esta pantalla.

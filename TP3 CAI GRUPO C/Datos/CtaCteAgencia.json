@@ -2,7 +2,7 @@
   {
     "CodigoAgencia": "AG-LP-01-01",
     "Fecha": "2026-05-01T10:15:30.001",
-    "NumeroGuia": 20260501101530001,
+    "NumeroGuia": "AG-LP-01-01-00000001",
     "Comprobante": "FC-A-0001-000001",
     "Comision": 3700,
     "Debe": 3700,
@@ -12,7 +12,7 @@
   {
     "CodigoAgencia": "AG-LP-01-01",
     "Fecha": "2026-06-02T09:00:00.000",
-    "NumeroGuia": 20260501101530001,
+    "NumeroGuia": "AG-LP-01-01-00000001",
     "Comprobante": "OP-A-0001-000001",
     "Comision": 0,
     "Debe": 0,
@@ -22,7 +22,7 @@
   {
     "CodigoAgencia": "AG-RET-01-01",
     "Fecha": "2026-05-04T10:10:00.000",
-    "NumeroGuia": 20260502113045002,
+    "NumeroGuia": "CD-MDP-01-00000001",
     "Comprobante": "FC-A-0001-000002",
     "Comision": 5800,
     "Debe": 5800,
@@ -32,7 +32,7 @@
   {
     "CodigoAgencia": "AG-RET-01-01",
     "Fecha": "2026-06-02T09:15:00.000",
-    "NumeroGuia": 20260502113045002,
+    "NumeroGuia": "CD-MDP-01-00000001",
     "Comprobante": "OP-A-0001-000002",
     "Comision": 0,
     "Debe": 0,
@@ -42,7 +42,7 @@
   {
     "CodigoAgencia": "AG-LIN-02-01",
     "Fecha": "2026-05-04T10:20:05.004",
-    "NumeroGuia": 20260504102005004,
+    "NumeroGuia": "AG-LIN-02-01-00000001",
     "Comprobante": "FC-A-0001-000003",
     "Comision": 7700,
     "Debe": 7700,
@@ -52,7 +52,7 @@
   {
     "CodigoAgencia": "AG-LIN-02-01",
     "Fecha": "2026-06-03T09:00:00.000",
-    "NumeroGuia": 20260504102005004,
+    "NumeroGuia": "AG-LIN-02-01-00000001",
     "Comprobante": "OP-A-0001-000003",
     "Comision": 0,
     "Debe": 0,
@@ -62,7 +62,7 @@
   {
     "CodigoAgencia": "AG-PAL-01-01",
     "Fecha": "2026-05-08T08:45:00.000",
-    "NumeroGuia": 20260505165022005,
+    "NumeroGuia": "CD-GC-01-00000001",
     "Comprobante": "FC-A-0001-000004",
     "Comision": 4100,
     "Debe": 4100,
@@ -72,7 +72,7 @@
   {
     "CodigoAgencia": "AG-PAL-01-01",
     "Fecha": "2026-06-03T09:15:00.000",
-    "NumeroGuia": 20260505165022005,
+    "NumeroGuia": "CD-GC-01-00000001",
     "Comprobante": "OP-A-0001-000004",
     "Comision": 0,
     "Debe": 0,
@@ -82,7 +82,7 @@
   {
     "CodigoAgencia": "AG-RC-01-02",
     "Fecha": "2026-05-07T19:05:33.007",
-    "NumeroGuia": 20260507190533007,
+    "NumeroGuia": "AG-RC-01-02-00000001",
     "Comprobante": "FC-A-0001-000005",
     "Comision": 4400,
     "Debe": 4400,
@@ -92,7 +92,7 @@
   {
     "CodigoAgencia": "AG-RC-01-02",
     "Fecha": "2026-06-04T09:00:00.000",
-    "NumeroGuia": 20260507190533007,
+    "NumeroGuia": "AG-RC-01-02-00000001",
     "Comprobante": "OP-A-0001-000005",
     "Comision": 0,
     "Debe": 0,

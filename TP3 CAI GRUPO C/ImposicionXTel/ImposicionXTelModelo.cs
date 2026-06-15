@@ -238,11 +238,10 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
         private GuiaEntidad GenerarGuía(Imposicion imposicion)
         {
             var ahora = DateTime.Now;
-            var numeroGuia = long.Parse(ahora.ToString("yyyyMMddHHmmssfff"));
-
             var metodoEntrega = ObtenerMetodoEntrega(imposicion.MetodoEntrega);
 
             var cdOrigen = ObtenerCentroDistribucionOrigen()!;
+            var numeroGuia = GenerarNumeroGuia(cdOrigen.Codigo);
 
             string cdDestinoCodigo;
             string agenciaEntregaCodigo = "";
@@ -326,6 +325,23 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
             };
         }     
 
+        private static string GenerarNumeroGuia(string codigoOrigen)
+        {
+            var prefijo = $"{codigoOrigen}-";
+
+            var ultimoNumero = GuiaAlmacen.guias
+                .Where(g => g.NumeroGuia.StartsWith(prefijo))
+                .Select(g =>
+                {
+                    var secuencial = g.NumeroGuia[prefijo.Length..];
+                    return int.TryParse(secuencial, out var numero) ? numero : 0;
+                })
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return $"{prefijo}{ultimoNumero + 1:00000000}";
+        }
+
         private static (HojaDeRutaFleteroEntidad? hojaDeRuta, string error) GenerarHojaDeRutaRetiro(GuiaEntidad guia)
         {
             if (!PuedeGenerarHojaDeRutaFletero(guia.EstadoActual))
@@ -349,7 +365,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 CuitCuilFletero = fletero.CuitCuilFletero,
                 TipoHDR = TipoHDRFleteroEnum.Retiro,
                 Estado = EstadoHDRFleteroEnum.Asignada,
-                Guias = new List<long> { guia.NumeroGuia }
+                Guias = new List<string> { guia.NumeroGuia }
             }, "");
         }
 

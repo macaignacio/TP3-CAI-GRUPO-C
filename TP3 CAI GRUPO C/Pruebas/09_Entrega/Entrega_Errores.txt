@@ -37,7 +37,7 @@
 
 	(Se disparan al apretar el botón "Confirmar entrega")
 
-	PRE: Usar la guía fija 20260601090090005, preparada en estado
+	PRE: Usar la guía fija CD-CBA-01-00000005, preparada en estado
 	     ListaParaEntregarPorAgencia para el DNI 40555666.
 
 	2.1 - Confirmar sin seleccionar una encomienda:

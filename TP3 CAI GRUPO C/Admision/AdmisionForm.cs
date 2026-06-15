@@ -16,9 +16,11 @@ namespace TP3_CAI_GRUPO_C.Admision
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            if (!long.TryParse(NumeroGuiaTextBox.Text, out var numeroGuia))
+            var numeroGuia = NumeroGuiaTextBox.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(numeroGuia))
             {
-                MessageBox.Show("El número de guía debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar un número de guía.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -43,9 +45,11 @@ namespace TP3_CAI_GRUPO_C.Admision
 
         private void confirmarAdmisionButton_Click(object sender, EventArgs e)
         {
-            if (!long.TryParse(NumeroGuiaTextBox.Text, out var numeroGuia))
+            var numeroGuia = NumeroGuiaTextBox.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(numeroGuia))
             {
-                MessageBox.Show("El número de guía debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar un número de guía.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

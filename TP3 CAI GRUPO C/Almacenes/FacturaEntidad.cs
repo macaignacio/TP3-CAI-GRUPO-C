@@ -14,7 +14,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
 
 
         //movimientos
-        public List<long> Guias { get; set; }
+        public List<string> Guias { get; set; }
 
     }
 

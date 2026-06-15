@@ -8,7 +8,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
     internal class GuiaEntidad
     {   //datos cabecera
         public long CuitCliente { get; set; }      
-        public long NumeroGuia { get; set; }
+        public string NumeroGuia { get; set; }
         public DateTime FechaCreacion { get; set; }
         public decimal  Importe { get; set; }
         public EstadoEnum EstadoActual { get; set; }

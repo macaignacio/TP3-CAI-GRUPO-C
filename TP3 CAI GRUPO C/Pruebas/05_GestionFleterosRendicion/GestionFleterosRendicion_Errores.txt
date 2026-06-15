@@ -47,7 +47,7 @@
 	PRE: Usar el dato fijo preparado para esta prueba:
 	     - CUIT/CUIL: 20978901234 (Diego Sebastian Molina)
 	     - HDR: "HDR-RET-PRUEBA-RENDICION"
-	     - Guía: 20260601090090001
+	     - Guía: CD-CBA-01-00000001
 	     La HDR está Asignada y la guía está en RetiroDomicilioEnCurso.
 	     No depende del camino feliz.
 

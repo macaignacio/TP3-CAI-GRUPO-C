@@ -10,7 +10,7 @@ namespace TP3_CAI_GRUPO_C.FacturarCliente
         
         public required string Descripcion { get; set; }
 
-        public long NumeroGuia { get; set; }
+        public string NumeroGuia { get; set; }
 
         public decimal Monto { get; set; }
 

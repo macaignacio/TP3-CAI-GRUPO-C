@@ -113,7 +113,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
                 .ToList();
         }
 
-        public (bool valido, string error) ConfirmarEntrega(int dni, long numeroGuia)
+        public (bool valido, string error) ConfirmarEntrega(int dni, string numeroGuia)
         {
             var resultadoDni = ValidarDNI(dni);
             if (!resultadoDni.valido)

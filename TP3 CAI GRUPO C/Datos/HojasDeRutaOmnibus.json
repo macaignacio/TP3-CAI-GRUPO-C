@@ -1,4 +1,3 @@
-﻿
 [
   {
     "Codigo": "HDR-OMN-202605-0001",
@@ -7,7 +6,7 @@
     "CentroDistribucionDestino": "CD-CBA-01",
     "Estado": 2,
     "Guias": [
-      20260501101530001
+      "AG-LP-01-01-00000001"
     ]
   },
   {
@@ -17,7 +16,7 @@
     "CentroDistribucionDestino": "CD-RET-01",
     "Estado": 2,
     "Guias": [
-      20260502113045002
+      "CD-MDP-01-00000001"
     ]
   },
   {
@@ -27,7 +26,7 @@
     "CentroDistribucionDestino": "CD-MZA-01",
     "Estado": 2,
     "Guias": [
-      20260503144510003
+      "CD-CBA-02-00000001"
     ]
   },
   {
@@ -37,7 +36,7 @@
     "CentroDistribucionDestino": "CD-BB-01",
     "Estado": 2,
     "Guias": [
-      20260504102005004
+      "AG-LIN-02-01-00000001"
     ]
   },
   {
@@ -47,7 +46,7 @@
     "CentroDistribucionDestino": "CD-PAL-01",
     "Estado": 2,
     "Guias": [
-      20260505165022005
+      "CD-GC-01-00000001"
     ]
   },
   {
@@ -57,7 +56,7 @@
     "CentroDistribucionDestino": "CD-MDP-02",
     "Estado": 2,
     "Guias": [
-      20260506120540006
+      "CD-RET-02-00000001"
     ]
   },
   {
@@ -67,7 +66,7 @@
     "CentroDistribucionDestino": "CD-LP-02",
     "Estado": 2,
     "Guias": [
-      20260507190533007
+      "AG-RC-01-02-00000001"
     ]
   },
   {
@@ -77,7 +76,7 @@
     "CentroDistribucionDestino": "CD-GC-01",
     "Estado": 2,
     "Guias": [
-      20260508172012008
+      "CD-PAL-02-00000001"
     ]
   }
 ]

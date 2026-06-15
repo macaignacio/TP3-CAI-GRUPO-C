@@ -271,7 +271,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                    guia.MetodoEntrega == MetodoEntregaEnum.Agencia;
         }
 
-        private static bool ExisteHojaDeRutaDistribucion(long numeroGuia)
+        private static bool ExisteHojaDeRutaDistribucion(string numeroGuia)
         {
             return HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Any(h =>
                 h.TipoHDR == TipoHDRFleteroEnum.Entrega &&
@@ -291,7 +291,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                 CuitCuilFletero = fletero.CuitCuilFletero,
                 TipoHDR = TipoHDRFleteroEnum.Entrega,
                 Estado = EstadoHDRFleteroEnum.Asignada,
-                Guias = new List<long> { guia.NumeroGuia }
+                Guias = new List<string> { guia.NumeroGuia }
             };
         }
 

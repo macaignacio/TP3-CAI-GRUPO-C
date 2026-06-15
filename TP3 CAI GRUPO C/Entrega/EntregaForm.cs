@@ -79,11 +79,7 @@ namespace TP3_CAI_GRUPO_C.Entrega
                 return;
             }
 
-            if (!long.TryParse(DatosEncomiendaListView.SelectedItems[0].Text, out var numeroGuia))
-            {
-                MessageBox.Show("El numero de guia debe ser un numero valido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            var numeroGuia = DatosEncomiendaListView.SelectedItems[0].Text;
 
             var confirmacion = MessageBox.Show(
                 $"Confirma la entrega de la guia {numeroGuia}?",

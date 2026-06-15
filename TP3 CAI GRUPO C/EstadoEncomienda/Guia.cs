@@ -6,7 +6,7 @@ namespace TP3_CAI_GRUPO_C.EstadoEncomienda
 {
     public class Guia
     {
-        public long NumeroGuia { get; set; }
+        public string NumeroGuia { get; set; }
         public List<Movimiento> Historial { get; set; } = new List<Movimiento>();
     }
 }

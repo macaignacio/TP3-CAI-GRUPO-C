@@ -216,9 +216,9 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
         private GuiaEntidad GenerarGuia(Imposicion imposicion)
         {
             var ahora = DateTime.Now;
-            var numeroGuia = long.Parse(ahora.ToString("yyyyMMddHHmmssfff"));
             var metodoEntrega = ObtenerMetodoEntrega(imposicion.MetodoEntrega);
             var cdOrigen = ObtenerCentroDistribucionOrigen()!;
+            var numeroGuia = GenerarNumeroGuia(cdOrigen.Codigo);
 
             string cdDestinoCodigo;
             string agenciaEntregaCodigo = "";
@@ -312,6 +312,23 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
             };
         }
 
+        private static string GenerarNumeroGuia(string codigoOrigen)
+        {
+            var prefijo = $"{codigoOrigen}-";
+
+            var ultimoNumero = GuiaAlmacen.guias
+                .Where(g => g.NumeroGuia.StartsWith(prefijo))
+                .Select(g =>
+                {
+                    var secuencial = g.NumeroGuia[prefijo.Length..];
+                    return int.TryParse(secuencial, out var numero) ? numero : 0;
+                })
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return $"{prefijo}{ultimoNumero + 1:00000000}";
+        }
+
         private static (HojaDeRutaOmnibusEntidad? hojaDeRuta, string error) GenerarHojaDeRutaOmnibus(GuiaEntidad guia)
         {
             if (guia.EstadoActual != EstadoEnum.AdmitidaEnCD)
@@ -332,7 +349,7 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                 CentroDistribucionOrigen = guia.CentroDistribucionOrigen,
                 CentroDistribucionDestino = guia.CentroDistribucionDestino,
                 Estado = EstadoHDROmnibusEnum.Asignada,
-                Guias = new List<long> { guia.NumeroGuia }
+                Guias = new List<string> { guia.NumeroGuia }
             }, "");
         }
 
