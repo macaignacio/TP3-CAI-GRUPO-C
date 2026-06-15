@@ -19,6 +19,18 @@ namespace TP3_CAI_GRUPO_C.Almacenes
         EnTransitoEntregaDomicilio,
         EnTransitoAAgenciaDestino,
         ListaParaEntregarPorAgencia,
-        Entregado
+        Entregado,
+        PendienteSegundoIntentoEntrega,
+        EnTransitoSegundoIntentoEntrega,
+        DevolucionIniciada,
+        ListaParaDespachoDevolucion,
+        EnTransitoDevolucionAOrigen,
+        EnCDOrigenPorDevolucion,
+        EnTransitoDomicilioRemitente,
+        EnTransitoAgenciaOrigen,
+        DisponibleParaRetiroEnAgenciaOrigen,
+        DisponibleParaRetiroEnCDOrigen,
+        DevueltaAlRemitente
+
     }
 }

@@ -7,6 +7,7 @@ namespace TP3_CAI_GRUPO_C.Almacenes
     public enum EstadoHDRFleteroEnum
     {
         Asignada,
-        Cumplida
+        Cumplida,
+        NoCumplida
     }
 }

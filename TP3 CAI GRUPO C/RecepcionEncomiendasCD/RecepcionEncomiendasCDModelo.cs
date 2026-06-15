@@ -59,7 +59,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                         h.CentroDistribucionDestino == CodigoCDActual
                         &&
                         h.Estado ==
-                        EstadoHDROmnibusEnum.EnTransito)
+                        EstadoHDROmnibusEnum.EnTransitoCDDestino)
                     .ToList();
 
                 foreach (var hdr in hdrs)
@@ -141,7 +141,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                     );
                 }
 
-                if (hojaEnSistema.Estado != EstadoHDROmnibusEnum.EnTransito)
+                if (hojaEnSistema.Estado != EstadoHDROmnibusEnum.EnTransitoCDDestino)
                 {
                     return (
                         false,

@@ -206,9 +206,9 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                     .First(h => h.Codigo == hoja.Codigo);
 
                 hojaEnSistema.Estado =
-                    EstadoHDROmnibusEnum.EnTransito;
+                    EstadoHDROmnibusEnum.EnTransitoCDDestino;
 
-                hoja.Estado = EstadoHDROmnibusEnum.EnTransito.ToString();
+                hoja.Estado = EstadoHDROmnibusEnum.EnTransitoCDDestino.ToString();
 
                 var ubicacion = CentroDistribucionAlmacen.cd
                     .FirstOrDefault(c => c.Codigo == hojaEnSistema.CentroDistribucionOrigen)
