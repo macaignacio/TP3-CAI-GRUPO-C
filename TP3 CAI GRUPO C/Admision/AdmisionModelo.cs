@@ -155,6 +155,9 @@ namespace TP3_CAI_GRUPO_C.Admision
             importe += guia.CajasL * ObtenerPrecioBulto("L", cdOrigen.IdLocalidad, cdDestino.IdLocalidad);
             importe += guia.CajasXL * ObtenerPrecioBulto("XL", cdOrigen.IdLocalidad, cdDestino.IdLocalidad);
 
+            if (guia.MetodoRetiro == MetodoRetiroEnum.EnDomicilio)
+                importe += ObtenerPrecioExtra("RetiroDomicilio");
+
             if (guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio)
                 importe += ObtenerPrecioExtra("EntregaDomicilio");
             else if (guia.MetodoEntrega == MetodoEntregaEnum.Agencia)
