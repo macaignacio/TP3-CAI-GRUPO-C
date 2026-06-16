@@ -25,6 +25,9 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
             if (!Empresas.Any(e => e.nombre == empresa))
                 return (false, "Debe seleccionar una empresa de ómnibus válida.");
 
+            if (!EsFechaRecepcionPermitida(fechaSalida))
+                return (false, "Solo se pueden buscar paradas de llegada del dia actual o con hasta 12 horas de demora.");
+
             return (true, "");
         }
 
@@ -71,7 +74,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                     if (fechaHoraDestino == null)
                         continue;
 
-                    if (!CoincideFechaHora(fechaHoraDestino.Value, fechaSalida))
+                    if (!EsParadaRecepcionPermitida(fechaHoraDestino.Value))
                         continue;
 
                     resultado.Add(new HojaDeRuta
@@ -99,13 +102,20 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                 .FirstOrDefault();
         }
 
-        private static bool CoincideFechaHora(DateTime parada, DateTime busqueda)
+        private static bool EsFechaRecepcionPermitida(DateTime busqueda)
         {
-            return parada.Year == busqueda.Year &&
-                   parada.Month == busqueda.Month &&
-                   parada.Day == busqueda.Day &&
-                   parada.Hour == busqueda.Hour &&
-                   parada.Minute == busqueda.Minute;
+            var diferencia = DateTime.Now - busqueda;
+
+            return busqueda.Date == DateTime.Today ||
+                   (diferencia >= TimeSpan.Zero && diferencia <= TimeSpan.FromHours(12));
+        }
+
+        private static bool EsParadaRecepcionPermitida(DateTime parada)
+        {
+            var diferencia = DateTime.Now - parada;
+
+            return parada.Date == DateTime.Today ||
+                   (diferencia >= TimeSpan.Zero && diferencia <= TimeSpan.FromHours(12));
         }
 
         public (bool valido, string error) ValidarConfirmacion(

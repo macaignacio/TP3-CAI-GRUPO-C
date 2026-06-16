@@ -1,4 +1,5 @@
 using TP3_CAI_GRUPO_C.Almacenes;
+using TP3_CAI_GRUPO_C.Auxiliares;
 
 namespace TP3_CAI_GRUPO_C.Admision
 {
@@ -53,11 +54,6 @@ namespace TP3_CAI_GRUPO_C.Admision
             if (cdOrigen.Codigo == cdDestino.Codigo)
                 return new ResultadoAdmision { Valido = false, Error = "No corresponde generar hoja de ruta de omnibus porque el origen y el destino son el mismo centro de distribucion." };
 
-            var servicio = ObtenerServicioConCobertura(cdOrigen.Codigo, cdDestino.Codigo);
-
-            if (servicio == null)
-                return new ResultadoAdmision { Valido = false, Error = "No hay servicios de omnibus con cobertura entre el centro de distribucion origen y destino." };
-
             var cajasModificadas =
                 guia.CajasS != cantidadCajaS ||
                 guia.CajasM != cantidadCajaM ||
@@ -65,6 +61,24 @@ namespace TP3_CAI_GRUPO_C.Admision
                 guia.CajasXL != cantidadCajaXL;
             var centroDistribucionOrigenModificado =
                 guia.CentroDistribucionOrigen != cdOrigen.Codigo;
+
+            var guiaParaPlanificar = new GuiaEntidad
+            {
+                NumeroGuia = guia.NumeroGuia,
+                CentroDistribucionOrigen = cdOrigen.Codigo,
+                CentroDistribucionDestino = guia.CentroDistribucionDestino,
+                CajasS = cantidadCajaS,
+                CajasM = cantidadCajaM,
+                CajasL = cantidadCajaL,
+                CajasXL = cantidadCajaXL
+            };
+
+            var resultadoHojaDeRuta = HojaDeRutaOmnibusPlanificador.ObtenerHojaDeRutaDisponible(
+                guiaParaPlanificar,
+                GenerarCodigoHojaDeRutaOmnibus());
+
+            if (resultadoHojaDeRuta.hojaDeRuta == null)
+                return new ResultadoAdmision { Valido = false, Error = resultadoHojaDeRuta.error };
 
             guia.CajasS = cantidadCajaS;
             guia.CajasM = cantidadCajaM;
@@ -84,17 +98,8 @@ namespace TP3_CAI_GRUPO_C.Admision
                 Ubicacion = cdOrigen.Nombre
             });
 
-            var hojaDeRuta = new HojaDeRutaOmnibusEntidad
-            {
-                Codigo = GenerarCodigoHojaDeRutaOmnibus(),
-                IdentificadorServicio = servicio.IdentificadorServicio,
-                CentroDistribucionOrigen = cdOrigen.Codigo,
-                CentroDistribucionDestino = cdDestino.Codigo,
-                Estado = EstadoHDROmnibusEnum.Asignada,
-                Guias = new List<string> { guia.NumeroGuia }
-            };
-
-            HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(hojaDeRuta);
+            if (resultadoHojaDeRuta.esNueva)
+                HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHojaDeRuta.hojaDeRuta);
 
             GuiaAlmacen.Guardar();
             HojaDeRutaOmnibusAlmacen.Guardar();
@@ -181,33 +186,6 @@ namespace TP3_CAI_GRUPO_C.Admision
             return PreciosExtrasAlmacen.PreciosExtras
                 .First(e => e.Tipo == tipo)
                 .Precio;
-        }
-
-        private static ServicioOmnibusEntidad? ObtenerServicioConCobertura(string centroDistribucionOrigen, string centroDistribucionDestino)
-        {
-            return ServicioOmnibusAlmacen.servicios
-                .Where(s => EmpresaOmnibusAlmacen.empresasOmnibus.Any(e => e.cuitEmpresaOmnibus == s.CuitEmpresaOmnibus))
-                .Where(s => TieneParadasEnOrden(s, centroDistribucionOrigen, centroDistribucionDestino))
-                .OrderBy(s => ObtenerFechaHoraParada(s, centroDistribucionOrigen))
-                .FirstOrDefault();
-        }
-
-        private static bool TieneParadasEnOrden(ServicioOmnibusEntidad servicio, string centroDistribucionOrigen, string centroDistribucionDestino)
-        {
-            var paradaOrigen = ObtenerFechaHoraParada(servicio, centroDistribucionOrigen);
-            var paradaDestino = ObtenerFechaHoraParada(servicio, centroDistribucionDestino);
-
-            return paradaOrigen != null &&
-                   paradaDestino != null &&
-                   paradaOrigen < paradaDestino;
-        }
-
-        private static DateTime? ObtenerFechaHoraParada(ServicioOmnibusEntidad servicio, string centroDistribucion)
-        {
-            return servicio.Parada
-                .Where(p => p.CentroDistribucionParada == centroDistribucion)
-                .Select(p => (DateTime?)p.FechaHoraParada)
-                .FirstOrDefault();
         }
 
         private static string GenerarCodigoHojaDeRutaOmnibus()

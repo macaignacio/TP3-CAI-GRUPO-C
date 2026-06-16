@@ -25,6 +25,9 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
             if (!Empresas.Any(e => e.nombre == empresa))
                 return (false, "Debe seleccionar una empresa de ómnibus válida.");
 
+            if (fechaSalida.Date != DateTime.Today)
+                return (false, "Solo se pueden buscar paradas de salida del dia actual.");
+
             return (true, "");
         }
 
@@ -82,7 +85,7 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                         continue;
                     }
 
-                    if (!CoincideFechaHora(fechaHoraOrigen.Value, fechaSalida))
+                    if (!EsParadaDeHoy(fechaHoraOrigen.Value))
                         continue;
 
                     resultado.Add(new HojaDeRuta
@@ -110,13 +113,9 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                 .FirstOrDefault();
         }
 
-        private static bool CoincideFechaHora(DateTime parada, DateTime busqueda)
+        private static bool EsParadaDeHoy(DateTime parada)
         {
-            return parada.Year == busqueda.Year &&
-                   parada.Month == busqueda.Month &&
-                   parada.Day == busqueda.Day &&
-                   parada.Hour == busqueda.Hour &&
-                   parada.Minute == busqueda.Minute;
+            return parada.Date == DateTime.Today;
         }
         
         public (bool valido, string error)

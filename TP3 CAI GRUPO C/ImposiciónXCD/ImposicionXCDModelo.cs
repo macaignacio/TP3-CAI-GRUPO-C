@@ -1,4 +1,5 @@
-using TP3_CAI_GRUPO_C.Almacenes;
+﻿using TP3_CAI_GRUPO_C.Almacenes;
+using TP3_CAI_GRUPO_C.Auxiliares;
 
 namespace TP3_CAI_GRUPO_C.ImposiciónXCD
 {
@@ -116,7 +117,7 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
         public (bool valido, string error) ValidarDNI(int dni)
         {
             if (dni < 1_000_000 || dni > 99_999_999)
-                return (false, "DNI inválido. Se debe ingresar un número de entre 7 a 8 dígitos.");
+                return (false, "DNI inválido. Se debe ingresar un número de entre 7 a 8 dí­gitos.");
 
             return (true, "");
         }
@@ -134,7 +135,7 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                 return new ResultadoImposicion { Valido = false, Error = "No se encontró el centro de distribución de origen." };
 
             if (string.IsNullOrWhiteSpace(imposicion.NombreDestinatario))
-                return new ResultadoImposicion { Valido = false, Error = "El Nombre y Apellido de Destinatario no puede estar vací­o." };
+                return new ResultadoImposicion { Valido = false, Error = "El Nombre y Apellido de Destinatario no puede estar vacío." };
 
             var resultadoDNI = ValidarDNI(imposicion.DniDestinatario);
             if (!resultadoDNI.valido)
@@ -160,7 +161,7 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                     return new ResultadoImposicion { Valido = false, Error = "El código postal de entrega no corresponde a la localidad seleccionada o no tiene centro de distribución asignado." };
 
                 if (!ValidarDireccion(imposicion.DireccionDomicilio))
-                    return new ResultadoImposicion { Valido = false, Error = "La dirección de entrega no puede estar vací­a." };
+                    return new ResultadoImposicion { Valido = false, Error = "La dirección de entrega no puede estar vacía." };
             }
             else
             {
@@ -196,7 +197,9 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                 return new ResultadoImposicion { Valido = false, Error = resultadoHojaDeRuta.error };
 
             GuiaAlmacen.guias.Add(guia);
-            HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHojaDeRuta.hojaDeRuta);
+
+            if (resultadoHojaDeRuta.esNueva)
+                HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHojaDeRuta.hojaDeRuta);
 
             GuiaAlmacen.Guardar();
             HojaDeRutaOmnibusAlmacen.Guardar();
@@ -329,55 +332,17 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
             return $"{prefijo}{ultimoNumero + 1:00000000}";
         }
 
-        private static (HojaDeRutaOmnibusEntidad? hojaDeRuta, string error) GenerarHojaDeRutaOmnibus(GuiaEntidad guia)
+        private static (HojaDeRutaOmnibusEntidad? hojaDeRuta, bool esNueva, string error) GenerarHojaDeRutaOmnibus(GuiaEntidad guia)
         {
             if (guia.EstadoActual != EstadoEnum.AdmitidaEnCD)
-                return (null, "La guí­a no está en un estado válido para generar una hoja de ruta de ómnibus.");
+                return (null, false, "La guía no está en un estado válido para generar una hoja de ruta de ómnibus.");
 
             if (guia.CentroDistribucionOrigen == guia.CentroDistribucionDestino)
-                return (null, "No corresponde generar hoja de ruta de ómnibus porque el origen y el destino son el mismo centro de distribución.");
+                return (null, false, "No corresponde generar hoja de ruta de ómnibus porque el origen y el destino son el mismo centro de distribución.");
 
-            var servicio = ObtenerServicioConCobertura(guia.CentroDistribucionOrigen, guia.CentroDistribucionDestino);
-
-            if (servicio == null)
-                return (null, "No hay servicios de ómnibus con cobertura entre el centro de distribución origen y destino.");
-
-            return (new HojaDeRutaOmnibusEntidad
-            {
-                Codigo = GenerarCodigoHojaDeRutaOmnibus(),
-                IdentificadorServicio = servicio.IdentificadorServicio,
-                CentroDistribucionOrigen = guia.CentroDistribucionOrigen,
-                CentroDistribucionDestino = guia.CentroDistribucionDestino,
-                Estado = EstadoHDROmnibusEnum.Asignada,
-                Guias = new List<string> { guia.NumeroGuia }
-            }, "");
-        }
-
-        private static ServicioOmnibusEntidad? ObtenerServicioConCobertura(string centroDistribucionOrigen, string centroDistribucionDestino)
-        {
-            return ServicioOmnibusAlmacen.servicios
-                .Where(s => EmpresaOmnibusAlmacen.empresasOmnibus.Any(e => e.cuitEmpresaOmnibus == s.CuitEmpresaOmnibus))
-                .Where(s => TieneParadasEnOrden(s, centroDistribucionOrigen, centroDistribucionDestino))
-                .OrderBy(s => ObtenerFechaHoraParada(s, centroDistribucionOrigen))
-                .FirstOrDefault();
-        }
-
-        private static bool TieneParadasEnOrden(ServicioOmnibusEntidad servicio, string centroDistribucionOrigen, string centroDistribucionDestino)
-        {
-            var paradaOrigen = ObtenerFechaHoraParada(servicio, centroDistribucionOrigen);
-            var paradaDestino = ObtenerFechaHoraParada(servicio, centroDistribucionDestino);
-
-            return paradaOrigen != null &&
-                   paradaDestino != null &&
-                   paradaOrigen < paradaDestino;
-        }
-
-        private static DateTime? ObtenerFechaHoraParada(ServicioOmnibusEntidad servicio, string centroDistribucion)
-        {
-            return servicio.Parada
-                .Where(p => p.CentroDistribucionParada == centroDistribucion)
-                .Select(p => (DateTime?)p.FechaHoraParada)
-                .FirstOrDefault();
+            return HojaDeRutaOmnibusPlanificador.ObtenerHojaDeRutaDisponible(
+                guia,
+                GenerarCodigoHojaDeRutaOmnibus());
         }
 
         private static string GenerarCodigoHojaDeRutaOmnibus()
