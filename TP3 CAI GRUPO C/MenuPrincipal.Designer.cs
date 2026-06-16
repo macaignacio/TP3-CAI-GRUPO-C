@@ -34,6 +34,7 @@ namespace TP3_CAI_GRUPO_C
             AgenciaActualLabel = new Label();
             CDActualLabel = new Label();
             MenuGroupBox = new GroupBox();
+            GestionDevolucionesButton = new Button();
             ResultadosButton = new Button();
             CtaCteClienteButton = new Button();
             FacturarButton = new Button();
@@ -103,6 +104,7 @@ namespace TP3_CAI_GRUPO_C
             // 
             // MenuGroupBox
             // 
+            MenuGroupBox.Controls.Add(GestionDevolucionesButton);
             MenuGroupBox.Controls.Add(ResultadosButton);
             MenuGroupBox.Controls.Add(CtaCteClienteButton);
             MenuGroupBox.Controls.Add(FacturarButton);
@@ -123,6 +125,15 @@ namespace TP3_CAI_GRUPO_C
             MenuGroupBox.TabIndex = 1;
             MenuGroupBox.TabStop = false;
             MenuGroupBox.Text = "Menú principal";
+            // 
+            // GestionDevolucionesButton
+            // 
+            GestionDevolucionesButton.Location = new Point(440, 250);
+            GestionDevolucionesButton.Name = "GestionDevolucionesButton";
+            GestionDevolucionesButton.Size = new Size(180, 35);
+            GestionDevolucionesButton.TabIndex = 14;
+            GestionDevolucionesButton.Text = "Gestión Devoluciones";
+            GestionDevolucionesButton.UseVisualStyleBackColor = true;
             // 
             // ResultadosButton
             // 
@@ -262,6 +273,7 @@ namespace TP3_CAI_GRUPO_C
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menú Principal";
+            Load += MenuPrincipal_Load;
             ContextoGroupBox.ResumeLayout(false);
             ContextoGroupBox.PerformLayout();
             MenuGroupBox.ResumeLayout(false);
@@ -291,5 +303,6 @@ namespace TP3_CAI_GRUPO_C
         private Button FacturarButton;
         private Button CtaCteClienteButton;
         private Button ResultadosButton;
+        private Button GestionDevolucionesButton;
     }
 }

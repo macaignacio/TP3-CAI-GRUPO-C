@@ -11,6 +11,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
 
         private void GestionFleterosAsignacionForm_Load(object sender, EventArgs e)
         {
+            CodigoCDValorLabel.Text = Program.CDActual;
             NombreLabel.Text = "";
             DetalleHDRPendientesGroupBox.Enabled = false;
             ConfirmarAsignacionButton.Enabled = false;

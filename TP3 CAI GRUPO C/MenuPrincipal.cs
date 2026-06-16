@@ -1,6 +1,7 @@
 using TP3_CAI_GRUPO_C.Admision;
 using TP3_CAI_GRUPO_C.Almacenes;
 using TP3_CAI_GRUPO_C.ConsultaCtaCteCliente;
+using TP3_CAI_GRUPO_C.Devolucion;
 using TP3_CAI_GRUPO_C.DespachoEncomiendasCD;
 using TP3_CAI_GRUPO_C.Entrega;
 using TP3_CAI_GRUPO_C.EstadoEncomienda;
@@ -32,22 +33,42 @@ namespace TP3_CAI_GRUPO_C
                 .OrderBy(codigo => codigo)
                 .ToArray());
 
-            comboBox2.Items.AddRange(AgenciaAlmacen.agencia
-                .Select(agencia => agencia.Codigo)
-                .OrderBy(codigo => codigo)
-                .ToArray());
-
             comboBox1.SelectedIndex = -1;
             comboBox2.SelectedIndex = -1;
+            comboBox2.Enabled = false;
         }
 
         private void ConfigurarCombos()
         {
             comboBox1.SelectedIndexChanged += (_, _) =>
+            {
                 Program.CDActual = comboBox1.SelectedItem?.ToString() ?? "";
+                CargarAgenciasPorCD(Program.CDActual);
+            };
 
             comboBox2.SelectedIndexChanged += (_, _) =>
                 Program.AgenciaActual = comboBox2.SelectedItem?.ToString() ?? "";
+        }
+
+        private void CargarAgenciasPorCD(string codigoCD)
+        {
+            comboBox2.Items.Clear();
+            comboBox2.SelectedIndex = -1;
+            Program.AgenciaActual = "";
+
+            if (string.IsNullOrWhiteSpace(codigoCD))
+            {
+                comboBox2.Enabled = false;
+                return;
+            }
+
+            comboBox2.Items.AddRange(AgenciaAlmacen.agencia
+                .Where(agencia => agencia.CentroDistribucion == codigoCD)
+                .Select(agencia => agencia.Codigo)
+                .OrderBy(codigo => codigo)
+                .ToArray());
+
+            comboBox2.Enabled = comboBox2.Items.Count > 0;
         }
 
         private void ConfigurarBotones()
@@ -65,6 +86,7 @@ namespace TP3_CAI_GRUPO_C
             FacturarButton.Click += (_, _) => AbrirFormulario(new FacturarClienteForm());
             CtaCteClienteButton.Click += (_, _) => AbrirFormulario(new ConsultaCtaCteClienteForm());
             ResultadosButton.Click += (_, _) => AbrirFormulario(new ResultadosCostoVentaForm());
+            GestionDevolucionesButton.Click += (_, _) => AbrirFormulario(new GestionDevolucionForm());
         }
 
         private void AbrirFormulario(Form formulario)
@@ -73,6 +95,11 @@ namespace TP3_CAI_GRUPO_C
             {
                 formulario.ShowDialog(this);
             }
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

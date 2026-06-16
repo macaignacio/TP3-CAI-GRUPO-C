@@ -11,6 +11,7 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 
         private void GestionFleterosRendicionForm_Load(object sender, EventArgs e)
         {
+            CodigoCDValorLabel.Text = Program.CDActual;
             traerNombreFleteroLabel.Text = "";
             HdrAsignadasGroupBox.Enabled = false;
             ConfirmarCumplidaButton.Enabled = false;

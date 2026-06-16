@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            CodigoCDTextoLabel = new Label();
+            CodigoCDValorLabel = new Label();
+            CodigoAgenciaTextoLabel = new Label();
+            CodigoAgenciaValorLabel = new Label();
             seleccionarLabel = new Label();
             OperacionGroupBox = new GroupBox();
             ContinuarButton = new Button();
@@ -60,6 +64,42 @@
             IniciarDevGroupBox.SuspendLayout();
             SuspendLayout();
             // 
+            // CodigoCDTextoLabel
+            // 
+            CodigoCDTextoLabel.AutoSize = true;
+            CodigoCDTextoLabel.Location = new Point(20, 13);
+            CodigoCDTextoLabel.Name = "CodigoCDTextoLabel";
+            CodigoCDTextoLabel.Size = new Size(64, 15);
+            CodigoCDTextoLabel.TabIndex = 4;
+            CodigoCDTextoLabel.Text = "Codigo CD:";
+            // 
+            // CodigoCDValorLabel
+            // 
+            CodigoCDValorLabel.AutoSize = true;
+            CodigoCDValorLabel.Location = new Point(90, 13);
+            CodigoCDValorLabel.Name = "CodigoCDValorLabel";
+            CodigoCDValorLabel.Size = new Size(52, 15);
+            CodigoCDValorLabel.TabIndex = 5;
+            CodigoCDValorLabel.Text = "[codigo]";
+            // 
+            // CodigoAgenciaTextoLabel
+            // 
+            CodigoAgenciaTextoLabel.AutoSize = true;
+            CodigoAgenciaTextoLabel.Location = new Point(190, 13);
+            CodigoAgenciaTextoLabel.Name = "CodigoAgenciaTextoLabel";
+            CodigoAgenciaTextoLabel.Size = new Size(92, 15);
+            CodigoAgenciaTextoLabel.TabIndex = 6;
+            CodigoAgenciaTextoLabel.Text = "Codigo Agencia:";
+            // 
+            // CodigoAgenciaValorLabel
+            // 
+            CodigoAgenciaValorLabel.AutoSize = true;
+            CodigoAgenciaValorLabel.Location = new Point(288, 13);
+            CodigoAgenciaValorLabel.Name = "CodigoAgenciaValorLabel";
+            CodigoAgenciaValorLabel.Size = new Size(52, 15);
+            CodigoAgenciaValorLabel.TabIndex = 7;
+            CodigoAgenciaValorLabel.Text = "[codigo]";
+            // 
             // seleccionarLabel
             // 
             seleccionarLabel.AutoSize = true;
@@ -75,7 +115,7 @@
             OperacionGroupBox.Controls.Add(IniciarDevRadioButton);
             OperacionGroupBox.Controls.Add(ConfirmarDevRadioButton);
             OperacionGroupBox.Controls.Add(seleccionarLabel);
-            OperacionGroupBox.Location = new Point(20, 20);
+            OperacionGroupBox.Location = new Point(20, 38);
             OperacionGroupBox.Name = "OperacionGroupBox";
             OperacionGroupBox.Size = new Size(597, 88);
             OperacionGroupBox.TabIndex = 1;
@@ -122,7 +162,7 @@
             ConfirmarDevGroupBox.Controls.Add(BuscarButton);
             ConfirmarDevGroupBox.Controls.Add(CuitTextBox);
             ConfirmarDevGroupBox.Controls.Add(CuitLabel);
-            ConfirmarDevGroupBox.Location = new Point(20, 124);
+            ConfirmarDevGroupBox.Location = new Point(20, 142);
             ConfirmarDevGroupBox.Name = "ConfirmarDevGroupBox";
             ConfirmarDevGroupBox.Size = new Size(1140, 238);
             ConfirmarDevGroupBox.TabIndex = 2;
@@ -209,7 +249,7 @@
             IniciarDevGroupBox.Controls.Add(IniciarDevButton);
             IniciarDevGroupBox.Controls.Add(DatosEncomiendaParaDevListView);
             IniciarDevGroupBox.Controls.Add(InstruccionDevLabel);
-            IniciarDevGroupBox.Location = new Point(20, 378);
+            IniciarDevGroupBox.Location = new Point(20, 396);
             IniciarDevGroupBox.Name = "IniciarDevGroupBox";
             IniciarDevGroupBox.Size = new Size(1140, 238);
             IniciarDevGroupBox.TabIndex = 3;
@@ -286,7 +326,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1180, 636);
+            ClientSize = new Size(1180, 654);
+            Controls.Add(CodigoAgenciaValorLabel);
+            Controls.Add(CodigoAgenciaTextoLabel);
+            Controls.Add(CodigoCDValorLabel);
+            Controls.Add(CodigoCDTextoLabel);
             Controls.Add(IniciarDevGroupBox);
             Controls.Add(ConfirmarDevGroupBox);
             Controls.Add(OperacionGroupBox);
@@ -331,5 +375,9 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
+        private Label CodigoCDTextoLabel;
+        private Label CodigoCDValorLabel;
+        private Label CodigoAgenciaTextoLabel;
+        private Label CodigoAgenciaValorLabel;
     }
 }

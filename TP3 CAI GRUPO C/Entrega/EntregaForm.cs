@@ -19,6 +19,8 @@ namespace TP3_CAI_GRUPO_C.Entrega
 
         private void EntregaForm_Load(object? sender, EventArgs e)
         {
+            CodigoCDValorLabel.Text = Program.CDActual;
+            CodigoAgenciaValorLabel.Text = Program.AgenciaActual;
             traerNombreDestinatarioLabel.Text = "";
             DatosEncomiendaListView.FullRowSelect = true;
             DatosEncomiendaListView.MultiSelect = false;

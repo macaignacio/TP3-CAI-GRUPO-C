@@ -26,9 +26,13 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+            private void InitializeComponent()
         {
             TutasaTituloLabel = new Label();
+            CodigoCDTextoLabel = new Label();
+            CodigoCDValorLabel = new Label();
+            CodigoAgenciaTextoLabel = new Label();
+            CodigoAgenciaValorLabel = new Label();
             VerififcacionDestinatarioGroupBox = new GroupBox();
             BuscarButton = new Button();
             DniTextBox = new TextBox();
@@ -53,6 +57,42 @@
             TutasaTituloLabel.Size = new Size(50, 15);
             TutasaTituloLabel.TabIndex = 0;
             TutasaTituloLabel.Text = "TUTASA";
+            // 
+            // CodigoCDTextoLabel
+            // 
+            CodigoCDTextoLabel.AutoSize = true;
+            CodigoCDTextoLabel.Location = new Point(34, 14);
+            CodigoCDTextoLabel.Name = "CodigoCDTextoLabel";
+            CodigoCDTextoLabel.Size = new Size(64, 15);
+            CodigoCDTextoLabel.TabIndex = 3;
+            CodigoCDTextoLabel.Text = "Codigo CD:";
+            // 
+            // CodigoCDValorLabel
+            // 
+            CodigoCDValorLabel.AutoSize = true;
+            CodigoCDValorLabel.Location = new Point(104, 14);
+            CodigoCDValorLabel.Name = "CodigoCDValorLabel";
+            CodigoCDValorLabel.Size = new Size(52, 15);
+            CodigoCDValorLabel.TabIndex = 4;
+            CodigoCDValorLabel.Text = "[codigo]";
+            // 
+            // CodigoAgenciaTextoLabel
+            // 
+            CodigoAgenciaTextoLabel.AutoSize = true;
+            CodigoAgenciaTextoLabel.Location = new Point(286, 14);
+            CodigoAgenciaTextoLabel.Name = "CodigoAgenciaTextoLabel";
+            CodigoAgenciaTextoLabel.Size = new Size(92, 15);
+            CodigoAgenciaTextoLabel.TabIndex = 5;
+            CodigoAgenciaTextoLabel.Text = "Codigo Agencia:";
+            // 
+            // CodigoAgenciaValorLabel
+            // 
+            CodigoAgenciaValorLabel.AutoSize = true;
+            CodigoAgenciaValorLabel.Location = new Point(384, 14);
+            CodigoAgenciaValorLabel.Name = "CodigoAgenciaValorLabel";
+            CodigoAgenciaValorLabel.Size = new Size(52, 15);
+            CodigoAgenciaValorLabel.TabIndex = 6;
+            CodigoAgenciaValorLabel.Text = "[codigo]";
             // 
             // VerififcacionDestinatarioGroupBox
             // 
@@ -166,6 +206,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(463, 401);
+            Controls.Add(CodigoAgenciaValorLabel);
+            Controls.Add(CodigoAgenciaTextoLabel);
+            Controls.Add(CodigoCDValorLabel);
+            Controls.Add(CodigoCDTextoLabel);
             Controls.Add(DatosEncomiendasGroupBox);
             Controls.Add(VerififcacionDestinatarioGroupBox);
             Controls.Add(TutasaTituloLabel);
@@ -195,5 +239,9 @@
         private Label NombreApellidoLabel;
         private Label traerNombreDestinatarioLabel;
         private Button NuevaConsultabtn;
+        private Label CodigoCDTextoLabel;
+        private Label CodigoCDValorLabel;
+        private Label CodigoAgenciaTextoLabel;
+        private Label CodigoAgenciaValorLabel;
     }
 }

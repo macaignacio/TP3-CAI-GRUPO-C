@@ -19,6 +19,8 @@ namespace TP3_CAI_GRUPO_C.Devolucion
 
         private void GestionDevolucionForm_Load(object sender, EventArgs e)
         {
+            CodigoCDValorLabel.Text = Program.CDActual;
+            CodigoAgenciaValorLabel.Text = Program.AgenciaActual;
             ConfirmarDevGroupBox.Enabled = false;
             IniciarDevGroupBox.Enabled = false;
             RazonSocialClienteLabel.Text = "";

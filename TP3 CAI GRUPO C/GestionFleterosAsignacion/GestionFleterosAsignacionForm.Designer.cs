@@ -42,6 +42,8 @@
             ConfirmarAsignacionButton = new Button();
             button4 = new Button();
             TutasaTituloLabel = new Label();
+            CodigoCDTextoLabel = new Label();
+            CodigoCDValorLabel = new Label();
             SeleccionarFleteroGroupBox.SuspendLayout();
             DetalleHDRPendientesGroupBox.SuspendLayout();
             SuspendLayout();
@@ -170,11 +172,31 @@
             TutasaTituloLabel.TabIndex = 4;
             TutasaTituloLabel.Text = "TUTASA";
             // 
+            // CodigoCDTextoLabel
+            // 
+            CodigoCDTextoLabel.AutoSize = true;
+            CodigoCDTextoLabel.Location = new Point(31, 14);
+            CodigoCDTextoLabel.Name = "CodigoCDTextoLabel";
+            CodigoCDTextoLabel.Size = new Size(64, 15);
+            CodigoCDTextoLabel.TabIndex = 5;
+            CodigoCDTextoLabel.Text = "Codigo CD:";
+            // 
+            // CodigoCDValorLabel
+            // 
+            CodigoCDValorLabel.AutoSize = true;
+            CodigoCDValorLabel.Location = new Point(101, 14);
+            CodigoCDValorLabel.Name = "CodigoCDValorLabel";
+            CodigoCDValorLabel.Size = new Size(52, 15);
+            CodigoCDValorLabel.TabIndex = 6;
+            CodigoCDValorLabel.Text = "[codigo]";
+            // 
             // GestionFleterosAsignacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(576, 404);
+            Controls.Add(CodigoCDValorLabel);
+            Controls.Add(CodigoCDTextoLabel);
             Controls.Add(TutasaTituloLabel);
             Controls.Add(button4);
             Controls.Add(DetalleHDRPendientesGroupBox);
@@ -205,5 +227,7 @@
         private Label NombreTextoLabel;
         private TextBox CuilTextBox;
         private Label NombreLabel;
+        private Label CodigoCDTextoLabel;
+        private Label CodigoCDValorLabel;
     }
 }

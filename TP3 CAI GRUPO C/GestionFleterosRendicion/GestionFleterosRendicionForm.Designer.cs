@@ -26,9 +26,11 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+            private void InitializeComponent()
         {
             TutasaLabel = new Label();
+            CodigoCDTextoLabel = new Label();
+            CodigoCDValorLabel = new Label();
             HdrAsignadasGroupBox = new GroupBox();
             InstruccionesLabel = new Label();
             HdrAsignadasListView = new ListView();
@@ -56,6 +58,26 @@
             TutasaLabel.Size = new Size(97, 32);
             TutasaLabel.TabIndex = 0;
             TutasaLabel.Text = "TUTASA";
+            // 
+            // CodigoCDTextoLabel
+            // 
+            CodigoCDTextoLabel.AutoSize = true;
+            CodigoCDTextoLabel.Location = new Point(24, 19);
+            CodigoCDTextoLabel.Margin = new Padding(6, 0, 6, 0);
+            CodigoCDTextoLabel.Name = "CodigoCDTextoLabel";
+            CodigoCDTextoLabel.Size = new Size(126, 32);
+            CodigoCDTextoLabel.TabIndex = 8;
+            CodigoCDTextoLabel.Text = "Codigo CD:";
+            // 
+            // CodigoCDValorLabel
+            // 
+            CodigoCDValorLabel.AutoSize = true;
+            CodigoCDValorLabel.Location = new Point(166, 19);
+            CodigoCDValorLabel.Margin = new Padding(6, 0, 6, 0);
+            CodigoCDValorLabel.Name = "CodigoCDValorLabel";
+            CodigoCDValorLabel.Size = new Size(101, 32);
+            CodigoCDValorLabel.TabIndex = 9;
+            CodigoCDValorLabel.Text = "[codigo]";
             // 
             // HdrAsignadasGroupBox
             // 
@@ -205,6 +227,8 @@
             Controls.Add(ConfirmarCumplidaButton);
             Controls.Add(ConfirmarNoCumplidaButton);
             Controls.Add(HdrAsignadasGroupBox);
+            Controls.Add(CodigoCDValorLabel);
+            Controls.Add(CodigoCDTextoLabel);
             Controls.Add(TutasaLabel);
             Margin = new Padding(6, 6, 6, 6);
             Name = "GestionFleterosRendicionForm";
@@ -235,5 +259,7 @@
         private Label CuitLabel;
         private Label traerNombreFleteroLabel;
         private Label InstruccionesLabel;
+        private Label CodigoCDTextoLabel;
+        private Label CodigoCDValorLabel;
     }
 }
