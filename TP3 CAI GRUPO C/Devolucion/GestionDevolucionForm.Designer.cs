@@ -34,7 +34,7 @@
             IniciarDevRadioButton = new RadioButton();
             ConfirmarDevRadioButton = new RadioButton();
             ConfirmarDevGroupBox = new GroupBox();
-            button2 = new Button();
+            ConfirmarDevolucionButton = new Button();
             DatosEncomiendaListView = new ListView();
             NumeroGuia = new ColumnHeader();
             Estado = new ColumnHeader();
@@ -90,6 +90,7 @@
             ContinuarButton.TabIndex = 3;
             ContinuarButton.Text = "Continuar";
             ContinuarButton.UseVisualStyleBackColor = true;
+            ContinuarButton.Click += ContinuarButton_Click;
             // 
             // IniciarDevRadioButton
             // 
@@ -115,7 +116,7 @@
             // 
             // ConfirmarDevGroupBox
             // 
-            ConfirmarDevGroupBox.Controls.Add(button2);
+            ConfirmarDevGroupBox.Controls.Add(ConfirmarDevolucionButton);
             ConfirmarDevGroupBox.Controls.Add(DatosEncomiendaListView);
             ConfirmarDevGroupBox.Controls.Add(RazonSocialClienteLabel);
             ConfirmarDevGroupBox.Controls.Add(BuscarButton);
@@ -128,14 +129,15 @@
             ConfirmarDevGroupBox.TabStop = false;
             ConfirmarDevGroupBox.Text = "Confirmar devolución al remitente";
             // 
-            // button2
+            // ConfirmarDevolucionButton
             // 
-            button2.Location = new Point(990, 198);
-            button2.Name = "button2";
-            button2.Size = new Size(132, 25);
-            button2.TabIndex = 4;
-            button2.Text = "Confimar devolución";
-            button2.UseVisualStyleBackColor = true;
+            ConfirmarDevolucionButton.Location = new Point(990, 198);
+            ConfirmarDevolucionButton.Name = "ConfirmarDevolucionButton";
+            ConfirmarDevolucionButton.Size = new Size(132, 25);
+            ConfirmarDevolucionButton.TabIndex = 4;
+            ConfirmarDevolucionButton.Text = "Confirmar devolución";
+            ConfirmarDevolucionButton.UseVisualStyleBackColor = true;
+            ConfirmarDevolucionButton.Click += ConfirmarDevolucionButton_Click;
             // 
             // DatosEncomiendaListView
             // 
@@ -184,6 +186,7 @@
             BuscarButton.TabIndex = 8;
             BuscarButton.Text = "Buscar";
             BuscarButton.UseVisualStyleBackColor = true;
+            BuscarButton.Click += BuscarButton_Click;
             // 
             // CuitTextBox
             // 
@@ -221,6 +224,7 @@
             IniciarDevButton.TabIndex = 10;
             IniciarDevButton.Text = "Iniciar devolución";
             IniciarDevButton.UseVisualStyleBackColor = true;
+            IniciarDevButton.Click += IniciarDevButton_Click;
             // 
             // DatosEncomiendaParaDevListView
             // 
@@ -288,6 +292,7 @@
             Controls.Add(OperacionGroupBox);
             Name = "GestionDevolucionForm";
             Text = "Gestión de devoluciones";
+            Load += GestionDevolucionForm_Load;
             OperacionGroupBox.ResumeLayout(false);
             OperacionGroupBox.PerformLayout();
             ConfirmarDevGroupBox.ResumeLayout(false);
@@ -305,7 +310,7 @@
         private RadioButton IniciarDevRadioButton;
         private RadioButton ConfirmarDevRadioButton;
         private GroupBox ConfirmarDevGroupBox;
-        private Button button2;
+        private Button ConfirmarDevolucionButton;
         private ListView DatosEncomiendaListView;
         private ColumnHeader NumeroGuia;
         private ColumnHeader Estado;
