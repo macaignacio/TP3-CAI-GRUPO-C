@@ -180,7 +180,8 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                         );
                     }
 
-                    if (guia.EstadoActual != EstadoEnum.EnTransitoACDDestino)
+                    if (guia.EstadoActual != EstadoEnum.EnTransitoACDDestino &&
+                        guia.EstadoActual != EstadoEnum.EnTransitoDevolucionAOrigen)
                     {
                         return (
                             false,
@@ -188,8 +189,16 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                         );
                     }
 
-                    if (guia.CentroDistribucionOrigen != hojaEnSistema.CentroDistribucionOrigen ||
-                        guia.CentroDistribucionDestino != hojaEnSistema.CentroDistribucionDestino)
+                    var esDevolucion = guia.EstadoActual == EstadoEnum.EnTransitoDevolucionAOrigen;
+                    var origenGuia = esDevolucion
+                        ? guia.CentroDistribucionOrigenDevolucion
+                        : guia.CentroDistribucionOrigen;
+                    var destinoGuia = esDevolucion
+                        ? guia.CentroDistribucionDestinoDevolucion
+                        : guia.CentroDistribucionDestino;
+
+                    if (origenGuia != hojaEnSistema.CentroDistribucionOrigen ||
+                        destinoGuia != hojaEnSistema.CentroDistribucionDestino)
                     {
                         return (
                             false,
@@ -197,7 +206,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                         );
                     }
 
-                    if (RequiereDistribucionFletero(guia) &&
+                    if (!esDevolucion && RequiereDistribucionFletero(guia) &&
                         ExisteHojaDeRutaDistribucion(guia.NumeroGuia))
                     {
                         return (
@@ -206,12 +215,21 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                         );
                     }
 
-                    if (RequiereDistribucionFletero(guia) &&
+                    if (!esDevolucion && RequiereDistribucionFletero(guia) &&
                         ObtenerFleteroConMenorCarga(hojaEnSistema.CentroDistribucionDestino) == null)
                     {
                         return (
                             false,
                             $"No hay fleteros con cobertura para distribuir la Guía {numeroGuia}."
+                        );
+                    }
+
+                    if (esDevolucion && RequiereFleteroDevolucion(guia) &&
+                        ObtenerFleteroConMenorCarga(hojaEnSistema.CentroDistribucionDestino) == null)
+                    {
+                        return (
+                            false,
+                            $"No hay fleteros con cobertura para distribuir la devolución de la Guía {numeroGuia}."
                         );
                     }
                 }
@@ -239,6 +257,38 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                         .First(g => g.NumeroGuia == numeroGuia);
 
                     var ahora = DateTime.Now;
+                    var esDevolucion = guia.EstadoActual == EstadoEnum.EnTransitoDevolucionAOrigen;
+
+                    if (esDevolucion)
+                    {
+                        guia.EstadoActual = EstadoEnum.EnCDOrigenPorDevolucion;
+                        guia.Historial ??= new List<MovimientoGuia>();
+                        guia.Historial.Add(new MovimientoGuia
+                        {
+                            Estado = EstadoEnum.EnCDOrigenPorDevolucion,
+                            UltimaActualizacion = ahora,
+                            Ubicacion = ubicacion
+                        });
+
+                        if (RequiereFleteroDevolucion(guia))
+                        {
+                            HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(
+                                GenerarHojaDeRutaDistribucionDevolucion(guia));
+                        }
+                        else if (guia.MetodoRetiro == MetodoRetiroEnum.CentroDeDistribución)
+                        {
+                            guia.EstadoActual = EstadoEnum.DisponibleParaRetiroEnCDOrigen;
+                            guia.Historial.Add(new MovimientoGuia
+                            {
+                                Estado = EstadoEnum.DisponibleParaRetiroEnCDOrigen,
+                                UltimaActualizacion = ahora,
+                                Ubicacion = ubicacion
+                            });
+                        }
+
+                        continue;
+                    }
+
                     guia.EstadoActual = EstadoEnum.EnCDDestino;
                     guia.Historial ??= new List<MovimientoGuia>();
                     guia.Historial.Add(new MovimientoGuia
@@ -279,6 +329,28 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
         {
             return guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio ||
                    guia.MetodoEntrega == MetodoEntregaEnum.Agencia;
+        }
+
+        private static bool RequiereFleteroDevolucion(GuiaEntidad guia)
+        {
+            return guia.MetodoRetiro == MetodoRetiroEnum.EnDomicilio ||
+                   guia.MetodoRetiro == MetodoRetiroEnum.Agencia;
+        }
+
+        private static HojaDeRutaFleteroEntidad GenerarHojaDeRutaDistribucionDevolucion(GuiaEntidad guia)
+        {
+            var fletero = ObtenerFleteroConMenorCarga(
+                guia.CentroDistribucionDestinoDevolucion)!;
+
+            return new HojaDeRutaFleteroEntidad
+            {
+                Codigo = GenerarCodigoHojaDeRutaDistribucion(),
+                CentroDistribucion = guia.CentroDistribucionDestinoDevolucion,
+                CuitCuilFletero = fletero.CuitCuilFletero,
+                TipoHDR = TipoHDRFleteroEnum.Entrega,
+                Estado = EstadoHDRFleteroEnum.Asignada,
+                Guias = new List<string> { guia.NumeroGuia }
+            };
         }
 
         private static bool ExisteHojaDeRutaDistribucion(string numeroGuia)

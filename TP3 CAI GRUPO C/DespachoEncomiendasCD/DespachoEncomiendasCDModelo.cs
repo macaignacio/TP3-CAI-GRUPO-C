@@ -178,16 +178,24 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                         );
                     }
 
-                    if (guia.EstadoActual != EstadoEnum.AdmitidaEnCD)
+                    if (guia.EstadoActual != EstadoEnum.AdmitidaEnCD &&
+                        guia.EstadoActual != EstadoEnum.ListaParaDespachoDevolucion)
                     {
                         return (
                             false,
-                            $"La Guía {numeroGuia} no está admitida en el centro de distribución."
+                            $"La Guía {numeroGuia} no está en un estado válido para despacho."
                         );
                     }
 
-                    if (guia.CentroDistribucionOrigen != hojaEnSistema.CentroDistribucionOrigen ||
-                        guia.CentroDistribucionDestino != hojaEnSistema.CentroDistribucionDestino)
+                    var origenGuia = guia.EstadoActual == EstadoEnum.ListaParaDespachoDevolucion
+                        ? guia.CentroDistribucionOrigenDevolucion
+                        : guia.CentroDistribucionOrigen;
+                    var destinoGuia = guia.EstadoActual == EstadoEnum.ListaParaDespachoDevolucion
+                        ? guia.CentroDistribucionDestinoDevolucion
+                        : guia.CentroDistribucionDestino;
+
+                    if (origenGuia != hojaEnSistema.CentroDistribucionOrigen ||
+                        destinoGuia != hojaEnSistema.CentroDistribucionDestino)
                     {
                         return (
                             false,
@@ -218,11 +226,15 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
                     var guia = GuiaAlmacen.guias
                         .First(g => g.NumeroGuia == numeroGuia);
 
-                    guia.EstadoActual = EstadoEnum.EnTransitoACDDestino;
+                    var nuevoEstado = guia.EstadoActual == EstadoEnum.ListaParaDespachoDevolucion
+                        ? EstadoEnum.EnTransitoDevolucionAOrigen
+                        : EstadoEnum.EnTransitoACDDestino;
+
+                    guia.EstadoActual = nuevoEstado;
                     guia.Historial ??= new List<MovimientoGuia>();
                     guia.Historial.Add(new MovimientoGuia
                     {
-                        Estado = EstadoEnum.EnTransitoACDDestino,
+                        Estado = nuevoEstado,
                         UltimaActualizacion = DateTime.Now,
                         Ubicacion = ubicacion
                     });

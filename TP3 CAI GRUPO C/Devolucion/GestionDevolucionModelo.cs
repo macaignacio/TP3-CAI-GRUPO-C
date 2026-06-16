@@ -62,10 +62,41 @@ namespace TP3_CAI_GRUPO_C.Devolucion
             });
             GuiaAlmacen.Guardar();
 
+            GenerarMovimientoCuentaCorrienteClienteDevolucion(guia);
+
             if (retiroAgencia)
                 GenerarMovimientoCuentaCorrienteAgencia(guia);
 
             return (true, "");
+        }
+
+        private static void GenerarMovimientoCuentaCorrienteClienteDevolucion(GuiaEntidad guia)
+        {
+            var importe = guia.Importe;
+            var saldoAnterior = ObtenerSaldoCuentaCorrienteCliente(guia.CuitCliente);
+
+            var movimiento = new CuentaCorrienteClienteEntidad
+            {
+                Cuit = guia.CuitCliente,
+                TipoComprobante = "Devolucion",
+                Fecha = DateTime.Now,
+                Comprobante = guia.NumeroGuia,
+                Debe = importe,
+                Haber = 0,
+                Saldo = saldoAnterior + importe
+            };
+
+            CuentaCorrienteClienteAlmacen.ctaCteCliente.Add(movimiento);
+            CuentaCorrienteClienteAlmacen.Guardar();
+        }
+
+        private static decimal ObtenerSaldoCuentaCorrienteCliente(long cuit)
+        {
+            return CuentaCorrienteClienteAlmacen.ctaCteCliente
+                .Where(c => c.Cuit == cuit)
+                .OrderBy(c => c.Fecha)
+                .LastOrDefault()
+                ?.Saldo ?? 0;
         }
 
         public List<GuiaDevolucionIniciar> ObtenerGuiasParaIniciar()
