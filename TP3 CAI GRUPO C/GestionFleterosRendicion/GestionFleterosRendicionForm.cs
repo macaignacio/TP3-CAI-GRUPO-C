@@ -13,7 +13,8 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
         {
             traerNombreFleteroLabel.Text = "";
             HdrAsignadasGroupBox.Enabled = false;
-            ConfirmarButton.Enabled = false;
+            ConfirmarCumplidaButton.Enabled = false;
+            ConfirmarNoCumplidaButton.Enabled = false;
 
             HdrAsignadasListView.CheckBoxes = true;
             HdrAsignadasListView.FullRowSelect = true;
@@ -35,7 +36,8 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
                 traerNombreFleteroLabel.Text = "";
                 HdrAsignadasListView.Items.Clear();
                 HdrAsignadasGroupBox.Enabled = false;
-                ConfirmarButton.Enabled = false;
+                ConfirmarCumplidaButton.Enabled = false;
+                ConfirmarNoCumplidaButton.Enabled = false;
                 MessageBox.Show(resultado.error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -43,14 +45,25 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             traerNombreFleteroLabel.Text = resultado.fletero.NombreCompleto;
             HdrAsignadasGroupBox.Enabled = true;
             CargarHojasDeRuta(resultado.fletero.HojasDeRuta);
-            ConfirmarButton.Enabled = false;
+            ConfirmarCumplidaButton.Enabled = false;
+            ConfirmarNoCumplidaButton.Enabled = false;
         }
 
-        private void ConfirmarButton_Click(object sender, EventArgs e)
+        private void ConfirmarCumplidaButton_Click(object sender, EventArgs e)
+        {
+            ConfirmarRendicion(cumplida: true);
+        }
+
+        private void ConfirmarNoCumplidaButton_Click(object sender, EventArgs e)
+        {
+            ConfirmarRendicion(cumplida: false);
+        }
+
+        private void ConfirmarRendicion(bool cumplida)
         {
             if (HdrAsignadasListView.CheckedItems.Count == 0)
             {
-                MessageBox.Show("Debe marcar al menos una hoja de ruta cumplida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe marcar al menos una hoja de ruta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -60,8 +73,10 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
                 return;
             }
 
-            var codigosCumplidos = ObtenerCodigosCumplidos();
-            var resultado = modelo.ConfirmarRendicion(cuitCuil, codigosCumplidos);
+            var codigosSeleccionados = ObtenerCodigosSeleccionados();
+            var resultado = cumplida
+                ? modelo.ConfirmarRendicionCumplida(cuitCuil, codigosSeleccionados)
+                : modelo.ConfirmarRendicionNoCumplida(cuitCuil, codigosSeleccionados);
 
             if (!resultado.Valido)
             {
@@ -77,21 +92,23 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             LimpiarFormulario();
         }
 
-        private List<string> ObtenerCodigosCumplidos()
+        private List<string> ObtenerCodigosSeleccionados()
         {
-            var codigosCumplidos = new List<string>();
+            var codigos = new List<string>();
 
             foreach (ListViewItem item in HdrAsignadasListView.CheckedItems)
             {
-                codigosCumplidos.Add(item.Text);
+                codigos.Add(item.Text);
             }
 
-            return codigosCumplidos;
+            return codigos;
         }
 
         private void HdrAsignadasListView_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            ConfirmarButton.Enabled = HdrAsignadasListView.CheckedItems.Count > 0;
+            var hayChequeados = HdrAsignadasListView.CheckedItems.Count > 0;
+            ConfirmarCumplidaButton.Enabled = hayChequeados;
+            ConfirmarNoCumplidaButton.Enabled = hayChequeados;
         }
 
         private void CargarHojasDeRuta(List<HojaDeRuta> hojasDeRuta)
@@ -114,7 +131,8 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             traerNombreFleteroLabel.Text = "";
             HdrAsignadasListView.Items.Clear();
             HdrAsignadasGroupBox.Enabled = false;
-            ConfirmarButton.Enabled = false;
+            ConfirmarCumplidaButton.Enabled = false;
+            ConfirmarNoCumplidaButton.Enabled = false;
         }
     }
 }

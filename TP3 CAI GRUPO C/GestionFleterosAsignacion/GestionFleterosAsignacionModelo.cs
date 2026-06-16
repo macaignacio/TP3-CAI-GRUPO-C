@@ -70,12 +70,23 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
             if (tipoHDR == TipoHDRFleteroEnum.Retiro)
             {
                 return guia.EstadoActual == EstadoEnum.ImpuestaTelefonicamente ||
-                       guia.EstadoActual == EstadoEnum.ImpuestaEnAgencia;
+                       guia.EstadoActual == EstadoEnum.ImpuestaEnAgencia ||
+                       guia.EstadoActual == EstadoEnum.DevolucionIniciada;
             }
 
-            return guia.EstadoActual == EstadoEnum.EnCDDestino &&
-                   (guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio ||
-                    guia.MetodoEntrega == MetodoEntregaEnum.Agencia);
+            if (guia.EstadoActual == EstadoEnum.EnCDDestino &&
+                (guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio ||
+                 guia.MetodoEntrega == MetodoEntregaEnum.Agencia))
+                return true;
+
+            if (guia.EstadoActual == EstadoEnum.PendienteSegundoIntentoEntrega &&
+                guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio)
+                return true;
+
+            if (guia.EstadoActual == EstadoEnum.EnCDOrigenPorDevolucion)
+                return true;
+
+            return false;
         }
 
         public (Fletero? fletero, string error) BuscarFletero(long cuitCuil)
@@ -192,6 +203,20 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosAsignacion
                 {
                     EstadoEnum.ImpuestaTelefonicamente => EstadoEnum.RetiroDomicilioEnCurso,
                     EstadoEnum.ImpuestaEnAgencia => EstadoEnum.RetiroAgenciaEnCurso,
+                    EstadoEnum.DevolucionIniciada => EstadoEnum.RetiroDevolucionAgenciaEnCurso,
+                    _ => guia.EstadoActual
+                };
+            }
+
+            if (guia.EstadoActual == EstadoEnum.PendienteSegundoIntentoEntrega)
+                return EstadoEnum.EnTransitoSegundoIntentoEntrega;
+
+            if (guia.EstadoActual == EstadoEnum.EnCDOrigenPorDevolucion)
+            {
+                return guia.MetodoRetiro switch
+                {
+                    MetodoRetiroEnum.EnDomicilio => EstadoEnum.EnTransitoDomicilioRemitente,
+                    MetodoRetiroEnum.Agencia => EstadoEnum.EnTransitoAgenciaOrigen,
                     _ => guia.EstadoActual
                 };
             }
