@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TP3_CAI_GRUPO_C.Almacenes;
+using TP3_CAI_GRUPO_C.Auxiliares;
 
 namespace TP3_CAI_GRUPO_C.Devolucion
 {
@@ -149,11 +150,14 @@ namespace TP3_CAI_GRUPO_C.Devolucion
 
             if (guia.EstadoActual == EstadoEnum.ListaParaEntregarPorAgencia)
             {
-                var resultadoHDR = GenerarHojaDeRutaRetiroDevolucion(guia);
+                var resultadoHDR = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaRetiroDisponible(
+                    guia,
+                    GenerarCodigoHojaDeRutaRetiro());
                 if (resultadoHDR.hojaDeRuta == null)
-                    return (false, resultadoHDR.error);
+                    return (false, "No hay fleteros con cobertura para el centro de distribución.");
 
-                HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHDR.hojaDeRuta);
+                if (resultadoHDR.esNueva)
+                    HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHDR.hojaDeRuta);
 
                 guia.EstadoActual = EstadoEnum.DevolucionIniciada;
                 guia.Historial.Add(new MovimientoGuia

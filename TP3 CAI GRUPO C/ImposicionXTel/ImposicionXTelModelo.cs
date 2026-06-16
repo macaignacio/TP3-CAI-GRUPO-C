@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TP3_CAI_GRUPO_C.Almacenes;
+using TP3_CAI_GRUPO_C.Auxiliares;
 
 namespace TP3_CAI_GRUPO_C.ImposicionXTel
 {
@@ -212,13 +213,17 @@ namespace TP3_CAI_GRUPO_C.ImposicionXTel
                 return new ResultadoImposicion { Valido = false, Error = "El centro de distribucion actual no corresponde a la localidad y codigo postal de retiro." };
 
             var guia = GenerarGuía(imposicion);
-            var resultadoHojaDeRuta = GenerarHojaDeRutaRetiro(guia);
+            var resultadoHojaDeRuta = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaRetiroDisponible(
+                guia,
+                GenerarCodigoHojaDeRutaRetiro());
 
             if (resultadoHojaDeRuta.hojaDeRuta == null)
-                return new ResultadoImposicion { Valido = false, Error = resultadoHojaDeRuta.error };
+                return new ResultadoImposicion { Valido = false, Error = "No hay fleteros con cobertura para el centro de distribuciÃ³n de origen." };
 
             GuiaAlmacen.guias.Add(guia);
-            HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRuta);
+
+            if (resultadoHojaDeRuta.esNueva)
+                HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRuta);
 
             GuiaAlmacen.Guardar();
             HojaDeRutaFleteroAlmacen.Guardar();

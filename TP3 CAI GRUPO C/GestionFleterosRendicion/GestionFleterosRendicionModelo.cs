@@ -1,4 +1,5 @@
 using TP3_CAI_GRUPO_C.Almacenes;
+using TP3_CAI_GRUPO_C.Auxiliares;
 
 namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 {
@@ -505,25 +506,12 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 
         private static void GenerarHojaDeRutaSegundoIntento(GuiaEntidad guia)
         {
-            var centroDistribucion = CentroDistribucionAlmacen.cd
-                .FirstOrDefault(c => c.Codigo == ObtenerCodigoCentroDistribucionDestino(guia));
+            var resultadoHojaDeRuta = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaEntregaDisponible(
+                guia,
+                GenerarCodigoHojaDeRutaDistribucion());
 
-            if (centroDistribucion == null) return;
-
-            var fletero = ObtenerFleteroConMenorCargaEntrega(centroDistribucion);
-            if (fletero == null) return;
-
-            var hdr = new HojaDeRutaFleteroEntidad
-            {
-                Codigo = GenerarCodigoHojaDeRutaDistribucion(),
-                CentroDistribucion = centroDistribucion.Codigo,
-                CuitCuilFletero = fletero.CuitCuilFletero,
-                TipoHDR = TipoHDRFleteroEnum.Entrega,
-                Estado = EstadoHDRFleteroEnum.Asignada,
-                Guias = new List<string> { guia.NumeroGuia }
-            };
-
-            HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(hdr);
+            if (resultadoHojaDeRuta.esNueva)
+                HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRuta!);
         }
 
         private static void GenerarHojaDeRutaOmnibusDevolucion(GuiaEntidad guia)

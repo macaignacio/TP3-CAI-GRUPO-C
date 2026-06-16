@@ -51,9 +51,6 @@ namespace TP3_CAI_GRUPO_C.Admision
             if (cdDestino == null)
                 return new ResultadoAdmision { Valido = false, Error = "No se encontro el centro de distribucion de destino de la guia." };
 
-            if (cdOrigen.Codigo == cdDestino.Codigo)
-                return new ResultadoAdmision { Valido = false, Error = "No corresponde generar hoja de ruta de omnibus porque el origen y el destino son el mismo centro de distribucion." };
-
             var cajasModificadas =
                 guia.CajasS != cantidadCajaS ||
                 guia.CajasM != cantidadCajaM ||
@@ -67,17 +64,22 @@ namespace TP3_CAI_GRUPO_C.Admision
                 NumeroGuia = guia.NumeroGuia,
                 CentroDistribucionOrigen = cdOrigen.Codigo,
                 CentroDistribucionDestino = guia.CentroDistribucionDestino,
+                MetodoEntrega = guia.MetodoEntrega,
+                AgenciaEntregaCodigo = guia.AgenciaEntregaCodigo,
+                CentroDistribucionEntregaCodigo = guia.CentroDistribucionEntregaCodigo,
+                DireccionEntrega = guia.DireccionEntrega,
+                CodPostalEntrega = guia.CodPostalEntrega,
                 CajasS = cantidadCajaS,
                 CajasM = cantidadCajaM,
                 CajasL = cantidadCajaL,
                 CajasXL = cantidadCajaXL
             };
 
-            var resultadoHojaDeRuta = HojaDeRutaOmnibusPlanificador.ObtenerHojaDeRutaDisponible(
+            var resultadoHojaDeRuta = PlanificarHojaDeRutaPosterior(
                 guiaParaPlanificar,
-                GenerarCodigoHojaDeRutaOmnibus());
+                guia.MetodoEntrega);
 
-            if (resultadoHojaDeRuta.hojaDeRuta == null)
+            if (!resultadoHojaDeRuta.valido)
                 return new ResultadoAdmision { Valido = false, Error = resultadoHojaDeRuta.error };
 
             guia.CajasS = cantidadCajaS;
@@ -89,20 +91,24 @@ namespace TP3_CAI_GRUPO_C.Admision
             if (cajasModificadas || centroDistribucionOrigenModificado)
                 guia.Importe = CalcularImporte(guia, cdOrigen, cdDestino);
 
-            guia.EstadoActual = EstadoEnum.AdmitidaEnCD;
+            guia.EstadoActual = resultadoHojaDeRuta.estadoGuia;
             guia.Historial ??= new List<MovimientoGuia>();
             guia.Historial.Add(new MovimientoGuia
             {
-                Estado = EstadoEnum.AdmitidaEnCD,
+                Estado = resultadoHojaDeRuta.estadoGuia,
                 UltimaActualizacion = DateTime.Now,
                 Ubicacion = cdOrigen.Nombre
             });
 
-            if (resultadoHojaDeRuta.esNueva)
-                HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHojaDeRuta.hojaDeRuta);
+            if (resultadoHojaDeRuta.hojaDeRutaOmnibusNueva)
+                HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHojaDeRuta.hojaDeRutaOmnibus!);
+
+            if (resultadoHojaDeRuta.hojaDeRutaFleteroNueva)
+                HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRutaFletero!);
 
             GuiaAlmacen.Guardar();
             HojaDeRutaOmnibusAlmacen.Guardar();
+            HojaDeRutaFleteroAlmacen.Guardar();
 
             return new ResultadoAdmision
             {
@@ -128,6 +134,51 @@ namespace TP3_CAI_GRUPO_C.Admision
                 return (false, "La cantidad de cajas supera el maximo permitido.");
 
             return (true, "");
+        }
+
+        private static (
+            bool valido,
+            string error,
+            EstadoEnum estadoGuia,
+            HojaDeRutaOmnibusEntidad? hojaDeRutaOmnibus,
+            bool hojaDeRutaOmnibusNueva,
+            HojaDeRutaFleteroEntidad? hojaDeRutaFletero,
+            bool hojaDeRutaFleteroNueva) PlanificarHojaDeRutaPosterior(
+                GuiaEntidad guia,
+                MetodoEntregaEnum metodoEntrega)
+        {
+            if (guia.CentroDistribucionOrigen != guia.CentroDistribucionDestino)
+            {
+                var resultadoOmnibus = HojaDeRutaOmnibusPlanificador.ObtenerHojaDeRutaDisponible(
+                    guia,
+                    GenerarCodigoHojaDeRutaOmnibus());
+
+                return (
+                    resultadoOmnibus.hojaDeRuta != null,
+                    resultadoOmnibus.error,
+                    EstadoEnum.AdmitidaEnCD,
+                    resultadoOmnibus.hojaDeRuta,
+                    resultadoOmnibus.esNueva,
+                    null,
+                    false);
+            }
+
+            if (metodoEntrega == MetodoEntregaEnum.CentroDeDistribucion)
+                return (true, "", EstadoEnum.ListaParaEntregarPorCD, null, false, null, false);
+
+            guia.EstadoActual = EstadoEnum.EnCDDestino;
+            var resultadoFletero = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaEntregaDisponible(
+                guia,
+                GenerarCodigoHojaDeRutaDistribucion());
+
+            return (
+                resultadoFletero.hojaDeRuta != null,
+                resultadoFletero.hojaDeRuta == null ? "No hay fleteros con cobertura para el centro de distribucion destino." : "",
+                EstadoEnum.EnCDDestino,
+                null,
+                false,
+                resultadoFletero.hojaDeRuta,
+                resultadoFletero.esNueva);
         }
 
         private static bool PuedeAdmitirse(EstadoEnum estado)
@@ -194,6 +245,20 @@ namespace TP3_CAI_GRUPO_C.Admision
             var prefijo = $"HDR-OMN-{periodo}-";
 
             var ultimoNumero = HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus
+                .Where(h => h.Codigo.StartsWith(prefijo))
+                .Select(h => int.TryParse(h.Codigo.Substring(prefijo.Length), out var numero) ? numero : 0)
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return $"{prefijo}{ultimoNumero + 1:0000}";
+        }
+
+        private static string GenerarCodigoHojaDeRutaDistribucion()
+        {
+            var periodo = DateTime.Now.ToString("yyyyMM");
+            var prefijo = $"HDR-DIS-{periodo}-";
+
+            var ultimoNumero = HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros
                 .Where(h => h.Codigo.StartsWith(prefijo))
                 .Select(h => int.TryParse(h.Codigo.Substring(prefijo.Length), out var numero) ? numero : 0)
                 .DefaultIfEmpty(0)

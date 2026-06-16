@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TP3_CAI_GRUPO_C.Almacenes;
+using TP3_CAI_GRUPO_C.Auxiliares;
 
 namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 {
@@ -216,6 +217,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                     }
 
                     if (!esDevolucion && RequiereDistribucionFletero(guia) &&
+                        !HojaDeRutaFleteroPlanificador.ExisteHojaDeRutaEntregaDisponible(guia) &&
                         ObtenerFleteroConMenorCarga(hojaEnSistema.CentroDistribucionDestino) == null)
                     {
                         return (
@@ -225,6 +227,7 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
                     }
 
                     if (esDevolucion && RequiereFleteroDevolucion(guia) &&
+                        !HojaDeRutaFleteroPlanificador.ExisteHojaDeRutaEntregaDisponible(guia) &&
                         ObtenerFleteroConMenorCarga(hojaEnSistema.CentroDistribucionDestino) == null)
                     {
                         return (
@@ -272,8 +275,12 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 
                         if (RequiereFleteroDevolucion(guia))
                         {
-                            HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(
-                                GenerarHojaDeRutaDistribucionDevolucion(guia));
+                            var resultadoHojaDeRuta = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaEntregaDisponible(
+                                guia,
+                                GenerarCodigoHojaDeRutaDistribucion());
+
+                            if (resultadoHojaDeRuta.esNueva)
+                                HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRuta!);
                         }
                         else if (guia.MetodoRetiro == MetodoRetiroEnum.CentroDeDistribución)
                         {
@@ -300,8 +307,12 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 
                     if (RequiereDistribucionFletero(guia))
                     {
-                        HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(
-                            GenerarHojaDeRutaDistribucion(guia));
+                        var resultadoHojaDeRuta = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaEntregaDisponible(
+                            guia,
+                            GenerarCodigoHojaDeRutaDistribucion());
+
+                        if (resultadoHojaDeRuta.esNueva)
+                            HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRuta!);
                     }
                     else if (guia.MetodoEntrega ==
                              MetodoEntregaEnum.CentroDeDistribucion)

@@ -1,4 +1,5 @@
 using TP3_CAI_GRUPO_C.Almacenes;
+using TP3_CAI_GRUPO_C.Auxiliares;
 
 namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
 {
@@ -130,10 +131,15 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
             if (resultadoCliente.cliente == null)
                 return new ResultadoImposicion { Valido = false, Error = resultadoCliente.error };
 
-            if (ObtenerAgenciaOrigen() == null)
+            var agenciaOrigen = ObtenerAgenciaOrigen();
+            if (agenciaOrigen == null)
                 return new ResultadoImposicion { Valido = false, Error = "No se encontró la agencia de origen." };
 
-            if (ObtenerCentroDistribucionOrigen() == null)
+            var cdOrigen = ObtenerCentroDistribucionOrigen();
+            if (cdOrigen == null)
+                return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar un centro de distribucion actual valido." };
+
+            if (agenciaOrigen.CentroDistribucion != cdOrigen.Codigo)
                 return new ResultadoImposicion { Valido = false, Error = "Debe seleccionar un centro de distribucion actual valido." };
 
             if (string.IsNullOrWhiteSpace(imposicion.NombreDestinatario))
@@ -193,15 +199,19 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
                 return new ResultadoImposicion { Valido = false, Error = resultadoCajas.error };
 
             var guia = GenerarGuia(imposicion);
-            var resultadoHojaDeRuta = GenerarHojaDeRutaRetiro(guia);
+            var resultadoHojaDeRuta = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaRetiroDisponible(
+                guia,
+                GenerarCodigoHojaDeRutaRetiro());
 
             if (resultadoHojaDeRuta.hojaDeRuta == null)
-                return new ResultadoImposicion { Valido = false, Error = resultadoHojaDeRuta.error };
+                return new ResultadoImposicion { Valido = false, Error = "No hay fleteros con cobertura para el centro de distribuciÃ³n de origen." };
 
             var movimientoCuentaCorriente = GenerarMovimientoCuentaCorrienteAgencia(imposicion, guia);
 
             GuiaAlmacen.guias.Add(guia);
-            HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRuta);
+
+            if (resultadoHojaDeRuta.esNueva)
+                HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRuta);
             CuentaCorrienteAgenciaAlmacen.ctaCteAgencia.Add(movimientoCuentaCorriente);
 
             GuiaAlmacen.Guardar();

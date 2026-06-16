@@ -191,18 +191,22 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
                 return new ResultadoImposicion { Valido = false, Error = resultadoCajas.error };
 
             var guia = GenerarGuia(imposicion);
-            var resultadoHojaDeRuta = GenerarHojaDeRutaOmnibus(guia);
+            var resultadoHojaDeRuta = PlanificarHojaDeRutaPosterior(guia);
 
-            if (resultadoHojaDeRuta.hojaDeRuta == null)
+            if (!resultadoHojaDeRuta.valido)
                 return new ResultadoImposicion { Valido = false, Error = resultadoHojaDeRuta.error };
 
             GuiaAlmacen.guias.Add(guia);
 
-            if (resultadoHojaDeRuta.esNueva)
-                HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHojaDeRuta.hojaDeRuta);
+            if (resultadoHojaDeRuta.hojaDeRutaOmnibusNueva)
+                HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHojaDeRuta.hojaDeRutaOmnibus!);
+
+            if (resultadoHojaDeRuta.hojaDeRutaFleteroNueva)
+                HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros.Add(resultadoHojaDeRuta.hojaDeRutaFletero!);
 
             GuiaAlmacen.Guardar();
             HojaDeRutaOmnibusAlmacen.Guardar();
+            HojaDeRutaFleteroAlmacen.Guardar();
 
             return new ResultadoImposicion
             {
@@ -332,6 +336,63 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
             return $"{prefijo}{ultimoNumero + 1:00000000}";
         }
 
+        private static (
+            bool valido,
+            string error,
+            HojaDeRutaOmnibusEntidad? hojaDeRutaOmnibus,
+            bool hojaDeRutaOmnibusNueva,
+            HojaDeRutaFleteroEntidad? hojaDeRutaFletero,
+            bool hojaDeRutaFleteroNueva) PlanificarHojaDeRutaPosterior(GuiaEntidad guia)
+        {
+            if (guia.CentroDistribucionOrigen != guia.CentroDistribucionDestino)
+            {
+                var resultadoOmnibus = GenerarHojaDeRutaOmnibus(guia);
+                return (
+                    resultadoOmnibus.hojaDeRuta != null,
+                    resultadoOmnibus.error,
+                    resultadoOmnibus.hojaDeRuta,
+                    resultadoOmnibus.esNueva,
+                    null,
+                    false);
+            }
+
+            if (guia.MetodoEntrega == MetodoEntregaEnum.CentroDeDistribucion)
+            {
+                ActualizarEstado(guia, EstadoEnum.ListaParaEntregarPorCD, guia.CentroDistribucionDestino);
+                return (true, "", null, false, null, false);
+            }
+
+            ActualizarEstado(guia, EstadoEnum.EnCDDestino, guia.CentroDistribucionDestino);
+
+            var resultadoFletero = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaEntregaDisponible(
+                guia,
+                GenerarCodigoHojaDeRutaDistribucion());
+
+            return (
+                resultadoFletero.hojaDeRuta != null,
+                resultadoFletero.hojaDeRuta == null ? "No hay fleteros con cobertura para el centro de distribucion destino." : "",
+                null,
+                false,
+                resultadoFletero.hojaDeRuta,
+                resultadoFletero.esNueva);
+        }
+
+        private static void ActualizarEstado(GuiaEntidad guia, EstadoEnum estado, string codigoCentroDistribucion)
+        {
+            var ubicacion = CentroDistribucionAlmacen.cd
+                .FirstOrDefault(c => c.Codigo == codigoCentroDistribucion)
+                ?.Nombre ?? codigoCentroDistribucion;
+
+            guia.EstadoActual = estado;
+            guia.Historial ??= new List<MovimientoGuia>();
+            guia.Historial.Add(new MovimientoGuia
+            {
+                Estado = estado,
+                UltimaActualizacion = DateTime.Now,
+                Ubicacion = ubicacion
+            });
+        }
+
         private static (HojaDeRutaOmnibusEntidad? hojaDeRuta, bool esNueva, string error) GenerarHojaDeRutaOmnibus(GuiaEntidad guia)
         {
             if (guia.EstadoActual != EstadoEnum.AdmitidaEnCD)
@@ -351,6 +412,20 @@ namespace TP3_CAI_GRUPO_C.ImposiciónXCD
             var prefijo = $"HDR-OMN-{periodo}-";
 
             var ultimoNumero = HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus
+                .Where(h => h.Codigo.StartsWith(prefijo))
+                .Select(h => int.TryParse(h.Codigo.Substring(prefijo.Length), out var numero) ? numero : 0)
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return $"{prefijo}{ultimoNumero + 1:0000}";
+        }
+
+        private static string GenerarCodigoHojaDeRutaDistribucion()
+        {
+            var periodo = DateTime.Now.ToString("yyyyMM");
+            var prefijo = $"HDR-DIS-{periodo}-";
+
+            var ultimoNumero = HojaDeRutaFleteroAlmacen.HojasDeRutaFleteros
                 .Where(h => h.Codigo.StartsWith(prefijo))
                 .Select(h => int.TryParse(h.Codigo.Substring(prefijo.Length), out var numero) ? numero : 0)
                 .DefaultIfEmpty(0)
