@@ -2,97 +2,157 @@
   {
     "CuitCuilFletero": 20301234567,
     "Fecha": "2026-05-02T15:00:00.000",
-    "Descripcion": "Servicio de retiro a domicilio HDR-RET-202605-0001 - Guia CD-MDP-01-00000001",
+    "CodigoHDR": "HDR-RET-202605-0001",
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Servicio de retiro a domicilio",
+    "Importe": 5800,
     "Debe": 5800,
     "Haber": 0,
-    "Saldo": 5800
+    "Saldo": 5800,
+    "Pagado": true
   },
   {
     "CuitCuilFletero": 20301234567,
     "Fecha": "2026-06-02T10:00:00.000",
-    "Descripcion": "Pago de comisiones mayo 2026 - HDR-RET-202605-0001",
+    "CodigoHDR": "",
+    "Comprobante": "OP-F-0001-000001",
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de servicios brindados en mayo 2026",
+    "Importe": 5800,
     "Debe": 0,
     "Haber": 5800,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CuitCuilFletero": 27312345678,
     "Fecha": "2026-05-06T09:10:00.000",
-    "Descripcion": "Servicio de retiro a domicilio HDR-RET-202605-0002 - Guia CD-GC-01-00000001",
+    "CodigoHDR": "HDR-RET-202605-0002",
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Servicio de retiro a domicilio",
+    "Importe": 4100,
     "Debe": 4100,
     "Haber": 0,
-    "Saldo": 4100
+    "Saldo": 4100,
+    "Pagado": true
   },
   {
     "CuitCuilFletero": 27312345678,
     "Fecha": "2026-06-02T10:15:00.000",
-    "Descripcion": "Pago de comisiones mayo 2026 - HDR-RET-202605-0002",
+    "CodigoHDR": "",
+    "Comprobante": "OP-F-0001-000002",
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de servicios brindados en mayo 2026",
+    "Importe": 4100,
     "Debe": 0,
     "Haber": 4100,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CuitCuilFletero": 20423456789,
     "Fecha": "2026-05-09T09:15:00.000",
-    "Descripcion": "Servicio de retiro a domicilio HDR-RET-202605-0003 - Guia CD-PAL-02-00000001",
+    "CodigoHDR": "HDR-RET-202605-0003",
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Servicio de retiro a domicilio",
+    "Importe": 8400,
     "Debe": 8400,
     "Haber": 0,
-    "Saldo": 8400
+    "Saldo": 8400,
+    "Pagado": true
   },
   {
     "CuitCuilFletero": 20423456789,
     "Fecha": "2026-06-03T10:00:00.000",
-    "Descripcion": "Pago de comisiones mayo 2026 - HDR-RET-202605-0003",
+    "CodigoHDR": "",
+    "Comprobante": "OP-F-0001-000003",
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de servicios brindados en mayo 2026",
+    "Importe": 8400,
     "Debe": 0,
     "Haber": 8400,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CuitCuilFletero": 27534567890,
     "Fecha": "2026-05-03T16:20:00.000",
-    "Descripcion": "Servicio de entrega a domicilio HDR-DIS-202605-0001 - Guia AG-LP-01-01-00000001",
+    "CodigoHDR": "HDR-DIS-202605-0001",
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Servicio de entrega a domicilio",
+    "Importe": 3700,
     "Debe": 3700,
     "Haber": 0,
-    "Saldo": 3700
+    "Saldo": 3700,
+    "Pagado": true
   },
   {
     "CuitCuilFletero": 27534567890,
     "Fecha": "2026-06-03T10:15:00.000",
-    "Descripcion": "Pago de comisiones mayo 2026 - HDR-DIS-202605-0001",
+    "CodigoHDR": "",
+    "Comprobante": "OP-F-0001-000004",
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de servicios brindados en mayo 2026",
+    "Importe": 3700,
     "Debe": 0,
     "Haber": 3700,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CuitCuilFletero": 20645678901,
     "Fecha": "2026-05-10T09:00:00.000",
-    "Descripcion": "Servicio de entrega a domicilio HDR-DIS-202605-0002 - Guia AG-RC-01-02-00000001",
+    "CodigoHDR": "HDR-DIS-202605-0002",
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Servicio de entrega a domicilio",
+    "Importe": 4400,
     "Debe": 4400,
     "Haber": 0,
-    "Saldo": 4400
+    "Saldo": 4400,
+    "Pagado": true
   },
   {
     "CuitCuilFletero": 20645678901,
     "Fecha": "2026-06-04T10:00:00.000",
-    "Descripcion": "Pago de comisiones mayo 2026 - HDR-DIS-202605-0002",
+    "CodigoHDR": "",
+    "Comprobante": "OP-F-0001-000005",
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de servicios brindados en mayo 2026",
+    "Importe": 4400,
     "Debe": 0,
     "Haber": 4400,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CuitCuilFletero": 20756789012,
     "Fecha": "2026-05-05T07:30:00.000",
-    "Descripcion": "Servicio de entrega a domicilio HDR-DIS-202605-0003 - Guia AG-LIN-02-01-00000001",
+    "CodigoHDR": "HDR-DIS-202605-0003",
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Servicio de entrega a domicilio",
+    "Importe": 7700,
     "Debe": 7700,
     "Haber": 0,
-    "Saldo": 7700
+    "Saldo": 7700,
+    "Pagado": true
   },
   {
     "CuitCuilFletero": 20756789012,
     "Fecha": "2026-06-04T10:15:00.000",
-    "Descripcion": "Pago de comisiones mayo 2026 - HDR-DIS-202605-0003",
+    "CodigoHDR": "",
+    "Comprobante": "OP-F-0001-000006",
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de servicios brindados en mayo 2026",
+    "Importe": 7700,
     "Debe": 0,
     "Haber": 7700,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   }
 ]

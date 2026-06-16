@@ -97,6 +97,8 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 
             foreach (var hojaDeRutaFletero in hojasDeRutaCumplidas)
             {
+                var importeCargo = CalcularImporteCargoFletero(hojaDeRutaFletero);
+
                 hojaDeRutaFletero.Estado = EstadoHDRFleteroEnum.Cumplida;
 
                 foreach (var numeroGuia in hojaDeRutaFletero.Guias)
@@ -107,6 +109,9 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
                         hojaDeRutaFletero,
                         guia!);
                 }
+
+                if (importeCargo > 0)
+                    GenerarMovimientoCuentaCorrienteFletero(hojaDeRutaFletero, importeCargo);
             }
 
             foreach (var hojaDeRuta in resultadoFletero.fletero.HojasDeRuta)
@@ -120,12 +125,88 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 
             HojaDeRutaFleteroAlmacen.Guardar();
             GuiaAlmacen.Guardar();
+            CuentaCorrienteFleteroAlmacen.Guardar();
 
             return new ResultadoRendicion
             {
                 Valido = true,
                 HojasActualizadas = resultadoFletero.fletero.HojasDeRuta
             };
+        }
+
+        private static decimal CalcularImporteCargoFletero(HojaDeRutaFleteroEntidad hojaDeRuta)
+        {
+            var precioExtra = ObtenerPrecioExtraFletero(hojaDeRuta.TipoHDR);
+            var importe = 0m;
+
+            foreach (var numeroGuia in hojaDeRuta.Guias)
+            {
+                var guia = GuiaAlmacen.guias.FirstOrDefault(g => g.NumeroGuia == numeroGuia);
+
+                if (guia == null || !CorrespondeCargoFletero(hojaDeRuta.TipoHDR, guia))
+                    continue;
+
+                var porcentaje = guia.EstadoActual == EstadoEnum.EnTransitoSegundoIntentoEntrega
+                    ? 0.5m
+                    : 1m;
+
+                importe += precioExtra * porcentaje;
+            }
+
+            return importe;
+        }
+
+        private static bool CorrespondeCargoFletero(TipoHDRFleteroEnum tipoHDR, GuiaEntidad guia)
+        {
+            if (tipoHDR == TipoHDRFleteroEnum.Retiro)
+                return guia.MetodoRetiro == MetodoRetiroEnum.EnDomicilio;
+
+            return guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio;
+        }
+
+        private static decimal ObtenerPrecioExtraFletero(TipoHDRFleteroEnum tipoHDR)
+        {
+            var tipo = tipoHDR == TipoHDRFleteroEnum.Retiro
+                ? "RetiroDomicilio"
+                : "EntregaDomicilio";
+
+            return PreciosExtrasAlmacen.PreciosExtras
+                .First(e => e.Tipo == tipo)
+                .Precio;
+        }
+
+        private static void GenerarMovimientoCuentaCorrienteFletero(HojaDeRutaFleteroEntidad hojaDeRuta, decimal importe)
+        {
+            var saldoAnterior = ObtenerSaldoCuentaCorrienteFletero(hojaDeRuta.CuitCuilFletero);
+            var concepto = hojaDeRuta.TipoHDR == TipoHDRFleteroEnum.Retiro
+                ? "Servicio de retiro a domicilio"
+                : "Servicio de entrega a domicilio";
+
+            var movimiento = new CuentaCorrienteFleteroEntidad
+            {
+                CuitCuilFletero = hojaDeRuta.CuitCuilFletero,
+                Fecha = DateTime.Now,
+                CodigoHDR = hojaDeRuta.Codigo,
+                Comprobante = "",
+                TipoMovimiento = TipoMovimientoCtaCteEnum.Cargo,
+                Concepto = concepto,
+                Importe = importe,
+                Debe = importe,
+                Haber = 0,
+                Saldo = saldoAnterior + importe,
+                Pagado = false
+            };
+
+            CuentaCorrienteFleteroAlmacen.ctaCteFletero.Add(movimiento);
+        }
+
+        private static decimal ObtenerSaldoCuentaCorrienteFletero(long cuitCuilFletero)
+        {
+            return CuentaCorrienteFleteroAlmacen.ctaCteFletero
+                .Where(c => c.CuitCuilFletero == cuitCuilFletero)
+                .OrderBy(c => c.Fecha)
+                .LastOrDefault()
+                ?.Saldo ?? 0;
         }
 
         private static bool HojaPuedeRendirse(

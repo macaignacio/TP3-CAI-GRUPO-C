@@ -3,100 +3,130 @@
     "CodigoAgencia": "AG-LP-01-01",
     "Fecha": "2026-05-01T10:15:30.001",
     "NumeroGuia": "AG-LP-01-01-00000001",
-    "Comprobante": "FC-A-0001-000001",
-    "Comision": 3700,
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Comision por imposicion",
+    "Importe": 3700,
     "Debe": 3700,
     "Haber": 0,
-    "Saldo": 3700
+    "Saldo": 3700,
+    "Pagado": true
   },
   {
     "CodigoAgencia": "AG-LP-01-01",
     "Fecha": "2026-06-02T09:00:00.000",
-    "NumeroGuia": "AG-LP-01-01-00000001",
+    "NumeroGuia": "",
     "Comprobante": "OP-A-0001-000001",
-    "Comision": 0,
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de comisiones por servicios brindados en mayo 2026",
+    "Importe": 3700,
     "Debe": 0,
     "Haber": 3700,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CodigoAgencia": "AG-RET-01-01",
     "Fecha": "2026-05-04T10:10:00.000",
     "NumeroGuia": "CD-MDP-01-00000001",
-    "Comprobante": "FC-A-0001-000002",
-    "Comision": 5800,
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Comision por imposicion",
+    "Importe": 5800,
     "Debe": 5800,
     "Haber": 0,
-    "Saldo": 5800
+    "Saldo": 5800,
+    "Pagado": true
   },
   {
     "CodigoAgencia": "AG-RET-01-01",
     "Fecha": "2026-06-02T09:15:00.000",
-    "NumeroGuia": "CD-MDP-01-00000001",
+    "NumeroGuia": "",
     "Comprobante": "OP-A-0001-000002",
-    "Comision": 0,
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de comisiones por servicios brindados en mayo 2026",
+    "Importe": 5800,
     "Debe": 0,
     "Haber": 5800,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CodigoAgencia": "AG-LIN-02-01",
     "Fecha": "2026-05-04T10:20:05.004",
     "NumeroGuia": "AG-LIN-02-01-00000001",
-    "Comprobante": "FC-A-0001-000003",
-    "Comision": 7700,
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Comision por imposicion",
+    "Importe": 7700,
     "Debe": 7700,
     "Haber": 0,
-    "Saldo": 7700
+    "Saldo": 7700,
+    "Pagado": true
   },
   {
     "CodigoAgencia": "AG-LIN-02-01",
     "Fecha": "2026-06-03T09:00:00.000",
-    "NumeroGuia": "AG-LIN-02-01-00000001",
+    "NumeroGuia": "",
     "Comprobante": "OP-A-0001-000003",
-    "Comision": 0,
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de comisiones por servicios brindados en mayo 2026",
+    "Importe": 7700,
     "Debe": 0,
     "Haber": 7700,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CodigoAgencia": "AG-PAL-01-01",
     "Fecha": "2026-05-08T08:45:00.000",
     "NumeroGuia": "CD-GC-01-00000001",
-    "Comprobante": "FC-A-0001-000004",
-    "Comision": 4100,
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Comision por imposicion",
+    "Importe": 4100,
     "Debe": 4100,
     "Haber": 0,
-    "Saldo": 4100
+    "Saldo": 4100,
+    "Pagado": true
   },
   {
     "CodigoAgencia": "AG-PAL-01-01",
     "Fecha": "2026-06-03T09:15:00.000",
-    "NumeroGuia": "CD-GC-01-00000001",
+    "NumeroGuia": "",
     "Comprobante": "OP-A-0001-000004",
-    "Comision": 0,
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de comisiones por servicios brindados en mayo 2026",
+    "Importe": 4100,
     "Debe": 0,
     "Haber": 4100,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   },
   {
     "CodigoAgencia": "AG-RC-01-02",
     "Fecha": "2026-05-07T19:05:33.007",
     "NumeroGuia": "AG-RC-01-02-00000001",
-    "Comprobante": "FC-A-0001-000005",
-    "Comision": 4400,
+    "Comprobante": "",
+    "TipoMovimiento": 0,
+    "Concepto": "Comision por imposicion",
+    "Importe": 4400,
     "Debe": 4400,
     "Haber": 0,
-    "Saldo": 4400
+    "Saldo": 4400,
+    "Pagado": true
   },
   {
     "CodigoAgencia": "AG-RC-01-02",
     "Fecha": "2026-06-04T09:00:00.000",
-    "NumeroGuia": "AG-RC-01-02-00000001",
+    "NumeroGuia": "",
     "Comprobante": "OP-A-0001-000005",
-    "Comision": 0,
+    "TipoMovimiento": 1,
+    "Concepto": "Pago de comisiones por servicios brindados en mayo 2026",
+    "Importe": 4400,
     "Debe": 0,
     "Haber": 4400,
-    "Saldo": 0
+    "Saldo": 0,
+    "Pagado": false
   }
 ]

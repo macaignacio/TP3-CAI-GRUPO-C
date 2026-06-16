@@ -355,7 +355,7 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
         private CuentaCorrienteAgenciaEntidad GenerarMovimientoCuentaCorrienteAgencia(Imposicion imposicion, GuiaEntidad guia)
         {
             var agenciaOrigen = ObtenerAgenciaOrigen()!;
-            var comision = CalcularComisionAgencia(imposicion, agenciaOrigen);
+            const decimal importe = 2000m;
             var saldoAnterior = ObtenerSaldoCuentaCorrienteAgencia(agenciaOrigen.Codigo);
 
             return new CuentaCorrienteAgenciaEntidad
@@ -363,20 +363,15 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
                 CodigoAgencia = agenciaOrigen.Codigo,
                 Fecha = guia.FechaCreacion,
                 NumeroGuia = guia.NumeroGuia,
-                Comprobante = GenerarComprobanteCuentaCorrienteAgencia(),
-                Comision = comision,
-                Debe = comision,
+                Comprobante = "",
+                TipoMovimiento = TipoMovimientoCtaCteEnum.Cargo,
+                Concepto = "Comision por imposicion",
+                Importe = importe,
+                Debe = importe,
                 Haber = 0,
-                Saldo = saldoAnterior + comision
+                Saldo = saldoAnterior + importe,
+                Pagado = false
             };
-        }
-
-        private static decimal CalcularComisionAgencia(Imposicion imposicion, AgenciaEntidad agencia)
-        {
-            return imposicion.CantidadCajaS * agencia.ComisionS +
-                   imposicion.CantidadCajaM * agencia.ComisionM +
-                   imposicion.CantidadCajaL * agencia.ComisionL +
-                   imposicion.CantidadCajaXL * agencia.ComisionXL;
         }
 
         private static decimal ObtenerSaldoCuentaCorrienteAgencia(string codigoAgencia)
@@ -384,22 +379,8 @@ namespace TP3_CAI_GRUPO_C.ImposicionXAgencia
             return CuentaCorrienteAgenciaAlmacen.ctaCteAgencia
                 .Where(c => c.CodigoAgencia == codigoAgencia)
                 .OrderBy(c => c.Fecha)
-                .ThenBy(c => c.NumeroGuia)
                 .LastOrDefault()
                 ?.Saldo ?? 0;
-        }
-
-        private static string GenerarComprobanteCuentaCorrienteAgencia()
-        {
-            const string prefijo = "FC-A-0001-";
-
-            var ultimoNumero = CuentaCorrienteAgenciaAlmacen.ctaCteAgencia
-                .Where(c => c.Comprobante.StartsWith(prefijo))
-                .Select(c => int.TryParse(c.Comprobante.Substring(prefijo.Length), out var numero) ? numero : 0)
-                .DefaultIfEmpty(0)
-                .Max();
-
-            return $"{prefijo}{ultimoNumero + 1:000000}";
         }
 
         private static bool PuedeGenerarHojaDeRutaFletero(EstadoEnum estado)

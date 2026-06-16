@@ -142,6 +142,8 @@ namespace TP3_CAI_GRUPO_C.Entrega
             if (!resultadoContexto.valido)
                 return resultadoContexto;
 
+            var entregaPorAgencia = guia.EstadoActual == EstadoEnum.ListaParaEntregarPorAgencia;
+
             guia.EstadoActual = EstadoEnum.Entregado;
             guia.Historial ??= new List<MovimientoGuia>();
             guia.Historial.Add(new MovimientoGuia
@@ -152,9 +154,45 @@ namespace TP3_CAI_GRUPO_C.Entrega
             });
             GuiaAlmacen.Guardar();
 
+            if (entregaPorAgencia)
+                GenerarMovimientoCuentaCorrienteAgenciaEntrega(guia);
+
             encomienda.Estado = EstadoEncomienda.Entregado;
 
             return (true, "");
+        }
+
+        private static void GenerarMovimientoCuentaCorrienteAgenciaEntrega(GuiaEntidad guia)
+        {
+            const decimal importe = 2000m;
+            var saldoAnterior = ObtenerSaldoCuentaCorrienteAgencia(guia.AgenciaEntregaCodigo);
+
+            var movimiento = new CuentaCorrienteAgenciaEntidad
+            {
+                CodigoAgencia = guia.AgenciaEntregaCodigo,
+                Fecha = DateTime.Now,
+                NumeroGuia = guia.NumeroGuia,
+                Comprobante = "",
+                TipoMovimiento = TipoMovimientoCtaCteEnum.Cargo,
+                Concepto = "Comision por entrega",
+                Importe = importe,
+                Debe = importe,
+                Haber = 0,
+                Saldo = saldoAnterior + importe,
+                Pagado = false
+            };
+
+            CuentaCorrienteAgenciaAlmacen.ctaCteAgencia.Add(movimiento);
+            CuentaCorrienteAgenciaAlmacen.Guardar();
+        }
+
+        private static decimal ObtenerSaldoCuentaCorrienteAgencia(string codigoAgencia)
+        {
+            return CuentaCorrienteAgenciaAlmacen.ctaCteAgencia
+                .Where(c => c.CodigoAgencia == codigoAgencia)
+                .OrderBy(c => c.Fecha)
+                .LastOrDefault()
+                ?.Saldo ?? 0;
         }
 
         private static (bool valido, string error) ValidarContextoEntrega(
