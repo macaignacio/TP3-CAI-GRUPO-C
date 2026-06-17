@@ -61,12 +61,13 @@ namespace TP3_CAI_GRUPO_C.Devolucion
                 UltimaActualizacion = DateTime.Now,
                 Ubicacion = ObtenerUbicacionConfirmacion(guia, retiroAgencia)
             });
-            GuiaAlmacen.Guardar();
 
             GenerarMovimientoCuentaCorrienteClienteDevolucion(guia);
 
             if (retiroAgencia)
                 GenerarMovimientoCuentaCorrienteAgencia(guia);
+
+            GuiaAlmacen.Guardar();
 
             return (true, "");
         }
@@ -89,6 +90,8 @@ namespace TP3_CAI_GRUPO_C.Devolucion
 
             CuentaCorrienteClienteAlmacen.ctaCteCliente.Add(movimiento);
             CuentaCorrienteClienteAlmacen.Guardar();
+
+            guia.Importe += importe;
         }
 
         private static decimal ObtenerSaldoCuentaCorrienteCliente(long cuit)
@@ -150,6 +153,7 @@ namespace TP3_CAI_GRUPO_C.Devolucion
 
             if (guia.EstadoActual == EstadoEnum.ListaParaEntregarPorAgencia)
             {
+                var codigoAgenciaDevolucion = guia.AgenciaEntregaCodigo;
                 var resultadoHDR = HojaDeRutaFleteroPlanificador.ObtenerHojaDeRutaRetiroDisponible(
                     guia,
                     GenerarCodigoHojaDeRutaRetiro());
@@ -166,6 +170,11 @@ namespace TP3_CAI_GRUPO_C.Devolucion
                     UltimaActualizacion = DateTime.Now,
                     Ubicacion = ObtenerNombreAgencia(guia.AgenciaEntregaCodigo)
                 });
+
+                GenerarMovimientoCuentaCorrienteAgencia(
+                    codigoAgenciaDevolucion,
+                    guia,
+                    "Comision por imposicion devolucion");
 
                 GuiaAlmacen.Guardar();
                 HojaDeRutaFleteroAlmacen.Guardar();
@@ -353,7 +362,17 @@ namespace TP3_CAI_GRUPO_C.Devolucion
 
         private static void GenerarMovimientoCuentaCorrienteAgencia(GuiaEntidad guia)
         {
-            var codigoAgencia = guia.AgenciaRetiroCodigo;
+            GenerarMovimientoCuentaCorrienteAgencia(
+                guia.AgenciaRetiroCodigo,
+                guia,
+                "Comision por entrega devolucion");
+        }
+
+        private static void GenerarMovimientoCuentaCorrienteAgencia(
+            string codigoAgencia,
+            GuiaEntidad guia,
+            string concepto)
+        {
             var saldoAnterior = ObtenerSaldoCuentaCorrienteAgencia(codigoAgencia);
 
             var movimiento = new CuentaCorrienteAgenciaEntidad
@@ -363,7 +382,7 @@ namespace TP3_CAI_GRUPO_C.Devolucion
                 NumeroGuia = guia.NumeroGuia,
                 Comprobante = "",
                 TipoMovimiento = TipoMovimientoCtaCteEnum.Cargo,
-                Concepto = "Comision por entrega devolucion",
+                Concepto = concepto,
                 Importe = ComisionAgencia,
                 Debe = ComisionAgencia,
                 Haber = 0,

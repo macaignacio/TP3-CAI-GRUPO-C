@@ -396,17 +396,31 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
 
         private static (decimal precio, bool aplica) DeterminarPrecioYAplicabilidad(TipoHDRFleteroEnum tipoHDR, GuiaEntidad guia)
         {
-            if (guia.EstadoActual == EstadoEnum.EnTransitoAgenciaOrigen ||
-                guia.EstadoActual == EstadoEnum.RetiroDevolucionAgenciaEnCurso)
-                return (0m, false);
-
             if (guia.EstadoActual == EstadoEnum.EnTransitoDomicilioRemitente)
                 return (ObtenerPrecioExtra("EntregaDomicilio"), true);
 
-            if (tipoHDR == TipoHDRFleteroEnum.Retiro)
-                return (ObtenerPrecioExtra("RetiroDomicilio"), guia.MetodoRetiro == MetodoRetiroEnum.EnDomicilio);
+            if (guia.EstadoActual == EstadoEnum.EnTransitoAgenciaOrigen ||
+                guia.EstadoActual == EstadoEnum.RetiroDevolucionAgenciaEnCurso)
+                return (ObtenerPrecioExtra("EntregaAgencia"), true);
 
-            return (ObtenerPrecioExtra("EntregaDomicilio"), guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio);
+            if (tipoHDR == TipoHDRFleteroEnum.Retiro)
+            {
+                if (guia.MetodoRetiro == MetodoRetiroEnum.EnDomicilio)
+                    return (ObtenerPrecioExtra("RetiroDomicilio"), true);
+
+                if (guia.MetodoRetiro == MetodoRetiroEnum.Agencia)
+                    return (ObtenerPrecioExtra("EntregaAgencia"), true);
+
+                return (0m, false);
+            }
+
+            if (guia.MetodoEntrega == MetodoEntregaEnum.ADomicilio)
+                return (ObtenerPrecioExtra("EntregaDomicilio"), true);
+
+            if (guia.MetodoEntrega == MetodoEntregaEnum.Agencia)
+                return (ObtenerPrecioExtra("EntregaAgencia"), true);
+
+            return (0m, false);
         }
 
         private static decimal DeterminarPorcentaje(EstadoEnum estado, bool cumplida)
@@ -478,6 +492,8 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             };
 
             CuentaCorrienteClienteAlmacen.ctaCteCliente.Add(movimiento);
+
+            guia.Importe += importe;
         }
 
         private static decimal ObtenerSaldoCuentaCorrienteCliente(long cuit)
