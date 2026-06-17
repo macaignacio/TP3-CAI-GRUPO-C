@@ -524,20 +524,23 @@ namespace TP3_CAI_GRUPO_C.GestionFleterosRendicion
             if (cdOrigen == null || cdDestino == null || cdOrigen.Codigo == cdDestino.Codigo)
                 return;
 
-            var servicio = ObtenerServicioConCobertura(cdOrigen.Codigo, cdDestino.Codigo);
-            if (servicio == null) return;
-
-            var hdr = new HojaDeRutaOmnibusEntidad
+            var guiaDevolucion = new GuiaEntidad
             {
-                Codigo = GenerarCodigoHojaDeRutaOmnibus(),
-                IdentificadorServicio = servicio.IdentificadorServicio,
+                NumeroGuia = guia.NumeroGuia,
                 CentroDistribucionOrigen = cdOrigen.Codigo,
                 CentroDistribucionDestino = cdDestino.Codigo,
-                Estado = EstadoHDROmnibusEnum.Asignada,
-                Guias = new List<string> { guia.NumeroGuia }
+                CajasS = guia.CajasS,
+                CajasM = guia.CajasM,
+                CajasL = guia.CajasL,
+                CajasXL = guia.CajasXL
             };
 
-            HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(hdr);
+            var resultado = HojaDeRutaOmnibusPlanificador.ObtenerHojaDeRutaDisponible(
+                guiaDevolucion,
+                GenerarCodigoHojaDeRutaOmnibus());
+
+            if (resultado.esNueva)
+                HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultado.hojaDeRuta!);
         }
 
         private static string ObtenerCodigoCentroDistribucionDestino(GuiaEntidad guia)

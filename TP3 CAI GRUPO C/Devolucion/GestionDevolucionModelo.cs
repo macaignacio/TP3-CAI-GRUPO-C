@@ -195,7 +195,8 @@ namespace TP3_CAI_GRUPO_C.Devolucion
                 Ubicacion = ubicacionCDActual
             });
 
-            HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHDROmnibus.hojaDeRuta);
+            if (resultadoHDROmnibus.esNueva)
+                HojaDeRutaOmnibusAlmacen.HojasDeRutaOmnibus.Add(resultadoHDROmnibus.hojaDeRuta);
 
             GuiaAlmacen.Guardar();
             HojaDeRutaOmnibusAlmacen.Guardar();
@@ -316,7 +317,7 @@ namespace TP3_CAI_GRUPO_C.Devolucion
             }, "");
         }
 
-        private static (HojaDeRutaOmnibusEntidad? hojaDeRuta, string error) GenerarHojaDeRutaOmnibusDevolucion(GuiaEntidad guia)
+        private static (HojaDeRutaOmnibusEntidad? hojaDeRuta, bool esNueva, string error) GenerarHojaDeRutaOmnibusDevolucion(GuiaEntidad guia)
         {
             var cdOrigen = CentroDistribucionAlmacen.cd
                 .FirstOrDefault(c => c.Codigo == guia.CentroDistribucionOrigenDevolucion);
@@ -324,25 +325,30 @@ namespace TP3_CAI_GRUPO_C.Devolucion
                 .FirstOrDefault(c => c.Codigo == guia.CentroDistribucionDestinoDevolucion);
 
             if (cdOrigen == null || cdDestino == null)
-                return (null, "No se encontró el centro de distribución de origen o destino para la devolución.");
+                return (null, false, "No se encontró el centro de distribución de origen o destino para la devolución.");
 
             if (cdOrigen.Codigo == cdDestino.Codigo)
-                return (null, "El centro de distribución de origen y destino de la devolución son el mismo.");
+                return (null, false, "El centro de distribución de origen y destino de la devolución son el mismo.");
 
-            var servicio = ObtenerServicioConCobertura(cdOrigen.Codigo, cdDestino.Codigo);
-
-            if (servicio == null)
-                return (null, "No hay servicios de omnibus con cobertura entre el centro de distribución de origen y destino de la devolución.");
-
-            return (new HojaDeRutaOmnibusEntidad
+            var guiaDevolucion = new GuiaEntidad
             {
-                Codigo = GenerarCodigoHojaDeRutaOmnibus(),
-                IdentificadorServicio = servicio.IdentificadorServicio,
+                NumeroGuia = guia.NumeroGuia,
                 CentroDistribucionOrigen = cdOrigen.Codigo,
                 CentroDistribucionDestino = cdDestino.Codigo,
-                Estado = EstadoHDROmnibusEnum.Asignada,
-                Guias = new List<string> { guia.NumeroGuia }
-            }, "");
+                CajasS = guia.CajasS,
+                CajasM = guia.CajasM,
+                CajasL = guia.CajasL,
+                CajasXL = guia.CajasXL
+            };
+
+            var resultado = HojaDeRutaOmnibusPlanificador.ObtenerHojaDeRutaDisponible(
+                guiaDevolucion,
+                GenerarCodigoHojaDeRutaOmnibus());
+
+            if (resultado.hojaDeRuta == null)
+                return (null, false, "No hay servicios de omnibus con cobertura entre el centro de distribución de origen y destino de la devolución.");
+
+            return (resultado.hojaDeRuta, resultado.esNueva, "");
         }
 
         private static void GenerarMovimientoCuentaCorrienteAgencia(GuiaEntidad guia)

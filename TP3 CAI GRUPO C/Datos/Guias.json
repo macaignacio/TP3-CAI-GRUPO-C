@@ -1,723 +1,839 @@
-[
-  {
-    "CuitCliente": 30712345678,
-    "NumeroGuia": "AG-LP-01-01-00000001",
-    "FechaCreacion": "2026-05-01T10:15:30.001",
-    "Importe": 14500,
-    "EstadoActual": 13,
-    "CentroDistribucionOrigen": "CD-LP-01",
-    "CentroDistribucionDestino": "CD-CBA-01",
-    "MetodoEntrega": 0,
-    "AgenciaEntregaCodigo": "",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "Av. Colon 1240",
-    "CodPostalEntrega": 5001,
-    "MetodoRetiro": 0,
-    "AgenciaRetiroCodigo": "AG-LP-01-01",
-    "CentroDistribucionRetiroCodigo": "",
-    "DireccionRetiro": "",
-    "CodPostalRetiro": 0,
-    "DniDestinatario": 31876543,
-    "NombreApellidoDestinatario": "Sofia Martinez",
-    "CajasS": 2,
-    "CajasM": 1,
-    "CajasL": 0,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 1,
-        "UltimaActualizacion": "2026-05-01T10:15:30.001",
-        "Ubicacion": "Agencia La Plata Norte Centro"
-      },
-      {
-        "Estado": 4,
-        "UltimaActualizacion": "2026-05-01T11:05:00.000",
-        "Ubicacion": "CD-LP-01"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-05-01T13:20:00.000",
-        "Ubicacion": "Centro Distribucion La Plata Norte"
-      },
-      {
-        "Estado": 6,
-        "UltimaActualizacion": "2026-05-02T08:10:00.000",
-        "Ubicacion": "En transito a CD-CBA-01"
-      },
-      {
-        "Estado": 7,
-        "UltimaActualizacion": "2026-05-02T19:45:00.000",
-        "Ubicacion": "Centro Distribucion Cordoba Capital Norte"
-      },
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-05-03T09:30:00.000",
-        "Ubicacion": "Centro Distribucion Cordoba Capital Norte"
-      },
-      {
-        "Estado": 10,
-        "UltimaActualizacion": "2026-05-03T16:20:00.000",
-        "Ubicacion": "En transito a domicilio"
-      },
-      {
-        "Estado": 13,
-        "UltimaActualizacion": "2026-05-04T10:00:00.000",
-        "Ubicacion": "Av. Colon 1240"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30765432109,
-    "NumeroGuia": "CD-MDP-01-00000001",
-    "FechaCreacion": "2026-05-02T11:30:45.002",
-    "Importe": 19150,
-    "EstadoActual": 13,
-    "CentroDistribucionOrigen": "CD-MDP-01",
-    "CentroDistribucionDestino": "CD-RET-01",
-    "MetodoEntrega": 2,
-    "AgenciaEntregaCodigo": "AG-RET-01-01",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "",
-    "CodPostalEntrega": 0,
-    "MetodoRetiro": 2,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "",
-    "DireccionRetiro": "San Martin 2450",
-    "CodPostalRetiro": 7602,
-    "DniDestinatario": 28456123,
-    "NombreApellidoDestinatario": "Federico Alonso",
-    "CajasS": 0,
-    "CajasM": 2,
-    "CajasL": 1,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 0,
-        "UltimaActualizacion": "2026-05-02T11:30:45.002",
-        "Ubicacion": "Solicitud telefonica"
-      },
-      {
-        "Estado": 3,
-        "UltimaActualizacion": "2026-05-02T15:00:00.000",
-        "Ubicacion": "San Martin 2450"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-05-02T18:40:00.000",
-        "Ubicacion": "Centro Distribucion Mar del Plata Centro"
-      },
-      {
-        "Estado": 6,
-        "UltimaActualizacion": "2026-05-03T07:15:00.000",
-        "Ubicacion": "En transito a CD-RET-01"
-      },
-      {
-        "Estado": 7,
-        "UltimaActualizacion": "2026-05-03T17:20:00.000",
-        "Ubicacion": "Centro Distribucion Retiro Terminal"
-      },
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-05-04T08:00:00.000",
-        "Ubicacion": "Centro Distribucion Retiro Terminal"
-      },
-      {
-        "Estado": 11,
-        "UltimaActualizacion": "2026-05-04T08:35:00.000",
-        "Ubicacion": "En transito a agencia destino"
-      },
-      {
-        "Estado": 12,
-        "UltimaActualizacion": "2026-05-04T10:10:00.000",
-        "Ubicacion": "Agencia Retiro Terminal"
-      },
-      {
-        "Estado": 13,
-        "UltimaActualizacion": "2026-05-05T09:30:00.000",
-        "Ubicacion": "Agencia Retiro Terminal"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30567891234,
-    "NumeroGuia": "CD-CBA-02-00000001",
-    "FechaCreacion": "2026-05-03T14:45:10.003",
-    "Importe": 19850,
-    "EstadoActual": 13,
-    "CentroDistribucionOrigen": "CD-CBA-02",
-    "CentroDistribucionDestino": "CD-MZA-01",
-    "MetodoEntrega": 1,
-    "AgenciaEntregaCodigo": "",
-    "CentroDistribucionEntregaCodigo": "CD-MZA-01",
-    "DireccionEntrega": "",
-    "CodPostalEntrega": 0,
-    "MetodoRetiro": 1,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "CD-CBA-02",
-    "DireccionRetiro": "",
-    "CodPostalRetiro": 0,
-    "DniDestinatario": 35123987,
-    "NombreApellidoDestinatario": "Laura Benitez",
-    "CajasS": 1,
-    "CajasM": 0,
-    "CajasL": 2,
-    "CajasXL": 1,
-    "Historial": [
-      {
-        "Estado": 2,
-        "UltimaActualizacion": "2026-05-03T14:45:10.003",
-        "Ubicacion": "Centro Distribucion Cordoba Capital Sur"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-05-03T15:25:00.000",
-        "Ubicacion": "Centro Distribucion Cordoba Capital Sur"
-      },
-      {
-        "Estado": 6,
-        "UltimaActualizacion": "2026-05-04T06:50:00.000",
-        "Ubicacion": "En transito a CD-MZA-01"
-      },
-      {
-        "Estado": 7,
-        "UltimaActualizacion": "2026-05-04T18:15:00.000",
-        "Ubicacion": "Centro Distribucion Ciudad de Mendoza Centro"
-      },
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-05-05T08:30:00.000",
-        "Ubicacion": "Centro Distribucion Ciudad de Mendoza Centro"
-      },
-      {
-        "Estado": 9,
-        "UltimaActualizacion": "2026-05-05T12:00:00.000",
-        "Ubicacion": "Centro Distribucion Ciudad de Mendoza Centro"
-      },
-      {
-        "Estado": 13,
-        "UltimaActualizacion": "2026-05-06T09:00:00.000",
-        "Ubicacion": "Centro Distribucion Ciudad de Mendoza Centro"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30543219876,
-    "NumeroGuia": "AG-LIN-02-01-00000001",
-    "FechaCreacion": "2026-05-04T10:20:05.004",
-    "Importe": 17100,
-    "EstadoActual": 13,
-    "CentroDistribucionOrigen": "CD-LIN-02",
-    "CentroDistribucionDestino": "CD-BB-01",
-    "MetodoEntrega": 0,
-    "AgenciaEntregaCodigo": "",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "Alsina 830",
-    "CodPostalEntrega": 8003,
-    "MetodoRetiro": 0,
-    "AgenciaRetiroCodigo": "AG-LIN-02-01",
-    "CentroDistribucionRetiroCodigo": "",
-    "DireccionRetiro": "",
-    "CodPostalRetiro": 0,
-    "DniDestinatario": 30333444,
-    "NombreApellidoDestinatario": "Diego Herrera",
-    "CajasS": 3,
-    "CajasM": 1,
-    "CajasL": 0,
-    "CajasXL": 1,
-    "Historial": [
-      {
-        "Estado": 1,
-        "UltimaActualizacion": "2026-05-04T10:20:05.004",
-        "Ubicacion": "Agencia Liniers Sur Terminal"
-      },
-      {
-        "Estado": 4,
-        "UltimaActualizacion": "2026-05-04T11:10:00.000",
-        "Ubicacion": "CD-LIN-02"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-05-04T13:00:00.000",
-        "Ubicacion": "Centro Distribucion Liniers Sur"
-      },
-      {
-        "Estado": 6,
-        "UltimaActualizacion": "2026-05-05T07:30:00.000",
-        "Ubicacion": "En transito a CD-BB-01"
-      },
-      {
-        "Estado": 7,
-        "UltimaActualizacion": "2026-05-05T17:30:00.000",
-        "Ubicacion": "Centro Distribucion Bahia Blanca"
-      },
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-05-06T08:00:00.000",
-        "Ubicacion": "Centro Distribucion Bahia Blanca"
-      },
-      {
-        "Estado": 10,
-        "UltimaActualizacion": "2026-05-06T11:00:00.000",
-        "Ubicacion": "En transito a domicilio"
-      },
-      {
-        "Estado": 13,
-        "UltimaActualizacion": "2026-05-07T10:00:00.000",
-        "Ubicacion": "Alsina 830"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30678912345,
-    "NumeroGuia": "CD-GC-01-00000001",
-    "FechaCreacion": "2026-05-05T16:50:22.005",
-    "Importe": 22450,
-    "EstadoActual": 13,
-    "CentroDistribucionOrigen": "CD-GC-01",
-    "CentroDistribucionDestino": "CD-PAL-01",
-    "MetodoEntrega": 2,
-    "AgenciaEntregaCodigo": "AG-PAL-01-01",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "",
-    "CodPostalEntrega": 0,
-    "MetodoRetiro": 2,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "",
-    "DireccionRetiro": "Belgrano 1520",
-    "CodPostalRetiro": 5524,
-    "DniDestinatario": 27654198,
-    "NombreApellidoDestinatario": "Mariana Ruiz",
-    "CajasS": 0,
-    "CajasM": 1,
-    "CajasL": 1,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 0,
-        "UltimaActualizacion": "2026-05-05T16:50:22.005",
-        "Ubicacion": "Solicitud telefonica"
-      },
-      {
-        "Estado": 3,
-        "UltimaActualizacion": "2026-05-06T09:10:00.000",
-        "Ubicacion": "Belgrano 1520"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-05-06T12:35:00.000",
-        "Ubicacion": "Centro Distribucion Godoy Cruz"
-      },
-      {
-        "Estado": 6,
-        "UltimaActualizacion": "2026-05-07T06:25:00.000",
-        "Ubicacion": "En transito a CD-PAL-01"
-      },
-      {
-        "Estado": 7,
-        "UltimaActualizacion": "2026-05-07T19:05:00.000",
-        "Ubicacion": "Centro Distribucion Palermo Norte"
-      },
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-05-08T08:00:00.000",
-        "Ubicacion": "Centro Distribucion Palermo Norte"
-      },
-      {
-        "Estado": 11,
-        "UltimaActualizacion": "2026-05-08T08:45:00.000",
-        "Ubicacion": "En transito a agencia destino"
-      },
-      {
-        "Estado": 12,
-        "UltimaActualizacion": "2026-05-08T10:00:00.000",
-        "Ubicacion": "Agencia Palermo Norte Soho"
-      },
-      {
-        "Estado": 13,
-        "UltimaActualizacion": "2026-05-09T09:30:00.000",
-        "Ubicacion": "Agencia Palermo Norte Soho"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30712345678,
-    "NumeroGuia": "CD-RET-02-00000001",
-    "FechaCreacion": "2026-05-06T12:05:40.006",
-    "Importe": 5600,
-    "EstadoActual": 13,
-    "CentroDistribucionOrigen": "CD-RET-02",
-    "CentroDistribucionDestino": "CD-MDP-02",
-    "MetodoEntrega": 1,
-    "AgenciaEntregaCodigo": "",
-    "CentroDistribucionEntregaCodigo": "CD-MDP-02",
-    "DireccionEntrega": "",
-    "CodPostalEntrega": 0,
-    "MetodoRetiro": 1,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "CD-RET-02",
-    "DireccionRetiro": "",
-    "CodPostalRetiro": 0,
-    "DniDestinatario": 39555111,
-    "NombreApellidoDestinatario": "Camila Fernandez",
-    "CajasS": 4,
-    "CajasM": 0,
-    "CajasL": 0,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 2,
-        "UltimaActualizacion": "2026-05-06T12:05:40.006",
-        "Ubicacion": "Centro Distribucion Retiro Centro"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-05-06T13:00:00.000",
-        "Ubicacion": "Centro Distribucion Retiro Centro"
-      },
-      {
-        "Estado": 6,
-        "UltimaActualizacion": "2026-05-06T22:00:00.000",
-        "Ubicacion": "En transito a CD-MDP-02"
-      },
-      {
-        "Estado": 7,
-        "UltimaActualizacion": "2026-05-07T08:30:00.000",
-        "Ubicacion": "Centro Distribucion Mar del Plata Puerto"
-      },
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-05-07T09:00:00.000",
-        "Ubicacion": "Centro Distribucion Mar del Plata Puerto"
-      },
-      {
-        "Estado": 9,
-        "UltimaActualizacion": "2026-05-07T12:00:00.000",
-        "Ubicacion": "Centro Distribucion Mar del Plata Puerto"
-      },
-      {
-        "Estado": 13,
-        "UltimaActualizacion": "2026-05-08T09:00:00.000",
-        "Ubicacion": "Centro Distribucion Mar del Plata Puerto"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30765432109,
-    "NumeroGuia": "AG-RC-01-02-00000001",
-    "FechaCreacion": "2026-05-07T19:05:33.007",
-    "Importe": 16100,
-    "EstadoActual": 13,
-    "CentroDistribucionOrigen": "CD-RC-01",
-    "CentroDistribucionDestino": "CD-LP-02",
-    "MetodoEntrega": 0,
-    "AgenciaEntregaCodigo": "",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "Calle 12 980",
-    "CodPostalEntrega": 1907,
-    "MetodoRetiro": 0,
-    "AgenciaRetiroCodigo": "AG-RC-01-02",
-    "CentroDistribucionRetiroCodigo": "",
-    "DireccionRetiro": "",
-    "CodPostalRetiro": 0,
-    "DniDestinatario": 33222888,
-    "NombreApellidoDestinatario": "Nicolas Suarez",
-    "CajasS": 1,
-    "CajasM": 2,
-    "CajasL": 0,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 1,
-        "UltimaActualizacion": "2026-05-07T19:05:33.007",
-        "Ubicacion": "Agencia Rio Cuarto Sur"
-      },
-      {
-        "Estado": 4,
-        "UltimaActualizacion": "2026-05-08T08:10:00.000",
-        "Ubicacion": "CD-RC-01"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-05-08T10:25:00.000",
-        "Ubicacion": "Centro Distribucion Rio Cuarto"
-      },
-      {
-        "Estado": 6,
-        "UltimaActualizacion": "2026-05-09T06:40:00.000",
-        "Ubicacion": "En transito a CD-LP-02"
-      },
-      {
-        "Estado": 7,
-        "UltimaActualizacion": "2026-05-09T20:05:00.000",
-        "Ubicacion": "Centro Distribucion La Plata Sur"
-      },
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-05-10T08:30:00.000",
-        "Ubicacion": "Centro Distribucion La Plata Sur"
-      },
-      {
-        "Estado": 10,
-        "UltimaActualizacion": "2026-05-10T09:00:00.000",
-        "Ubicacion": "En transito a domicilio"
-      },
-      {
-        "Estado": 13,
-        "UltimaActualizacion": "2026-05-11T10:00:00.000",
-        "Ubicacion": "Calle 12 980"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30567891234,
-    "NumeroGuia": "CD-PAL-02-00000001",
-    "FechaCreacion": "2026-05-08T17:20:12.008",
-    "Importe": 27600,
-    "EstadoActual": 13,
-    "CentroDistribucionOrigen": "CD-PAL-02",
-    "CentroDistribucionDestino": "CD-GC-01",
-    "MetodoEntrega": 1,
-    "AgenciaEntregaCodigo": "",
-    "CentroDistribucionEntregaCodigo": "CD-GC-01",
-    "DireccionEntrega": "",
-    "CodPostalEntrega": 0,
-    "MetodoRetiro": 2,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "",
-    "DireccionRetiro": "Av. Santa Fe 4100",
-    "CodPostalRetiro": 1422,
-    "DniDestinatario": 29111876,
-    "NombreApellidoDestinatario": "Valeria Costa",
-    "CajasS": 0,
-    "CajasM": 0,
-    "CajasL": 1,
-    "CajasXL": 2,
-    "Historial": [
-      {
-        "Estado": 0,
-        "UltimaActualizacion": "2026-05-08T17:20:12.008",
-        "Ubicacion": "Solicitud telefonica"
-      },
-      {
-        "Estado": 3,
-        "UltimaActualizacion": "2026-05-09T09:15:00.000",
-        "Ubicacion": "Av. Santa Fe 4100"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-05-09T12:45:00.000",
-        "Ubicacion": "Centro Distribucion Palermo Sur"
-      },
-      {
-        "Estado": 6,
-        "UltimaActualizacion": "2026-05-10T07:00:00.000",
-        "Ubicacion": "En transito a CD-GC-01"
-      },
-      {
-        "Estado": 7,
-        "UltimaActualizacion": "2026-05-10T18:50:00.000",
-        "Ubicacion": "Centro Distribucion Godoy Cruz"
-      },
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-05-11T08:30:00.000",
-        "Ubicacion": "Centro Distribucion Godoy Cruz"
-      },
-      {
-        "Estado": 9,
-        "UltimaActualizacion": "2026-05-11T12:00:00.000",
-        "Ubicacion": "Centro Distribucion Godoy Cruz"
-      },
-      {
-        "Estado": 13,
-        "UltimaActualizacion": "2026-05-12T09:00:00.000",
-        "Ubicacion": "Centro Distribucion Godoy Cruz"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30712345678,
-    "NumeroGuia": "CD-CBA-01-00000001",
-    "FechaCreacion": "2026-06-01T09:00:00.000",
-    "Importe": 13200,
-    "EstadoActual": 3,
-    "CentroDistribucionOrigen": "CD-CBA-01",
-    "CentroDistribucionDestino": "CD-MZA-01",
-    "MetodoEntrega": 2,
-    "AgenciaEntregaCodigo": "AG-MZA-01-01",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "Av. San Martin 1120",
-    "CodPostalEntrega": 5500,
-    "MetodoRetiro": 2,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "CD-CBA-01",
-    "DireccionRetiro": "Av. Colon 1234",
-    "CodPostalRetiro": 5000,
-    "DniDestinatario": 40111222,
-    "NombreApellidoDestinatario": "Prueba Rendicion",
-    "CajasS": 1,
-    "CajasM": 0,
-    "CajasL": 0,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 0,
-        "UltimaActualizacion": "2026-06-01T09:00:00.000",
-        "Ubicacion": "Solicitud telefonica"
-      },
-      {
-        "Estado": 3,
-        "UltimaActualizacion": "2026-06-01T09:15:00.000",
-        "Ubicacion": "En transito a Av. Colon 1234"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30712345678,
-    "NumeroGuia": "CD-CBA-01-00000002",
-    "FechaCreacion": "2026-06-01T09:05:00.000",
-    "Importe": 13200,
-    "EstadoActual": 0,
-    "CentroDistribucionOrigen": "CD-CBA-01",
-    "CentroDistribucionDestino": "CD-MZA-01",
-    "MetodoEntrega": 2,
-    "AgenciaEntregaCodigo": "AG-MZA-01-01",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "Av. San Martin 1120",
-    "CodPostalEntrega": 5500,
-    "MetodoRetiro": 2,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "CD-CBA-01",
-    "DireccionRetiro": "Av. Colon 1250",
-    "CodPostalRetiro": 5000,
-    "DniDestinatario": 40222333,
-    "NombreApellidoDestinatario": "Prueba Admision Estado",
-    "CajasS": 1,
-    "CajasM": 0,
-    "CajasL": 0,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 0,
-        "UltimaActualizacion": "2026-06-01T09:05:00.000",
-        "Ubicacion": "Solicitud telefonica"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30712345678,
-    "NumeroGuia": "CD-CBA-01-00000003",
-    "FechaCreacion": "2026-06-01T09:10:00.000",
-    "Importe": 13200,
-    "EstadoActual": 5,
-    "CentroDistribucionOrigen": "CD-CBA-01",
-    "CentroDistribucionDestino": "CD-MZA-01",
-    "MetodoEntrega": 2,
-    "AgenciaEntregaCodigo": "AG-MZA-01-01",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "Av. San Martin 1120",
-    "CodPostalEntrega": 5500,
-    "MetodoRetiro": 2,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "CD-CBA-01",
-    "DireccionRetiro": "Av. Colon 1260",
-    "CodPostalRetiro": 5000,
-    "DniDestinatario": 40333444,
-    "NombreApellidoDestinatario": "Prueba Admision Valida",
-    "CajasS": 1,
-    "CajasM": 0,
-    "CajasL": 0,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 0,
-        "UltimaActualizacion": "2026-06-01T09:10:00.000",
-        "Ubicacion": "Solicitud telefonica"
-      },
-      {
-        "Estado": 3,
-        "UltimaActualizacion": "2026-06-01T09:20:00.000",
-        "Ubicacion": "En transito a Av. Colon 1260"
-      },
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-06-01T09:30:00.000",
-        "Ubicacion": "Centro Distribucion Cordoba Capital Norte"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30712345678,
-    "NumeroGuia": "CD-CBA-01-00000004",
-    "FechaCreacion": "2026-06-01T09:15:00.000",
-    "Importe": 6000,
-    "EstadoActual": 5,
-    "CentroDistribucionOrigen": "CD-CBA-01",
-    "CentroDistribucionDestino": "CD-XX-99",
-    "MetodoEntrega": 1,
-    "AgenciaEntregaCodigo": "",
-    "CentroDistribucionEntregaCodigo": "CD-XX-99",
-    "DireccionEntrega": "",
-    "CodPostalEntrega": 0,
-    "MetodoRetiro": 2,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "CD-CBA-01",
-    "DireccionRetiro": "Av. Colon 1270",
-    "CodPostalRetiro": 5000,
-    "DniDestinatario": 40444555,
-    "NombreApellidoDestinatario": "Prueba Admision Destino",
-    "CajasS": 1,
-    "CajasM": 0,
-    "CajasL": 0,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 5,
-        "UltimaActualizacion": "2026-06-01T09:35:00.000",
-        "Ubicacion": "Centro Distribucion Cordoba Capital Norte"
-      }
-    ]
-  },
-  {
-    "CuitCliente": 30765432109,
-    "NumeroGuia": "CD-CBA-01-00000005",
-    "FechaCreacion": "2026-06-01T09:20:00.000",
-    "Importe": 11300,
-    "EstadoActual": 12,
-    "CentroDistribucionOrigen": "CD-CBA-01",
-    "CentroDistribucionDestino": "CD-MZA-01",
-    "MetodoEntrega": 2,
-    "AgenciaEntregaCodigo": "AG-MZA-01-01",
-    "CentroDistribucionEntregaCodigo": "",
-    "DireccionEntrega": "Av. San Martin 1120",
-    "CodPostalEntrega": 5500,
-    "MetodoRetiro": 1,
-    "AgenciaRetiroCodigo": "",
-    "CentroDistribucionRetiroCodigo": "CD-CBA-01",
-    "DireccionRetiro": "",
-    "CodPostalRetiro": 0,
-    "DniDestinatario": 40555666,
-    "NombreApellidoDestinatario": "Prueba Entrega Agencia",
-    "CajasS": 1,
-    "CajasM": 0,
-    "CajasL": 0,
-    "CajasXL": 0,
-    "Historial": [
-      {
-        "Estado": 8,
-        "UltimaActualizacion": "2026-06-01T10:00:00.000",
-        "Ubicacion": "Centro Distribucion Ciudad de Mendoza Centro"
-      },
-      {
-        "Estado": 11,
-        "UltimaActualizacion": "2026-06-01T10:15:00.000",
-        "Ubicacion": "En transito a Agencia Ciudad de Mendoza Centro"
-      },
-      {
-        "Estado": 12,
-        "UltimaActualizacion": "2026-06-01T10:30:00.000",
-        "Ubicacion": "Agencia Ciudad de Mendoza Centro"
-      }
-    ]
-  }
+﻿[
+    {
+        "CuitCliente":  30712345678,
+        "NumeroGuia":  "AG-LP-01-01-00000001",
+        "FechaCreacion":  "2026-05-01T10:15:30.001",
+        "Importe":  14500,
+        "EstadoActual":  13,
+        "CentroDistribucionOrigen":  "CD-LP-01",
+        "CentroDistribucionDestino":  "CD-CBA-01",
+        "MetodoEntrega":  0,
+        "AgenciaEntregaCodigo":  "",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "Av. Colon 1240",
+        "CodPostalEntrega":  5001,
+        "MetodoRetiro":  0,
+        "AgenciaRetiroCodigo":  "AG-LP-01-01",
+        "CentroDistribucionRetiroCodigo":  "",
+        "DireccionRetiro":  "",
+        "CodPostalRetiro":  0,
+        "DniDestinatario":  31876543,
+        "NombreApellidoDestinatario":  "Sofia Martinez",
+        "CajasS":  2,
+        "CajasM":  1,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  1,
+                              "UltimaActualizacion":  "2026-05-01T10:15:30.001",
+                              "Ubicacion":  "Agencia La Plata Norte Centro"
+                          },
+                          {
+                              "Estado":  4,
+                              "UltimaActualizacion":  "2026-05-01T11:05:00.000",
+                              "Ubicacion":  "CD-LP-01"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-05-01T13:20:00.000",
+                              "Ubicacion":  "Centro Distribucion La Plata Norte"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-02T08:10:00.000",
+                              "Ubicacion":  "En transito a CD-CBA-01"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-02T19:45:00.000",
+                              "Ubicacion":  "Centro Distribucion Cordoba Capital Norte"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-03T09:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Cordoba Capital Norte"
+                          },
+                          {
+                              "Estado":  10,
+                              "UltimaActualizacion":  "2026-05-03T16:20:00.000",
+                              "Ubicacion":  "En transito a domicilio"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-04T10:00:00.000",
+                              "Ubicacion":  "Av. Colon 1240"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30765432109,
+        "NumeroGuia":  "CD-MDP-01-00000001",
+        "FechaCreacion":  "2026-05-02T11:30:45.002",
+        "Importe":  19150,
+        "EstadoActual":  13,
+        "CentroDistribucionOrigen":  "CD-MDP-01",
+        "CentroDistribucionDestino":  "CD-RET-01",
+        "MetodoEntrega":  2,
+        "AgenciaEntregaCodigo":  "AG-RET-01-01",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "",
+        "CodPostalEntrega":  0,
+        "MetodoRetiro":  2,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "",
+        "DireccionRetiro":  "San Martin 2450",
+        "CodPostalRetiro":  7602,
+        "DniDestinatario":  28456123,
+        "NombreApellidoDestinatario":  "Federico Alonso",
+        "CajasS":  0,
+        "CajasM":  2,
+        "CajasL":  1,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  0,
+                              "UltimaActualizacion":  "2026-05-02T11:30:45.002",
+                              "Ubicacion":  "Solicitud telefonica"
+                          },
+                          {
+                              "Estado":  3,
+                              "UltimaActualizacion":  "2026-05-02T15:00:00.000",
+                              "Ubicacion":  "San Martin 2450"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-05-02T18:40:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Centro"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-03T07:15:00.000",
+                              "Ubicacion":  "En transito a CD-RET-01"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-03T17:20:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-04T08:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  11,
+                              "UltimaActualizacion":  "2026-05-04T08:35:00.000",
+                              "Ubicacion":  "En transito a agencia destino"
+                          },
+                          {
+                              "Estado":  12,
+                              "UltimaActualizacion":  "2026-05-04T10:10:00.000",
+                              "Ubicacion":  "Agencia Retiro Terminal"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-05T09:30:00.000",
+                              "Ubicacion":  "Agencia Retiro Terminal"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30567891234,
+        "NumeroGuia":  "CD-CBA-02-00000001",
+        "FechaCreacion":  "2026-05-03T14:45:10.003",
+        "Importe":  19850,
+        "EstadoActual":  13,
+        "CentroDistribucionOrigen":  "CD-CBA-02",
+        "CentroDistribucionDestino":  "CD-MZA-01",
+        "MetodoEntrega":  1,
+        "AgenciaEntregaCodigo":  "",
+        "CentroDistribucionEntregaCodigo":  "CD-MZA-01",
+        "DireccionEntrega":  "",
+        "CodPostalEntrega":  0,
+        "MetodoRetiro":  1,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-CBA-02",
+        "DireccionRetiro":  "",
+        "CodPostalRetiro":  0,
+        "DniDestinatario":  35123987,
+        "NombreApellidoDestinatario":  "Laura Benitez",
+        "CajasS":  1,
+        "CajasM":  0,
+        "CajasL":  2,
+        "CajasXL":  1,
+        "Historial":  [
+                          {
+                              "Estado":  2,
+                              "UltimaActualizacion":  "2026-05-03T14:45:10.003",
+                              "Ubicacion":  "Centro Distribucion Cordoba Capital Sur"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-05-03T15:25:00.000",
+                              "Ubicacion":  "Centro Distribucion Cordoba Capital Sur"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-04T06:50:00.000",
+                              "Ubicacion":  "En transito a CD-MZA-01"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-04T18:15:00.000",
+                              "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-05T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
+                          },
+                          {
+                              "Estado":  9,
+                              "UltimaActualizacion":  "2026-05-05T12:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-06T09:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30543219876,
+        "NumeroGuia":  "AG-LIN-02-01-00000001",
+        "FechaCreacion":  "2026-05-04T10:20:05.004",
+        "Importe":  17100,
+        "EstadoActual":  13,
+        "CentroDistribucionOrigen":  "CD-LIN-02",
+        "CentroDistribucionDestino":  "CD-BB-01",
+        "MetodoEntrega":  0,
+        "AgenciaEntregaCodigo":  "",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "Alsina 830",
+        "CodPostalEntrega":  8003,
+        "MetodoRetiro":  0,
+        "AgenciaRetiroCodigo":  "AG-LIN-02-01",
+        "CentroDistribucionRetiroCodigo":  "",
+        "DireccionRetiro":  "",
+        "CodPostalRetiro":  0,
+        "DniDestinatario":  30333444,
+        "NombreApellidoDestinatario":  "Diego Herrera",
+        "CajasS":  3,
+        "CajasM":  1,
+        "CajasL":  0,
+        "CajasXL":  1,
+        "Historial":  [
+                          {
+                              "Estado":  1,
+                              "UltimaActualizacion":  "2026-05-04T10:20:05.004",
+                              "Ubicacion":  "Agencia Liniers Sur Terminal"
+                          },
+                          {
+                              "Estado":  4,
+                              "UltimaActualizacion":  "2026-05-04T11:10:00.000",
+                              "Ubicacion":  "CD-LIN-02"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-05-04T13:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Liniers Sur"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-05T07:30:00.000",
+                              "Ubicacion":  "En transito a CD-BB-01"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-05T17:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Bahia Blanca"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-06T08:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Bahia Blanca"
+                          },
+                          {
+                              "Estado":  10,
+                              "UltimaActualizacion":  "2026-05-06T11:00:00.000",
+                              "Ubicacion":  "En transito a domicilio"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-07T10:00:00.000",
+                              "Ubicacion":  "Alsina 830"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30678912345,
+        "NumeroGuia":  "CD-GC-01-00000001",
+        "FechaCreacion":  "2026-05-05T16:50:22.005",
+        "Importe":  22450,
+        "EstadoActual":  13,
+        "CentroDistribucionOrigen":  "CD-GC-01",
+        "CentroDistribucionDestino":  "CD-PAL-01",
+        "MetodoEntrega":  2,
+        "AgenciaEntregaCodigo":  "AG-PAL-01-01",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "",
+        "CodPostalEntrega":  0,
+        "MetodoRetiro":  2,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "",
+        "DireccionRetiro":  "Belgrano 1520",
+        "CodPostalRetiro":  5524,
+        "DniDestinatario":  27654198,
+        "NombreApellidoDestinatario":  "Mariana Ruiz",
+        "CajasS":  0,
+        "CajasM":  1,
+        "CajasL":  1,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  0,
+                              "UltimaActualizacion":  "2026-05-05T16:50:22.005",
+                              "Ubicacion":  "Solicitud telefonica"
+                          },
+                          {
+                              "Estado":  3,
+                              "UltimaActualizacion":  "2026-05-06T09:10:00.000",
+                              "Ubicacion":  "Belgrano 1520"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-05-06T12:35:00.000",
+                              "Ubicacion":  "Centro Distribucion Godoy Cruz"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-07T06:25:00.000",
+                              "Ubicacion":  "En transito a CD-PAL-01"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-07T19:05:00.000",
+                              "Ubicacion":  "Centro Distribucion Palermo Norte"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-08T08:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Palermo Norte"
+                          },
+                          {
+                              "Estado":  11,
+                              "UltimaActualizacion":  "2026-05-08T08:45:00.000",
+                              "Ubicacion":  "En transito a agencia destino"
+                          },
+                          {
+                              "Estado":  12,
+                              "UltimaActualizacion":  "2026-05-08T10:00:00.000",
+                              "Ubicacion":  "Agencia Palermo Norte Soho"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-09T09:30:00.000",
+                              "Ubicacion":  "Agencia Palermo Norte Soho"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30712345678,
+        "NumeroGuia":  "CD-RET-02-00000001",
+        "FechaCreacion":  "2026-05-06T12:05:40.006",
+        "Importe":  5600,
+        "EstadoActual":  13,
+        "CentroDistribucionOrigen":  "CD-RET-02",
+        "CentroDistribucionDestino":  "CD-MDP-02",
+        "MetodoEntrega":  1,
+        "AgenciaEntregaCodigo":  "",
+        "CentroDistribucionEntregaCodigo":  "CD-MDP-02",
+        "DireccionEntrega":  "",
+        "CodPostalEntrega":  0,
+        "MetodoRetiro":  1,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-RET-02",
+        "DireccionRetiro":  "",
+        "CodPostalRetiro":  0,
+        "DniDestinatario":  39555111,
+        "NombreApellidoDestinatario":  "Camila Fernandez",
+        "CajasS":  4,
+        "CajasM":  0,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  2,
+                              "UltimaActualizacion":  "2026-05-06T12:05:40.006",
+                              "Ubicacion":  "Centro Distribucion Retiro Centro"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-05-06T13:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Centro"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-06T22:00:00.000",
+                              "Ubicacion":  "En transito a CD-MDP-02"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-07T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Puerto"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-07T09:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Puerto"
+                          },
+                          {
+                              "Estado":  9,
+                              "UltimaActualizacion":  "2026-05-07T12:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Puerto"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-08T09:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Mar del Plata Puerto"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30765432109,
+        "NumeroGuia":  "AG-RC-01-02-00000001",
+        "FechaCreacion":  "2026-05-07T19:05:33.007",
+        "Importe":  16100,
+        "EstadoActual":  13,
+        "CentroDistribucionOrigen":  "CD-RC-01",
+        "CentroDistribucionDestino":  "CD-LP-02",
+        "MetodoEntrega":  0,
+        "AgenciaEntregaCodigo":  "",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "Calle 12 980",
+        "CodPostalEntrega":  1907,
+        "MetodoRetiro":  0,
+        "AgenciaRetiroCodigo":  "AG-RC-01-02",
+        "CentroDistribucionRetiroCodigo":  "",
+        "DireccionRetiro":  "",
+        "CodPostalRetiro":  0,
+        "DniDestinatario":  33222888,
+        "NombreApellidoDestinatario":  "Nicolas Suarez",
+        "CajasS":  1,
+        "CajasM":  2,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  1,
+                              "UltimaActualizacion":  "2026-05-07T19:05:33.007",
+                              "Ubicacion":  "Agencia Rio Cuarto Sur"
+                          },
+                          {
+                              "Estado":  4,
+                              "UltimaActualizacion":  "2026-05-08T08:10:00.000",
+                              "Ubicacion":  "CD-RC-01"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-05-08T10:25:00.000",
+                              "Ubicacion":  "Centro Distribucion Rio Cuarto"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-09T06:40:00.000",
+                              "Ubicacion":  "En transito a CD-LP-02"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-09T20:05:00.000",
+                              "Ubicacion":  "Centro Distribucion La Plata Sur"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-10T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion La Plata Sur"
+                          },
+                          {
+                              "Estado":  10,
+                              "UltimaActualizacion":  "2026-05-10T09:00:00.000",
+                              "Ubicacion":  "En transito a domicilio"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-11T10:00:00.000",
+                              "Ubicacion":  "Calle 12 980"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30567891234,
+        "NumeroGuia":  "CD-PAL-02-00000001",
+        "FechaCreacion":  "2026-05-08T17:20:12.008",
+        "Importe":  27600,
+        "EstadoActual":  13,
+        "CentroDistribucionOrigen":  "CD-PAL-02",
+        "CentroDistribucionDestino":  "CD-GC-01",
+        "MetodoEntrega":  1,
+        "AgenciaEntregaCodigo":  "",
+        "CentroDistribucionEntregaCodigo":  "CD-GC-01",
+        "DireccionEntrega":  "",
+        "CodPostalEntrega":  0,
+        "MetodoRetiro":  2,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "",
+        "DireccionRetiro":  "Av. Santa Fe 4100",
+        "CodPostalRetiro":  1422,
+        "DniDestinatario":  29111876,
+        "NombreApellidoDestinatario":  "Valeria Costa",
+        "CajasS":  0,
+        "CajasM":  0,
+        "CajasL":  1,
+        "CajasXL":  2,
+        "Historial":  [
+                          {
+                              "Estado":  0,
+                              "UltimaActualizacion":  "2026-05-08T17:20:12.008",
+                              "Ubicacion":  "Solicitud telefonica"
+                          },
+                          {
+                              "Estado":  3,
+                              "UltimaActualizacion":  "2026-05-09T09:15:00.000",
+                              "Ubicacion":  "Av. Santa Fe 4100"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-05-09T12:45:00.000",
+                              "Ubicacion":  "Centro Distribucion Palermo Sur"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-05-10T07:00:00.000",
+                              "Ubicacion":  "En transito a CD-GC-01"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-05-10T18:50:00.000",
+                              "Ubicacion":  "Centro Distribucion Godoy Cruz"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-05-11T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Godoy Cruz"
+                          },
+                          {
+                              "Estado":  9,
+                              "UltimaActualizacion":  "2026-05-11T12:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Godoy Cruz"
+                          },
+                          {
+                              "Estado":  13,
+                              "UltimaActualizacion":  "2026-05-12T09:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Godoy Cruz"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30712345678,
+        "NumeroGuia":  "CD-CBA-01-00000001",
+        "FechaCreacion":  "2026-06-01T09:00:00.000",
+        "Importe":  13200,
+        "EstadoActual":  3,
+        "CentroDistribucionOrigen":  "CD-CBA-01",
+        "CentroDistribucionDestino":  "CD-MZA-01",
+        "MetodoEntrega":  2,
+        "AgenciaEntregaCodigo":  "AG-MZA-01-01",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "Av. San Martin 1120",
+        "CodPostalEntrega":  5500,
+        "MetodoRetiro":  2,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-CBA-01",
+        "DireccionRetiro":  "Av. Colon 1234",
+        "CodPostalRetiro":  5000,
+        "DniDestinatario":  40111222,
+        "NombreApellidoDestinatario":  "Prueba Rendicion",
+        "CajasS":  1,
+        "CajasM":  0,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  0,
+                              "UltimaActualizacion":  "2026-06-01T09:00:00.000",
+                              "Ubicacion":  "Solicitud telefonica"
+                          },
+                          {
+                              "Estado":  3,
+                              "UltimaActualizacion":  "2026-06-01T09:15:00.000",
+                              "Ubicacion":  "En transito a Av. Colon 1234"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30712345678,
+        "NumeroGuia":  "CD-CBA-01-00000002",
+        "FechaCreacion":  "2026-06-01T09:05:00.000",
+        "Importe":  13200,
+        "EstadoActual":  0,
+        "CentroDistribucionOrigen":  "CD-CBA-01",
+        "CentroDistribucionDestino":  "CD-MZA-01",
+        "MetodoEntrega":  2,
+        "AgenciaEntregaCodigo":  "AG-MZA-01-01",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "Av. San Martin 1120",
+        "CodPostalEntrega":  5500,
+        "MetodoRetiro":  2,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-CBA-01",
+        "DireccionRetiro":  "Av. Colon 1250",
+        "CodPostalRetiro":  5000,
+        "DniDestinatario":  40222333,
+        "NombreApellidoDestinatario":  "Prueba Admision Estado",
+        "CajasS":  1,
+        "CajasM":  0,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  0,
+                              "UltimaActualizacion":  "2026-06-01T09:05:00.000",
+                              "Ubicacion":  "Solicitud telefonica"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30712345678,
+        "NumeroGuia":  "CD-CBA-01-00000003",
+        "FechaCreacion":  "2026-06-01T09:10:00.000",
+        "Importe":  13200,
+        "EstadoActual":  5,
+        "CentroDistribucionOrigen":  "CD-CBA-01",
+        "CentroDistribucionDestino":  "CD-MZA-01",
+        "MetodoEntrega":  2,
+        "AgenciaEntregaCodigo":  "AG-MZA-01-01",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "Av. San Martin 1120",
+        "CodPostalEntrega":  5500,
+        "MetodoRetiro":  2,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-CBA-01",
+        "DireccionRetiro":  "Av. Colon 1260",
+        "CodPostalRetiro":  5000,
+        "DniDestinatario":  40333444,
+        "NombreApellidoDestinatario":  "Prueba Admision Valida",
+        "CajasS":  1,
+        "CajasM":  0,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  0,
+                              "UltimaActualizacion":  "2026-06-01T09:10:00.000",
+                              "Ubicacion":  "Solicitud telefonica"
+                          },
+                          {
+                              "Estado":  3,
+                              "UltimaActualizacion":  "2026-06-01T09:20:00.000",
+                              "Ubicacion":  "En transito a Av. Colon 1260"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-06-01T09:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Cordoba Capital Norte"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30712345678,
+        "NumeroGuia":  "CD-CBA-01-00000004",
+        "FechaCreacion":  "2026-06-01T09:15:00.000",
+        "Importe":  6000,
+        "EstadoActual":  5,
+        "CentroDistribucionOrigen":  "CD-CBA-01",
+        "CentroDistribucionDestino":  "CD-XX-99",
+        "MetodoEntrega":  1,
+        "AgenciaEntregaCodigo":  "",
+        "CentroDistribucionEntregaCodigo":  "CD-XX-99",
+        "DireccionEntrega":  "",
+        "CodPostalEntrega":  0,
+        "MetodoRetiro":  2,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-CBA-01",
+        "DireccionRetiro":  "Av. Colon 1270",
+        "CodPostalRetiro":  5000,
+        "DniDestinatario":  40444555,
+        "NombreApellidoDestinatario":  "Prueba Admision Destino",
+        "CajasS":  1,
+        "CajasM":  0,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-06-01T09:35:00.000",
+                              "Ubicacion":  "Centro Distribucion Cordoba Capital Norte"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30765432109,
+        "NumeroGuia":  "CD-CBA-01-00000005",
+        "FechaCreacion":  "2026-06-01T09:20:00.000",
+        "Importe":  11300,
+        "EstadoActual":  12,
+        "CentroDistribucionOrigen":  "CD-CBA-01",
+        "CentroDistribucionDestino":  "CD-MZA-01",
+        "MetodoEntrega":  2,
+        "AgenciaEntregaCodigo":  "AG-MZA-01-01",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "Av. San Martin 1120",
+        "CodPostalEntrega":  5500,
+        "MetodoRetiro":  1,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-CBA-01",
+        "DireccionRetiro":  "",
+        "CodPostalRetiro":  0,
+        "DniDestinatario":  40555666,
+        "NombreApellidoDestinatario":  "Prueba Entrega Agencia",
+        "CajasS":  1,
+        "CajasM":  0,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-06-01T10:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Ciudad de Mendoza Centro"
+                          },
+                          {
+                              "Estado":  11,
+                              "UltimaActualizacion":  "2026-06-01T10:15:00.000",
+                              "Ubicacion":  "En transito a Agencia Ciudad de Mendoza Centro"
+                          },
+                          {
+                              "Estado":  12,
+                              "UltimaActualizacion":  "2026-06-01T10:30:00.000",
+                              "Ubicacion":  "Agencia Ciudad de Mendoza Centro"
+                          }
+                      ]
+    },
+    {
+        "CuitCliente":  30712345678,
+        "NumeroGuia":  "CD-RET-01-00000001",
+        "FechaCreacion":  "2026-06-16T08:00:00.000",
+        "Importe":  12500,
+        "EstadoActual":  7,
+        "CentroDistribucionOrigen":  "CD-RET-01",
+        "CentroDistribucionDestino":  "CD-GC-01",
+        "MetodoEntrega":  2,
+        "AgenciaEntregaCodigo":  "AG-GC-01-01",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "",
+        "CodPostalEntrega":  0,
+        "MetodoRetiro":  1,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-RET-01",
+        "DireccionRetiro":  "Av. Ramos Mejia 1358",
+        "CodPostalRetiro":  1001,
+        "DniDestinatario":  28456123,
+        "NombreApellidoDestinatario":  "Federico Alonso",
+        "CajasS":  1,
+        "CajasM":  1,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  2,
+                              "UltimaActualizacion":  "2026-06-16T08:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-06-16T08:15:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-06-16T08:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-06-16T09:00:00.000",
+                              "Ubicacion":  "En transito a CD-GC-01"
+                          }
+                      ],
+        "Facturada":  false,
+        "CentroDistribucionOrigenDevolucion":  "",
+        "CentroDistribucionDestinoDevolucion":  "",
+        "AgenciaDevolucionCodigo":  "",
+        "DireccionDevolucion":  "",
+        "CodPostalDevolucion":  0
+    },
+    {
+        "CuitCliente":  30712345678,
+        "NumeroGuia":  "CD-RET-01-00000002",
+        "FechaCreacion":  "2026-06-16T09:15:00.000",
+        "Importe":  18400,
+        "EstadoActual":  17,
+        "CentroDistribucionOrigen":  "CD-RET-01",
+        "CentroDistribucionDestino":  "CD-CBA-01",
+        "MetodoEntrega":  0,
+        "AgenciaEntregaCodigo":  "",
+        "CentroDistribucionEntregaCodigo":  "",
+        "DireccionEntrega":  "Av. Colon 1240",
+        "CodPostalEntrega":  5001,
+        "MetodoRetiro":  1,
+        "AgenciaRetiroCodigo":  "",
+        "CentroDistribucionRetiroCodigo":  "CD-RET-01",
+        "DireccionRetiro":  "Av. Antartida Argentina 1180",
+        "CodPostalRetiro":  1001,
+        "DniDestinatario":  31876543,
+        "NombreApellidoDestinatario":  "Sofia Martinez",
+        "CajasS":  2,
+        "CajasM":  1,
+        "CajasL":  0,
+        "CajasXL":  0,
+        "Historial":  [
+                          {
+                              "Estado":  2,
+                              "UltimaActualizacion":  "2026-06-16T09:15:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  5,
+                              "UltimaActualizacion":  "2026-06-16T09:20:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  6,
+                              "UltimaActualizacion":  "2026-06-16T09:30:00.000",
+                              "Ubicacion":  "Centro Distribucion Retiro Terminal"
+                          },
+                          {
+                              "Estado":  7,
+                              "UltimaActualizacion":  "2026-06-16T10:00:00.000",
+                              "Ubicacion":  "En transito a CD-CBA-01"
+                          },
+                          {
+                              "Estado":  8,
+                              "UltimaActualizacion":  "2026-06-16T15:00:00.000",
+                              "Ubicacion":  "Centro Distribucion Cordoba Capital Norte"
+                          },
+                          {
+                              "Estado":  10,
+                              "UltimaActualizacion":  "2026-06-16T16:00:00.000",
+                              "Ubicacion":  "En transito a Av. Colon 1240"
+                          }
+                      ],
+        "Facturada":  false,
+        "CentroDistribucionOrigenDevolucion":  "CD-CBA-01",
+        "CentroDistribucionDestinoDevolucion":  "CD-RET-01",
+        "AgenciaDevolucionCodigo":  "",
+        "DireccionDevolucion":  "",
+        "CodPostalDevolucion":  0
+    }
 ]
