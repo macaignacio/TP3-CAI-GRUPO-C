@@ -27,7 +27,7 @@
 	En "Guias.json" buscar la guía con el NumeroGuia usado y confirmar que cambió:
 		- Estado (EstadoActual): 6  (= Admitida en CD)
 		- CentroDistribucionOrigen: "CD-CBA-01"  (se mantiene)
-		- Importe: 3500  (no cambia porque no se modificaron las cajas ni el CD origen)
+		- Importe: 13200  (no cambia porque no se modificaron las cajas ni el CD origen)
 		- Historial: tiene un movimiento NUEVO agregado al final con
 		     Estado: 6 (Admitida en CD)
 		     Ubicacion: "Centro Distribucion Cordoba Capital Norte"
@@ -35,8 +35,10 @@
 	En "HojasDeRutaOmnibus.json" confirmar que se creó un HDR de ómnibus nuevo:
 		- Codigo: anotar como <HDR_OMNIBUS_CAMINO_FELIZ>
 		  (formato HDR-OMN-AAAAMM-numero)
-		- IdentificadorServicio: "FLE-20260610-0600-TRONCAL-IDA"
-		     (servicio que pasa por CD-CBA-01 antes que por CD-MZA-01)
+		- IdentificadorServicio: "FLE-20260618-0900-TRONCAL-IDA"
+		     (servicio que pasa por CD-CBA-01 antes que por CD-MZA-01;
+		      con los datos cargados, la parada en CD-CBA-01 es el
+		      20/06/2026 18:00 y la llegada a CD-MZA-01 el 20/06/2026 22:30)
 		- CentroDistribucionOrigen: "CD-CBA-01"
 		- CentroDistribucionDestino: "CD-MZA-01"
 		- Estado: 0  (= Asignada)

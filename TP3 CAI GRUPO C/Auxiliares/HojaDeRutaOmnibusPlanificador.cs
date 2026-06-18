@@ -104,7 +104,7 @@ namespace TP3_CAI_GRUPO_C.Auxiliares
 
             return paradaOrigen != null &&
                    paradaDestino != null &&
-                   paradaOrigen > DateTime.Now &&
+                   paradaOrigen > Program.AhoraSistema() &&
                    paradaOrigen < paradaDestino;
         }
 

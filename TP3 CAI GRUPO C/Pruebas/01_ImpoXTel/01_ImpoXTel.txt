@@ -30,9 +30,10 @@
 
 	En "Guias.json" confirmar que se creó la guía con los datos ingresados en el paso 01.
 	Los datos a corroborar son:
-		- NumeroGuia: el número largo que mostró el cartel (fecha/hora)
+		- NumeroGuia: el número con formato "CD-CBA-01-NNNNNNNN" que mostró
+		  el cartel (prefijo = CD origen + 8 dígitos secuenciales).
 		- CuitCliente: 30712345678
-		- Importe: 3500
+		- Importe: 13200
 		- Estado (EstadoActual): 0  (= Impuesta Telefónicamente)
 		- CentroDistribucionOrigen: "CD-CBA-01"
 		- CentroDistribucionDestino: "CD-MZA-01"

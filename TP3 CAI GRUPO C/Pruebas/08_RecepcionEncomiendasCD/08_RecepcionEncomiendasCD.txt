@@ -7,22 +7,32 @@
 		- En "HojasDeRutaOmnibus.json": <HDR_OMNIBUS_CAMINO_FELIZ>
 		  en estado 1 (EnTransito)
 
+	NOTA SOBRE FECHAS:
+	  El troncal cargado en "ServiciosOmnibus.json" tiene a CD-MZA-01 llegando
+	  el 20/06/2026 22:30 (el mismo día que el despacho). La pantalla de
+	  Recepción acepta como Fecha/Hora una del DIA ACTUAL o de las últimas
+	  12 horas. Por eso esta prueba se diseñó para correrse el 20/06/2026
+	  (idealmente después de "07_DespachoEncomiendasCD" en el mismo día).
+	  Si se corre otro día, hay que editar las paradas del servicio
+	  "FLE-20260618-0900-TRONCAL-IDA" en "ServiciosOmnibus.json" o usar
+	  el override de "Fecha Sistema" desde el menú principal.
+
 01. Menú principal:
 	1 - En "Centro de distribución actual" elegir: "CD-MZA-01" (CD Destino)
-	   
+
 	2 - Entrar al menú "Recepción Encomiendas"
 
 02. Pantalla "Recepción Encomiendas CD" - GroupBox "Seleccionar Ómnibus":
 	1 - VERIFICAR que en el campo "Código CD" figure: "CD-MZA-01"
 	2 - Empresa: "Flecha Bus"
-	3 - Fecha/Hora de Salida: 12/06/2026 01:30
+	3 - Fecha/Hora de Salida: 20/06/2026 22:30
 	     (es la hora a la que el servicio troncal LLEGA a CD-MZA-01)
 	4 - Apretar el botón "Buscar"
 	5 - VERIFICAR que se habilita el GroupBox "Detalle de Hojas de Ruta de transporte recibidas"
 
 03. Pantalla "Recepción Encomiendas CD" - GroupBox "Detalle de Hojas de Ruta de transporte recibidas":
 	1 - VERIFICAR que en la lista aparece una fila con:
-	     - Nro de Orden: "FLE-20260610-0600-TRONCAL-IDA"
+	     - Nro de Orden: "FLE-20260618-0900-TRONCAL-IDA"
 	     - Hoja de Ruta: <HDR_OMNIBUS_CAMINO_FELIZ>
 	     - Estado: "EnTransito"
 	     - Empresa de ómnibus: "Flecha Bus"

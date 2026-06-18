@@ -17,9 +17,12 @@
 	     - Fecha: la fecha de emisión de la factura
 	     - Vencimiento: 30 días después de la emisión
 	     - Comprobante: <FACTURA_CAMINO_FELIZ>
-	     - Debe: 3.500,00
+	     - Debe: 13.200,00
 	     - Haber: 0,00
-	     - Saldo: 3.500,00
+	     - Saldo: saldo anterior del cliente + 13.200,00
+	        (con los datos cargados por defecto en "CtaCteCliente.json",
+	         para 30712345678 el saldo anterior es 14.600,00 y el saldo
+	         resultante es 27.800,00)
 
 04. Cierro el programa
 

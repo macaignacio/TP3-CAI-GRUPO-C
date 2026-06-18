@@ -20,11 +20,20 @@
 		- Entrar a Recepción, elegir una empresa (ej: "Flecha Bus") y apretar "Buscar".
 		- VERIFICAR cartel: "Debe seleccionar un centro de distribución actual."
 
-	1.3 - El CD actual NO es el destino (o fecha/hora que no coincide):
-		- CD actual: "CD-CBA-01" (que es el ORIGEN, no el destino), Empresa: "Flecha Bus"
-		- Fecha/Hora de Salida: 12/06/2026 01:30
+	1.3 - Fecha/Hora fuera de la ventana permitida:
+		- CD actual: "CD-MZA-01", Empresa: "Flecha Bus"
+		- Fecha/Hora de Salida: una fecha de varios días atrás o una fecha
+		  futura distinta de hoy (que no entre en la ventana "hoy" ni en
+		  "hasta 12 horas de demora").
 		- Apretar "Buscar"
-		- VERIFICAR cartel: "No se encontraron Hojas de Ruta para la empresa y
-		  fecha/hora seleccionadas."
-		  (También pasa si el CD actual es el destino correcto pero la fecha/hora
-		   no coincide con la llegada, o si la HDR todavía no fue despachada.)
+		- VERIFICAR cartel: "Solo se pueden buscar paradas de llegada del
+		  dia actual o con hasta 12 horas de demora."
+
+	1.4 - CD actual no es destino, o no hay HDR en tránsito para recibir:
+		- CD actual: "CD-CBA-01"  (es ORIGEN, no destino, del troncal)
+		- Empresa: "Flecha Bus" / Fecha/Hora: la de hoy (o de las últimas 12hs)
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "No se encontraron Hojas de Ruta para la empresa
+		  y fecha/hora seleccionadas."
+		  (También pasa si elegís una empresa sin HDR llegando a tu CD, o
+		   si la HDR todavía no fue despachada.)

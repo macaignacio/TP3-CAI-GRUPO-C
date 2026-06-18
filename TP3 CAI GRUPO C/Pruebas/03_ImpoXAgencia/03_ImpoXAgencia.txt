@@ -74,8 +74,11 @@ ACLARACION:
 	En "CtaCteAgencia.json":
 		- CodigoAgencia: "AG-MDP-01-02"
 		- NumeroGuia: <GUIA_IMPOXAGENCIA_1>
-		- Comprobante: formato "FC-A-0001-número"
-		- Comision: 5800
-		- Debe: 5800
+		- Comprobante: "" (vacío)
+		- TipoMovimiento: 0  (= Cargo)
+		- Concepto: "Comision por imposicion"
+		- Importe: 2000
+		- Debe: 2000
 		- Haber: 0
-		- Saldo: saldo anterior de la agencia + 5800
+		- Saldo: saldo anterior de la agencia + 2000
+		- Pagado: false

@@ -19,10 +19,20 @@
 		- Entrar a Despacho, elegir una empresa (ej: "Flecha Bus") y apretar "Buscar".
 		- VERIFICAR cartel: "Debe seleccionar un centro de distribución actual."
 
-	1.3 - Empresa y/o fecha-hora sin hojas de ruta para despachar:
+	1.3 - Fecha/Hora distinta al día actual:
 		- CD actual: "CD-CBA-01", Empresa: "Flecha Bus"
-		- Fecha/Hora de Salida: una distinta a 11/06/2026 11:45 (ej: la fecha de hoy)
-		  (también pasa si elegís una empresa sin HDR para ese CD, ej "Andesmar")
+		- Fecha/Hora de Salida: cualquier fecha que NO sea HOY
+		  (ej: ayer, o una fecha futura distinta de hoy).
 		- Apretar "Buscar"
-		- VERIFICAR cartel: "No se encontraron Hojas de Ruta para la empresa y
-		  fecha/hora seleccionadas."
+		- VERIFICAR cartel: "Solo se pueden buscar paradas de salida del
+		  dia actual."
+
+	1.4 - Día actual pero empresa sin HDR para despachar desde el CD actual:
+		- CD actual: "CD-CBA-01", Empresa: "Andesmar"
+		  (una empresa que no tenga HDR asignada saliendo hoy desde CD-CBA-01;
+		   también pasa si elegís Flecha Bus pero la fecha/hora no coincide
+		   con ninguna parada del troncal de hoy en CD-CBA-01)
+		- Fecha/Hora de Salida: la fecha de hoy
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "No se encontraron Hojas de Ruta para la empresa
+		  y fecha/hora seleccionadas."

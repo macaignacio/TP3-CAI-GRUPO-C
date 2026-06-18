@@ -18,13 +18,14 @@
 
 	(Se disparan al apretar el botón "Buscar")
 
-	1.1 - Número de guía vacío o con letras:
-		- Número de Guía: "" o "ABC123"
+	1.1 - Número de guía vacío:
+		- Número de Guía: ""
 		- Apretar "Buscar"
-		- VERIFICAR cartel: "El número de guía debe ser un número."
+		- VERIFICAR cartel: "Debe ingresar un número de guía."
 
 	1.2 - Número de guía que NO existe en el sistema:
-		- Número de Guía: 99999999999999999
+		- Número de Guía: "ABC123" (o "CD-XX-99-99999999", o cualquier
+		  string que no corresponda a una guía cargada).
 		- Apretar "Buscar"
 		- VERIFICAR cartel: "Guia no encontrada."
 

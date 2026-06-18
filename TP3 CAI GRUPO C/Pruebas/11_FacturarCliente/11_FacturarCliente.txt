@@ -14,9 +14,9 @@
 	     - Fecha: la fecha de entrega (la de hoy)
 	     - Descripción: "Entrega de encomienda en Agencia"
 	     - Número de Guía: <GUIA_CAMINO_FELIZ>
-	     - Monto: 3.500,00
-	     - Subtotal: 3.500,00
-	2 - VERIFICAR que el "Total calculado" muestra: 3.500,00
+	     - Monto: 13.200,00
+	     - Subtotal: 13.200,00
+	2 - VERIFICAR que el "Total calculado" muestra: 13.200,00
 	3 - Apretar el botón "Emitir Factura"
 	4 - VERIFICAR que aparece el cartel: "Factura emitida con éxito. Número de factura: ..."
 	     Anotar el número generado como <FACTURA_CAMINO_FELIZ> y verificar
@@ -29,7 +29,7 @@
 	En "Facturas.json" confirmar que se creó la factura:
 		- NumeroFactura: <FACTURA_CAMINO_FELIZ>
 		- CuitCliente: 30712345678
-		- Total: 3500
+		- Total: 13200
 		- Vencimiento: 30 días después de la fecha de emisión
 		- Guias: tiene que estar <GUIA_CAMINO_FELIZ>
 
@@ -37,9 +37,11 @@
 		- Cuit: 30712345678
 		- TipoComprobante: "Factura"
 		- Comprobante: <FACTURA_CAMINO_FELIZ>
-		- Debe: 3500
+		- Debe: 13200
 		- Haber: 0
-		- Saldo: 3500
+		- Saldo: saldo anterior del cliente + 13200
+		     (el cliente 30712345678 ya tiene movimientos cargados; el saldo
+		      depende del estado de la cuenta corriente al momento de facturar)
 
 	Con esto la guía queda facturada y lista para consultarse en la cuenta
 	corriente del cliente (prueba "12_ConsultaCtaCteCliente").

@@ -9,10 +9,13 @@
 
 03. Pantalla "Resultados Costos Ventas" - GroupBox "Resultado Operativo":
 	1 - VERIFICAR que aparece una fila para "Flecha Bus" con:
-	     - Ventas: $3.500,00   (el importe de la guía que viajó en el troncal de junio)
+	     - Ventas: como mínimo $13.200,00   (el importe de la guía del camino feliz
+	                                          que viajó en el troncal de junio; puede
+	                                          ser mayor si hubo otras guías despachadas
+	                                          en junio por Flecha Bus)
 	     - Costos: $0,00       (no hay costos cargados en junio; los movimientos de
 	                            CtaCteEmpresaOmnibus.json son todos de mayo 2026)
-	     - Utilidad: $3.500,00
+	     - Utilidad: Ventas - Costos (= Ventas si no hay costos en el mes)
 	2 - VERIFICAR que NO aparecen las demás empresas (no tienen ventas ni costos en junio).
 
 	NOTA: si en cambio elegís MAYO 2026, vas a ver lo contrario: cada empresa con

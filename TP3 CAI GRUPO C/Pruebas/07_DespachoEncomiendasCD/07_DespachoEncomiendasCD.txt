@@ -5,8 +5,20 @@
 	Al llegar acá tiene que estar así:
 		- En "Guias.json": la guía en estado 6 (Admitida en CD)
 		- En "HojasDeRutaOmnibus.json": <HDR_OMNIBUS_CAMINO_FELIZ>
-		     en estado 0 (Asignada), servicio "FLE-20260610-0600-TRONCAL-IDA",
+		     en estado 0 (Asignada), servicio "FLE-20260618-0900-TRONCAL-IDA",
 		     origen CD-CBA-01, destino CD-MZA-01.
+
+	NOTA SOBRE FECHAS:
+	  El troncal cargado en "ServiciosOmnibus.json" tiene a CD-CBA-01 saliendo
+	  el 20/06/2026 18:00 y llegando a CD-MZA-01 el 20/06/2026 22:30. La
+	  pantalla de Despacho sólo acepta como Fecha/Hora una del DIA ACTUAL.
+	  Por eso esta prueba se diseñó para correrse el 20/06/2026. Si se corre
+	  otro día, hay que:
+	      - Editar las paradas CD-CBA-01 y CD-MZA-01 del servicio
+	        "FLE-20260618-0900-TRONCAL-IDA" en "ServiciosOmnibus.json" para
+	        moverlas a la fecha del día de la prueba, o
+	      - Usar el override de "Fecha Sistema" desde el menú principal
+	        (botón "Fecha sistema") para simular que hoy es 20/06/2026.
 
 01. Menú principal:
 	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
@@ -15,14 +27,14 @@
 02. Pantalla "Despacho Encomiendas CD" - GroupBox "Seleccionar Ómnibus":
 	1 - VERIFICAR que en el campo "Código CD" figure: "CD-CBA-01"
 	2 - Empresa: "Flecha Bus"
-	3 - Fecha/Hora de Salida: 11/06/2026 11:45
+	3 - Fecha/Hora de Salida: 20/06/2026 18:00
 	     (es la hora a la que el servicio troncal sale de CD-CBA-01)
 	4 - Apretar el botón "Buscar"
 	5 - VERIFICAR que se habilita el GroupBox "Detalle de Hojas de Ruta de transporte asignadas"
 
 03. Pantalla "Despacho Encomiendas CD" - GroupBox "Detalle de Hojas de Ruta de transporte asignadas":
 	1 - VERIFICAR que en la lista aparece una fila con:
-	     - Nro de Orden: "FLE-20260610-0600-TRONCAL-IDA"
+	     - Nro de Orden: "FLE-20260618-0900-TRONCAL-IDA"
 	     - Hoja de Ruta: <HDR_OMNIBUS_CAMINO_FELIZ>
 	     - Estado: "Asignada"
 	     - Empresa de ómnibus: "Flecha Bus"
@@ -35,7 +47,7 @@
 
 	En "HojasDeRutaOmnibus.json" confirmar que se actualizó la hoja de ruta:
 		- Codigo: <HDR_OMNIBUS_CAMINO_FELIZ>
-		- IdentificadorServicio: "FLE-20260610-0600-TRONCAL-IDA"
+		- IdentificadorServicio: "FLE-20260618-0900-TRONCAL-IDA"
 		- CentroDistribucionOrigen: "CD-CBA-01"
 		- CentroDistribucionDestino: "CD-MZA-01"
 		- Estado: 1  (= EnTransito; antes era 0 = Asignada)

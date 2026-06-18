@@ -1,1 +1,93 @@
-﻿
+00. Antes de empezar:
+
+	IMPORTANTE: Esta prueba es independiente del camino feliz iniciado en
+	Imposición por Teléfono. Se apoya en la guía fija CD-CBA-01-00000005,
+	ya preparada en estado 12 (Lista para entregar por Agencia) en la
+	agencia AG-MZA-01-01 desde el 01/06/2026, por lo tanto supera los
+	15 días requeridos para iniciar la devolución.
+
+	Datos a usar:
+		- CUIT cliente: 30765432109 (Comercial del Plata S.A.)
+		- NumeroGuia: CD-CBA-01-00000005
+		- AgenciaEntregaCodigo: "AG-MZA-01-01"
+		- CentroDistribucionOrigen: "CD-CBA-01"
+		- MetodoRetiro: 1 (Centro de Distribución)
+
+01. Menú principal:
+	1 - En "Agencia actual" elegir: "AG-MZA-01-01" (Agencia Ciudad de
+	     Mendoza Centro)
+	2 - Entrar al menú "Gestión devoluciones"
+
+02. Pantalla "Gestión de devoluciones" - GroupBox "Operación a realizar":
+	1 - VERIFICAR que en el encabezado figure:
+	     - Codigo CD: el que esté seleccionado (puede quedar vacío)
+	     - Codigo Agencia: "AG-MZA-01-01"
+	2 - Seleccionar el RadioButton "Iniciar proceso de devolución"
+	3 - Apretar el botón "Continuar"
+	4 - VERIFICAR que el GroupBox "Confirmar devolución
+	     al remitente" permanece deshabilitado y se HABILITA el GroupBox "Iniciar devolución".
+
+03. Pantalla "Gestión de devoluciones" - GroupBox "Iniciar devolución":
+	1 - VERIFICAR que en la lista "Guías disponibles para devolución por
+	     superar 15 días en CD o agencia de destino" aparece una fila con:
+	     - Numero de Guía: CD-CBA-01-00000005
+	     - Cliente: "Comercial del Plata S.A."
+	     - Estado: "ListaParaEntregarPorAgencia"
+	     - Ubicación actual: "Agencia Ciudad de Mendoza Centro"
+	     - Fecha arribo: 01/06/2026
+	     - Días en espera: 16 (puede variar si se corre en otra fecha,
+	        pero debe ser > 15)
+	     - Destino de devolución: "Centro Distribucion Cordoba Capital Norte"
+	        (porque MetodoRetiro = Centro de Distribución y el origen
+	         es CD-CBA-01)
+	2 - Seleccionar la fila de la guía
+	3 - Apretar el botón "Iniciar devolución"
+	4 - VERIFICAR que aparece el cartel: "La devolución se inició
+	     correctamente."
+	5 - VERIFICAR que la lista se recarga sin esa guía (ya no cumple el
+	     criterio porque cambió de estado).
+
+04. Cierro el programa
+
+05. En Bin > Datos corroborar los siguientes archivos:
+
+	En "Guias.json" buscar la guía CD-CBA-01-00000005 y confirmar que cambió:
+		- EstadoActual: 16  (= DevolucionIniciada; antes era 12)
+		- CentroDistribucionOrigenDevolucion: "CD-MZA-01"
+		  (CD de la agencia que tenía la encomienda)
+		- CentroDistribucionDestinoDevolucion: "CD-CBA-01"
+		  (el origen original de la guía)
+		- AgenciaDevolucionCodigo: ""  (MetodoRetiro no es Agencia)
+		- DireccionDevolucion: "" / CodPostalDevolucion: 0
+		  (porque la guía original tenía DireccionRetiro vacía)
+		- Historial: tiene un movimiento NUEVO agregado al final con
+		     Estado: 16 (DevolucionIniciada)
+		     Ubicacion: "Agencia Ciudad de Mendoza Centro"
+
+	En "HojasDeRutaFleteros.json" confirmar que se creó un HDR de retiro
+	NUEVO para llevar la encomienda desde la agencia al CD destino de
+	devolución (porque la entrega original era a agencia, hay que pasar
+	primero por un fletero que la levante):
+		- Codigo: anotar como <HDR_RETIRO_DEVOLUCION>
+		  (formato HDR-RET-AAAAMM-numero)
+		- CentroDistribucion: "CD-MZA-01"
+		- CuitCuilFletero: el fletero con menor carga del CD-MZA-01
+		- TipoHDR: 0  (= Retiro)
+		- Estado: 0  (= Asignada)
+		- Guias: tiene que estar "CD-CBA-01-00000005"
+
+	En "CtaCteAgencia.json" confirmar que se generó un cargo a la agencia
+	que tenía la encomienda (comisión por iniciar la devolución):
+		- CodigoAgencia: "AG-MZA-01-01"
+		- NumeroGuia: "CD-CBA-01-00000005"
+		- TipoMovimiento: 0  (= Cargo)
+		- Concepto: "Comision por imposicion devolucion"
+		- Importe: 2000 / Debe: 2000 / Haber: 0
+		- Saldo: saldo anterior de la agencia + 2000
+		- Pagado: false
+
+	NOTA: para terminar el ciclo completo de la devolución (fletero levanta
+	la encomienda, llega al CD origen, se despacha por ómnibus, y llega al
+	cliente) hay que pasar por las pantallas de Asignación / Rendición de
+	fleteros, Despacho y Recepción reusando los flujos ya probados en las
+	pruebas 04, 05, 07 y 08.

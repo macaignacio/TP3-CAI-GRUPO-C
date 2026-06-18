@@ -39,7 +39,7 @@ ACLARACION:
 	En "Guias.json":
 		- NumeroGuia: <GUIA_IMPOXCD_1>
 		- CuitCliente: 30543219876
-		- Importe: 13950
+		- Importe: 19450
 		- EstadoActual: 6  (= AdmitidaEnCD)
 		- CentroDistribucionOrigen: "CD-CBA-02"
 		- CentroDistribucionDestino: "CD-MZA-01"

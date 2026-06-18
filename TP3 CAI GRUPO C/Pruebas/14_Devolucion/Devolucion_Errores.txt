@@ -1,1 +1,111 @@
-﻿
+00. Antes de empezar (menú principal):
+	1 - En "Agencia actual" elegir: "AG-MZA-01-01"
+	     (este contexto sirve para los casos de "Iniciar devolución" porque
+	     la guía fija CD-CBA-01-00000005 está en esa agencia; los casos del
+	     groupBox "Confirmar devolución al remitente" no dependen de
+	     contexto).
+	2 - Entrar al menú "Gestión devoluciones"
+
+
+	NOTA IMPORTANTE:
+	  Estas pruebas usan, para el flujo de Iniciar, la guía fija
+	  CD-CBA-01-00000005 (estado 12 / Lista para entregar por Agencia, con
+	  más de 15 días en la agencia). No se consume al probar errores: la
+	  prueba 14_Devolucion la consume y debería correrse DESPUÉS de
+	  estos casos de error.
+
+	  Para el flujo de Confirmar devolución NO hay datos preparados (no
+	  existen guías en estado 22/23 = DisponibleParaRetiroEnAgenciaOrigen
+	  o DisponibleParaRetiroEnCDOrigen). Por eso los casos del groupBox
+	  "Confirmar devolución al remitente" verifican únicamente las
+	  validaciones que se disparan ANTES de necesitar una guía.
+
+
+------------------------------------------------------------------------------
+
+01. Validaciones del GroupBox "Operación a realizar":
+
+	(Se disparan al apretar el botón "Continuar")
+
+	1.1 - Sin operación seleccionada:
+		- No marcar ningún radio button.
+		- Apretar "Continuar"
+		- VERIFICAR cartel: "Debe seleccionar una operación."
+
+
+------------------------------------------------------------------------------
+
+02. Validaciones del GroupBox "Confirmar devolución al remitente"
+    (CUIT - botón "Buscar"):
+
+	PRE: Marcar el radio button "Confirmar devolución al remitente" y
+	     apretar "Continuar". Recién ahí se habilita el GroupBox.
+
+	2.1 - CUIT vacío:
+		- CUIT: ""  (vacío)
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Debe ingresar un CUIT."
+
+	2.2 - CUIT con letras o con guiones:
+		- CUIT: "ABC" (o "30-71234567-8")
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "CUIT inválido. Se debe ingresar un número
+		  de 11 digitos sin guiones ni comas."
+
+	2.3 - CUIT con menos de 11 dígitos:
+		- CUIT: "12345"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "CUIT inválido. Se debe ingresar un número
+		  de 11 digitos sin guiones ni comas."
+
+	2.4 - CUIT con 11 dígitos pero NO existe en el sistema:
+		- CUIT: "99999999999"
+		- Apretar "Buscar"
+		- VERIFICAR cartel: "Cliente no encontrado."
+
+	2.5 - Cliente existe pero NO tiene guías en estado de devolución:
+		- CUIT: 30765432109  (Comercial del Plata S.A.)
+		- Apretar "Buscar"
+		- VERIFICAR que aparece la razón social "Comercial del Plata S.A."
+		  pero la lista de encomiendas queda VACÍA (no hay guías de ese
+		  cliente en estado DisponibleParaRetiroEnAgenciaOrigen o
+		  DisponibleParaRetiroEnCDOrigen en el contexto actual).
+
+
+------------------------------------------------------------------------------
+
+03. Validaciones del GroupBox "Confirmar devolución al remitente"
+    (botón "Confirmar devolución"):
+
+	PRE: El radio button "Confirmar devolución al remitente" tildado y
+	     "Continuar" apretado.
+
+	3.1 - Confirmar sin seleccionar una guía:
+		- Cargar un CUIT válido (ej. 30712345678) y apretar "Buscar"
+		- Sin seleccionar ninguna fila (o con la lista vacía), apretar
+		  "Confirmar devolución"
+		- VERIFICAR cartel: "Debe seleccionar una guía."
+
+
+------------------------------------------------------------------------------
+
+04. Validaciones del GroupBox "Iniciar devolución":
+
+	PRE: Marcar el radio button "Iniciar proceso de devolución" y apretar
+	     "Continuar". Recién ahí se habilita el GroupBox y se carga la
+	     lista de guías candidatas.
+
+	4.1 - Iniciar sin seleccionar una guía:
+		- Con la lista cargada (o vacía si no hay candidatas en el
+		  contexto), apretar "Iniciar devolución" sin marcar ninguna fila.
+		- VERIFICAR cartel: "Debe seleccionar una guía."
+
+	4.2 - Contexto sin guías candidatas (lista vacía):
+		- Volver al menú principal y cambiar la "Agencia actual" a una
+		  agencia donde NO haya guías en estado 9 o 12 con más de 15
+		  días (por ejemplo "AG-MZA-02-01").
+		- Volver a Devolución, tildar "Iniciar proceso de devolución"
+		  y apretar "Continuar".
+		- VERIFICAR que la lista del groupBox "Iniciar devolución"
+		  queda VACÍA (la pantalla no muestra cartel; simplemente no
+		  hay candidatas).

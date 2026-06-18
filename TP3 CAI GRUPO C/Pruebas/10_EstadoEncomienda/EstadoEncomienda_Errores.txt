@@ -14,12 +14,13 @@
 		- Apretar "Buscar"
 		- VERIFICAR cartel: "Debe ingresar una guia"
 
-	1.2 - Número de guía que no es válido (no numérico o no tiene 17 dígitos):
-		- Número de Guía: "123"  (o "ABC", o un número de menos/más de 17 dígitos)
+	1.2 - Número de guía con formato inválido o que NO existe:
+		- Número de Guía: "123"  (o "ABC", o cualquier string que no respete
+		  el formato "<CD/AG-Codigo>-NNNNNNNN")
 		- Apretar "Buscar"
-		- VERIFICAR cartel: "Guia invalida. Debe ingresar un numero de 17 digitos"
+		- VERIFICAR cartel: "Guia no encontrada"
 
-	1.3 - Número de guía con 17 dígitos pero que NO existe:
-		- Número de Guía: 99999999999999999  (17 nueves)
+	1.3 - Número de guía con formato válido pero que NO existe:
+		- Número de Guía: CD-XX-99-99999999  (prefijo de CD inexistente)
 		- Apretar "Buscar"
 		- VERIFICAR cartel: "Guia no encontrada"
