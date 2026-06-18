@@ -24,8 +24,7 @@ namespace TP3_CAI_GRUPO_C
             CargarCombos();
             ConfigurarCombos();
             ConfigurarBotones();
-            ConfigurarFechaSistema();
-        }
+                    }
 
         private void CargarCombos()
         {
@@ -90,43 +89,8 @@ namespace TP3_CAI_GRUPO_C
             GestionDevolucionesButton.Click += (_, _) => AbrirFormulario(new GestionDevolucionForm());
         }
 
-        private void ConfigurarFechaSistema()
-        {
-            FechaSistemaDateTimePicker.Value = DateTime.Now;
-            FechaSistemaDateTimePicker.Enabled = false;
-            ActualizarLabelFechaSistema();
-
-            FechaSistemaOverrideCheckBox.CheckedChanged += (_, _) =>
-            {
-                FechaSistemaDateTimePicker.Enabled = FechaSistemaOverrideCheckBox.Checked;
-                AplicarFechaSistema();
-            };
-
-            FechaSistemaDateTimePicker.ValueChanged += (_, _) => AplicarFechaSistema();
-
-            FechaSistemaResetButton.Click += (_, _) =>
-            {
-                FechaSistemaOverrideCheckBox.Checked = false;
-                FechaSistemaDateTimePicker.Value = DateTime.Now;
-                AplicarFechaSistema();
-            };
-        }
-
-        private void AplicarFechaSistema()
-        {
-            Program.FechaSistemaOverride = FechaSistemaOverrideCheckBox.Checked
-                ? FechaSistemaDateTimePicker.Value
-                : null;
-            ActualizarLabelFechaSistema();
-        }
-
-        private void ActualizarLabelFechaSistema()
-        {
-            FechaSistemaActualLabel.Text = "Hoy: " +
-                Program.AhoraSistema().ToString("dd/MM/yyyy HH:mm");
-        }
-
-        private void AbrirFormulario(Form formulario)
+       
+       private void AbrirFormulario(Form formulario)
         {
             using (formulario)
             {

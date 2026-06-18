@@ -33,11 +33,6 @@ namespace TP3_CAI_GRUPO_C
             comboBox1 = new ComboBox();
             AgenciaActualLabel = new Label();
             CDActualLabel = new Label();
-            FechaSistemaGroupBox = new GroupBox();
-            FechaSistemaOverrideCheckBox = new CheckBox();
-            FechaSistemaDateTimePicker = new DateTimePicker();
-            FechaSistemaActualLabel = new Label();
-            FechaSistemaResetButton = new Button();
             MenuGroupBox = new GroupBox();
             GestionDevolucionesButton = new Button();
             ResultadosButton = new Button();
@@ -55,7 +50,6 @@ namespace TP3_CAI_GRUPO_C
             ImpoXTelButton = new Button();
             MenuPpalLabel = new Label();
             ContextoGroupBox.SuspendLayout();
-            FechaSistemaGroupBox.SuspendLayout();
             MenuGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -107,57 +101,7 @@ namespace TP3_CAI_GRUPO_C
             CDActualLabel.Size = new Size(132, 15);
             CDActualLabel.TabIndex = 0;
             CDActualLabel.Text = "Seleccione el CD actual:";
-            //
-            // FechaSistemaGroupBox
-            //
-            FechaSistemaGroupBox.Controls.Add(FechaSistemaOverrideCheckBox);
-            FechaSistemaGroupBox.Controls.Add(FechaSistemaDateTimePicker);
-            FechaSistemaGroupBox.Controls.Add(FechaSistemaActualLabel);
-            FechaSistemaGroupBox.Controls.Add(FechaSistemaResetButton);
-            FechaSistemaGroupBox.Location = new Point(475, 20);
-            FechaSistemaGroupBox.Name = "FechaSistemaGroupBox";
-            FechaSistemaGroupBox.Size = new Size(205, 95);
-            FechaSistemaGroupBox.TabIndex = 2;
-            FechaSistemaGroupBox.TabStop = false;
-            FechaSistemaGroupBox.Text = "Fecha Sistema (override)";
-            //
-            // FechaSistemaOverrideCheckBox
-            //
-            FechaSistemaOverrideCheckBox.AutoSize = true;
-            FechaSistemaOverrideCheckBox.Location = new Point(10, 22);
-            FechaSistemaOverrideCheckBox.Name = "FechaSistemaOverrideCheckBox";
-            FechaSistemaOverrideCheckBox.Size = new Size(120, 19);
-            FechaSistemaOverrideCheckBox.TabIndex = 0;
-            FechaSistemaOverrideCheckBox.Text = "Usar fecha custom";
-            FechaSistemaOverrideCheckBox.UseVisualStyleBackColor = true;
-            //
-            // FechaSistemaDateTimePicker
-            //
-            FechaSistemaDateTimePicker.CustomFormat = "dd/MM/yyyy HH:mm";
-            FechaSistemaDateTimePicker.Format = DateTimePickerFormat.Custom;
-            FechaSistemaDateTimePicker.Location = new Point(10, 45);
-            FechaSistemaDateTimePicker.Name = "FechaSistemaDateTimePicker";
-            FechaSistemaDateTimePicker.Size = new Size(135, 23);
-            FechaSistemaDateTimePicker.TabIndex = 1;
-            //
-            // FechaSistemaResetButton
-            //
-            FechaSistemaResetButton.Location = new Point(150, 44);
-            FechaSistemaResetButton.Name = "FechaSistemaResetButton";
-            FechaSistemaResetButton.Size = new Size(45, 25);
-            FechaSistemaResetButton.TabIndex = 2;
-            FechaSistemaResetButton.Text = "Hoy";
-            FechaSistemaResetButton.UseVisualStyleBackColor = true;
-            //
-            // FechaSistemaActualLabel
-            //
-            FechaSistemaActualLabel.AutoSize = true;
-            FechaSistemaActualLabel.Location = new Point(10, 73);
-            FechaSistemaActualLabel.Name = "FechaSistemaActualLabel";
-            FechaSistemaActualLabel.Size = new Size(140, 15);
-            FechaSistemaActualLabel.TabIndex = 3;
-            FechaSistemaActualLabel.Text = "Hoy: --";
-            //
+            // 
             // MenuGroupBox
             // 
             MenuGroupBox.Controls.Add(GestionDevolucionesButton);
@@ -323,7 +267,6 @@ namespace TP3_CAI_GRUPO_C
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 460);
             Controls.Add(MenuGroupBox);
-            Controls.Add(FechaSistemaGroupBox);
             Controls.Add(ContextoGroupBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -333,8 +276,6 @@ namespace TP3_CAI_GRUPO_C
             Load += MenuPrincipal_Load;
             ContextoGroupBox.ResumeLayout(false);
             ContextoGroupBox.PerformLayout();
-            FechaSistemaGroupBox.ResumeLayout(false);
-            FechaSistemaGroupBox.PerformLayout();
             MenuGroupBox.ResumeLayout(false);
             MenuGroupBox.PerformLayout();
             ResumeLayout(false);
@@ -363,10 +304,5 @@ namespace TP3_CAI_GRUPO_C
         private Button CtaCteClienteButton;
         private Button ResultadosButton;
         private Button GestionDevolucionesButton;
-        private GroupBox FechaSistemaGroupBox;
-        private CheckBox FechaSistemaOverrideCheckBox;
-        private DateTimePicker FechaSistemaDateTimePicker;
-        private Button FechaSistemaResetButton;
-        private Label FechaSistemaActualLabel;
     }
 }

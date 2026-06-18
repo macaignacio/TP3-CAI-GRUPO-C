@@ -25,7 +25,7 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
             if (!Empresas.Any(e => e.nombre == empresa))
                 return (false, "Debe seleccionar una empresa de ómnibus válida.");
 
-            if (fechaSalida.Date != Program.HoySistema())
+            if (fechaSalida.Date != DateTime.Today)
                 return (false, "Solo se pueden buscar paradas de salida del dia actual.");
 
             return (true, "");
@@ -115,7 +115,7 @@ namespace TP3_CAI_GRUPO_C.DespachoEncomiendasCD
 
         private static bool EsParadaDeHoy(DateTime parada)
         {
-            return parada.Date == Program.HoySistema();
+            return parada.Date == DateTime.Today;
         }
         
         public (bool valido, string error)

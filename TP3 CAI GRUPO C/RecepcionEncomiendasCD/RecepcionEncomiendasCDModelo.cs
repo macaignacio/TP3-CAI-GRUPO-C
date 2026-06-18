@@ -105,17 +105,17 @@ namespace TP3_CAI_GRUPO_C.RecepcionEncomiendasCD
 
         private static bool EsFechaRecepcionPermitida(DateTime busqueda)
         {
-            var diferencia = Program.AhoraSistema() - busqueda;
+            var diferencia = DateTime.Now - busqueda;
 
-            return busqueda.Date == Program.HoySistema() ||
+            return busqueda.Date == DateTime.Today ||
                    (diferencia >= TimeSpan.Zero && diferencia <= TimeSpan.FromHours(12));
         }
 
         private static bool EsParadaRecepcionPermitida(DateTime parada)
         {
-            var diferencia = Program.AhoraSistema() - parada;
+            var diferencia = DateTime.Now - parada;
 
-            return parada.Date == Program.HoySistema() ||
+            return parada.Date == DateTime.Today ||
                    (diferencia >= TimeSpan.Zero && diferencia <= TimeSpan.FromHours(12));
         }
 
