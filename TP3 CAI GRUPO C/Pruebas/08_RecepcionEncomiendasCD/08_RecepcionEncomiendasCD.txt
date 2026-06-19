@@ -14,8 +14,7 @@
 	  12 horas. Por eso esta prueba se diseñó para correrse el 20/06/2026
 	  (idealmente después de "07_DespachoEncomiendasCD" en el mismo día).
 	  Si se corre otro día, hay que editar las paradas del servicio
-	  "FLE-20260618-0900-TRONCAL-IDA" en "ServiciosOmnibus.json" o usar
-	  el override de "Fecha Sistema" desde el menú principal.
+	  "FLE-20260618-0900-TRONCAL-IDA" en "ServiciosOmnibus.json".
 
 01. Menú principal:
 	1 - En "Centro de distribución actual" elegir: "CD-MZA-01" (CD Destino)

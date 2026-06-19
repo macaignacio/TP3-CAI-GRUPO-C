@@ -17,8 +17,6 @@
 	      - Editar las paradas CD-CBA-01 y CD-MZA-01 del servicio
 	        "FLE-20260618-0900-TRONCAL-IDA" en "ServiciosOmnibus.json" para
 	        moverlas a la fecha del día de la prueba, o
-	      - Usar el override de "Fecha Sistema" desde el menú principal
-	        (botón "Fecha sistema") para simular que hoy es 20/06/2026.
 
 01. Menú principal:
 	1 - En "Centro de distribución actual" elegir: "CD-CBA-01" (Córdoba Capital Norte)
