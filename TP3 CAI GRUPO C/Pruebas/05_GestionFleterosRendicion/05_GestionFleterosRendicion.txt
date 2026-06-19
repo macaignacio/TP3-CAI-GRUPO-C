@@ -18,10 +18,10 @@
 	     - Número de Guía: <GUIA_CAMINO_FELIZ>
 	     - Estado: "RetiroDomicilioEnCurso"
 	2 - Marcar el CHECKBOX de esa fila (la HDR fue cumplida por el fletero)
-	3 - VERIFICAR que al marcar el checkbox se habilita el botón "Confirmar"
-	     (antes de marcar nada, el botón está deshabilitado)
-	4 - Apretar el botón "Confirmar"
-	5 - VERIFICAR que aparece el cartel: "Se actualizo el estado de las encomiendas correctamente."
+	3 - VERIFICAR que al marcar el checkbox se habilitan los botones "Confirmar cumplidas" y "Confirmar no cumplidas"
+	     (antes de marcar nada, los botones están deshabilitados)
+	4 - Apretar el botón "Confirmar cumplidas"
+	5 - VERIFICAR que aparece el cartel: "Se actualizó el estado de las encomiendas correctamente."
 	6 - VERIFICAR que el formulario se limpia.
 
 04. Cierro el programa

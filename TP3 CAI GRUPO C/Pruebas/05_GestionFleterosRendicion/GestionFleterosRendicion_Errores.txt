@@ -42,7 +42,7 @@
 
 02. Validaciones del GroupBox "Hojas de Ruta Asignadas":
 
-	(Se disparan al apretar el botón "Confirmar")
+	(Se disparan al apretar el botón "Confirmar cumplidas")
 
 	PRE: Usar el dato fijo preparado para esta prueba:
 	     - CUIT/CUIL: 20978901234 (Diego Sebastian Molina)
@@ -53,8 +53,7 @@
 
 	2.1 - Confirmar sin marcar ninguna HDR:
 		- Buscar el fletero 20978901234 pero NO marcar ningún checkbox.
-		- VERIFICAR que el botón "Confirmar" queda DESHABILITADO: el sistema
-		  no deja confirmar una rendición sin marcar al menos una HDR como
-		  cumplida.
+		- VERIFICAR que los botones "Confirmar cumplidas" y "Confirmar no cumplidas" quedan DESHABILITADOS: el sistema
+		  no deja confirmar una rendición sin marcar al menos una HDR como cumplida.
 		  (Si por algún motivo se llegara a apretar sin marcar nada, el
 		   cartel sería: "Debe marcar al menos una hoja de ruta cumplida.")
